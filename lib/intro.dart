@@ -95,7 +95,7 @@ class _IntroState extends State<Intro> {
                             'Let\'s improve your skills together with Elera right now!',
                             style: GoogleFonts.poppins(
                               fontSize: 30,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -132,7 +132,7 @@ class _IntroState extends State<Intro> {
             Padding(
               padding: EdgeInsets.symmetric(
                   vertical: MediaQuery.of(context).size.height * 0.04),
-              child: GestureDetector(
+              child: InkWell(
                 onTap: () {
                   _controller.nextPage(
                     duration: const Duration(milliseconds: 300),
@@ -143,7 +143,7 @@ class _IntroState extends State<Intro> {
                         MaterialPageRoute(builder: (context) => const Login()));
                   }
                 },
-                child: Container(
+                child: Ink(
                   decoration: BoxDecoration(
                       color: const Color(0xff5f82ff),
                       boxShadow: [
