@@ -32,13 +32,21 @@ class App extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
           labelSmall: GoogleFonts.poppins(
+            fontSize: 12,
             color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
+          displaySmall: GoogleFonts.poppins(
+            fontSize: 12,
             fontWeight: FontWeight.w600,
           ),
           displayMedium: GoogleFonts.poppins(
             fontSize: 12,
             fontWeight: FontWeight.w600,
           ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Color(0xff5f82ff),
         ),
       );
 }
