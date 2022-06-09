@@ -1,6 +1,6 @@
+import 'package:elearning/onboarding/intro_page.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../login.dart';
@@ -42,17 +42,17 @@ class _IntroState extends State<Intro> {
                     });
                   },
                   children: const [
-                    Page(
+                    IntroPage(
                       imagePath: 'assets/images/onboard1.png',
                       text:
                           'We provide the best learning courses & great mentors!',
                     ),
-                    Page(
+                    IntroPage(
                       imagePath: 'assets/images/onboard2.png',
                       text:
                           'Learn anytime and anywhere easily and conveniently',
                     ),
-                    Page(
+                    IntroPage(
                       imagePath: 'assets/images/onboard3.png',
                       text:
                           'Let\'s improve your skills together with Elera right now!',

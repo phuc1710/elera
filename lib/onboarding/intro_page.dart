@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Page extends StatelessWidget {
-  const Page({
+class IntroPage extends StatelessWidget {
+  const IntroPage({
     Key? key,
     required this.imagePath,
     required this.text,
