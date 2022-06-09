@@ -30,10 +30,14 @@ class App extends StatelessWidget {
             fontSize: 32,
             fontWeight: FontWeight.w600,
           ),
-          button: GoogleFonts.poppins(
+          labelSmall: GoogleFonts.poppins(
             color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
+          displayMedium: GoogleFonts.poppins(
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
           ),
         ),
-        
       );
 }

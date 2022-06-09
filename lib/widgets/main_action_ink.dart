@@ -28,7 +28,7 @@ class MainActionInk extends StatelessWidget {
         child: Center(
           child: Text(
             _buttonString,
-            style: Theme.of(context).textTheme.button,
+            style: Theme.of(context).textTheme.labelSmall,
           ),
         ),
       ),
