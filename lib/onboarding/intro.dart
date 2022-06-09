@@ -3,7 +3,7 @@ import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../login.dart';
+import '../letsin/letsin.dart';
 
 class Intro extends StatefulWidget {
   const Intro({Key? key}) : super(key: key);
@@ -95,7 +95,7 @@ class _IntroState extends State<Intro> {
                   );
                   if (_buttonString == 'Get Started') {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Login()));
+                        MaterialPageRoute(builder: (context) => const LetsIn()));
                   }
                 },
                 child: MainActionInk(buttonString: _buttonString),

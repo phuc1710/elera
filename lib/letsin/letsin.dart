@@ -2,8 +2,8 @@ import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class LetsIn extends StatelessWidget {
+  const LetsIn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
