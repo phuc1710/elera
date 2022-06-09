@@ -35,13 +35,9 @@ class _IntroState extends State<Intro> {
                     setState(() {
                       page = index;
                       if (page > 1) {
-                        setState(() {
-                          _buttonString = 'Get Started';
-                        });
+                        _buttonString = 'Get Started';
                       } else {
-                        setState(() {
-                          _buttonString = 'Next';
-                        });
+                        _buttonString = 'Next';
                       }
                     });
                   },
@@ -153,4 +149,3 @@ class _IntroState extends State<Intro> {
     );
   }
 }
-
