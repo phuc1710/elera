@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class MainActionInk extends StatelessWidget {
   const MainActionInk({
     Key? key,
     required String buttonString,
-  }) : _buttonString = buttonString, super(key: key);
+  })  : _buttonString = buttonString,
+        super(key: key);
 
   final String _buttonString;
 
@@ -13,7 +13,7 @@ class MainActionInk extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       decoration: BoxDecoration(
-          color: const Color(0xff5f82ff),
+          color: Theme.of(context).primaryColor,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
@@ -26,12 +26,11 @@ class MainActionInk extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.8,
         height: MediaQuery.of(context).size.height * 0.08,
         child: Center(
-            child: Text(
-          _buttonString,
-          style: GoogleFonts.poppins(
-            color: Colors.white,
+          child: Text(
+            _buttonString,
+            style: Theme.of(context).textTheme.button,
           ),
-        )),
+        ),
       ),
     );
   }

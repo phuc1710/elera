@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({
@@ -23,13 +22,10 @@ class IntroPage extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.9,
           child: Text(
             text,
-            style: GoogleFonts.poppins(
-              fontSize: 30,
-              fontWeight: FontWeight.w600,
-            ),
             textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
-        )
+        ),
       ],
     );
   }

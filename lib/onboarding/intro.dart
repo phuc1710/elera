@@ -68,10 +68,10 @@ class _IntroState extends State<Intro> {
                         child: SmoothPageIndicator(
                           controller: _controller,
                           count: 3,
-                          effect: const ExpandingDotsEffect(
+                          effect: ExpandingDotsEffect(
                             dotHeight: 8,
                             dotWidth: 8,
-                            activeDotColor: Color(0xff5f82ff),
+                            activeDotColor: Theme.of(context).primaryColor,
                           ),
                           onDotClicked: (index) => _controller.animateToPage(
                               index,
