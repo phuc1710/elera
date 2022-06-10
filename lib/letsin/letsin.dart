@@ -1,7 +1,8 @@
-import 'package:elearning/letsin/signup.dart';
-import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widgets/main_action_ink.dart';
+import 'signup.dart';
 
 class LetsIn extends StatelessWidget {
   const LetsIn({Key? key}) : super(key: key);
