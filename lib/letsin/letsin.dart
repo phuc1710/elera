@@ -110,8 +110,8 @@ class LetsIn extends StatelessWidget {
                       'Don\'t have an account?',
                       style: GoogleFonts.poppins(
                         fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey[200],
+                        fontWeight: FontWeight.w300,
+                        color: Colors.grey[400],
                       ),
                     ),
                     TextButton(

@@ -12,7 +12,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  bool _showPassword = false;
+  bool _showPassword = true;
   var color = const Color(0xff5f82ff);
   bool? rememberMe = false;
 
@@ -73,8 +73,8 @@ class _SignUpState extends State<SignUp> {
                       prefixIcon: const Icon(Icons.lock),
                       suffixIcon: IconButton(
                           icon: Icon(_showPassword
-                              ? Icons.visibility
-                              : Icons.visibility_off),
+                              ? Icons.visibility_off
+                              : Icons.visibility),
                           onPressed: () {
                             setState(() {
                               _showPassword = !_showPassword;
@@ -104,7 +104,9 @@ class _SignUpState extends State<SignUp> {
                         style: Theme.of(context).textTheme.displaySmall),
                   ],
                 ),
-                const MainActionInk(buttonString: 'Sign up'),
+                InkWell(
+                    onTap: (() {}),
+                    child: const MainActionInk(buttonString: 'Sign up')),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20.0),
                   child: Row(
@@ -138,8 +140,115 @@ class _SignUpState extends State<SignUp> {
                     ],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      borderRadius: BorderRadius.circular(15.0),
+                      onTap: () {
+                        //TODO: Facebook login
+                      },
+                      child: const SocialConnectInk(
+                        imagePath: 'assets/images/facebook-logo.png',
+                      ),
+                    ),
+                    InkWell(
+                      borderRadius: BorderRadius.circular(15.0),
+                      onTap: () {
+                        //TODO: Google login
+                      },
+                      child: const SocialConnectInk(
+                        imagePath: 'assets/images/google-logo.png',
+                      ),
+                    ),
+                    InkWell(
+                      borderRadius: BorderRadius.circular(15.0),
+                      onTap: () {
+                        //TODO: Apple login
+                      },
+                      child: const SocialConnectInk(
+                        imagePath: 'assets/images/apple-logo.png',
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      vertical: MediaQuery.of(context).size.height * 0.03),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already have an account?',
+                        style: GoogleFonts.poppins(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          //TODO: Go to login page
+                          
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => const SignIn()));
+                        },
+                        child: Text(
+                          'Sign in',
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SocialConnectInk extends StatelessWidget {
+  const SocialConnectInk({
+    Key? key,
+    required this.imagePath,
+  }) : super(key: key);
+
+  final String imagePath;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Ink(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey.shade200,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white,
+        ),
+        width: MediaQuery.of(context).size.width * 0.2,
+        height: MediaQuery.of(context).size.height * 0.075,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                imagePath,
+                width: MediaQuery.of(context).size.width * 0.06,
+              ),
+            ],
           ),
         ),
       ),
