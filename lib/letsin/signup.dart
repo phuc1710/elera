@@ -1,3 +1,4 @@
+import 'package:elearning/letsin/signin.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as dev;
@@ -174,7 +175,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      vertical: MediaQuery.of(context).size.height * 0.03),
+                      vertical: MediaQuery.of(context).size.height * 0.07),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -188,12 +189,10 @@ class _SignUpState extends State<SignUp> {
                       ),
                       TextButton(
                         onPressed: () {
-                          //TODO: Go to login page
-                          
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => const SignIn()));
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignIn()));
                         },
                         child: Text(
                           'Sign in',
