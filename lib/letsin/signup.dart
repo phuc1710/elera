@@ -109,7 +109,7 @@ class _SignUpState extends State<SignUp> {
                     onTap: (() {}),
                     child: const MainActionInk(buttonString: 'Sign up')),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 68.0, 0.0, 20.0),
                   child: Row(
                     children: [
                       Expanded(
@@ -175,7 +175,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      vertical: MediaQuery.of(context).size.height * 0.07),
+                      vertical: MediaQuery.of(context).size.height * 0.01),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
