@@ -23,6 +23,10 @@ class App extends StatelessWidget {
         primaryColor: const Color(0xff5f82ff),
         scaffoldBackgroundColor: Colors.white,
         textTheme: TextTheme(
+          titleSmall: GoogleFonts.poppins(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
           titleMedium: GoogleFonts.poppins(
             fontSize: 30,
             fontWeight: FontWeight.w600,

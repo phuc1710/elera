@@ -1,3 +1,4 @@
+import 'package:elearning/account_setup/fill_your_profile.dart';
 import 'package:elearning/letsin/signin/view/signin_view.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
@@ -106,7 +107,10 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
                 InkWell(
-                    onTap: (() {}),
+                    onTap: (() {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => const FillYourProfileView()));
+                    }),
                     child: const MainActionInk(buttonString: 'Sign up')),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0.0, 68.0, 0.0, 20.0),
