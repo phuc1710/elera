@@ -139,7 +139,8 @@ class _IntroState extends State<Intro> {
                     curve: Curves.easeIn,
                   );
                   if (_buttonString == 'Get Started') {
-                    // TODO: Navigate to login page
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Login()));
                   }
                 },
                 child: Container(
