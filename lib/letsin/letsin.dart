@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/main_action_ink.dart';
+import 'signin/view/signin_view.dart';
 import 'signup.dart';
 
 class LetsIn extends StatelessWidget {
@@ -103,7 +104,15 @@ class LetsIn extends StatelessWidget {
                     ],
                   ),
                 ),
-                const MainActionInk(buttonString: 'Sign in with password'),
+                InkWell(
+                    onTap: (() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignInView()));
+                    }),
+                    child: const MainActionInk(
+                        buttonString: 'Sign in with password')),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

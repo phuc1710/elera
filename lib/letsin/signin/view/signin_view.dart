@@ -3,18 +3,17 @@ import 'dart:developer' as dev;
 
 import 'package:google_fonts/google_fonts.dart';
 
-import '../widgets/main_action_ink.dart';
-import 'signup.dart';
+import '../../../widgets/main_action_ink.dart';
+import '../../signup.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+class SignInView extends StatefulWidget {
+  const SignInView({Key? key}) : super(key: key);
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignInView> createState() => _SignInViewState();
 }
 
-class _SignInState extends State<SignIn> {
-  bool _showPassword = true;
+class _SignInViewState extends State<SignInView> {
   var color = const Color(0xff5f82ff);
   bool? rememberMe = false;
 
@@ -24,7 +23,7 @@ class _SignInState extends State<SignIn> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: SafeArea(
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
+          resizeToAvoidBottomInset: true,
           appBar: AppBar(
             title: const Text(''),
             foregroundColor: Colors.black,
@@ -39,7 +38,7 @@ class _SignInState extends State<SignIn> {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      vertical: MediaQuery.of(context).size.height * 0.03),
+                      vertical: MediaQuery.of(context).size.height * 0.02),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Text(
@@ -48,45 +47,13 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05),
-                      ),
-                      prefixIcon: const Icon(Icons.email_rounded),
-                      hintText: 'Email',
-                    ),
-                    style: Theme.of(context).textTheme.displaySmall,
-                  ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: _UsernameInput(),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05),
-                      ),
-                      prefixIcon: const Icon(Icons.lock),
-                      suffixIcon: IconButton(
-                          icon: Icon(_showPassword
-                              ? Icons.visibility_off
-                              : Icons.visibility),
-                          onPressed: () {
-                            setState(() {
-                              _showPassword = !_showPassword;
-                            });
-                          }),
-                      hintText: 'Password',
-                    ),
-                    obscureText: _showPassword,
-                    style: Theme.of(context).textTheme.displaySmall,
-                  ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: _PasswordInput(),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -225,6 +192,65 @@ class _SignInState extends State<SignIn> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _PasswordInput extends StatefulWidget {
+  const _PasswordInput({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<_PasswordInput> createState() => _PasswordInputState();
+}
+
+class _PasswordInputState extends State<_PasswordInput> {
+  bool _showPassword = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        focusedBorder: OutlineInputBorder(
+          borderRadius:
+              BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
+        ),
+        prefixIcon: const Icon(Icons.lock),
+        suffixIcon: IconButton(
+            icon: Icon(_showPassword ? Icons.visibility_off : Icons.visibility),
+            onPressed: () {
+              setState(() {
+                _showPassword = !_showPassword;
+              });
+            }),
+        hintText: 'Password',
+      ),
+      obscureText: _showPassword,
+      style: Theme.of(context).textTheme.displaySmall,
+    );
+  }
+}
+
+class _UsernameInput extends StatelessWidget {
+  const _UsernameInput({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        focusedBorder: OutlineInputBorder(
+          borderRadius:
+              BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
+        ),
+        prefixIcon: const Icon(Icons.email_rounded),
+        hintText: 'Email',
+      ),
+      style: Theme.of(context).textTheme.displaySmall,
     );
   }
 }

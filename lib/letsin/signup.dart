@@ -1,4 +1,4 @@
-import 'package:elearning/letsin/signin.dart';
+import 'package:elearning/letsin/signin/view/signin_view.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as dev;
@@ -192,7 +192,7 @@ class _SignUpState extends State<SignUp> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const SignIn()));
+                                  builder: (context) => const SignInView()));
                         },
                         child: Text(
                           'Sign in',
