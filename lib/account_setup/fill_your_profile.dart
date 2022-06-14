@@ -51,7 +51,7 @@ class _FillYourProfileViewState extends State<FillYourProfileView> {
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.025),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     DropdownButton<String>(
                       value: dropDownFlagValue,
@@ -80,22 +80,25 @@ class _FillYourProfileViewState extends State<FillYourProfileView> {
                   ],
                 ),
               ),
-              DropdownButton<String>(
-                value: dropDownGenderValue,
-                style: Theme.of(context).textTheme.displaySmall,
-                isExpanded: true,
-                hint: const Text('Gender'),
-                items: ['Male', 'Female']
-                    .map((e) => DropdownMenuItem(
-                          value: e,
-                          child: Text(e),
-                        ))
-                    .toList(),
-                onChanged: (value) {
-                  setState(() {
-                    dropDownGenderValue = value;
-                  });
-                },
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.025),
+                child: DropdownButton<String>(
+                  value: dropDownGenderValue,
+                  style: Theme.of(context).textTheme.displaySmall,
+                  isExpanded: true,
+                  hint: const Text('Gender'),
+                  items: ['Male', 'Female']
+                      .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(e),
+                          ))
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      dropDownGenderValue = value;
+                    });
+                  },
+                ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.02),
