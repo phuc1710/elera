@@ -48,6 +48,10 @@ class App extends StatelessWidget {
             fontSize: 12,
             fontWeight: FontWeight.w600,
           ),
+          displayLarge: GoogleFonts.poppins(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          )
         ),
         iconTheme: const IconThemeData(
           color: Color(0xff5f82ff),

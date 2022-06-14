@@ -1,14 +1,10 @@
+import 'package:elearning/account_setup/create_new_pin.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 
-class FillYourProfileView extends StatefulWidget {
+class FillYourProfileView extends StatelessWidget {
   const FillYourProfileView({Key? key}) : super(key: key);
 
-  @override
-  State<FillYourProfileView> createState() => _FillYourProfileViewState();
-}
-
-class _FillYourProfileViewState extends State<FillYourProfileView> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,9 +31,7 @@ class _FillYourProfileViewState extends State<FillYourProfileView> {
 }
 
 class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({
-    Key? key,
-  }) : super(key: key);
+  const ScaffoldBody({Key? key}) : super(key: key);
 
   @override
   State<ScaffoldBody> createState() => _ScaffoldBodyState();
@@ -85,7 +79,12 @@ class _ScaffoldBodyState extends State<ScaffoldBody> {
           padding: EdgeInsets.symmetric(
               vertical: MediaQuery.of(context).size.height * 0.02),
           child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CreateNewPinView()));
+              },
               child: const MainActionInk(buttonString: 'Continue')),
         )
       ]),
@@ -109,9 +108,7 @@ class _ScaffoldBodyState extends State<ScaffoldBody> {
 }
 
 class PhoneNumberInput extends StatefulWidget {
-  const PhoneNumberInput({
-    Key? key,
-  }) : super(key: key);
+  const PhoneNumberInput({Key? key}) : super(key: key);
 
   @override
   State<PhoneNumberInput> createState() => _PhoneNumberInputState();
