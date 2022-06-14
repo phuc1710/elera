@@ -49,26 +49,28 @@ class _FillYourProfileViewState extends State<FillYourProfileView> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.025),
+                    horizontal: MediaQuery.of(context).size.width * 0.03),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    DropdownButton<String>(
-                      value: dropDownFlagValue,
-                      style: Theme.of(context).textTheme.displaySmall,
-                      items: const [
-                        DropdownMenuItem(
-                          value: 'US',
-                          child: Text(
-                            'US',
-                          ),
-                        )
-                      ],
-                      onChanged: (value) {
-                        setState(() {
-                          dropDownFlagValue = value!;
-                        });
-                      },
+                    DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: dropDownFlagValue,
+                        style: Theme.of(context).textTheme.displaySmall,
+                        items: const [
+                          DropdownMenuItem(
+                            value: 'US',
+                            child: Text(
+                              'US',
+                            ),
+                          )
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            dropDownFlagValue = value!;
+                          });
+                        },
+                      ),
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.7,
@@ -81,23 +83,25 @@ class _FillYourProfileViewState extends State<FillYourProfileView> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.025),
-                child: DropdownButton<String>(
-                  value: dropDownGenderValue,
-                  style: Theme.of(context).textTheme.displaySmall,
-                  isExpanded: true,
-                  hint: const Text('Gender'),
-                  items: ['Male', 'Female']
-                      .map((e) => DropdownMenuItem(
-                            value: e,
-                            child: Text(e),
-                          ))
-                      .toList(),
-                  onChanged: (value) {
-                    setState(() {
-                      dropDownGenderValue = value;
-                    });
-                  },
+                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.03),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    value: dropDownGenderValue,
+                    style: Theme.of(context).textTheme.displaySmall,
+                    isExpanded: true,
+                    hint: const Text('Gender'),
+                    items: ['Male', 'Female']
+                        .map((e) => DropdownMenuItem(
+                              value: e,
+                              child: Text(e),
+                            ))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        dropDownGenderValue = value;
+                      });
+                    },
+                  ),
                 ),
               ),
               Padding(
