@@ -41,8 +41,8 @@ class App extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
           displaySmall: GoogleFonts.poppins(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
+            fontSize: 10,
+            fontWeight: FontWeight.w500,
           ),
           displayMedium: GoogleFonts.poppins(
             fontSize: 12,

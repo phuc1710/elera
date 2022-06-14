@@ -23,7 +23,7 @@ class _IntroState extends State<Intro> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
+        body: ListView(
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.8,
