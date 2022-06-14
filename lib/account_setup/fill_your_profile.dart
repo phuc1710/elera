@@ -9,8 +9,6 @@ class FillYourProfileView extends StatefulWidget {
 }
 
 class _FillYourProfileViewState extends State<FillYourProfileView> {
-  String dropDownFlagValue = 'US';
-  String? dropDownGenderValue;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -29,92 +27,138 @@ class _FillYourProfileViewState extends State<FillYourProfileView> {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.05),
-            child: ListView(children: [
-              CircleAvatar(
-                radius: MediaQuery.of(context).size.width * 0.17,
-                backgroundColor: Colors.red,
-              ),
-              const InformationInput(hintText: 'Full Name'),
-              const InformationInput(hintText: 'Nickname'),
-              const InformationInput(
-                hintText: 'Date of Birth',
-                suffixIcon: Icon(Icons.date_range_rounded),
-              ),
-              const InformationInput(
-                hintText: 'Email',
-                suffixIcon: Icon(Icons.email_rounded),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.03),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
-                        value: dropDownFlagValue,
-                        style: Theme.of(context).textTheme.displaySmall,
-                        items: const [
-                          DropdownMenuItem(
-                            value: 'US',
-                            child: Text(
-                              'US',
-                            ),
-                          )
-                        ],
-                        onChanged: (value) {
-                          setState(() {
-                            dropDownFlagValue = value!;
-                          });
-                        },
-                      ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.7,
-                      child: const InformationInput(
-                        hintText: 'Phone Number',
-                        keyboardtype: TextInputType.number,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.03),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: dropDownGenderValue,
-                    style: Theme.of(context).textTheme.displaySmall,
-                    isExpanded: true,
-                    hint: const Text('Gender'),
-                    items: ['Male', 'Female']
-                        .map((e) => DropdownMenuItem(
-                              value: e,
-                              child: Text(e),
-                            ))
-                        .toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        dropDownGenderValue = value;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.02),
-                child: InkWell(
-                    onTap: () {},
-                    child: const MainActionInk(buttonString: 'Continue')),
-              )
-            ]),
-          ),
+          body: const ScaffoldBody(),
         ),
       ),
     );
+  }
+}
+
+class ScaffoldBody extends StatefulWidget {
+  const ScaffoldBody({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+}
+
+class _ScaffoldBodyState extends State<ScaffoldBody> {
+  String? dropDownGenderValue;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.05),
+      child: ListView(children: [
+        CircleAvatar(
+          radius: MediaQuery.of(context).size.width * 0.17,
+          backgroundColor: Colors.red,
+        ),
+        const InformationInput(hintText: 'Full Name'),
+        const InformationInput(hintText: 'Nickname'),
+        const InformationInput(
+          hintText: 'Date of Birth',
+          suffixIcon: Icon(Icons.date_range_rounded),
+        ),
+        const InformationInput(
+          hintText: 'Email',
+          suffixIcon: Icon(Icons.email_rounded),
+        ),
+        const PhoneNumberInput(),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.03),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: dropDownGenderValue,
+              style: Theme.of(context).textTheme.displaySmall,
+              isExpanded: true,
+              hint: const Text('Gender'),
+              items: getGenderItems(),
+              onChanged: onDropDownGenderChanged,
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              vertical: MediaQuery.of(context).size.height * 0.02),
+          child: InkWell(
+              onTap: () {},
+              child: const MainActionInk(buttonString: 'Continue')),
+        )
+      ]),
+    );
+  }
+
+  void onDropDownGenderChanged(value) {
+    setState(() {
+      dropDownGenderValue = value;
+    });
+  }
+
+  List<DropdownMenuItem<String>> getGenderItems() {
+    return ['Male', 'Female']
+        .map((e) => DropdownMenuItem(
+              value: e,
+              child: Text(e),
+            ))
+        .toList();
+  }
+}
+
+class PhoneNumberInput extends StatefulWidget {
+  const PhoneNumberInput({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<PhoneNumberInput> createState() => _PhoneNumberInputState();
+}
+
+class _PhoneNumberInputState extends State<PhoneNumberInput> {
+  String dropDownFlagValue = 'US';
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.03),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: dropDownFlagValue,
+              style: Theme.of(context).textTheme.displaySmall,
+              items: const [
+                DropdownMenuItem(
+                  value: 'US',
+                  child: Text(
+                    'US',
+                  ),
+                )
+              ],
+              onChanged: onDropDownFlagChanged,
+            ),
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.7,
+            child: const InformationInput(
+              hintText: 'Phone Number',
+              keyboardtype: TextInputType.number,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void onDropDownFlagChanged(value) {
+    setState(() {
+      dropDownFlagValue = value;
+    });
   }
 }
 
