@@ -1,3 +1,4 @@
+import 'package:elearning/forgot_and_reset_password/select_contact_view.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as dev;
 
@@ -77,7 +78,13 @@ class _SignInViewState extends State<SignInView> {
                     onTap: (() {}),
                     child: const MainActionInk(buttonString: 'Sign in')),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SelectContactView()),
+                    );
+                  },
                   child: Text(
                     'Forgot the password?',
                     style: GoogleFonts.poppins(
