@@ -1,3 +1,4 @@
+import 'package:elearning/account_setup/set_your_fingerprint.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -56,7 +57,13 @@ class ScaffoldBody extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               vertical: MediaQuery.of(context).size.height * 0.02),
           child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const SetYourFingerprintView(),
+                  ),
+                );
+              },
               child: const MainActionInk(buttonString: 'Continue')),
         )
       ]),
