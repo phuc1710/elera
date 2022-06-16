@@ -1,7 +1,8 @@
-import 'package:elearning/account_setup/set_your_fingerprint.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import 'create_new_password_view.dart';
 
 class EnterPinView extends StatelessWidget {
   const EnterPinView({
@@ -68,8 +69,8 @@ class ScaffoldBody extends StatelessWidget {
           ),
         ),
         const PinCodeInput(),
-        ResendCodeRow(),
-        const MainActionButton()
+        const ResendCodeRow(),
+        const MainActionButton(),
       ]),
     );
   }
@@ -93,8 +94,8 @@ class ResendCodeRow extends StatelessWidget {
               style: Theme.of(context).textTheme.displayMedium,
             ),
             TweenAnimationBuilder(
-              tween: Tween(
-                  begin: const Duration(minutes: 1), end: Duration.zero),
+              tween:
+                  Tween(begin: const Duration(minutes: 1), end: Duration.zero),
               duration: const Duration(minutes: 1),
               builder:
                   (BuildContext context, Duration duration, Widget? child) {
@@ -123,12 +124,12 @@ class MainActionButton extends StatelessWidget {
           EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
       child: InkWell(
         onTap: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => SetYourFingerprint(),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CreateNewPasswordView(),
+            ),
+          );
         },
         child: const MainActionInk(buttonString: 'Continue'),
       ),

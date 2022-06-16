@@ -52,14 +52,17 @@ class App extends StatelessWidget {
           ),
           displaySmall: GoogleFonts.poppins(
             fontSize: 10,
+            color: Colors.black,
             fontWeight: FontWeight.w500,
           ),
           displayMedium: GoogleFonts.poppins(
             fontSize: 12,
+            color: Colors.black,
             fontWeight: FontWeight.w500,
           ),
           displayLarge: GoogleFonts.poppins(
             fontSize: 14,
+            color: Colors.black,
             fontWeight: FontWeight.w400,
           ),
         ),
