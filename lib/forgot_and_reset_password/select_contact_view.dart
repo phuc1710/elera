@@ -1,3 +1,4 @@
+import 'package:elearning/forgot_and_reset_password/enter_pin_view.dart';
 import 'package:elearning/widgets/main_action_ink.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,7 +39,7 @@ class ScaffoldBody extends StatefulWidget {
 }
 
 class _ScaffoldBodyState extends State<ScaffoldBody> {
-  var _selectedIndex = 0;
+  var _selectedIndex = '';
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +61,7 @@ class _ScaffoldBodyState extends State<ScaffoldBody> {
         ),
         ContactRadio(
           index: 1,
-          selectedIndex: _selectedIndex,
+          selectedValue: _selectedIndex,
           icon: Icons.chat_rounded,
           title: 'via SMS:',
           subtitle: '+ 1 111 ******99',
@@ -68,14 +69,16 @@ class _ScaffoldBodyState extends State<ScaffoldBody> {
         ),
         ContactRadio(
           index: 2,
-          selectedIndex: _selectedIndex,
+          selectedValue: _selectedIndex,
           icon: Icons.email,
           title: 'via Email:',
           subtitle: 'and***ley@yourdomain.com',
           onSelected: (value) => setState(() => _selectedIndex = value),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)  => EnterPinView(contactInfo: _selectedIndex)));
+          },
           borderRadius: BorderRadius.circular(40),
           child: const MainActionInk(buttonString: 'Continue'),
         ),
@@ -88,13 +91,13 @@ class ContactRadio extends StatelessWidget {
   const ContactRadio({
     Key? key,
     required int index,
-    required int selectedIndex,
+    required String selectedValue,
     required IconData icon,
     required String title,
     required String subtitle,
     required ValueChanged onSelected,
   })  : _index = index,
-        _selectedIndex = selectedIndex,
+        _selectedValue = selectedValue,
         _icon = icon,
         _title = title,
         _subtitle = subtitle,
@@ -102,7 +105,7 @@ class ContactRadio extends StatelessWidget {
         super(key: key);
 
   final int _index;
-  final int _selectedIndex;
+  final String _selectedValue;
   final IconData _icon;
   final String _title;
   final String _subtitle;
@@ -110,9 +113,9 @@ class ContactRadio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSelected = _index == _selectedIndex;
+    final bool isSelected = _subtitle == _selectedValue;
     return InkWell(
-      onTap: (() => _onSelected(_index)),
+      onTap: (() => _onSelected(_subtitle)),
       borderRadius: BorderRadius.circular(15),
       child: Padding(
         padding:
