@@ -25,9 +25,7 @@ class DividerRowWithText extends StatelessWidget {
               endIndent: MediaQuery.of(context).size.width * 0.03,
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.1,
-            color: Colors.white,
+          FittedBox(
             child: Center(
               child: Text(
                 _text,
