@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../widgets/scaffold_body.dart';
 
-class Intro extends StatefulWidget {
-  const Intro({Key? key}) : super(key: key);
+class IntroView extends StatefulWidget {
+  const IntroView({Key? key}) : super(key: key);
 
   @override
-  State<Intro> createState() => _IntroState();
+  State<IntroView> createState() => _IntroViewState();
 }
 
-class _IntroState extends State<Intro> {
+class _IntroViewState extends State<IntroView> {
   int page = 0;
   @override
   Widget build(BuildContext context) {

@@ -40,6 +40,7 @@ class _ScaffoldBodyState extends State<ScaffoldBody> {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.1,
             vertical: MediaQuery.of(context).size.height * 0.04,
           ),
           child: InkWell(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'src/config/theme/app_theme.dart';
-import 'src/presentation/onboarding/onboarding/views/onboarding_view.dart';
+import 'src/presentation/onboarding/intro/views/intro_view.dart';
 
 void main() {
   runApp(const App());
@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Onboarding(),
+      home: const IntroView(),
       debugShowCheckedModeBanner: false,
       theme: theme(),
     );
