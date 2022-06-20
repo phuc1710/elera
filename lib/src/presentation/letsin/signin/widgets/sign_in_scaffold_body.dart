@@ -60,7 +60,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
           PasswordInput(controller: _passwordController),
           const RememberMeCheckBox(),
           SignInButton(
-            onTap: onSignInButtonTapped,
+            onTap: () => onSignInButtonTapped(context),
           ),
           const ForgotPasswordButton(),
           const DividerRowWithText(
@@ -78,7 +78,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
     );
   }
 
-  void onSignInButtonTapped() {
+  void onSignInButtonTapped(BuildContext context) {
     context.read<SignInBloc>().add(
           SignInSubmitted(
             email: _emailController.text,
