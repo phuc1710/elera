@@ -33,13 +33,13 @@ class LoginModel {
   factory LoginModel.fromJson(Map<String, dynamic> json) =>
       _$LoginModelFromJson(json);
   @JsonKey(name: 'token')
-  String? token;
+  final String? token;
 
   @JsonKey(name: 'name')
-  String? name;
+  final String? name;
 
   @JsonKey(name: 'email')
-  String? email;
+  final String? email;
 
   Map<String, dynamic> toJson() => _$LoginModelToJson(this);
 }
