@@ -6,24 +6,15 @@ import '../bloc/signin_bloc.dart';
 
 class SignInButton extends StatelessWidget {
   const SignInButton({
-    Key? key,
-    required this.email,
-    required this.password,
-    required this.parrentContext,
+    Key? key, required this.onTap,
   }) : super(key: key);
 
-  final String email;
-  final String password;
-  final BuildContext parrentContext;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        parrentContext
-            .read<SignInBloc>()
-            .add(SignInSubmitted(email: email, password: password));
-      },
+      onTap: onTap,
       child: const MainActionInk(buttonString: 'Sign in'),
     );
   }

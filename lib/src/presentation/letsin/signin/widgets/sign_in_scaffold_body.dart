@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:developer';
 
+import '../../../../core/utils/snackbar.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
 import '../../signup/views/signup_view.dart';
 import '../../signup/widgets/bottom_prompt_row.dart';
@@ -32,20 +33,15 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
     return BlocConsumer<SignInBloc, SignInState>(
       listener: (context, state) {
         if (state is SignInFailed) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                state.message ?? 'An error occurred',
-                style: Theme.of(context).textTheme.labelSmall,
-              ),
-            ),
-          );
+          AppSnackBar(message: state.message ?? 'An error occurred')
+              .show(context);
         }
         if (state is SignInSuccess) {
           // TODO(phucndh): Navigate to the home screen
           log('Login success');
         }
       },
+      buildWhen: (prev, curr) => curr is! SignInLoading,
       builder: (context, state) {
         return buildLoginView(context);
       },
@@ -64,9 +60,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
           PasswordInput(controller: _passwordController),
           const RememberMeCheckBox(),
           SignInButton(
-            email: _emailController.text,
-            password: _passwordController.text,
-            parrentContext: context,
+            onTap: onSignInButtonTapped,
           ),
           const ForgotPasswordButton(),
           const DividerRowWithText(
@@ -82,5 +76,14 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
         ],
       ),
     );
+  }
+
+  void onSignInButtonTapped() {
+    context.read<SignInBloc>().add(
+          SignInSubmitted(
+            email: _emailController.text,
+            password: _passwordController.text,
+          ),
+        );
   }
 }
