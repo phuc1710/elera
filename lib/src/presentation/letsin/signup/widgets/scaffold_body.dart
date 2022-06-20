@@ -5,10 +5,10 @@ import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
 import '../../signin/views/signin_view.dart';
 import '../widgets/bottom_prompt_row.dart';
-import '../widgets/password_input.dart';
 import '../widgets/remember_me_check_box.dart';
 import '../widgets/social_login_row.dart';
-import '../widgets/username_input.dart';
+import 'email_input.dart';
+import 'password_input.dart';
 import 'title_text.dart';
 
 class ScaffoldBody extends StatelessWidget {
@@ -18,6 +18,9 @@ class ScaffoldBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _emailController = TextEditingController();
+    final _passwordController = TextEditingController();
+
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -27,8 +30,8 @@ class ScaffoldBody extends StatelessWidget {
           const TitleText(
             title: 'Create your\nAccount',
           ),
-          const UsernameInput(),
-          const PasswordInput(),
+          EmailInput(controller: _emailController),
+          PasswordInput(controller: _passwordController),
           const RememberMeCheckBox(),
           InkWell(
             onTap: () {
