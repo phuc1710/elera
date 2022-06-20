@@ -1,47 +1,32 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+
+import '../../../../core/network/api.dart';
+import '../../../../core/network/status_code.dart';
 
 part 'signin_event.dart';
 part 'signin_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  SignInBloc() : super(const SignInState()) {
-    on<SignInEmailChanged>(_onEmailChanged);
-    on<SignInPasswordChanged>(_onPasswordChanged);
+  SignInBloc() : super(SignInInitial()) {
     on<SignInSubmitted>(_onSignInSubmitted);
-  }
-
-  void _onEmailChanged(
-    SignInEmailChanged event,
-    Emitter<SignInState> emit,
-  ) {
-    final email = event.email;
-    emit(
-      state.copyWith(
-        email: email,
-      ),
-    );
-  }
-
-  void _onPasswordChanged(
-    SignInPasswordChanged event,
-    Emitter<SignInState> emit,
-  ) {
-    final password = event.password;
-    emit(
-      state.copyWith(
-        password: password,
-      ),
-    );
   }
 
   Future<void> _onSignInSubmitted(
     SignInSubmitted event,
     Emitter<SignInState> emit,
   ) async {
-    if (state.status == SignInStatus.loading) {
-      return;
+    emit(SignInLoading());
+    try {
+      final res = await Api.login(email: event.email, password: event.password);
+      if (res?.status == StatusCode.success) {
+        emit(SignInSuccess());
+      } else {
+        emit(SignInFailed(res?.message));
+      }
+    } catch (e) {
+      emit(SignInFailed(null));
     }
   }
 }

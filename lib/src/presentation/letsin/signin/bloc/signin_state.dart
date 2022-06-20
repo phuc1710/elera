@@ -1,35 +1,23 @@
 part of 'signin_bloc.dart';
 
-enum SignInStatus {
-  initial,
-  loading,
-  signInFailed,
-  signInSuccess,
+abstract class SignInState {
+  SignInState();
 }
 
-class SignInState extends Equatable {
-  const SignInState({
-    this.status = SignInStatus.initial,
-    this.email = '',
-    this.password = '',
-  });
+class SignInInitial extends SignInState {
+  SignInInitial();
+}
 
-  final SignInStatus status;
-  final String email;
-  final String password;
+class SignInLoading extends SignInState {
+  SignInLoading();
+}
 
-  @override
-  List<Object> get props => [email, password];
+class SignInSuccess extends SignInState {
+  SignInSuccess();
+}
 
-  SignInState copyWith({
-    SignInStatus? status,
-    String? email,
-    String? password,
-  }) {
-    return SignInState(
-      status: status ?? this.status,
-      email: email ?? this.email,
-      password: password ?? this.password,
-    );
-  }
+class SignInFailed extends SignInState {
+  SignInFailed(this.message);
+
+  final String? message;
 }

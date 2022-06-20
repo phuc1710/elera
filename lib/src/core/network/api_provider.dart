@@ -58,7 +58,7 @@ class ApiProvider {
     }
 
     if (postParams.options != null) {
-      postParams.options!.headers?.addAll(postParams.headers);
+      postParams.options?.headers?.addAll(postParams.headers);
     } else {
       postParams.options = Options(headers: postParams.headers);
     }

@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widgets/scaffold_body.dart';
+import '../bloc/signin_bloc.dart';
+import '../widgets/sign_in_scaffold_body.dart';
 
-class SignInView extends StatefulWidget {
+class SignInView extends StatelessWidget {
   const SignInView({Key? key}) : super(key: key);
-
-  @override
-  State<SignInView> createState() => _SignInViewState();
-}
-
-class _SignInViewState extends State<SignInView> {
-  bool? rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +21,10 @@ class _SignInViewState extends State<SignInView> {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const ScaffoldBody(),
+          body: BlocProvider(
+            create: (context) => SignInBloc(),
+            child: const SignInScaffoldBody(),
+          ),
         ),
       ),
     );
