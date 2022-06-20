@@ -5,7 +5,7 @@ class AppSnackBar {
     required this.message,
   }) : super();
 
-  final dynamic message;
+  final String message;
 
   void show(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
