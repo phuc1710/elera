@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/snackbar.dart';
-import '../../../home_and_action_menu/views/home_view.dart';
+import '../../../home_and_action_menu/home/views/home_view.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
 import '../../signup/views/signup_view.dart';
 import '../../signup/widgets/bottom_prompt_row.dart';

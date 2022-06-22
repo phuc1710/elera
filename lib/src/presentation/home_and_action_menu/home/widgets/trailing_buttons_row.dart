@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../notification/views/notification_view.dart';
+
 class TrailingButtonsRow extends StatelessWidget {
   const TrailingButtonsRow({
     Key? key,
@@ -12,7 +14,12 @@ class TrailingButtonsRow extends StatelessWidget {
       children: [
         IconButton(
           icon: const Icon(Icons.notifications_none),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push<Object>(
+              context,
+              MaterialPageRoute(builder: (builder) => const NotificationView()),
+            );
+          },
         ),
         IconButton(
           icon: const Icon(Icons.bookmark_border),

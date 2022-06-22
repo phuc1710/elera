@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'section_text.dart';
 
 class TitleRow extends StatelessWidget {
   const TitleRow({
@@ -22,14 +23,7 @@ class TitleRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            title,
-            style: GoogleFonts.urbanist(
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
-            ),
-          ),
+          SectionText(text: title),
           InkWell(
             borderRadius: BorderRadius.circular(8),
             onTap: leadingButtonCallback,
