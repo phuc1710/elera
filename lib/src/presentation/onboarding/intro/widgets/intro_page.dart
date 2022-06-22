@@ -15,11 +15,12 @@ class IntroPage extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.8,
+          height: MediaQuery.of(context).size.height * 0.5,
           child: Image.asset(imagePath),
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.9,
+          height: MediaQuery.of(context).size.height * 0.3,
           child: Text(
             text,
             textAlign: TextAlign.center,
