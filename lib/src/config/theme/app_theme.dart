@@ -19,7 +19,7 @@ TextTheme getTextTheme() {
   return TextTheme(
     titleSmall: GoogleFonts.urbanist(
       fontSize: 20,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w700,
     ),
     titleMedium: GoogleFonts.urbanist(
       fontSize: 34,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../my_bookmark/views/my_bookmark_view.dart';
 import '../../notification/views/notification_view.dart';
 
 class TrailingButtonsRow extends StatelessWidget {
@@ -23,7 +24,12 @@ class TrailingButtonsRow extends StatelessWidget {
         ),
         IconButton(
           icon: const Icon(Icons.bookmark_border),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push<Object>(
+              context,
+              MaterialPageRoute(builder: (builder) => const MyBookmarkView()),
+            );
+          },
         ),
       ],
     );

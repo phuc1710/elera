@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 
+import '../../../../models/course/course_model.dart';
 import 'bookmark_button.dart';
 import 'course_content_column.dart';
 import 'course_image.dart';
 
-class CourseCard extends StatelessWidget {
+class CourseCard extends StatefulWidget {
   const CourseCard({
     Key? key,
-    required this.imagePath,
-    required this.tag,
-    required this.name,
-    required this.price,
-    required this.originalPrice,
-    required this.rating,
-    required this.studentCount,
+    required this.courseModel,
+    required this.isInRemoveBookmark,
+    required this.onRemoveBookmark,
   }) : super(key: key);
 
-  final String imagePath;
-  final String tag;
-  final String name;
-  final String price;
-  final String originalPrice;
-  final double rating;
-  final String studentCount;
+  final CourseModel courseModel;
+  final bool isInRemoveBookmark;
+  final VoidCallback onRemoveBookmark;
 
+  @override
+  State<CourseCard> createState() => _CourseCardState();
+}
+
+class _CourseCardState extends State<CourseCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -43,17 +41,34 @@ class CourseCard extends StatelessWidget {
         child: Row(
           children: [
             CourseImage(
-              imagePath: imagePath,
+              imagePath: widget.courseModel.imagePath,
             ),
             CourseContentColumn(
-              tag: tag,
-              name: name,
-              price: price,
-              originalPrice: originalPrice,
-              rating: rating,
-              studentCount: studentCount,
+              tag: widget.courseModel.tag,
+              name: widget.courseModel.name,
+              price: widget.courseModel.price,
+              originalPrice: widget.courseModel.originalPrice,
+              rating: widget.courseModel.rating,
+              studentCount: widget.courseModel.studentCount,
             ),
-            const BookmarkButton(),
+            if (widget.isInRemoveBookmark)
+              SizedBox(
+                height: 120,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Icon(Icons.bookmark),
+                  ],
+                ),
+              )
+            else
+              BookmarkButton(
+                courseModel: widget.courseModel,
+                isInRemoveBookmark: widget.isInRemoveBookmark,
+                onRemoveBookmark: () {
+                  widget.onRemoveBookmark();
+                },
+              ),
           ],
         ),
       ),

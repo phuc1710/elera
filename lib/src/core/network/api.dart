@@ -20,10 +20,11 @@ class Api {
     required String password,
   }) async {
     try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return LoginResponseModel.fromJson(noConnectionRes);
-      }
+      // *Uncomment this when has internet connection
+      // final canMakeRequest = await checkConnection();
+      // if (!canMakeRequest) {
+      //   return LoginResponseModel.fromJson(noConnectionRes);
+      // }
       final res = await http.postRequest(
         PostParams(
           EndPoints.login,
