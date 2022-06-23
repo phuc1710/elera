@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../top_mentors/views/top_mentors_view.dart';
 import 'course_filter_chips.dart';
 import 'course_list_view.dart';
 import 'deals_slider.dart';
@@ -25,7 +26,14 @@ class HomeTabView extends StatelessWidget {
             TitleRow(
               title: 'Top Mentors',
               leadingButtonText: 'See All',
-              leadingButtonCallback: () {},
+              leadingButtonCallback: () {
+                Navigator.push<Object?>(
+                  context,
+                  MaterialPageRoute<dynamic>(
+                    builder: (context) => const TopMentorsView(),
+                  ),
+                );
+              },
             ),
             const MentorListview(),
             TitleRow(
