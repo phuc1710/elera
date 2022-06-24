@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../most_popular_courses/views/most_popular_courses_view.dart';
 import '../../top_mentors/views/top_mentors_view.dart';
-import 'course_filter_chips.dart';
-import 'course_list_view.dart';
+import 'course_tab_bar.dart';
 import 'deals_slider.dart';
 import 'mentor_list_view.dart';
 import 'search_bar.dart';
@@ -39,10 +39,16 @@ class HomeTabView extends StatelessWidget {
             TitleRow(
               title: 'Most Popular Courses',
               leadingButtonText: 'See All',
-              leadingButtonCallback: () {},
+              leadingButtonCallback: () {
+                Navigator.push<Object?>(
+                  context,
+                  MaterialPageRoute<dynamic>(
+                    builder: (context) => const MostPopularCoursesView(),
+                  ),
+                );
+              },
             ),
-            const CourseFilterChips(),
-            const CourseListView()
+            const CourseTabBar(),
           ],
         ),
       ),
