@@ -22,7 +22,7 @@ class _CourseTabBarState extends State<CourseTabBar> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 172.0 * courseList.length,
+      height: 185.0 * courseList.length,
       child: DefaultTabController(
         length: _filterList.length,
         child: Column(
