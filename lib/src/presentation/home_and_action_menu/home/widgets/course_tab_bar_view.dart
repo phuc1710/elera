@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import '../../../../models/course/course_model.dart';
 import 'course_list_view.dart';
 
-class CourseTabBar extends StatefulWidget {
-  const CourseTabBar({
+class CourseTabBarView extends StatefulWidget {
+  const CourseTabBarView({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<CourseTabBar> createState() => _CourseTabBarState();
+  State<CourseTabBarView> createState() => _CourseTabBarViewState();
 }
 
-class _CourseTabBarState extends State<CourseTabBar> {
+class _CourseTabBarViewState extends State<CourseTabBarView> {
   final List<String> _filterList = [
     '🔥 All',
     '💡 3D Design',
@@ -43,7 +43,12 @@ class _CourseTabBarState extends State<CourseTabBar> {
               child: TabBarView(
                 children: List.generate(
                   _filterList.length,
-                  (index) => const CourseListView(),
+                  (index) => Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.05,
+                    ),
+                    child: const CourseListView(),
+                  ),
                 ),
               ),
             )

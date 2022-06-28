@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../models/course/course_model.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../search/widgets/bottom_modal_sheet_title.dart';
+import 'bottom_sheet_action_button.dart';
 import 'course_card.dart';
 
 class BookmarkButton extends StatefulWidget {
@@ -70,15 +71,7 @@ class _BookmarkButtonState extends State<BookmarkButton> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).size.height * 0.025,
-                ),
-                child: Text(
-                  'Remove from Bookmark?',
-                  style: Theme.of(context).textTheme.titleSmall,
-                ),
-              ),
+              const BottomModalSheetTitle(title: 'Remove from bookmark?'),
               const Divider(),
               CourseCard(
                 courseModel: widget.courseModel,
@@ -86,70 +79,15 @@ class _BookmarkButtonState extends State<BookmarkButton> {
                 onRemoveBookmark: () {},
               ),
               BottomSheetActionButtons(
+                mainButtonString: 'Yes, Remove',
+                subButtonString: 'Cancel',
                 courseModel: widget.courseModel,
-                onRemoveBookmark: widget.onRemoveBookmark,
+                onMainActionPressed: widget.onRemoveBookmark,
               )
             ],
           ),
         );
       },
-    );
-  }
-}
-
-class BottomSheetActionButtons extends StatefulWidget {
-  const BottomSheetActionButtons({
-    Key? key,
-    required this.courseModel,
-    required this.onRemoveBookmark,
-  }) : super(key: key);
-
-  final CourseModel courseModel;
-  final VoidCallback onRemoveBookmark;
-
-  @override
-  State<BottomSheetActionButtons> createState() =>
-      _BottomSheetActionButtonsState();
-}
-
-class _BottomSheetActionButtonsState extends State<BottomSheetActionButtons> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: MediaQuery.of(context).size.height * 0.02,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          InkWell(
-            borderRadius: BorderRadius.circular(40),
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: const MainActionInk(
-              buttonString: 'Cancel',
-              width: 0.4,
-              isMainAction: true,
-            ),
-          ),
-          InkWell(
-            borderRadius: BorderRadius.circular(40),
-            onTap: () {
-              setState(() {
-                widget.courseModel.isBookmarked =
-                    !widget.courseModel.isBookmarked;
-              });
-              widget.onRemoveBookmark();
-              Navigator.pop(context);
-            },
-            child: const MainActionInk(
-              buttonString: 'Yes, Remove',
-              width: 0.42,
-            ),
-          )
-        ],
-      ),
     );
   }
 }

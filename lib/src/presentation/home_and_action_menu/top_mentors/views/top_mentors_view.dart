@@ -21,7 +21,12 @@ class TopMentorsView extends StatelessWidget {
           elevation: 0,
           toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
         ),
-        body: const TopMentorsBody(),
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.05,
+          ),
+          child: const TopMentorsBody(),
+        ),
       ),
     );
   }

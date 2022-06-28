@@ -32,7 +32,7 @@ class ContactListTile extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 10.0),
         child: Text(
           title,
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.urbanist(
             fontSize: 10,
             fontWeight: FontWeight.w500,
             color: Colors.grey[400],
@@ -41,9 +41,10 @@ class ContactListTile extends StatelessWidget {
       ),
       subtitle: Text(
         subtitle,
-        style: GoogleFonts.poppins(
+        style: GoogleFonts.urbanist(
           fontSize: 12,
           fontWeight: FontWeight.w700,
+          color: Colors.black,
         ),
       ),
     );
