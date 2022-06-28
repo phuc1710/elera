@@ -48,7 +48,7 @@ class _BottomSheetActionButtonsState extends State<BottomSheetActionButtons> {
             onTap: () {
               setState(() {
                 widget.courseModel?.isBookmarked =
-                    widget.courseModel!.isBookmarked;
+                    widget.courseModel?.isBookmarked ?? false;
               });
               widget.onMainActionPressed();
               Navigator.pop(context);
