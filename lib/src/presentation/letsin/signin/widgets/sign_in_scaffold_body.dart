@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:developer';
 
 import '../../../../core/utils/snackbar.dart';
+import '../../../home_and_action_menu/home/views/home_view.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
 import '../../signup/views/signup_view.dart';
 import '../../signup/widgets/bottom_prompt_row.dart';
 import '../../signup/widgets/email_input.dart';
-import '../../signup/widgets/remember_me_check_box.dart';
 import '../../signup/widgets/password_input.dart';
+import '../../signup/widgets/remember_me_check_box.dart';
 import '../../signup/widgets/social_login_row.dart';
 import '../../signup/widgets/title_text.dart';
 import '../bloc/signin_bloc.dart';
@@ -37,8 +37,11 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
               .show(context);
         }
         if (state is SignInSuccess) {
-          // TODO(phucndh): Navigate to the home screen
-          log('Login success');
+          Navigator.pushAndRemoveUntil<Object?>(
+            context,
+            MaterialPageRoute<dynamic>(builder: (context) => const HomeView()),
+            (dynamic route) => false,
+          );
         }
       },
       buildWhen: (prev, curr) => curr is! SignInLoading,

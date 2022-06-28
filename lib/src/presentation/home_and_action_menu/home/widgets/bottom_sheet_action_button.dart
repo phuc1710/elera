@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+
+import '../../../../models/course/course_model.dart';
+import '../../../onboarding/intro/widgets/main_action_ink.dart';
+
+class BottomSheetActionButtons extends StatefulWidget {
+  const BottomSheetActionButtons({
+    Key? key,
+    required this.mainButtonString,
+    required this.subButtonString,
+    this.courseModel,
+    required this.onMainActionPressed,
+  }) : super(key: key);
+
+  final String mainButtonString;
+  final String subButtonString;
+  final CourseModel? courseModel;
+  final VoidCallback onMainActionPressed;
+
+  @override
+  State<BottomSheetActionButtons> createState() =>
+      _BottomSheetActionButtonsState();
+}
+
+class _BottomSheetActionButtonsState extends State<BottomSheetActionButtons> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: MediaQuery.of(context).size.height * 0.02,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          InkWell(
+            borderRadius: BorderRadius.circular(40),
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: MainActionInk(
+              buttonString: widget.subButtonString,
+              width: 0.4,
+              isMainAction: true,
+            ),
+          ),
+          InkWell(
+            borderRadius: BorderRadius.circular(40),
+            onTap: () {
+              setState(() {
+                widget.courseModel?.isBookmarked =
+                    widget.courseModel?.isBookmarked ?? false;
+              });
+              widget.onMainActionPressed();
+              Navigator.pop(context);
+            },
+            child: MainActionInk(
+              buttonString: widget.mainButtonString,
+              width: 0.42,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
