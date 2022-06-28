@@ -20,34 +20,39 @@ class _StarFilterChipsState extends State<StarFilterChips> {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: _courseFilterList.length,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(right: 8),
-          child: ChoiceChip(
-            avatar: Icon(
-              Icons.star_rounded,
-              color: _courseFilterList[index] == selectedCourseTag
-                  ? Colors.white
-                  : Theme.of(context).primaryColor,
-              size: MediaQuery.of(context).size.width * 0.05,
+        itemBuilder: (context, index) {
+          final bool isCourseSelected =
+              _courseFilterList[index] == selectedCourseTag;
+          final primaryColor = Theme.of(context).primaryColor;
+          final double width = MediaQuery.of(context).size.width;
+
+          return Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: ChoiceChip(
+              avatar: Icon(
+                Icons.star_rounded,
+                color: isCourseSelected ? Colors.white : primaryColor,
+                size: width * 0.05,
+              ),
+              backgroundColor: Colors.white,
+              padding: EdgeInsets.symmetric(
+                horizontal: width * 0.01,
+              ),
+              label: Text(
+                _courseFilterList[index],
+              ),
+              side: BorderSide(width: 2, color: primaryColor),
+              selected: isCourseSelected,
+              selectedColor: primaryColor,
+              labelStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
+                    color: isCourseSelected ? Colors.white : primaryColor,
+                  ),
+              onSelected: (bool b) => setState(() {
+                selectedCourseTag = _courseFilterList[index];
+              }),
             ),
-            backgroundColor: Colors.white,
-            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.01),
-            label: Text(
-              _courseFilterList[index],
-            ),
-            side: BorderSide(width: 2, color: Theme.of(context).primaryColor),
-            selected: _courseFilterList[index] == selectedCourseTag,
-            selectedColor: Theme.of(context).primaryColor,
-            labelStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  color: _courseFilterList[index] == selectedCourseTag
-                      ? Colors.white
-                      : Theme.of(context).primaryColor,
-                ),
-            onSelected: (bool b) => setState(() {
-              selectedCourseTag = _courseFilterList[index];
-            }),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

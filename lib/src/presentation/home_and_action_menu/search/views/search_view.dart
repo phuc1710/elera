@@ -46,24 +46,27 @@ class _SearchViewState extends State<SearchView> {
                     ),
                   ),
                 ),
-                if (searchSubmitted)
-                  SearchResultTabView(searchPhrase: searchPhrase)
-                else
-                  RecentSearchListView(
-                    key: _key,
-                    onSuggestPressed: () {
-                      setState(() {
-                        searchPhrase = _key.currentState!.searchPhrase;
-                        searchSubmitted = true;
-                      });
-                    },
-                  )
+                getSearchContent()
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  Widget getSearchContent() {
+    return searchSubmitted
+        ? SearchResultTabView(searchPhrase: searchPhrase)
+        : RecentSearchListView(
+            key: _key,
+            onSuggestPressed: () {
+              setState(() {
+                searchPhrase = _key.currentState!.searchPhrase;
+                searchSubmitted = true;
+              });
+            },
+          );
   }
 
   void _onSearchSubmitted(String searchWords) {

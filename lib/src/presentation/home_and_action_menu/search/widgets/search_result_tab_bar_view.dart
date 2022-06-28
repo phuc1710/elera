@@ -51,11 +51,11 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
               Expanded(
                 child: TabBarView(
                   children: [
-                    if (widget.searchPhrase == '')
+                    if (widget.searchPhrase.isEmpty)
                       const NotFoundListView()
                     else
                       const CourseListView(),
-                    if (widget.searchPhrase == '')
+                    if (widget.searchPhrase.isEmpty)
                       const NotFoundListView()
                     else
                       const TopMentorsBody(),

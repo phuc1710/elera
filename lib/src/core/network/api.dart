@@ -1,8 +1,9 @@
 import 'dart:developer';
+
 import '../../domain/entities/post_params.dart';
 import '../../models/login/login_response_model.dart';
-import 'end_points.dart';
 import 'api_provider.dart';
+import 'end_points.dart';
 import 'network_helper.dart';
 
 class Api {
@@ -20,11 +21,10 @@ class Api {
     required String password,
   }) async {
     try {
-      // *Uncomment this when has internet connection
-      // final canMakeRequest = await checkConnection();
-      // if (!canMakeRequest) {
-      //   return LoginResponseModel.fromJson(noConnectionRes);
-      // }
+      final canMakeRequest = await checkConnection();
+      if (!canMakeRequest) {
+        return LoginResponseModel.fromJson(noConnectionRes);
+      }
       final res = await http.postRequest(
         PostParams(
           EndPoints.login,
