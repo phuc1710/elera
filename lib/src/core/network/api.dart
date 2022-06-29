@@ -57,7 +57,7 @@ class Api {
       }
       final res = await http.getRequest(
         GetParams(
-          EndPoints.login,
+          EndPoints.course,
           isMockup: true, // set false if call api,
           headers: await getHeaders(),
         ),

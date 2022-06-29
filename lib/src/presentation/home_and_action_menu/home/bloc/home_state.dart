@@ -16,7 +16,7 @@ class HomeCourseLoading extends HomeState {
 class HomeCourseSuccess extends HomeState {
   HomeCourseSuccess(this.courses);
 
-  final CourseModel? courses;
+  final List<CourseModelItem?> courses;
 }
 
 class HomeCourseFailed extends HomeState {
