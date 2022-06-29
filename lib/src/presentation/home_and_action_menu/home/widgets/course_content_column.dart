@@ -33,7 +33,7 @@ class CourseContentColumn extends StatelessWidget {
           children: [
             CourseTag(tag: tag),
             Text(
-              name,
+              name.replaceAll('', '\u{200B}'),
               overflow: TextOverflow.ellipsis,
               softWrap: false,
               style: GoogleFonts.urbanist(

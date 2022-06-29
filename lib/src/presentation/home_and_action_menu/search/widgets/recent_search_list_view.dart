@@ -24,7 +24,7 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
           title: 'Recent',
           leadingButtonText: 'Clear All',
           leadingButtonCallback: () => setState(() {
-            AppStrings.recentSearchList.clear();
+            recentSearchList.clear();
           }),
         ),
         Padding(
@@ -35,26 +35,26 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
         ),
         ListView.builder(
           shrinkWrap: true,
-          itemCount: AppStrings.recentSearchList.length,
+          itemCount: recentSearchList.length,
           itemBuilder: (context, i) => ListTile(
             contentPadding: EdgeInsets.zero,
             dense: true,
             minLeadingWidth: 0,
             onTap: () {
               setState(() {
-                searchPhrase = AppStrings.recentSearchList[i];
+                searchPhrase = recentSearchList[i];
               });
               widget.onSuggestPressed();
             },
             title: Text(
-              AppStrings.recentSearchList[i],
+              recentSearchList[i],
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
                     color: Colors.grey,
                   ),
             ),
             trailing: InkWell(
               onTap: () => setState(() {
-                AppStrings.recentSearchList.removeAt(i);
+                recentSearchList.removeAt(i);
               }),
               child: const Icon(Icons.cancel_outlined),
             ),

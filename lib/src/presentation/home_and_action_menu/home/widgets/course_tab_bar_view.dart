@@ -7,8 +7,10 @@ import 'course_list_view.dart';
 class CourseTabBarView extends StatefulWidget {
   const CourseTabBarView({
     Key? key,
+    required this.courseList,
   }) : super(key: key);
 
+  final List<CourseModelItem?> courseList;
   @override
   State<CourseTabBarView> createState() => _CourseTabBarViewState();
 }
@@ -47,7 +49,7 @@ class _CourseTabBarViewState extends State<CourseTabBarView> {
                     padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.05,
                     ),
-                    child: const CourseListView(),
+                    child: CourseListView(courseList: widget.courseList),
                   ),
                 ),
               ),

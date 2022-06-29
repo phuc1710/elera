@@ -8,7 +8,7 @@ class MyBookmarkScaffoldBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [CourseTabBarView()],
+      children: const [CourseTabBarView(courseList: [])],
     );
   }
 }

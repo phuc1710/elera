@@ -1,17 +1,17 @@
 class AppStrings {
   static const String materialAppTitle = 'E-Learning';
-
-  static const List<String> recentSearchList = [
-    'CRM Management',
-    'Full-stack Web Developer',
-    'Learn UX User Persona',
-    '3D Blender and UI/UX',
-    'Digital Entrepreneurship',
-    '3D Icons Set Blender',
-    'Flutter Mobile Apps',
-    '3D Design Illustration'
-  ];
 }
+
+List<String> recentSearchList = [
+  'CRM Management',
+  'Full-stack Web Developer',
+  'Learn UX User Persona',
+  '3D Blender and UI/UX',
+  'Digital Entrepreneurship',
+  '3D Icons Set Blender',
+  'Flutter Mobile Apps',
+  '3D Design Illustration'
+];
 
 class EndPoints {
   static const String baseUrl = '';

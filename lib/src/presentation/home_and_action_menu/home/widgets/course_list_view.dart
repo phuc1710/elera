@@ -6,8 +6,10 @@ import 'course_card.dart';
 class CourseListView extends StatefulWidget {
   const CourseListView({
     Key? key,
+    required this.courseList,
   }) : super(key: key);
 
+  final List<CourseModelItem?> courseList;
   @override
   State<CourseListView> createState() => _CourseListViewState();
 }
@@ -17,7 +19,7 @@ class _CourseListViewState extends State<CourseListView> {
   Widget build(BuildContext context) {
     return Column(
       children: List.generate(
-        courseList.length,
+        widget.courseList.length,
         (index) => CourseCard(
           courseModel: courseList[index],
           isInRemoveBookmark: false,
