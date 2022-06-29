@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 
-import '../../domain/entities/post_params.dart';
-import '../../domain/entities/request_params.dart';
-import 'end_points.dart';
+import '../params/get_params.dart';
+import '../params/post_params.dart';
+import '../utils/constants.dart';
 import 'mock_api.dart';
 
 class ApiProvider {
@@ -22,27 +22,27 @@ class ApiProvider {
   final baseUrl = EndPoints.devUrl;
 
   Future<Map<String, dynamic>?> getRequest(
-    RequestParams requestParams,
+    GetParams getParams,
   ) async {
     Response response;
 
-    if (requestParams.isMockup) {
-      return MockApi.get(requestParams.endpoint);
+    if (getParams.isMockup) {
+      return MockApi.get(getParams.endpoint);
     }
 
-    if (requestParams.options != null && requestParams.headers != null) {
-      requestParams.options?.headers
-          ?.addAll(requestParams.headers ?? <String, dynamic>{});
+    if (getParams.options != null && getParams.headers != null) {
+      getParams.options?.headers
+          ?.addAll(getParams.headers ?? <String, dynamic>{});
     } else {
-      requestParams.options = Options(headers: requestParams.headers);
+      getParams.options = Options(headers: getParams.headers);
     }
 
     response = await _dio.get<dynamic>(
-      requestParams.endpoint,
-      queryParameters: requestParams.queryParameters,
-      options: requestParams.options,
-      cancelToken: requestParams.cancelToken,
-      onReceiveProgress: requestParams.onReceiveProgress,
+      getParams.endpoint,
+      queryParameters: getParams.queryParameters,
+      options: getParams.options,
+      cancelToken: getParams.cancelToken,
+      onReceiveProgress: getParams.onReceiveProgress,
     );
 
     return response.data as Map<String, dynamic>?;
@@ -57,8 +57,9 @@ class ApiProvider {
       return MockApi.get(postParams.endpoint);
     }
 
-    if (postParams.options != null) {
-      postParams.options?.headers?.addAll(postParams.headers);
+    if (postParams.options != null && postParams.headers != null) {
+      postParams.options?.headers
+          ?.addAll(postParams.headers ?? <String, dynamic>{});
     } else {
       postParams.options = Options(headers: postParams.headers);
     }

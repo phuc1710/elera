@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'status_code.dart';
+import '../utils/constants.dart';
 
 Future<bool> checkConnection() async {
   final hasConnection = await Connection.status();

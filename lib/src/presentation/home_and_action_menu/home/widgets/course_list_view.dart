@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/course/course_model.dart';
+import '../../../../data/models/course/course_response_model.dart';
 import 'course_card.dart';
 
 class CourseListView extends StatefulWidget {

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 
 import '../../../../core/network/api.dart';
-import '../../../../core/network/status_code.dart';
+import '../../../../core/utils/constants.dart';
 
 part 'signin_event.dart';
 part 'signin_state.dart';

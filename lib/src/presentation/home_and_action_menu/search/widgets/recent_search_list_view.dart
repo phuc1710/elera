@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/recent_search/recent_search_model.dart';
+import '../../../../core/utils/constants.dart';
 import '../../home/widgets/title_row.dart';
 
 class RecentSearchListView extends StatefulWidget {
@@ -24,7 +24,7 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
           title: 'Recent',
           leadingButtonText: 'Clear All',
           leadingButtonCallback: () => setState(() {
-            recentSearchList.clear();
+            AppStrings.recentSearchList.clear();
           }),
         ),
         Padding(
@@ -35,26 +35,26 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
         ),
         ListView.builder(
           shrinkWrap: true,
-          itemCount: recentSearchList.length,
+          itemCount: AppStrings.recentSearchList.length,
           itemBuilder: (context, i) => ListTile(
             contentPadding: EdgeInsets.zero,
             dense: true,
             minLeadingWidth: 0,
             onTap: () {
               setState(() {
-                searchPhrase = recentSearchList[i];
+                searchPhrase = AppStrings.recentSearchList[i];
               });
               widget.onSuggestPressed();
             },
             title: Text(
-              recentSearchList[i],
+              AppStrings.recentSearchList[i],
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
                     color: Colors.grey,
                   ),
             ),
             trailing: InkWell(
               onTap: () => setState(() {
-                recentSearchList.removeAt(i);
+                AppStrings.recentSearchList.removeAt(i);
               }),
               child: const Icon(Icons.cancel_outlined),
             ),

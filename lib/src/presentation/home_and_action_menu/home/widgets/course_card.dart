@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/course/course_model.dart';
+import '../../../../data/models/course/course_response_model.dart';
 import 'bookmark_button.dart';
 import 'course_content_column.dart';
 import 'course_image.dart';
@@ -13,7 +13,7 @@ class CourseCard extends StatefulWidget {
     required this.onRemoveBookmark,
   }) : super(key: key);
 
-  final CourseModel courseModel;
+  final CourseModelItem courseModel;
   final bool isInRemoveBookmark;
   final VoidCallback onRemoveBookmark;
 

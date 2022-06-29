@@ -1,9 +1,11 @@
 import 'dart:developer';
 
-import '../../domain/entities/post_params.dart';
-import '../../models/login/login_response_model.dart';
+import '../../data/models/course/course_response_model.dart';
+import '../../data/models/sign_in/sign_in_response_model.dart';
+import '../params/get_params.dart';
+import '../params/post_params.dart';
+import '../utils/constants.dart';
 import 'api_provider.dart';
-import 'end_points.dart';
 import 'network_helper.dart';
 
 class Api {
@@ -16,14 +18,14 @@ class Api {
     };
   }
 
-  static Future<LoginResponseModel?> login({
+  static Future<SignInResponseModel?> login({
     required String email,
     required String password,
   }) async {
     try {
       final canMakeRequest = await checkConnection();
       if (!canMakeRequest) {
-        return LoginResponseModel.fromJson(noConnectionRes);
+        return SignInResponseModel.fromJson(noConnectionRes);
       }
       final res = await http.postRequest(
         PostParams(
@@ -36,7 +38,31 @@ class Api {
           },
         ),
       );
-      final result = LoginResponseModel.fromJson(res!);
+      final result = SignInResponseModel.fromJson(res!);
+      handleExceptionCase(result.status);
+
+      return result;
+    } catch (e) {
+      log(e.toString());
+
+      return null;
+    }
+  }
+
+  static Future<CourseResponseModel?> getCourses() async {
+    try {
+      final canMakeRequest = await checkConnection();
+      if (!canMakeRequest) {
+        return CourseResponseModel.fromJson(noConnectionRes);
+      }
+      final res = await http.getRequest(
+        GetParams(
+          EndPoints.login,
+          isMockup: true, // set false if call api,
+          headers: await getHeaders(),
+        ),
+      );
+      final result = CourseResponseModel.fromJson(res!);
       handleExceptionCase(result.status);
 
       return result;

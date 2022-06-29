@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-import 'end_points.dart';
+import '../utils/constants.dart';
 
 class MockApi {
   static Map<String, String> mapMockApi = {

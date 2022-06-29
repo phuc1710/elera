@@ -1,7 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../models/course/course_model.dart';
+import '../../../../data/models/course/course_response_model.dart';
 import '../../home/widgets/course_list_view.dart';
 import '../../top_mentors/widgets/top_mentors_body.dart';
 import 'not_found_list_view.dart';
