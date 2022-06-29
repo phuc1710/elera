@@ -26,7 +26,7 @@ class _SearchResultTitleRowState extends State<SearchResultTitleRow> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          RichResultText(text: widget.phrase ),
+          RichResultText(text: widget.phrase),
           Text(
             widget.leadingText,
             style: Theme.of(context)
