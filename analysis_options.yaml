@@ -26,10 +26,10 @@ analyzer:
     # Ignore protoc generated files
     # - "dev/conductor/lib/proto/*"
     # Ignore datasources generated files
-    - "mobile/lib/**.g.dart"
-    - "mobile/lib/**.freezed.dart"
+    - "lib/**.g.dart"
+    - "lib/**.freezed.dart"
     # Ignore mobile injector generated file
-    - "mobile/lib/src/injector/injector.config.dart"
+    - "lib/src/injector/injector.config.dart"
 
   plugins:
     - dart_code_metrics
