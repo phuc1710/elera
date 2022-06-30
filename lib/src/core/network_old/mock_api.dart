@@ -7,6 +7,7 @@ import '../utils/constants.dart';
 class MockApi {
   static Map<String, String> mapMockApi = {
     EndPoints.course: 'course',
+    EndPoints.helperCenter: 'helper_center',
   };
 
   static Future<Map<String, dynamic>?> get(String endpoint) async {

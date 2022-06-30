@@ -18,6 +18,7 @@ class EndPoints {
   static const String devUrl = '';
 
   static const String course = '/course';
+  static const String helperCenter = '/helper_center';
 }
 
 class ErrorCode {

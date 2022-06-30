@@ -27,9 +27,109 @@
                     "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
                 }
             ]
+        },
+        {
+            "name": "Account",
+            "items": [
+                {
+                    "title": "What is Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        },
+        {
+            "name": "Course",
+            "items": [
+                {
+                    "title": "What is Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        },
+        {
+            "name": "Payment",
+            "items": [
+                {
+                    "title": "What is Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        }
+      ],
+      "contacts": [
+        {
+            "id": "0",
+            "name": "Customer Service"
+        },
+        {
+            "id": "1",
+            "name": "WhatsApp"
+        },
+        {
+            "id": "2",
+            "name": "Website"
+        },
+        {
+            "id": "3",
+            "name": "Facebook"
+        },
+        {
+            "id": "4",
+            "name": "Twitter"
+        },
+        {
+            "id": "5",
+            "name": "Instagram"
         }
       ]
-      
     }
   }
   
