@@ -9,11 +9,14 @@ class SearchBar extends StatelessWidget {
     required this.atHome,
     this.onSubmitted,
     this.controller,
+    this.onChanged,
   }) : super(key: key);
 
   final bool atHome;
   final void Function(String)? onSubmitted;
+  final void Function(String)? onChanged;
   final TextEditingController? controller;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,7 @@ class SearchBar extends StatelessWidget {
                 ))
             : () {},
         onSubmitted: onSubmitted,
+        onChanged: onChanged,
         textAlignVertical: TextAlignVertical.center,
         textInputAction: TextInputAction.search,
         decoration: InputDecoration(

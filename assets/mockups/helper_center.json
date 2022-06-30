@@ -32,7 +32,7 @@
             "name": "Account",
             "items": [
                 {
-                    "title": "What is Elera?",
+                    "title": "What is Elera2?",
                     "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
                 },
                 {
@@ -57,7 +57,7 @@
             "name": "Course",
             "items": [
                 {
-                    "title": "What is Elera?",
+                    "title": "What is Elera3?",
                     "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
                 },
                 {
@@ -82,7 +82,7 @@
             "name": "Payment",
             "items": [
                 {
-                    "title": "What is Elera?",
+                    "title": "What is Elera4?",
                     "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
                 },
                 {
