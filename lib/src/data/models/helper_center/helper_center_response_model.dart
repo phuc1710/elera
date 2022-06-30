@@ -36,6 +36,8 @@ class HelperCenterDataModel {
 
   Map<String, dynamic> toJson() => _$HelperCenterDataModelToJson(this);
 
+  @JsonKey(defaultValue: <FAQSectionModel>[])
   final List<FAQSectionModel?> faqs;
+  @JsonKey(defaultValue: <HelperContactModel>[])
   final List<HelperContactModel?> contacts;
 }

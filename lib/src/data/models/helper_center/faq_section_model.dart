@@ -15,6 +15,7 @@ class FAQSectionModel {
   Map<String, dynamic> toJson() => _$FAQSectionModelToJson(this);
 
   final String? name;
+  @JsonKey(defaultValue: <FAQModel>[])
   final List<FAQModel?> items;
 }
 

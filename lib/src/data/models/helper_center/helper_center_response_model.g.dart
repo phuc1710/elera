@@ -28,16 +28,18 @@ Map<String, dynamic> _$HelperCenterResponseModelToJson(
 HelperCenterDataModel _$HelperCenterDataModelFromJson(
         Map<String, dynamic> json) =>
     HelperCenterDataModel(
-      faqs: (json['faqs'] as List<dynamic>)
-          .map((e) => e == null
-              ? null
-              : FAQSectionModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      contacts: (json['contacts'] as List<dynamic>)
-          .map((e) => e == null
-              ? null
-              : HelperContactModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      faqs: (json['faqs'] as List<dynamic>?)
+              ?.map((e) => e == null
+                  ? null
+                  : FAQSectionModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      contacts: (json['contacts'] as List<dynamic>?)
+              ?.map((e) => e == null
+                  ? null
+                  : HelperContactModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
     );
 
 Map<String, dynamic> _$HelperCenterDataModelToJson(

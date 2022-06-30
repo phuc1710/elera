@@ -9,10 +9,12 @@ part of 'faq_section_model.dart';
 FAQSectionModel _$FAQSectionModelFromJson(Map<String, dynamic> json) =>
     FAQSectionModel(
       name: json['name'] as String?,
-      items: (json['items'] as List<dynamic>)
-          .map((e) =>
-              e == null ? null : FAQModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      items: (json['items'] as List<dynamic>?)
+              ?.map((e) => e == null
+                  ? null
+                  : FAQModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
     );
 
 Map<String, dynamic> _$FAQSectionModelToJson(FAQSectionModel instance) =>
