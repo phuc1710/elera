@@ -3,68 +3,131 @@ import 'package:flutter/material.dart';
 import '../../search/views/search_view.dart';
 import '../../search/widgets/filter_bottom_sheet_content.dart';
 
-class SearchBar extends StatelessWidget {
+class SearchBar extends StatefulWidget {
   const SearchBar({
     Key? key,
     required this.atHome,
     this.onSubmitted,
     this.controller,
     this.onChanged,
+    this.showOverlayResultPrediction = false,
+    this.data = const <String?>[],
   }) : super(key: key);
 
   final bool atHome;
-  final void Function(String)? onSubmitted;
-  final void Function(String)? onChanged;
+  final void Function(String?)? onSubmitted;
+  final void Function(String?)? onChanged;
   final TextEditingController? controller;
-  
+
+  final bool showOverlayResultPrediction;
+  final List<String?> data;
+
+  @override
+  State<SearchBar> createState() => _SearchBarState();
+}
+
+class _SearchBarState extends State<SearchBar> {
+  OverlayEntry? _overlayEntry;
+  final LayerLink _layerLink = LayerLink();
+  List<String?> alPredictions = [];
+
+  final FocusNode focusNode = FocusNode();
+
+  var isFocus = false;
+
+  @override
+  void initState() {
+    super.initState();
+    focusNode.addListener(() {
+      setState(() {
+        isFocus = focusNode.hasPrimaryFocus;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: TextField(
-        autofocus: !atHome,
-        onTap: atHome
-            ? (() => Navigator.push<Object?>(
-                  context,
-                  MaterialPageRoute<dynamic>(
-                    builder: (context) => const SearchView(),
-                  ),
-                ))
-            : () {},
-        onSubmitted: onSubmitted,
-        onChanged: onChanged,
-        textAlignVertical: TextAlignVertical.center,
-        textInputAction: TextInputAction.search,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          prefixIcon: Icon(
-            Icons.search,
-            color: Colors.grey[400],
-          ),
-          suffixIcon: atHome
-              ? Icon(
-                  Icons.filter_alt_outlined,
-                  color: Theme.of(context).primaryColor,
-                )
-              : IconButton(
-                  onPressed: () => showSearchFilterBottomSheet(context),
-                  icon: Icon(
-                    Icons.filter_alt_outlined,
-                    color: Theme.of(context).primaryColor,
-                  ),
-                  splashRadius: 10,
-                ),
-          hintText: 'Search',
-          hintStyle: Theme.of(context)
-              .textTheme
-              .displayMedium
-              ?.copyWith(color: Colors.grey[400]),
+    return CompositedTransformTarget(
+      link: _layerLink,
+      child: Container(
+        decoration: BoxDecoration(
+          color: isFocus ? Colors.lightBlue[100] : Colors.grey[100],
+          borderRadius: BorderRadius.circular(15),
+          border: isFocus ? Border.all(color: Colors.blue) : null,
         ),
-        style: Theme.of(context).textTheme.displaySmall,
+        child: SizedBox(
+          height: 50,
+          child: TextField(
+            focusNode: focusNode,
+            controller: widget.controller,
+            autofocus: !widget.atHome,
+            onTap: widget.atHome
+                ? (() => Navigator.push<Object?>(
+                      context,
+                      MaterialPageRoute<dynamic>(
+                        builder: (context) => const SearchView(),
+                      ),
+                    ))
+                : () {},
+            onSubmitted: widget.onSubmitted,
+            onChanged: (text) {
+              widget.onChanged?.call(text);
+
+              if (widget.showOverlayResultPrediction) {
+                if (text.isEmpty) {
+                  alPredictions.clear();
+                  _overlayEntry?.remove();
+
+                  return;
+                }
+
+                if (widget.data.isNotEmpty) {
+                  alPredictions.clear();
+                  final result = widget.data
+                      .where((e) => e?.contains(text) == true)
+                      .toList();
+
+                  alPredictions.addAll(result);
+                }
+
+                _overlayEntry = null;
+                _overlayEntry = _createOverlayEntry();
+
+                if (_overlayEntry != null) {
+                  Overlay.of(context)?.insert(_overlayEntry!);
+                }
+              }
+            },
+            textAlignVertical: TextAlignVertical.center,
+            textInputAction: TextInputAction.search,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              prefixIcon: Icon(
+                Icons.search,
+                color: isFocus ? Colors.blueAccent : Colors.grey[400],
+              ),
+              suffixIcon: widget.atHome
+                  ? Icon(
+                      Icons.filter_alt_outlined,
+                      color: Theme.of(context).primaryColor,
+                    )
+                  : IconButton(
+                      onPressed: () => showSearchFilterBottomSheet(context),
+                      icon: Icon(
+                        Icons.filter_alt_outlined,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      splashRadius: 10,
+                    ),
+              hintText: 'Search',
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .displayMedium
+                  ?.copyWith(color: isFocus ? Colors.black : Colors.grey[400]),
+            ),
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+        ),
       ),
     );
   }
@@ -87,5 +150,64 @@ class SearchBar extends StatelessWidget {
         );
       },
     );
+  }
+
+  OverlayEntry? _createOverlayEntry() {
+    if (context.findRenderObject() != null) {
+      final renderBox = context.findRenderObject() as RenderBox?;
+      final size = renderBox?.size ?? Size.zero;
+      final offset = renderBox?.localToGlobal(Offset.zero);
+
+      return OverlayEntry(
+        builder: (context) => Positioned(
+          left: offset?.dx,
+          top: size.height + (offset?.dy ?? 0),
+          width: size.width,
+          child: CompositedTransformFollower(
+            showWhenUnlinked: false,
+            link: _layerLink,
+            offset: Offset(0.0, size.height + 5.0),
+            child: Material(
+              borderRadius: BorderRadius.circular(15),
+              elevation: 1.0,
+              child: ListView.separated(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                shrinkWrap: true,
+                itemCount: alPredictions.length,
+                separatorBuilder: (_, __) => const Divider(color: Colors.grey),
+                itemBuilder: (BuildContext context, int index) {
+                  return InkWell(
+                    onTap: () {
+                      widget.onSubmitted?.call(alPredictions[index]);
+                      removeOverlay();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        alPredictions[index] ?? '',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(color: Colors.black),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return null;
+  }
+
+  void removeOverlay() {
+    alPredictions.clear();
+    _overlayEntry = _createOverlayEntry();
+
+    Overlay.of(context)!.insert(_overlayEntry!);
+    _overlayEntry!.markNeedsBuild();
   }
 }

@@ -1,6 +1,7 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:collection/collection.dart';
 
 import '../../../data/models/api_models.dart';
 
@@ -20,46 +21,50 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
   final TextEditingController _searchController = TextEditingController();
 
   var selectedFAQ = 0;
+  FAQModel? searchedFAQItem;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(
-        AppBarParams(
-          context,
-          title: 'Help Center',
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: buildAppBar(
+          AppBarParams(
+            context,
+            title: 'Help Center',
+          ),
         ),
-      ),
-      body: BlocProvider(
-        create: (context) => HelperCenterBloc()..add(HelperCenterStarted()),
-        child: SizedBox(
-          width: double.maxFinite,
-          height: double.maxFinite,
-          child: DefaultTabController(
-            length: 2,
-            child: Column(
-              children: [
-                TabBar(
-                  labelStyle: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: Theme.of(context).primaryColor),
-                  labelColor: Theme.of(context).primaryColor,
-                  unselectedLabelColor: Colors.grey,
-                  tabs: const [
-                    Tab(text: 'FAQ'),
-                    Tab(text: 'Contact Us'),
-                  ],
-                ),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      buildFAQ(context),
-                      Container(color: Colors.amber),
+        body: BlocProvider(
+          create: (context) => HelperCenterBloc()..add(HelperCenterStarted()),
+          child: SizedBox(
+            width: double.maxFinite,
+            height: double.maxFinite,
+            child: DefaultTabController(
+              length: 2,
+              child: Column(
+                children: [
+                  TabBar(
+                    labelStyle: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: Theme.of(context).primaryColor),
+                    labelColor: Theme.of(context).primaryColor,
+                    unselectedLabelColor: Colors.grey,
+                    tabs: const [
+                      Tab(text: 'FAQ'),
+                      Tab(text: 'Contact Us'),
                     ],
                   ),
-                )
-              ],
+                  Expanded(
+                    child: TabBarView(
+                      children: [
+                        buildFAQ(context),
+                        Container(color: Colors.amber),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -72,7 +77,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: BlocBuilder<HelperCenterBloc, HelperCenterState>(
         buildWhen: (_, current) => current is HelperCenterFetchSuccess,
-        builder: (context, state) {
+        builder: (_, state) {
           if (state is HelperCenterFetchSuccess) {
             return Column(
               children: [
@@ -81,15 +86,31 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
                 SearchBar(
                   atHome: false,
                   controller: _searchController,
-                  onChanged: (text) {},
+                  data: state.data?.faqs[selectedFAQ]?.items
+                          .map((e) => e?.title)
+                          .toList() ??
+                      [],
+                  showOverlayResultPrediction: true,
+                  onChanged: (_) {
+                    searchedFAQItem = null;
+                    setState(() {});
+                  },
+                  onSubmitted: (selected) {
+                    searchedFAQItem = itemWithTitle(state.data, selected);
+                    setState(() {});
+                  },
                 ),
                 const SizedBox(height: 30),
                 Expanded(
                   child: ListView.separated(
-                    itemCount: state.data?.faqs[selectedFAQ]?.items.length ?? 0,
+                    itemCount: searchedFAQItem != null
+                        ? [searchedFAQItem].length
+                        : state.data?.faqs[selectedFAQ]?.items.length ?? 0,
                     separatorBuilder: (_, __) => const SizedBox(height: 15),
                     itemBuilder: (_, index) {
-                      final item = state.data?.faqs[selectedFAQ]?.items[index];
+                      final item = searchedFAQItem != null
+                          ? searchedFAQItem
+                          : state.data?.faqs[selectedFAQ]?.items[index];
 
                       return buildFAQItem(context, item);
                     },
@@ -99,9 +120,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
             );
           }
 
-          return const Center(
-            child: Text('Chưa có nội dung'),
-          );
+          return const Center(child: Text('Chưa có nội dung'));
         },
       ),
     );
@@ -124,16 +143,24 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
           ),
         ),
         collapsed: const SizedBox(),
-        expanded: Container(
-          width: double.maxFinite,
-          padding: const EdgeInsets.all(15),
-          child: Text(
-            item?.answer ?? '',
-            style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  color: Colors.black,
-                  fontSize: 18,
-                ),
-          ),
+        expanded: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Divider(color: Colors.grey),
+            ),
+            Container(
+              width: double.maxFinite,
+              padding: const EdgeInsets.all(15),
+              child: Text(
+                item?.answer ?? '',
+                style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -182,5 +209,14 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
         },
       ),
     );
+  }
+
+  FAQModel? itemWithTitle(HelperCenterDataModel? data, String? title) {
+    final sectionContainsTitle = data?.faqs.firstWhereOrNull(
+      (e) => e?.items.firstWhereOrNull((item) => item?.title == title) != null,
+    );
+
+    return sectionContainsTitle?.items
+        .firstWhereOrNull((item) => item?.title == title);
   }
 }
