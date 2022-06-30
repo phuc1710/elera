@@ -48,6 +48,7 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   image_picker: ^0.8.5+3
 
+  expandable: ^5.0.1
 
 dev_dependencies:
   flutter_test:
