@@ -17,7 +17,7 @@ class SignInSuccess extends SignInState {
 }
 
 class SignInFailed extends SignInState {
-  SignInFailed(this.message);
+  SignInFailed(this.error);
 
-  final String? message;
+  final DioError? error;
 }

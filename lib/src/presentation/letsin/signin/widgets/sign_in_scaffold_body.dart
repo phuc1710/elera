@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,7 +35,8 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
     return BlocConsumer<SignInBloc, SignInState>(
       listener: (context, state) {
         if (state is SignInFailed) {
-          AppSnackBar(message: state.message ?? 'An error occurred')
+          log(state.error?.message ?? 'An error occurred');
+          AppSnackBar(message: state.error?.message ?? 'An error occurred')
               .show(context);
         }
         if (state is SignInSuccess) {

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 
-import '../../../../core/network/api.dart';
+import '../../../../core/network_old/api.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../data/models/course/course_response_model.dart';
 
