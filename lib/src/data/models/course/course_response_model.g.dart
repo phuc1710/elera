@@ -16,8 +16,7 @@ CourseResponseModel _$CourseResponseModelFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CourseResponseModelToJson(
-  CourseResponseModel instance,
-) =>
+        CourseResponseModel instance) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
       'message': instance.message,
@@ -26,11 +25,9 @@ Map<String, dynamic> _$CourseResponseModelToJson(
 
 CourseModel _$CourseModelFromJson(Map<String, dynamic> json) => CourseModel(
       (json['items'] as List<dynamic>?)
-              ?.map(
-                (dynamic e) => e == null
-                    ? null
-                    : CourseModelItem.fromJson(e as Map<String, dynamic>),
-              )
+              ?.map((e) => e == null
+                  ? null
+                  : CourseModelItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
     );

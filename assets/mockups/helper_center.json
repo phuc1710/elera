@@ -1,0 +1,35 @@
+{
+    "message": "",
+    "status": 0,
+    "data": {
+      "faqs": [
+        {
+            "name": "General",
+            "items": [
+                {
+                    "title": "What is Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        }
+      ]
+      
+    }
+  }
+  
