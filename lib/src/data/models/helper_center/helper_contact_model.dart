@@ -7,6 +7,7 @@ class HelperContactModel {
   HelperContactModel({
     this.name,
     this.id,
+    this.img,
   });
 
   factory HelperContactModel.fromJson(Map<String, dynamic> json) =>
@@ -16,4 +17,5 @@ class HelperContactModel {
 
   final String? name;
   final String? id;
+  final String? img;
 }

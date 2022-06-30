@@ -107,27 +107,33 @@
       "contacts": [
         {
             "id": "0",
-            "name": "Customer Service"
+            "name": "Customer Service",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
         },
         {
             "id": "1",
-            "name": "WhatsApp"
+            "name": "WhatsApp",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
         },
         {
             "id": "2",
-            "name": "Website"
+            "name": "Website",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
         },
         {
             "id": "3",
-            "name": "Facebook"
+            "name": "Facebook",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
         },
         {
             "id": "4",
-            "name": "Twitter"
+            "name": "Twitter",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
         },
         {
             "id": "5",
-            "name": "Instagram"
+            "name": "Instagram",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
         }
       ]
     }

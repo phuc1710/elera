@@ -28,6 +28,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
+        backgroundColor: Colors.grey[100],
         appBar: buildAppBar(
           AppBarParams(
             context,
@@ -36,7 +37,8 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
         ),
         body: BlocProvider(
           create: (context) => HelperCenterBloc()..add(HelperCenterStarted()),
-          child: SizedBox(
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             width: double.maxFinite,
             height: double.maxFinite,
             child: DefaultTabController(
@@ -59,7 +61,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
                     child: TabBarView(
                       children: [
                         buildFAQ(context),
-                        Container(color: Colors.amber),
+                        buildContacts(context),
                       ],
                     ),
                   )
@@ -72,57 +74,90 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
     );
   }
 
-  Widget buildFAQ(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: BlocBuilder<HelperCenterBloc, HelperCenterState>(
-        buildWhen: (_, current) => current is HelperCenterFetchSuccess,
-        builder: (_, state) {
-          if (state is HelperCenterFetchSuccess) {
-            return Column(
-              children: [
-                buildFAQFilterList(context, faqData: state.data?.faqs ?? []),
-                const SizedBox(height: 20),
-                SearchBar(
-                  atHome: false,
-                  controller: _searchController,
-                  data: state.data?.faqs[selectedFAQ]?.items
-                          .map((e) => e?.title)
-                          .toList() ??
-                      [],
-                  showOverlayResultPrediction: true,
-                  onChanged: (_) {
-                    searchedFAQItem = null;
-                    setState(() {});
-                  },
-                  onSubmitted: (selected) {
-                    searchedFAQItem = itemWithTitle(state.data, selected);
-                    setState(() {});
-                  },
-                ),
-                const SizedBox(height: 30),
-                Expanded(
-                  child: ListView.separated(
-                    itemCount: searchedFAQItem != null
-                        ? [searchedFAQItem].length
-                        : state.data?.faqs[selectedFAQ]?.items.length ?? 0,
-                    separatorBuilder: (_, __) => const SizedBox(height: 15),
-                    itemBuilder: (_, index) {
-                      final item = searchedFAQItem != null
-                          ? searchedFAQItem
-                          : state.data?.faqs[selectedFAQ]?.items[index];
+  Widget buildContacts(BuildContext context) {
+    return BlocBuilder<HelperCenterBloc, HelperCenterState>(
+      builder: (_, state) {
+        if (state is HelperCenterFetchSuccess) {
+          return ListView.separated(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            itemCount: state.data?.contacts.length ?? 0,
+            separatorBuilder: (_, __) => const SizedBox(height: 20),
+            itemBuilder: (_, index) {
+              final item = state.data?.contacts[index];
 
-                      return buildFAQItem(context, item);
-                    },
-                  ),
-                ),
-              ],
-            );
-          }
+              return buildContactItem(item, context);
+            },
+          );
+        }
 
-          return const Center(child: Text('Chưa có nội dung'));
-        },
+        return const Center(child: Text('Chưa có nội dung'));
+      },
+    );
+  }
+
+  Widget buildContactItem(HelperContactModel? item, BuildContext context) {
+    return ListTile(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      tileColor: Colors.white,
+      contentPadding: const EdgeInsets.all(10),
+      leading: Image.network(item?.img ?? '', width: 30, height: 30),
+      title: Text(
+        item?.name ?? '',
+        style: Theme.of(context)
+            .textTheme
+            .bodyMedium
+            ?.copyWith(color: Colors.black),
       ),
+    );
+  }
+
+  Widget buildFAQ(BuildContext context) {
+    return BlocBuilder<HelperCenterBloc, HelperCenterState>(
+      buildWhen: (_, current) => current is HelperCenterFetchSuccess,
+      builder: (_, state) {
+        if (state is HelperCenterFetchSuccess) {
+          return Column(
+            children: [
+              buildFAQFilterList(context, faqData: state.data?.faqs ?? []),
+              const SizedBox(height: 20),
+              SearchBar(
+                atHome: false,
+                controller: _searchController,
+                data: state.data?.faqs[selectedFAQ]?.items
+                        .map((e) => e?.title)
+                        .toList() ??
+                    [],
+                showOverlayResultPrediction: true,
+                onChanged: (_) {
+                  searchedFAQItem = null;
+                  setState(() {});
+                },
+                onSubmitted: (selected) {
+                  searchedFAQItem = itemWithTitle(state.data, selected);
+                  setState(() {});
+                },
+              ),
+              const SizedBox(height: 30),
+              Expanded(
+                child: ListView.separated(
+                  itemCount: searchedFAQItem != null
+                      ? [searchedFAQItem].length
+                      : state.data?.faqs[selectedFAQ]?.items.length ?? 0,
+                  separatorBuilder: (_, __) => const SizedBox(height: 15),
+                  itemBuilder: (_, index) {
+                    final item = searchedFAQItem ??
+                        state.data?.faqs[selectedFAQ]?.items[index];
+
+                    return buildFAQItem(context, item);
+                  },
+                ),
+              ),
+            ],
+          );
+        }
+
+        return const Center(child: Text('Chưa có nội dung'));
+      },
     );
   }
 
