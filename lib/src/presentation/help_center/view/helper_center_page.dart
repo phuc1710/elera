@@ -9,9 +9,6 @@ import '../../../data/models/api_models.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../home_and_action_menu/home/widgets/search_bar.dart';
 import '../../widgets/base_appbar.dart';
-import '../../widgets/base_bottom_sheet.dart';
-import '../../widgets/base_button.dart';
-import '../../widgets/logout_button.dart';
 import '../bloc/helper_center_bloc.dart';
 
 class HelpeCenterPage extends StatefulWidget {
@@ -33,7 +30,6 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: Colors.grey[100],
-        floatingActionButton: LogoutButton(),
         appBar: buildAppBar(
           AppBarParams(
             context,
