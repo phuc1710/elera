@@ -9,6 +9,9 @@ import '../../../data/models/api_models.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../home_and_action_menu/home/widgets/search_bar.dart';
 import '../../widgets/base_appbar.dart';
+import '../../widgets/base_bottom_sheet.dart';
+import '../../widgets/base_button.dart';
+import '../../widgets/logout_button.dart';
 import '../bloc/helper_center_bloc.dart';
 
 class HelpeCenterPage extends StatefulWidget {
@@ -30,6 +33,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: Colors.grey[100],
+        floatingActionButton: LogoutButton(),
         appBar: buildAppBar(
           AppBarParams(
             context,
@@ -86,7 +90,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
             itemBuilder: (_, index) {
               final item = state.data?.contacts[index];
 
-              return buildContactItem(item, context);
+              return buildContactItem(context, item);
             },
           );
         }
@@ -96,10 +100,10 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
     );
   }
 
-  Widget buildContactItem(HelperContactModel? item, BuildContext context) {
+  Widget buildContactItem(BuildContext context, HelperContactModel? item) {
     return ListTile(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      onTap: () => onContactTap(item),
+      onTap: () => onContactTap(context, item),
       tileColor: Colors.white,
       contentPadding: const EdgeInsets.all(10),
       leading: Image.network(item?.img ?? '', width: 30, height: 30),
@@ -257,7 +261,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
         .firstWhereOrNull((item) => item?.title == title);
   }
 
-  void onContactTap(HelperContactModel? item) {
+  void onContactTap(BuildContext context, HelperContactModel? item) {
     final contactType = HelperContactType.values
         .whereIndexed((index, element) => index == item?.id)
         .firstOrNull;
