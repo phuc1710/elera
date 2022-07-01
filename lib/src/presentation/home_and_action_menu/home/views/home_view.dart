@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../profile/view/profile_screen.dart';
 import '../widgets/home_tab_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -31,12 +32,7 @@ class _HomeViewState extends State<HomeView> {
         style: TextStyle(color: Colors.black),
       ),
     ),
-    const Center(
-      child: Text(
-        'Profile',
-        style: TextStyle(color: Colors.black),
-      ),
-    ),
+    const ProfileScreen(),
   ];
 
   @override

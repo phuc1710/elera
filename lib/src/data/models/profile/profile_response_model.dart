@@ -26,6 +26,7 @@ class ProfileModel {
     this.fullname,
     this.name,
     this.email,
+    this.img,
     this.dob,
     this.country,
     this.phone,
@@ -41,6 +42,7 @@ class ProfileModel {
   final String? fullname;
   final String? name;
   final String? email;
+  final String? img;
   final String? dob;
   final String? country;
   final String? phone;

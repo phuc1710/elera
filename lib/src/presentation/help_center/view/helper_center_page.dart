@@ -34,6 +34,13 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
           AppBarParams(
             context,
             title: 'Help Center',
+            actions: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child:
+                    const Icon(Icons.more_horiz_rounded, color: Colors.black),
+              )
+            ],
           ),
         ),
         body: BlocProvider(

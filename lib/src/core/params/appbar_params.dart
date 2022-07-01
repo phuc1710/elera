@@ -9,8 +9,9 @@ class AppBarParams {
     this.onExit,
     this.hasBack = true,
     this.elevation = 0,
-    this.actions,
+    this.actions = const [],
     this.backButton,
+    this.leading,
     this.centerTitle = false,
     this.bottom,
     this.titleColor,
@@ -24,8 +25,9 @@ class AppBarParams {
   final VoidCallback? onExit;
   final bool hasBack;
   final double elevation;
-  final List<Widget>? actions;
+  final List<Widget> actions;
   final Widget? backButton;
+  final Widget? leading;
   final bool centerTitle;
   final PreferredSizeWidget? bottom;
   final Color? titleColor;

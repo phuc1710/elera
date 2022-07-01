@@ -8,6 +8,7 @@ class MockApi {
   static Map<String, String> mapMockApi = {
     EndPoints.course: 'course',
     EndPoints.helperCenter: 'helper_center',
+    EndPoints.profile: 'profile',
   };
 
   static Future<Map<String, dynamic>?> get(String endpoint) async {
