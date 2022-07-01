@@ -9,7 +9,7 @@ part of 'helper_contact_model.dart';
 HelperContactModel _$HelperContactModelFromJson(Map<String, dynamic> json) =>
     HelperContactModel(
       name: json['name'] as String?,
-      id: json['id'] as String?,
+      id: json['id'] as int?,
       img: json['img'] as String?,
     );
 

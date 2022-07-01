@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collection/collection.dart';
 
+import '../../../core/enums/helper_contact_type.dart';
 import '../../../data/models/api_models.dart';
 
 import '../../../core/params/appbar_params.dart';
@@ -98,6 +99,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
   Widget buildContactItem(HelperContactModel? item, BuildContext context) {
     return ListTile(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      onTap: () => onContactTap(item),
       tileColor: Colors.white,
       contentPadding: const EdgeInsets.all(10),
       leading: Image.network(item?.img ?? '', width: 30, height: 30),
@@ -253,5 +255,28 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
 
     return sectionContainsTitle?.items
         .firstWhereOrNull((item) => item?.title == title);
+  }
+
+  void onContactTap(HelperContactModel? item) {
+    final contactType = HelperContactType.values
+        .whereIndexed((index, element) => index == item?.id)
+        .firstOrNull;
+
+    switch (contactType) {
+      case HelperContactType.customerService:
+
+      case HelperContactType.whatsapp:
+
+      case HelperContactType.website:
+
+      case HelperContactType.facebook:
+
+      case HelperContactType.twitter:
+
+      case HelperContactType.instagram:
+
+      case null:
+        break;
+    }
   }
 }

@@ -16,6 +16,6 @@ class HelperContactModel {
   Map<String, dynamic> toJson() => _$HelperContactModelToJson(this);
 
   final String? name;
-  final String? id;
+  final int? id;
   final String? img;
 }
