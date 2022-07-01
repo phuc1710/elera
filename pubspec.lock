@@ -563,7 +563,7 @@ packages:
     source: hosted
     version: "1.5.0"
   pretty_dio_logger:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: pretty_dio_logger
       url: "https://pub.dartlang.org"
@@ -612,7 +612,7 @@ packages:
     source: hosted
     version: "3.0.1+1"
   retrofit_generator:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: retrofit_generator
       url: "https://pub.dartlang.org"
