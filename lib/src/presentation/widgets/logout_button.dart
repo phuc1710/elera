@@ -8,9 +8,14 @@ class LogoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseButton(
-      title: 'text',
-      color: Colors.red,
+    return ListTile(
+      leading: const Icon(Icons.logout, size: 35, color: Colors.red),
+      title: Text(
+        'Logout',
+        textAlign: TextAlign.start,
+        style:
+            Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.red),
+      ),
       onTap: () {
         showBaseBottomSheet(
           context: context,

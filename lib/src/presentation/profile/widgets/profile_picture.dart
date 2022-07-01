@@ -32,7 +32,19 @@ class _ProfilePictureState extends State<ProfilePicture> {
               top: 95,
               right: 8,
               child: GestureDetector(
-                child: const Icon(Icons.edit, size: 22),
+                child: Stack(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                        color: Colors.blue[700],
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      child:
+                          const Icon(Icons.edit, size: 18, color: Colors.white),
+                    ),
+                  ],
+                ),
                 onTap: () => widget.callBack.call(),
               ),
             ),
@@ -41,7 +53,6 @@ class _ProfilePictureState extends State<ProfilePicture> {
       ],
     );
   }
-
 
   Widget buildPicture() {
     return SizedBox(
