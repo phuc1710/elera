@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import '../../data/models/course/course_response_model.dart';
+import '../../data/models/edit_profile/edit_profile_response_model.dart';
 import '../../data/models/helper_center/helper_center_response_model.dart';
 import '../../data/models/profile/profile_response_model.dart';
 import '../../data/models/sign_in/sign_in_response_model.dart';
@@ -81,6 +82,30 @@ class Api {
         ),
       );
       final result = ProfileResponseModel.fromJson(res!);
+      handleExceptionCase(result.status);
+
+      return result;
+    } catch (e) {
+      log(e.toString());
+
+      return null;
+    }
+  }
+
+  static Future<EditProfileResponseModel?> getCountries() async {
+    try {
+      final canMakeRequest = await checkConnection();
+      if (!canMakeRequest) {
+        return EditProfileResponseModel.fromJson(noConnectionRes);
+      }
+      final res = await http.getRequest(
+        GetParams(
+          EndPoints.countries,
+          isMockup: true, // set false if call api,
+          headers: await getHeaders(),
+        ),
+      );
+      final result = EditProfileResponseModel.fromJson(res!);
       handleExceptionCase(result.status);
 
       return result;

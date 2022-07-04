@@ -20,6 +20,7 @@ class EndPoints {
   static const String course = '/course';
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';
+  static const String countries = '/countries';
 }
 
 class ErrorCode {
