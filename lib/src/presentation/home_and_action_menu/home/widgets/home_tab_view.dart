@@ -86,7 +86,7 @@ class HomeTabView extends StatelessWidget {
                 },
                 builder: (context, state) {
                   if (state is HomeCourseLoading)
-                    return const CircularProgressIndicator();
+                    return const Center(child: CircularProgressIndicator());
                   if (state is HomeCourseSuccess)
                     return CourseTabBarView(courseList: state.courses);
 

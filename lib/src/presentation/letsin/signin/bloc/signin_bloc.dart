@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 
 import '../../../../core/params/sign_in_request_params.dart';
 import '../../../../core/resources/data_state.dart';
+import '../../../../core/utils/constants.dart';
 import '../../../../domain/usecases/sign_in_usecase.dart';
 
 part 'signin_event.dart';
@@ -29,10 +29,13 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       ),
     );
     if (dataState is DataSuccess) {
-      emit(SignInSuccess());
+      if (dataState.data?.status == StatusCode.success)
+        emit(SignInSuccess());
+      else
+        emit(SignInFailed(dataState.data?.message));
     }
     if (dataState is DataFailed) {
-      emit(SignInFailed(dataState.error));
+      emit(SignInFailed(dataState.data?.message));
     }
   }
 }

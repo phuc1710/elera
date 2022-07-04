@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../home_and_action_menu/home/views/home_view.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
@@ -20,9 +21,7 @@ class ActionButtonRow extends StatelessWidget {
         children: [
           InkWell(
             borderRadius: BorderRadius.circular(40),
-            onTap: () {
-              showWelcomeDialog(context);
-            },
+            onTap: () => showWelcomeDialog(context),
             child: const MainActionInk(
               buttonString: 'Skip',
               width: 0.4,
@@ -31,9 +30,7 @@ class ActionButtonRow extends StatelessWidget {
           ),
           InkWell(
             borderRadius: BorderRadius.circular(40),
-            onTap: () {
-              showWelcomeDialog(context);
-            },
+            onTap: () => showWelcomeDialog(context),
             child: const MainActionInk(
               buttonString: 'Continue',
               width: 0.4,
@@ -49,12 +46,14 @@ class ActionButtonRow extends StatelessWidget {
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
-        // Future.delayed(const Duration(seconds: 2), () {
-        //   Navigator.of(context).pop();
-        //   Navigator.of(context).pushAndRemoveUntil(
-        //       MaterialPageRoute(builder: (context) => const Onboarding()),
-        //       (route) => false);
-        // });
+        Future.delayed(const Duration(seconds: 2), () {
+          Navigator.of(context).pop();
+          Navigator.of(context).pushAndRemoveUntil<Object?>(
+            MaterialPageRoute(builder: (context) => const HomeView()),
+            (route) => false,
+          );
+        });
+
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),

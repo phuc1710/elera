@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,9 +16,7 @@ import 'forgot_password_button.dart';
 import 'sign_in_button.dart';
 
 class SignInScaffoldBody extends StatefulWidget {
-  const SignInScaffoldBody({
-    Key? key,
-  }) : super(key: key);
+  const SignInScaffoldBody({Key? key}) : super(key: key);
 
   @override
   State<SignInScaffoldBody> createState() => _SignInScaffoldBodyState();
@@ -35,8 +31,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
     return BlocConsumer<SignInBloc, SignInState>(
       listener: (context, state) {
         if (state is SignInFailed) {
-          log(state.error?.message ?? 'An error occurred');
-          AppSnackBar(message: state.error?.message ?? 'An error occurred')
+          AppSnackBar(message: state.error ?? 'An error occurred')
               .show(context);
         }
         if (state is SignInSuccess) {

@@ -26,7 +26,8 @@ class EndPoints {
   static const String news = '/news';
   static const String contact = '/social';
   static const String referral = '/collaborator/referral';
-  static const String login = '/login';
+  static const String signIn = '/sign_in';
+  static const String signUp = '/sign_up';
   static const String profile = '/profile';
   static const String services = '/collaborator/services';
   static const String configurations = '/configurations';

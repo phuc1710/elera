@@ -1,5 +1,6 @@
 // Dart imports:
 import 'dart:convert';
+import 'dart:developer';
 
 // Flutter imports:
 import 'package:flutter/services.dart';
@@ -39,6 +40,7 @@ class MockApi {
     final responseStr =
         await rootBundle.loadString('assets/mockups/$endpoint.json');
     final dynamic responseJson = json.decode(responseStr);
+    log('mockup runned');
 
     return responseJson as Map<String, dynamic>?;
   }
