@@ -19,5 +19,5 @@ class SignUpSuccess extends SignUpState {
 class SignUpFailed extends SignUpState {
   SignUpFailed(this.error);
 
-  final String? error;
+  final ApiError error;
 }

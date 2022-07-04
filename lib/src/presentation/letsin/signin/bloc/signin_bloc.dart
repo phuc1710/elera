@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 
 import '../../../../core/params/sign_in_request_params.dart';
+import '../../../../core/resources/api_error.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../domain/usecases/sign_in_usecase.dart';
@@ -29,13 +30,18 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       ),
     );
     if (dataState is DataSuccess) {
+      final res = dataState.data;
       if (dataState.data?.status == StatusCode.success)
         emit(SignInSuccess());
       else
-        emit(SignInFailed(dataState.data?.message));
+        emit(
+          SignInFailed(
+            ApiError(statusCode: res?.status, errorMessage: res?.message),
+          ),
+        );
     }
     if (dataState is DataFailed) {
-      emit(SignInFailed(dataState.data?.message));
+      emit(SignInFailed(ApiError(errorMessage: dataState.error?.message)));
     }
   }
 }

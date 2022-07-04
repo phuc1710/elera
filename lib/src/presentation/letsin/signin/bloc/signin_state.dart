@@ -19,5 +19,5 @@ class SignInSuccess extends SignInState {
 class SignInFailed extends SignInState {
   SignInFailed(this.error);
 
-  final String? error;
+  final ApiError error;
 }

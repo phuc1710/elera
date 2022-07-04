@@ -19,31 +19,51 @@ class UserRepositoryImpl implements UserRepository {
   Future<DataState<SignInResponseModel>> postSignInRequest(
     SignInRequestParams? params,
   ) async {
-    final httpResponse = await _userApiService.postSignInRequest(
-      isMockup: true,
-      body: params,
-    );
+    try {
+      final httpResponse =
+          await _userApiService.postSignInRequest(isMockup: true, body: params);
 
-    if (httpResponse.response.statusCode == HttpStatus.ok) {
-      return DataSuccess(httpResponse.data);
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(
+        DioError(
+          error: httpResponse.response.statusMessage,
+          response: httpResponse.response,
+          requestOptions: httpResponse.response.requestOptions,
+          type: DioErrorType.response,
+        ),
+      );
+    } on DioError catch (e) {
+      return DataFailed(e);
     }
-
-    return DataFailed(httpResponse.data);
   }
 
   @override
   Future<DataState<SignUpResponseModel>> postSignUpRequest(
     SignUpRequestParams? params,
   ) async {
-    final httpResponse = await _userApiService.postSignUpRequest(
-      isMockup: true,
-      body: params,
-    );
+    try {
+      final httpResponse = await _userApiService.postSignUpRequest(
+        isMockup: true,
+        body: params,
+      );
 
-    if (httpResponse.response.statusCode == HttpStatus.ok) {
-      return DataSuccess(httpResponse.data);
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(
+        DioError(
+          error: httpResponse.response.statusMessage,
+          response: httpResponse.response,
+          requestOptions: httpResponse.response.requestOptions,
+          type: DioErrorType.response,
+        ),
+      );
+    } on DioError catch (e) {
+      return DataFailed(e);
     }
-
-    return DataFailed(httpResponse.data);
   }
 }
