@@ -28,6 +28,9 @@ class _PaymentPageState extends State<PaymentPage> {
             context,
             title: 'Payment',
             backgroundColor: Colors.grey[100],
+            actions: [
+              const Icon(Icons.more_horiz_outlined),
+            ],
           ),
         ),
         body: BlocConsumer<PaymentBloc, PaymentState>(
