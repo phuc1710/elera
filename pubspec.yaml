@@ -50,6 +50,7 @@ dependencies:
 
   expandable: ^5.0.1
   flutter_multi_formatter: ^2.5.7
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

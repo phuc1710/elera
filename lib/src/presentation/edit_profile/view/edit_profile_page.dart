@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/params/appbar_params.dart';
+import '../../../core/params/date_picker_param.dart';
 import '../../../core/params/update_profile_params.dart';
 import '../../../core/utils/alert.dart';
+import '../../../core/utils/date_picker.dart';
+import '../../../core/utils/intl_helper.dart';
 import '../../../data/models/edit_profile/country_model.dart';
 import '../../../data/models/edit_profile/edit_profile_response_model.dart';
 import '../../../data/models/profile/profile_response_model.dart';
@@ -105,6 +108,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
               const SizedBox(height: 20),
               ProfileTextField(
                 controller: dobController,
+                onTap: () => showDatePicker(context),
+                readOnly: true,
                 icon: const Icon(Icons.calendar_month_outlined),
               ),
               const SizedBox(height: 20),
@@ -152,7 +157,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     );
   }
 
-  SizedBox buildUpdateButton(BuildContext context) {
+  Widget buildUpdateButton(BuildContext context) {
     return SizedBox(
       width: double.maxFinite,
       child: BaseButton(
@@ -175,6 +180,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
               );
         },
+      ),
+    );
+  }
+
+  ListTile buildSheetItem(
+    BuildContext context, {
+    String? title,
+    required Function() onTap,
+  }) {
+    return ListTile(
+      onTap: () {
+        onTap.call();
+        Navigator.of(context).pop();
+      },
+      title: Text(
+        title ?? '',
+        style: Theme.of(context)
+            .textTheme
+            .bodyMedium
+            ?.copyWith(color: Colors.black),
       ),
     );
   }
@@ -226,22 +251,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
     );
   }
 
-  ListTile buildSheetItem(
-    BuildContext context, {
-    String? title,
-    required Function() onTap,
-  }) {
-    return ListTile(
-      onTap: () {
-        onTap.call();
-        Navigator.of(context).pop();
-      },
-      title: Text(
-        title ?? '',
-        style: Theme.of(context)
-            .textTheme
-            .bodyMedium
-            ?.copyWith(color: Colors.black),
+  Future<void> showDatePicker(BuildContext context) {
+    return showDatePickerView(
+      context,
+      param: DatePickerParam(
+        controller: dobController,
+        setModalState: setState,
+        dateFormat: IntlHelper.dateFormatter,
       ),
     );
   }
