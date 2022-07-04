@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/params/appbar_params.dart';
+import '../../edit_profile/view/edit_profile_page.dart';
 import '../../help_center/view/helper_center_page.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/logout_button.dart';
@@ -138,11 +139,22 @@ class _ProfilePageState extends State<ProfilePage> {
 
   // ignore: long-method
   List<Widget> actions(BuildContext context) => [
-        profileActionItem(
-          context,
-          title: 'Edit Profile',
-          icon: Icons.person,
-          onTap: () {},
+        BlocBuilder<ProfileBloc, ProfileState>(
+          builder: (context, state) {
+            if (state is ProfileFetchSuccess) {
+              return profileActionItem(
+                context,
+                title: 'Edit Profile',
+                icon: Icons.person,
+                onTap: () => pushScreen(
+                  context,
+                  EditProfilePage(profile: state.profile),
+                ),
+              );
+            }
+
+            return const SizedBox();
+          },
         ),
         profileActionItem(
           context,
