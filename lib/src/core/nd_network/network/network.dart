@@ -39,7 +39,7 @@ class Network {
     required this.getHeadersApiProvider,
   }) {
     apiProvider = ApiProvider(
-      baseUrl: EndPoints.sandboxBaseUrl,
+      baseUrl: EndPoints.baseUrl,
       enableLogger: enableLogger,
       getHeaders: getHeadersApiProvider,
     );

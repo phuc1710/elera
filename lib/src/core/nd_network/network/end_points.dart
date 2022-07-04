@@ -2,6 +2,7 @@
 class EndPoints {
   EndPoints._();
 
+  static const String baseUrl = '';
   static const String sandboxBaseUrl = 'https://mobile-api-dev.zema.com.vn';
   static const String stagingBaseUrl = 'https://mobile-api-staging.zema.com.vn';
   static const String productionBaseUrl = 'https://mobile-api.zema.com.vn';
