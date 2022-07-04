@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/params/appbar_params.dart';
+import '../../../core/params/update_profile_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/edit_profile/country_model.dart';
 import '../../../data/models/edit_profile/edit_profile_response_model.dart';
@@ -68,7 +69,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
             if (state is EditProfileFailure) {
               Alert.showAlert(context, state.msg);
             }
+            if (state is EditProfileUpdateSuccess) {
+              Alert.showAlert(context, state.msg);
+            }
           },
+          buildWhen: (_, currentState) =>
+              currentState is EditProfileLoadSuccess,
           builder: (context, state) {
             if (state is EditProfileInProgress) {
               return const Center(child: CircularProgressIndicator());
@@ -153,6 +159,22 @@ class _EditProfilePageState extends State<EditProfilePage> {
         title: 'Update',
         titleColor: Colors.white,
         color: Colors.blue[700],
+        onTap: () {
+          context.read<EditProfileBloc>().add(
+                EditProfileUpdated(
+                  UpdateProfileParams(
+                    fullname: fullNameController.text,
+                    name: shortNameController.text,
+                    email: emailController.text,
+                    dob: dobController.text,
+                    country: countryController.text,
+                    phone: phoneController.text,
+                    gender: selectedGender,
+                    job: jobController.text,
+                  ),
+                ),
+              );
+        },
       ),
     );
   }

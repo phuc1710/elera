@@ -28,3 +28,12 @@ class EditProfileLoadSuccess extends EditProfileState {
   @override
   List<Object?> get props => [data];
 }
+
+class EditProfileUpdateSuccess extends EditProfileState {
+  const EditProfileUpdateSuccess(this.msg);
+
+  final String? msg;
+
+  @override
+  List<Object?> get props => [msg];
+}

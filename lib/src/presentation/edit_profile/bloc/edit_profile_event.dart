@@ -8,3 +8,12 @@ abstract class EditProfileEvent extends Equatable {
 }
 
 class EditProfileStarted extends EditProfileEvent {}
+
+class EditProfileUpdated extends EditProfileEvent {
+  const EditProfileUpdated(this.params);
+
+  final UpdateProfileParams params;
+
+  @override
+  List<Object?> get props => [params];
+}

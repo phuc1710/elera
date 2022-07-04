@@ -2,10 +2,13 @@ import 'dart:developer';
 
 import '../../data/models/course/course_response_model.dart';
 import '../../data/models/edit_profile/edit_profile_response_model.dart';
+import '../../data/models/general_response/general_response_model.dart';
 import '../../data/models/helper_center/helper_center_response_model.dart';
 import '../../data/models/profile/profile_response_model.dart';
 import '../../data/models/sign_in/sign_in_response_model.dart';
 import '../params/get_params.dart';
+import '../params/post_params.dart';
+import '../params/update_profile_params.dart';
 import '../utils/constants.dart';
 import 'api_provider.dart';
 import 'network_helper.dart';
@@ -106,6 +109,33 @@ class Api {
         ),
       );
       final result = EditProfileResponseModel.fromJson(res!);
+      handleExceptionCase(result.status);
+
+      return result;
+    } catch (e) {
+      log(e.toString());
+
+      return null;
+    }
+  }
+
+  static Future<GeneralResponseModel?> updateProfile(
+    UpdateProfileParams params,
+  ) async {
+    try {
+      final canMakeRequest = await checkConnection();
+      if (!canMakeRequest) {
+        return GeneralResponseModel.fromJson(noConnectionRes);
+      }
+      final res = await http.postRequest(
+        PostParams(
+          EndPoints.profile,
+          queryParameters: params.toJson(),
+          isMockup: true, // set false if call api,
+          headers: await getHeaders(),
+        ),
+      );
+      final result = GeneralResponseModel.fromJson(res!);
       handleExceptionCase(result.status);
 
       return result;
