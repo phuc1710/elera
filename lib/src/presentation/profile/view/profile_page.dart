@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../edit_profile/view/edit_profile_page.dart';
 import '../../help_center/view/helper_center_page.dart';
+import '../../notification_settings/view/notification_settings_page.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/logout_button.dart';
 import '../bloc/profile_bloc.dart';
@@ -160,7 +161,10 @@ class _ProfilePageState extends State<ProfilePage> {
           context,
           title: 'Notification',
           icon: Icons.notifications,
-          onTap: () {},
+          onTap: () => pushScreen(
+            context,
+            const NotificationSettingsPage(),
+          ),
         ),
         profileActionItem(
           context,
