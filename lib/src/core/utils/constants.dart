@@ -21,6 +21,7 @@ class EndPoints {
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';
   static const String countries = '/countries';
+  static const String payments = '/payments';
 }
 
 class ErrorCode {

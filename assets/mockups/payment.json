@@ -1,0 +1,33 @@
+{
+    "message": "",
+    "status": 0,
+    "data": {
+      "payments": [
+        {
+            "id": 0,
+            "display_name": "PayPal",
+            "status": "Connected",
+            "img": "https://banner2.cleanpng.com/20180823/jfo/kisspng-paypal-logo-brand-font-payment-paypal-logo-icon-paypal-icon-logo-png-and-vecto-5b7f273deebfa6.7493516515350597739779.jpg"
+        },
+        {
+            "id": 1,
+            "display_name": "Google Pay",
+            "status": "Connected",
+            "img": "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+        },
+        {
+            "id": 2,
+            "display_name": "Apple Pay",
+            "status": "Connected",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
+        },
+        {
+            "id": 3,
+            "display_name": "**** **** **** **** 4679",
+            "status": "Connected",
+            "img" : "https://w7.pngwing.com/pngs/305/373/png-transparent-logo-mastercard-font-solar-home-text-orange-logo-thumbnail.png"
+        }
+      ]
+    }
+  }
+  
