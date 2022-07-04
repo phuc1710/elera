@@ -11,8 +11,8 @@ import 'email_input.dart';
 import 'password_input.dart';
 import 'title_text.dart';
 
-class ScaffoldBody extends StatelessWidget {
-  const ScaffoldBody({Key? key}) : super(key: key);
+class SignUpBody extends StatelessWidget {
+  const SignUpBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
