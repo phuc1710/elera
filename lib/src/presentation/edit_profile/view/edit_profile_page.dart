@@ -10,6 +10,7 @@ import '../../widgets/base_appbar.dart';
 import '../../widgets/base_bottom_sheet.dart';
 import '../../widgets/base_button.dart';
 import '../bloc/edit_profile_bloc.dart';
+import '../widgets/phone_textfield.dart';
 import '../widgets/profile_textfield.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -86,8 +87,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   Widget buildBody(BuildContext context, EditProfileDataModel? data) {
     return SizedBox(
-      height: double.maxFinite,
-      width: double.maxFinite,
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -108,17 +107,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 icon: const Icon(Icons.check_box_outlined),
               ),
               const SizedBox(height: 20),
-              ProfileTextField(
-                controller: countryController,
-                onTap: () => showModalCountries(
-                  context,
-                  countries: data?.countries ?? [],
-                ),
-                readOnly: true,
-                icon: const Icon(Icons.arrow_drop_down),
-              ),
+              buildCountriesDropDown(context, data),
               const SizedBox(height: 20),
-              ProfileTextField(controller: phoneController),
+              PhoneTextField(
+                controller: phoneController,
+                countries: data?.countries,
+              ),
               const SizedBox(height: 20),
               ProfileTextField(
                 controller: genderController,
@@ -134,6 +128,21 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget buildCountriesDropDown(
+    BuildContext context,
+    EditProfileDataModel? data,
+  ) {
+    return ProfileTextField(
+      controller: countryController,
+      onTap: () => showModalCountries(
+        context,
+        countries: data?.countries ?? [],
+      ),
+      readOnly: true,
+      icon: const Icon(Icons.arrow_drop_down),
     );
   }
 
