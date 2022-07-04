@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/params/appbar_params.dart';
+import '../../../core/utils/alert.dart';
+import '../../../data/models/edit_profile/edit_profile_response_model.dart';
 import '../../../data/models/profile/profile_response_model.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
+import '../bloc/edit_profile_bloc.dart';
 import '../widgets/profile_textfield.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -45,54 +49,76 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(
-        AppBarParams(context, title: 'Edit Profile'),
+    return BlocProvider(
+      create: (context) => EditProfileBloc()..add(EditProfileStarted()),
+      child: Scaffold(
+        appBar: buildAppBar(
+          AppBarParams(context, title: 'Edit Profile'),
+        ),
+        body: BlocConsumer<EditProfileBloc, EditProfileState>(
+          listener: (context, state) {
+            if (state is EditProfileFailure) {
+              Alert.showAlert(context, state.msg);
+            }
+          },
+          builder: (context, state) {
+            if (state is EditProfileInProgress) {
+              return const Center(child: CircularProgressIndicator());
+            }
+
+            if (state is EditProfileLoadSuccess) {
+              return buildBody(context, state.data);
+            }
+
+            return const Center(child: Text('chưa có nội dung'));
+          },
+        ),
       ),
-      body: SizedBox(
-        height: double.maxFinite,
-        width: double.maxFinite,
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Column(
-              children: [
-                const SizedBox(height: 30),
-                ProfileTextField(controller: fullNameController),
-                const SizedBox(height: 15),
-                ProfileTextField(controller: shortNameController),
-                const SizedBox(height: 15),
-                ProfileTextField(
-                  controller: dobController,
-                  icon: const Icon(Icons.calendar_month_outlined),
-                ),
-                const SizedBox(height: 15),
-                ProfileTextField(
-                  controller: emailController,
-                  icon: const Icon(Icons.check_box_outlined),
-                ),
-                const SizedBox(height: 15),
-                ProfileTextField(
-                  controller: countryController,
-                  icon: const Icon(
-                    Icons.arrow_drop_down,
-                  ),
-                ),
-                const SizedBox(height: 15),
-                ProfileTextField(controller: phoneController),
-                const SizedBox(height: 15),
-                ProfileTextField(
-                  controller: genderController,
-                  icon: const Icon(Icons.arrow_drop_down),
-                ),
-                const SizedBox(height: 15),
-                ProfileTextField(controller: jobController),
-                const SizedBox(height: 30),
-                buildUpdateButton(context),
-                const SizedBox(height: 30),
-              ],
-            ),
+    );
+  }
+
+  Widget buildBody(BuildContext context, EditProfileDataModel? data) {
+    return SizedBox(
+      height: double.maxFinite,
+      width: double.maxFinite,
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            children: [
+              const SizedBox(height: 30),
+              ProfileTextField(controller: fullNameController),
+              const SizedBox(height: 20),
+              ProfileTextField(controller: shortNameController),
+              const SizedBox(height: 20),
+              ProfileTextField(
+                controller: dobController,
+                icon: const Icon(Icons.calendar_month_outlined),
+              ),
+              const SizedBox(height: 20),
+              ProfileTextField(
+                controller: emailController,
+                icon: const Icon(Icons.check_box_outlined),
+              ),
+              const SizedBox(height: 20),
+              ProfileTextField(
+                controller: countryController,
+                icon: const Icon(Icons.arrow_drop_down),
+              ),
+              const SizedBox(height: 20),
+              ProfileTextField(controller: phoneController),
+              const SizedBox(height: 20),
+              ProfileTextField(
+                controller: genderController,
+                icon: const Icon(Icons.arrow_drop_down),
+              ),
+              const SizedBox(height: 20),
+              ProfileTextField(controller: jobController),
+              const SizedBox(height: 40),
+              buildUpdateButton(context),
+              const SizedBox(height: 35),
+            ],
           ),
         ),
       ),
