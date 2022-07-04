@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/utils/snackbar.dart';
+import '../../../../core/utils/utils.dart';
 import '../../../account_setup/fill_your_profile/views/fill_your_profile.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
@@ -30,8 +30,7 @@ class _SignUpBodyState extends State<SignUpBody> {
     return BlocConsumer<SignUpBloc, SignUpState>(
       listener: (context, state) {
         if (state is SignUpFailed) {
-          AppSnackBar(message: state.error ?? 'An error occurred')
-              .show(context);
+          Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignUpSuccess) {
           Navigator.of(context).pushReplacement<dynamic, Function>(

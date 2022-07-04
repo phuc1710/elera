@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/utils/snackbar.dart';
+import '../../../../core/utils/utils.dart';
 import '../../most_popular_courses/views/most_popular_courses_view.dart';
 import '../../top_mentors/views/top_mentors_view.dart';
 import '../bloc/home_bloc.dart';
@@ -79,9 +79,7 @@ class HomeTabView extends StatelessWidget {
               BlocConsumer<HomeBloc, HomeState>(
                 listener: (context, state) {
                   if (state is HomeCourseFailed) {
-                    AppSnackBar(
-                      message: state.message ?? 'An error occurred',
-                    ).show(context);
+                    Utils.showAppSnackBar(context, state.message);
                   }
                 },
                 builder: (context, state) {

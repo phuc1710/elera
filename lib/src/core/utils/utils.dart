@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class Utils {
@@ -7,5 +8,16 @@ class Utils {
       final license = await rootBundle.loadString('google_fonts/OFL.txt');
       yield LicenseEntryWithLineBreaks(['google_fonts'], license);
     });
+  }
+
+  static void showAppSnackBar(BuildContext context, String? message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message ?? 'An error occurred',
+          style: Theme.of(context).textTheme.labelSmall,
+        ),
+      ),
+    );
   }
 }
