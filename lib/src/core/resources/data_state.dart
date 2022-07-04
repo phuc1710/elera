@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+import '../nd_network/nd_network.dart';
 
 abstract class DataState<T> {
   const DataState({this.data, this.error});

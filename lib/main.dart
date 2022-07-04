@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'src/config/theme/app_theme.dart';
+import 'src/core/utils/utils.dart';
+import 'src/injector.dart';
 import 'src/presentation/onboarding/intro/views/intro_view.dart';
 
-void main() {
+Future<void> main() async {
+  Utils.addGoogleFontsLicense();
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDependencies();
+
   runApp(const App());
 }
 

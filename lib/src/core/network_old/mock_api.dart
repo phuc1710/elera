@@ -6,7 +6,6 @@ import '../utils/constants.dart';
 
 class MockApi {
   static Map<String, String> mapMockApi = {
-    EndPoints.login: 'login',
     EndPoints.course: 'course',
   };
 

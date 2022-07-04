@@ -4,7 +4,6 @@ import '../widgets/scaffold_body.dart';
 
 class LetsIn extends StatelessWidget {
   const LetsIn({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(

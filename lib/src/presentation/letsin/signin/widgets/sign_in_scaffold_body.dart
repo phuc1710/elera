@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/utils/snackbar.dart';
+import '../../../../core/utils/utils.dart';
 import '../../../home_and_action_menu/home/views/home_view.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
 import '../../signup/views/signup_view.dart';
@@ -16,9 +16,7 @@ import 'forgot_password_button.dart';
 import 'sign_in_button.dart';
 
 class SignInScaffoldBody extends StatefulWidget {
-  const SignInScaffoldBody({
-    Key? key,
-  }) : super(key: key);
+  const SignInScaffoldBody({Key? key}) : super(key: key);
 
   @override
   State<SignInScaffoldBody> createState() => _SignInScaffoldBodyState();
@@ -33,8 +31,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
     return BlocConsumer<SignInBloc, SignInState>(
       listener: (context, state) {
         if (state is SignInFailed) {
-          AppSnackBar(message: state.message ?? 'An error occurred')
-              .show(context);
+          Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignInSuccess) {
           Navigator.pushAndRemoveUntil<Object?>(

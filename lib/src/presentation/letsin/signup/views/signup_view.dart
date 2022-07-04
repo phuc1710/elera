@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widgets/scaffold_body.dart';
+import '../../../../injector.dart';
+import '../bloc/signup_bloc.dart';
+import '../widgets/sign_up_body.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({Key? key}) : super(key: key);
@@ -19,7 +22,10 @@ class SignUpView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const ScaffoldBody(),
+          body: BlocProvider<SignUpBloc>(
+            create: (context) => injector(),
+            child: const SignUpBody(),
+          ),
         ),
       ),
     );
