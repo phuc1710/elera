@@ -17,7 +17,7 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(
-        AppBarParams(context, title: 'Edit Profile'),
+        AppBarParams(context, title: 'Notification'),
       ),
       body: SizedBox(
         child: SingleChildScrollView(

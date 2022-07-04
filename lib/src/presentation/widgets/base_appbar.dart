@@ -4,7 +4,7 @@ import '../../core/params/appbar_params.dart';
 
 AppBar buildAppBar(AppBarParams params) {
   return AppBar(
-    backgroundColor: Colors.white,
+    backgroundColor: params.backgroundColor,
     elevation: 0,
     title: Text(
       params.title ?? '',
