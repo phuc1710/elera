@@ -1,7 +1,5 @@
 // Project imports:
-import 'api_loyalty_provider.dart';
 import 'api_provider.dart';
-import 'api_upload_provider.dart';
 import 'end_points.dart';
 import 'environment.dart';
 
@@ -43,14 +41,6 @@ class Network {
       enableLogger: enableLogger,
       getHeaders: getHeadersApiProvider,
     );
-    uploadProvider = UploadProvider(
-      baseUrl: StaticEndPoints.baseUrl,
-      enableLogger: enableLogger,
-    );
-    loyaltyProvider = LoyaltyProvider(
-      baseUrl: LoyaltyEndPoints.sandboxLoyaltyBaseUrl,
-      enableLogger: enableLogger,
-    );
   }
 
   Network._production({
@@ -59,17 +49,9 @@ class Network {
     required this.getHeadersApiProvider,
   }) {
     apiProvider = ApiProvider(
-      baseUrl: EndPoints.productionBaseUrl,
+      baseUrl: EndPoints.baseUrl,
       enableLogger: enableLogger,
       getHeaders: getHeadersApiProvider,
-    );
-    uploadProvider = UploadProvider(
-      baseUrl: StaticEndPoints.baseUrl,
-      enableLogger: enableLogger,
-    );
-    loyaltyProvider = LoyaltyProvider(
-      baseUrl: LoyaltyEndPoints.productionLoyaltyBaseUrl,
-      enableLogger: enableLogger,
     );
   }
   final bool enableLogger;
@@ -79,8 +61,4 @@ class Network {
   final Future<Map<String, dynamic>> Function() getHeadersApiProvider;
 
   late ApiProvider apiProvider;
-
-  late UploadProvider uploadProvider;
-
-  late LoyaltyProvider loyaltyProvider;
 }
