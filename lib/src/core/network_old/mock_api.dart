@@ -11,6 +11,7 @@ class MockApi {
     EndPoints.profile: 'profile',
     EndPoints.countries: 'edit_profile',
     EndPoints.payments: 'payment',
+    EndPoints.addNewCard: 'profile',
   };
 
   static Future<Map<String, dynamic>?> get(String endpoint) async {

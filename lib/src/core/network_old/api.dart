@@ -8,6 +8,7 @@ import '../../data/models/payment/payment_response_model.dart';
 import '../../data/models/profile/profile_response_model.dart';
 import '../../data/models/sign_in/sign_in_response_model.dart';
 import '../params/get_params.dart';
+import '../params/new_card_params.dart';
 import '../params/post_params.dart';
 import '../params/update_profile_params.dart';
 import '../utils/constants.dart';
@@ -161,6 +162,31 @@ class Api {
         ),
       );
       final result = PaymentResponseModel.fromJson(res!);
+      handleExceptionCase(result.status);
+
+      return result;
+    } catch (e) {
+      log(e.toString());
+
+      return null;
+    }
+  }
+
+  static Future<GeneralResponseModel?> addNewCard(NewCardParams params) async {
+    try {
+      final canMakeRequest = await checkConnection();
+      if (!canMakeRequest) {
+        return GeneralResponseModel.fromJson(noConnectionRes);
+      }
+      final res = await http.postRequest(
+        PostParams(
+          EndPoints.addNewCard,
+          queryParameters: params.toJson(),
+          isMockup: true, // set false if call api,
+          headers: await getHeaders(),
+        ),
+      );
+      final result = GeneralResponseModel.fromJson(res!);
       handleExceptionCase(result.status);
 
       return result;

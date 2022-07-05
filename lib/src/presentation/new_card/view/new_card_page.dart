@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/params/appbar_params.dart';
+import '../../../core/params/new_card_params.dart';
+import '../../../core/utils/alert.dart';
 import '../../edit_profile/widgets/profile_textfield.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
+import '../bloc/new_card_bloc.dart';
 
 class NewCardPage extends StatefulWidget {
   const NewCardPage({Key? key}) : super(key: key);
@@ -20,49 +24,66 @@ class _NewCardPageState extends State<NewCardPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[100],
-      appBar: buildAppBar(
-        AppBarParams(
-          context,
-          title: 'Add New Card',
-          backgroundColor: Colors.white,
-          actions: [
-            const Icon(Icons.more_horiz_outlined, color: Colors.black),
-          ],
+    return BlocProvider(
+      create: (context) => NewCardBloc(),
+      child: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: buildAppBar(
+          AppBarParams(
+            context,
+            title: 'Add New Card',
+            backgroundColor: Colors.white,
+            actions: [
+              const Icon(Icons.more_horiz_outlined, color: Colors.black),
+            ],
+          ),
+        ),
+        body: BlocConsumer<NewCardBloc, NewCardState>(
+          listener: (context, state) {
+            if (state is NewCardFailure) {
+              Alert.showAlert(context, state.msg);
+            }
+            if (state is NewCardAddSuccess) {
+              Alert.showAlert(context, state.msg);
+            }
+          },
+          builder: (context, state) => buildBody(context),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-        child: Stack(
-          children: [
-            SizedBox(
-              height: double.maxFinite,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Image.network(
-                      'https://lcus1storage.azureedge.net/web/v3/images/global/cardhover/TC_Front-400x252.png',
-                      width: double.maxFinite,
-                    ),
-                    buildInputField(
-                      context,
-                      title: 'Card Name',
-                      controller: cardNameController,
-                    ),
-                    buildInputField(
-                      context,
-                      title: 'Card Number',
-                      controller: cardNumberController,
-                    ),
-                    buildMoreInputs(context),
-                  ],
-                ),
+    );
+  }
+
+  Widget buildBody(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+      child: Stack(
+        children: [
+          SizedBox(
+            height: double.maxFinite,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Image.network(
+                    'https://lcus1storage.azureedge.net/web/v3/images/global/cardhover/TC_Front-400x252.png',
+                    width: double.maxFinite,
+                  ),
+                  buildInputField(
+                    context,
+                    title: 'Card Name',
+                    controller: cardNameController,
+                  ),
+                  buildInputField(
+                    context,
+                    title: 'Card Number',
+                    controller: cardNumberController,
+                  ),
+                  buildMoreInputs(context),
+                ],
               ),
             ),
-            buildAddButton(context)
-          ],
-        ),
+          ),
+          buildAddButton(context)
+        ],
       ),
     );
   }
@@ -76,7 +97,18 @@ class _NewCardPageState extends State<NewCardPage> {
         title: 'Add New Card',
         titleColor: Colors.white,
         color: Colors.blue[700],
-        onTap: () {},
+        onTap: () {
+          context.read<NewCardBloc>().add(
+                NewCardAdded(
+                  NewCardParams(
+                    cardName: cardNameController.text,
+                    cardNumber: cardNumberController.text,
+                    expiryDate: expiryDateController.text,
+                    cvv: cvvController.text,
+                  ),
+                ),
+              );
+        },
       ),
     );
   }

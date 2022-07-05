@@ -19,6 +19,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     ProfileStarted event,
     Emitter<ProfileState> emit,
   ) async {
+    emit(ProfileInProgress());
     try {
       final res = await Api.getProfile();
       if (res?.status == StatusCode.success) {
