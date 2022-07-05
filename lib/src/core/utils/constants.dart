@@ -1,5 +1,7 @@
 class AppStrings {
   static const String materialAppTitle = 'E-Learning';
+
+  static const String getTitleWebView = 'window.document.title';
 }
 
 List<String> recentSearchList = [

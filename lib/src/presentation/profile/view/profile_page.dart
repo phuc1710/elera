@@ -9,6 +9,7 @@ import '../../language/view/language_page.dart';
 import '../../notification_settings/view/notification_settings_page.dart';
 import '../../payment/view/payment_page.dart';
 import '../../security/view/security_page.dart';
+import '../../webview/webview_page.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/logout_button.dart';
 import '../bloc/profile_bloc.dart';
@@ -223,7 +224,13 @@ class _ProfilePageState extends State<ProfilePage> {
           context,
           title: 'Privacy Policy',
           icon: Icons.lock,
-          onTap: () {},
+          onTap: () => pushScreen(
+            context,
+            const WebViewPage(
+              url:
+                  'https://cmapi.ngocdunggroup.com.vn/news/view?id=4a730df1-5d68-454c-99d2-4574f2f04154',
+            ),
+          ),
         ),
         profileActionItem(
           context,
