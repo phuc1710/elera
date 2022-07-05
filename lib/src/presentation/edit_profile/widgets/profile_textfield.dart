@@ -7,12 +7,14 @@ class ProfileTextField extends StatelessWidget {
     this.icon,
     this.onTap,
     this.readOnly = false,
+    this.hint,
   }) : super(key: key);
 
   final TextEditingController controller;
   final Widget? icon;
   final Function()? onTap;
   final bool readOnly;
+  final String? hint;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class ProfileTextField extends StatelessWidget {
           border: InputBorder.none,
           contentPadding: const EdgeInsets.all(15),
           suffixIcon: icon,
+          hintText: hint,
         ),
         style: Theme.of(context)
             .textTheme

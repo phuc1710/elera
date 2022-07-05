@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/payment/payment_response_model.dart';
+import '../../new_card/view/new_card_page.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
 import '../bloc/payment_bloc.dart';
@@ -87,7 +88,13 @@ class _PaymentPageState extends State<PaymentPage> {
         title: 'Add New Card',
         titleColor: Colors.white,
         color: Colors.blue[700],
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push<dynamic>(
+            MaterialPageRoute<dynamic>(
+              builder: (context) => const NewCardPage(),
+            ),
+          );
+        },
       ),
     );
   }
