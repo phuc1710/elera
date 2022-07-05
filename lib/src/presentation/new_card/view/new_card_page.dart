@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/params/appbar_params.dart';
+import '../../../core/params/date_picker_param.dart';
 import '../../../core/params/new_card_params.dart';
 import '../../../core/utils/alert.dart';
+import '../../../core/utils/date_picker.dart';
+import '../../../core/utils/intl_helper.dart';
 import '../../edit_profile/widgets/profile_textfield.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
@@ -121,6 +124,7 @@ class _NewCardPageState extends State<NewCardPage> {
             context,
             title: 'Expiry Date',
             controller: expiryDateController,
+            onTap: () => showDatePicker(context),
             icon: const Icon(Icons.calendar_month),
           ),
         ),
@@ -141,6 +145,7 @@ class _NewCardPageState extends State<NewCardPage> {
     required TextEditingController controller,
     required String title,
     Widget? icon,
+    Function()? onTap,
   }) {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
@@ -161,9 +166,22 @@ class _NewCardPageState extends State<NewCardPage> {
           ProfileTextField(
             controller: controller,
             hint: 'Enter $title',
+            onTap: onTap,
+            readOnly: onTap != null,
             icon: icon,
           ),
         ],
+      ),
+    );
+  }
+
+  Future<void> showDatePicker(BuildContext context) {
+    return showDatePickerView(
+      context,
+      param: DatePickerParam(
+        controller: expiryDateController,
+        setModalState: setState,
+        dateFormat: IntlHelper.dateFormatter,
       ),
     );
   }
