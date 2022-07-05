@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector.dart';
+import '../bloc/fill_your_profile_bloc.dart';
 import '../widgets/fill_your_profile_body.dart';
 
 class FillYourProfileView extends StatelessWidget {
@@ -23,7 +26,10 @@ class FillYourProfileView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const FillYourProfileBody(),
+          body: BlocProvider<FillYourProfileBloc>(
+            create: (context) => injector(),
+            child: const FillYourProfileBody(),
+          ),
         ),
       ),
     );

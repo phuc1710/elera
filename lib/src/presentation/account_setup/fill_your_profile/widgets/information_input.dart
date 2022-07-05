@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 class InformationInput extends StatelessWidget {
   const InformationInput({
     Key? key,
-    required String hintText,
-    Widget? suffixIcon,
-    TextInputType? keyboardtype,
-  })  : _hintText = hintText,
-        _suffixIcon = suffixIcon,
-        _keyboardtype = keyboardtype,
-        super(key: key);
+    required this.hintText,
+    this.controller,
+    this.suffixIcon,
+    this.keyboardtype,
+  }) : super(key: key);
 
-  final String _hintText;
-  final Widget? _suffixIcon;
-  final TextInputType? _keyboardtype;
+  final String hintText;
+  final TextEditingController? controller;
+  final Widget? suffixIcon;
+  final TextInputType? keyboardtype;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +21,7 @@ class InformationInput extends StatelessWidget {
         vertical: MediaQuery.of(context).size.height * 0.01,
       ),
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius:
@@ -32,11 +32,11 @@ class InformationInput extends StatelessWidget {
             borderRadius:
                 BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
           ),
-          hintText: _hintText,
-          suffixIcon: _suffixIcon,
+          hintText: hintText,
+          suffixIcon: suffixIcon,
         ),
         style: Theme.of(context).textTheme.displaySmall,
-        keyboardType: _keyboardtype,
+        keyboardType: keyboardtype,
       ),
     );
   }

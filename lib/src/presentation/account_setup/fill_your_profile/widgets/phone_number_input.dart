@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'information_input.dart';
 
 class PhoneNumberInput extends StatefulWidget {
-  const PhoneNumberInput({Key? key}) : super(key: key);
+  const PhoneNumberInput({Key? key, required this.controller})
+      : super(key: key);
+
+  final TextEditingController controller;
 
   @override
   State<PhoneNumberInput> createState() => _PhoneNumberInputState();
@@ -38,7 +41,8 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.7,
-            child: const InformationInput(
+            child: InformationInput(
+              controller: widget.controller,
               hintText: 'Phone Number',
               keyboardtype: TextInputType.number,
             ),

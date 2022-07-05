@@ -2,12 +2,14 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
+import '../../core/params/fill_your_profile_request_params.dart';
 import '../../core/params/sign_in_request_params.dart';
 import '../../core/params/sign_up_request_params.dart';
 import '../../core/resources/data_state.dart';
 import '../../core/utils/extensions.dart';
 import '../../domain/repositories/user_repository.dart';
 import '../datasources/remote/user_api_service.dart';
+import '../models/fill_your_profile/fill_your_profile_response_model.dart';
 import '../models/sign_in/sign_in_response_model.dart';
 import '../models/sign_up/sign_up_response_model.dart';
 
@@ -40,6 +42,26 @@ class UserRepositoryImpl implements UserRepository {
   ) async {
     try {
       final httpResponse = await _userApiService.postSignUpRequest(
+        isMockup: true,
+        body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<FillYourProfileResponseModel>> postFillYourProfileRequest(
+    FillYourProfileRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.postFillYourProfileRequest(
         isMockup: true,
         body: params,
       );

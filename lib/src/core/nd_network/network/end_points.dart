@@ -5,4 +5,5 @@ class EndPoints {
   static const String baseUrl = '';
   static const String signIn = '/sign_in';
   static const String signUp = '/sign_up';
+  static const String fillYourProfile = '/fill_your_profile';
 }
