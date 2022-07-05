@@ -6,14 +6,14 @@ import '../widgets/main_action_button.dart';
 import '../widgets/phone_number_input.dart';
 import 'avatar.dart';
 
-class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({Key? key}) : super(key: key);
+class FillYourProfileBody extends StatefulWidget {
+  const FillYourProfileBody({Key? key}) : super(key: key);
 
   @override
-  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+  State<FillYourProfileBody> createState() => _FillYourProfileBodyState();
 }
 
-class _ScaffoldBodyState extends State<ScaffoldBody> {
+class _FillYourProfileBodyState extends State<FillYourProfileBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
