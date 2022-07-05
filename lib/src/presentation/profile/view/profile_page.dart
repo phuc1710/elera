@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../edit_profile/view/edit_profile_page.dart';
 import '../../help_center/view/helper_center_page.dart';
+import '../../language/view/language_page.dart';
 import '../../notification_settings/view/notification_settings_page.dart';
 import '../../payment/view/payment_page.dart';
 import '../../security/view/security_page.dart';
@@ -191,7 +192,10 @@ class _ProfilePageState extends State<ProfilePage> {
           title: 'Language',
           icon: Icons.language,
           value: 'English(US)',
-          onTap: () {},
+          onTap: () => pushScreen(
+            context,
+            const LanguagePage(),
+          ),
         ),
         ListTile(
           leading: const Icon(Icons.dark_mode_outlined, size: 35),

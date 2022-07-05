@@ -12,6 +12,7 @@ class MockApi {
     EndPoints.countries: 'edit_profile',
     EndPoints.payments: 'payment',
     EndPoints.addNewCard: 'profile',
+    EndPoints.languages: 'languages',
   };
 
   static Future<Map<String, dynamic>?> get(String endpoint) async {

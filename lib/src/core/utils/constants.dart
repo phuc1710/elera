@@ -23,6 +23,7 @@ class EndPoints {
   static const String countries = '/countries';
   static const String payments = '/payments';
   static const String addNewCard = '/add_new_card';
+  static const String languages = '/language';
 }
 
 class ErrorCode {
