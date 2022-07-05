@@ -5,6 +5,7 @@ class BaseButton extends StatelessWidget {
     Key? key,
     this.title,
     this.color,
+    this.borderColor,
     this.style,
     this.borderRadius,
     this.titleColor,
@@ -14,6 +15,7 @@ class BaseButton extends StatelessWidget {
   final String? title;
   final Color? color;
   final Color? titleColor;
+  final Color? borderColor;
   final TextStyle? style;
   final double? borderRadius;
   final Function()? onTap;
@@ -26,11 +28,15 @@ class BaseButton extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 200, minWidth: 100),
       decoration: BoxDecoration(
         color: color,
+        border:
+            Border.all(color: borderColor ?? color ?? const Color(0xFF000000)),
         borderRadius: BorderRadius.circular(borderRadius ?? 30),
       ),
       child: Material(
+        borderRadius: BorderRadius.circular(borderRadius ?? 30),
         color: Colors.transparent,
         child: InkWell(
+          borderRadius: BorderRadius.circular(borderRadius ?? 30),
           onTap: onTap,
           child: Center(
             child: Text(

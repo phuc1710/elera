@@ -248,13 +248,13 @@ class Api {
     }
   }
 
-  static Future<GeneralResponseModel?> inviteFriend(
+  static Future<FriendResponseModel?> inviteFriend(
     FriendInviteParams params,
   ) async {
     try {
       final canMakeRequest = await checkConnection();
       if (!canMakeRequest) {
-        return GeneralResponseModel.fromJson(noConnectionRes);
+        return FriendResponseModel.fromJson(noConnectionRes);
       }
       final res = await http.postRequest(
         PostParams(
@@ -264,7 +264,7 @@ class Api {
           headers: await getHeaders(),
         ),
       );
-      final result = GeneralResponseModel.fromJson(res!);
+      final result = FriendResponseModel.fromJson(res!);
       handleExceptionCase(result.status);
 
       return result;

@@ -44,8 +44,8 @@ class FriendDataModel extends Equatable {
 }
 
 @JsonSerializable()
-class FriendModel extends Equatable {
-  const FriendModel({
+class FriendModel {
+  FriendModel({
     this.id,
     this.name,
     this.img,
@@ -58,19 +58,10 @@ class FriendModel extends Equatable {
 
   Map<String, dynamic> toJson() => _$FriendModelToJson(this);
 
-  final String? id;
-  final String? img;
-  final String? name;
-  final String? phone;
+  String? id;
+  String? img;
+  String? name;
+  String? phone;
   @JsonKey(name: 'is_invited', defaultValue: false)
-  final bool isInvited;
-
-  @override
-  List<Object?> get props => [
-        id,
-        img,
-        name,
-        phone,
-        isInvited,
-      ];
+  bool isInvited;
 }
