@@ -2,12 +2,14 @@ import 'dart:developer';
 
 import '../../data/models/course/course_response_model.dart';
 import '../../data/models/edit_profile/edit_profile_response_model.dart';
+import '../../data/models/friends/friend_response_model.dart';
 import '../../data/models/general_response/general_response_model.dart';
 import '../../data/models/helper_center/helper_center_response_model.dart';
 import '../../data/models/language/language_response_model.dart';
 import '../../data/models/payment/payment_response_model.dart';
 import '../../data/models/profile/profile_response_model.dart';
 import '../../data/models/sign_in/sign_in_response_model.dart';
+import '../params/friend_invite_params.dart';
 import '../params/get_params.dart';
 import '../params/new_card_params.dart';
 import '../params/post_params.dart';
@@ -212,6 +214,57 @@ class Api {
         ),
       );
       final result = LanguageResponseModel.fromJson(res!);
+      handleExceptionCase(result.status);
+
+      return result;
+    } catch (e) {
+      log(e.toString());
+
+      return null;
+    }
+  }
+
+  static Future<FriendResponseModel?> getInviteFriends() async {
+    try {
+      final canMakeRequest = await checkConnection();
+      if (!canMakeRequest) {
+        return FriendResponseModel.fromJson(noConnectionRes);
+      }
+      final res = await http.getRequest(
+        GetParams(
+          EndPoints.inviteFriends,
+          isMockup: true, // set false if call api,
+          headers: await getHeaders(),
+        ),
+      );
+      final result = FriendResponseModel.fromJson(res!);
+      handleExceptionCase(result.status);
+
+      return result;
+    } catch (e) {
+      log(e.toString());
+
+      return null;
+    }
+  }
+
+  static Future<GeneralResponseModel?> inviteFriend(
+    FriendInviteParams params,
+  ) async {
+    try {
+      final canMakeRequest = await checkConnection();
+      if (!canMakeRequest) {
+        return GeneralResponseModel.fromJson(noConnectionRes);
+      }
+      final res = await http.postRequest(
+        PostParams(
+          EndPoints.inviteFriends,
+          queryParameters: params.toJson(),
+          isMockup: true, // set false if call api,
+          headers: await getHeaders(),
+        ),
+      );
+      final result = GeneralResponseModel.fromJson(res!);
       handleExceptionCase(result.status);
 
       return result;

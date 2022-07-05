@@ -26,6 +26,7 @@ class EndPoints {
   static const String payments = '/payments';
   static const String addNewCard = '/add_new_card';
   static const String languages = '/language';
+  static const String inviteFriends = '/invite_friends';
 }
 
 class ErrorCode {

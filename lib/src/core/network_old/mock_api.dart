@@ -13,6 +13,7 @@ class MockApi {
     EndPoints.payments: 'payment',
     EndPoints.addNewCard: 'profile',
     EndPoints.languages: 'languages',
+    EndPoints.inviteFriends: 'invite_friends',
   };
 
   static Future<Map<String, dynamic>?> get(String endpoint) async {
