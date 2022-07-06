@@ -7,14 +7,14 @@ import '../../set_your_fingerprint/views/set_your_fingerprint.dart';
 import '../bloc/create_new_pin_bloc.dart';
 import 'pin_code_input.dart';
 
-class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({Key? key}) : super(key: key);
+class CreateNewPinBody extends StatefulWidget {
+  const CreateNewPinBody({Key? key}) : super(key: key);
 
   @override
-  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+  State<CreateNewPinBody> createState() => _CreateNewPinBodyState();
 }
 
-class _ScaffoldBodyState extends State<ScaffoldBody> {
+class _CreateNewPinBodyState extends State<CreateNewPinBody> {
   final TextEditingController pinController = TextEditingController();
 
   @override

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injector.dart';
 import '../bloc/create_new_pin_bloc.dart';
-import '../widgets/scaffold_body.dart';
+import '../widgets/create_new_pin_body.dart';
 
 class CreateNewPinView extends StatelessWidget {
   const CreateNewPinView({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class CreateNewPinView extends StatelessWidget {
           ),
           body: BlocProvider<CreateNewPinBloc>(
             create: (context) => injector(),
-            child: const ScaffoldBody(),
+            child: const CreateNewPinBody(),
           ),
         ),
       ),
