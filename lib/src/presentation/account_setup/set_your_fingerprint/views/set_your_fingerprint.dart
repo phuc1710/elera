@@ -11,6 +11,7 @@ class SetYourFingerprintView extends StatelessWidget {
       onTap: () {
         FocusScope.of(context).unfocus();
       },
+      // TODO(phucndh): implement fingerprint flow
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
