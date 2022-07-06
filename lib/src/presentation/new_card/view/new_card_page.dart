@@ -7,6 +7,7 @@ import '../../../core/params/new_card_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../core/utils/date_picker.dart';
 import '../../../core/utils/intl_helper.dart';
+import '../../../injector/injector.dart';
 import '../../edit_profile/widgets/profile_textfield.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
@@ -28,7 +29,7 @@ class _NewCardPageState extends State<NewCardPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NewCardBloc(),
+      create: (context) => injector<NewCardBloc>(),
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: buildAppBar(

@@ -28,10 +28,12 @@ class ApiProvider {
 
     //----------------- LOGGING -------------------//
     if (enableLogger) {
-      apiDio.interceptors.add(PrettyDioLogger(
-        requestBody: enableLogger,
-        requestHeader: enableLogger,
-      ),);
+      apiDio.interceptors.add(
+        PrettyDioLogger(
+          requestBody: enableLogger,
+          requestHeader: enableLogger,
+        ),
+      );
     }
 
     //---------------- MOCKUP -------------------//

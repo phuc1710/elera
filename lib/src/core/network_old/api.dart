@@ -1,20 +1,11 @@
 import 'dart:developer';
 
 import '../../data/models/course/course_response_model.dart';
-import '../../data/models/edit_profile/edit_profile_response_model.dart';
-import '../../data/models/friends/friend_response_model.dart';
-import '../../data/models/general_response/general_response_model.dart';
 import '../../data/models/helper_center/helper_center_response_model.dart';
-import '../../data/models/language/language_response_model.dart';
 import '../../data/models/payment/payment_response_model.dart';
-import '../../data/models/profile/profile_response_model.dart';
-import '../../data/models/sign_in/sign_in_response_model.dart';
-import '../params/friend_invite_params.dart';
+import '../nd_network/network/end_points.dart';
 import '../params/get_params.dart';
-import '../params/new_card_params.dart';
-import '../params/post_params.dart';
-import '../params/update_profile_params.dart';
-import '../utils/constants.dart';
+
 import 'api_provider.dart';
 import 'network_helper.dart';
 
@@ -76,81 +67,6 @@ class Api {
     }
   }
 
-  static Future<ProfileResponseModel?> getProfile() async {
-    try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return ProfileResponseModel.fromJson(noConnectionRes);
-      }
-      final res = await http.getRequest(
-        GetParams(
-          EndPoints.profile,
-          isMockup: true, // set false if call api,
-          headers: await getHeaders(),
-        ),
-      );
-      final result = ProfileResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
-
-      return result;
-    } catch (e) {
-      log(e.toString());
-
-      return null;
-    }
-  }
-
-  static Future<EditProfileResponseModel?> getCountries() async {
-    try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return EditProfileResponseModel.fromJson(noConnectionRes);
-      }
-      final res = await http.getRequest(
-        GetParams(
-          EndPoints.countries,
-          isMockup: true, // set false if call api,
-          headers: await getHeaders(),
-        ),
-      );
-      final result = EditProfileResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
-
-      return result;
-    } catch (e) {
-      log(e.toString());
-
-      return null;
-    }
-  }
-
-  static Future<GeneralResponseModel?> updateProfile(
-    UpdateProfileParams params,
-  ) async {
-    try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return GeneralResponseModel.fromJson(noConnectionRes);
-      }
-      final res = await http.postRequest(
-        PostParams(
-          EndPoints.profile,
-          queryParameters: params.toJson(),
-          isMockup: true, // set false if call api,
-          headers: await getHeaders(),
-        ),
-      );
-      final result = GeneralResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
-
-      return result;
-    } catch (e) {
-      log(e.toString());
-
-      return null;
-    }
-  }
-
   static Future<PaymentResponseModel?> getPayments() async {
     try {
       final canMakeRequest = await checkConnection();
@@ -165,106 +81,6 @@ class Api {
         ),
       );
       final result = PaymentResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
-
-      return result;
-    } catch (e) {
-      log(e.toString());
-
-      return null;
-    }
-  }
-
-  static Future<GeneralResponseModel?> addNewCard(NewCardParams params) async {
-    try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return GeneralResponseModel.fromJson(noConnectionRes);
-      }
-      final res = await http.postRequest(
-        PostParams(
-          EndPoints.addNewCard,
-          queryParameters: params.toJson(),
-          isMockup: true, // set false if call api,
-          headers: await getHeaders(),
-        ),
-      );
-      final result = GeneralResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
-
-      return result;
-    } catch (e) {
-      log(e.toString());
-
-      return null;
-    }
-  }
-
-  static Future<LanguageResponseModel?> getLanguages() async {
-    try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return LanguageResponseModel.fromJson(noConnectionRes);
-      }
-      final res = await http.getRequest(
-        GetParams(
-          EndPoints.languages,
-          isMockup: true, // set false if call api,
-          headers: await getHeaders(),
-        ),
-      );
-      final result = LanguageResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
-
-      return result;
-    } catch (e) {
-      log(e.toString());
-
-      return null;
-    }
-  }
-
-  static Future<FriendResponseModel?> getInviteFriends() async {
-    try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return FriendResponseModel.fromJson(noConnectionRes);
-      }
-      final res = await http.getRequest(
-        GetParams(
-          EndPoints.inviteFriends,
-          isMockup: true, // set false if call api,
-          headers: await getHeaders(),
-        ),
-      );
-      final result = FriendResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
-
-      return result;
-    } catch (e) {
-      log(e.toString());
-
-      return null;
-    }
-  }
-
-  static Future<FriendResponseModel?> inviteFriend(
-    FriendInviteParams params,
-  ) async {
-    try {
-      final canMakeRequest = await checkConnection();
-      if (!canMakeRequest) {
-        return FriendResponseModel.fromJson(noConnectionRes);
-      }
-      final res = await http.postRequest(
-        PostParams(
-          EndPoints.inviteFriends,
-          queryParameters: params.toJson(),
-          isMockup: true, // set false if call api,
-          headers: await getHeaders(),
-        ),
-      );
-      final result = FriendResponseModel.fromJson(res!);
       handleExceptionCase(result.status);
 
       return result;

@@ -13,8 +13,7 @@ SignInRequestParams _$SignInRequestParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$SignInRequestParamsToJson(
-  SignInRequestParams instance,
-) =>
+        SignInRequestParams instance) =>
     <String, dynamic>{
       'email': instance.email,
       'password': instance.password,

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/payment/payment_response_model.dart';
+import '../../../injector/injector.dart';
 import '../../new_card/view/new_card_page.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
@@ -21,7 +22,7 @@ class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PaymentBloc()..add(PaymentStarted()),
+      create: (context) => injector<PaymentBloc>()..add(PaymentStarted()),
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: buildAppBar(

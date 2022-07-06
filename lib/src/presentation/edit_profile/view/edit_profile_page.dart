@@ -10,6 +10,7 @@ import '../../../core/utils/intl_helper.dart';
 import '../../../data/models/edit_profile/country_model.dart';
 import '../../../data/models/edit_profile/edit_profile_response_model.dart';
 import '../../../data/models/profile/profile_response_model.dart';
+import '../../../injector/injector.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_bottom_sheet.dart';
 import '../../widgets/base_button.dart';
@@ -62,7 +63,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => EditProfileBloc()..add(EditProfileStarted()),
+      create: (context) =>
+          injector<EditProfileBloc>()..add(EditProfileStarted()),
       child: Scaffold(
         appBar: buildAppBar(
           AppBarParams(context, title: 'Edit Profile'),

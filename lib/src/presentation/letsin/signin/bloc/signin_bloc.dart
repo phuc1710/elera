@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../core/params/sign_in_request_params.dart';
 import '../../../../core/resources/api_error.dart';
@@ -11,6 +12,7 @@ import '../../../../domain/usecases/sign_in_usecase.dart';
 part 'signin_event.dart';
 part 'signin_state.dart';
 
+@injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   SignInBloc(this.signInUseCase) : super(SignInInitial()) {
     on<SignInSubmitted>(_onSignInSubmitted);

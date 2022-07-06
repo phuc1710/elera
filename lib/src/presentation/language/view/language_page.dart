@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/language/language_response_model.dart';
+import '../../../injector/injector.dart';
 import '../../widgets/base_appbar.dart';
 import '../bloc/language_bloc.dart';
 
@@ -20,7 +21,7 @@ class _LanguagePageState extends State<LanguagePage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LanguageBloc()..add(LanguageStarted()),
+      create: (context) => injector<LanguageBloc>()..add(LanguageStarted()),
       child: Scaffold(
         appBar: buildAppBar(
           AppBarParams(

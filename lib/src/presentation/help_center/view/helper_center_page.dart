@@ -7,6 +7,7 @@ import '../../../core/enums/helper_contact_type.dart';
 import '../../../data/models/api_models.dart';
 
 import '../../../core/params/appbar_params.dart';
+import '../../../injector/injector.dart';
 import '../../home_and_action_menu/home/widgets/search_bar.dart';
 import '../../widgets/base_appbar.dart';
 import '../bloc/helper_center_bloc.dart';
@@ -44,7 +45,8 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
           ),
         ),
         body: BlocProvider(
-          create: (context) => HelperCenterBloc()..add(HelperCenterStarted()),
+          create: (context) =>
+              injector<HelperCenterBloc>()..add(HelperCenterStarted()),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             width: double.maxFinite,

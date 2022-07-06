@@ -1,13 +1,23 @@
 // Project imports:
 import '../network/end_points.dart';
 
-final Map<String, String> mapMockApiForGetRequest = {};
+final Map<String, String> mapMockApiForGetRequest = {
+  EndPoints.payments: 'payment',
+  EndPoints.helperCenter: 'helper_center',
+  EndPoints.profile: 'profile',
+  EndPoints.countries: 'edit_profile',
+  EndPoints.languages: 'languages',
+  EndPoints.inviteFriends: 'invite_friends',
+};
 
 final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.signIn: 'sign_in',
   EndPoints.signUp: 'sign_up',
   EndPoints.fillYourProfile: 'fill_your_profile',
   EndPoints.createNewPin: 'create_new_pin',
+  EndPoints.profile: 'profile',
+  EndPoints.addNewCard: 'profile',
+  EndPoints.inviteFriends: 'invite_friends',
 };
 
 String? getJsonNameForGetRequest(

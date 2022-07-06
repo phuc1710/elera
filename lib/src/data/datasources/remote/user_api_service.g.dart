@@ -16,58 +16,42 @@ class _UserApiService implements UserApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<SignInResponseModel>> postSignInRequest({
-    isMockup,
-    body,
-  }) async {
+  Future<HttpResponse<SignInResponseModel>> postSignInRequest(
+      {isMockup, body}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(body?.toJson() ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, dynamic v) => v == null);
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'isMockup': isMockup};
-    _headers.removeWhere((k, dynamic v) => v == null);
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-      _setStreamType<HttpResponse<SignInResponseModel>>(
-        Options(method: 'POST', headers: _headers, extra: _extra)
-            .compose(
-              _dio.options,
-              '/sign_in',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl),
-      ),
-    );
+        _setStreamType<HttpResponse<SignInResponseModel>>(
+            Options(method: 'POST', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/sign_in',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = SignInResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
 
   @override
-  Future<HttpResponse<SignUpResponseModel>> postSignUpRequest({
-    isMockup,
-    body,
-  }) async {
+  Future<HttpResponse<SignUpResponseModel>> postSignUpRequest(
+      {isMockup, body}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(body?.toJson() ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, dynamic v) => v == null);
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'isMockup': isMockup};
-    _headers.removeWhere((k, dynamic v) => v == null);
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-      _setStreamType<HttpResponse<SignUpResponseModel>>(
-        Options(method: 'POST', headers: _headers, extra: _extra)
-            .compose(
-              _dio.options,
-              '/sign_up',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl),
-      ),
-    );
+        _setStreamType<HttpResponse<SignUpResponseModel>>(
+            Options(method: 'POST', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/sign_up',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = SignUpResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;

@@ -2,18 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-import '../utils/constants.dart';
+import '../nd_network/network/end_points.dart';
 
 class MockApi {
   static Map<String, String> mapMockApi = {
     EndPoints.course: 'course',
-    EndPoints.helperCenter: 'helper_center',
-    EndPoints.profile: 'profile',
-    EndPoints.countries: 'edit_profile',
-    EndPoints.payments: 'payment',
-    EndPoints.addNewCard: 'profile',
-    EndPoints.languages: 'languages',
-    EndPoints.inviteFriends: 'invite_friends',
   };
 
   static Future<Map<String, dynamic>?> get(String endpoint) async {

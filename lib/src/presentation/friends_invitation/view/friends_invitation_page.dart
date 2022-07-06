@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/friends/friend_response_model.dart';
+import '../../../injector/injector.dart';
 import '../../widgets/base_appbar.dart';
 import '../bloc/friends_invitation_bloc.dart';
 import '../widgets/friend_tile.dart';
@@ -20,7 +21,7 @@ class _FriendsInvitationPageState extends State<FriendsInvitationPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          FriendsInvitationBloc()..add(FriendsInvitationStarted()),
+          injector<FriendsInvitationBloc>()..add(FriendsInvitationStarted()),
       child: Scaffold(
         appBar: buildAppBar(
           AppBarParams(

@@ -8,6 +8,16 @@ import '../../../core/params/sign_up_request_params.dart';
 import '../../../core/utils/constants.dart';
 import '../../models/create_new_pin/create_new_pin_response_model.dart';
 import '../../models/fill_your_profile/fill_your_profile_response_model.dart';
+import '../../../core/nd_network/network/end_points.dart';
+import '../../../core/params/friend_invite_params.dart';
+import '../../../core/params/new_card_params.dart';
+import '../../../core/params/sign_in_request_params.dart';
+import '../../../core/params/sign_up_request_params.dart';
+import '../../../core/params/update_profile_params.dart';
+import '../../models/friends/friend_response_model.dart';
+import '../../models/general_response/general_response_model.dart';
+import '../../models/payment/payment_response_model.dart';
+import '../../models/profile/profile_response_model.dart';
 import '../../models/sign_in/sign_in_response_model.dart';
 import '../../models/sign_up/sign_up_response_model.dart';
 
@@ -40,5 +50,36 @@ abstract class UserApiService {
   Future<HttpResponse<CreateNewPinResponseModel>> postCreateNewPinRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() CreateNewPinRequestParams? body,
+  @GET(EndPoints.profile)
+  Future<HttpResponse<ProfileResponseModel?>> getProfile({
+    @Header('isMockup') bool? isMockup,
+  });
+
+  @POST(EndPoints.profile)
+  Future<HttpResponse<GeneralResponseModel?>> updateProfile(
+    @Queries() UpdateProfileParams params, {
+    @Header('isMockup') bool? isMockup,
+  });
+
+  @POST(EndPoints.addNewCard)
+  Future<HttpResponse<GeneralResponseModel?>> addNewCard(
+    @Queries() NewCardParams params, {
+    @Header('isMockup') bool? isMockup,
+  });
+
+  @GET(EndPoints.inviteFriends)
+  Future<HttpResponse<FriendResponseModel?>> getInviteFriends({
+    @Header('isMockup') bool? isMockup,
+  });
+
+  @POST(EndPoints.inviteFriends)
+  Future<HttpResponse<FriendResponseModel?>> inviteFriend(
+    @Queries() FriendInviteParams params, {
+    @Header('isMockup') bool? isMockup,
+  });
+
+  @GET(EndPoints.payments)
+  Future<HttpResponse<PaymentResponseModel?>> getPayments({
+    @Header('isMockup') bool? isMockup,
   });
 }

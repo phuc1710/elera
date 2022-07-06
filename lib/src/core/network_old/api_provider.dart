@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 
+import '../nd_network/network/end_points.dart';
 import '../params/get_params.dart';
 import '../params/post_params.dart';
-import '../utils/constants.dart';
 import 'mock_api.dart';
 
 class ApiProvider {
