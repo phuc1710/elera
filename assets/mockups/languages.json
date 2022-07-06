@@ -1,6 +1,6 @@
 {
     "message": "",
-    "status": 0,
+    "error_code": 1,
     "data": {
     "suggested": [
         {

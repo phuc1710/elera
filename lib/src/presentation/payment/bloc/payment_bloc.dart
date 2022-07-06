@@ -29,7 +29,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     final dataState = await _getPaymentsUC();
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.status == StatusCode.success) {
+      if (res?.errorCode == ErrorCode.success) {
         emit(PaymentFetchSuccess(res?.data));
       } else {
         emit(PaymentFailure(msg: res?.message));

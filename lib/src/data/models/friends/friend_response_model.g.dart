@@ -8,7 +8,7 @@ part of 'friend_response_model.dart';
 
 FriendResponseModel _$FriendResponseModelFromJson(Map<String, dynamic> json) =>
     FriendResponseModel(
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
@@ -18,7 +18,7 @@ FriendResponseModel _$FriendResponseModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$FriendResponseModelToJson(
         FriendResponseModel instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'message': instance.message,
       'data': instance.data,
     };

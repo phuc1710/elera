@@ -29,7 +29,7 @@ class NewCardBloc extends Bloc<NewCardEvent, NewCardState> {
     final dataState = await _addNewCardUC(params: event.params);
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.status == StatusCode.success) {
+      if (res?.errorCode == ErrorCode.success) {
         emit(NewCardAddSuccess(msg: res?.message));
       } else {
         emit(NewCardFailure(msg: res?.message));

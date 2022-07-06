@@ -57,7 +57,7 @@ class Api {
         ),
       );
       final result = HelperCenterResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
+      handleExceptionCase(result.errorCode);
 
       return result;
     } catch (e) {
@@ -81,7 +81,7 @@ class Api {
         ),
       );
       final result = PaymentResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
+      handleExceptionCase(result.errorCode);
 
       return result;
     } catch (e) {

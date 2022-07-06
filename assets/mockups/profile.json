@@ -1,6 +1,6 @@
 {
     "message": "success",
-    "status": 0,
+    "error_code": 1,
     "data": {
       "fullname": "Andrew Ainsley",
       "name": "Andrew",

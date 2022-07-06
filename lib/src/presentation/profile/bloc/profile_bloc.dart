@@ -29,7 +29,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final dataState = await _getProfileUC();
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.status == StatusCode.success) {
+      if (res?.errorCode == ErrorCode.success) {
         emit(ProfileFetchSuccess(res?.data));
       } else {
         emit(ProfileFailure(msg: res?.message));

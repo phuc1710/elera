@@ -7,8 +7,7 @@ part of 'fill_your_profile_response_model.dart';
 // **************************************************************************
 
 FillYourProfileResponseModel _$FillYourProfileResponseModelFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     FillYourProfileResponseModel(
       errorCode: json['error_code'] as int?,
       data: json['data'] == null
@@ -18,8 +17,7 @@ FillYourProfileResponseModel _$FillYourProfileResponseModelFromJson(
     );
 
 Map<String, dynamic> _$FillYourProfileResponseModelToJson(
-  FillYourProfileResponseModel instance,
-) =>
+        FillYourProfileResponseModel instance) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
       'message': instance.message,
@@ -27,8 +25,7 @@ Map<String, dynamic> _$FillYourProfileResponseModelToJson(
     };
 
 FillYourProfileModel _$FillYourProfileModelFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     FillYourProfileModel(
       token: json['token'] as String?,
       name: json['name'] as String?,
@@ -36,8 +33,7 @@ FillYourProfileModel _$FillYourProfileModelFromJson(
     );
 
 Map<String, dynamic> _$FillYourProfileModelToJson(
-  FillYourProfileModel instance,
-) =>
+        FillYourProfileModel instance) =>
     <String, dynamic>{
       'token': instance.token,
       'name': instance.name,

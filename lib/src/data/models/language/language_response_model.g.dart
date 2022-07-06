@@ -10,7 +10,7 @@ LanguageResponseModel _$LanguageResponseModelFromJson(
         Map<String, dynamic> json) =>
     LanguageResponseModel(
       message: json['message'] as String?,
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : LanguageDataModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -20,7 +20,7 @@ Map<String, dynamic> _$LanguageResponseModelToJson(
         LanguageResponseModel instance) =>
     <String, dynamic>{
       'message': instance.message,
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'data': instance.data,
     };
 

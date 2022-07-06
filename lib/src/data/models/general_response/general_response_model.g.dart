@@ -9,13 +9,13 @@ part of 'general_response_model.dart';
 GeneralResponseModel _$GeneralResponseModelFromJson(
         Map<String, dynamic> json) =>
     GeneralResponseModel(
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       message: json['message'] as String?,
     );
 
 Map<String, dynamic> _$GeneralResponseModelToJson(
         GeneralResponseModel instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'message': instance.message,
     };

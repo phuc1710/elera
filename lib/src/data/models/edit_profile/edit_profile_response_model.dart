@@ -7,7 +7,7 @@ part 'edit_profile_response_model.g.dart';
 @JsonSerializable()
 class EditProfileResponseModel {
   EditProfileResponseModel({
-    this.status,
+    this.errorCode,
     this.message,
     this.data,
   });
@@ -16,8 +16,8 @@ class EditProfileResponseModel {
       _$EditProfileResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$EditProfileResponseModelToJson(this);
-
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
   final String? message;
   final EditProfileDataModel? data;
 }

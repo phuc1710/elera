@@ -7,15 +7,15 @@ part 'helper_center_response_model.g.dart';
 
 @JsonSerializable()
 class HelperCenterResponseModel {
-  HelperCenterResponseModel({this.status, this.data, this.message});
+  HelperCenterResponseModel({this.errorCode, this.data, this.message});
 
   factory HelperCenterResponseModel.fromJson(Map<String, dynamic> json) =>
       _$HelperCenterResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$HelperCenterResponseModelToJson(this);
 
-  @JsonKey(name: 'status')
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
 
   @JsonKey(name: 'message')
   final String? message;

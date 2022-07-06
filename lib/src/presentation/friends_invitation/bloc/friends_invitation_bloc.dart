@@ -38,7 +38,7 @@ class FriendsInvitationBloc
     final dataState = await _getInviteFriendsUC();
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.status == StatusCode.success) {
+      if (res?.errorCode == ErrorCode.success) {
         emit(FriendsInvitationFetchSuccess(friends: res?.data?.friends ?? []));
       } else {
         emit(FriendsInvitationFailure(msg: res?.message));
@@ -59,7 +59,7 @@ class FriendsInvitationBloc
         await _inviteFriendUC(params: FriendInviteParams(id: event.id));
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.status == StatusCode.success) {
+      if (res?.errorCode == ErrorCode.success) {
         emit(FriendsInvitationInviteSuccess(id: event.id));
       } else {
         emit(FriendsInvitationFailure(msg: res?.message));

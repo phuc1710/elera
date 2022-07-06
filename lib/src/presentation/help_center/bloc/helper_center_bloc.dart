@@ -29,7 +29,7 @@ class HelperCenterBloc extends Bloc<HelperCenterEvent, HelperCenterState> {
     final dataState = await _getHelperCenterUC();
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.status == StatusCode.success) {
+      if (res?.errorCode == ErrorCode.success) {
         emit(HelperCenterFetchSuccess(res?.data));
       } else {
         emit(HelperCenterFailure(msg: res?.message));

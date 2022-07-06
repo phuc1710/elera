@@ -10,7 +10,7 @@ ProfileResponseModel _$ProfileResponseModelFromJson(
         Map<String, dynamic> json) =>
     ProfileResponseModel(
       message: json['message'] as String?,
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : ProfileModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -20,7 +20,7 @@ Map<String, dynamic> _$ProfileResponseModelToJson(
         ProfileResponseModel instance) =>
     <String, dynamic>{
       'message': instance.message,
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'data': instance.data,
     };
 

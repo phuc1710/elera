@@ -10,7 +10,7 @@ PaymentResponseModel _$PaymentResponseModelFromJson(
         Map<String, dynamic> json) =>
     PaymentResponseModel(
       message: json['message'] as String?,
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : PaymentDataModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -20,7 +20,7 @@ Map<String, dynamic> _$PaymentResponseModelToJson(
         PaymentResponseModel instance) =>
     <String, dynamic>{
       'message': instance.message,
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'data': instance.data,
     };
 

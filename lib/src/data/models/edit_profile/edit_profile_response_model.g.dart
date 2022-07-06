@@ -9,7 +9,7 @@ part of 'edit_profile_response_model.dart';
 EditProfileResponseModel _$EditProfileResponseModelFromJson(
         Map<String, dynamic> json) =>
     EditProfileResponseModel(
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
@@ -19,7 +19,7 @@ EditProfileResponseModel _$EditProfileResponseModelFromJson(
 Map<String, dynamic> _$EditProfileResponseModelToJson(
         EditProfileResponseModel instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'message': instance.message,
       'data': instance.data,
     };

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../core/params/create_new_pin_request_params.dart';
 import '../../../../core/resources/api_error.dart';
@@ -9,6 +10,7 @@ import '../../../../domain/usecases/create_new_pin_usecase.dart';
 part 'create_new_pin_event.dart';
 part 'create_new_pin_state.dart';
 
+@injectable
 class CreateNewPinBloc extends Bloc<CreateNewPinEvent, CreateNewPinState> {
   CreateNewPinBloc(this.createNewPinUseCase) : super(CreateNewPinInitial()) {
     on<CreateNewPinSubmitted>(_onCreateNewPinSubmitted);

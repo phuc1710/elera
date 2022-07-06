@@ -6,7 +6,7 @@ part 'profile_response_model.g.dart';
 class ProfileResponseModel {
   ProfileResponseModel({
     this.message,
-    this.status,
+    this.errorCode,
     this.data,
   });
 
@@ -16,7 +16,8 @@ class ProfileResponseModel {
   Map<String, dynamic> toJson() => _$ProfileResponseModelToJson(this);
 
   final String? message;
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
   final ProfileModel? data;
 }
 

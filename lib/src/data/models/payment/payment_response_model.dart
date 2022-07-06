@@ -7,7 +7,7 @@ part 'payment_response_model.g.dart';
 class PaymentResponseModel extends Equatable {
   const PaymentResponseModel({
     this.message,
-    this.status,
+    this.errorCode,
     this.data,
   });
 
@@ -17,13 +17,14 @@ class PaymentResponseModel extends Equatable {
   Map<String, dynamic> toJson() => _$PaymentResponseModelToJson(this);
 
   final String? message;
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
   final PaymentDataModel? data;
 
   @override
   List<Object?> get props => [
         message,
-        status,
+        errorCode,
         data,
       ];
 }

@@ -3,17 +3,14 @@ import 'package:retrofit/retrofit.dart';
 
 import '../../../core/params/create_new_pin_request_params.dart';
 import '../../../core/params/fill_your_profile_request_params.dart';
-import '../../../core/params/sign_in_request_params.dart';
-import '../../../core/params/sign_up_request_params.dart';
-import '../../../core/utils/constants.dart';
-import '../../models/create_new_pin/create_new_pin_response_model.dart';
-import '../../models/fill_your_profile/fill_your_profile_response_model.dart';
-import '../../../core/nd_network/network/end_points.dart';
 import '../../../core/params/friend_invite_params.dart';
 import '../../../core/params/new_card_params.dart';
 import '../../../core/params/sign_in_request_params.dart';
 import '../../../core/params/sign_up_request_params.dart';
 import '../../../core/params/update_profile_params.dart';
+import '../../models/create_new_pin/create_new_pin_response_model.dart';
+import '../../models/fill_your_profile/fill_your_profile_response_model.dart';
+import '../../../core/nd_network/network/end_points.dart';
 import '../../models/friends/friend_response_model.dart';
 import '../../models/general_response/general_response_model.dart';
 import '../../models/payment/payment_response_model.dart';
@@ -50,6 +47,8 @@ abstract class UserApiService {
   Future<HttpResponse<CreateNewPinResponseModel>> postCreateNewPinRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() CreateNewPinRequestParams? body,
+  });
+
   @GET(EndPoints.profile)
   Future<HttpResponse<ProfileResponseModel?>> getProfile({
     @Header('isMockup') bool? isMockup,

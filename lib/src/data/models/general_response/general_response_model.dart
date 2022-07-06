@@ -7,7 +7,7 @@ part 'general_response_model.g.dart';
 @JsonSerializable()
 class GeneralResponseModel extends Equatable {
   const GeneralResponseModel({
-    this.status,
+    this.errorCode,
     this.message,
   });
 
@@ -16,12 +16,13 @@ class GeneralResponseModel extends Equatable {
 
   Map<String, dynamic> toJson() => _$GeneralResponseModelToJson(this);
 
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
   final String? message;
 
   @override
   List<Object?> get props => [
-        status,
+        errorCode,
         message,
       ];
 }

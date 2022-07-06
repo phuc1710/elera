@@ -6,7 +6,7 @@ part 'friend_response_model.g.dart';
 @JsonSerializable()
 class FriendResponseModel extends Equatable {
   const FriendResponseModel({
-    this.status,
+    this.errorCode,
     this.message,
     this.data,
   });
@@ -16,13 +16,14 @@ class FriendResponseModel extends Equatable {
 
   Map<String, dynamic> toJson() => _$FriendResponseModelToJson(this);
 
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
   final String? message;
   final FriendDataModel? data;
 
   @override
   List<Object?> get props => [
-        status,
+        errorCode,
         message,
         data,
       ];

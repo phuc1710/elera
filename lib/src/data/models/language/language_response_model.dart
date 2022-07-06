@@ -7,7 +7,7 @@ part 'language_response_model.g.dart';
 class LanguageResponseModel extends Equatable {
   const LanguageResponseModel({
     this.message,
-    this.status,
+    this.errorCode,
     this.data,
   });
 
@@ -17,13 +17,14 @@ class LanguageResponseModel extends Equatable {
   Map<String, dynamic> toJson() => _$LanguageResponseModelToJson(this);
 
   final String? message;
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
   final LanguageDataModel? data;
 
   @override
   List<Object?> get props => [
         message,
-        status,
+        errorCode,
         data,
       ];
 }
