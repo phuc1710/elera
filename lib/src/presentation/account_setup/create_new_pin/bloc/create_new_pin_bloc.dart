@@ -28,12 +28,12 @@ class CreateNewPinBloc extends Bloc<CreateNewPinEvent, CreateNewPinState> {
     );
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (dataState.data?.status == StatusCode.success)
+      if (dataState.data?.errorCode == ErrorCode.success)
         emit(CreateNewPinSuccess());
       else
         emit(
           CreateNewPinFailed(
-            ApiError(statusCode: res?.status, errorMessage: res?.message),
+            ApiError(errorCode: res?.errorCode, errorMessage: res?.message),
           ),
         );
     }

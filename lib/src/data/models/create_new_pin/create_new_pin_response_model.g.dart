@@ -10,7 +10,7 @@ CreateNewPinResponseModel _$CreateNewPinResponseModelFromJson(
   Map<String, dynamic> json,
 ) =>
     CreateNewPinResponseModel(
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : CreateNewPinModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -21,7 +21,7 @@ Map<String, dynamic> _$CreateNewPinResponseModelToJson(
   CreateNewPinResponseModel instance,
 ) =>
     <String, dynamic>{
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'message': instance.message,
       'data': instance.data,
     };

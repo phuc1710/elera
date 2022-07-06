@@ -4,12 +4,12 @@ part 'create_new_pin_response_model.g.dart';
 
 @JsonSerializable()
 class CreateNewPinResponseModel {
-  CreateNewPinResponseModel({this.status, this.data, this.message});
+  CreateNewPinResponseModel({this.errorCode, this.data, this.message});
 
   factory CreateNewPinResponseModel.fromJson(Map<String, dynamic> json) =>
       _$CreateNewPinResponseModelFromJson(json);
-  @JsonKey(name: 'status')
-  int? status;
+  @JsonKey(name: 'error_code')
+  int? errorCode;
 
   @JsonKey(name: 'message')
   String? message;

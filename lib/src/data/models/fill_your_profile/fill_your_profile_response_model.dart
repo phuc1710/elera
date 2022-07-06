@@ -4,12 +4,12 @@ part 'fill_your_profile_response_model.g.dart';
 
 @JsonSerializable()
 class FillYourProfileResponseModel {
-  FillYourProfileResponseModel({this.status, this.data, this.message});
+  FillYourProfileResponseModel({this.errorCode, this.data, this.message});
 
   factory FillYourProfileResponseModel.fromJson(Map<String, dynamic> json) =>
       _$FillYourProfileResponseModelFromJson(json);
-  @JsonKey(name: 'status')
-  int? status;
+  @JsonKey(name: 'error_code')
+  int? errorCode;
 
   @JsonKey(name: 'message')
   String? message;

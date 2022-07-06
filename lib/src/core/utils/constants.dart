@@ -20,7 +20,7 @@ class EndPoints {
   static const String course = '/course';
 }
 
-class StatusCode {
-  static const int success = 0;
+class ErrorCode {
+  static const int success = 1;
   static const int tokenExpired = -15;
 }

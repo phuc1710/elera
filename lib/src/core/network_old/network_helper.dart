@@ -31,7 +31,7 @@ class Connection {
 void handleExceptionCase(int? statusCode, {String? message}) {
   // Do something with response data
   switch (statusCode) {
-    case StatusCode.tokenExpired:
+    case ErrorCode.tokenExpired:
       {
         // do something
         break;

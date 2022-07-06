@@ -39,12 +39,12 @@ final bookmarkList = courseList.where((c) => c.isBookmarked).toList();
 
 @JsonSerializable()
 class CourseResponseModel {
-  CourseResponseModel({this.status, this.data, this.message});
+  CourseResponseModel({this.errorCode, this.data, this.message});
 
   factory CourseResponseModel.fromJson(Map<String, dynamic> json) =>
       _$CourseResponseModelFromJson(json);
-  @JsonKey(name: 'status')
-  final int? status;
+  @JsonKey(name: 'error_code')
+  final int? errorCode;
 
   @JsonKey(name: 'message')
   final String? message;
@@ -59,9 +59,9 @@ class CourseResponseModel {
 class CourseModel {
   CourseModel(this.courseList);
 
-factory CourseModel.fromJson(Map<String, dynamic> json) =>
+  factory CourseModel.fromJson(Map<String, dynamic> json) =>
       _$CourseModelFromJson(json);
-  
+
   @JsonKey(name: 'items', defaultValue: <CourseModelItem?>[])
   final List<CourseModelItem?> courseList;
 

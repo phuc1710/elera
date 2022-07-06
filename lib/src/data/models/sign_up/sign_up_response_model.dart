@@ -4,12 +4,12 @@ part 'sign_up_response_model.g.dart';
 
 @JsonSerializable()
 class SignUpResponseModel {
-  SignUpResponseModel({this.status, this.data, this.message});
+  SignUpResponseModel({this.errorCode, this.data, this.message});
 
   factory SignUpResponseModel.fromJson(Map<String, dynamic> json) =>
       _$SignUpResponseModelFromJson(json);
-  @JsonKey(name: 'status')
-  int? status;
+  @JsonKey(name: 'error_code')
+  int? errorCode;
 
   @JsonKey(name: 'message')
   String? message;
