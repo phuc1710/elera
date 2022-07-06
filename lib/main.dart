@@ -6,9 +6,7 @@ import 'src/injector.dart';
 import 'src/presentation/onboarding/intro/views/intro_view.dart';
 
 Future<void> main() async {
-  Utils.addGoogleFontsLicense(
-    
-  );
+  Utils.addGoogleFontsLicense();
 
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();

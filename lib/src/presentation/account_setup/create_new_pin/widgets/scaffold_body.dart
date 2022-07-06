@@ -1,53 +1,83 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/utils.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import '../../set_your_fingerprint/views/set_your_fingerprint.dart';
+import '../bloc/create_new_pin_bloc.dart';
 import 'pin_code_input.dart';
 
-class ScaffoldBody extends StatelessWidget {
+class ScaffoldBody extends StatefulWidget {
   const ScaffoldBody({Key? key}) : super(key: key);
 
   @override
+  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+}
+
+class _ScaffoldBodyState extends State<ScaffoldBody> {
+  final TextEditingController pinController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.of(context).size.width * 0.05,
-      ),
-      child: ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(
-              MediaQuery.of(context).size.width * 0.05,
-              MediaQuery.of(context).size.height * 0.1,
-              MediaQuery.of(context).size.width * 0.05,
-              MediaQuery.of(context).size.height * 0.05,
+    return BlocConsumer<CreateNewPinBloc, CreateNewPinState>(
+      listener: (context, state) {
+        if (state is CreateNewPinFailed) {
+          Utils.showAppSnackBar(context, state.error.errorMessage);
+        }
+        if (state is CreateNewPinSuccess) {
+          Navigator.push<Object?>(
+            context,
+            MaterialPageRoute<dynamic>(
+              builder: (context) => const SetYourFingerprintView(),
             ),
-            child: Text(
-              'Add a pin number to make your account more secure',
-              style: Theme.of(context).textTheme.displayMedium,
-              textAlign: TextAlign.center,
-            ),
+          );
+        }
+      },
+      builder: (context, state) {
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.05,
           ),
-          const PinCodeInput(
-            obscureText: false,
+          child: ListView(
+            children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                  MediaQuery.of(context).size.width * 0.05,
+                  MediaQuery.of(context).size.height * 0.1,
+                  MediaQuery.of(context).size.width * 0.05,
+                  MediaQuery.of(context).size.height * 0.05,
+                ),
+                child: Text(
+                  'Add a pin number to make your account more secure',
+                  style: Theme.of(context).textTheme.displayMedium,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              PinCodeInput(
+                controller: pinController,
+                obscureText: true,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.02,
+                ),
+                child: InkWell(
+                  onTap: () => onContinueButtonTapped(context),
+                  child: const MainActionInk(buttonString: 'Continue'),
+                ),
+              )
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height * 0.02,
-            ),
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).push<dynamic>(
-                  MaterialPageRoute<dynamic>(
-                    builder: (context) => const SetYourFingerprintView(),
-                  ),
-                );
-              },
-              child: const MainActionInk(buttonString: 'Continue'),
-            ),
-          )
-        ],
-      ),
+        );
+      },
     );
+  }
+
+  void onContinueButtonTapped(BuildContext context) {
+    context.read<CreateNewPinBloc>().add(
+          CreateNewPinSubmitted(
+            pinCode: pinController.text,
+          ),
+        );
   }
 }

@@ -1,10 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../../../core/params/create_new_pin_request_params.dart';
 import '../../../core/params/fill_your_profile_request_params.dart';
 import '../../../core/params/sign_in_request_params.dart';
 import '../../../core/params/sign_up_request_params.dart';
 import '../../../core/utils/constants.dart';
+import '../../models/create_new_pin/create_new_pin_response_model.dart';
 import '../../models/fill_your_profile/fill_your_profile_response_model.dart';
 import '../../models/sign_in/sign_in_response_model.dart';
 import '../../models/sign_up/sign_up_response_model.dart';
@@ -32,5 +34,11 @@ abstract class UserApiService {
       postFillYourProfileRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() FillYourProfileRequestParams? body,
+  });
+
+  @POST('/create_new_pin')
+  Future<HttpResponse<CreateNewPinResponseModel>> postCreateNewPinRequest({
+    @Header('isMockup') bool? isMockup,
+    @Queries() CreateNewPinRequestParams? body,
   });
 }
