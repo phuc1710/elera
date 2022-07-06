@@ -1,22 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_up_response_model.dart';
+part of 'create_new_pin_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignUpResponseModel _$SignUpResponseModelFromJson(Map<String, dynamic> json) =>
-    SignUpResponseModel(
+CreateNewPinResponseModel _$CreateNewPinResponseModelFromJson(
+  Map<String, dynamic> json,
+) =>
+    CreateNewPinResponseModel(
       errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
-          : SignUpModel.fromJson(json['data'] as Map<String, dynamic>),
+          : CreateNewPinModel.fromJson(json['data'] as Map<String, dynamic>),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$SignUpResponseModelToJson(
-  SignUpResponseModel instance,
+Map<String, dynamic> _$CreateNewPinResponseModelToJson(
+  CreateNewPinResponseModel instance,
 ) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
@@ -24,13 +26,14 @@ Map<String, dynamic> _$SignUpResponseModelToJson(
       'data': instance.data,
     };
 
-SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) => SignUpModel(
+CreateNewPinModel _$CreateNewPinModelFromJson(Map<String, dynamic> json) =>
+    CreateNewPinModel(
       token: json['token'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
     );
 
-Map<String, dynamic> _$SignUpModelToJson(SignUpModel instance) =>
+Map<String, dynamic> _$CreateNewPinModelToJson(CreateNewPinModel instance) =>
     <String, dynamic>{
       'token': instance.token,
       'name': instance.name,

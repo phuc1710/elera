@@ -1,9 +1,9 @@
 class ApiError {
   ApiError({
-    this.statusCode,
+    this.errorCode,
     this.errorMessage,
   });
 
-  int? statusCode;
+  int? errorCode;
   String? errorMessage;
 }

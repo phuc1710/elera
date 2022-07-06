@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widgets/scaffold_body.dart';
+import '../../../../injector.dart';
+import '../bloc/fill_your_profile_bloc.dart';
+import '../widgets/fill_your_profile_body.dart';
 
 class FillYourProfileView extends StatelessWidget {
   const FillYourProfileView({Key? key}) : super(key: key);
@@ -23,7 +26,10 @@ class FillYourProfileView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const ScaffoldBody(),
+          body: BlocProvider<FillYourProfileBloc>(
+            create: (context) => injector(),
+            child: const FillYourProfileBody(),
+          ),
         ),
       ),
     );

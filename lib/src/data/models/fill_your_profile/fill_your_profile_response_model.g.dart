@@ -1,22 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_up_response_model.dart';
+part of 'fill_your_profile_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignUpResponseModel _$SignUpResponseModelFromJson(Map<String, dynamic> json) =>
-    SignUpResponseModel(
+FillYourProfileResponseModel _$FillYourProfileResponseModelFromJson(
+  Map<String, dynamic> json,
+) =>
+    FillYourProfileResponseModel(
       errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
-          : SignUpModel.fromJson(json['data'] as Map<String, dynamic>),
+          : FillYourProfileModel.fromJson(json['data'] as Map<String, dynamic>),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$SignUpResponseModelToJson(
-  SignUpResponseModel instance,
+Map<String, dynamic> _$FillYourProfileResponseModelToJson(
+  FillYourProfileResponseModel instance,
 ) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
@@ -24,13 +26,18 @@ Map<String, dynamic> _$SignUpResponseModelToJson(
       'data': instance.data,
     };
 
-SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) => SignUpModel(
+FillYourProfileModel _$FillYourProfileModelFromJson(
+  Map<String, dynamic> json,
+) =>
+    FillYourProfileModel(
       token: json['token'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
     );
 
-Map<String, dynamic> _$SignUpModelToJson(SignUpModel instance) =>
+Map<String, dynamic> _$FillYourProfileModelToJson(
+  FillYourProfileModel instance,
+) =>
     <String, dynamic>{
       'token': instance.token,
       'name': instance.name,

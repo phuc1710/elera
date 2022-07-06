@@ -4,7 +4,7 @@ import '../../../account_setup/create_new_pin/widgets/pin_code_input.dart';
 import '../widgets/main_action_button.dart';
 import '../widgets/resend_code_row.dart';
 
-class ScaffoldBody extends StatelessWidget {
+class ScaffoldBody extends StatefulWidget {
   const ScaffoldBody({
     Key? key,
     required dynamic contactInfo,
@@ -13,6 +13,12 @@ class ScaffoldBody extends StatelessWidget {
 
   final dynamic _contactInfo;
 
+  @override
+  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+}
+
+class _ScaffoldBodyState extends State<ScaffoldBody> {
+  final TextEditingController pinController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,12 +38,15 @@ class ScaffoldBody extends StatelessWidget {
               MediaQuery.of(context).size.height * 0.05,
             ),
             child: Text(
-              'Code has been sent to $_contactInfo',
+              'Code has been sent to ${widget._contactInfo}',
               style: Theme.of(context).textTheme.displayMedium,
               textAlign: TextAlign.center,
             ),
           ),
-          const PinCodeInput(obscureText: true,),
+          PinCodeInput(
+            controller: pinController,
+            obscureText: true,
+          ),
           const ResendCodeRow(),
           const MainActionButton(),
         ],

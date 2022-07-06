@@ -4,9 +4,11 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 class PinCodeInput extends StatefulWidget {
   const PinCodeInput({
     Key? key,
+    required this.controller,
     required this.obscureText,
   }) : super(key: key);
 
+  final TextEditingController controller;
   final bool obscureText;
 
   @override
@@ -27,10 +29,12 @@ class _PinCodeInputState extends State<PinCodeInput> {
       ),
       child: PinCodeTextField(
         appContext: context,
+        controller: widget.controller,
         length: 4,
         onChanged: onPinCodeChanged,
         obscureText: widget.obscureText,
         keyboardType: TextInputType.number,
+        textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.black),
         pinTheme: PinTheme(
           shape: PinCodeFieldShape.box,
           borderRadius: BorderRadius.circular(10),

@@ -30,7 +30,7 @@ class Api {
         ),
       );
       final result = CourseResponseModel.fromJson(res!);
-      handleExceptionCase(result.status);
+      handleExceptionCase(result.errorCode);
 
       return result;
     } catch (e) {

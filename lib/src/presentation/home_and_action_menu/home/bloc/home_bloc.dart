@@ -22,7 +22,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     try {
       Future<dynamic>.delayed(const Duration(seconds: 1));
       final res = await Api.getCourses();
-      if (res?.status == StatusCode.success) {
+      if (res?.errorCode == ErrorCode.success) {
         emit(HomeCourseSuccess(res?.data?.courseList ?? []));
       } else {
         emit(HomeCourseFailed(res?.message));

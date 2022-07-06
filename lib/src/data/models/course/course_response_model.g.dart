@@ -8,7 +8,7 @@ part of 'course_response_model.dart';
 
 CourseResponseModel _$CourseResponseModelFromJson(Map<String, dynamic> json) =>
     CourseResponseModel(
-      status: json['status'] as int?,
+      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : CourseModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -19,7 +19,7 @@ Map<String, dynamic> _$CourseResponseModelToJson(
   CourseResponseModel instance,
 ) =>
     <String, dynamic>{
-      'status': instance.status,
+      'error_code': instance.errorCode,
       'message': instance.message,
       'data': instance.data,
     };

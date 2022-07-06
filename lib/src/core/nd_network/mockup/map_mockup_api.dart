@@ -6,6 +6,8 @@ final Map<String, String> mapMockApiForGetRequest = {};
 final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.signIn: 'sign_in',
   EndPoints.signUp: 'sign_up',
+  EndPoints.fillYourProfile: 'fill_your_profile',
+  EndPoints.createNewPin: 'create_new_pin',
 };
 
 String? getJsonNameForGetRequest(
