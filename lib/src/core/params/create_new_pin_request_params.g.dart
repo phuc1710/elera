@@ -7,15 +7,13 @@ part of 'create_new_pin_request_params.dart';
 // **************************************************************************
 
 CreateNewPinRequestParams _$CreateNewPinRequestParamsFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     CreateNewPinRequestParams(
       pinCode: json['pin_code'] as String?,
     );
 
 Map<String, dynamic> _$CreateNewPinRequestParamsToJson(
-  CreateNewPinRequestParams instance,
-) =>
+        CreateNewPinRequestParams instance) =>
     <String, dynamic>{
       'pin_code': instance.pinCode,
     };

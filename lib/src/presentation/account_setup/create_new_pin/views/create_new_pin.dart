@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../injector.dart';
+import '../../../../injector/injector.dart';
 import '../bloc/create_new_pin_bloc.dart';
 import '../widgets/create_new_pin_body.dart';
 
@@ -27,7 +27,7 @@ class CreateNewPinView extends StatelessWidget {
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider<CreateNewPinBloc>(
-            create: (context) => injector(),
+            create: (context) => injector<CreateNewPinBloc>(),
             child: const CreateNewPinBody(),
           ),
         ),

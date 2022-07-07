@@ -34,7 +34,10 @@ class _PinCodeInputState extends State<PinCodeInput> {
         onChanged: onPinCodeChanged,
         obscureText: widget.obscureText,
         keyboardType: TextInputType.number,
-        textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.black),
+        textStyle: Theme.of(context)
+            .textTheme
+            .bodyLarge
+            ?.copyWith(color: Colors.black),
         pinTheme: PinTheme(
           shape: PinCodeFieldShape.box,
           borderRadius: BorderRadius.circular(10),

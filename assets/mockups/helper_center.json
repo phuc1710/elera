@@ -1,0 +1,141 @@
+{
+    "message": "",
+    "error_code": 1,
+    "data": {
+      "faqs": [
+        {
+            "name": "General",
+            "items": [
+                {
+                    "title": "What is Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        },
+        {
+            "name": "Account",
+            "items": [
+                {
+                    "title": "What is Elera2?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        },
+        {
+            "name": "Course",
+            "items": [
+                {
+                    "title": "What is Elera3?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        },
+        {
+            "name": "Payment",
+            "items": [
+                {
+                    "title": "What is Elera4?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to use Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Can i create my own course?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "Is Elera free to use?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                },
+                {
+                    "title": "How to make offer on Elera?",
+                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
+                }
+            ]
+        }
+      ],
+      "contacts": [
+        {
+            "id": 0,
+            "name": "Customer Service",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+        },
+        {
+            "id": 1,
+            "name": "WhatsApp",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+        },
+        {
+            "id": 2,
+            "name": "Website",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+        },
+        {
+            "id": 3,
+            "name": "Facebook",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+        },
+        {
+            "id": 4,
+            "name": "Twitter",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+        },
+        {
+            "id": 5,
+            "name": "Instagram",
+            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+        }
+      ]
+    }
+  }
+  

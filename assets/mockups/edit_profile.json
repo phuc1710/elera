@@ -1,0 +1,21 @@
+{
+    "message": "",
+    "error_code": 1,
+    "data": {
+      "countries": [
+        {
+            "id": 0,
+            "name": "United States",
+            "flag": "https://cdn-icons-png.flaticon.com/512/206/206626.png",
+            "phone_prefix": "+1"
+        },
+        {
+            "id": 1,
+            "name": "Viet Nam",
+            "flag": "https://cdn.iconscout.com/icon/free/png-256/vietnam-flag-country-nation-union-empire-33148.png",
+            "phone_prefix": "+84"
+          }
+      ]
+    }
+  }
+  

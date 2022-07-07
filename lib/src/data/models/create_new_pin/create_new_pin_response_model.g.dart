@@ -7,8 +7,7 @@ part of 'create_new_pin_response_model.dart';
 // **************************************************************************
 
 CreateNewPinResponseModel _$CreateNewPinResponseModelFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     CreateNewPinResponseModel(
       errorCode: json['error_code'] as int?,
       data: json['data'] == null
@@ -18,8 +17,7 @@ CreateNewPinResponseModel _$CreateNewPinResponseModelFromJson(
     );
 
 Map<String, dynamic> _$CreateNewPinResponseModelToJson(
-  CreateNewPinResponseModel instance,
-) =>
+        CreateNewPinResponseModel instance) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
       'message': instance.message,

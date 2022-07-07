@@ -69,9 +69,9 @@ class _SearchViewState extends State<SearchView> {
           );
   }
 
-  void _onSearchSubmitted(String searchWords) {
+  void _onSearchSubmitted(String? searchWords) {
     setState(() {
-      searchPhrase = searchWords;
+      searchPhrase = searchWords ?? '';
       searchSubmitted = true;
     });
   }

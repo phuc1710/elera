@@ -1,5 +1,7 @@
 class AppStrings {
   static const String materialAppTitle = 'E-Learning';
+
+  static const String getTitleWebView = 'window.document.title';
 }
 
 List<String> recentSearchList = [
@@ -12,13 +14,6 @@ List<String> recentSearchList = [
   'Flutter Mobile Apps',
   '3D Design Illustration'
 ];
-
-class EndPoints {
-  static const String baseUrl = '';
-  static const String devUrl = '';
-
-  static const String course = '/course';
-}
 
 class ErrorCode {
   static const int success = 1;

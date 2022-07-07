@@ -13,8 +13,7 @@ SignUpRequestParams _$SignUpRequestParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$SignUpRequestParamsToJson(
-  SignUpRequestParams instance,
-) =>
+        SignUpRequestParams instance) =>
     <String, dynamic>{
       'email': instance.email,
       'password': instance.password,

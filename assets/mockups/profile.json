@@ -1,0 +1,16 @@
+{
+    "message": "success",
+    "error_code": 1,
+    "data": {
+      "fullname": "Andrew Ainsley",
+      "name": "Andrew",
+      "img": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000",
+      "email": "andrew_ainsley@yourdomain.com",
+      "dob": "12/27/1995",
+      "country": "United States",
+      "phone": "+1111467378399",
+      "gender": false,
+      "job": "Student"
+    }
+  }
+  

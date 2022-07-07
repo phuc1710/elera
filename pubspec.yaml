@@ -48,6 +48,11 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   image_picker: ^0.8.5+3
 
+  injectable: ^1.5.3
+  expandable: ^5.0.1
+  flutter_multi_formatter: ^2.5.7
+  intl: ^0.17.0
+  webview_flutter: ^3.0.4
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +65,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   json_serializable: ^6.2.0
+  injectable_generator: ^1.5.3  
   build_runner: ^2.0.6
   dart_code_metrics: ^4.15.2
   retrofit_generator: ^4.0.1

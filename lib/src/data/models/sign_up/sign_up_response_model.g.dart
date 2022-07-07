@@ -16,8 +16,7 @@ SignUpResponseModel _$SignUpResponseModelFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$SignUpResponseModelToJson(
-  SignUpResponseModel instance,
-) =>
+        SignUpResponseModel instance) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
       'message': instance.message,

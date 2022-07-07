@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../core/params/fill_your_profile_request_params.dart';
 import '../../../../core/resources/api_error.dart';
@@ -11,6 +12,7 @@ import '../../../../domain/usecases/fill_your_profile_usecase.dart';
 part 'fill_your_profile_event.dart';
 part 'fill_your_profile_state.dart';
 
+@injectable
 class FillYourProfileBloc
     extends Bloc<FillYourProfileEvent, FillYourProfileState> {
   FillYourProfileBloc(this.fillYourProfileUseCase)

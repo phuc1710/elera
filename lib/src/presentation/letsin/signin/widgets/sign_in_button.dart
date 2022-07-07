@@ -4,7 +4,8 @@ import '../../../onboarding/intro/widgets/main_action_ink.dart';
 
 class SignInButton extends StatelessWidget {
   const SignInButton({
-    Key? key, required this.onTap,
+    Key? key,
+    required this.onTap,
   }) : super(key: key);
 
   final VoidCallback onTap;
