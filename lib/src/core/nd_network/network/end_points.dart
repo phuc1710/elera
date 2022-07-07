@@ -6,8 +6,12 @@ class EndPoints {
   static const String devUrl = '';
   static const String signIn = '/sign_in';
   static const String signUp = '/sign_up';
+
   static const String fillYourProfile = '/fill_your_profile';
   static const String createNewPin = '/create_new_pin';
+
+  static const String fetchContact = '/fetch_contact';
+  static const String selectContact = '/select_contact';
 
   static const String course = '/course';
   static const String helperCenter = '/helper_center';

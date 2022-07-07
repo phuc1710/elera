@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../core/params/contact_fetch_request_params.dart';
+import '../../core/params/contact_selection_request_params.dart';
 import '../../core/params/create_new_pin_request_params.dart';
 import '../../core/params/fill_your_profile_request_params.dart';
 import '../../core/params/new_card_params.dart';
@@ -14,6 +16,8 @@ import '../../core/resources/data_state.dart';
 import '../../core/utils/extensions.dart';
 import '../../domain/repositories/user_repository.dart';
 import '../datasources/remote/user_api_service.dart';
+import '../models/contact_selection/contact_fetch_response_model.dart';
+import '../models/contact_selection/contact_selection_response_model.dart';
 import '../models/create_new_pin/create_new_pin_response_model.dart';
 import '../models/fill_your_profile/fill_your_profile_response_model.dart';
 import '../models/profile/profile_response_model.dart';
@@ -95,6 +99,26 @@ class UserRepositoryImpl implements UserRepository {
       final httpResponse = await _userApiService.postCreateNewPinRequest(
         isMockup: true,
         body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<ContactFetchResponseModel>> getContactFetchRequest(
+    ContactFetchRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.getContactFetchRequest(
+        isMockup: true,
+        query: params,
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
@@ -255,6 +279,26 @@ class UserRepositoryImpl implements UserRepository {
           type: DioErrorType.response,
         ),
       );
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<ContactSelectionResponseModel>> postContactSelectionRequest(
+    ContactSelectionRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.postContactSelectionRequest(
+        isMockup: true,
+        body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
     } on DioError catch (e) {
       return DataFailed(e);
     }

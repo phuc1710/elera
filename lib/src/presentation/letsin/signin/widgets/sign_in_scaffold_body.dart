@@ -62,7 +62,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
           SignInButton(
             onTap: () => onSignInButtonTapped(context),
           ),
-          const ForgotPasswordButton(),
+          ForgotPasswordButton(email: _emailController.text),
           const DividerRowWithText(
             text: 'or continue with',
             padding: EdgeInsets.symmetric(vertical: 20.0),

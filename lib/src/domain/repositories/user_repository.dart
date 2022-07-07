@@ -1,3 +1,5 @@
+import '../../core/params/contact_fetch_request_params.dart';
+import '../../core/params/contact_selection_request_params.dart';
 import '../../core/params/create_new_pin_request_params.dart';
 import '../../core/params/fill_your_profile_request_params.dart';
 import '../../core/params/friend_invite_params.dart';
@@ -6,6 +8,8 @@ import '../../core/params/sign_in_request_params.dart';
 import '../../core/params/sign_up_request_params.dart';
 import '../../core/params/update_profile_params.dart';
 import '../../core/resources/data_state.dart';
+import '../../data/models/contact_selection/contact_fetch_response_model.dart';
+import '../../data/models/contact_selection/contact_selection_response_model.dart';
 import '../../data/models/create_new_pin/create_new_pin_response_model.dart';
 import '../../data/models/fill_your_profile/fill_your_profile_response_model.dart';
 import '../../data/models/friends/friend_response_model.dart';
@@ -26,6 +30,14 @@ abstract class UserRepository {
 
   Future<DataState<FillYourProfileResponseModel>> postFillYourProfileRequest(
     FillYourProfileRequestParams? params,
+  );
+
+  Future<DataState<ContactFetchResponseModel>> getContactFetchRequest(
+    ContactFetchRequestParams? params,
+  );
+
+  Future<DataState<ContactSelectionResponseModel>> postContactSelectionRequest(
+    ContactSelectionRequestParams? params,
   );
 
   Future<DataState<CreateNewPinResponseModel>> postCreateNewPinRequest(

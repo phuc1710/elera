@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../../../core/params/contact_fetch_request_params.dart';
+import '../../../core/params/contact_selection_request_params.dart';
 import '../../../core/params/create_new_pin_request_params.dart';
 import '../../../core/params/fill_your_profile_request_params.dart';
 import '../../../core/params/friend_invite_params.dart';
@@ -8,6 +10,8 @@ import '../../../core/params/new_card_params.dart';
 import '../../../core/params/sign_in_request_params.dart';
 import '../../../core/params/sign_up_request_params.dart';
 import '../../../core/params/update_profile_params.dart';
+import '../../models/contact_selection/contact_fetch_response_model.dart';
+import '../../models/contact_selection/contact_selection_response_model.dart';
 import '../../models/create_new_pin/create_new_pin_response_model.dart';
 import '../../models/fill_your_profile/fill_your_profile_response_model.dart';
 import '../../../core/nd_network/network/end_points.dart';
@@ -47,6 +51,19 @@ abstract class UserApiService {
   Future<HttpResponse<CreateNewPinResponseModel>> postCreateNewPinRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() CreateNewPinRequestParams? body,
+  });
+
+  @GET('/fetch_contact')
+  Future<HttpResponse<ContactFetchResponseModel>> getContactFetchRequest({
+    @Header('isMockup') bool? isMockup,
+    @Queries() ContactFetchRequestParams? query,
+  });
+
+  @POST('/select_contact')
+  Future<HttpResponse<ContactSelectionResponseModel>>
+      postContactSelectionRequest({
+    @Header('isMockup') bool? isMockup,
+    @Body() ContactSelectionRequestParams? body,
   });
 
   @GET(EndPoints.profile)

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/contact_selection_bloc.dart';
 import '../widgets/scaffold_body.dart';
 
 class SelectContactView extends StatelessWidget {
-  const SelectContactView({Key? key}) : super(key: key);
-
+  const SelectContactView({Key? key, required this.email}) : super(key: key);
+  final String email;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +24,11 @@ class SelectContactView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const ScaffoldBody(),
+          body: BlocProvider<ContactSelectionBloc>(
+            create: (context) =>
+                injector()..add(ContactFetched(userEmail: email)),
+            child: ScaffoldBody(email: email),
+          ),
         ),
       ),
     );
