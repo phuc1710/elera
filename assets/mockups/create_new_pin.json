@@ -1,9 +1,5 @@
 {
   "message": "",
   "error_code": 1,
-  "data": {
-    "token": "thisIsToken",
-    "name": "Name",
-    "email": "email@gmail.com"
-  }
+  "data": {}
 }
