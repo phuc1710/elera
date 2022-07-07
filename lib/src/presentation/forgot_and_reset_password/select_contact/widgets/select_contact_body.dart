@@ -8,15 +8,15 @@ import '../bloc/contact_selection_bloc.dart';
 import '../widgets/contact_radio.dart';
 import '../widgets/prompt_with_image.dart';
 
-class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({Key? key, required this.email}) : super(key: key);
+class SelectContactBody extends StatefulWidget {
+  const SelectContactBody({Key? key, required this.email}) : super(key: key);
 
   final String email;
   @override
-  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+  State<SelectContactBody> createState() => _SelectContactBodyState();
 }
 
-class _ScaffoldBodyState extends State<ScaffoldBody> {
+class _SelectContactBodyState extends State<SelectContactBody> {
   dynamic _selectedIndex;
   List<IconData> iconList = [Icons.chat_rounded, Icons.email];
 

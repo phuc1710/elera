@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injector/injector.dart';
 import '../bloc/contact_selection_bloc.dart';
-import '../widgets/scaffold_body.dart';
+import '../widgets/select_contact_body.dart';
 
 class SelectContactView extends StatelessWidget {
   const SelectContactView({Key? key, required this.email}) : super(key: key);
@@ -27,7 +27,7 @@ class SelectContactView extends StatelessWidget {
           body: BlocProvider<ContactSelectionBloc>(
             create: (context) =>
                 injector()..add(ContactFetched(userEmail: email)),
-            child: ScaffoldBody(email: email),
+            child: SelectContactBody(email: email),
           ),
         ),
       ),
