@@ -31,26 +31,26 @@ abstract class UserApiService {
   @POST(EndPoints.signIn)
   Future<HttpResponse<SignInResponseModel>> postSignInRequest({
     @Header('isMockup') bool? isMockup,
-    @Queries() SignInRequestParams? body,
+    @Body() SignInRequestParams? body,
   });
 
   @POST(EndPoints.signUp)
   Future<HttpResponse<SignUpResponseModel>> postSignUpRequest({
     @Header('isMockup') bool? isMockup,
-    @Queries() SignUpRequestParams? body,
+    @Body() SignUpRequestParams? body,
   });
 
   @POST(EndPoints.fillYourProfile)
   Future<HttpResponse<FillYourProfileResponseModel>>
       postFillYourProfileRequest({
     @Header('isMockup') bool? isMockup,
-    @Queries() FillYourProfileRequestParams? body,
+    @Body() FillYourProfileRequestParams? body,
   });
 
   @POST(EndPoints.createNewPin)
   Future<HttpResponse<CreateNewPinResponseModel>> postCreateNewPinRequest({
     @Header('isMockup') bool? isMockup,
-    @Queries() CreateNewPinRequestParams? body,
+    @Body() CreateNewPinRequestParams? body,
   });
 
   @GET(EndPoints.fetchContact)
