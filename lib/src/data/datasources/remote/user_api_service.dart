@@ -28,38 +28,38 @@ part 'user_api_service.g.dart';
 abstract class UserApiService {
   factory UserApiService(Dio dio, {String baseUrl}) = _UserApiService;
 
-  @POST('/sign_in')
+  @POST(EndPoints.signIn)
   Future<HttpResponse<SignInResponseModel>> postSignInRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() SignInRequestParams? body,
   });
 
-  @POST('/sign_up')
+  @POST(EndPoints.signUp)
   Future<HttpResponse<SignUpResponseModel>> postSignUpRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() SignUpRequestParams? body,
   });
 
-  @POST('/fill_your_profile')
+  @POST(EndPoints.fillYourProfile)
   Future<HttpResponse<FillYourProfileResponseModel>>
       postFillYourProfileRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() FillYourProfileRequestParams? body,
   });
 
-  @POST('/create_new_pin')
+  @POST(EndPoints.createNewPin)
   Future<HttpResponse<CreateNewPinResponseModel>> postCreateNewPinRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() CreateNewPinRequestParams? body,
   });
 
-  @GET('/fetch_contact')
+  @GET(EndPoints.fetchContact)
   Future<HttpResponse<ContactFetchResponseModel>> getContactFetchRequest({
     @Header('isMockup') bool? isMockup,
     @Queries() ContactFetchRequestParams? query,
   });
 
-  @POST('/select_contact')
+  @POST(EndPoints.selectContact)
   Future<HttpResponse<ContactSelectionResponseModel>>
       postContactSelectionRequest({
     @Header('isMockup') bool? isMockup,
