@@ -10,7 +10,7 @@ class ContactSelectionRequestParams {
       _$ContactSelectionRequestParamsFromJson(json);
 
   @JsonKey(name: 'contact_info')
-  String? contactInfo;
+  dynamic contactInfo;
 
   Map<String, dynamic> toJson() => _$ContactSelectionRequestParamsToJson(this);
 }

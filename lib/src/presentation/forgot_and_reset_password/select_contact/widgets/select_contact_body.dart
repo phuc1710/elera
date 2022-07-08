@@ -40,6 +40,8 @@ class _SelectContactBodyState extends State<SelectContactBody> {
           );
         }
       },
+      buildWhen: (prev, curr) =>
+          prev is ContactFetchInProgress && curr is! ContactFetchInProgress,
       builder: (context, state) {
         return Padding(
           padding: EdgeInsets.symmetric(
@@ -77,8 +79,14 @@ class _SelectContactBodyState extends State<SelectContactBody> {
   }
 
   void onContinueButtonTapped(BuildContext context) {
-    context.read<ContactSelectionBloc>().add(
-          const ContactSelectionSubmitted(),
-        );
+    if (_selectedIndex != null)
+      context.read<ContactSelectionBloc>().add(
+            ContactSelectionSubmitted(contactInfo: _selectedIndex),
+          );
+    else {
+      context
+          .read<ContactSelectionBloc>()
+          .add(const ContactNoSelectionSubmitted());
+    }
   }
 }

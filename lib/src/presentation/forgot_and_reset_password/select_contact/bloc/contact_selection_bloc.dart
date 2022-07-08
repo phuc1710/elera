@@ -21,6 +21,7 @@ class ContactSelectionBloc
   ContactSelectionBloc(this.contactSelectionUseCase, this.contactFetchUseCase)
       : super(ContactSelectionInitial()) {
     on<ContactFetched>(_onContactFetched);
+    on<ContactNoSelectionSubmitted>(_onContactNoSelectionSubmitted);
     on<ContactSelectionSubmitted>(_onContactSelectionSubmitted);
   }
 
@@ -61,7 +62,7 @@ class ContactSelectionBloc
   ) async {
     emit(ContactSelectionInProgress());
     final dataState = await contactSelectionUseCase(
-      params: ContactSelectionRequestParams(),
+      params: ContactSelectionRequestParams(contactInfo: event.contactInfo),
     );
     if (dataState is DataSuccess) {
       final res = dataState.data;
@@ -81,5 +82,16 @@ class ContactSelectionBloc
         ),
       );
     }
+  }
+
+  Future<void> _onContactNoSelectionSubmitted(
+    ContactNoSelectionSubmitted event,
+    Emitter<ContactSelectionState> emit,
+  ) async {
+    emit(
+      ContactSelectionFailure(
+        ApiError(errorMessage: 'Please select a contact'),
+      ),
+    );
   }
 }

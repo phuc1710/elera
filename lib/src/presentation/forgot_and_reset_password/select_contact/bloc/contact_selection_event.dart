@@ -11,5 +11,11 @@ class ContactFetched extends ContactSelectionEvent {
 }
 
 class ContactSelectionSubmitted extends ContactSelectionEvent {
-  const ContactSelectionSubmitted();
+  const ContactSelectionSubmitted({required this.contactInfo});
+
+  final dynamic contactInfo;
+}
+
+class ContactNoSelectionSubmitted extends ContactSelectionEvent {
+  const ContactNoSelectionSubmitted();
 }
