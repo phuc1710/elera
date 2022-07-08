@@ -28,6 +28,7 @@ class _SelectContactBodyState extends State<SelectContactBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is ContactSelectionSuccess) {
+          ScaffoldMessenger.of(context).removeCurrentSnackBar();
           Navigator.push<Object?>(
             context,
             MaterialPageRoute<dynamic>(
