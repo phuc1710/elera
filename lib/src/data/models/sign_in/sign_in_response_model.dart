@@ -22,22 +22,13 @@ class SignInResponseModel {
 
 @JsonSerializable()
 class SignInModel {
-  SignInModel({
-    this.token,
-    this.name,
-    this.email,
-  });
+  SignInModel({this.token});
 
   factory SignInModel.fromJson(Map<String, dynamic> json) =>
       _$SignInModelFromJson(json);
+
   @JsonKey(name: 'token')
   final String? token;
-
-  @JsonKey(name: 'name')
-  final String? name;
-
-  @JsonKey(name: 'email')
-  final String? email;
 
   Map<String, dynamic> toJson() => _$SignInModelToJson(this);
 }
