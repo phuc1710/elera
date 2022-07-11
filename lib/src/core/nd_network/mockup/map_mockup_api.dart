@@ -21,7 +21,8 @@ final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.addNewCard: 'profile',
   EndPoints.inviteFriends: 'invite_friends',
   EndPoints.selectContact: 'select_contact',
-  EndPoints.enterPin: 'enter_pin'
+  EndPoints.enterPin: 'enter_pin',
+  EndPoints.createPassword: 'create_password',
 };
 
 String? getJsonNameForGetRequest(

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
-import 'show_welcome_dialog.dart';
+import '../bloc/password_creation_bloc.dart';
 
 class MainActionButton extends StatelessWidget {
-  const MainActionButton({Key? key}) : super(key: key);
-
+  const MainActionButton({Key? key, required this.password}) : super(key: key);
+  final String password;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,11 +15,17 @@ class MainActionButton extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(40),
-        onTap: () => showWelcomeDialog(context),
+        onTap: () => onContinueButtonTapped(context),
         child: const MainActionInk(
           buttonString: 'Continue',
         ),
       ),
     );
+  }
+
+  void onContinueButtonTapped(BuildContext context) {
+    context
+        .read<PasswordCreationBloc>()
+        .add(PasswordCreationSubmitted(password));
   }
 }

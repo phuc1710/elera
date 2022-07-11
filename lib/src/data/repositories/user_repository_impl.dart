@@ -9,6 +9,7 @@ import '../../core/params/create_new_pin_request_params.dart';
 import '../../core/params/fill_your_profile_request_params.dart';
 import '../../core/params/friend_invite_params.dart';
 import '../../core/params/new_card_params.dart';
+import '../../core/params/password_creation_request_params.dart';
 import '../../core/params/pin_entry_request_params.dart';
 import '../../core/params/pin_sending_request_params.dart';
 import '../../core/params/sign_in_request_params.dart';
@@ -24,6 +25,7 @@ import '../models/create_new_pin/create_new_pin_response_model.dart';
 import '../models/fill_your_profile/fill_your_profile_response_model.dart';
 import '../models/friends/friend_response_model.dart';
 import '../models/general_response/general_response_model.dart';
+import '../models/password_creation/password_creation_response_model.dart';
 import '../models/payment/payment_response_model.dart';
 import '../models/pin_entry/pin_entry_response_model.dart';
 import '../models/pin_sending/pin_sending_response_model.dart';
@@ -162,7 +164,7 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final httpResponse = await _userApiService.getPinSendingRequest(
         isMockup: true,
-        body: params,
+        query: params,
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
@@ -181,6 +183,26 @@ class UserRepositoryImpl implements UserRepository {
   ) async {
     try {
       final httpResponse = await _userApiService.postPinEntryRequest(
+        isMockup: true,
+        body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<PasswordCreationResponseModel>> postPasswordCreationRequest(
+    PasswordCreationRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.postPasswordCreationRequest(
         isMockup: true,
         body: params,
       );
