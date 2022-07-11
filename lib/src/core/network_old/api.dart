@@ -18,11 +18,11 @@ class Api {
     };
   }
 
-  static Future<CourseResponseModel?> getCourses() async {
+  static Future<CourseFetchResponseModel?> getCourses() async {
     try {
       final canMakeRequest = await checkConnection();
       if (!canMakeRequest) {
-        return CourseResponseModel.fromJson(noConnectionRes);
+        return CourseFetchResponseModel.fromJson(noConnectionRes);
       }
       final res = await http.getRequest(
         GetParams(
@@ -31,7 +31,7 @@ class Api {
           headers: await getHeaders(),
         ),
       );
-      final result = CourseResponseModel.fromJson(res!);
+      final result = CourseFetchResponseModel.fromJson(res!);
       handleExceptionCase(result.errorCode);
 
       return result;

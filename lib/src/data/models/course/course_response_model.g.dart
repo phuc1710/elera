@@ -6,24 +6,26 @@ part of 'course_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CourseResponseModel _$CourseResponseModelFromJson(Map<String, dynamic> json) =>
-    CourseResponseModel(
+CourseFetchResponseModel _$CourseFetchResponseModelFromJson(
+        Map<String, dynamic> json) =>
+    CourseFetchResponseModel(
       errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
-          : CourseModel.fromJson(json['data'] as Map<String, dynamic>),
+          : CourseFetchModel.fromJson(json['data'] as Map<String, dynamic>),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$CourseResponseModelToJson(
-        CourseResponseModel instance) =>
+Map<String, dynamic> _$CourseFetchResponseModelToJson(
+        CourseFetchResponseModel instance) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
       'message': instance.message,
       'data': instance.data,
     };
 
-CourseModel _$CourseModelFromJson(Map<String, dynamic> json) => CourseModel(
+CourseFetchModel _$CourseFetchModelFromJson(Map<String, dynamic> json) =>
+    CourseFetchModel(
       (json['items'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
@@ -32,7 +34,7 @@ CourseModel _$CourseModelFromJson(Map<String, dynamic> json) => CourseModel(
           [],
     );
 
-Map<String, dynamic> _$CourseModelToJson(CourseModel instance) =>
+Map<String, dynamic> _$CourseFetchModelToJson(CourseFetchModel instance) =>
     <String, dynamic>{
       'items': instance.courseList,
     };

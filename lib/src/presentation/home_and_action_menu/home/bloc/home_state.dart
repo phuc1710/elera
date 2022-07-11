@@ -5,22 +5,22 @@ abstract class HomeState {
   const HomeState();
 }
 
-class HomeCourseInitial extends HomeState {
-  HomeCourseInitial();
+class CourseFetchInitial extends HomeState {
+  CourseFetchInitial();
 }
 
-class HomeCourseLoading extends HomeState {
-  HomeCourseLoading();
+class CourseFetchInProgress extends HomeState {
+  CourseFetchInProgress();
 }
 
-class HomeCourseSuccess extends HomeState {
-  HomeCourseSuccess(this.courses);
+class CourseFetchSuccess extends HomeState {
+  CourseFetchSuccess(this.courses);
 
   final List<CourseModelItem?> courses;
 }
 
-class HomeCourseFailed extends HomeState {
-  HomeCourseFailed(this.message);
+class CourseFetchFailure extends HomeState {
+  CourseFetchFailure(this.error);
 
-  final String? message;
+  final ApiError error;
 }

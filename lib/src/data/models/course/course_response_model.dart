@@ -38,11 +38,11 @@ final courseList = [
 final bookmarkList = courseList.where((c) => c.isBookmarked).toList();
 
 @JsonSerializable()
-class CourseResponseModel {
-  CourseResponseModel({this.errorCode, this.data, this.message});
+class CourseFetchResponseModel {
+  CourseFetchResponseModel({this.errorCode, this.data, this.message});
 
-  factory CourseResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$CourseResponseModelFromJson(json);
+  factory CourseFetchResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$CourseFetchResponseModelFromJson(json);
   @JsonKey(name: 'error_code')
   final int? errorCode;
 
@@ -50,22 +50,22 @@ class CourseResponseModel {
   final String? message;
 
   @JsonKey(name: 'data')
-  final CourseModel? data;
+  final CourseFetchModel? data;
 
-  Map<String, dynamic> toJson() => _$CourseResponseModelToJson(this);
+  Map<String, dynamic> toJson() => _$CourseFetchResponseModelToJson(this);
 }
 
 @JsonSerializable()
-class CourseModel {
-  CourseModel(this.courseList);
+class CourseFetchModel {
+  CourseFetchModel(this.courseList);
 
-  factory CourseModel.fromJson(Map<String, dynamic> json) =>
-      _$CourseModelFromJson(json);
+  factory CourseFetchModel.fromJson(Map<String, dynamic> json) =>
+      _$CourseFetchModelFromJson(json);
 
   @JsonKey(name: 'items', defaultValue: <CourseModelItem?>[])
   final List<CourseModelItem?> courseList;
 
-  Map<String, dynamic> toJson() => _$CourseModelToJson(this);
+  Map<String, dynamic> toJson() => _$CourseFetchModelToJson(this);
 }
 
 @JsonSerializable()

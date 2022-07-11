@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
+import '../../../../injector/injector.dart';
 import '../../most_popular_courses/views/most_popular_courses_view.dart';
 import '../../top_mentors/views/top_mentors_view.dart';
 import '../bloc/home_bloc.dart';
@@ -19,8 +20,8 @@ class HomeTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: BlocProvider(
-        create: (context) => HomeBloc()..add(CourseFetched()),
+      child: BlocProvider<HomeBloc>(
+        create: (context) => injector()..add(CourseFetched()),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,17 +79,17 @@ class HomeTabView extends StatelessWidget {
               ),
               BlocConsumer<HomeBloc, HomeState>(
                 listener: (context, state) {
-                  if (state is HomeCourseFailed) {
-                    Utils.showAppSnackBar(context, state.message);
+                  if (state is CourseFetchFailure) {
+                    Utils.showAppSnackBar(context, state.error.errorMessage);
                   }
                 },
                 builder: (context, state) {
-                  if (state is HomeCourseLoading)
+                  if (state is CourseFetchInProgress)
                     return const Center(child: CircularProgressIndicator());
-                  if (state is HomeCourseSuccess)
+                  if (state is CourseFetchSuccess)
                     return CourseTabBarView(courseList: state.courses);
 
-                  return const CircularProgressIndicator();
+                  return const Center(child: CircularProgressIndicator());
                 },
               ),
             ],
