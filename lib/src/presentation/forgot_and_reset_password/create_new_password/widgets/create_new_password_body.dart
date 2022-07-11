@@ -8,14 +8,14 @@ import '../widgets/main_action_button.dart';
 import '../widgets/password_input.dart';
 import 'show_welcome_dialog.dart';
 
-class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({Key? key}) : super(key: key);
+class CreateNewPasswordBody extends StatefulWidget {
+  const CreateNewPasswordBody({Key? key}) : super(key: key);
 
   @override
-  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+  State<CreateNewPasswordBody> createState() => _CreateNewPasswordBodyState();
 }
 
-class _ScaffoldBodyState extends State<ScaffoldBody> {
+class _CreateNewPasswordBodyState extends State<CreateNewPasswordBody> {
   final passwordController = TextEditingController();
   final repeatPasswordController = TextEditingController();
   @override
