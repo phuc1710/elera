@@ -22,22 +22,10 @@ class FillYourProfileResponseModel {
 
 @JsonSerializable()
 class FillYourProfileModel {
-  FillYourProfileModel({
-    this.token,
-    this.name,
-    this.email,
-  });
+  FillYourProfileModel();
 
   factory FillYourProfileModel.fromJson(Map<String, dynamic> json) =>
       _$FillYourProfileModelFromJson(json);
-  @JsonKey(name: 'token')
-  final String? token;
-
-  @JsonKey(name: 'name')
-  final String? name;
-
-  @JsonKey(name: 'email')
-  final String? email;
 
   Map<String, dynamic> toJson() => _$FillYourProfileModelToJson(this);
 }

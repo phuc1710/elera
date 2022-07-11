@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widgets/scaffold_body.dart';
+import '../../../../injector/injector.dart';
+import '../bloc/pin_entry_bloc.dart';
+import '../widgets/enter_pin_body.dart';
 
 class EnterPinView extends StatelessWidget {
   const EnterPinView({
@@ -28,7 +31,11 @@ class EnterPinView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: ScaffoldBody(contactInfo: contactInfo),
+          body: BlocProvider<PinEntryBloc>(
+            create: (context) =>
+                injector()..add(PinSendingRequested(contactInfo as String)),
+            child: EnterPinBody(contactInfo: contactInfo),
+          ),
         ),
       ),
     );

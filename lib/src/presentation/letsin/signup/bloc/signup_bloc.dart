@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../core/params/sign_up_request_params.dart';
 import '../../../../core/resources/api_error.dart';
@@ -11,6 +12,7 @@ import '../../../../domain/usecases/sign_up_usecase.dart';
 part 'signup_event.dart';
 part 'signup_state.dart';
 
+@injectable
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   SignUpBloc(this.signUpUseCase) : super(SignUpInitial()) {
     on<SignUpSubmitted>(_onSignUpSubmitted);

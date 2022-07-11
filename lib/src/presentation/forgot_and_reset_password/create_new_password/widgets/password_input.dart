@@ -4,9 +4,11 @@ class PasswordInput extends StatefulWidget {
   const PasswordInput({
     Key? key,
     required this.hint,
+    required this.controller,
   }) : super(key: key);
 
   final String hint;
+  final TextEditingController controller;
 
   @override
   State<PasswordInput> createState() => _PasswordInputState();

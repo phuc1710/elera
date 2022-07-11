@@ -6,7 +6,7 @@ import '../nd_network/network/end_points.dart';
 
 class MockApi {
   static Map<String, String> mapMockApi = {
-    EndPoints.course: 'course',
+    EndPoints.course: 'fetch_course',
   };
 
   static Future<Map<String, dynamic>?> get(String endpoint) async {

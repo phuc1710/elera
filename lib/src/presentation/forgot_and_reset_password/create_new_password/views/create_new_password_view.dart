@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widgets/scaffold_body.dart';
+import '../../../../injector/injector.dart';
+import '../bloc/password_creation_bloc.dart';
+import '../widgets/create_new_password_body.dart';
 
 class CreateNewPasswordView extends StatelessWidget {
   const CreateNewPasswordView({Key? key}) : super(key: key);
@@ -23,7 +26,10 @@ class CreateNewPasswordView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const ScaffoldBody(),
+          body: BlocProvider<PasswordCreationBloc>(
+            create: (context) => injector(),
+            child: const CreateNewPasswordBody(),
+          ),
         ),
       ),
     );

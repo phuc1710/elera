@@ -1,0 +1,10 @@
+{
+  "message": "",
+  "error_code": 1,
+  "data": {
+    "contacts": [
+      { "type": "Email", "info": "email@gmail.com" },
+      { "type": "SMS", "info": "+84123456789" }
+    ]
+  }
+}

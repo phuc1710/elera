@@ -8,6 +8,8 @@ final Map<String, String> mapMockApiForGetRequest = {
   EndPoints.countries: 'edit_profile',
   EndPoints.languages: 'languages',
   EndPoints.inviteFriends: 'invite_friends',
+  EndPoints.fetchContact: 'fetch_contact',
+  EndPoints.pinSending: 'pin_sending',
 };
 
 final Map<String, String> mapMockApiForPostRequest = {
@@ -18,6 +20,9 @@ final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.profile: 'profile',
   EndPoints.addNewCard: 'profile',
   EndPoints.inviteFriends: 'invite_friends',
+  EndPoints.selectContact: 'select_contact',
+  EndPoints.enterPin: 'enter_pin',
+  EndPoints.createPassword: 'create_password',
 };
 
 String? getJsonNameForGetRequest(

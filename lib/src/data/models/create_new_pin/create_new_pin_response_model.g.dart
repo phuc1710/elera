@@ -25,15 +25,7 @@ Map<String, dynamic> _$CreateNewPinResponseModelToJson(
     };
 
 CreateNewPinModel _$CreateNewPinModelFromJson(Map<String, dynamic> json) =>
-    CreateNewPinModel(
-      token: json['token'] as String?,
-      name: json['name'] as String?,
-      email: json['email'] as String?,
-    );
+    CreateNewPinModel();
 
 Map<String, dynamic> _$CreateNewPinModelToJson(CreateNewPinModel instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-      'name': instance.name,
-      'email': instance.email,
-    };
+    <String, dynamic>{};
