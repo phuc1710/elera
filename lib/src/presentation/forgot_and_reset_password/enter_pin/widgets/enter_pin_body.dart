@@ -8,8 +8,8 @@ import '../bloc/pin_entry_bloc.dart';
 import '../widgets/main_action_button.dart';
 import '../widgets/resend_code_row.dart';
 
-class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({
+class EnterPinBody extends StatefulWidget {
+  const EnterPinBody({
     Key? key,
     required dynamic contactInfo,
   })  : _contactInfo = contactInfo,
@@ -18,10 +18,10 @@ class ScaffoldBody extends StatefulWidget {
   final dynamic _contactInfo;
 
   @override
-  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+  State<EnterPinBody> createState() => _EnterPinBodyState();
 }
 
-class _ScaffoldBodyState extends State<ScaffoldBody> {
+class _EnterPinBodyState extends State<EnterPinBody> {
   final TextEditingController pinController = TextEditingController();
   @override
   Widget build(BuildContext context) {

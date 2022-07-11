@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injector/injector.dart';
 import '../bloc/pin_entry_bloc.dart';
-import '../widgets/scaffold_body.dart';
+import '../widgets/enter_pin_body.dart';
 
 class EnterPinView extends StatelessWidget {
   const EnterPinView({
@@ -34,7 +34,7 @@ class EnterPinView extends StatelessWidget {
           body: BlocProvider<PinEntryBloc>(
             create: (context) =>
                 injector()..add(PinSendingRequested(contactInfo as String)),
-            child: ScaffoldBody(contactInfo: contactInfo),
+            child: EnterPinBody(contactInfo: contactInfo),
           ),
         ),
       ),
