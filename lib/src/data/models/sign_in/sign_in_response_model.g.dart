@@ -25,13 +25,9 @@ Map<String, dynamic> _$SignInResponseModelToJson(
 
 SignInModel _$SignInModelFromJson(Map<String, dynamic> json) => SignInModel(
       token: json['token'] as String?,
-      name: json['name'] as String?,
-      email: json['email'] as String?,
     );
 
 Map<String, dynamic> _$SignInModelToJson(SignInModel instance) =>
     <String, dynamic>{
       'token': instance.token,
-      'name': instance.name,
-      'email': instance.email,
     };

@@ -18,35 +18,39 @@ import '../domain/usecases/add_new_card_usecase.dart' as _i7;
 import '../domain/usecases/create_new_pin_usecase.dart' as _i10;
 import '../domain/usecases/fill_your_profile_usecase.dart' as _i11;
 import '../domain/usecases/get_contact_fetch_usecase.dart' as _i8;
-import '../domain/usecases/get_countries_usecase.dart' as _i29;
-import '../domain/usecases/get_helper_center_usecase.dart' as _i30;
+import '../domain/usecases/get_countries_usecase.dart' as _i31;
+import '../domain/usecases/get_helper_center_usecase.dart' as _i32;
 import '../domain/usecases/get_invite_friends_usecase.dart' as _i12;
-import '../domain/usecases/get_languages_usecase.dart' as _i31;
+import '../domain/usecases/get_languages_usecase.dart' as _i33;
 import '../domain/usecases/get_payments_usecase.dart' as _i13;
+import '../domain/usecases/get_pin_sending_usecase.dart' as _i22;
 import '../domain/usecases/get_profile_usecase.dart' as _i14;
 import '../domain/usecases/invite_friend_usecase.dart' as _i18;
 import '../domain/usecases/post_contact_selection_usecase.dart' as _i9;
-import '../domain/usecases/sign_in_usecase.dart' as _i22;
-import '../domain/usecases/sign_up_usecase.dart' as _i23;
-import '../domain/usecases/update_profile_usecase.dart' as _i24;
-import '../module/register_module.dart' as _i37;
+import '../domain/usecases/post_pin_entry_usecase.dart' as _i21;
+import '../domain/usecases/sign_in_usecase.dart' as _i24;
+import '../domain/usecases/sign_up_usecase.dart' as _i25;
+import '../domain/usecases/update_profile_usecase.dart' as _i26;
+import '../module/register_module.dart' as _i40;
 import '../presentation/account_setup/create_new_pin/bloc/create_new_pin_bloc.dart'
-    as _i26;
-import '../presentation/account_setup/fill_your_profile/bloc/fill_your_profile_bloc.dart'
-    as _i27;
-import '../presentation/edit_profile/bloc/edit_profile_bloc.dart' as _i36;
-import '../presentation/forgot_and_reset_password/select_contact/bloc/contact_selection_bloc.dart'
-    as _i25;
-import '../presentation/friends_invitation/bloc/friends_invitation_bloc.dart'
     as _i28;
-import '../presentation/help_center/bloc/helper_center_bloc.dart' as _i32;
-import '../presentation/language/bloc/language_bloc.dart' as _i33;
-import '../presentation/letsin/signin/bloc/signin_bloc.dart' as _i34;
-import '../presentation/letsin/signup/bloc/signup_bloc.dart' as _i35;
+import '../presentation/account_setup/fill_your_profile/bloc/fill_your_profile_bloc.dart'
+    as _i29;
+import '../presentation/edit_profile/bloc/edit_profile_bloc.dart' as _i39;
+import '../presentation/forgot_and_reset_password/enter_pin/bloc/pin_entry_bloc.dart'
+    as _i36;
+import '../presentation/forgot_and_reset_password/select_contact/bloc/contact_selection_bloc.dart'
+    as _i27;
+import '../presentation/friends_invitation/bloc/friends_invitation_bloc.dart'
+    as _i30;
+import '../presentation/help_center/bloc/helper_center_bloc.dart' as _i34;
+import '../presentation/language/bloc/language_bloc.dart' as _i35;
+import '../presentation/letsin/signin/bloc/signin_bloc.dart' as _i37;
+import '../presentation/letsin/signup/bloc/signup_bloc.dart' as _i38;
 import '../presentation/new_card/bloc/new_card_bloc.dart' as _i19;
 import '../presentation/payment/bloc/payment_bloc.dart' as _i20;
 import '../presentation/profile/bloc/profile_bloc.dart'
-    as _i21; // ignore_for_file: unnecessary_lambdas
+    as _i23; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -89,37 +93,43 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i19.NewCardBloc(get<_i7.AddNewCardUseCase>()));
   gh.factory<_i20.PaymentBloc>(
       () => _i20.PaymentBloc(get<_i13.GetPaymentsUseCase>()));
-  gh.factory<_i21.ProfileBloc>(
-      () => _i21.ProfileBloc(get<_i14.GetProfileUseCase>()));
-  gh.factory<_i22.SignInUseCase>(
-      () => _i22.SignInUseCase(get<_i5.UserRepository>()));
-  gh.factory<_i23.SignUpUseCase>(
-      () => _i23.SignUpUseCase(get<_i5.UserRepository>()));
-  gh.factory<_i24.UpdateProfileUseCase>(
-      () => _i24.UpdateProfileUseCase(get<_i5.UserRepository>()));
-  gh.factory<_i25.ContactSelectionBloc>(() => _i25.ContactSelectionBloc(
+  gh.factory<_i21.PinEntryUseCase>(
+      () => _i21.PinEntryUseCase(get<_i5.UserRepository>()));
+  gh.factory<_i22.PinSendingUseCase>(
+      () => _i22.PinSendingUseCase(get<_i5.UserRepository>()));
+  gh.factory<_i23.ProfileBloc>(
+      () => _i23.ProfileBloc(get<_i14.GetProfileUseCase>()));
+  gh.factory<_i24.SignInUseCase>(
+      () => _i24.SignInUseCase(get<_i5.UserRepository>()));
+  gh.factory<_i25.SignUpUseCase>(
+      () => _i25.SignUpUseCase(get<_i5.UserRepository>()));
+  gh.factory<_i26.UpdateProfileUseCase>(
+      () => _i26.UpdateProfileUseCase(get<_i5.UserRepository>()));
+  gh.factory<_i27.ContactSelectionBloc>(() => _i27.ContactSelectionBloc(
       get<_i9.ContactSelectionUseCase>(), get<_i8.ContactFetchUseCase>()));
-  gh.factory<_i26.CreateNewPinBloc>(
-      () => _i26.CreateNewPinBloc(get<_i10.CreateNewPinUseCase>()));
-  gh.factory<_i27.FillYourProfileBloc>(
-      () => _i27.FillYourProfileBloc(get<_i11.FillYourProfileUseCase>()));
-  gh.factory<_i28.FriendsInvitationBloc>(() => _i28.FriendsInvitationBloc(
+  gh.factory<_i28.CreateNewPinBloc>(
+      () => _i28.CreateNewPinBloc(get<_i10.CreateNewPinUseCase>()));
+  gh.factory<_i29.FillYourProfileBloc>(
+      () => _i29.FillYourProfileBloc(get<_i11.FillYourProfileUseCase>()));
+  gh.factory<_i30.FriendsInvitationBloc>(() => _i30.FriendsInvitationBloc(
       get<_i12.GetInviteFriendsUseCase>(), get<_i18.InviteFriendUseCase>()));
-  gh.factory<_i29.GetCountriesUseCase>(
-      () => _i29.GetCountriesUseCase(get<_i16.HelperRepository>()));
-  gh.factory<_i30.GetHelperCenterUseCase>(
-      () => _i30.GetHelperCenterUseCase(get<_i16.HelperRepository>()));
-  gh.factory<_i31.GetLanguagesUseCase>(
-      () => _i31.GetLanguagesUseCase(get<_i16.HelperRepository>()));
-  gh.factory<_i32.HelperCenterBloc>(
-      () => _i32.HelperCenterBloc(get<_i30.GetHelperCenterUseCase>()));
-  gh.factory<_i33.LanguageBloc>(
-      () => _i33.LanguageBloc(get<_i31.GetLanguagesUseCase>()));
-  gh.factory<_i34.SignInBloc>(() => _i34.SignInBloc(get<_i22.SignInUseCase>()));
-  gh.factory<_i35.SignUpBloc>(() => _i35.SignUpBloc(get<_i23.SignUpUseCase>()));
-  gh.factory<_i36.EditProfileBloc>(() => _i36.EditProfileBloc(
-      get<_i29.GetCountriesUseCase>(), get<_i24.UpdateProfileUseCase>()));
+  gh.factory<_i31.GetCountriesUseCase>(
+      () => _i31.GetCountriesUseCase(get<_i16.HelperRepository>()));
+  gh.factory<_i32.GetHelperCenterUseCase>(
+      () => _i32.GetHelperCenterUseCase(get<_i16.HelperRepository>()));
+  gh.factory<_i33.GetLanguagesUseCase>(
+      () => _i33.GetLanguagesUseCase(get<_i16.HelperRepository>()));
+  gh.factory<_i34.HelperCenterBloc>(
+      () => _i34.HelperCenterBloc(get<_i32.GetHelperCenterUseCase>()));
+  gh.factory<_i35.LanguageBloc>(
+      () => _i35.LanguageBloc(get<_i33.GetLanguagesUseCase>()));
+  gh.factory<_i36.PinEntryBloc>(() => _i36.PinEntryBloc(
+      get<_i22.PinSendingUseCase>(), get<_i21.PinEntryUseCase>()));
+  gh.factory<_i37.SignInBloc>(() => _i37.SignInBloc(get<_i24.SignInUseCase>()));
+  gh.factory<_i38.SignUpBloc>(() => _i38.SignUpBloc(get<_i25.SignUpUseCase>()));
+  gh.factory<_i39.EditProfileBloc>(() => _i39.EditProfileBloc(
+      get<_i31.GetCountriesUseCase>(), get<_i26.UpdateProfileUseCase>()));
   return get;
 }
 
-class _$RegisterModule extends _i37.RegisterModule {}
+class _$RegisterModule extends _i40.RegisterModule {}

@@ -1,31 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'create_new_pin_response_model.dart';
+part of 'pin_entry_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CreateNewPinResponseModel _$CreateNewPinResponseModelFromJson(
+PinEntryResponseModel _$PinEntryResponseModelFromJson(
         Map<String, dynamic> json) =>
-    CreateNewPinResponseModel(
+    PinEntryResponseModel(
       errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
-          : CreateNewPinModel.fromJson(json['data'] as Map<String, dynamic>),
+          : PinEntryModel.fromJson(json['data'] as Map<String, dynamic>),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$CreateNewPinResponseModelToJson(
-        CreateNewPinResponseModel instance) =>
+Map<String, dynamic> _$PinEntryResponseModelToJson(
+        PinEntryResponseModel instance) =>
     <String, dynamic>{
       'error_code': instance.errorCode,
       'message': instance.message,
       'data': instance.data,
     };
 
-CreateNewPinModel _$CreateNewPinModelFromJson(Map<String, dynamic> json) =>
-    CreateNewPinModel();
+PinEntryModel _$PinEntryModelFromJson(Map<String, dynamic> json) =>
+    PinEntryModel();
 
-Map<String, dynamic> _$CreateNewPinModelToJson(CreateNewPinModel instance) =>
+Map<String, dynamic> _$PinEntryModelToJson(PinEntryModel instance) =>
     <String, dynamic>{};

@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
-import '../../create_new_password/views/create_new_password_view.dart';
+import '../bloc/pin_entry_bloc.dart';
 
-class MainActionButton extends StatelessWidget {
-  const MainActionButton({Key? key}) : super(key: key);
+class MainActionButton extends StatefulWidget {
+  const MainActionButton({Key? key, required this.pin}) : super(key: key);
 
+  final String pin;
+  @override
+  State<MainActionButton> createState() => _MainActionButtonState();
+}
+
+class _MainActionButtonState extends State<MainActionButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding:
           EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
       child: InkWell(
-        onTap: () {
-          Navigator.push<dynamic>(
-            context,
-            MaterialPageRoute<dynamic>(
-              builder: (context) => const CreateNewPasswordView(),
-            ),
-          );
-        },
+        onTap: () => onContinueButtonTapped(context),
         child: const MainActionInk(buttonString: 'Continue'),
       ),
     );
+  }
+
+  void onContinueButtonTapped(BuildContext context) {
+    context.read<PinEntryBloc>().add(PinEntrySubmitted(widget.pin));
   }
 }

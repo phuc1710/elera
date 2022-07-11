@@ -7,6 +7,8 @@ import '../../../core/params/create_new_pin_request_params.dart';
 import '../../../core/params/fill_your_profile_request_params.dart';
 import '../../../core/params/friend_invite_params.dart';
 import '../../../core/params/new_card_params.dart';
+import '../../../core/params/pin_entry_request_params.dart';
+import '../../../core/params/pin_sending_request_params.dart';
 import '../../../core/params/sign_in_request_params.dart';
 import '../../../core/params/sign_up_request_params.dart';
 import '../../../core/params/update_profile_params.dart';
@@ -18,6 +20,8 @@ import '../../../core/nd_network/network/end_points.dart';
 import '../../models/friends/friend_response_model.dart';
 import '../../models/general_response/general_response_model.dart';
 import '../../models/payment/payment_response_model.dart';
+import '../../models/pin_entry/pin_entry_response_model.dart';
+import '../../models/pin_sending/pin_sending_response_model.dart';
 import '../../models/profile/profile_response_model.dart';
 import '../../models/sign_in/sign_in_response_model.dart';
 import '../../models/sign_up/sign_up_response_model.dart';
@@ -47,16 +51,28 @@ abstract class UserApiService {
     @Body() FillYourProfileRequestParams? body,
   });
 
+  @GET(EndPoints.fetchContact)
+  Future<HttpResponse<ContactFetchResponseModel>> getContactFetchRequest({
+    @Header('isMockup') bool? isMockup,
+    @Queries() ContactFetchRequestParams? query,
+  });
+
   @POST(EndPoints.createNewPin)
   Future<HttpResponse<CreateNewPinResponseModel>> postCreateNewPinRequest({
     @Header('isMockup') bool? isMockup,
     @Body() CreateNewPinRequestParams? body,
   });
 
-  @GET(EndPoints.fetchContact)
-  Future<HttpResponse<ContactFetchResponseModel>> getContactFetchRequest({
+  @GET(EndPoints.pinSending)
+  Future<HttpResponse<PinSendingResponseModel>> getPinSendingRequest({
     @Header('isMockup') bool? isMockup,
-    @Queries() ContactFetchRequestParams? query,
+    @Body() PinSendingRequestParams? body,
+  });
+
+  @POST(EndPoints.enterPin)
+  Future<HttpResponse<PinEntryResponseModel>> postPinEntryRequest({
+    @Header('isMockup') bool? isMockup,
+    @Body() PinEntryRequestParams? body,
   });
 
   @POST(EndPoints.selectContact)

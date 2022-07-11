@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'contact_selection_request_params.dart';
+part of 'pin_sending_request_params.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ContactSelectionRequestParams _$ContactSelectionRequestParamsFromJson(
+PinSendingRequestParams _$PinSendingRequestParamsFromJson(
         Map<String, dynamic> json) =>
-    ContactSelectionRequestParams(
-      contactInfo: json['contact_info'],
+    PinSendingRequestParams(
+      contactInfo: json['contact_info'] as String?,
     );
 
-Map<String, dynamic> _$ContactSelectionRequestParamsToJson(
-        ContactSelectionRequestParams instance) =>
+Map<String, dynamic> _$PinSendingRequestParamsToJson(
+        PinSendingRequestParams instance) =>
     <String, dynamic>{
       'contact_info': instance.contactInfo,
     };

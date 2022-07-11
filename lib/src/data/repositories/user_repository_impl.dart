@@ -7,8 +7,10 @@ import '../../core/params/contact_fetch_request_params.dart';
 import '../../core/params/contact_selection_request_params.dart';
 import '../../core/params/create_new_pin_request_params.dart';
 import '../../core/params/fill_your_profile_request_params.dart';
-import '../../core/params/new_card_params.dart';
 import '../../core/params/friend_invite_params.dart';
+import '../../core/params/new_card_params.dart';
+import '../../core/params/pin_entry_request_params.dart';
+import '../../core/params/pin_sending_request_params.dart';
 import '../../core/params/sign_in_request_params.dart';
 import '../../core/params/sign_up_request_params.dart';
 import '../../core/params/update_profile_params.dart';
@@ -20,10 +22,12 @@ import '../models/contact_selection/contact_fetch_response_model.dart';
 import '../models/contact_selection/contact_selection_response_model.dart';
 import '../models/create_new_pin/create_new_pin_response_model.dart';
 import '../models/fill_your_profile/fill_your_profile_response_model.dart';
-import '../models/profile/profile_response_model.dart';
-import '../models/payment/payment_response_model.dart';
-import '../models/general_response/general_response_model.dart';
 import '../models/friends/friend_response_model.dart';
+import '../models/general_response/general_response_model.dart';
+import '../models/payment/payment_response_model.dart';
+import '../models/pin_entry/pin_entry_response_model.dart';
+import '../models/pin_sending/pin_sending_response_model.dart';
+import '../models/profile/profile_response_model.dart';
 import '../models/sign_in/sign_in_response_model.dart';
 import '../models/sign_up/sign_up_response_model.dart';
 
@@ -119,6 +123,66 @@ class UserRepositoryImpl implements UserRepository {
       final httpResponse = await _userApiService.getContactFetchRequest(
         isMockup: true,
         query: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<ContactSelectionResponseModel>> postContactSelectionRequest(
+    ContactSelectionRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.postContactSelectionRequest(
+        isMockup: true,
+        body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<PinSendingResponseModel>> getPinSendingRequest(
+    PinSendingRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.getPinSendingRequest(
+        isMockup: true,
+        body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<PinEntryResponseModel>> postPinEntryRequest(
+    PinEntryRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.postPinEntryRequest(
+        isMockup: true,
+        body: params,
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
@@ -279,26 +343,6 @@ class UserRepositoryImpl implements UserRepository {
           type: DioErrorType.response,
         ),
       );
-    } on DioError catch (e) {
-      return DataFailed(e);
-    }
-  }
-
-  @override
-  Future<DataState<ContactSelectionResponseModel>> postContactSelectionRequest(
-    ContactSelectionRequestParams? params,
-  ) async {
-    try {
-      final httpResponse = await _userApiService.postContactSelectionRequest(
-        isMockup: true,
-        body: params,
-      );
-
-      if (httpResponse.response.statusCode == HttpStatus.ok) {
-        return DataSuccess(httpResponse.data);
-      }
-
-      return DataFailed(httpResponse.dioError);
     } on DioError catch (e) {
       return DataFailed(e);
     }

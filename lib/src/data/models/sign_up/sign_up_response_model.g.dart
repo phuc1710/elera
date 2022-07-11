@@ -23,15 +23,7 @@ Map<String, dynamic> _$SignUpResponseModelToJson(
       'data': instance.data,
     };
 
-SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) => SignUpModel(
-      token: json['token'] as String?,
-      name: json['name'] as String?,
-      email: json['email'] as String?,
-    );
+SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) => SignUpModel();
 
 Map<String, dynamic> _$SignUpModelToJson(SignUpModel instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-      'name': instance.name,
-      'email': instance.email,
-    };
+    <String, dynamic>{};

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/pin_entry_bloc.dart';
 
 class ResendCodeRow extends StatefulWidget {
   const ResendCodeRow({
     Key? key,
+    required this.contactInfo,
   }) : super(key: key);
+
+  final String contactInfo;
 
   @override
   State<ResendCodeRow> createState() => _ResendCodeRowState();
@@ -22,14 +28,14 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Resend code in ', style: displayMedium),
-          buildResendTimerAndButton(),
+          buildResendTimerAndButton(context),
           Text(' s', style: displayMedium),
         ],
       ),
     );
   }
 
-  Widget buildResendTimerAndButton() {
+  Widget buildResendTimerAndButton(BuildContext context) {
     const Duration duration = Duration(minutes: 1);
 
     return !isTimeOut
@@ -45,7 +51,12 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
             onEnd: () => setState(() => isTimeOut = true),
           )
         : InkWell(
-            onTap: () => setState(() => isTimeOut = false),
+            onTap: () {
+              context
+                  .read<PinEntryBloc>()
+                  .add(PinSendingRequested(widget.contactInfo));
+              setState(() => isTimeOut = false);
+            },
             child:
                 Text('Resend', style: Theme.of(context).textTheme.labelMedium),
           );

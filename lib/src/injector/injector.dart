@@ -3,7 +3,6 @@ import 'package:injectable/injectable.dart';
 
 import '../core/nd_network/nd_network.dart';
 import '../core/nd_network/network/environment.dart' as env;
-
 // Project imports:
 import 'injector.config.dart';
 

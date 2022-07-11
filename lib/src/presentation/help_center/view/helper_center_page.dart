@@ -1,12 +1,11 @@
+import 'package:collection/collection.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:collection/collection.dart';
 
 import '../../../core/enums/helper_contact_type.dart';
-import '../../../data/models/api_models.dart';
-
 import '../../../core/params/appbar_params.dart';
+import '../../../data/models/api_models.dart';
 import '../../../injector/injector.dart';
 import '../../home_and_action_menu/home/widgets/search_bar.dart';
 import '../../widgets/base_appbar.dart';
