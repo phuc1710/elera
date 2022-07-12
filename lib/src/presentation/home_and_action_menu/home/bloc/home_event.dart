@@ -5,3 +5,5 @@ abstract class HomeEvent {
 }
 
 class CourseFetched extends HomeEvent {}
+
+class DealFetched extends HomeEvent {}

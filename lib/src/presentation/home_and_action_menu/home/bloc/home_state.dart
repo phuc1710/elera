@@ -24,3 +24,23 @@ class CourseFetchFailure extends HomeState {
 
   final ApiError error;
 }
+
+class DealFetchInitial extends HomeState {
+  DealFetchInitial();
+}
+
+class DealFetchInProgress extends HomeState {
+  DealFetchInProgress();
+}
+
+class DealFetchSuccess extends HomeState {
+  DealFetchSuccess(this.deals);
+
+  final List<Deal?> deals;
+}
+
+class DealFetchFailure extends HomeState {
+  DealFetchFailure(this.error);
+
+  final ApiError error;
+}

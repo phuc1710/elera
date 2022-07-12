@@ -1,0 +1,38 @@
+{
+  "message": "",
+  "error_code": 1,
+  "data": {
+    "deals": [
+      {
+        "title": "Today's Special",
+        "subtitle": "40% OFF",
+        "description": "Get a discount for every course order!\nOnly valid for today!",
+        "deal": "40%"
+      },
+      {
+        "title": "Today's Special",
+        "subtitle": "50% OFF",
+        "description": "Get a discount for every course order!\nOnly valid for today!",
+        "deal": "50%"
+      },
+      {
+        "title": "Today's Special",
+        "subtitle": "60% OFF",
+        "description": "Get a discount for every course order!\nOnly valid for today!",
+        "deal": "60%"
+      },
+      {
+        "title": "Today's Special",
+        "subtitle": "70% OFF",
+        "description": "Get a discount for every course order!\nOnly valid for today!",
+        "deal": "70%"
+      },
+      {
+        "title": "Today's Special",
+        "subtitle": "80% OFF",
+        "description": "Get a discount for every course order!\nOnly valid for today!",
+        "deal": "80%"
+      }
+    ]
+  }
+}
