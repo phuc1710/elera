@@ -17,7 +17,7 @@ class EndPoints {
   static const String createPassword = '/create_password';
 
   static const String course = '/fetch_course';
-  static const String deal = 'fetch_deal';
+  static const String home = '/fetch_home';
 
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';

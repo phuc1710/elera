@@ -1,7 +1,6 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/course/course_response_model.dart';
 import '../../home/widgets/course_list_view.dart';
 import '../../top_mentors/widgets/top_mentors_body.dart';
 import 'not_found_list_view.dart';
@@ -24,7 +23,7 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SizedBox(
-        height: 185.0 * courseList.length + 30,
+        height: 185.0 * 0 + 30,
         child: DefaultTabController(
           length: _tabList.length,
           child: Column(
@@ -55,7 +54,7 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
                       const NotFoundListView()
                     else
                       const CourseListView(
-                        courseList: [],
+                        courses: [],
                       ),
                     if (widget.searchPhrase.isEmpty)
                       const NotFoundListView()

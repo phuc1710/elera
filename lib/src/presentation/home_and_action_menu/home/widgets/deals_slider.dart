@@ -20,14 +20,14 @@ class _DealsSliderState extends State<DealsSlider> {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
       listener: (context, state) {
-        if (state is CourseFetchFailure) {
+        if (state is HomeFetchFailure) {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
       },
       builder: (context, state) {
-        if (state is DealFetchInProgress)
+        if (state is HomeFetchInProgress)
           return const Center(child: CircularProgressIndicator());
-        if (state is DealFetchSuccess)
+        if (state is HomeFetchSuccess)
           return Padding(
             padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -49,8 +49,9 @@ class _DealsSliderState extends State<DealsSlider> {
                       onPageChanged: (index) => setState(() {
                         page = index;
                       }),
-                      children: List.generate(state.deals.length, (index) {
-                        final deal = state.deals[index];
+                      children: List.generate(state.data?.deals?.length ?? 0,
+                          (index) {
+                        final deal = state.data?.deals?[index];
 
                         return DealPage(
                           title: deal?.title,
@@ -61,7 +62,9 @@ class _DealsSliderState extends State<DealsSlider> {
                       }),
                     ),
                     PageIndicator(
-                        controller: _controller, pageCount: state.deals.length)
+                      controller: _controller,
+                      pageCount: state.data?.deals?.length ?? 0,
+                    )
                   ],
                 ),
               ),

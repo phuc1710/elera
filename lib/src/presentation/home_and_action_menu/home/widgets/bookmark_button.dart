@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/course/course_response_model.dart';
+import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../../search/widgets/bottom_modal_sheet_title.dart';
 import 'bottom_sheet_action_button.dart';
 import 'course_card.dart';
@@ -13,7 +13,7 @@ class BookmarkButton extends StatefulWidget {
     required this.onRemoveBookmark,
   }) : super(key: key);
 
-  final CourseModelItem courseModel;
+  final Course? courseModel;
   final bool isInRemoveBookmark;
   final VoidCallback onRemoveBookmark;
 
@@ -31,18 +31,16 @@ class _BookmarkButtonState extends State<BookmarkButton> {
         children: [
           InkWell(
             onTap: () {
-              if (widget.courseModel.isBookmarked) {
+              if (widget.courseModel?.isBookmarked ?? true) {
                 showBookmarkRemoveBottomSheet(context);
               }
-              if (!widget.courseModel.isBookmarked)
+              if (!(widget.courseModel?.isBookmarked ?? false))
                 setState(() {
-                  widget.courseModel.isBookmarked = true;
-                  if (!bookmarkList.contains(widget.courseModel))
-                    bookmarkList.add(widget.courseModel);
+                  widget.courseModel?.isBookmarked = true;
                 });
             },
             child: Icon(
-              widget.courseModel.isBookmarked
+              widget.courseModel?.isBookmarked ?? false
                   ? Icons.bookmark
                   : Icons.bookmark_outline,
               color: Theme.of(context).primaryColor,

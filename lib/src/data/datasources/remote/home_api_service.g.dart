@@ -16,7 +16,7 @@ class _HomeApiService implements HomeApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<DealFetchResponseModel>> getDealFetchRequest(
+  Future<HttpResponse<HomeFetchResponseModel>> getHomeFetchRequest(
       {isMockup, query}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -26,12 +26,12 @@ class _HomeApiService implements HomeApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<DealFetchResponseModel>>(
+        _setStreamType<HttpResponse<HomeFetchResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'fetch_deal',
+                .compose(_dio.options, '/fetch_home',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = DealFetchResponseModel.fromJson(_result.data!);
+    final value = HomeFetchResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

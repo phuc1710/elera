@@ -1,9 +1,9 @@
-import '../../core/params/deal_fetch_request_params.dart';
+import '../../core/params/home_fetch_request_params.dart';
 import '../../core/resources/data_state.dart';
-import '../../data/models/deal/deal_fetch_response_model.dart';
+import '../../data/models/home/home_fetch_response_model.dart';
 
 abstract class HomeRepository {
-  Future<DataState<DealFetchResponseModel>> getDealFetchRequest(
-    DealFetchRequestParams? params,
+  Future<DataState<HomeFetchResponseModel>> getHomeFetchRequest(
+    HomeFetchRequestParams? params,
   );
 }

@@ -5,42 +5,22 @@ abstract class HomeState {
   const HomeState();
 }
 
-class CourseFetchInitial extends HomeState {
-  CourseFetchInitial();
+class HomeFetchInitial extends HomeState {
+  HomeFetchInitial();
 }
 
-class CourseFetchInProgress extends HomeState {
-  CourseFetchInProgress();
+class HomeFetchInProgress extends HomeState {
+  HomeFetchInProgress();
 }
 
-class CourseFetchSuccess extends HomeState {
-  CourseFetchSuccess(this.courses);
+class HomeFetchSuccess extends HomeState {
+  HomeFetchSuccess(this.data);
 
-  final List<CourseModelItem?> courses;
+  final Data? data;
 }
 
-class CourseFetchFailure extends HomeState {
-  CourseFetchFailure(this.error);
-
-  final ApiError error;
-}
-
-class DealFetchInitial extends HomeState {
-  DealFetchInitial();
-}
-
-class DealFetchInProgress extends HomeState {
-  DealFetchInProgress();
-}
-
-class DealFetchSuccess extends HomeState {
-  DealFetchSuccess(this.deals);
-
-  final List<Deal?> deals;
-}
-
-class DealFetchFailure extends HomeState {
-  DealFetchFailure(this.error);
+class HomeFetchFailure extends HomeState {
+  HomeFetchFailure(this.error);
 
   final ApiError error;
 }

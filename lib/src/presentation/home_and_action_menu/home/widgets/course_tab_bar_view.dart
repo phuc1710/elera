@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/course/course_response_model.dart';
+import '../../../../data/models/course/course_fetch_response_model.dart';
 import 'course_list_view.dart';
 
 class CourseTabBarView extends StatefulWidget {
@@ -10,50 +12,58 @@ class CourseTabBarView extends StatefulWidget {
     required this.courseList,
   }) : super(key: key);
 
-  final List<CourseModelItem?> courseList;
+  final List<CourseList>? courseList;
   @override
   State<CourseTabBarView> createState() => _CourseTabBarViewState();
 }
 
 class _CourseTabBarViewState extends State<CourseTabBarView> {
-  final List<String> _filterList = [
-    '🔥 All',
-    '💡 3D Design',
-    '💰 Bussiness',
-  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 185.0 * courseList.length,
+      height: 185.0 * (widget.courseList?[0].courses?.length ?? 0),
       child: DefaultTabController(
-        length: _filterList.length,
+        length: widget.courseList?.length ?? 0,
         child: Column(
           children: [
-            ButtonsTabBar(
-              backgroundColor: Theme.of(context).primaryColor,
-              borderColor: Theme.of(context).primaryColor,
-              borderWidth: 2,
-              contentPadding: const EdgeInsets.symmetric(horizontal: 15),
-              radius: 20,
-              tabs: _filterList.map((e) => Tab(text: e)).toList(),
-              unselectedBackgroundColor: Colors.white,
-              unselectedBorderColor: Theme.of(context).primaryColor,
-              unselectedLabelStyle:
-                  TextStyle(color: Theme.of(context).primaryColor),
+            Padding(
+              padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width * 0.05,
+              ),
+              child: ButtonsTabBar(
+                backgroundColor: Theme.of(context).primaryColor,
+                borderColor: Theme.of(context).primaryColor,
+                borderWidth: 2,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 15),
+                radius: 20,
+                tabs: widget.courseList
+                        ?.map((course) => Tab(text: course.tag))
+                        .toList() ??
+                    [],
+                unselectedBackgroundColor: Colors.white,
+                unselectedBorderColor: Theme.of(context).primaryColor,
+                unselectedLabelStyle:
+                    TextStyle(color: Theme.of(context).primaryColor),
+              ),
             ),
             Expanded(
               child: TabBarView(
-                children: List.generate(
-                  _filterList.length,
-                  (index) => Padding(
+                physics: const NeverScrollableScrollPhysics(),
+                children:
+                    List.generate(widget.courseList?.length ?? 0, (index) {
+                  log(widget.courseList?[index].tag ?? '');
+
+                  return Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.05,
                     ),
-                    child: CourseListView(courseList: widget.courseList),
-                  ),
-                ),
+                    child: CourseListView(
+                      courses: widget.courseList?[index].courses,
+                    ),
+                  );
+                }),
               ),
-            )
+            ),
           ],
         ),
       ),

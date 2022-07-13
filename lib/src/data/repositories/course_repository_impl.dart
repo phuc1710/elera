@@ -8,7 +8,7 @@ import '../../core/resources/data_state.dart';
 import '../../core/utils/extensions.dart';
 import '../../domain/repositories/course_repository.dart';
 import '../datasources/remote/course_api_service.dart';
-import '../models/course/course_response_model.dart';
+import '../models/course/course_fetch_response_model.dart';
 
 @Injectable(as: CourseRepository)
 class CourseRepositoryImpl implements CourseRepository {

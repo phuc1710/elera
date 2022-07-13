@@ -21,9 +21,7 @@ class HomeTabView extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: BlocProvider<HomeBloc>(
-        create: (context) => injector()
-          ..add(CourseFetched())
-          ..add(DealFetched()),
+        create: (context) => injector()..add(HomeFetched()),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,15 +79,15 @@ class HomeTabView extends StatelessWidget {
               ),
               BlocConsumer<HomeBloc, HomeState>(
                 listener: (context, state) {
-                  if (state is CourseFetchFailure) {
+                  if (state is HomeFetchFailure) {
                     Utils.showAppSnackBar(context, state.error.errorMessage);
                   }
                 },
                 builder: (context, state) {
-                  if (state is CourseFetchInProgress)
+                  if (state is HomeFetchInProgress)
                     return const Center(child: CircularProgressIndicator());
-                  if (state is CourseFetchSuccess)
-                    return CourseTabBarView(courseList: state.courses);
+                  if (state is HomeFetchSuccess)
+                    return CourseTabBarView(courseList: state.data?.courseList);
 
                   return const Center(child: CircularProgressIndicator());
                 },

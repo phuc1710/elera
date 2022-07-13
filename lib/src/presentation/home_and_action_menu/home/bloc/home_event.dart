@@ -4,6 +4,4 @@ abstract class HomeEvent {
   const HomeEvent();
 }
 
-class CourseFetched extends HomeEvent {}
-
-class DealFetched extends HomeEvent {}
+class HomeFetched extends HomeEvent {}

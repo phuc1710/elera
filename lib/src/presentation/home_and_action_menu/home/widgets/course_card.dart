@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/course/course_response_model.dart';
+import '../../../../data/models/course/course_fetch_response_model.dart';
 import 'bookmark_button.dart';
 import 'course_content_column.dart';
 import 'course_image.dart';
@@ -13,7 +13,7 @@ class CourseCard extends StatefulWidget {
     required this.onRemoveBookmark,
   }) : super(key: key);
 
-  final CourseModelItem courseModel;
+  final Course? courseModel;
   final bool isInRemoveBookmark;
   final VoidCallback onRemoveBookmark;
 
@@ -41,15 +41,15 @@ class _CourseCardState extends State<CourseCard> {
         child: Row(
           children: [
             CourseImage(
-              imagePath: widget.courseModel.imagePath,
+              imagePath: widget.courseModel?.imagePath ?? '',
             ),
             CourseContentColumn(
-              tag: widget.courseModel.tag,
-              name: widget.courseModel.name,
-              price: widget.courseModel.price,
-              originalPrice: widget.courseModel.originalPrice,
-              rating: widget.courseModel.rating,
-              studentCount: widget.courseModel.studentCount,
+              tag: widget.courseModel?.tag ?? '',
+              name: widget.courseModel?.name ?? '',
+              price: widget.courseModel?.price ?? '',
+              originalPrice: widget.courseModel?.originalPrice ?? '',
+              rating: widget.courseModel?.rating ?? 0,
+              studentCount: widget.courseModel?.studentCount ?? '',
             ),
             if (widget.isInRemoveBookmark)
               SizedBox(

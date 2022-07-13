@@ -24,12 +24,12 @@ import '../domain/usecases/add_new_card_usecase.dart' as _i7;
 import '../domain/usecases/create_new_pin_usecase.dart' as _i13;
 import '../domain/usecases/fill_your_profile_usecase.dart' as _i14;
 import '../domain/usecases/get_contact_fetch_usecase.dart' as _i8;
-import '../domain/usecases/get_countries_usecase.dart' as _i40;
+import '../domain/usecases/get_countries_usecase.dart' as _i39;
 import '../domain/usecases/get_course_list_usecase.dart' as _i35;
-import '../domain/usecases/get_deal_fetch_usecase.dart' as _i37;
-import '../domain/usecases/get_helper_center_usecase.dart' as _i41;
+import '../domain/usecases/get_helper_center_usecase.dart' as _i40;
+import '../domain/usecases/get_home_fetch_usecase.dart' as _i43;
 import '../domain/usecases/get_invite_friends_usecase.dart' as _i15;
-import '../domain/usecases/get_languages_usecase.dart' as _i42;
+import '../domain/usecases/get_languages_usecase.dart' as _i41;
 import '../domain/usecases/get_payments_usecase.dart' as _i16;
 import '../domain/usecases/get_pin_sending_usecase.dart' as _i29;
 import '../domain/usecases/get_profile_usecase.dart' as _i17;
@@ -44,21 +44,21 @@ import '../module/register_module.dart' as _i51;
 import '../presentation/account_setup/create_new_pin/bloc/create_new_pin_bloc.dart'
     as _i36;
 import '../presentation/account_setup/fill_your_profile/bloc/fill_your_profile_bloc.dart'
-    as _i38;
-import '../presentation/edit_profile/bloc/edit_profile_bloc.dart' as _i50;
+    as _i37;
+import '../presentation/edit_profile/bloc/edit_profile_bloc.dart' as _i49;
 import '../presentation/forgot_and_reset_password/create_new_password/bloc/password_creation_bloc.dart'
-    as _i46;
+    as _i45;
 import '../presentation/forgot_and_reset_password/enter_pin/bloc/pin_entry_bloc.dart'
-    as _i47;
+    as _i46;
 import '../presentation/forgot_and_reset_password/select_contact/bloc/contact_selection_bloc.dart'
     as _i34;
 import '../presentation/friends_invitation/bloc/friends_invitation_bloc.dart'
-    as _i39;
-import '../presentation/help_center/bloc/helper_center_bloc.dart' as _i43;
-import '../presentation/home_and_action_menu/home/bloc/home_bloc.dart' as _i44;
-import '../presentation/language/bloc/language_bloc.dart' as _i45;
-import '../presentation/letsin/signin/bloc/signin_bloc.dart' as _i48;
-import '../presentation/letsin/signup/bloc/signup_bloc.dart' as _i49;
+    as _i38;
+import '../presentation/help_center/bloc/helper_center_bloc.dart' as _i42;
+import '../presentation/home_and_action_menu/home/bloc/home_bloc.dart' as _i50;
+import '../presentation/language/bloc/language_bloc.dart' as _i44;
+import '../presentation/letsin/signin/bloc/signin_bloc.dart' as _i47;
+import '../presentation/letsin/signup/bloc/signup_bloc.dart' as _i48;
 import '../presentation/new_card/bloc/new_card_bloc.dart' as _i25;
 import '../presentation/payment/bloc/payment_bloc.dart' as _i27;
 import '../presentation/profile/bloc/profile_bloc.dart'
@@ -135,32 +135,32 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i35.CourseFetchUseCase(get<_i11.CourseRepository>()));
   gh.factory<_i36.CreateNewPinBloc>(
       () => _i36.CreateNewPinBloc(get<_i13.CreateNewPinUseCase>()));
-  gh.factory<_i37.DealFetchUseCase>(
-      () => _i37.DealFetchUseCase(get<_i22.HomeRepository>()));
-  gh.factory<_i38.FillYourProfileBloc>(
-      () => _i38.FillYourProfileBloc(get<_i14.FillYourProfileUseCase>()));
-  gh.factory<_i39.FriendsInvitationBloc>(() => _i39.FriendsInvitationBloc(
+  gh.factory<_i37.FillYourProfileBloc>(
+      () => _i37.FillYourProfileBloc(get<_i14.FillYourProfileUseCase>()));
+  gh.factory<_i38.FriendsInvitationBloc>(() => _i38.FriendsInvitationBloc(
       get<_i15.GetInviteFriendsUseCase>(), get<_i24.InviteFriendUseCase>()));
-  gh.factory<_i40.GetCountriesUseCase>(
-      () => _i40.GetCountriesUseCase(get<_i19.HelperRepository>()));
-  gh.factory<_i41.GetHelperCenterUseCase>(
-      () => _i41.GetHelperCenterUseCase(get<_i19.HelperRepository>()));
-  gh.factory<_i42.GetLanguagesUseCase>(
-      () => _i42.GetLanguagesUseCase(get<_i19.HelperRepository>()));
-  gh.factory<_i43.HelperCenterBloc>(
-      () => _i43.HelperCenterBloc(get<_i41.GetHelperCenterUseCase>()));
-  gh.factory<_i44.HomeBloc>(() => _i44.HomeBloc(
-      get<_i35.CourseFetchUseCase>(), get<_i37.DealFetchUseCase>()));
-  gh.factory<_i45.LanguageBloc>(
-      () => _i45.LanguageBloc(get<_i42.GetLanguagesUseCase>()));
-  gh.factory<_i46.PasswordCreationBloc>(
-      () => _i46.PasswordCreationBloc(get<_i26.PasswordCreationUseCase>()));
-  gh.factory<_i47.PinEntryBloc>(() => _i47.PinEntryBloc(
+  gh.factory<_i39.GetCountriesUseCase>(
+      () => _i39.GetCountriesUseCase(get<_i19.HelperRepository>()));
+  gh.factory<_i40.GetHelperCenterUseCase>(
+      () => _i40.GetHelperCenterUseCase(get<_i19.HelperRepository>()));
+  gh.factory<_i41.GetLanguagesUseCase>(
+      () => _i41.GetLanguagesUseCase(get<_i19.HelperRepository>()));
+  gh.factory<_i42.HelperCenterBloc>(
+      () => _i42.HelperCenterBloc(get<_i40.GetHelperCenterUseCase>()));
+  gh.factory<_i43.HomeFetchUseCase>(
+      () => _i43.HomeFetchUseCase(get<_i22.HomeRepository>()));
+  gh.factory<_i44.LanguageBloc>(
+      () => _i44.LanguageBloc(get<_i41.GetLanguagesUseCase>()));
+  gh.factory<_i45.PasswordCreationBloc>(
+      () => _i45.PasswordCreationBloc(get<_i26.PasswordCreationUseCase>()));
+  gh.factory<_i46.PinEntryBloc>(() => _i46.PinEntryBloc(
       get<_i29.PinSendingUseCase>(), get<_i28.PinEntryUseCase>()));
-  gh.factory<_i48.SignInBloc>(() => _i48.SignInBloc(get<_i31.SignInUseCase>()));
-  gh.factory<_i49.SignUpBloc>(() => _i49.SignUpBloc(get<_i32.SignUpUseCase>()));
-  gh.factory<_i50.EditProfileBloc>(() => _i50.EditProfileBloc(
-      get<_i40.GetCountriesUseCase>(), get<_i33.UpdateProfileUseCase>()));
+  gh.factory<_i47.SignInBloc>(() => _i47.SignInBloc(get<_i31.SignInUseCase>()));
+  gh.factory<_i48.SignUpBloc>(() => _i48.SignUpBloc(get<_i32.SignUpUseCase>()));
+  gh.factory<_i49.EditProfileBloc>(() => _i49.EditProfileBloc(
+      get<_i39.GetCountriesUseCase>(), get<_i33.UpdateProfileUseCase>()));
+  gh.factory<_i50.HomeBloc>(() => _i50.HomeBloc(
+      get<_i35.CourseFetchUseCase>(), get<_i43.HomeFetchUseCase>()));
   return get;
 }
 
