@@ -100,6 +100,7 @@ class NotificationScaffoldBody extends StatelessWidget {
               // ),
             );
           }
+
           return const Center(child: CircularProgressIndicator());
         },
       ),
