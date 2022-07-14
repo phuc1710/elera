@@ -8,7 +8,6 @@ import '../../../../core/resources/api_error.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../data/models/home/home_fetch_response_model.dart';
-import '../../../../domain/usecases/get_course_list_usecase.dart';
 import '../../../../domain/usecases/get_home_fetch_usecase.dart';
 
 part 'home_event.dart';
@@ -16,20 +15,18 @@ part 'home_state.dart';
 
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc(this.courseFetchUseCase, this.dealFetchUseCase)
-      : super(HomeFetchInitial()) {
+  HomeBloc(this.homeFetchUseCase) : super(HomeFetchInitial()) {
     on<HomeFetched>(_onHomeFetched);
   }
 
-  final CourseFetchUseCase courseFetchUseCase;
-  final HomeFetchUseCase dealFetchUseCase;
+  final HomeFetchUseCase homeFetchUseCase;
 
   Future<void> _onHomeFetched(
     HomeFetched event,
     Emitter<HomeState> emit,
   ) async {
     emit(HomeFetchInProgress());
-    final dataState = await dealFetchUseCase(
+    final dataState = await homeFetchUseCase(
       params: HomeFetchRequestParams(),
     );
     if (dataState is DataSuccess) {
