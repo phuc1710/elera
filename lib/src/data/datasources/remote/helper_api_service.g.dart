@@ -9,7 +9,9 @@ part of 'helper_api_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps
 
 class _HelperApiService implements HelperApiService {
-  _HelperApiService(this._dio, {this.baseUrl});
+  _HelperApiService(this._dio, {this.baseUrl}) {
+    baseUrl ??= 'http://103.63.215.140:7412/api/';
+  }
 
   final Dio _dio;
 

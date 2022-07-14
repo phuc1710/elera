@@ -9,7 +9,9 @@ part of 'course_api_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps
 
 class _CourseApiService implements CourseApiService {
-  _CourseApiService(this._dio, {this.baseUrl});
+  _CourseApiService(this._dio, {this.baseUrl}) {
+    baseUrl ??= 'http://103.63.215.140:7412/api/';
+  }
 
   final Dio _dio;
 

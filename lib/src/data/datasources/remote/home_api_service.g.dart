@@ -9,7 +9,9 @@ part of 'home_api_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps
 
 class _HomeApiService implements HomeApiService {
-  _HomeApiService(this._dio, {this.baseUrl});
+  _HomeApiService(this._dio, {this.baseUrl}) {
+    baseUrl ??= 'http://103.63.215.140:7412/api/';
+  }
 
   final Dio _dio;
 
