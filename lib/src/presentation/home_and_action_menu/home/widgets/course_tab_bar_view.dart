@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
@@ -51,8 +49,6 @@ class _CourseTabBarViewState extends State<CourseTabBarView> {
                 physics: const NeverScrollableScrollPhysics(),
                 children:
                     List.generate(widget.courseList?.length ?? 0, (index) {
-                  log(widget.courseList?[index].tag ?? '');
-
                   return Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.05,

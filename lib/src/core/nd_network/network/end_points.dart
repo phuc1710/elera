@@ -18,6 +18,7 @@ class EndPoints {
 
   static const String course = '/fetch_course';
   static const String home = '/fetch_home';
+  static const String notification = 'fetch_notification';
 
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';

@@ -5,6 +5,7 @@ import '../core/nd_network/nd_network.dart';
 import '../data/datasources/remote/course_api_service.dart';
 import '../data/datasources/remote/helper_api_service.dart';
 import '../data/datasources/remote/home_api_service.dart';
+import '../data/datasources/remote/notification_api_service.dart';
 import '../data/datasources/remote/user_api_service.dart';
 import '../injector/injector.dart';
 
@@ -37,6 +38,13 @@ abstract class RegisterModule {
     @Named(kApiBaseUrl) String url,
   ) =>
       HomeApiService(dio, baseUrl: url);
+
+  @lazySingleton
+  NotificationApiService notificationApiService(
+    @Named(kApiDio) Dio dio,
+    @Named(kApiBaseUrl) String url,
+  ) =>
+      NotificationApiService(dio, baseUrl: url);
 
   @lazySingleton
   HelperApiService helperApiService(
