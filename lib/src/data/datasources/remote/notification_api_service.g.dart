@@ -30,7 +30,7 @@ class _NotificationApiService implements NotificationApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<NotificationFetchResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'fetch_notification',
+                .compose(_dio.options, '/fetch_notification',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = NotificationFetchResponseModel.fromJson(_result.data!);
