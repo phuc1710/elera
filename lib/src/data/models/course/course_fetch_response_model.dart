@@ -40,14 +40,14 @@ class Data {
 class CourseList {
   CourseList({
     required this.tag,
-    required this.courses,
+    required this.items,
   });
 
   factory CourseList.fromJson(Map<String, dynamic> json) =>
       _$CourseListFromJson(json);
 
   final String? tag;
-  final List<Course>? courses;
+  final List<Course>? items;
 
   Map<String, dynamic> toJson() => _$CourseListToJson(this);
 }
@@ -55,29 +55,33 @@ class CourseList {
 @JsonSerializable()
 class Course {
   Course({
-    required this.tag,
+    required this.categoryName,
     required this.name,
-    required this.imagePath,
-    required this.price,
+    required this.image,
+    required this.discountPrice,
     required this.originalPrice,
     required this.rating,
-    required this.studentCount,
+    required this.enrollCount,
     required this.isBookmarked,
   });
 
   factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
 
-  final String? tag;
+  @JsonKey(name: 'category_name')
+  final String? categoryName;
+
   final String? name;
-  final String? imagePath;
-  final String? price;
+  final String? image;
+
+  @JsonKey(name: 'discount_price')
+  final String? discountPrice;
 
   @JsonKey(name: 'original_price')
   final String? originalPrice;
   final double? rating;
 
-  @JsonKey(name: 'student_count')
-  final String? studentCount;
+  @JsonKey(name: 'enroll_count')
+  final String? enrollCount;
 
   @JsonKey(name: 'is_bookmarked')
   bool? isBookmarked;

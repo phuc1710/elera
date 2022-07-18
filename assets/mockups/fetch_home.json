@@ -93,81 +93,81 @@
     "course_list": [
       {
         "tag": "All",
-        "courses": [
+        "items": [
           {
-            "tag": "3D Design",
+            "category_name": "3D Design",
             "name": "3D Design Illustration",
-            "imagePath": "assets/images/course_1.png",
-            "price": "$48",
+            "image": "assets/images/course_1.png",
+            "discount_price": "$48",
             "original_price": "$80",
             "rating": 4.8,
-            "student_count": "8.289",
-            "is_bookmarked": false
+            "enroll_count": "8.289",
+            "is_bookmarked": true
           },
           {
-            "tag": "Entrepreneurship",
+            "category_name": "Entrepreneurship",
             "name": "Digital Entrepreneurship",
-            "imagePath": "assets/images/course_2.jpg",
-            "price": "$39",
+            "image": "assets/images/course_2.jpg",
+            "discount_price": "$39",
             "original_price": "",
             "rating": 4.9,
-            "student_count": "6.182",
-            "is_bookmarked": false
+            "enroll_count": "6.182",
+            "is_bookmarked": true
           },
           {
-            "tag": "UI/UX Design",
+            "category_name": "UI/UX Design",
             "name": "Learn UX User Persona",
-            "imagePath": "assets/images/course_3.jpg",
-            "price": "$42",
+            "image": "assets/images/course_3.jpg",
+            "discount_price": "$42",
             "original_price": "$75",
             "rating": 4.7,
-            "student_count": "7.938",
-            "is_bookmarked": false
+            "enroll_count": "7.938",
+            "is_bookmarked": true
           }
         ]
       },
       {
         "tag": "3D Design",
-        "courses": [
+        "items": [
           {
-            "tag": "3D Design",
+            "category_name": "3D Design",
             "name": "3D Design Illustration",
-            "imagePath": "assets/images/course_1.png",
-            "price": "$48",
+            "image": "assets/images/course_1.png",
+            "discount_price": "$48",
             "original_price": "$80",
             "rating": 4.8,
-            "student_count": "8.289",
-            "is_bookmarked": false
+            "enroll_count": "8.289",
+            "is_bookmarked": true
           }
         ]
       },
       {
         "tag": "Entrepreneurship",
-        "courses": [
+        "items": [
           {
-            "tag": "Entrepreneurship",
+            "category_name": "Entrepreneurship",
             "name": "Digital Entrepreneurship",
-            "imagePath": "assets/images/course_2.jpg",
-            "price": "$39",
+            "image": "assets/images/course_2.jpg",
+            "discount_price": "$39",
             "original_price": "",
             "rating": 4.9,
-            "student_count": "6.182",
-            "is_bookmarked": false
+            "enroll_count": "6.182",
+            "is_bookmarked": true
           }
         ]
       },
       {
         "tag": "UI/UX Design",
-        "courses": [
+        "items": [
           {
-            "tag": "UI/UX Design",
+            "category_name": "UI/UX Design",
             "name": "Learn UX User Persona",
-            "imagePath": "assets/images/course_3.jpg",
-            "price": "$42",
+            "image": "assets/images/course_3.jpg",
+            "discount_price": "$42",
             "original_price": "$75",
             "rating": 4.7,
-            "student_count": "7.938",
-            "is_bookmarked": false
+            "enroll_count": "7.938",
+            "is_bookmarked": true
           }
         ]
       }
