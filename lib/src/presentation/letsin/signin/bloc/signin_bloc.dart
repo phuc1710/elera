@@ -33,12 +33,12 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     );
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (dataState.data?.errorCode == ErrorCode.success)
+      if (dataState.data?.code == ErrorCode.success)
         emit(SignInSuccess());
       else
         emit(
           SignInFailed(
-            ApiError(errorCode: res?.errorCode, errorMessage: res?.message),
+            ApiError(errorCode: res?.code, errorMessage: res?.message),
           ),
         );
     }
