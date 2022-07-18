@@ -1,34 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_in_response_model.dart';
+part of 'bookmark_fetch_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignInResponseModel _$SignInResponseModelFromJson(Map<String, dynamic> json) =>
-    SignInResponseModel(
-      status: json['status'] as int?,
-      code: json['code'] as int?,
+BookmarkFetchResponseModel _$BookmarkFetchResponseModelFromJson(
+        Map<String, dynamic> json) =>
+    BookmarkFetchResponseModel(
       message: json['message'] as String?,
+      code: json['code'] as int?,
       data: json['data'] == null
           ? null
           : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SignInResponseModelToJson(
-        SignInResponseModel instance) =>
+Map<String, dynamic> _$BookmarkFetchResponseModelToJson(
+        BookmarkFetchResponseModel instance) =>
     <String, dynamic>{
-      'status': instance.status,
-      'code': instance.code,
       'message': instance.message,
+      'code': instance.code,
       'data': instance.data,
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      token: json['token'] as String?,
+      bookmarkCourses: (json['bookmark_courses'] as List<dynamic>?)
+          ?.map((e) => CourseList.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'token': instance.token,
+      'bookmark_courses': instance.bookmarkCourses,
     };

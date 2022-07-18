@@ -18,6 +18,9 @@ class EndPoints {
 
   static const String home = '/fetch_home';
   static const String notification = '/fetch_notification';
+  static const String bookmark = '/fetch_bookmark';
+  static const String addBookmark = '/add_bookmark';
+  static const String removeBookmark = '/remove_bookmark';
 
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';

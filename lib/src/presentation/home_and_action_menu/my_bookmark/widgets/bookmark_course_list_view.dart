@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
-import '../bloc/home_bloc.dart';
-import 'course_card.dart';
+import '../../home/widgets/course_card.dart';
+import '../bloc/bookmark_bloc.dart';
 
-class CourseListView extends StatefulWidget {
-  const CourseListView({
+class BookmarkCourseListView extends StatefulWidget {
+  const BookmarkCourseListView({
     Key? key,
     required this.courseList,
     required this.tag,
@@ -16,10 +16,10 @@ class CourseListView extends StatefulWidget {
   final List<CourseList>? courseList;
 
   @override
-  State<CourseListView> createState() => _CourseListViewState();
+  State<BookmarkCourseListView> createState() => _BookmarkCourseListViewState();
 }
 
-class _CourseListViewState extends State<CourseListView> {
+class _BookmarkCourseListViewState extends State<BookmarkCourseListView> {
   @override
   Widget build(BuildContext context) {
     final itemList = widget.courseList
@@ -32,14 +32,7 @@ class _CourseListViewState extends State<CourseListView> {
         (index) => CourseCard(
           courseModel: itemList?[index],
           isInRemoveBookmark: false,
-          onAddBookmark: () {
-            onBookmarkAdded(
-              context,
-              widget.courseList ?? <CourseList>[],
-              '${itemList?[index].categoryName}',
-              '${itemList?[index].name}',
-            );
-          },
+          onAddBookmark: () {},
           onRemoveBookmark: () {
             setState(() {
               itemList?[index].isBookmarked = false;
@@ -56,17 +49,6 @@ class _CourseListViewState extends State<CourseListView> {
     );
   }
 
-  void onBookmarkAdded(
-    BuildContext context,
-    List<CourseList> courseList,
-    String tag,
-    String name,
-  ) {
-    context
-        .read<HomeBloc>()
-        .add(HomeBookmarkAddRequested(courseList, tag, name));
-  }
-
   void onBookmarkRemoved(
     BuildContext context,
     List<CourseList> courseList,
@@ -74,7 +56,7 @@ class _CourseListViewState extends State<CourseListView> {
     String name,
   ) {
     context
-        .read<HomeBloc>()
-        .add(HomeBookmarkRemoveRequested(courseList, tag, name));
+        .read<BookmarkBloc>()
+        .add(BookmarkRemoveRequested(courseList, tag, name));
   }
 }

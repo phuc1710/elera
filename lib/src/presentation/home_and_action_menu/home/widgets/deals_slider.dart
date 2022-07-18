@@ -24,6 +24,8 @@ class _DealsSliderState extends State<DealsSlider> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
       },
+      buildWhen: (prev, curr) =>
+          prev is HomeFetchInProgress && curr is HomeFetchSuccess,
       builder: (context, state) {
         if (state is HomeFetchInProgress)
           return const Center(child: CircularProgressIndicator());

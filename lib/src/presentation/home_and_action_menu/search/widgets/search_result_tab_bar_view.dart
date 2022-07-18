@@ -54,7 +54,8 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
                       const NotFoundListView()
                     else
                       const CourseListView(
-                        courses: [],
+                        courseList: [],
+                        tag: '',
                       ),
                     if (widget.searchPhrase.isEmpty)
                       const NotFoundListView()

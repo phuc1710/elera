@@ -6,7 +6,7 @@ part 'sign_in_response_model.g.dart';
 class SignInResponseModel {
   SignInResponseModel({
     required this.status,
-    required this.errorCode,
+    required this.code,
     required this.message,
     required this.data,
   });
@@ -15,7 +15,7 @@ class SignInResponseModel {
       _$SignInResponseModelFromJson(json);
 
   final int? status;
-  final int? errorCode;
+  final int? code;
   final String? message;
   final Data? data;
 

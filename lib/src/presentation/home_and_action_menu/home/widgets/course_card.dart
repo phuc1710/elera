@@ -10,11 +10,13 @@ class CourseCard extends StatefulWidget {
     Key? key,
     required this.courseModel,
     required this.isInRemoveBookmark,
+    required this.onAddBookmark,
     required this.onRemoveBookmark,
   }) : super(key: key);
 
   final Course? courseModel;
   final bool isInRemoveBookmark;
+  final VoidCallback onAddBookmark;
   final VoidCallback onRemoveBookmark;
 
   @override
@@ -41,15 +43,15 @@ class _CourseCardState extends State<CourseCard> {
         child: Row(
           children: [
             CourseImage(
-              imagePath: widget.courseModel?.imagePath ?? '',
+              imagePath: widget.courseModel?.image ?? '',
             ),
             CourseContentColumn(
-              tag: widget.courseModel?.tag ?? '',
+              tag: widget.courseModel?.categoryName ?? '',
               name: widget.courseModel?.name ?? '',
-              price: widget.courseModel?.price ?? '',
+              price: widget.courseModel?.discountPrice ?? '',
               originalPrice: widget.courseModel?.originalPrice ?? '',
               rating: widget.courseModel?.rating ?? 0,
-              studentCount: widget.courseModel?.studentCount ?? '',
+              studentCount: widget.courseModel?.enrollCount ?? '',
             ),
             if (widget.isInRemoveBookmark)
               SizedBox(
@@ -65,6 +67,9 @@ class _CourseCardState extends State<CourseCard> {
               BookmarkButton(
                 courseModel: widget.courseModel,
                 isInRemoveBookmark: widget.isInRemoveBookmark,
+                onAddBookmark: () {
+                  widget.onAddBookmark();
+                },
                 onRemoveBookmark: () {
                   widget.onRemoveBookmark();
                 },

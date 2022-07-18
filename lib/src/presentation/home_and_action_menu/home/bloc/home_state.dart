@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'home_bloc.dart';
 
 abstract class HomeState {
@@ -16,11 +15,43 @@ class HomeFetchInProgress extends HomeState {
 class HomeFetchSuccess extends HomeState {
   HomeFetchSuccess(this.data);
 
-  final Data? data;
+  final home_data.Data? data;
 }
 
 class HomeFetchFailure extends HomeState {
   HomeFetchFailure(this.error);
+
+  final ApiError error;
+}
+
+class BookmarkAdditionInProgress extends HomeState {
+  BookmarkAdditionInProgress();
+}
+
+class BookmarkAdditionSuccess extends HomeState {
+  BookmarkAdditionSuccess(this.courseList);
+
+  final List<CourseList> courseList;
+}
+
+class BookmarkAdditionFailure extends HomeState {
+  BookmarkAdditionFailure(this.error);
+
+  final ApiError error;
+}
+
+class BookmarkRemovalInProgress extends HomeState {
+  BookmarkRemovalInProgress();
+}
+
+class BookmarkRemovalSuccess extends HomeState {
+  BookmarkRemovalSuccess(this.courseList);
+
+  final List<CourseList> courseList;
+}
+
+class BookmarkRemovalFailure extends HomeState {
+  BookmarkRemovalFailure(this.error);
 
   final ApiError error;
 }

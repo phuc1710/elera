@@ -1,22 +1,24 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
-import '../bloc/home_bloc.dart';
-import 'course_list_view.dart';
+import '../bloc/bookmark_bloc.dart';
+import 'bookmark_course_list_view.dart';
 
-class CourseTabBarView extends StatefulWidget {
-  const CourseTabBarView({
+class BookmarkCourseTabBarView extends StatefulWidget {
+  const BookmarkCourseTabBarView({
     Key? key,
     required this.courseList,
   }) : super(key: key);
 
   final List<CourseList>? courseList;
   @override
-  State<CourseTabBarView> createState() => _CourseTabBarViewState();
+  State<BookmarkCourseTabBarView> createState() =>
+      _BookmarkCourseTabBarViewState();
 }
 
-class _CourseTabBarViewState extends State<CourseTabBarView> {
+class _BookmarkCourseTabBarViewState extends State<BookmarkCourseTabBarView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -46,35 +48,40 @@ class _CourseTabBarViewState extends State<CourseTabBarView> {
                     TextStyle(color: Theme.of(context).primaryColor),
               ),
             ),
-            Expanded(
-              child: TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
-                children:
-                    List.generate(widget.courseList?.length ?? 0, (index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.05,
-                    ),
-                    child: CourseListView(
-                      tag: widget.courseList?[index].tag,
-                      courseList: widget.courseList,
-                    ),
-                  );
-                }),
-              ),
-            )
+            BlocConsumer<BookmarkBloc, BookmarkState>(
+              listener: (context, state) {},
+              builder: (context, state) {
+                return !(state is BookmarkFetchSuccess ||
+                        state is BookmarkRemovalSuccess)
+                    ? const Center(child: CircularProgressIndicator())
+                    : Expanded(
+                        child: TabBarView(
+                          children: List.generate(
+                              widget.courseList?.length ?? 0, (index) {
+                            return Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * 0.05,
+                              ),
+                              child: BookmarkCourseListView(
+                                tag: getCourseTag(state, index),
+                                courseList: getCourseList(state, index),
+                              ),
+                            );
+                          }),
+                        ),
+                      );
+              },
+            ),
           ],
         ),
       ),
     );
   }
 
-  String? getCourseTag(HomeState state, int index) {
-    if (state is HomeFetchSuccess) {
+  String? getCourseTag(BookmarkState state, int index) {
+    if (state is BookmarkFetchSuccess) {
       return widget.courseList?[index].tag;
-    }
-    if (state is BookmarkAdditionSuccess) {
-      return state.courseList[index].tag;
     }
     if (state is BookmarkRemovalSuccess) {
       return state.courseList[index].tag;
@@ -83,12 +90,9 @@ class _CourseTabBarViewState extends State<CourseTabBarView> {
     return '';
   }
 
-  List<CourseList>? getCourseList(HomeState state, int index) {
-    if (state is HomeFetchSuccess) {
+  List<CourseList>? getCourseList(BookmarkState state, int index) {
+    if (state is BookmarkFetchSuccess) {
       return widget.courseList;
-    }
-    if (state is BookmarkAdditionSuccess) {
-      return state.courseList;
     }
     if (state is BookmarkRemovalSuccess) {
       return state.courseList;

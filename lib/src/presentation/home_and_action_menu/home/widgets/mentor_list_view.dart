@@ -16,6 +16,8 @@ class MentorListview extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.2,
         child: BlocConsumer<HomeBloc, HomeState>(
           listener: (context, state) {},
+          buildWhen: (prev, curr) =>
+              prev is HomeFetchInProgress && curr is HomeFetchSuccess,
           builder: (context, state) {
             if (state is HomeFetchSuccess) {
               final mentorList = state.data?.mentors;

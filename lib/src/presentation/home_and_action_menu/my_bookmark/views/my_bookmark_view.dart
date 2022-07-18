@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/bookmark_bloc.dart';
 import '../widgets/my_bookmark_scaffold_body.dart';
 
 class MyBookmarkView extends StatelessWidget {
@@ -23,7 +26,10 @@ class MyBookmarkView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const MyBookmarkScaffoldBody(),
+          body: BlocProvider<BookmarkBloc>(
+            create: (context) => injector()..add(BookmarkFetched()),
+            child: const MyBookmarkScaffoldBody(),
+          ),
         ),
       ),
     );

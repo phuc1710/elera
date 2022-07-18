@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
+import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../../../../injector/injector.dart';
 import '../../most_popular_courses/views/most_popular_courses_view.dart';
 import '../../top_mentors/views/top_mentors_view.dart';
@@ -49,14 +50,12 @@ class HomeTabView extends StatelessWidget {
                 child: TitleRow(
                   title: 'Top Mentors',
                   leadingButtonText: 'See All',
-                  leadingButtonCallback: () {
-                    Navigator.push<Object?>(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                        builder: (context) => const TopMentorsView(),
-                      ),
-                    );
-                  },
+                  leadingButtonCallback: () => Navigator.push<Object?>(
+                    context,
+                    MaterialPageRoute<dynamic>(
+                      builder: (context) => const TopMentorsView(),
+                    ),
+                  ),
                 ),
               ),
               const MentorListview(),
@@ -67,14 +66,12 @@ class HomeTabView extends StatelessWidget {
                 child: TitleRow(
                   title: 'Most Popular Courses',
                   leadingButtonText: 'See All',
-                  leadingButtonCallback: () {
-                    Navigator.push<Object?>(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                        builder: (context) => const MostPopularCoursesView(),
-                      ),
-                    );
-                  },
+                  leadingButtonCallback: () => Navigator.push<Object?>(
+                    context,
+                    MaterialPageRoute<dynamic>(
+                      builder: (context) => const MostPopularCoursesView(),
+                    ),
+                  ),
                 ),
               ),
               BlocConsumer<HomeBloc, HomeState>(
@@ -83,19 +80,36 @@ class HomeTabView extends StatelessWidget {
                     Utils.showAppSnackBar(context, state.error.errorMessage);
                   }
                 },
-                builder: (context, state) {
-                  if (state is HomeFetchInProgress)
-                    return const Center(child: CircularProgressIndicator());
-                  if (state is HomeFetchSuccess)
-                    return CourseTabBarView(courseList: state.data?.courseList);
-
-                  return const Center(child: CircularProgressIndicator());
-                },
+                buildWhen: (prev, curr) =>
+                    prev is HomeFetchInProgress && curr is HomeFetchSuccess,
+                builder: (context, state) => !(state is HomeFetchSuccess ||
+                        state is BookmarkRemovalSuccess ||
+                        state is BookmarkAdditionSuccess)
+                    ? const Center(child: CircularProgressIndicator())
+                    : CourseTabBarView(
+                        courseList: getCourseList(context, state),
+                      ),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  List<CourseList>? getCourseList(BuildContext context, HomeState state) {
+    if (state is HomeFetchSuccess) {
+      return state.data?.courseList;
+    }
+
+    if (state is BookmarkAdditionSuccess) {
+      return state.courseList;
+    }
+
+    if (state is BookmarkRemovalSuccess) {
+      return state.courseList;
+    }
+
+    return [];
   }
 }

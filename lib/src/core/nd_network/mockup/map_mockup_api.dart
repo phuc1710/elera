@@ -12,6 +12,7 @@ final Map<String, String> mapMockApiForGetRequest = {
   EndPoints.pinSending: 'pin_sending',
   EndPoints.home: 'fetch_home',
   EndPoints.notification: 'fetch_notification',
+  EndPoints.bookmark: 'fetch_bookmark'
 };
 
 final Map<String, String> mapMockApiForPostRequest = {
@@ -25,6 +26,8 @@ final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.selectContact: 'select_contact',
   EndPoints.enterPin: 'enter_pin',
   EndPoints.createPassword: 'create_password',
+  EndPoints.addBookmark: 'add_bookmark',
+  EndPoints.removeBookmark: 'remove_bookmark'
 };
 
 String? getJsonNameForGetRequest(

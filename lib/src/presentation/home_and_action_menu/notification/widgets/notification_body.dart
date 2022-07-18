@@ -17,9 +17,8 @@ class NotificationBody extends StatelessWidget {
       ),
       child: BlocConsumer<NotificationBloc, NotificationState>(
         listener: (context, state) {
-          if (state is NotificationFetchFailure) {
+          if (state is NotificationFetchFailure)
             Utils.showAppSnackBar(context, state.error.errorMessage);
-          }
         },
         builder: (context, state) {
           if (state is NotificationFetchSuccess) {

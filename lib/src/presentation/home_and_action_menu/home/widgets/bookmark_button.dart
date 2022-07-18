@@ -11,10 +11,12 @@ class BookmarkButton extends StatefulWidget {
     required this.courseModel,
     required this.isInRemoveBookmark,
     required this.onRemoveBookmark,
+    required this.onAddBookmark,
   }) : super(key: key);
 
   final Course? courseModel;
   final bool isInRemoveBookmark;
+  final VoidCallback onAddBookmark;
   final VoidCallback onRemoveBookmark;
 
   @override
@@ -34,10 +36,12 @@ class _BookmarkButtonState extends State<BookmarkButton> {
               if (widget.courseModel?.isBookmarked ?? true) {
                 showBookmarkRemoveBottomSheet(context);
               }
-              if (!(widget.courseModel?.isBookmarked ?? false))
+              if (!(widget.courseModel?.isBookmarked ?? false)) {
+                widget.onAddBookmark();
                 setState(() {
                   widget.courseModel?.isBookmarked = true;
                 });
+              }
             },
             child: Icon(
               widget.courseModel?.isBookmarked ?? false
@@ -74,6 +78,7 @@ class _BookmarkButtonState extends State<BookmarkButton> {
               CourseCard(
                 courseModel: widget.courseModel,
                 isInRemoveBookmark: true,
+                onAddBookmark: () {},
                 onRemoveBookmark: () {},
               ),
               BottomSheetActionButtons(
