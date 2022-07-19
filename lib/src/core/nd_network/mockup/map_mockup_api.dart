@@ -10,6 +10,7 @@ final Map<String, String> mapMockApiForGetRequest = {
   EndPoints.inviteFriends: 'invite_friends',
   EndPoints.fetchContact: 'fetch_contact',
   EndPoints.pinSending: 'pin_sending',
+  EndPoints.course: 'fetch_course',
   EndPoints.home: 'fetch_home',
   EndPoints.notification: 'fetch_notification',
   EndPoints.bookmark: 'fetch_bookmark',

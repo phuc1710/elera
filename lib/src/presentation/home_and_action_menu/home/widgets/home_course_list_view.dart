@@ -5,8 +5,8 @@ import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../bloc/home_bloc.dart';
 import 'course_card.dart';
 
-class CourseListView extends StatefulWidget {
-  const CourseListView({
+class HomeCourseListView extends StatefulWidget {
+  const HomeCourseListView({
     Key? key,
     required this.courseList,
     required this.tag,
@@ -16,10 +16,10 @@ class CourseListView extends StatefulWidget {
   final List<CourseList>? courseList;
 
   @override
-  State<CourseListView> createState() => _CourseListViewState();
+  State<HomeCourseListView> createState() => _HomeCourseListViewState();
 }
 
-class _CourseListViewState extends State<CourseListView> {
+class _HomeCourseListViewState extends State<HomeCourseListView> {
   @override
   Widget build(BuildContext context) {
     final itemList = widget.courseList

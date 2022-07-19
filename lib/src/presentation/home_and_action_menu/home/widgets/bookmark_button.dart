@@ -14,7 +14,7 @@ class BookmarkButton extends StatefulWidget {
     required this.onAddBookmark,
   }) : super(key: key);
 
-  final Course? courseModel;
+  final Item? courseModel;
   final bool isInRemoveBookmark;
   final VoidCallback onAddBookmark;
   final VoidCallback onRemoveBookmark;

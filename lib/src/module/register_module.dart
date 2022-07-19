@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import '../config/defines/keys.dart';
 import '../core/nd_network/nd_network.dart';
 import '../data/datasources/remote/bookmark_api_service.dart';
+import '../data/datasources/remote/course_api_service.dart';
 import '../data/datasources/remote/helper_api_service.dart';
 import '../data/datasources/remote/home_api_service.dart';
 import '../data/datasources/remote/mentor_api_service.dart';
@@ -53,6 +54,13 @@ abstract class RegisterModule {
     @Named(kApiBaseUrl) String url,
   ) =>
       MentorApiService(dio, baseUrl: url);
+
+  @lazySingleton
+  CourseApiService courseApiService(
+    @Named(kApiDio) Dio dio,
+    @Named(kApiBaseUrl) String url,
+  ) =>
+      CourseApiService(dio, baseUrl: url);
 
   @lazySingleton
   HelperApiService helperApiService(

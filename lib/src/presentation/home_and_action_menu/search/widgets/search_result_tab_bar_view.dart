@@ -1,7 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../home/widgets/course_list_view.dart';
+import '../../home/widgets/home_course_list_view.dart';
 import '../../top_mentors/widgets/top_mentors_body.dart';
 import 'not_found_list_view.dart';
 import 'search_result_title_row.dart';
@@ -53,7 +53,7 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
                     if (widget.searchPhrase.isEmpty)
                       const NotFoundListView()
                     else
-                      const CourseListView(
+                      const HomeCourseListView(
                         courseList: [],
                         tag: '',
                       ),

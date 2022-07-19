@@ -16,6 +16,7 @@ class EndPoints {
   static const String enterPin = '/enter_pin';
   static const String createPassword = '/create_password';
 
+  static const String course = '/fetch_course';
   static const String home = '/fetch_home';
   static const String notification = '/fetch_notification';
   static const String bookmark = '/fetch_bookmark';

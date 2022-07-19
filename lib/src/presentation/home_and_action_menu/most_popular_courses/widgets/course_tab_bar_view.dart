@@ -2,7 +2,7 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
-import '../bloc/home_bloc.dart';
+import '../bloc/course_bloc.dart';
 import 'course_list_view.dart';
 
 class CourseTabBarView extends StatefulWidget {
@@ -69,8 +69,8 @@ class _CourseTabBarViewState extends State<CourseTabBarView> {
     );
   }
 
-  String? getCourseTag(HomeState state, int index) {
-    if (state is HomeFetchSuccess) {
+  String? getCourseTag(CourseState state, int index) {
+    if (state is CourseFetchSuccess) {
       return widget.courseList?[index].tag;
     }
     if (state is BookmarkAdditionSuccess) {
@@ -83,8 +83,8 @@ class _CourseTabBarViewState extends State<CourseTabBarView> {
     return '';
   }
 
-  List<CourseList>? getCourseList(HomeState state, int index) {
-    if (state is HomeFetchSuccess) {
+  List<CourseList>? getCourseList(CourseState state, int index) {
+    if (state is CourseFetchSuccess) {
       return widget.courseList;
     }
     if (state is BookmarkAdditionSuccess) {

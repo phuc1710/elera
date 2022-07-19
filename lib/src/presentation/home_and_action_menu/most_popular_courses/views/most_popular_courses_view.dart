@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/course_bloc.dart';
 import '../widgets/most_popular_courses_body.dart';
 
 class MostPopularCoursesView extends StatelessWidget {
@@ -23,7 +26,10 @@ class MostPopularCoursesView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const MyBookmarkScaffoldBody(),
+          body: BlocProvider<CourseBloc>(
+            create: (context) => injector()..add(CourseFetched()),
+            child: const MostPopularCoursesBody(),
+          ),
         ),
       ),
     );

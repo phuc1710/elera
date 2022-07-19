@@ -1,0 +1,89 @@
+{
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+    "course_list": [
+      {
+        "tag": "All",
+        "items": [
+          {
+            "category_name": "3D Design",
+            "name": "3D Design Illustration",
+            "image": "assets/images/course_1.png",
+            "discount_price": "$48",
+            "original_price": "$80",
+            "rating": 4.8,
+            "enroll_count": "8.289",
+            "is_bookmarked": true
+          },
+          {
+            "category_name": "Entrepreneurship",
+            "name": "Digital Entrepreneurship",
+            "image": "assets/images/course_2.jpg",
+            "discount_price": "$39",
+            "original_price": "",
+            "rating": 4.9,
+            "enroll_count": "6.182",
+            "is_bookmarked": true
+          },
+          {
+            "category_name": "UI/UX Design",
+            "name": "Learn UX User Persona",
+            "image": "assets/images/course_3.jpg",
+            "discount_price": "$42",
+            "original_price": "$75",
+            "rating": 4.7,
+            "enroll_count": "7.938",
+            "is_bookmarked": true
+          }
+        ]
+      },
+      {
+        "tag": "3D Design",
+        "items": [
+          {
+            "category_name": "3D Design",
+            "name": "3D Design Illustration",
+            "image": "assets/images/course_1.png",
+            "discount_price": "$48",
+            "original_price": "$80",
+            "rating": 4.8,
+            "enroll_count": "8.289",
+            "is_bookmarked": true
+          }
+        ]
+      },
+      {
+        "tag": "Entrepreneurship",
+        "items": [
+          {
+            "category_name": "Entrepreneurship",
+            "name": "Digital Entrepreneurship",
+            "image": "assets/images/course_2.jpg",
+            "discount_price": "$39",
+            "original_price": "",
+            "rating": 4.9,
+            "enroll_count": "6.182",
+            "is_bookmarked": true
+          }
+        ]
+      },
+      {
+        "tag": "UI/UX Design",
+        "items": [
+          {
+            "category_name": "UI/UX Design",
+            "name": "Learn UX User Persona",
+            "image": "assets/images/course_3.jpg",
+            "discount_price": "$42",
+            "original_price": "$75",
+            "rating": 4.7,
+            "enroll_count": "7.938",
+            "is_bookmarked": true
+          }
+        ]
+      }
+    ]
+  }
+}

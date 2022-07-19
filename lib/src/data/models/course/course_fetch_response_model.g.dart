@@ -9,8 +9,9 @@ part of 'course_fetch_response_model.dart';
 CourseFetchResponseModel _$CourseFetchResponseModelFromJson(
         Map<String, dynamic> json) =>
     CourseFetchResponseModel(
+      status: json['status'] as int?,
+      code: json['code'] as int?,
       message: json['message'] as String?,
-      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : Data.fromJson(json['data'] as Map<String, dynamic>),
@@ -19,8 +20,9 @@ CourseFetchResponseModel _$CourseFetchResponseModelFromJson(
 Map<String, dynamic> _$CourseFetchResponseModelToJson(
         CourseFetchResponseModel instance) =>
     <String, dynamic>{
+      'status': instance.status,
+      'code': instance.code,
       'message': instance.message,
-      'error_code': instance.errorCode,
       'data': instance.data,
     };
 
@@ -37,7 +39,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
 CourseList _$CourseListFromJson(Map<String, dynamic> json) => CourseList(
       tag: json['tag'] as String?,
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) => Course.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Item.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -47,7 +49,7 @@ Map<String, dynamic> _$CourseListToJson(CourseList instance) =>
       'items': instance.items,
     };
 
-Course _$CourseFromJson(Map<String, dynamic> json) => Course(
+Item _$ItemFromJson(Map<String, dynamic> json) => Item(
       categoryName: json['category_name'] as String?,
       name: json['name'] as String?,
       image: json['image'] as String?,
@@ -58,7 +60,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       isBookmarked: json['is_bookmarked'] as bool?,
     );
 
-Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
+Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{
       'category_name': instance.categoryName,
       'name': instance.name,
       'image': instance.image,

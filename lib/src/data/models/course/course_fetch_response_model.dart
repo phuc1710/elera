@@ -5,18 +5,18 @@ part 'course_fetch_response_model.g.dart';
 @JsonSerializable()
 class CourseFetchResponseModel {
   CourseFetchResponseModel({
+    required this.status,
+    required this.code,
     required this.message,
-    required this.errorCode,
     required this.data,
   });
 
   factory CourseFetchResponseModel.fromJson(Map<String, dynamic> json) =>
       _$CourseFetchResponseModelFromJson(json);
 
+  final int? status;
+  final int? code;
   final String? message;
-
-  @JsonKey(name: 'error_code')
-  final int? errorCode;
   final Data? data;
 
   Map<String, dynamic> toJson() => _$CourseFetchResponseModelToJson(this);
@@ -47,14 +47,14 @@ class CourseList {
       _$CourseListFromJson(json);
 
   final String? tag;
-  final List<Course>? items;
+  final List<Item>? items;
 
   Map<String, dynamic> toJson() => _$CourseListToJson(this);
 }
 
 @JsonSerializable()
-class Course {
-  Course({
+class Item {
+  Item({
     required this.categoryName,
     required this.name,
     required this.image,
@@ -65,11 +65,10 @@ class Course {
     required this.isBookmarked,
   });
 
-  factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
+  factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
   @JsonKey(name: 'category_name')
   final String? categoryName;
-
   final String? name;
   final String? image;
 
@@ -86,5 +85,5 @@ class Course {
   @JsonKey(name: 'is_bookmarked')
   bool? isBookmarked;
 
-  Map<String, dynamic> toJson() => _$CourseToJson(this);
+  Map<String, dynamic> toJson() => _$ItemToJson(this);
 }

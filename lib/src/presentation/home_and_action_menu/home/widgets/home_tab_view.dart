@@ -7,7 +7,7 @@ import '../../../../injector/injector.dart';
 import '../../most_popular_courses/views/most_popular_courses_view.dart';
 import '../../top_mentors/views/top_mentors_view.dart';
 import '../bloc/home_bloc.dart';
-import 'course_tab_bar_view.dart';
+import 'home_course_tab_bar_view.dart';
 import 'deals_slider.dart';
 import 'mentor_list_view.dart';
 import 'search_bar.dart';
@@ -86,7 +86,7 @@ class HomeTabView extends StatelessWidget {
                         state is BookmarkRemovalSuccess ||
                         state is BookmarkAdditionSuccess)
                     ? const Center(child: CircularProgressIndicator())
-                    : CourseTabBarView(
+                    : HomeCourseTabBarView(
                         courseList: getCourseList(context, state),
                       ),
               ),
