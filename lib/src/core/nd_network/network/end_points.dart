@@ -21,6 +21,7 @@ class EndPoints {
   static const String bookmark = '/fetch_bookmark';
   static const String addBookmark = '/add_bookmark';
   static const String removeBookmark = '/remove_bookmark';
+  static const String mentor = '/mentor';
 
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';

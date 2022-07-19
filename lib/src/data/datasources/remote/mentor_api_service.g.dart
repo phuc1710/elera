@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'course_api_service.dart';
+part of 'mentor_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'course_api_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps
 
-class _CourseApiService implements CourseApiService {
-  _CourseApiService(this._dio, {this.baseUrl}) {
+class _MentorApiService implements MentorApiService {
+  _MentorApiService(this._dio, {this.baseUrl}) {
     baseUrl ??= 'http://103.63.215.140:7412/api/';
   }
 
@@ -18,7 +18,7 @@ class _CourseApiService implements CourseApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<CourseFetchResponseModel>> getCourseFetchRequest(
+  Future<HttpResponse<MentorFetchResponseModel>> getMentorFetchRequest(
       {isMockup, query}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -28,12 +28,12 @@ class _CourseApiService implements CourseApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<CourseFetchResponseModel>>(
+        _setStreamType<HttpResponse<MentorFetchResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/fetch_course',
+                .compose(_dio.options, '/mentor',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = CourseFetchResponseModel.fromJson(_result.data!);
+    final value = MentorFetchResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

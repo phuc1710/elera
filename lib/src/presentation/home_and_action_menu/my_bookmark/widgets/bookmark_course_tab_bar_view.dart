@@ -22,7 +22,7 @@ class _BookmarkCourseTabBarViewState extends State<BookmarkCourseTabBarView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: (211.0 - 5 * (widget.courseList?[0].items?.length ?? 0)) *
+      height: (214.0 - 4 * (widget.courseList?[0].items?.length ?? 0)) *
           (widget.courseList?[0].items?.length ?? 0),
       child: DefaultTabController(
         length: widget.courseList?.length ?? 0,

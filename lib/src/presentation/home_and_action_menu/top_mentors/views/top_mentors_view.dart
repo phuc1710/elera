@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/top_mentors_bloc.dart';
 import '../widgets/top_mentors_body.dart';
 
 class TopMentorsView extends StatelessWidget {
@@ -25,7 +28,10 @@ class TopMentorsView extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.05,
           ),
-          child: const TopMentorsBody(),
+          child: BlocProvider<TopMentorsBloc>(
+            create: (context) => injector()..add(TopMentorsFetched()),
+            child: const TopMentorsBody(),
+          ),
         ),
       ),
     );

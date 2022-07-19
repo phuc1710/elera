@@ -12,7 +12,8 @@ final Map<String, String> mapMockApiForGetRequest = {
   EndPoints.pinSending: 'pin_sending',
   EndPoints.home: 'fetch_home',
   EndPoints.notification: 'fetch_notification',
-  EndPoints.bookmark: 'fetch_bookmark'
+  EndPoints.bookmark: 'fetch_bookmark',
+  EndPoints.mentor: 'fetch_mentor',
 };
 
 final Map<String, String> mapMockApiForPostRequest = {
