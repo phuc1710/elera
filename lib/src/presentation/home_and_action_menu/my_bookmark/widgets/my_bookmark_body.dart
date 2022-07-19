@@ -6,8 +6,8 @@ import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../bloc/bookmark_bloc.dart';
 import 'bookmark_course_tab_bar_view.dart';
 
-class MyBookmarkScaffoldBody extends StatelessWidget {
-  const MyBookmarkScaffoldBody({Key? key}) : super(key: key);
+class MyBookmarkBody extends StatelessWidget {
+  const MyBookmarkBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
