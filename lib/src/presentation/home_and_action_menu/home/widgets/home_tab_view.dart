@@ -32,12 +32,13 @@ class HomeTabView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05,
                 ),
-                child: const Hero(
+                child: Hero(
                   tag: 'searchBar',
                   child: Material(
                     color: Colors.white,
                     child: SearchBar(
                       atHome: true,
+                      onFocus: () {},
                     ),
                   ),
                 ),

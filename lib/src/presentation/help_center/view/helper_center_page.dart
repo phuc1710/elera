@@ -131,6 +131,7 @@ class _HelpeCenterPageState extends State<HelpeCenterPage> {
               buildFAQFilterList(context, faqData: state.data?.faqs ?? []),
               const SizedBox(height: 20),
               SearchBar(
+                onFocus: () {},
                 atHome: false,
                 controller: _searchController,
                 data: state.data?.faqs[selectedFAQ]?.items

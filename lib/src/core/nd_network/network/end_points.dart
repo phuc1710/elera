@@ -23,6 +23,10 @@ class EndPoints {
   static const String addBookmark = '/add_bookmark';
   static const String removeBookmark = '/remove_bookmark';
   static const String mentor = '/mentor';
+  static const String recentSearch = '/recent_search';
+  static const String addRecentSearch = '/add_recent_search';
+  static const String removeRecentSearch = '/remove_recent_search';
+  static const String search = '/search';
 
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';

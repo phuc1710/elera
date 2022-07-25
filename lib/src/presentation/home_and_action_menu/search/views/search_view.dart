@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../home/widgets/search_bar.dart';
+import '../../../../core/utils/utils.dart';
+import '../widgets/search_bar.dart';
+import '../bloc/search_bloc.dart';
 import '../widgets/recent_search_list_view.dart';
 import '../widgets/search_result_tab_bar_view.dart';
 
@@ -14,7 +17,6 @@ class SearchView extends StatefulWidget {
 class _SearchViewState extends State<SearchView> {
   final GlobalKey<RecentSearchListViewState> _key = GlobalKey();
   final _searchController = TextEditingController();
-  bool searchSubmitted = false;
   String searchPhrase = '';
 
   @override
@@ -40,6 +42,11 @@ class _SearchViewState extends State<SearchView> {
                       ),
                       child: SearchBar(
                         atHome: false,
+                        onFocus: () {
+                          context
+                              .read<SearchBloc>()
+                              .add(RecentSearchFetched('userEmail'));
+                        },
                         onSubmitted: _onSearchSubmitted,
                         controller: _searchController,
                       ),
@@ -56,23 +63,52 @@ class _SearchViewState extends State<SearchView> {
   }
 
   Widget getSearchContent() {
-    return searchSubmitted
-        ? SearchResultTabView(searchPhrase: searchPhrase)
-        : RecentSearchListView(
+    return BlocConsumer<SearchBloc, SearchState>(
+      listener: (context, state) {
+        if (state is SearchFetchFailure)
+          Utils.showAppSnackBar(context, state.error.errorMessage);
+      },
+      buildWhen: (prev, curr) =>
+          (prev is RecentSearchFetchInProgress &&
+              curr is RecentSearchFetchSuccess) ||
+          (prev is RecentSearchAdditionSuccess && curr is SearchFetchSuccess),
+      builder: (context, state) {
+        if (state is SearchFetchSuccess) {
+          FocusScope.of(context).unfocus();
+
+          return SearchResultTabView(
+            searchPhrase: searchPhrase,
+            courseList: state.data?.courses,
+            mentorList: state.data?.mentors,
+          );
+        }
+        if (state is RecentSearchFetchSuccess) {
+          return RecentSearchListView(
             key: _key,
+            searchList: state.data?.searchList,
             onSuggestPressed: () {
+              FocusScope.of(context).unfocus();
               setState(() {
-                searchPhrase = _key.currentState!.searchPhrase;
-                searchSubmitted = true;
+                searchPhrase = _key.currentState?.searchPhrase ?? '';
               });
+              context.read<SearchBloc>().add(
+                    RecentSearchAdded(searchPhrase),
+                  );
+              context.read<SearchBloc>().add(SearchFetched(searchPhrase));
             },
           );
+        }
+
+        return const Center(child: CircularProgressIndicator());
+      },
+    );
   }
 
   void _onSearchSubmitted(String? searchWords) {
     setState(() {
       searchPhrase = searchWords ?? '';
-      searchSubmitted = true;
     });
+    context.read<SearchBloc>().add(RecentSearchAdded(searchPhrase));
+    context.read<SearchBloc>().add(SearchFetched(searchPhrase));
   }
 }

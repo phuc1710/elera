@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../injector/injector.dart';
-import '../../search/bloc/search_bloc.dart';
-import '../../search/views/search_view.dart';
 import '../../search/widgets/filter_bottom_sheet_content.dart';
 
 class SearchBar extends StatefulWidget {
@@ -38,15 +34,13 @@ class _SearchBarState extends State<SearchBar> {
 
   final FocusNode focusNode = FocusNode();
 
-  bool isFocus = true;
+  bool? isFocus;
 
   @override
   void initState() {
     super.initState();
     focusNode.addListener(() {
-      setState(() {
-        isFocus = focusNode.hasPrimaryFocus;
-      });
+      isFocus = focusNode.hasPrimaryFocus;
     });
   }
 
@@ -56,38 +50,26 @@ class _SearchBarState extends State<SearchBar> {
       link: _layerLink,
       child: Container(
         decoration: BoxDecoration(
-          color: isFocus && !widget.atHome
+          color: isFocus ?? true && !widget.atHome
               ? const Color(0xFFEFF3FF)
               : const Color(0xFFF5F5F5),
           borderRadius: BorderRadius.circular(15),
-          border: isFocus && !widget.atHome
+          border: isFocus ?? true && !widget.atHome
               ? Border.all(color: Theme.of(context).primaryColor)
               : null,
         ),
         child: SizedBox(
           height: 50,
           child: TextField(
-            readOnly: true,
-            showCursor: true,
             focusNode:
                 widget.atHome ? FocusNode(canRequestFocus: false) : focusNode,
             controller: widget.controller,
             autofocus: !widget.atHome,
             autocorrect: false,
-            onTap: widget.atHome
-                ? () {
-                    Navigator.push<Object?>(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                        builder: (context) => BlocProvider<SearchBloc>(
-                          create: (context) => injector()
-                            ..add(RecentSearchFetched('user@email.com')),
-                          child: const SearchView(),
-                        ),
-                      ),
-                    );
-                  }
-                : () => focusNode.requestFocus(),
+            onTap: () {
+              widget.onFocus();
+              focusNode.requestFocus();
+            },
             onSubmitted: widget.onSubmitted,
             onChanged: (text) {
               widget.onChanged?.call(text);
@@ -123,7 +105,7 @@ class _SearchBarState extends State<SearchBar> {
               border: InputBorder.none,
               prefixIcon: Icon(
                 Icons.search,
-                color: isFocus && !widget.atHome
+                color: isFocus ?? true && !widget.atHome
                     ? Theme.of(context).primaryColor
                     : Colors.grey[400],
               ),
@@ -142,7 +124,7 @@ class _SearchBarState extends State<SearchBar> {
                     ),
               hintText: 'Search',
               hintStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: isFocus && !widget.atHome
+                    color: isFocus ?? true && !widget.atHome
                         ? Colors.black
                         : Colors.grey[400],
                   ),
