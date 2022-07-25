@@ -15,14 +15,14 @@ import '../bloc/signin_bloc.dart';
 import 'forgot_password_button.dart';
 import 'sign_in_button.dart';
 
-class SignInScaffoldBody extends StatefulWidget {
-  const SignInScaffoldBody({Key? key}) : super(key: key);
+class SignInBody extends StatefulWidget {
+  const SignInBody({Key? key}) : super(key: key);
 
   @override
-  State<SignInScaffoldBody> createState() => _SignInScaffoldBodyState();
+  State<SignInBody> createState() => _SignInBodyState();
 }
 
-class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
+class _SignInBodyState extends State<SignInBody> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 

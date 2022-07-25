@@ -6,8 +6,8 @@ import 'bottom_prompt_row.dart';
 import 'divider_row_with_text.dart';
 import 'social_login_column.dart';
 
-class ScaffoldBody extends StatelessWidget {
-  const ScaffoldBody({
+class LetsInBody extends StatelessWidget {
+  const LetsInBody({
     Key? key,
   }) : super(key: key);
 

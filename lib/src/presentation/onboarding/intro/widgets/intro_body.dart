@@ -5,16 +5,16 @@ import 'intro_page.dart';
 import 'main_action_ink.dart';
 import 'page_indicator.dart';
 
-class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({
+class IntroBody extends StatefulWidget {
+  const IntroBody({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+  State<IntroBody> createState() => _IntroBodyState();
 }
 
-class _ScaffoldBodyState extends State<ScaffoldBody> {
+class _IntroBodyState extends State<IntroBody> {
   final _controller = PageController();
   String _buttonString = 'Next';
   int page = 0;
@@ -53,7 +53,7 @@ class _ScaffoldBodyState extends State<ScaffoldBody> {
                 Navigator.push<dynamic>(
                   context,
                   MaterialPageRoute<dynamic>(
-                    builder: (context) => const LetsIn(),
+                    builder: (context) => const LetsInView(),
                   ),
                 );
               }

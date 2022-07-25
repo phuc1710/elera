@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injector/injector.dart';
 import '../bloc/signin_bloc.dart';
-import '../widgets/sign_in_scaffold_body.dart';
+import '../widgets/sign_in_body.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class SignInView extends StatelessWidget {
           ),
           body: BlocProvider<SignInBloc>(
             create: (context) => injector(),
-            child: const SignInScaffoldBody(),
+            child: const SignInBody(),
           ),
         ),
       ),
