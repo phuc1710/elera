@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class DividerRowWithText extends StatelessWidget {
   const DividerRowWithText({
@@ -29,11 +28,10 @@ class DividerRowWithText extends StatelessWidget {
             child: Center(
               child: Text(
                 _text,
-                style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.grey,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .labelSmall
+                    ?.copyWith(color: Colors.grey),
               ),
             ),
           ),

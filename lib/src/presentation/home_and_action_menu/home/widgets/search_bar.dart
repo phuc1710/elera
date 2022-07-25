@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../../search/bloc/search_bloc.dart';
 import '../../search/views/search_view.dart';
 import '../../search/widgets/filter_bottom_sheet_content.dart';
 
@@ -12,9 +15,11 @@ class SearchBar extends StatefulWidget {
     this.onChanged,
     this.showOverlayResultPrediction = false,
     this.data = const <String?>[],
+    required this.onFocus,
   }) : super(key: key);
 
   final bool atHome;
+  final VoidCallback onFocus;
   final void Function(String?)? onSubmitted;
   final void Function(String?)? onChanged;
   final TextEditingController? controller;
@@ -33,7 +38,7 @@ class _SearchBarState extends State<SearchBar> {
 
   final FocusNode focusNode = FocusNode();
 
-  var isFocus = false;
+  bool isFocus = true;
 
   @override
   void initState() {
@@ -51,24 +56,38 @@ class _SearchBarState extends State<SearchBar> {
       link: _layerLink,
       child: Container(
         decoration: BoxDecoration(
-          color: isFocus ? Colors.lightBlue[100] : Colors.grey[100],
+          color: isFocus && !widget.atHome
+              ? const Color(0xFFEFF3FF)
+              : const Color(0xFFF5F5F5),
           borderRadius: BorderRadius.circular(15),
-          border: isFocus ? Border.all(color: Colors.blue) : null,
+          border: isFocus && !widget.atHome
+              ? Border.all(color: Theme.of(context).primaryColor)
+              : null,
         ),
         child: SizedBox(
           height: 50,
           child: TextField(
-            focusNode: focusNode,
+            readOnly: true,
+            showCursor: true,
+            focusNode:
+                widget.atHome ? FocusNode(canRequestFocus: false) : focusNode,
             controller: widget.controller,
             autofocus: !widget.atHome,
+            autocorrect: false,
             onTap: widget.atHome
-                ? (() => Navigator.push<Object?>(
+                ? () {
+                    Navigator.push<Object?>(
                       context,
                       MaterialPageRoute<dynamic>(
-                        builder: (context) => const SearchView(),
+                        builder: (context) => BlocProvider<SearchBloc>(
+                          create: (context) => injector()
+                            ..add(RecentSearchFetched('user@email.com')),
+                          child: const SearchView(),
+                        ),
                       ),
-                    ))
-                : () {},
+                    );
+                  }
+                : () => focusNode.requestFocus(),
             onSubmitted: widget.onSubmitted,
             onChanged: (text) {
               widget.onChanged?.call(text);
@@ -104,7 +123,9 @@ class _SearchBarState extends State<SearchBar> {
               border: InputBorder.none,
               prefixIcon: Icon(
                 Icons.search,
-                color: isFocus ? Colors.blueAccent : Colors.grey[400],
+                color: isFocus && !widget.atHome
+                    ? Theme.of(context).primaryColor
+                    : Colors.grey[400],
               ),
               suffixIcon: widget.atHome
                   ? Icon(
@@ -120,10 +141,11 @@ class _SearchBarState extends State<SearchBar> {
                       splashRadius: 10,
                     ),
               hintText: 'Search',
-              hintStyle: Theme.of(context)
-                  .textTheme
-                  .displayMedium
-                  ?.copyWith(color: isFocus ? Colors.black : Colors.grey[400]),
+              hintStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
+                    color: isFocus && !widget.atHome
+                        ? Colors.black
+                        : Colors.grey[400],
+                  ),
             ),
             style: Theme.of(context).textTheme.displaySmall,
           ),

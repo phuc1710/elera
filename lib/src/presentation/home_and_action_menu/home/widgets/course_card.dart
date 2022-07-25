@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/course/course_response_model.dart';
+import '../../../../data/models/course/course_fetch_response_model.dart';
 import 'bookmark_button.dart';
 import 'course_content_column.dart';
 import 'course_image.dart';
@@ -10,11 +10,13 @@ class CourseCard extends StatefulWidget {
     Key? key,
     required this.courseModel,
     required this.isInRemoveBookmark,
+    required this.onAddBookmark,
     required this.onRemoveBookmark,
   }) : super(key: key);
 
-  final CourseModelItem courseModel;
+  final Item? courseModel;
   final bool isInRemoveBookmark;
+  final VoidCallback onAddBookmark;
   final VoidCallback onRemoveBookmark;
 
   @override
@@ -41,15 +43,15 @@ class _CourseCardState extends State<CourseCard> {
         child: Row(
           children: [
             CourseImage(
-              imagePath: widget.courseModel.imagePath,
+              imagePath: widget.courseModel?.image ?? '',
             ),
             CourseContentColumn(
-              tag: widget.courseModel.tag,
-              name: widget.courseModel.name,
-              price: widget.courseModel.price,
-              originalPrice: widget.courseModel.originalPrice,
-              rating: widget.courseModel.rating,
-              studentCount: widget.courseModel.studentCount,
+              tag: widget.courseModel?.categoryName ?? '',
+              name: widget.courseModel?.name ?? '',
+              price: widget.courseModel?.discountPrice ?? '',
+              originalPrice: widget.courseModel?.originalPrice ?? '',
+              rating: widget.courseModel?.rating ?? 0,
+              studentCount: widget.courseModel?.enrollCount ?? '',
             ),
             if (widget.isInRemoveBookmark)
               SizedBox(
@@ -65,6 +67,9 @@ class _CourseCardState extends State<CourseCard> {
               BookmarkButton(
                 courseModel: widget.courseModel,
                 isInRemoveBookmark: widget.isInRemoveBookmark,
+                onAddBookmark: () {
+                  widget.onAddBookmark();
+                },
                 onRemoveBookmark: () {
                   widget.onRemoveBookmark();
                 },

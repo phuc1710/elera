@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 class DealPage extends StatelessWidget {
   const DealPage({
     Key? key,
+    this.title,
+    this.subtitle,
+    this.description,
+    this.deal,
   }) : super(key: key);
+
+  final String? title;
+  final String? subtitle;
+  final String? description;
+  final String? deal;
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +27,16 @@ class DealPage extends StatelessWidget {
                 title: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4.0),
                   child: Text(
-                    '40% OFF',
+                    subtitle ?? '',
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ),
                 subtitle: Text(
-                  "Today's Special",
+                  title ?? '',
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 trailing: Text(
-                  '40%',
+                  deal ?? '',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),
@@ -36,7 +45,7 @@ class DealPage extends StatelessWidget {
                   horizontal: MediaQuery.of(context).size.width * 0.04,
                 ),
                 child: Text(
-                  'Get a discount for every course order!\nOnly valid for today!',
+                  description ?? '',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontSize: 13.5,
                         fontWeight: FontWeight.w400,

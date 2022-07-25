@@ -24,9 +24,9 @@ class BottomPromptRow extends StatelessWidget {
         children: [
           Text(
             promptText,
-            style: GoogleFonts.poppins(
+            style: GoogleFonts.urbanist(
               fontSize: 12,
-              fontWeight: FontWeight.w300,
+              fontWeight: FontWeight.w400,
               color: Colors.grey[400],
             ),
           ),

@@ -6,9 +6,11 @@ import '../../home/widgets/title_row.dart';
 class RecentSearchListView extends StatefulWidget {
   const RecentSearchListView({
     Key? key,
+    this.searchList,
     required this.onSuggestPressed,
   }) : super(key: key);
 
+  final List<String>? searchList;
   final VoidCallback onSuggestPressed;
   @override
   State<RecentSearchListView> createState() => RecentSearchListViewState();
@@ -24,6 +26,7 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
           title: 'Recent',
           leadingButtonText: 'Clear All',
           leadingButtonCallback: () => setState(() {
+            widget.searchList?.clear();
             recentSearchList.clear();
           }),
         ),
@@ -35,26 +38,26 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
         ),
         ListView.builder(
           shrinkWrap: true,
-          itemCount: recentSearchList.length,
+          itemCount: widget.searchList?.length,
           itemBuilder: (context, i) => ListTile(
             contentPadding: EdgeInsets.zero,
             dense: true,
             minLeadingWidth: 0,
             onTap: () {
               setState(() {
-                searchPhrase = recentSearchList[i];
+                searchPhrase = widget.searchList?[i] ?? '';
               });
               widget.onSuggestPressed();
             },
             title: Text(
-              recentSearchList[i],
+              '${widget.searchList?[i]}',
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
                     color: Colors.grey,
                   ),
             ),
             trailing: InkWell(
               onTap: () => setState(() {
-                recentSearchList.removeAt(i);
+                widget.searchList?.removeAt(i);
               }),
               child: const Icon(Icons.cancel_outlined),
             ),
@@ -62,9 +65,5 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
         ),
       ],
     );
-  }
-
-  String getSearchPhrase() {
-    return searchPhrase;
   }
 }

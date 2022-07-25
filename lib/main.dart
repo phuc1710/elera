@@ -11,7 +11,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();
 
-  runApp(const App());
+  Future.delayed(const Duration(milliseconds: 150), () => runApp(const App()));
 }
 
 class App extends StatelessWidget {

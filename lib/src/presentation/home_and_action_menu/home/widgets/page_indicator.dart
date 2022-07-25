@@ -5,10 +5,12 @@ class PageIndicator extends StatelessWidget {
   const PageIndicator({
     Key? key,
     required PageController controller,
+    required this.pageCount,
   })  : _controller = controller,
         super(key: key);
 
   final PageController _controller;
+  final int pageCount;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class PageIndicator extends StatelessWidget {
           child: Center(
             child: SmoothPageIndicator(
               controller: _controller,
-              count: 5,
+              count: pageCount,
               effect: const ExpandingDotsEffect(
                 dotHeight: 4,
                 dotWidth: 4,

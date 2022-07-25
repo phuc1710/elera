@@ -1,7 +1,8 @@
 {
-  "message": "",
-  "error_code": 1,
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
   "data": {
-    "token": "thisIsToken"
+      "token": "this-is-token"
   }
 }

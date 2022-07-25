@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widgets/notification_scaffold_body.dart';
+import '../../../../injector/injector.dart';
+import '../bloc/notification_bloc.dart';
+import '../widgets/notification_body.dart';
 
 class NotificationView extends StatelessWidget {
   const NotificationView({Key? key}) : super(key: key);
@@ -23,7 +26,10 @@ class NotificationView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: const NotificationScaffoldBody(),
+          body: BlocProvider<NotificationBloc>(
+            create: (context) => injector()..add(NotificationFetched()),
+            child: const NotificationBody(),
+          ),
         ),
       ),
     );

@@ -1,0 +1,53 @@
+{
+  "message": "",
+  "error_code": 1,
+  "data": {
+    "notification_list": [
+      {
+        "date": "Today",
+        "notifications": [
+          {
+            "type": "payment",
+            "title": "Payment Successful!",
+            "description": "You have made a course payment"
+          },
+          {
+            "type": "offer",
+            "title": "Today's Special Offer",
+            "description": "You get a special promo today!"
+          }
+        ]
+      },
+      {
+        "date": "Yesterday",
+        "notifications": [
+          {
+            "type": "category",
+            "title": "New Category Courses!",
+            "description": "Now the 3D design course is available"
+          }
+        ]
+      },
+      {
+        "date": "29/10/2002",
+        "notifications": [
+          {
+            "type": "category",
+            "title": "New Category Courses!",
+            "description": "Now the 3D design course is available"
+          }
+        ]
+      },
+      {
+        "date": "17/10/2001",
+        "notifications": [
+          {
+            "type": "account",
+            "title": "Account Setup Successful!",
+            "description": "Your account has been created!"
+          }
+        ]
+      }
+    ]
+  }
+}

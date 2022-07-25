@@ -2,9 +2,9 @@
 class EndPoints {
   EndPoints._();
 
-  static const String baseUrl = '';
+  static const String baseUrl = 'http://103.63.215.140:7412/api/';
   static const String devUrl = '';
-  static const String signIn = '/sign_in';
+  static const String signIn = '/users/login';
   static const String signUp = '/sign_up';
 
   static const String fillYourProfile = '/fill_your_profile';
@@ -17,6 +17,17 @@ class EndPoints {
   static const String createPassword = '/create_password';
 
   static const String course = '/fetch_course';
+  static const String home = '/fetch_home';
+  static const String notification = '/fetch_notification';
+  static const String bookmark = '/fetch_bookmark';
+  static const String addBookmark = '/add_bookmark';
+  static const String removeBookmark = '/remove_bookmark';
+  static const String mentor = '/mentor';
+  static const String recentSearch = '/recent_search';
+  static const String addRecentSearch = '/add_recent_search';
+  static const String removeRecentSearch = '/remove_recent_search';
+  static const String search = '/search';
+
   static const String helperCenter = '/helper_center';
   static const String profile = '/profile';
   static const String countries = '/countries';

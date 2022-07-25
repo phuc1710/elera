@@ -18,8 +18,9 @@ Future<void> initializeDependencies() async {
       environment: env.Environment.sandbox,
       getHeadersApiProvider: () async {
         final Map<String, dynamic> header = <String, dynamic>{
-          'version': 'version app',
-          'token': 'token',
+          'product': 'postman',
+          'token':
+              '894ca68e81e66b957731debfdca118a063afcd06e7e01974bf39aa7acfb3d996',
         };
 
         return header;

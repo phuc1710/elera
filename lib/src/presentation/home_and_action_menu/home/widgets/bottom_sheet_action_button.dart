@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/course/course_response_model.dart';
+import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 
 class BottomSheetActionButtons extends StatefulWidget {
@@ -14,7 +14,7 @@ class BottomSheetActionButtons extends StatefulWidget {
 
   final String mainButtonString;
   final String subButtonString;
-  final CourseModelItem? courseModel;
+  final Item? courseModel;
   final VoidCallback onMainActionPressed;
 
   @override

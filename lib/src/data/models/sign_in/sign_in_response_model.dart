@@ -4,31 +4,33 @@ part 'sign_in_response_model.g.dart';
 
 @JsonSerializable()
 class SignInResponseModel {
-  SignInResponseModel({this.errorCode, this.data, this.message});
+  SignInResponseModel({
+    required this.status,
+    required this.code,
+    required this.message,
+    required this.data,
+  });
 
   factory SignInResponseModel.fromJson(Map<String, dynamic> json) =>
       _$SignInResponseModelFromJson(json);
-  @JsonKey(name: 'error_code')
-  int? errorCode;
 
-  @JsonKey(name: 'message')
-  String? message;
-
-  @JsonKey(name: 'data')
-  SignInModel? data;
+  final int? status;
+  final int? code;
+  final String? message;
+  final Data? data;
 
   Map<String, dynamic> toJson() => _$SignInResponseModelToJson(this);
 }
 
 @JsonSerializable()
-class SignInModel {
-  SignInModel({this.token});
+class Data {
+  Data({
+    required this.token,
+  });
 
-  factory SignInModel.fromJson(Map<String, dynamic> json) =>
-      _$SignInModelFromJson(json);
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
-  @JsonKey(name: 'token')
   final String? token;
 
-  Map<String, dynamic> toJson() => _$SignInModelToJson(this);
+  Map<String, dynamic> toJson() => _$DataToJson(this);
 }

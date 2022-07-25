@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../forgot_and_reset_password/select_contact/views/select_contact_view.dart';
 
@@ -21,11 +20,7 @@ class ForgotPasswordButton extends StatelessWidget {
       },
       child: Text(
         'Forgot the password?',
-        style: GoogleFonts.poppins(
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: Theme.of(context).primaryColor,
-        ),
+        style: Theme.of(context).textTheme.labelMedium,
       ),
     );
   }

@@ -1,19 +1,24 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/course/course_response_model.dart';
-import '../../home/widgets/course_list_view.dart';
-import '../../top_mentors/widgets/top_mentors_body.dart';
+import '../../../../data/models/course/course_fetch_response_model.dart';
+import '../../../../data/models/mentor/mentor_fetch_response_model.dart';
 import 'not_found_list_view.dart';
+import 'search_course_list_view.dart';
 import 'search_result_title_row.dart';
+import 'top_mentors_list_view.dart';
 
 class SearchResultTabView extends StatefulWidget {
   const SearchResultTabView({
     Key? key,
     required this.searchPhrase,
+    this.courseList,
+    this.mentorList,
   }) : super(key: key);
 
   final String searchPhrase;
+  final List<Item>? courseList;
+  final List<Mentor>? mentorList;
   @override
   State<SearchResultTabView> createState() => _SearchResultTabViewState();
 }
@@ -24,7 +29,7 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SizedBox(
-        height: 185.0 * courseList.length + 30,
+        height: MediaQuery.of(context).size.height * 0.85,
         child: DefaultTabController(
           length: _tabList.length,
           child: Column(
@@ -46,21 +51,25 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
               ),
               SearchResultTitleRow(
                 phrase: widget.searchPhrase,
-                leadingText: '0 founds',
+                leadingText:
+                    '${(widget.courseList?.length ?? 0) + (widget.mentorList?.length ?? 0)} founds',
               ),
               Expanded(
                 child: TabBarView(
                   children: [
-                    if (widget.searchPhrase.isEmpty)
+                    if (widget.courseList?.isEmpty ?? true)
                       const NotFoundListView()
                     else
-                      const CourseListView(
-                        courseList: [],
+                      SearchCourseListView(
+                        courseList: widget.courseList,
+                        tag: '',
                       ),
                     if (widget.searchPhrase.isEmpty)
                       const NotFoundListView()
                     else
-                      const TopMentorsBody(),
+                      TopMentorsListView(
+                        mentorList: widget.mentorList,
+                      ),
                   ],
                 ),
               ),
