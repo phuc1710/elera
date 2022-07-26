@@ -11,14 +11,14 @@ import '../../home_and_action_menu/home/widgets/search_bar.dart';
 import '../../widgets/base_appbar.dart';
 import '../bloc/helper_center_bloc.dart';
 
-class HelpeCenterPage extends StatefulWidget {
-  const HelpeCenterPage({Key? key}) : super(key: key);
+class HelperCenterView extends StatefulWidget {
+  const HelperCenterView({Key? key}) : super(key: key);
 
   @override
-  State<HelpeCenterPage> createState() => _HelpeCenterPageState();
+  State<HelperCenterView> createState() => _HelperCenterViewState();
 }
 
-class _HelpeCenterPageState extends State<HelpeCenterPage> {
+class _HelperCenterViewState extends State<HelperCenterView> {
   final TextEditingController _searchController = TextEditingController();
 
   var selectedFAQ = 0;

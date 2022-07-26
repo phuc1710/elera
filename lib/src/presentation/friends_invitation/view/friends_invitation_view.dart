@@ -9,14 +9,14 @@ import '../../widgets/base_appbar.dart';
 import '../bloc/friends_invitation_bloc.dart';
 import '../widgets/friend_tile.dart';
 
-class FriendsInvitationPage extends StatefulWidget {
-  const FriendsInvitationPage({Key? key}) : super(key: key);
+class FriendsInvitationView extends StatefulWidget {
+  const FriendsInvitationView({Key? key}) : super(key: key);
 
   @override
-  State<FriendsInvitationPage> createState() => _FriendsInvitationPageState();
+  State<FriendsInvitationView> createState() => _FriendsInvitationViewState();
 }
 
-class _FriendsInvitationPageState extends State<FriendsInvitationPage> {
+class _FriendsInvitationViewState extends State<FriendsInvitationView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

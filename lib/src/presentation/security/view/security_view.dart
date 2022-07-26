@@ -5,14 +5,14 @@ import '../../notification_settings/widgets/setting_tile.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
 
-class SecurityPage extends StatefulWidget {
-  const SecurityPage({Key? key}) : super(key: key);
+class SecurityView extends StatefulWidget {
+  const SecurityView({Key? key}) : super(key: key);
 
   @override
-  State<SecurityPage> createState() => _SecurityPageState();
+  State<SecurityView> createState() => _SecurityViewState();
 }
 
-class _SecurityPageState extends State<SecurityPage> {
+class _SecurityViewState extends State<SecurityView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
