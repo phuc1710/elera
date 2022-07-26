@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/constants.dart';
 import '../../home/widgets/title_row.dart';
 
 class RecentSearchListView extends StatefulWidget {
@@ -27,7 +26,6 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
           leadingButtonText: 'Clear All',
           leadingButtonCallback: () => setState(() {
             widget.searchList?.clear();
-            recentSearchList.clear();
           }),
         ),
         Padding(
