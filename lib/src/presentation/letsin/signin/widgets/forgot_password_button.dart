@@ -1,6 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../forgot_and_reset_password/select_contact/views/select_contact_view.dart';
+import '../../../../config/router/app_router.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
   const ForgotPasswordButton({Key? key, required this.email}) : super(key: key);
@@ -10,14 +11,8 @@ class ForgotPasswordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        Navigator.push<dynamic>(
-          context,
-          MaterialPageRoute<dynamic>(
-            builder: (context) => SelectContactView(email: email),
-          ),
-        );
-      },
+      //! Push object
+      onPressed: () => context.router.push(SelectContactRoute(email: email)),
       child: Text(
         'Forgot the password?',
         style: Theme.of(context).textTheme.labelMedium,

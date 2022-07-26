@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
+import '../../../../injector/injector.dart';
 import '../bloc/search_bloc.dart';
 import '../widgets/recent_search_list_view.dart';
 import '../widgets/search_bar.dart';
@@ -21,40 +22,42 @@ class _SearchViewState extends State<SearchView> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: SafeArea(
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          body: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.05,
-            ),
-            child: Column(
-              children: [
-                Hero(
-                  tag: 'searchBar',
-                  child: Material(
-                    color: Colors.white,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      child: SearchBar(
-                        atHome: false,
-                        onFocus: () {
-                          context
-                              .read<SearchBloc>()
-                              .add(RecentSearchFetched('userEmail'));
-                        },
-                        onSubmitted: _onSearchSubmitted,
-                        controller: _searchController,
+          body: BlocProvider<SearchBloc>(
+            create: (context) =>
+                injector()..add(RecentSearchFetched('user@email.com')),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: Column(
+                children: [
+                  Hero(
+                    tag: 'searchBar',
+                    child: Material(
+                      color: Colors.white,
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: screenHeight * 0.02),
+                        child: SearchBar(
+                          atHome: false,
+                          onFocus: () {},
+                          onSubmitted: (value) => setState(() {
+                            searchPhrase = '$value';
+                          }),
+                          controller: _searchController,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                getSearchContent()
-              ],
+                  getSearchContent()
+                ],
+              ),
             ),
           ),
         ),
@@ -74,8 +77,6 @@ class _SearchViewState extends State<SearchView> {
           (prev is RecentSearchAdditionSuccess && curr is SearchFetchSuccess),
       builder: (context, state) {
         if (state is SearchFetchSuccess) {
-          FocusScope.of(context).unfocus();
-
           return SearchResultTabView(
             searchPhrase: searchPhrase,
             courseList: state.data?.courses,
@@ -87,10 +88,9 @@ class _SearchViewState extends State<SearchView> {
             key: _key,
             searchList: state.data?.searchList,
             onSuggestPressed: () {
-              FocusScope.of(context).unfocus();
-              setState(() {
-                searchPhrase = _key.currentState?.searchPhrase ?? '';
-              });
+              setState(
+                () => searchPhrase = _key.currentState?.searchPhrase ?? '',
+              );
               context.read<SearchBloc>().add(
                     RecentSearchAdded(searchPhrase),
                   );
@@ -102,13 +102,5 @@ class _SearchViewState extends State<SearchView> {
         return const Center(child: CircularProgressIndicator());
       },
     );
-  }
-
-  void _onSearchSubmitted(String? searchWords) {
-    setState(() {
-      searchPhrase = searchWords ?? '';
-    });
-    context.read<SearchBloc>().add(RecentSearchAdded(searchPhrase));
-    context.read<SearchBloc>().add(SearchFetched(searchPhrase));
   }
 }

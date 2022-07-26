@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../search/widgets/filter_bottom_sheet_content.dart';
+import '../bloc/search_bloc.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({
     Key? key,
     required this.atHome,
-    this.onSubmitted,
+    required this.onSubmitted,
     this.controller,
     this.onChanged,
     this.showOverlayResultPrediction = false,
@@ -16,7 +18,7 @@ class SearchBar extends StatefulWidget {
 
   final bool atHome;
   final VoidCallback onFocus;
-  final void Function(String?)? onSubmitted;
+  final void Function(String?) onSubmitted;
   final void Function(String?)? onChanged;
   final TextEditingController? controller;
 
@@ -67,10 +69,14 @@ class _SearchBarState extends State<SearchBar> {
             autofocus: !widget.atHome,
             autocorrect: false,
             onTap: () {
-              widget.onFocus();
+              context.read<SearchBloc>().add(RecentSearchFetched('userEmail'));
               focusNode.requestFocus();
             },
-            onSubmitted: widget.onSubmitted,
+            onSubmitted: (value) {
+              widget.onSubmitted(value);
+              context.read<SearchBloc>().add(RecentSearchAdded(value));
+              context.read<SearchBloc>().add(SearchFetched(value));
+            },
             onChanged: (text) {
               widget.onChanged?.call(text);
 
@@ -182,7 +188,7 @@ class _SearchBarState extends State<SearchBar> {
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
                     onTap: () {
-                      widget.onSubmitted?.call(alPredictions[index]);
+                      widget.onSubmitted.call(alPredictions[index]);
                       removeOverlay();
                     },
                     child: Container(

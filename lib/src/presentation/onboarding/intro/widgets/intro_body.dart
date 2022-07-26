@@ -1,6 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../letsin/letsin/views/letsin_view.dart';
 import 'intro_page.dart';
 import 'main_action_ink.dart';
 import 'page_indicator.dart';
@@ -50,12 +50,7 @@ class _IntroBodyState extends State<IntroBody> {
                 curve: Curves.easeIn,
               );
               if (_buttonString == 'Get Started') {
-                Navigator.push<dynamic>(
-                  context,
-                  MaterialPageRoute<dynamic>(
-                    builder: (context) => const LetsInView(),
-                  ),
-                );
+                context.router.pushNamed('/lets_in');
               }
             },
             child: MainActionInk(buttonString: _buttonString),

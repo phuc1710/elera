@@ -1,9 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../injector/injector.dart';
-import '../../search/bloc/search_bloc.dart';
-import '../../search/views/search_view.dart';
 import '../../search/widgets/filter_bottom_sheet_content.dart';
 
 class SearchBar extends StatefulWidget {
@@ -38,15 +35,13 @@ class _SearchBarState extends State<SearchBar> {
 
   final FocusNode focusNode = FocusNode();
 
-  bool isFocus = true;
+  bool isFocus = false;
 
   @override
   void initState() {
     super.initState();
     focusNode.addListener(() {
-      setState(() {
-        isFocus = focusNode.hasPrimaryFocus;
-      });
+      isFocus = focusNode.hasPrimaryFocus;
     });
   }
 
@@ -75,18 +70,7 @@ class _SearchBarState extends State<SearchBar> {
             autofocus: !widget.atHome,
             autocorrect: false,
             onTap: widget.atHome
-                ? () {
-                    Navigator.push<Object?>(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                        builder: (context) => BlocProvider<SearchBloc>(
-                          create: (context) => injector()
-                            ..add(RecentSearchFetched('user@email.com')),
-                          child: const SearchView(),
-                        ),
-                      ),
-                    );
-                  }
+                ? () => context.router.pushNamed('/search')
                 : () => focusNode.requestFocus(),
             onSubmitted: widget.onSubmitted,
             onChanged: (text) {

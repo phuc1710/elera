@@ -1,11 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
-import '../../../account_setup/fill_your_profile/views/fill_your_profile.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
-import '../../signin/views/signin_view.dart';
 import '../bloc/signup_bloc.dart';
 import '../widgets/bottom_prompt_row.dart';
 import '../widgets/remember_me_check_box.dart';
@@ -33,11 +32,7 @@ class _SignUpBodyState extends State<SignUpBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignUpSuccess) {
-          Navigator.of(context).pushReplacement<dynamic, Function>(
-            MaterialPageRoute<dynamic>(
-              builder: (context) => const FillYourProfileView(),
-            ),
-          );
+          context.router.pushNamed('/fill_your_profile');
         }
       },
       builder: (context, state) {
@@ -64,7 +59,7 @@ class _SignUpBodyState extends State<SignUpBody> {
               const SocialLoginRow(),
               const BottomPromptRow(
                 promptText: 'Already have an account?',
-                view: SignInView(),
+                path: '/sign_in',
                 actionText: 'Sign in',
               ),
             ],

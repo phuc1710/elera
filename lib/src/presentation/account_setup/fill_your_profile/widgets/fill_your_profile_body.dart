@@ -1,8 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
-import '../../create_new_pin/views/create_new_pin.dart';
 import '../bloc/fill_your_profile_bloc.dart';
 import '../widgets/information_input.dart';
 import '../widgets/main_action_button.dart';
@@ -32,12 +32,7 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is FillYourProfileSuccess) {
-          Navigator.push<Object?>(
-            context,
-            MaterialPageRoute<dynamic>(
-              builder: (context) => const CreateNewPinView(),
-            ),
-          );
+          context.router.pushNamed('/create_new_pin');
         }
       },
       builder: (context, state) {

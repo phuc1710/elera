@@ -1,9 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
 import '../../../account_setup/create_new_pin/widgets/pin_code_input.dart';
-import '../../create_new_password/views/create_new_password_view.dart';
 import '../bloc/pin_entry_bloc.dart';
 import '../widgets/main_action_button.dart';
 import '../widgets/resend_code_row.dart';
@@ -35,12 +35,7 @@ class _EnterPinBodyState extends State<EnterPinBody> {
         }
         if (state is PinEntrySuccess) {
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
-          Navigator.push<Object?>(
-            context,
-            MaterialPageRoute<dynamic>(
-              builder: (context) => const CreateNewPasswordView(),
-            ),
-          );
+          context.router.pushNamed('/create_new_password');
         }
       },
       builder: (context, state) {

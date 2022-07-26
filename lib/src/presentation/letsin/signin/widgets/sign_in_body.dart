@@ -1,10 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
-import '../../../home_and_action_menu/home/views/home_view.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
-import '../../signup/views/signup_view.dart';
 import '../../signup/widgets/bottom_prompt_row.dart';
 import '../../signup/widgets/email_input.dart';
 import '../../signup/widgets/password_input.dart';
@@ -34,11 +33,7 @@ class _SignInBodyState extends State<SignInBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignInSuccess) {
-          Navigator.pushAndRemoveUntil<Object?>(
-            context,
-            MaterialPageRoute<dynamic>(builder: (context) => const HomeView()),
-            (dynamic route) => false,
-          );
+          context.router.navigateNamed('/home');
         }
       },
       buildWhen: (prev, curr) => curr is! SignInLoading,
@@ -70,7 +65,7 @@ class _SignInBodyState extends State<SignInBody> {
           const SocialLoginRow(),
           const BottomPromptRow(
             promptText: "Don't have an account?",
-            view: SignUpView(),
+            path: '/sign_up',
             actionText: 'Sign up',
           )
         ],

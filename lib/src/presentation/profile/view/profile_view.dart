@@ -1,30 +1,24 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../config/router/app_router.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../injector/injector.dart';
-import '../../edit_profile/view/edit_profile_page.dart';
-import '../../friends_invitation/view/friends_invitation_page.dart';
-import '../../help_center/view/helper_center_page.dart';
-import '../../language/view/language_page.dart';
-import '../../notification_settings/view/notification_settings_page.dart';
-import '../../payment/view/payment_page.dart';
-import '../../security/view/security_page.dart';
-import '../../webview/webview_page.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/logout_button.dart';
 import '../bloc/profile_bloc.dart';
 import '../widgets/profile_picture.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class ProfileView extends StatefulWidget {
+  const ProfileView({Key? key}) : super(key: key);
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<ProfileView> createState() => _ProfileViewState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfileViewState extends State<ProfileView> {
   var isDarkMode = false;
 
   @override
@@ -153,10 +147,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 context,
                 title: 'Edit Profile',
                 icon: Icons.person,
-                onTap: () => pushScreen(
-                  context,
-                  EditProfilePage(profile: state.profile),
-                ),
+                //! Push object
+                onTap: () => context.router
+                    .push(EditProfileRoute(profile: state.profile)),
               );
             }
 
@@ -167,38 +160,26 @@ class _ProfilePageState extends State<ProfilePage> {
           context,
           title: 'Notification',
           icon: Icons.notifications,
-          onTap: () => pushScreen(
-            context,
-            const NotificationSettingsPage(),
-          ),
+          onTap: () => context.router.pushNamed('/notification_setting'),
         ),
         profileActionItem(
           context,
           title: 'Payment',
           icon: Icons.payment,
-          onTap: () => pushScreen(
-            context,
-            const PaymentPage(),
-          ),
+          onTap: () => context.router.pushNamed('/payment'),
         ),
         profileActionItem(
           context,
           title: 'Security',
           icon: Icons.security,
-          onTap: () => pushScreen(
-            context,
-            const SecurityPage(),
-          ),
+          onTap: () => context.router.pushNamed('/security'),
         ),
         profileActionItem(
           context,
           title: 'Language',
           icon: Icons.language,
           value: 'English(US)',
-          onTap: () => pushScreen(
-            context,
-            const LanguagePage(),
-          ),
+          onTap: () => context.router.pushNamed('/language'),
         ),
         ListTile(
           leading: const Icon(Icons.dark_mode_outlined, size: 35),
@@ -226,9 +207,8 @@ class _ProfilePageState extends State<ProfilePage> {
           context,
           title: 'Privacy Policy',
           icon: Icons.lock,
-          onTap: () => pushScreen(
-            context,
-            const WebViewPage(
+          onTap: () => context.router.push(
+            PrivacyPolicyRoute(
               url:
                   'https://cmapi.ngocdunggroup.com.vn/news/view?id=4a730df1-5d68-454c-99d2-4574f2f04154',
             ),
@@ -238,24 +218,13 @@ class _ProfilePageState extends State<ProfilePage> {
           context,
           title: 'Help Center',
           icon: Icons.help_center,
-          onTap: () => pushScreen(context, const HelpeCenterPage()),
+          onTap: () => context.router.pushNamed('/helper_center'),
         ),
         profileActionItem(
           context,
           title: 'Invite Friends',
           icon: Icons.group,
-          onTap: () => pushScreen(
-            context,
-            const FriendsInvitationPage(),
-          ),
+          onTap: () => context.router.pushNamed('/friend_invitation'),
         ),
       ];
-
-  Future<void> pushScreen(BuildContext context, Widget screen) async {
-    return Navigator.of(context).push<dynamic>(
-      MaterialPageRoute<dynamic>(
-        builder: (context) => screen,
-      ),
-    );
-  }
 }
