@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
+import '../../../../config/router/routes.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
 
@@ -23,7 +24,7 @@ Future<dynamic> showWelcomeDialog(BuildContext context) async {
   await Future.delayed(const Duration(seconds: 2), () {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       context.router.pop();
-      context.router.navigateNamed('/home');
+      context.router.navigateNamed(Routes.homeRoute);
     });
   });
 }

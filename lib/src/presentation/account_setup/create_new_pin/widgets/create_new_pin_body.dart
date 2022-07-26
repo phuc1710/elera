@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import '../bloc/create_new_pin_bloc.dart';
@@ -25,7 +26,7 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is CreateNewPinSuccess) {
-          context.router.pushNamed('/set_your_fingerprint');
+          context.router.pushNamed(Routes.setYourFingerprintRoute);
         }
       },
       builder: (context, state) {

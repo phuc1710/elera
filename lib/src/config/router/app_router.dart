@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -35,48 +36,60 @@ part 'app_router.gr.dart';
   replaceInRouteName: 'View,Route',
   routes: <AutoRoute>[
     // 1. Onboarding
-    AutoRoute<dynamic>(page: IntroView, initial: true, path: '/'),
+    AutoRoute<dynamic>(page: IntroView, initial: true, path: Routes.introRoute),
     // 2. Let's in (Sign up, Sign in)
-    AutoRoute<dynamic>(page: LetsInView, path: '/lets_in'),
-    AutoRoute<dynamic>(page: SignUpView, path: '/sign_up'),
-    AutoRoute<dynamic>(page: SignInView, path: '/sign_in'),
+    AutoRoute<dynamic>(page: LetsInView, path: Routes.letsInRoute),
+    AutoRoute<dynamic>(page: SignUpView, path: Routes.signUpRoute),
+    AutoRoute<dynamic>(page: SignInView, path: Routes.signInRoute),
     // 3. Account Setup
-    AutoRoute<dynamic>(page: FillYourProfileView, path: '/fill_your_profile'),
-    AutoRoute<dynamic>(page: CreateNewPinView, path: '/create_new_pin'),
+    AutoRoute<dynamic>(
+      page: FillYourProfileView,
+      path: Routes.fillYourProfileRoute,
+    ),
+    AutoRoute<dynamic>(page: CreateNewPinView, path: Routes.createNewPinRoute),
     AutoRoute<dynamic>(
       page: SetYourFingerprintView,
-      path: '/set_your_fingerprint',
+      path: Routes.setYourFingerprintRoute,
     ),
     // 4. Forgot & Reset Password
-    AutoRoute<dynamic>(page: SelectContactView, path: '/select_contact'),
-    AutoRoute<dynamic>(page: EnterPinView, path: '/enter_pin'),
+    AutoRoute<dynamic>(
+      page: SelectContactView,
+      path: Routes.selectContactRoute,
+    ),
+    AutoRoute<dynamic>(page: EnterPinView, path: Routes.enterPinRoute),
     AutoRoute<dynamic>(
       page: CreateNewPasswordView,
-      path: '/create_new_password',
+      path: Routes.createNewPasswordRoute,
     ),
     // 5. Home & Action Menu
-    AutoRoute<dynamic>(page: HomeView, path: '/home'),
-    AutoRoute<dynamic>(page: NotificationView, path: '/notification'),
-    AutoRoute<dynamic>(page: MyBookmarkView, path: '/my_bookmark'),
-    AutoRoute<dynamic>(page: TopMentorsView, path: '/top_mentors'),
+    AutoRoute<dynamic>(page: HomeView, path: Routes.homeRoute),
+    AutoRoute<dynamic>(page: NotificationView, path: Routes.notificationRoute),
+    AutoRoute<dynamic>(page: MyBookmarkView, path: Routes.myBookmarkRoute),
+    AutoRoute<dynamic>(page: TopMentorsView, path: Routes.topMentorsRoute),
     AutoRoute<dynamic>(
       page: MostPopularCoursesView,
-      path: '/most_popular_courses',
+      path: Routes.mostPopularCoursesRoute,
     ),
-    AutoRoute<dynamic>(page: SearchView, path: '/search'),
+    AutoRoute<dynamic>(page: SearchView, path: Routes.searchRoute),
     // 10. Profile & Settings
-    AutoRoute<dynamic>(page: EditProfileView, path: '/edit_profile'),
+    AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(
       page: NotificationSettingsView,
       path: '/notification_setting',
     ),
-    AutoRoute<dynamic>(page: PaymentView, path: '/payment'),
-    AutoRoute<dynamic>(page: NewCardView, path: '/new_card'),
-    AutoRoute<dynamic>(page: SecurityView, path: '/security'),
-    AutoRoute<dynamic>(page: LanguageView, path: '/language'),
-    AutoRoute<dynamic>(page: PrivacyPolicyView, path: '/privacy_policy'),
-    AutoRoute<dynamic>(page: FriendsInvitationView, path: '/friend_invitation'),
-    AutoRoute<dynamic>(page: HelperCenterView, path: '/helper_center'),
+    AutoRoute<dynamic>(page: PaymentView, path: Routes.paymentRoute),
+    AutoRoute<dynamic>(page: NewCardView, path: Routes.newCardRoute),
+    AutoRoute<dynamic>(page: SecurityView, path: Routes.securityRoute),
+    AutoRoute<dynamic>(page: LanguageView, path: Routes.languageRoute),
+    AutoRoute<dynamic>(
+      page: PrivacyPolicyView,
+      path: Routes.privacyPolicyRoute,
+    ),
+    AutoRoute<dynamic>(
+      page: FriendsInvitationView,
+      path: Routes.friendsInvitationRoute,
+    ),
+    AutoRoute<dynamic>(page: HelperCenterView, path: Routes.helperCenter),
   ],
 )
 // extend the generated private router

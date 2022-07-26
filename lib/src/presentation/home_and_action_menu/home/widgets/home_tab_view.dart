@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../../../../injector/injector.dart';
@@ -51,7 +52,7 @@ class HomeTabView extends StatelessWidget {
                   title: 'Top Mentors',
                   leadingButtonText: 'See All',
                   leadingButtonCallback: () =>
-                      context.router.pushNamed('/top_mentors'),
+                      context.router.pushNamed(Routes.topMentorsRoute),
                 ),
               ),
               const MentorListview(),
@@ -63,7 +64,7 @@ class HomeTabView extends StatelessWidget {
                   title: 'Most Popular Courses',
                   leadingButtonText: 'See All',
                   leadingButtonCallback: () =>
-                      context.router.pushNamed('/most_popular_courses'),
+                      context.router.pushNamed(Routes.mostPopularCoursesRoute),
                 ),
               ),
               BlocConsumer<HomeBloc, HomeState>(

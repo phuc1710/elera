@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
@@ -47,11 +48,6 @@ class ActionButtonRow extends StatelessWidget {
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
-        Future.delayed(const Duration(seconds: 2), () {
-          context.router.pop();
-          context.router.navigateNamed('/home');
-        });
-
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
@@ -66,7 +62,7 @@ class ActionButtonRow extends StatelessWidget {
     await Future.delayed(const Duration(seconds: 2), () {
       SchedulerBinding.instance.addPostFrameCallback((_) {
         context.router.pop();
-        context.router.navigateNamed('/home');
+        context.router.navigateNamed(Routes.homeRoute);
       });
     });
   }

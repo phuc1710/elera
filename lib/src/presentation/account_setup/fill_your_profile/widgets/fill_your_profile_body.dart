@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../bloc/fill_your_profile_bloc.dart';
 import '../widgets/information_input.dart';
@@ -32,7 +33,7 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is FillYourProfileSuccess) {
-          context.router.pushNamed('/create_new_pin');
+          context.router.pushNamed(Routes.createNewPinRoute);
         }
       },
       builder: (context, state) {

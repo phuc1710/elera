@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../config/router/routes.dart';
+
 class BottomPromptRow extends StatelessWidget {
   const BottomPromptRow({
     Key? key,
@@ -21,7 +23,7 @@ class BottomPromptRow extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () => context.router.pushNamed('/sign_up'),
+          onPressed: () => context.router.pushNamed(Routes.signUpRoute),
           child: Text(
             'Sign up',
             style: Theme.of(context).textTheme.labelMedium,

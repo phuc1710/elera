@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
@@ -32,7 +33,7 @@ class _SignUpBodyState extends State<SignUpBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignUpSuccess) {
-          context.router.pushNamed('/fill_your_profile');
+          context.router.pushNamed(Routes.fillYourProfileRoute);
         }
       },
       builder: (context, state) {
@@ -59,7 +60,7 @@ class _SignUpBodyState extends State<SignUpBody> {
               const SocialLoginRow(),
               const BottomPromptRow(
                 promptText: 'Already have an account?',
-                path: '/sign_in',
+                path: Routes.signInRoute,
                 actionText: 'Sign in',
               ),
             ],

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../config/router/app_router.dart';
+import '../../../config/router/routes.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../injector/injector.dart';
 import '../../widgets/base_appbar.dart';
@@ -166,20 +167,20 @@ class _ProfileViewState extends State<ProfileView> {
           context,
           title: 'Payment',
           icon: Icons.payment,
-          onTap: () => context.router.pushNamed('/payment'),
+          onTap: () => context.router.pushNamed(Routes.paymentRoute),
         ),
         profileActionItem(
           context,
           title: 'Security',
           icon: Icons.security,
-          onTap: () => context.router.pushNamed('/security'),
+          onTap: () => context.router.pushNamed(Routes.securityRoute),
         ),
         profileActionItem(
           context,
           title: 'Language',
           icon: Icons.language,
           value: 'English(US)',
-          onTap: () => context.router.pushNamed('/language'),
+          onTap: () => context.router.pushNamed(Routes.languageRoute),
         ),
         ListTile(
           leading: const Icon(Icons.dark_mode_outlined, size: 35),
@@ -218,13 +219,13 @@ class _ProfileViewState extends State<ProfileView> {
           context,
           title: 'Help Center',
           icon: Icons.help_center,
-          onTap: () => context.router.pushNamed('/helper_center'),
+          onTap: () => context.router.pushNamed(Routes.helperCenter),
         ),
         profileActionItem(
           context,
           title: 'Invite Friends',
           icon: Icons.group,
-          onTap: () => context.router.pushNamed('/friend_invitation'),
+          onTap: () => context.router.pushNamed(Routes.friendsInvitationRoute),
         ),
       ];
 }

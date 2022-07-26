@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../search/widgets/filter_bottom_sheet_content.dart';
 
 class SearchBar extends StatefulWidget {
@@ -70,7 +71,7 @@ class _SearchBarState extends State<SearchBar> {
             autofocus: !widget.atHome,
             autocorrect: false,
             onTap: widget.atHome
-                ? () => context.router.pushNamed('/search')
+                ? () => context.router.pushNamed(Routes.searchRoute)
                 : () => focusNode.requestFocus(),
             onSubmitted: widget.onSubmitted,
             onChanged: (text) {

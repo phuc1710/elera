@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../config/router/routes.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/payment/payment_response_model.dart';
@@ -89,7 +90,7 @@ class _PaymentViewState extends State<PaymentView> {
         title: 'Add New Card',
         titleColor: Colors.white,
         color: Colors.blue[700],
-        onTap: () => context.router.pushNamed('/new_card'),
+        onTap: () => context.router.pushNamed(Routes.newCardRoute),
       ),
     );
   }

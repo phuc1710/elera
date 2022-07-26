@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
 import '../../signup/widgets/bottom_prompt_row.dart';
@@ -33,7 +34,7 @@ class _SignInBodyState extends State<SignInBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignInSuccess) {
-          context.router.navigateNamed('/home');
+          context.router.navigateNamed(Routes.homeRoute);
         }
       },
       buildWhen: (prev, curr) => curr is! SignInLoading,
@@ -65,7 +66,7 @@ class _SignInBodyState extends State<SignInBody> {
           const SocialLoginRow(),
           const BottomPromptRow(
             promptText: "Don't have an account?",
-            path: '/sign_up',
+            path: Routes.signUpRoute,
             actionText: 'Sign up',
           )
         ],

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../account_setup/create_new_pin/widgets/pin_code_input.dart';
 import '../bloc/pin_entry_bloc.dart';
@@ -35,7 +36,7 @@ class _EnterPinBodyState extends State<EnterPinBody> {
         }
         if (state is PinEntrySuccess) {
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
-          context.router.pushNamed('/create_new_password');
+          context.router.pushNamed(Routes.createNewPasswordRoute);
         }
       },
       builder: (context, state) {

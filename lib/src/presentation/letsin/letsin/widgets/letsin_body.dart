@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import 'bottom_prompt_row.dart';
 import 'divider_row_with_text.dart';
@@ -31,7 +32,7 @@ class LetsInBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 20.0),
             ),
             InkWell(
-              onTap: () => context.router.pushNamed('/sign_in'),
+              onTap: () => context.router.pushNamed(Routes.signInRoute),
               child: const MainActionInk(
                 buttonString: 'Sign in with password',
               ),
