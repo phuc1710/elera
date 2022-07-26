@@ -13,10 +13,10 @@ import '../../../../core/resources/api_error.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../data/models/course/course_fetch_response_model.dart';
-import '../../../../data/models/search/search_fetch_response_model.dart'
-    as search;
 import '../../../../data/models/search/recent_search_fetch_response_model.dart'
     as recent_search;
+import '../../../../data/models/search/search_fetch_response_model.dart'
+    as search;
 import '../../../../domain/usecases/get_recent_search_fetch_usecase.dart';
 import '../../../../domain/usecases/get_search_fetch_usecase.dart';
 import '../../../../domain/usecases/post_bookmark_addition_usecase.dart';

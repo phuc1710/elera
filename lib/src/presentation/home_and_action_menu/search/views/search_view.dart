@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
-import '../widgets/search_bar.dart';
 import '../bloc/search_bloc.dart';
 import '../widgets/recent_search_list_view.dart';
+import '../widgets/search_bar.dart';
 import '../widgets/search_result_tab_bar_view.dart';
 
 class SearchView extends StatefulWidget {
