@@ -13,14 +13,14 @@ import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
 import '../bloc/new_card_bloc.dart';
 
-class NewCardPage extends StatefulWidget {
-  const NewCardPage({Key? key}) : super(key: key);
+class NewCardView extends StatefulWidget {
+  const NewCardView({Key? key}) : super(key: key);
 
   @override
-  State<NewCardPage> createState() => _NewCardPageState();
+  State<NewCardView> createState() => _NewCardViewState();
 }
 
-class _NewCardPageState extends State<NewCardPage> {
+class _NewCardViewState extends State<NewCardView> {
   final cardNameController = TextEditingController();
   final cardNumberController = TextEditingController();
   final expiryDateController = TextEditingController();

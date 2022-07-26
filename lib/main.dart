@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'src/config/router/app_router.dart';
 import 'src/config/theme/app_theme.dart';
 import 'src/core/utils/utils.dart';
 import 'src/injector/injector.dart';
-import 'src/presentation/onboarding/intro/views/intro_view.dart';
 
 Future<void> main() async {
   Utils.addGoogleFontsLicense();
@@ -11,19 +11,22 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();
 
-  Future.delayed(const Duration(milliseconds: 150), () => runApp(const App()));
+  Future.delayed(const Duration(milliseconds: 150), () => runApp(App()));
 }
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  App({Key? key}) : super(key: key);
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'E-Learning',
-      home: const IntroView(),
       debugShowCheckedModeBanner: false,
       theme: theme(),
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }

@@ -1,10 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
-import '../../../home_and_action_menu/home/views/home_view.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
-import '../../signup/views/signup_view.dart';
 import '../../signup/widgets/bottom_prompt_row.dart';
 import '../../signup/widgets/email_input.dart';
 import '../../signup/widgets/password_input.dart';
@@ -15,14 +15,14 @@ import '../bloc/signin_bloc.dart';
 import 'forgot_password_button.dart';
 import 'sign_in_button.dart';
 
-class SignInScaffoldBody extends StatefulWidget {
-  const SignInScaffoldBody({Key? key}) : super(key: key);
+class SignInBody extends StatefulWidget {
+  const SignInBody({Key? key}) : super(key: key);
 
   @override
-  State<SignInScaffoldBody> createState() => _SignInScaffoldBodyState();
+  State<SignInBody> createState() => _SignInBodyState();
 }
 
-class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
+class _SignInBodyState extends State<SignInBody> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -34,11 +34,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignInSuccess) {
-          Navigator.pushAndRemoveUntil<Object?>(
-            context,
-            MaterialPageRoute<dynamic>(builder: (context) => const HomeView()),
-            (dynamic route) => false,
-          );
+          context.router.navigateNamed(Routes.homeRoute);
         }
       },
       buildWhen: (prev, curr) => curr is! SignInLoading,
@@ -70,7 +66,7 @@ class _SignInScaffoldBodyState extends State<SignInScaffoldBody> {
           const SocialLoginRow(),
           const BottomPromptRow(
             promptText: "Don't have an account?",
-            view: SignUpView(),
+            path: Routes.signUpRoute,
             actionText: 'Sign up',
           )
         ],

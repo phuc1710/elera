@@ -4,15 +4,15 @@ import '../../../core/params/appbar_params.dart';
 import '../../widgets/base_appbar.dart';
 import '../widgets/setting_tile.dart';
 
-class NotificationSettingsPage extends StatefulWidget {
-  const NotificationSettingsPage({Key? key}) : super(key: key);
+class NotificationSettingsView extends StatefulWidget {
+  const NotificationSettingsView({Key? key}) : super(key: key);
 
   @override
-  State<NotificationSettingsPage> createState() =>
-      _NotificationSettingsPageState();
+  State<NotificationSettingsView> createState() =>
+      _NotificationSettingsViewState();
 }
 
-class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
+class _NotificationSettingsViewState extends State<NotificationSettingsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
@@ -34,9 +35,7 @@ class _BottomSheetActionButtonsState extends State<BottomSheetActionButtons> {
         children: [
           InkWell(
             borderRadius: BorderRadius.circular(40),
-            onTap: () {
-              Navigator.pop(context);
-            },
+            onTap: () => context.router.pop(),
             child: MainActionInk(
               buttonString: widget.subButtonString,
               width: 0.4,
@@ -51,7 +50,7 @@ class _BottomSheetActionButtonsState extends State<BottomSheetActionButtons> {
                     widget.courseModel?.isBookmarked ?? false;
               });
               widget.onMainActionPressed();
-              Navigator.pop(context);
+              context.router.pop();
             },
             child: MainActionInk(
               buttonString: widget.mainButtonString,

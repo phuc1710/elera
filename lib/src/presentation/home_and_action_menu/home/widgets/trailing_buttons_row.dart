@@ -1,8 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../my_bookmark/views/my_bookmark_view.dart';
-import '../../notification/views/notification_view.dart';
+import '../../../../config/router/routes.dart';
 import '../bloc/home_bloc.dart';
 
 class TrailingButtonsRow extends StatefulWidget {
@@ -22,20 +22,14 @@ class _TrailingButtonsRowState extends State<TrailingButtonsRow> {
       children: [
         IconButton(
           icon: const Icon(Icons.notifications_none),
-          onPressed: () {
-            Navigator.push<Object>(
-              context,
-              MaterialPageRoute(builder: (builder) => const NotificationView()),
-            );
-          },
+          onPressed: () => context.router.pushNamed(Routes.notificationRoute),
         ),
         IconButton(
           icon: const Icon(Icons.bookmark_border),
           onPressed: () {
-            Navigator.push<Object>(
-              context,
-              MaterialPageRoute(builder: (builder) => const MyBookmarkView()),
-            ).then((value) => context.read<HomeBloc>().add(HomeFetched()));
+            context.router
+                .pushNamed(Routes.myBookmarkRoute)
+                .then((value) => context.read<HomeBloc>().add(HomeFetched()));
           },
         ),
       ],

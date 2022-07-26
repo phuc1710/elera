@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/app_router.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
-import '../../enter_pin/views/enter_pin_view.dart';
 import '../bloc/contact_selection_bloc.dart';
 import '../widgets/contact_radio.dart';
 import '../widgets/prompt_with_image.dart';
@@ -29,16 +30,14 @@ class _SelectContactBodyState extends State<SelectContactBody> {
         }
         if (state is ContactSelectionSuccess) {
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
-          Navigator.push<Object?>(
-            context,
-            MaterialPageRoute<dynamic>(
-              builder: (context) => EnterPinView(contactInfo: _selectedIndex),
-            ),
-          ).then<void>(
-            (_) => context.read<ContactSelectionBloc>().add(
-                  ContactFetched(userEmail: widget.email),
-                ),
-          );
+          //! Push object
+          context.router
+              .push(EnterPinRoute(contactInfo: _selectedIndex))
+              .then<void>(
+                (_) => context.read<ContactSelectionBloc>().add(
+                      ContactFetched(userEmail: widget.email),
+                    ),
+              );
         }
       },
       buildWhen: (prev, curr) =>

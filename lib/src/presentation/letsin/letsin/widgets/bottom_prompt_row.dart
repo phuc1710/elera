@@ -1,7 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../signup/views/signup_view.dart';
+import '../../../../config/router/routes.dart';
 
 class BottomPromptRow extends StatelessWidget {
   const BottomPromptRow({
@@ -22,14 +23,7 @@ class BottomPromptRow extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {
-            Navigator.push<dynamic>(
-              context,
-              MaterialPageRoute<dynamic>(
-                builder: (context) => const SignUpView(),
-              ),
-            );
-          },
+          onPressed: () => context.router.pushNamed(Routes.signUpRoute),
           child: Text(
             'Sign up',
             style: Theme.of(context).textTheme.labelMedium,

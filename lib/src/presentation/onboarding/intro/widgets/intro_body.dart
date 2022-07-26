@@ -1,20 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../letsin/letsin/views/letsin_view.dart';
+import '../../../../config/router/routes.dart';
 import 'intro_page.dart';
 import 'main_action_ink.dart';
 import 'page_indicator.dart';
 
-class ScaffoldBody extends StatefulWidget {
-  const ScaffoldBody({
+class IntroBody extends StatefulWidget {
+  const IntroBody({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<ScaffoldBody> createState() => _ScaffoldBodyState();
+  State<IntroBody> createState() => _IntroBodyState();
 }
 
-class _ScaffoldBodyState extends State<ScaffoldBody> {
+class _IntroBodyState extends State<IntroBody> {
   final _controller = PageController();
   String _buttonString = 'Next';
   int page = 0;
@@ -50,12 +51,7 @@ class _ScaffoldBodyState extends State<ScaffoldBody> {
                 curve: Curves.easeIn,
               );
               if (_buttonString == 'Get Started') {
-                Navigator.push<dynamic>(
-                  context,
-                  MaterialPageRoute<dynamic>(
-                    builder: (context) => const LetsIn(),
-                  ),
-                );
+                context.router.pushNamed(Routes.letsInRoute);
               }
             },
             child: MainActionInk(buttonString: _buttonString),

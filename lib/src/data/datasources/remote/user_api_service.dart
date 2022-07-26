@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../../../core/nd_network/network/end_points.dart';
 import '../../../core/params/contact_fetch_request_params.dart';
 import '../../../core/params/contact_selection_request_params.dart';
 import '../../../core/params/create_new_pin_request_params.dart';
@@ -17,7 +18,6 @@ import '../../models/contact_selection/contact_fetch_response_model.dart';
 import '../../models/contact_selection/contact_selection_response_model.dart';
 import '../../models/create_new_pin/create_new_pin_response_model.dart';
 import '../../models/fill_your_profile/fill_your_profile_response_model.dart';
-import '../../../core/nd_network/network/end_points.dart';
 import '../../models/friends/friend_response_model.dart';
 import '../../models/general_response/general_response_model.dart';
 import '../../models/password_creation/password_creation_response_model.dart';

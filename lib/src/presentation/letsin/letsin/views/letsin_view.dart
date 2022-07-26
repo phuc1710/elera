@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/scaffold_body.dart';
+import '../widgets/letsin_body.dart';
 
-class LetsIn extends StatelessWidget {
-  const LetsIn({Key? key}) : super(key: key);
+class LetsInView extends StatelessWidget {
+  const LetsInView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -15,7 +15,7 @@ class LetsIn extends StatelessWidget {
           elevation: 0,
           toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
         ),
-        body: const ScaffoldBody(),
+        body: const LetsInBody(),
       ),
     );
   }

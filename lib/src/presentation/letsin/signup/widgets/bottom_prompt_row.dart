@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -5,12 +6,12 @@ class BottomPromptRow extends StatelessWidget {
   const BottomPromptRow({
     Key? key,
     required this.promptText,
-    required this.view,
+    required this.path,
     required this.actionText,
   }) : super(key: key);
 
   final String promptText;
-  final Widget view;
+  final String path;
   final String actionText;
 
   @override
@@ -31,14 +32,7 @@ class BottomPromptRow extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {
-              Navigator.pushReplacement<dynamic, Function>(
-                context,
-                MaterialPageRoute<dynamic>(
-                  builder: (context) => view,
-                ),
-              );
-            },
+            onPressed: () => context.router.replaceNamed(path),
             child: Text(
               actionText,
               style: Theme.of(context).textTheme.labelMedium,

@@ -1,6 +1,7 @@
 // Flutter imports:
 import 'dart:developer';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -68,9 +69,7 @@ void showPicker(
           Positioned(
             right: 0,
             child: InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () => context.router.pop(),
               child: Container(
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
@@ -132,7 +131,7 @@ Future<void> showDatePickerView(
                 param.controller?.text =
                     _currentDate.formatByDateFormat(param.dateFormat!);
               });
-              Navigator.of(context).pop();
+              context.router.pop();
             },
           )
         ],

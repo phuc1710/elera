@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/params/appbar_params.dart';
@@ -15,10 +16,7 @@ AppBar buildAppBar(AppBarParams params) {
         (params.hasBack
             ? (params.backButton ??
                 IconButton(
-                  onPressed: params.onExit ??
-                      () {
-                        Navigator.pop(params.context);
-                      },
+                  onPressed: params.onExit ?? () => params.context.router.pop(),
                   iconSize: 30,
                   icon: const Icon(Icons.arrow_back, color: Colors.black),
                 ))

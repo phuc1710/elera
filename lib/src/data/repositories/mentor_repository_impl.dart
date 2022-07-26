@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../core/resources/data_state.dart';
 import '../../core/params/mentor_fetch_request_params.dart';
+import '../../core/resources/data_state.dart';
 import '../../core/utils/extensions.dart';
 import '../../domain/repositories/mentor_repository.dart';
 import '../datasources/remote/mentor_api_service.dart';

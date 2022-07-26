@@ -1,14 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../../../../injector/injector.dart';
-import '../../most_popular_courses/views/most_popular_courses_view.dart';
-import '../../top_mentors/views/top_mentors_view.dart';
 import '../bloc/home_bloc.dart';
-import 'home_course_tab_bar_view.dart';
 import 'deals_slider.dart';
+import 'home_course_tab_bar_view.dart';
 import 'mentor_list_view.dart';
 import 'search_bar.dart';
 import 'title_row.dart';
@@ -51,12 +51,8 @@ class HomeTabView extends StatelessWidget {
                 child: TitleRow(
                   title: 'Top Mentors',
                   leadingButtonText: 'See All',
-                  leadingButtonCallback: () => Navigator.push<Object?>(
-                    context,
-                    MaterialPageRoute<dynamic>(
-                      builder: (context) => const TopMentorsView(),
-                    ),
-                  ),
+                  leadingButtonCallback: () =>
+                      context.router.pushNamed(Routes.topMentorsRoute),
                 ),
               ),
               const MentorListview(),
@@ -67,12 +63,8 @@ class HomeTabView extends StatelessWidget {
                 child: TitleRow(
                   title: 'Most Popular Courses',
                   leadingButtonText: 'See All',
-                  leadingButtonCallback: () => Navigator.push<Object?>(
-                    context,
-                    MaterialPageRoute<dynamic>(
-                      builder: (context) => const MostPopularCoursesView(),
-                    ),
-                  ),
+                  leadingButtonCallback: () =>
+                      context.router.pushNamed(Routes.mostPopularCoursesRoute),
                 ),
               ),
               BlocConsumer<HomeBloc, HomeState>(

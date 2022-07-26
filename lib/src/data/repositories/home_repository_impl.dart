@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../core/resources/data_state.dart';
 import '../../core/params/home_fetch_request_params.dart';
+import '../../core/resources/data_state.dart';
 import '../../core/utils/extensions.dart';
 import '../../domain/repositories/home_repository.dart';
 import '../datasources/remote/home_api_service.dart';

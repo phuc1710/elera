@@ -1,24 +1,25 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../config/router/routes.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/payment/payment_response_model.dart';
 import '../../../injector/injector.dart';
-import '../../new_card/view/new_card_page.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/base_button.dart';
 import '../bloc/payment_bloc.dart';
 import '../widgets/payment_tile.dart';
 
-class PaymentPage extends StatefulWidget {
-  const PaymentPage({Key? key}) : super(key: key);
+class PaymentView extends StatefulWidget {
+  const PaymentView({Key? key}) : super(key: key);
 
   @override
-  State<PaymentPage> createState() => _PaymentPageState();
+  State<PaymentView> createState() => _PaymentViewState();
 }
 
-class _PaymentPageState extends State<PaymentPage> {
+class _PaymentViewState extends State<PaymentView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -89,13 +90,7 @@ class _PaymentPageState extends State<PaymentPage> {
         title: 'Add New Card',
         titleColor: Colors.white,
         color: Colors.blue[700],
-        onTap: () {
-          Navigator.of(context).push<dynamic>(
-            MaterialPageRoute<dynamic>(
-              builder: (context) => const NewCardPage(),
-            ),
-          );
-        },
+        onTap: () => context.router.pushNamed(Routes.newCardRoute),
       ),
     );
   }

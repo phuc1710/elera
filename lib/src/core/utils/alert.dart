@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +52,7 @@ class Alert {
                 ),
                 onPressed: () {
                   if (isPop) {
-                    Navigator.of(context).pop();
+                    context.router.pop();
                   }
                   onPressOK?.call();
                 },

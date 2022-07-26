@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/scaffold_body.dart';
+import '../widgets/intro_body.dart';
 
 class IntroView extends StatefulWidget {
   const IntroView({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class _IntroViewState extends State<IntroView> {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        body: ScaffoldBody(),
+        body: IntroBody(),
       ),
     );
   }

@@ -8,14 +8,14 @@ import '../../../injector/injector.dart';
 import '../../widgets/base_appbar.dart';
 import '../bloc/language_bloc.dart';
 
-class LanguagePage extends StatefulWidget {
-  const LanguagePage({Key? key}) : super(key: key);
+class LanguageView extends StatefulWidget {
+  const LanguageView({Key? key}) : super(key: key);
 
   @override
-  State<LanguagePage> createState() => _LanguagePageState();
+  State<LanguageView> createState() => _LanguageViewState();
 }
 
-class _LanguagePageState extends State<LanguagePage> {
+class _LanguageViewState extends State<LanguageView> {
   LanguageModel? selectedLanguage;
 
   @override

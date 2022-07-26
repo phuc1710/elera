@@ -18,9 +18,15 @@ class CourseTabBarView extends StatefulWidget {
 class _CourseTabBarViewState extends State<CourseTabBarView> {
   @override
   Widget build(BuildContext context) {
+    int? courseListLength;
+    try {
+      courseListLength = widget.courseList?[0].items?.length;
+    } catch (_) {
+      courseListLength = 0;
+    }
+
     return SizedBox(
-      height: (211.0 - 5 * (widget.courseList?[0].items?.length ?? 0)) *
-          (widget.courseList?[0].items?.length ?? 0),
+      height: (211.0 - 5 * (courseListLength ?? 0)) * (courseListLength ?? 0),
       child: DefaultTabController(
         length: widget.courseList?.length ?? 0,
         child: Column(

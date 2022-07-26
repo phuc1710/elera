@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,16 +19,16 @@ import '../bloc/edit_profile_bloc.dart';
 import '../widgets/phone_textfield.dart';
 import '../widgets/profile_textfield.dart';
 
-class EditProfilePage extends StatefulWidget {
-  const EditProfilePage({Key? key, required this.profile}) : super(key: key);
+class EditProfileView extends StatefulWidget {
+  const EditProfileView({Key? key, required this.profile}) : super(key: key);
 
   final ProfileModel? profile;
 
   @override
-  State<EditProfilePage> createState() => _EditProfilePageState();
+  State<EditProfileView> createState() => _EditProfileViewState();
 }
 
-class _EditProfilePageState extends State<EditProfilePage> {
+class _EditProfileViewState extends State<EditProfileView> {
   late TextEditingController fullNameController;
   late TextEditingController shortNameController;
   late TextEditingController dobController;
@@ -194,7 +195,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     return ListTile(
       onTap: () {
         onTap.call();
-        Navigator.of(context).pop();
+        context.router.pop();
       },
       title: Text(
         title ?? '',

@@ -6,16 +6,16 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../core/params/appbar_params.dart';
 import '../widgets/base_appbar.dart';
 
-class WebViewPage extends StatefulWidget {
-  const WebViewPage({Key? key, required this.url}) : super(key: key);
+class PrivacyPolicyView extends StatefulWidget {
+  const PrivacyPolicyView({Key? key, required this.url}) : super(key: key);
 
   final String? url;
 
   @override
-  State<WebViewPage> createState() => _WebViewPageState();
+  State<PrivacyPolicyView> createState() => _PrivacyPolicyViewState();
 }
 
-class _WebViewPageState extends State<WebViewPage> {
+class _PrivacyPolicyViewState extends State<PrivacyPolicyView> {
   @override
   void initState() {
     super.initState();

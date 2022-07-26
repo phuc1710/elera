@@ -1,22 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
-import '../../../home_and_action_menu/home/views/home_view.dart';
+import '../../../../config/router/routes.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
 
-Future<dynamic> showWelcomeDialog(BuildContext context) {
-  return showDialog<dynamic>(
+Future<dynamic> showWelcomeDialog(BuildContext context) async {
+  showDialog<dynamic>(
     context: context,
     barrierDismissible: true,
-    builder: (BuildContext context) {
-      Future.delayed(const Duration(seconds: 2), () {
-        Navigator.of(context).pop();
-        Navigator.of(context).pushAndRemoveUntil<Object?>(
-          MaterialPageRoute(builder: (context) => const HomeView()),
-          (route) => false,
-        );
-      });
-
+    builder: (BuildContext dialogContext) {
       return AlertDialog(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40),
@@ -27,4 +21,10 @@ Future<dynamic> showWelcomeDialog(BuildContext context) {
       );
     },
   );
+  await Future.delayed(const Duration(seconds: 2), () {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      context.router.pop();
+      context.router.navigateNamed(Routes.homeRoute);
+    });
+  });
 }
