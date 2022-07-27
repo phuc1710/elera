@@ -10,7 +10,7 @@ part of 'bookmark_api_service.dart';
 
 class _BookmarkApiService implements BookmarkApiService {
   _BookmarkApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.141:7412/api/';
+    baseUrl ??= 'http://103.63.215.141:7412';
   }
 
   final Dio _dio;

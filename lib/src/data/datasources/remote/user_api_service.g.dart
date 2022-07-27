@@ -10,7 +10,7 @@ part of 'user_api_service.dart';
 
 class _UserApiService implements UserApiService {
   _UserApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.141:7412/api/';
+    baseUrl ??= 'http://103.63.215.141:7412';
   }
 
   final Dio _dio;
@@ -217,7 +217,7 @@ class _UserApiService implements UserApiService {
     final _result = await _dio.fetch<Map<String, dynamic>?>(
         _setStreamType<HttpResponse<ProfileResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/profile',
+                .compose(_dio.options, '/api/users/profile',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data == null
@@ -240,7 +240,7 @@ class _UserApiService implements UserApiService {
     final _result = await _dio.fetch<Map<String, dynamic>?>(
         _setStreamType<HttpResponse<GeneralResponseModel>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/profile',
+                .compose(_dio.options, '/api/users/profile',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data == null

@@ -2,7 +2,7 @@
 class EndPoints {
   EndPoints._();
 
-  static const String baseUrl = 'http://103.63.215.141:7412/api/';
+  static const String baseUrl = 'http://103.63.215.141:7412';
   static const String devUrl = '';
   static const String signIn = '/users/login';
   static const String signUp = '/sign_up';
@@ -29,7 +29,7 @@ class EndPoints {
   static const String search = '/search';
 
   static const String helperCenter = '/helper_center';
-  static const String profile = '/profile';
+  static const String profile = '/api/users/profile';
   static const String countries = '/countries';
   static const String payments = '/payments';
   static const String addNewCard = '/add_new_card';

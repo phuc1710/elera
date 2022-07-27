@@ -10,7 +10,7 @@ part of 'helper_api_service.dart';
 
 class _HelperApiService implements HelperApiService {
   _HelperApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.141:7412/api/';
+    baseUrl ??= 'http://103.63.215.141:7412';
   }
 
   final Dio _dio;
