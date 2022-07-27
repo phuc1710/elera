@@ -14,23 +14,32 @@ class SignInResponseModel {
   factory SignInResponseModel.fromJson(Map<String, dynamic> json) =>
       _$SignInResponseModelFromJson(json);
 
+  Map<String, dynamic> toJson() => _$SignInResponseModelToJson(this);
+
   final int? status;
   final int? code;
   final String? message;
   final Data? data;
 
-  Map<String, dynamic> toJson() => _$SignInResponseModelToJson(this);
+  @override
+  String toString() {
+    return '$status, $code, $message, $data';
+  }
 }
 
 @JsonSerializable()
 class Data {
-  Data({
-    required this.token,
-  });
+  Data({required this.accessToken});
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
-  final String? token;
-
   Map<String, dynamic> toJson() => _$DataToJson(this);
+
+  @JsonKey(name: 'access_token')
+  final String? accessToken;
+
+  @override
+  String toString() {
+    return '$accessToken';
+  }
 }

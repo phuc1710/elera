@@ -26,9 +26,9 @@ Map<String, dynamic> _$SignInResponseModelToJson(
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      token: json['token'] as String?,
+      accessToken: json['access_token'] as String?,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'token': instance.token,
+      'access_token': instance.accessToken,
     };

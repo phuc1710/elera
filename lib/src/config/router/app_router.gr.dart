@@ -224,7 +224,7 @@ class SetYourFingerprintRoute extends PageRouteInfo<void> {
 class SelectContactRoute extends PageRouteInfo<SelectContactRouteArgs> {
   SelectContactRoute({Key? key, required String email})
       : super(SelectContactRoute.name,
-            path: Routes.selectContactRoute,
+            path: '/select_contact',
             args: SelectContactRouteArgs(key: key, email: email));
 
   static const String name = 'SelectContactRoute';

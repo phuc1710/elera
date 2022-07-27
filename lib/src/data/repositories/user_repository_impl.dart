@@ -18,6 +18,7 @@ import '../../core/params/update_profile_params.dart';
 import '../../core/resources/data_state.dart';
 import '../../core/utils/extensions.dart';
 import '../../domain/repositories/user_repository.dart';
+import '../datasources/local/cache/app_cache.dart';
 import '../datasources/remote/user_api_service.dart';
 import '../models/contact_selection/contact_fetch_response_model.dart';
 import '../models/contact_selection/contact_selection_response_model.dart';
@@ -35,9 +36,19 @@ import '../models/sign_up/sign_up_response_model.dart';
 
 @Injectable(as: UserRepository)
 class UserRepositoryImpl implements UserRepository {
-  UserRepositoryImpl(this._userApiService);
+  UserRepositoryImpl(
+    this.cache,
+    this._userApiService,
+  );
 
+  final AppCache cache;
   final UserApiService _userApiService;
+
+  @override
+  Future<String> get accessToken => cache.accessToken;
+
+  @override
+  Future<bool> saveAccessToken(String? token) => cache.saveAccessToken(token);
 
   @override
   Future<DataState<SignInResponseModel>> postSignInRequest(

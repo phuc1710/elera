@@ -7,18 +7,25 @@ import '../../../../core/params/sign_in_request_params.dart';
 import '../../../../core/resources/api_error.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
+import '../../../../data/datasources/app_datasources.dart';
+import '../../../../domain/usecases/access_token_save_usecase.dart';
 import '../../../../domain/usecases/sign_in_usecase.dart';
+import '../../../../injector/injector.dart';
 
 part 'signin_event.dart';
 part 'signin_state.dart';
 
 @injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  SignInBloc(this.signInUseCase) : super(SignInInitial()) {
+  SignInBloc(
+    this.signInUseCase,
+    this._accessTokenSaveUC,
+  ) : super(SignInInitial()) {
     on<SignInSubmitted>(_onSignInSubmitted);
   }
 
   final SignInUseCase signInUseCase;
+  final AccessTokenSaveUseCase _accessTokenSaveUC;
 
   Future<void> _onSignInSubmitted(
     SignInSubmitted event,
@@ -33,9 +40,10 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     );
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (dataState.data?.code == ErrorCode.success)
+      if (dataState.data?.code == ErrorCode.success) {
+        await _accessTokenSaveUC(params: res?.data?.accessToken);
         emit(SignInSuccess());
-      else
+      } else
         emit(
           SignInFailed(
             ApiError(errorCode: res?.code, errorMessage: res?.message),

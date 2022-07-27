@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'src/config/router/app_router.dart';
 import 'src/config/theme/app_theme.dart';
 import 'src/core/utils/utils.dart';
+import 'src/data/datasources/app_datasources.dart';
 import 'src/injector/injector.dart';
 
 Future<void> main() async {
   Utils.addGoogleFontsLicense();
 
   WidgetsFlutterBinding.ensureInitialized();
+  await AppDataSources.init();
   await initializeDependencies();
 
   Future.delayed(const Duration(milliseconds: 150), () => runApp(App()));

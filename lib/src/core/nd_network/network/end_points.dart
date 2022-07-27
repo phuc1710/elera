@@ -2,7 +2,7 @@
 class EndPoints {
   EndPoints._();
 
-  static const String baseUrl = 'http://103.63.215.140:7412/api/';
+  static const String baseUrl = 'http://103.63.215.141:7412/api/';
   static const String devUrl = '';
   static const String signIn = '/users/login';
   static const String signUp = '/sign_up';
