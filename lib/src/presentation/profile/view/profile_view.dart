@@ -115,12 +115,12 @@ class _ProfileViewState extends State<ProfileView> {
               child: Column(
                 children: [
                   ProfilePicture(
-                    avatar: state.profile?.img,
+                    avatar: state.profile?.avatar,
                     callBack: () {},
                   ),
                   const SizedBox(height: 15),
                   Text(
-                    state.profile?.fullname ?? '',
+                    state.profile?.fullName ?? '',
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                   const SizedBox(height: 12),

@@ -11,6 +11,7 @@ import '../../../core/params/new_card_params.dart';
 import '../../../core/params/password_creation_request_params.dart';
 import '../../../core/params/pin_entry_request_params.dart';
 import '../../../core/params/pin_sending_request_params.dart';
+import '../../../core/params/profile_request_params.dart';
 import '../../../core/params/sign_in_request_params.dart';
 import '../../../core/params/sign_up_request_params.dart';
 import '../../../core/params/update_profile_params.dart';
@@ -92,7 +93,8 @@ abstract class UserApiService {
   });
 
   @GET(EndPoints.profile)
-  Future<HttpResponse<ProfileResponseModel?>> getProfile({
+  Future<HttpResponse<ProfileResponseModel?>> getProfile(
+    @Queries() ProfileRequestParams params, {
     @Header('isMockup') bool? isMockup,
   });
 

@@ -9,8 +9,9 @@ part of 'profile_response_model.dart';
 ProfileResponseModel _$ProfileResponseModelFromJson(
         Map<String, dynamic> json) =>
     ProfileResponseModel(
+      status: json['status'] as int?,
+      code: json['code'] as int?,
       message: json['message'] as String?,
-      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : ProfileModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -19,32 +20,35 @@ ProfileResponseModel _$ProfileResponseModelFromJson(
 Map<String, dynamic> _$ProfileResponseModelToJson(
         ProfileResponseModel instance) =>
     <String, dynamic>{
+      'status': instance.status,
+      'code': instance.code,
       'message': instance.message,
-      'error_code': instance.errorCode,
       'data': instance.data,
     };
 
 ProfileModel _$ProfileModelFromJson(Map<String, dynamic> json) => ProfileModel(
-      fullname: json['fullname'] as String?,
-      name: json['name'] as String?,
+      id: json['id'] as String?,
+      fullName: json['full_name'] as String?,
+      nickname: json['nickname'] as String?,
       email: json['email'] as String?,
-      img: json['img'] as String?,
-      dob: json['dob'] as String?,
-      country: json['country'] as String?,
       phone: json['phone'] as String?,
-      gender: json['gender'] as bool?,
+      gender: json['gender'] as String?,
+      dob: json['dob'] as String?,
+      avatar: json['avatar'] as String?,
+      country: json['country'] as String?,
       job: json['job'] as String?,
     );
 
 Map<String, dynamic> _$ProfileModelToJson(ProfileModel instance) =>
     <String, dynamic>{
-      'fullname': instance.fullname,
-      'name': instance.name,
+      'id': instance.id,
+      'full_name': instance.fullName,
+      'nickname': instance.nickname,
       'email': instance.email,
-      'img': instance.img,
-      'dob': instance.dob,
-      'country': instance.country,
       'phone': instance.phone,
       'gender': instance.gender,
+      'dob': instance.dob,
+      'avatar': instance.avatar,
+      'country': instance.country,
       'job': instance.job,
     };

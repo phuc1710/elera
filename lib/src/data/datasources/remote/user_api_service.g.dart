@@ -10,7 +10,7 @@ part of 'user_api_service.dart';
 
 class _UserApiService implements UserApiService {
   _UserApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.141:7412';
+    baseUrl ??= 'http://103.63.215.141:7412/api';
   }
 
   final Dio _dio;
@@ -207,9 +207,11 @@ class _UserApiService implements UserApiService {
   }
 
   @override
-  Future<HttpResponse<ProfileResponseModel?>> getProfile({isMockup}) async {
+  Future<HttpResponse<ProfileResponseModel?>> getProfile(params,
+      {isMockup}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(params.toJson());
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'isMockup': isMockup};
     _headers.removeWhere((k, v) => v == null);
@@ -217,7 +219,7 @@ class _UserApiService implements UserApiService {
     final _result = await _dio.fetch<Map<String, dynamic>?>(
         _setStreamType<HttpResponse<ProfileResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/api/users/profile',
+                .compose(_dio.options, '/users/profile',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data == null
@@ -240,7 +242,7 @@ class _UserApiService implements UserApiService {
     final _result = await _dio.fetch<Map<String, dynamic>?>(
         _setStreamType<HttpResponse<GeneralResponseModel>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/api/users/profile',
+                .compose(_dio.options, '/users/profile',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data == null

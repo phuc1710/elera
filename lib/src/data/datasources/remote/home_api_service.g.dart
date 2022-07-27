@@ -10,7 +10,7 @@ part of 'home_api_service.dart';
 
 class _HomeApiService implements HomeApiService {
   _HomeApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.141:7412';
+    baseUrl ??= 'http://103.63.215.141:7412/api';
   }
 
   final Dio _dio;

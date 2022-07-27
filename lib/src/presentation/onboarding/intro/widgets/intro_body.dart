@@ -46,13 +46,14 @@ class _IntroBodyState extends State<IntroBody> {
           ),
           child: InkWell(
             onTap: () {
-              _controller.nextPage(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeIn,
-              );
-              if (_buttonString == 'Get Started') {
-                context.router.pushNamed(Routes.letsInRoute);
-              }
+              // _controller.nextPage(
+              //   duration: const Duration(milliseconds: 300),
+              //   curve: Curves.easeIn,
+              // );
+              // if (_buttonString == 'Get Started') {
+              //   context.router.pushNamed(Routes.letsInRoute); // TODO(thinhhh): hardcode
+              // }
+              context.router.pushNamed(Routes.homeRoute);
             },
             child: MainActionInk(buttonString: _buttonString),
           ),

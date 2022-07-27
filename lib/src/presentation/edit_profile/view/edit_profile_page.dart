@@ -38,26 +38,24 @@ class _EditProfileViewState extends State<EditProfileView> {
   late TextEditingController genderController;
   late TextEditingController jobController;
 
+  final genders = ['Male', 'Female', 'Others'];
+
   CountryModel? selectedCountry;
   bool selectedGender = false;
-
-  final genders = ['Male', 'Female'];
 
   @override
   void initState() {
     super.initState();
     fullNameController =
-        TextEditingController(text: widget.profile?.fullname ?? '');
+        TextEditingController(text: widget.profile?.fullName ?? '');
     shortNameController =
-        TextEditingController(text: widget.profile?.name ?? '');
+        TextEditingController(text: widget.profile?.nickname ?? '');
     dobController = TextEditingController(text: widget.profile?.dob ?? '');
     emailController = TextEditingController(text: widget.profile?.email ?? '');
     countryController =
         TextEditingController(text: widget.profile?.country ?? '');
     phoneController = TextEditingController(text: widget.profile?.phone ?? '');
-    genderController = TextEditingController(
-      text: widget.profile?.gender == false ? genders[0] : genders[1],
-    );
+    genderController = TextEditingController(text: widget.profile?.gender);
     jobController = TextEditingController(text: widget.profile?.job ?? '');
   }
 
