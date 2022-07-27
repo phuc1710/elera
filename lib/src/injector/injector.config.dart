@@ -176,8 +176,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i40.PinEntryUseCase(get<_i6.UserRepository>()));
   gh.factory<_i41.PinSendingUseCase>(
       () => _i41.PinSendingUseCase(get<_i6.UserRepository>()));
-  gh.factory<_i42.ProfileBloc>(
-      () => _i42.ProfileBloc(get<_i23.GetProfileUseCase>()));
+  gh.factory<_i42.ProfileBloc>(() => _i42.ProfileBloc(
+      get<_i23.GetProfileUseCase>(), get<_i9.AccessTokenUseCase>()));
   gh.lazySingleton<_i43.SearchApiService>(() => registerModule.searchApiService(
       get<_i4.Dio>(instanceName: 'ApiDio'),
       get<String>(instanceName: 'ApiBaseUrl')));
