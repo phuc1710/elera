@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../core/params/profile_request_params.dart';
 import '../../../core/resources/data_state.dart';
 import '../../../core/utils/constants.dart';
 import '../../../data/models/profile/profile_response_model.dart';
@@ -26,10 +27,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     emit(ProfileInProgress());
 
-    final dataState = await _getProfileUC();
+    final dataState = await _getProfileUC(
+      params: const ProfileRequestParams(id: '62e09d57bf80da2d56936980'),
+    ); // TODO(thinhhh): harcode
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.errorCode == ErrorCode.success) {
+      if (res?.code == ErrorCode.success) {
         emit(ProfileFetchSuccess(res?.data));
       } else {
         emit(ProfileFailure(msg: res?.message));

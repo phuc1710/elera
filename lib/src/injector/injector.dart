@@ -19,6 +19,7 @@ Future<void> initializeDependencies() async {
       getHeadersApiProvider: () async {
         final Map<String, dynamic> header = <String, dynamic>{
           'product': 'app',
+          'authorization': '62e09d57bf80da2d56936980', // TODO(thinhhh): harcode
           'token':
               '2b5fa55f4518e8f3cf810fce6591d347a69027d7916cdd54b6665f06b1a3ffe9',
         };
