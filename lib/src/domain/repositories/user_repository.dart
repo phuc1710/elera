@@ -26,6 +26,10 @@ import '../../data/models/sign_in/sign_in_response_model.dart';
 import '../../data/models/sign_up/sign_up_response_model.dart';
 
 abstract class UserRepository {
+  Future<bool> saveAccessToken(final String? token);
+
+  Future<String> get accessToken;
+
   Future<DataState<SignInResponseModel>> postSignInRequest(
     SignInRequestParams? params,
   );
