@@ -25,7 +25,7 @@ class Alert {
     // set up the button
     await showDialog<void>(
       context: context,
-      builder: (BuildContext context) {
+      builder: (BuildContext _) {
         return WillPopScope(
           onWillPop: () async => false,
           child: CupertinoAlertDialog(
@@ -52,7 +52,7 @@ class Alert {
                 ),
                 onPressed: () {
                   if (isPop) {
-                    context.router.pop();
+                    Navigator.of(context).pop();
                   }
                   onPressOK?.call();
                 },
