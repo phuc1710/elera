@@ -3,7 +3,6 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/enums/helper_contact_type.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../data/models/api_models.dart';
 import '../../../injector/injector.dart';
@@ -266,26 +265,5 @@ class _HelperCenterViewState extends State<HelperCenterView> {
         .firstWhereOrNull((item) => item?.title == title);
   }
 
-  void onContactTap(BuildContext context, HelperContactModel? item) {
-    final contactType = HelperContactType.values
-        .whereIndexed((index, element) => index == item?.id)
-        .firstOrNull;
-
-    switch (contactType) {
-      case HelperContactType.customerService:
-
-      case HelperContactType.whatsapp:
-
-      case HelperContactType.website:
-
-      case HelperContactType.facebook:
-
-      case HelperContactType.twitter:
-
-      case HelperContactType.instagram:
-
-      case null:
-        break;
-    }
-  }
+  void onContactTap(BuildContext context, HelperContactModel? item) {}
 }
