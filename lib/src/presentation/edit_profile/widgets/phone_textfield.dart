@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 
@@ -9,26 +8,20 @@ class PhoneTextField extends StatefulWidget {
     Key? key,
     required this.controller,
     required this.countries,
+    this.currentCountry,
+    required this.onCountryChange,
   }) : super(key: key);
 
   final TextEditingController controller;
   final List<CountryModel?>? countries;
+  final CountryModel? currentCountry;
+  final Function(CountryModel?) onCountryChange;
 
   @override
   State<PhoneTextField> createState() => _PhoneTextFieldState();
 }
 
 class _PhoneTextFieldState extends State<PhoneTextField> {
-  CountryModel? selectedCountry;
-
-  @override
-  void initState() {
-    super.initState();
-    selectedCountry = widget.countries?.firstOrNull;
-
-    widget.controller.text = formatAsPhoneNumber(widget.controller.text) ?? '';
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,37 +40,31 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           border: InputBorder.none,
           contentPadding: const EdgeInsets.all(15),
           prefixStyle: inputStyle(context),
-          prefixIcon: DropdownButton<CountryModel?>(
-            hint: Image.network(
-              selectedCountry?.flag ?? '',
-              width: 20,
-              height: 20,
-            ),
-            items: widget.countries
-                ?.map(
-                  (e) => DropdownMenuItem<CountryModel?>(
-                    value: e,
-                    child: Image.network(e?.flag ?? '', width: 20, height: 20),
+          prefixIcon: widget.currentCountry != null
+              ? DropdownButton<CountryModel?>(
+                  hint: Image.network(
+                    widget.currentCountry?.flag ?? '',
+                    width: 20,
+                    height: 20,
                   ),
+                  items: widget.countries
+                      ?.map(
+                        (e) => DropdownMenuItem<CountryModel?>(
+                          value: e,
+                          child: Image.network(
+                            e?.flag ?? '',
+                            width: 20,
+                            height: 20,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: widget.onCountryChange,
                 )
-                .toList(),
-            onChanged: updateNewPhonePrefix,
-          ),
+              : null,
         ),
       ),
     );
-  }
-
-  void updateNewPhonePrefix(CountryModel? newCountry) {
-    widget.controller.text = widget.controller.text
-        .replaceAll(selectedCountry?.phonePrefix ?? '', '');
-
-    setState(() {
-      selectedCountry = newCountry;
-    });
-
-    widget.controller.text =
-        (selectedCountry?.phonePrefix ?? '') + widget.controller.text;
   }
 
   TextStyle? inputStyle(BuildContext context) {

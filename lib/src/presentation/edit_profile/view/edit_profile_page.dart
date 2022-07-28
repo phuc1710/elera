@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 
 import '../../../core/params/appbar_params.dart';
 import '../../../core/params/date_picker_param.dart';
@@ -126,6 +127,8 @@ class _EditProfileViewState extends State<EditProfileView> {
               PhoneTextField(
                 controller: phoneController,
                 countries: data?.countries,
+                currentCountry: selectedCountry,
+                onCountryChange: updateSelectedCountry,
               ),
               const SizedBox(height: 20),
               ProfileTextField(
@@ -224,8 +227,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             context,
             title: countries[index]?.name,
             onTap: () {
-              selectedCountry = countries[index];
-              countryController.text = countries[index]?.name ?? '';
+              updateSelectedCountry(countries[index]);
             },
           );
         },
@@ -264,5 +266,21 @@ class _EditProfileViewState extends State<EditProfileView> {
         dateFormat: IntlHelper.dateFormatter,
       ),
     );
+  }
+
+  void updateSelectedCountry(CountryModel? country) {
+    phoneController.text =
+        phoneController.text.replaceAll(selectedCountry?.phonePrefix ?? '', '');
+
+    setState(() {
+      selectedCountry = country;
+    });
+
+    countryController.text = selectedCountry?.name ?? '';
+
+    phoneController.text =
+        (selectedCountry?.phonePrefix ?? '') + phoneController.text;
+
+    phoneController.text = formatAsPhoneNumber(phoneController.text) ?? '';
   }
 }
