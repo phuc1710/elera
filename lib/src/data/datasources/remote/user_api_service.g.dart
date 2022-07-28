@@ -207,11 +207,9 @@ class _UserApiService implements UserApiService {
   }
 
   @override
-  Future<HttpResponse<ProfileResponseModel?>> getProfile(params,
-      {isMockup}) async {
+  Future<HttpResponse<ProfileResponseModel?>> getProfile({isMockup}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(params.toJson());
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'isMockup': isMockup};
     _headers.removeWhere((k, v) => v == null);
