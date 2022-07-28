@@ -98,9 +98,10 @@ abstract class UserApiService {
     @Header('isMockup') bool? isMockup,
   });
 
-  @POST(EndPoints.profile)
+  @PUT(EndPoints.updateProfile)
   Future<HttpResponse<GeneralResponseModel?>> updateProfile(
-    @Queries() UpdateProfileParams params, {
+    @Path() String id,
+    @Body() UpdateProfileParams updateParams, {
     @Header('isMockup') bool? isMockup,
   });
 

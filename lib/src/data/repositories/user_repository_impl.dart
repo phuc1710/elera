@@ -357,12 +357,12 @@ class UserRepositoryImpl implements UserRepository {
 
   @override
   Future<DataState<GeneralResponseModel?>> updateProfile(
-    UpdateProfileParams param,
+    UpdateProfileParams params,
   ) async {
     try {
       final httpResponse = await _userApiService.updateProfile(
-        param,
-        isMockup: true, // TODO(thinhhh): mockup
+        await cache.accessToken,
+        params,
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {

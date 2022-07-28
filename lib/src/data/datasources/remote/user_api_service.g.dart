@@ -230,19 +230,19 @@ class _UserApiService implements UserApiService {
   }
 
   @override
-  Future<HttpResponse<GeneralResponseModel?>> updateProfile(params,
+  Future<HttpResponse<GeneralResponseModel?>> updateProfile(id, updateParams,
       {isMockup}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(params.toJson());
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'isMockup': isMockup};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
+    _data.addAll(updateParams.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>?>(
         _setStreamType<HttpResponse<GeneralResponseModel>>(
-            Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/users/profile',
+            Options(method: 'PUT', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/users/profile/${id}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data == null

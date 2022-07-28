@@ -30,6 +30,7 @@ class EndPoints {
 
   static const String helperCenter = '/support';
   static const String profile = '/users/profile';
+  static const String updateProfile = '${EndPoints.profile}/{id}';
   static const String countries = '/countries';
   static const String payments = '/payments';
   static const String addNewCard = '/add_new_card';
