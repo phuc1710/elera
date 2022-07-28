@@ -1,141 +1,181 @@
 {
-    "message": "",
-    "error_code": 1,
+    "status": 200,
+    "code": 1,
+    "message": "Thành công",
     "data": {
-      "faqs": [
-        {
-            "name": "General",
-            "items": [
-                {
-                    "title": "What is Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to use Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Can i create my own course?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Is Elera free to use?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to make offer on Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                }
-            ]
-        },
-        {
-            "name": "Account",
-            "items": [
-                {
-                    "title": "What is Elera2?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to use Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Can i create my own course?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Is Elera free to use?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to make offer on Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                }
-            ]
-        },
-        {
-            "name": "Course",
-            "items": [
-                {
-                    "title": "What is Elera3?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to use Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Can i create my own course?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Is Elera free to use?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to make offer on Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                }
-            ]
-        },
-        {
-            "name": "Payment",
-            "items": [
-                {
-                    "title": "What is Elera4?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to use Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Can i create my own course?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "Is Elera free to use?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                },
-                {
-                    "title": "How to make offer on Elera?",
-                    "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua"
-                }
-            ]
-        }
-      ],
-      "contacts": [
-        {
-            "id": 0,
-            "name": "Customer Service",
-            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
-        },
-        {
-            "id": 1,
-            "name": "WhatsApp",
-            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
-        },
-        {
-            "id": 2,
-            "name": "Website",
-            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
-        },
-        {
-            "id": 3,
-            "name": "Facebook",
-            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
-        },
-        {
-            "id": 4,
-            "name": "Twitter",
-            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
-        },
-        {
-            "id": 5,
-            "name": "Instagram",
-            "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
-        }
-      ]
+        "faqs": [
+            {
+                "type": "General",
+                "items": [
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d35",
+                        "title": "What is Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "General"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d36",
+                        "title": "How to use Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "General"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d37",
+                        "title": "Can i create my own course?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "General"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d39",
+                        "title": "How to make offer on Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "General"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d38",
+                        "title": "Is Elera free to use?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "General"
+                    }
+                ]
+            },
+            {
+                "type": "Account",
+                "items": [
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d3a",
+                        "title": "What is Elera2?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Account"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d3b",
+                        "title": "How to use Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Account"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d3c",
+                        "title": "Can i create my own course?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Account"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d3e",
+                        "title": "How to make offer on Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Account"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d3d",
+                        "title": "Is Elera free to use?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Account"
+                    }
+                ]
+            },
+            {
+                "type": "Course",
+                "items": [
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d40",
+                        "title": "How to use Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Course"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d43",
+                        "title": "How to make offer on Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Course"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d42",
+                        "title": "Is Elera free to use?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Course"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d3f",
+                        "title": "What is Elera3?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Course"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d41",
+                        "title": "Can i create my own course?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Course"
+                    }
+                ]
+            },
+            {
+                "type": "Payment",
+                "items": [
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d44",
+                        "title": "What is Elera4?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Payment"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d45",
+                        "title": "How to use Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Payment"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d46",
+                        "title": "Can i create my own course?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Payment"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d47",
+                        "title": "Is Elera free to use?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Payment"
+                    },
+                    {
+                        "id": "62e0e6ffd56baf0678dd5d48",
+                        "title": "How to make offer on Elera?",
+                        "answer": "Lorem issum dolor sit amet, cobnseletur adipisong edlit, sed do eslimod empor , indicidla ut labore efg dolore magna aliqua",
+                        "type": "Payment"
+                    }
+                ]
+            }
+        ],
+        "contacts": [
+            {
+                "id": "62e0e6ffd56baf0678dd5d28",
+                "name": "Customer Service",
+                "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+            },
+            {
+                "id": "62e0e6ffd56baf0678dd5d29",
+                "name": "WhatsApp",
+                "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+            },
+            {
+                "id": "62e0e6ffd56baf0678dd5d2a",
+                "name": "Website",
+                "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+            },
+            {
+                "id": "62e0e6ffd56baf0678dd5d2b",
+                "name": "Facebook",
+                "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+            },
+            {
+                "id": "62e0e6ffd56baf0678dd5d2c",
+                "name": "Twitter",
+                "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+            },
+            {
+                "id": "62e0e6ffd56baf0678dd5d2d",
+                "name": "Instagram",
+                "img": "https://flyclipart.com/thumb2/email-png-icon-free-download-732604.png"
+            }
+        ]
     }
-  }
-  
+}

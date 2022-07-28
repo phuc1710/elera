@@ -11,7 +11,7 @@ import '../models/helper_center/helper_center_response_model.dart';
 import '../models/language/language_response_model.dart';
 import '../models/edit_profile/edit_profile_response_model.dart';
 
-@Injectable(as: HelperRepository)
+@LazySingleton(as: HelperRepository)
 class HelperRepositoryImpl implements HelperRepository {
   HelperRepositoryImpl(this._cache, this._helperApiService);
 
@@ -67,9 +67,7 @@ class HelperRepositoryImpl implements HelperRepository {
   @override
   Future<DataState<HelperCenterResponseModel?>> getHelperCenter() async {
     try {
-      final httpResponse = await _helperApiService.getHelperCenter(
-        isMockup: true, // TODO(thinhhh): mockup
-      );
+      final httpResponse = await _helperApiService.getHelperCenter();
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data);

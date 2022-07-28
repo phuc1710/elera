@@ -149,7 +149,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i24.HelperApiService>(() => registerModule.helperApiService(
       get<_i4.Dio>(instanceName: 'ApiDio'),
       get<String>(instanceName: 'ApiBaseUrl')));
-  gh.factory<_i25.HelperRepository>(() => _i26.HelperRepositoryImpl(
+  gh.lazySingleton<_i25.HelperRepository>(() => _i26.HelperRepositoryImpl(
       get<_i27.AppCache>(), get<_i24.HelperApiService>()));
   gh.lazySingleton<_i28.HomeApiService>(() => registerModule.homeApiService(
       get<_i4.Dio>(instanceName: 'ApiDio'),

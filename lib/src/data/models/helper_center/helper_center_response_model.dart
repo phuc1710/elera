@@ -7,21 +7,27 @@ part 'helper_center_response_model.g.dart';
 
 @JsonSerializable()
 class HelperCenterResponseModel {
-  HelperCenterResponseModel({this.errorCode, this.data, this.message});
+  HelperCenterResponseModel({
+    required this.status,
+    required this.code,
+    required this.message,
+    required this.data,
+  });
 
   factory HelperCenterResponseModel.fromJson(Map<String, dynamic> json) =>
       _$HelperCenterResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$HelperCenterResponseModelToJson(this);
 
-  @JsonKey(name: 'error_code')
-  final int? errorCode;
-
-  @JsonKey(name: 'message')
+  final int? status;
+  final int? code;
   final String? message;
-
-  @JsonKey(name: 'data')
   final HelperCenterDataModel? data;
+
+  @override
+  String toString() {
+    return '$status, $code, $message, $data';
+  }
 }
 
 @JsonSerializable()
@@ -40,4 +46,9 @@ class HelperCenterDataModel {
   final List<FAQSectionModel?> faqs;
   @JsonKey(defaultValue: <HelperContactModel>[])
   final List<HelperContactModel?> contacts;
+
+  @override
+  String toString() {
+    return '$faqs, $contacts';
+  }
 }

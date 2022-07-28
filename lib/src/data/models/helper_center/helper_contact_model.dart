@@ -5,9 +5,9 @@ part 'helper_contact_model.g.dart';
 @JsonSerializable()
 class HelperContactModel {
   HelperContactModel({
-    this.name,
-    this.id,
-    this.img,
+    required this.id,
+    required this.name,
+    required this.img,
   });
 
   factory HelperContactModel.fromJson(Map<String, dynamic> json) =>
@@ -15,7 +15,12 @@ class HelperContactModel {
 
   Map<String, dynamic> toJson() => _$HelperContactModelToJson(this);
 
+  final String? id;
   final String? name;
-  final int? id;
   final String? img;
+
+  @override
+  String toString() {
+    return '$id, $name, $img';
+  }
 }

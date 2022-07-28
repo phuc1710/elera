@@ -242,7 +242,7 @@ class _HelperCenterViewState extends State<HelperCenterView> {
               },
               child: Center(
                 child: Text(
-                  faqData[index]?.name ?? '',
+                  faqData[index]?.type ?? '',
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
                         color: isSelected
                             ? Colors.white
