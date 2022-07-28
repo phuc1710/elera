@@ -41,7 +41,7 @@ class _EditProfileViewState extends State<EditProfileView> {
   final genders = ['Male', 'Female', 'Others'];
 
   CountryModel? selectedCountry;
-  bool selectedGender = false;
+  late String selectedGender;
 
   @override
   void initState() {
@@ -57,6 +57,8 @@ class _EditProfileViewState extends State<EditProfileView> {
     phoneController = TextEditingController(text: widget.profile?.phone ?? '');
     genderController = TextEditingController(text: widget.profile?.gender);
     jobController = TextEditingController(text: widget.profile?.job ?? '');
+
+    selectedGender = genders.first;
   }
 
   @override
@@ -169,10 +171,11 @@ class _EditProfileViewState extends State<EditProfileView> {
           context.read<EditProfileBloc>().add(
                 EditProfileUpdated(
                   UpdateProfileParams(
-                    fullname: fullNameController.text,
-                    name: shortNameController.text,
+                    fullName: fullNameController.text,
+                    nickname: shortNameController.text,
                     email: emailController.text,
-                    dob: dobController.text,
+                    dob: dobController.text
+                        .getTimeStamp(IntlHelper.dateFormatter),
                     country: countryController.text,
                     phone: phoneController.text,
                     gender: selectedGender,
@@ -243,7 +246,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             context,
             title: genders[index],
             onTap: () {
-              selectedGender = index == 1;
+              selectedGender = genders[index];
               genderController.text = genders[index];
             },
           );
