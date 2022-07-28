@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import '../../core/nd_network/nd_network.dart';
 import '../../core/resources/data_state.dart';
 import '../../domain/repositories/helper_repository.dart';
+import '../datasources/app_datasources.dart';
 import '../datasources/remote/helper_api_service.dart';
 import '../models/helper_center/helper_center_response_model.dart';
 import '../models/language/language_response_model.dart';
@@ -12,8 +13,9 @@ import '../models/edit_profile/edit_profile_response_model.dart';
 
 @Injectable(as: HelperRepository)
 class HelperRepositoryImpl implements HelperRepository {
-  HelperRepositoryImpl(this._helperApiService);
+  HelperRepositoryImpl(this._cache, this._helperApiService);
 
+  final AppCache _cache;
   final HelperApiService _helperApiService;
 
   @override
@@ -85,4 +87,11 @@ class HelperRepositoryImpl implements HelperRepository {
       return DataFailed(e);
     }
   }
+
+  @override
+  Future<LanguageModel?> get cacheLanguage => _cache.language;
+
+  @override
+  Future<bool> saveLanguage(LanguageModel? language) =>
+      _cache.saveLanguage(language);
 }

@@ -8,3 +8,12 @@ abstract class LanguageEvent extends Equatable {
 }
 
 class LanguageStarted extends LanguageEvent {}
+
+class LanguageSaved extends LanguageEvent {
+  const LanguageSaved(this.language);
+
+  final LanguageModel? language;
+
+  @override
+  List<Object?> get props => [language];
+}

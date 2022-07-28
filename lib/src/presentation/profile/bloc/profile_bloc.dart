@@ -5,9 +5,11 @@ import 'package:injectable/injectable.dart';
 import '../../../core/params/profile_request_params.dart';
 import '../../../core/resources/data_state.dart';
 import '../../../core/utils/constants.dart';
+import '../../../data/models/language/language_response_model.dart';
 import '../../../data/models/profile/profile_response_model.dart';
 import '../../../domain/usecases/access_token_usecase.dart';
 import '../../../domain/usecases/get_profile_usecase.dart';
+import '../../../domain/usecases/language_usecase.dart';
 
 part 'profile_event.dart';
 part 'profile_state.dart';
@@ -17,6 +19,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc(
     this._getProfileUC,
     this._accessTokenUC,
+    this._languageUC,
   ) : super(ProfileInitial()) {
     on<ProfileEvent>((event, emit) {});
 
@@ -25,6 +28,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
   final GetProfileUseCase _getProfileUC;
   final AccessTokenUseCase _accessTokenUC;
+  final LanguageUseCase _languageUC;
 
   Future<void> _fetchProfile(
     ProfileStarted event,
@@ -38,7 +42,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     if (dataState is DataSuccess) {
       final res = dataState.data;
       if (res?.code == ErrorCode.success) {
-        emit(ProfileFetchSuccess(res?.data));
+        emit(
+          ProfileFetchSuccess(
+            profile: res?.data,
+            language: await _languageUC(),
+          ),
+        );
       } else {
         emit(ProfileFailure(msg: res?.message));
       }

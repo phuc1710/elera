@@ -1,4 +1,7 @@
+import 'package:ez_cache/ez_cache.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../model_type_id.dart';
 
 part 'language_response_model.g.dart';
 
@@ -49,6 +52,7 @@ class LanguageDataModel {
 }
 
 @JsonSerializable()
+@HiveType(typeId: ModelTypeId.language)
 class LanguageModel {
   LanguageModel({
     required this.id,
@@ -61,10 +65,12 @@ class LanguageModel {
 
   Map<String, dynamic> toJson() => _$LanguageModelToJson(this);
 
+  @HiveField(0)
   final String? id;
+  @HiveField(1)
   final String? name;
-
   @JsonKey(name: 'is_suggested')
+  @HiveField(2)
   final bool? isSuggested;
 
   @override

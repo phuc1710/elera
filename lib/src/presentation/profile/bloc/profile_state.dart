@@ -21,9 +21,10 @@ class ProfileFailure extends ProfileState {
 }
 
 class ProfileFetchSuccess extends ProfileState {
-  const ProfileFetchSuccess(this.profile);
+  const ProfileFetchSuccess({this.profile, this.language});
 
   final ProfileModel? profile;
+  final LanguageModel? language;
 
   @override
   List<Object?> get props => [profile];
