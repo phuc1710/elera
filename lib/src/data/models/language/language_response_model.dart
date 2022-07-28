@@ -1,14 +1,14 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'language_response_model.g.dart';
 
 @JsonSerializable()
-class LanguageResponseModel extends Equatable {
-  const LanguageResponseModel({
-    this.message,
-    this.errorCode,
-    this.data,
+class LanguageResponseModel {
+  LanguageResponseModel({
+    required this.status,
+    required this.code,
+    required this.message,
+    required this.data,
   });
 
   factory LanguageResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -16,22 +16,20 @@ class LanguageResponseModel extends Equatable {
 
   Map<String, dynamic> toJson() => _$LanguageResponseModelToJson(this);
 
+  final int? status;
+  final int? code;
   final String? message;
-  @JsonKey(name: 'error_code')
-  final int? errorCode;
   final LanguageDataModel? data;
 
   @override
-  List<Object?> get props => [
-        message,
-        errorCode,
-        data,
-      ];
+  String toString() {
+    return '$status, $code, $message, $data';
+  }
 }
 
 @JsonSerializable()
-class LanguageDataModel extends Equatable {
-  const LanguageDataModel({
+class LanguageDataModel {
+  LanguageDataModel({
     required this.suggested,
     required this.languages,
   });
@@ -41,30 +39,36 @@ class LanguageDataModel extends Equatable {
 
   Map<String, dynamic> toJson() => _$LanguageDataModelToJson(this);
 
-  @JsonKey(defaultValue: <String>[])
-  final List<LanguageModel?> suggested;
-  @JsonKey(defaultValue: <String>[])
-  final List<LanguageModel?> languages;
+  final List<LanguageModel>? suggested;
+  final List<LanguageModel>? languages;
 
   @override
-  List<Object?> get props => [
-        suggested,
-        languages,
-      ];
+  String toString() {
+    return '$suggested, $languages';
+  }
 }
 
 @JsonSerializable()
-class LanguageModel extends Equatable {
-  const LanguageModel({this.id, this.name});
+class LanguageModel {
+  LanguageModel({
+    required this.id,
+    required this.name,
+    required this.isSuggested,
+  });
 
   factory LanguageModel.fromJson(Map<String, dynamic> json) =>
       _$LanguageModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$LanguageModelToJson(this);
 
-  final int? id;
+  final String? id;
   final String? name;
 
+  @JsonKey(name: 'is_suggested')
+  final bool? isSuggested;
+
   @override
-  List<Object?> get props => [id, name];
+  String toString() {
+    return '$id, $name, $isSuggested';
+  }
 }

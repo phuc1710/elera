@@ -43,9 +43,7 @@ class HelperRepositoryImpl implements HelperRepository {
   @override
   Future<DataState<LanguageResponseModel?>> getLanguages() async {
     try {
-      final httpResponse = await _helperApiService.getLanguages(
-        isMockup: true, // TODO(thinhhh): mockup
-      );
+      final httpResponse = await _helperApiService.getLanguages();
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data);

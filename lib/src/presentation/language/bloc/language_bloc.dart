@@ -29,7 +29,7 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     final dataState = await _getLanguagesUC();
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.errorCode == ErrorCode.success) {
+      if (res?.code == ErrorCode.success) {
         emit(
           LanguageFetchSuccess(
             suggested: res?.data?.suggested ?? [],

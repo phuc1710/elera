@@ -9,8 +9,9 @@ part of 'language_response_model.dart';
 LanguageResponseModel _$LanguageResponseModelFromJson(
         Map<String, dynamic> json) =>
     LanguageResponseModel(
+      status: json['status'] as int?,
+      code: json['code'] as int?,
       message: json['message'] as String?,
-      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : LanguageDataModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -19,25 +20,20 @@ LanguageResponseModel _$LanguageResponseModelFromJson(
 Map<String, dynamic> _$LanguageResponseModelToJson(
         LanguageResponseModel instance) =>
     <String, dynamic>{
+      'status': instance.status,
+      'code': instance.code,
       'message': instance.message,
-      'error_code': instance.errorCode,
       'data': instance.data,
     };
 
 LanguageDataModel _$LanguageDataModelFromJson(Map<String, dynamic> json) =>
     LanguageDataModel(
       suggested: (json['suggested'] as List<dynamic>?)
-              ?.map((e) => e == null
-                  ? null
-                  : LanguageModel.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+          ?.map((e) => LanguageModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       languages: (json['languages'] as List<dynamic>?)
-              ?.map((e) => e == null
-                  ? null
-                  : LanguageModel.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+          ?.map((e) => LanguageModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$LanguageDataModelToJson(LanguageDataModel instance) =>
@@ -48,12 +44,14 @@ Map<String, dynamic> _$LanguageDataModelToJson(LanguageDataModel instance) =>
 
 LanguageModel _$LanguageModelFromJson(Map<String, dynamic> json) =>
     LanguageModel(
-      id: json['id'] as int?,
+      id: json['id'] as String?,
       name: json['name'] as String?,
+      isSuggested: json['is_suggested'] as bool?,
     );
 
 Map<String, dynamic> _$LanguageModelToJson(LanguageModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'is_suggested': instance.isSuggested,
     };
