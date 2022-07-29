@@ -92,4 +92,7 @@ class HelperRepositoryImpl implements HelperRepository {
   @override
   Future<bool> saveLanguage(LanguageModel? language) =>
       _cache.saveLanguage(language);
+
+  @override
+  Future<void> clearCache() => _cache.clearCache();
 }

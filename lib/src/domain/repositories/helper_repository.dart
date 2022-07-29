@@ -13,4 +13,6 @@ abstract class HelperRepository {
   Future<DataState<EditProfileResponseModel?>> getCountries();
 
   Future<DataState<HelperCenterResponseModel?>> getHelperCenter();
+
+  Future<void> clearCache();
 }
