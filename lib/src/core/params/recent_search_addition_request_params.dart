@@ -6,8 +6,10 @@ part 'recent_search_addition_request_params.g.dart';
 class RecentSearchAdditionRequestParams {
   RecentSearchAdditionRequestParams();
 
-  factory RecentSearchAdditionRequestParams.fromJson(Map<String, dynamic> json) =>
+  factory RecentSearchAdditionRequestParams.fromJson(
+          Map<String, dynamic> json) =>
       _$RecentSearchAdditionRequestParamsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RecentSearchAdditionRequestParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$RecentSearchAdditionRequestParamsToJson(this);
 }

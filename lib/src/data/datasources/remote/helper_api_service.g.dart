@@ -50,7 +50,7 @@ class _HelperApiService implements HelperApiService {
     final _result = await _dio.fetch<Map<String, dynamic>?>(
         _setStreamType<HttpResponse<EditProfileResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/countries',
+                .compose(_dio.options, '/support/country',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data == null

@@ -126,7 +126,7 @@ class _EditProfileViewState extends State<EditProfileView> {
               const SizedBox(height: 20),
               PhoneTextField(
                 controller: phoneController,
-                countries: data?.countries,
+                countries: data?.items,
                 currentCountry: selectedCountry,
                 onCountryChange: updateSelectedCountry,
               ),
@@ -156,7 +156,7 @@ class _EditProfileViewState extends State<EditProfileView> {
       controller: countryController,
       onTap: () => showModalCountries(
         context,
-        countries: data?.countries ?? [],
+        countries: data?.items ?? [],
       ),
       readOnly: true,
       icon: const Icon(Icons.arrow_drop_down),
@@ -270,7 +270,7 @@ class _EditProfileViewState extends State<EditProfileView> {
 
   void updateSelectedCountry(CountryModel? country) {
     phoneController.text =
-        phoneController.text.replaceAll(selectedCountry?.phonePrefix ?? '', '');
+        phoneController.text.replaceAll(selectedCountry?.dialCode ?? '', '');
 
     setState(() {
       selectedCountry = country;
@@ -279,7 +279,7 @@ class _EditProfileViewState extends State<EditProfileView> {
     countryController.text = selectedCountry?.name ?? '';
 
     phoneController.text =
-        (selectedCountry?.phonePrefix ?? '') + phoneController.text;
+        (selectedCountry?.dialCode ?? '') + phoneController.text;
 
     phoneController.text = formatAsPhoneNumber(phoneController.text) ?? '';
   }

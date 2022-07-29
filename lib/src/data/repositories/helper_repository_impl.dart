@@ -21,9 +21,7 @@ class HelperRepositoryImpl implements HelperRepository {
   @override
   Future<DataState<EditProfileResponseModel?>> getCountries() async {
     try {
-      final httpResponse = await _helperApiService.getCountries(
-        isMockup: true, // TODO(thinhhh): mockup
-      );
+      final httpResponse = await _helperApiService.getCountries();
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data);

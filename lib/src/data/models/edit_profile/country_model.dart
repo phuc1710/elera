@@ -4,16 +4,21 @@ part 'country_model.g.dart';
 
 @JsonSerializable()
 class CountryModel {
-  CountryModel({this.id, this.name, this.flag, this.phonePrefix});
+  CountryModel({
+    required this.name,
+    required this.dialCode,
+    required this.code,
+    required this.icon,
+  });
 
   factory CountryModel.fromJson(Map<String, dynamic> json) =>
       _$CountryModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$CountryModelToJson(this);
 
-  final int? id;
   final String? name;
-  final String? flag;
-  @JsonKey(name: 'phone_prefix')
-  final String? phonePrefix;
+  @JsonKey(name: 'dial_code')
+  final String? dialCode;
+  final String? code;
+  final String? icon;
 }

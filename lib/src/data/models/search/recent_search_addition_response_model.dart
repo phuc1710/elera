@@ -10,14 +10,16 @@ class RecentSearchAdditionResponseModel {
     required this.data,
   });
 
-  factory RecentSearchAdditionResponseModel.fromJson(Map<String, dynamic> json) =>
+  factory RecentSearchAdditionResponseModel.fromJson(
+          Map<String, dynamic> json) =>
       _$RecentSearchAdditionResponseModelFromJson(json);
 
   final String? message;
   final int? code;
   final Data? data;
 
-  Map<String, dynamic> toJson() => _$RecentSearchAdditionResponseModelToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$RecentSearchAdditionResponseModelToJson(this);
 }
 
 @JsonSerializable()

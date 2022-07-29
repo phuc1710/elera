@@ -42,19 +42,14 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           prefixStyle: inputStyle(context),
           prefixIcon: widget.currentCountry != null
               ? DropdownButton<CountryModel?>(
-                  hint: Image.network(
-                    widget.currentCountry?.flag ?? '',
-                    width: 20,
-                    height: 20,
-                  ),
+                  hint: Text(widget.currentCountry?.icon ?? ''),
                   items: widget.countries
                       ?.map(
                         (e) => DropdownMenuItem<CountryModel?>(
                           value: e,
-                          child: Image.network(
-                            e?.flag ?? '',
-                            width: 20,
-                            height: 20,
+                          child: Text(
+                            '${e?.icon} ${e?.dialCode}',
+                            style: const TextStyle(fontSize: 16),
                           ),
                         ),
                       )
