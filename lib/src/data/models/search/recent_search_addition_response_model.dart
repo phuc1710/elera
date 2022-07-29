@@ -11,7 +11,8 @@ class RecentSearchAdditionResponseModel {
   });
 
   factory RecentSearchAdditionResponseModel.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RecentSearchAdditionResponseModelFromJson(json);
 
   final String? message;

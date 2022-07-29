@@ -251,19 +251,40 @@ class _UserApiService implements UserApiService {
   }
 
   @override
-  Future<HttpResponse<GeneralResponseModel?>> addNewCard(params,
-      {isMockup}) async {
+  Future<HttpResponse<PaymentResponseModel?>> getPayments({isMockup}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(params.toJson());
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'isMockup': isMockup};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>?>(
+        _setStreamType<HttpResponse<PaymentResponseModel>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/payment-method',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = _result.data == null
+        ? null
+        : PaymentResponseModel.fromJson(_result.data!);
+    final httpResponse = HttpResponse(value, _result);
+    return httpResponse;
+  }
+
+  @override
+  Future<HttpResponse<GeneralResponseModel?>> addNewCard(params,
+      {isMockup}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'isMockup': isMockup};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(params.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>?>(
         _setStreamType<HttpResponse<GeneralResponseModel>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/add_new_card',
+                .compose(_dio.options, '/payment-method',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data == null
@@ -314,27 +335,6 @@ class _UserApiService implements UserApiService {
     final value = _result.data == null
         ? null
         : FriendResponseModel.fromJson(_result.data!);
-    final httpResponse = HttpResponse(value, _result);
-    return httpResponse;
-  }
-
-  @override
-  Future<HttpResponse<PaymentResponseModel?>> getPayments({isMockup}) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'isMockup': isMockup};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>?>(
-        _setStreamType<HttpResponse<PaymentResponseModel>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/payments',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data == null
-        ? null
-        : PaymentResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

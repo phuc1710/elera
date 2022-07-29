@@ -69,10 +69,9 @@ class _PaymentViewState extends State<PaymentView> {
             height: double.maxFinite,
             width: double.maxFinite,
             child: ListView.separated(
-              itemCount: data?.payments.length ?? 0,
+              itemCount: data?.items.length ?? 0,
               separatorBuilder: (_, __) => const SizedBox(height: 15),
-              itemBuilder: (_, index) =>
-                  PaymentTile(data: data?.payments[index]),
+              itemBuilder: (_, index) => PaymentTile(data: data?.items[index]),
             ),
           ),
           buildAddButton(context),

@@ -9,8 +9,9 @@ part of 'payment_response_model.dart';
 PaymentResponseModel _$PaymentResponseModelFromJson(
         Map<String, dynamic> json) =>
     PaymentResponseModel(
+      status: json['status'] as int?,
+      code: json['code'] as int?,
       message: json['message'] as String?,
-      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : PaymentDataModel.fromJson(json['data'] as Map<String, dynamic>),
@@ -19,14 +20,15 @@ PaymentResponseModel _$PaymentResponseModelFromJson(
 Map<String, dynamic> _$PaymentResponseModelToJson(
         PaymentResponseModel instance) =>
     <String, dynamic>{
+      'status': instance.status,
+      'code': instance.code,
       'message': instance.message,
-      'error_code': instance.errorCode,
       'data': instance.data,
     };
 
 PaymentDataModel _$PaymentDataModelFromJson(Map<String, dynamic> json) =>
     PaymentDataModel(
-      payments: (json['payments'] as List<dynamic>?)
+      items: (json['items'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
                   : PaymentModel.fromJson(e as Map<String, dynamic>))
@@ -36,20 +38,18 @@ PaymentDataModel _$PaymentDataModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PaymentDataModelToJson(PaymentDataModel instance) =>
     <String, dynamic>{
-      'payments': instance.payments,
+      'items': instance.items,
     };
 
 PaymentModel _$PaymentModelFromJson(Map<String, dynamic> json) => PaymentModel(
-      id: json['id'] as int?,
-      displayName: json['display_name'] as String?,
-      status: json['status'] as String?,
+      id: json['id'] as String?,
+      name: json['name'] as String?,
       img: json['img'] as String?,
     );
 
 Map<String, dynamic> _$PaymentModelToJson(PaymentModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'display_name': instance.displayName,
-      'status': instance.status,
+      'name': instance.name,
       'img': instance.img,
     };

@@ -7,7 +7,8 @@ class RecentSearchRemovalRequestParams {
   RecentSearchRemovalRequestParams();
 
   factory RecentSearchRemovalRequestParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RecentSearchRemovalRequestParamsFromJson(json);
 
   Map<String, dynamic> toJson() =>

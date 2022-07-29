@@ -7,7 +7,8 @@ class RecentSearchAdditionRequestParams {
   RecentSearchAdditionRequestParams();
 
   factory RecentSearchAdditionRequestParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RecentSearchAdditionRequestParamsFromJson(json);
 
   Map<String, dynamic> toJson() =>
