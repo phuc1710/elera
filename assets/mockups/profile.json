@@ -1,16 +1,17 @@
 {
-    "message": "success",
-    "error_code": 1,
-    "data": {
-      "fullname": "Andrew Ainsley",
-      "name": "Andrew",
-      "img": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000",
-      "email": "andrew_ainsley@yourdomain.com",
-      "dob": "12/27/1995",
-      "country": "United States",
-      "phone": "+1111467378399",
-      "gender": false,
-      "job": "Student"
-    }
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+      "id": "62e09d57bf80da2d56936980",
+      "full_name": "",
+      "nickname": "",
+      "email": "thinhhh@gmail.com",
+      "phone": "",
+      "gender": "Khác",
+      "dob": "",
+      "avatar": "https://media.ngocdunggroup.com.vn/images/ma_ios/2019/10/36ad0db3-fc88-4f30-b9ce-183b62cd308c.jpg",
+      "country": "",
+      "job": ""
   }
-  
+}

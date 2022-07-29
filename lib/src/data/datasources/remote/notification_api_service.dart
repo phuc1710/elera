@@ -9,7 +9,8 @@ part 'notification_api_service.g.dart';
 
 @RestApi(baseUrl: EndPoints.baseUrl)
 abstract class NotificationApiService {
-  factory NotificationApiService(Dio dio, {String baseUrl}) = _NotificationApiService;
+  factory NotificationApiService(Dio dio, {String baseUrl}) =
+      _NotificationApiService;
 
   @GET(EndPoints.notification)
   Future<HttpResponse<NotificationFetchResponseModel>>

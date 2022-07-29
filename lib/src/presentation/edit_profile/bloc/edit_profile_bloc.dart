@@ -37,7 +37,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
     final dataState = await _getCountriesUC();
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (res?.errorCode == ErrorCode.success) {
+      if (res?.code == ErrorCode.success) {
         emit(EditProfileLoadSuccess(res?.data));
       } else {
         emit(EditProfileFailure(msg: res?.message));

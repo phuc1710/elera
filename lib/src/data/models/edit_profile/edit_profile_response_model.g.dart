@@ -9,7 +9,8 @@ part of 'edit_profile_response_model.dart';
 EditProfileResponseModel _$EditProfileResponseModelFromJson(
         Map<String, dynamic> json) =>
     EditProfileResponseModel(
-      errorCode: json['error_code'] as int?,
+      status: json['status'] as int?,
+      code: json['code'] as int?,
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
@@ -19,7 +20,8 @@ EditProfileResponseModel _$EditProfileResponseModelFromJson(
 Map<String, dynamic> _$EditProfileResponseModelToJson(
         EditProfileResponseModel instance) =>
     <String, dynamic>{
-      'error_code': instance.errorCode,
+      'status': instance.status,
+      'code': instance.code,
       'message': instance.message,
       'data': instance.data,
     };
@@ -27,7 +29,7 @@ Map<String, dynamic> _$EditProfileResponseModelToJson(
 EditProfileDataModel _$EditProfileDataModelFromJson(
         Map<String, dynamic> json) =>
     EditProfileDataModel(
-      countries: (json['countries'] as List<dynamic>?)
+      items: (json['items'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
                   : CountryModel.fromJson(e as Map<String, dynamic>))
@@ -38,5 +40,5 @@ EditProfileDataModel _$EditProfileDataModelFromJson(
 Map<String, dynamic> _$EditProfileDataModelToJson(
         EditProfileDataModel instance) =>
     <String, dynamic>{
-      'countries': instance.countries,
+      'items': instance.items,
     };

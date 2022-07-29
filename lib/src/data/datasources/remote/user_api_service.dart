@@ -96,15 +96,21 @@ abstract class UserApiService {
     @Header('isMockup') bool? isMockup,
   });
 
-  @POST(EndPoints.profile)
+  @PUT(EndPoints.updateProfile)
   Future<HttpResponse<GeneralResponseModel?>> updateProfile(
-    @Queries() UpdateProfileParams params, {
+    @Path() String id,
+    @Body() UpdateProfileParams updateParams, {
     @Header('isMockup') bool? isMockup,
   });
 
-  @POST(EndPoints.addNewCard)
+  @GET(EndPoints.payments)
+  Future<HttpResponse<PaymentResponseModel?>> getPayments({
+    @Header('isMockup') bool? isMockup,
+  });
+
+  @POST(EndPoints.payments)
   Future<HttpResponse<GeneralResponseModel?>> addNewCard(
-    @Queries() NewCardParams params, {
+    @Body() NewCardParams params, {
     @Header('isMockup') bool? isMockup,
   });
 
@@ -116,11 +122,6 @@ abstract class UserApiService {
   @POST(EndPoints.inviteFriends)
   Future<HttpResponse<FriendResponseModel?>> inviteFriend(
     @Queries() FriendInviteParams params, {
-    @Header('isMockup') bool? isMockup,
-  });
-
-  @GET(EndPoints.payments)
-  Future<HttpResponse<PaymentResponseModel?>> getPayments({
     @Header('isMockup') bool? isMockup,
   });
 }

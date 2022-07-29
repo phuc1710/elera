@@ -7,10 +7,8 @@ import '../../../../core/params/sign_in_request_params.dart';
 import '../../../../core/resources/api_error.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
-import '../../../../data/datasources/app_datasources.dart';
 import '../../../../domain/usecases/access_token_save_usecase.dart';
 import '../../../../domain/usecases/sign_in_usecase.dart';
-import '../../../../injector/injector.dart';
 
 part 'signin_event.dart';
 part 'signin_state.dart';

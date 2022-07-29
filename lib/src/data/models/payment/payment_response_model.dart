@@ -1,14 +1,14 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'payment_response_model.g.dart';
 
 @JsonSerializable()
-class PaymentResponseModel extends Equatable {
-  const PaymentResponseModel({
-    this.message,
-    this.errorCode,
-    this.data,
+class PaymentResponseModel {
+  PaymentResponseModel({
+    required this.status,
+    required this.code,
+    required this.message,
+    required this.data,
   });
 
   factory PaymentResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -16,23 +16,16 @@ class PaymentResponseModel extends Equatable {
 
   Map<String, dynamic> toJson() => _$PaymentResponseModelToJson(this);
 
+  final int? status;
+  final int? code;
   final String? message;
-  @JsonKey(name: 'error_code')
-  final int? errorCode;
   final PaymentDataModel? data;
-
-  @override
-  List<Object?> get props => [
-        message,
-        errorCode,
-        data,
-      ];
 }
 
 @JsonSerializable()
-class PaymentDataModel extends Equatable {
-  const PaymentDataModel({
-    required this.payments,
+class PaymentDataModel {
+  PaymentDataModel({
+    required this.items,
   });
 
   factory PaymentDataModel.fromJson(Map<String, dynamic> json) =>
@@ -41,19 +34,15 @@ class PaymentDataModel extends Equatable {
   Map<String, dynamic> toJson() => _$PaymentDataModelToJson(this);
 
   @JsonKey(defaultValue: <PaymentModel>[])
-  final List<PaymentModel?> payments;
-
-  @override
-  List<Object?> get props => [payments];
+  final List<PaymentModel?> items;
 }
 
 @JsonSerializable()
-class PaymentModel extends Equatable {
-  const PaymentModel({
-    this.id,
-    this.displayName,
-    this.status,
-    this.img,
+class PaymentModel {
+  PaymentModel({
+    required this.id,
+    required this.name,
+    required this.img,
   });
 
   factory PaymentModel.fromJson(Map<String, dynamic> json) =>
@@ -61,17 +50,7 @@ class PaymentModel extends Equatable {
 
   Map<String, dynamic> toJson() => _$PaymentModelToJson(this);
 
-  final int? id;
-  @JsonKey(name: 'display_name')
-  final String? displayName;
-  final String? status;
+  final String? id;
+  final String? name;
   final String? img;
-
-  @override
-  List<Object?> get props => [
-        id,
-        displayName,
-        status,
-        img,
-      ];
 }

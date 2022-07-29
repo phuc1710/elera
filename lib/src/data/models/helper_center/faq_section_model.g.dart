@@ -8,7 +8,7 @@ part of 'faq_section_model.dart';
 
 FAQSectionModel _$FAQSectionModelFromJson(Map<String, dynamic> json) =>
     FAQSectionModel(
-      name: json['name'] as String?,
+      type: json['type'] as String?,
       items: (json['items'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
@@ -19,16 +19,20 @@ FAQSectionModel _$FAQSectionModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FAQSectionModelToJson(FAQSectionModel instance) =>
     <String, dynamic>{
-      'name': instance.name,
+      'type': instance.type,
       'items': instance.items,
     };
 
 FAQModel _$FAQModelFromJson(Map<String, dynamic> json) => FAQModel(
+      id: json['id'] as String?,
       title: json['title'] as String?,
       answer: json['answer'] as String?,
+      type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$FAQModelToJson(FAQModel instance) => <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'answer': instance.answer,
+      'type': instance.type,
     };

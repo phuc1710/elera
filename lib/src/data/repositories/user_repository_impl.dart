@@ -229,14 +229,33 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
+  Future<DataState<PaymentResponseModel?>> getPayments() async {
+    try {
+      final httpResponse = await _userApiService.getPayments();
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(
+        DioError(
+          error: httpResponse.response.statusMessage,
+          response: httpResponse.response,
+          requestOptions: httpResponse.response.requestOptions,
+          type: DioErrorType.response,
+        ),
+      );
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
   Future<DataState<GeneralResponseModel?>> addNewCard(
     NewCardParams params,
   ) async {
     try {
-      final httpResponse = await _userApiService.addNewCard(
-        params,
-        isMockup: true, // TODO(thinhhh): mockup
-      );
+      final httpResponse = await _userApiService.addNewCard(params);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data);
@@ -280,35 +299,9 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<DataState<PaymentResponseModel?>> getPayments() async {
-    try {
-      final httpResponse = await _userApiService.getPayments(
-        isMockup: true, // TODO(thinhhh): mockup
-      );
-
-      if (httpResponse.response.statusCode == HttpStatus.ok) {
-        return DataSuccess(httpResponse.data);
-      }
-
-      return DataFailed(
-        DioError(
-          error: httpResponse.response.statusMessage,
-          response: httpResponse.response,
-          requestOptions: httpResponse.response.requestOptions,
-          type: DioErrorType.response,
-        ),
-      );
-    } on DioError catch (e) {
-      return DataFailed(e);
-    }
-  }
-
-  @override
   Future<DataState<ProfileResponseModel?>> getProfile() async {
     try {
-      final httpResponse = await _userApiService.getProfile(
-        isMockup: true, // TODO(thinhhh): mockup
-      );
+      final httpResponse = await _userApiService.getProfile();
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data);
@@ -356,12 +349,12 @@ class UserRepositoryImpl implements UserRepository {
 
   @override
   Future<DataState<GeneralResponseModel?>> updateProfile(
-    UpdateProfileParams param,
+    UpdateProfileParams params,
   ) async {
     try {
       final httpResponse = await _userApiService.updateProfile(
-        param,
-        isMockup: true, // TODO(thinhhh): mockup
+        await cache.accessToken,
+        params,
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {

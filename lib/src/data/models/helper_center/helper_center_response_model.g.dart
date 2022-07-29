@@ -9,18 +9,20 @@ part of 'helper_center_response_model.dart';
 HelperCenterResponseModel _$HelperCenterResponseModelFromJson(
         Map<String, dynamic> json) =>
     HelperCenterResponseModel(
-      errorCode: json['error_code'] as int?,
+      status: json['status'] as int?,
+      code: json['code'] as int?,
+      message: json['message'] as String?,
       data: json['data'] == null
           ? null
           : HelperCenterDataModel.fromJson(
               json['data'] as Map<String, dynamic>),
-      message: json['message'] as String?,
     );
 
 Map<String, dynamic> _$HelperCenterResponseModelToJson(
         HelperCenterResponseModel instance) =>
     <String, dynamic>{
-      'error_code': instance.errorCode,
+      'status': instance.status,
+      'code': instance.code,
       'message': instance.message,
       'data': instance.data,
     };

@@ -8,14 +8,14 @@ part of 'helper_contact_model.dart';
 
 HelperContactModel _$HelperContactModelFromJson(Map<String, dynamic> json) =>
     HelperContactModel(
+      id: json['id'] as String?,
       name: json['name'] as String?,
-      id: json['id'] as int?,
       img: json['img'] as String?,
     );
 
 Map<String, dynamic> _$HelperContactModelToJson(HelperContactModel instance) =>
     <String, dynamic>{
-      'name': instance.name,
       'id': instance.id,
+      'name': instance.name,
       'img': instance.img,
     };

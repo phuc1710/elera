@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 
 import '../../../core/params/appbar_params.dart';
 import '../../../core/params/date_picker_param.dart';
@@ -38,27 +39,27 @@ class _EditProfileViewState extends State<EditProfileView> {
   late TextEditingController genderController;
   late TextEditingController jobController;
 
-  CountryModel? selectedCountry;
-  bool selectedGender = false;
+  final genders = ['Male', 'Female', 'Others'];
 
-  final genders = ['Male', 'Female'];
+  CountryModel? selectedCountry;
+  late String selectedGender;
 
   @override
   void initState() {
     super.initState();
     fullNameController =
-        TextEditingController(text: widget.profile?.fullname ?? '');
+        TextEditingController(text: widget.profile?.fullName ?? '');
     shortNameController =
-        TextEditingController(text: widget.profile?.name ?? '');
+        TextEditingController(text: widget.profile?.nickname ?? '');
     dobController = TextEditingController(text: widget.profile?.dob ?? '');
     emailController = TextEditingController(text: widget.profile?.email ?? '');
     countryController =
         TextEditingController(text: widget.profile?.country ?? '');
     phoneController = TextEditingController(text: widget.profile?.phone ?? '');
-    genderController = TextEditingController(
-      text: widget.profile?.gender == false ? genders[0] : genders[1],
-    );
+    genderController = TextEditingController(text: widget.profile?.gender);
     jobController = TextEditingController(text: widget.profile?.job ?? '');
+
+    selectedGender = genders.first;
   }
 
   @override
@@ -125,7 +126,9 @@ class _EditProfileViewState extends State<EditProfileView> {
               const SizedBox(height: 20),
               PhoneTextField(
                 controller: phoneController,
-                countries: data?.countries,
+                countries: data?.items,
+                currentCountry: selectedCountry,
+                onCountryChange: updateSelectedCountry,
               ),
               const SizedBox(height: 20),
               ProfileTextField(
@@ -153,7 +156,7 @@ class _EditProfileViewState extends State<EditProfileView> {
       controller: countryController,
       onTap: () => showModalCountries(
         context,
-        countries: data?.countries ?? [],
+        countries: data?.items ?? [],
       ),
       readOnly: true,
       icon: const Icon(Icons.arrow_drop_down),
@@ -171,10 +174,11 @@ class _EditProfileViewState extends State<EditProfileView> {
           context.read<EditProfileBloc>().add(
                 EditProfileUpdated(
                   UpdateProfileParams(
-                    fullname: fullNameController.text,
-                    name: shortNameController.text,
+                    fullName: fullNameController.text,
+                    nickname: shortNameController.text,
                     email: emailController.text,
-                    dob: dobController.text,
+                    dob: dobController.text
+                        .getTimeStamp(IntlHelper.dateFormatter),
                     country: countryController.text,
                     phone: phoneController.text,
                     gender: selectedGender,
@@ -223,8 +227,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             context,
             title: countries[index]?.name,
             onTap: () {
-              selectedCountry = countries[index];
-              countryController.text = countries[index]?.name ?? '';
+              updateSelectedCountry(countries[index]);
             },
           );
         },
@@ -245,7 +248,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             context,
             title: genders[index],
             onTap: () {
-              selectedGender = index == 1;
+              selectedGender = genders[index];
               genderController.text = genders[index];
             },
           );
@@ -263,5 +266,21 @@ class _EditProfileViewState extends State<EditProfileView> {
         dateFormat: IntlHelper.dateFormatter,
       ),
     );
+  }
+
+  void updateSelectedCountry(CountryModel? country) {
+    phoneController.text =
+        phoneController.text.replaceAll(selectedCountry?.dialCode ?? '', '');
+
+    setState(() {
+      selectedCountry = country;
+    });
+
+    countryController.text = selectedCountry?.name ?? '';
+
+    phoneController.text =
+        (selectedCountry?.dialCode ?? '') + phoneController.text;
+
+    phoneController.text = formatAsPhoneNumber(phoneController.text) ?? '';
   }
 }
