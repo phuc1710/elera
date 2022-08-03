@@ -3,8 +3,8 @@
   "error_code": 1,
   "data": {
     "contacts": [
-      { "type": "Email", "info": "email@gmail.com" },
-      { "type": "SMS", "info": "+84123456789" }
+      { "type": "SMS", "info": "+1 111 ******99" },
+      { "type": "Email", "info": "and***ley@yourdomain.com" }
     ]
   }
 }

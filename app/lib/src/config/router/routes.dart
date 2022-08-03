@@ -22,6 +22,7 @@ class Routes {
   static const String searchRoute = '/search';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';
+  static const String notificationSettingsRoute = '/notification_settings';
   static const String paymentRoute = '/payment';
   static const String newCardRoute = '/new_card';
   static const String securityRoute = '/security';

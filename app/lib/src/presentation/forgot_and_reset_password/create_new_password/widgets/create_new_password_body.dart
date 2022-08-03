@@ -34,24 +34,23 @@ class _CreateNewPasswordBodyState extends State<CreateNewPasswordBody> {
         }
       },
       builder: (context, state) {
+        final screenWidth = MediaQuery.of(context).size.width;
+        final screenHeight = MediaQuery.of(context).size.height;
+
         return Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
           child: ListView(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).size.height * 0.05,
-                ),
+                padding: EdgeInsets.symmetric(vertical: screenHeight * 0.05),
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.32,
+                  height: screenHeight * 0.32,
                   child: Image.asset('assets/images/new_password.png'),
                 ),
               ),
               Text(
                 'Create Your New Password',
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
               PasswordInput(
                 hint: 'Password',

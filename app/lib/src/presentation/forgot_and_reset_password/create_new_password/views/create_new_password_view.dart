@@ -11,23 +11,22 @@ class CreateNewPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-      },
+      onTap: () => FocusScope.of(context).unfocus(),
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
             title: Text(
               'Create New Password',
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme.of(context).textTheme.headline6,
             ),
-            foregroundColor: Colors.black,
+            leadingWidth: 35,
+            foregroundColor: const Color(0xff212121),
             backgroundColor: Colors.transparent,
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider<PasswordCreationBloc>(
-            create: (context) => injector(),
+            create: (context) => getIt(),
             child: const CreateNewPasswordBody(),
           ),
         ),

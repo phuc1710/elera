@@ -40,10 +40,11 @@ class _EnterPinBodyState extends State<EnterPinBody> {
         }
       },
       builder: (context, state) {
+        final screenWidth = MediaQuery.of(context).size.width;
+        final screenHeight = MediaQuery.of(context).size.height;
+
         return Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
           child: Column(
             children: [
               const Expanded(
@@ -51,20 +52,20 @@ class _EnterPinBodyState extends State<EnterPinBody> {
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * 0.05,
-                  MediaQuery.of(context).size.height * 0.1,
-                  MediaQuery.of(context).size.width * 0.05,
-                  MediaQuery.of(context).size.height * 0.05,
+                  screenWidth * 0.05,
+                  screenHeight * 0.1,
+                  screenWidth * 0.05,
+                  screenHeight * 0.05,
                 ),
                 child: Text(
                   'Code has been sent to ${widget._contactInfo}',
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.bodyText2,
                   textAlign: TextAlign.center,
                 ),
               ),
               PinCodeInput(
                 controller: pinController,
-                obscureText: true,
+                obscureText: false,
               ),
               ResendCodeRow(contactInfo: widget._contactInfo as String),
               MainActionButton(pin: pinController.text),

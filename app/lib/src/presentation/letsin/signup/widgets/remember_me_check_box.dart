@@ -17,20 +17,25 @@ class _RememberMeCheckBoxState extends State<RememberMeCheckBox> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Checkbox(
-          value: rememberMe,
-          activeColor: const Color(0xff5f82ff),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(7.0),
+          side: BorderSide(
+            color: Theme.of(context).colorScheme.primary,
+            width: 2.5,
           ),
-          onChanged: (checked) {
-            setState(() {
-              rememberMe = checked;
-            });
-          },
+          value: rememberMe,
+          activeColor: Theme.of(context).colorScheme.primary,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
+          onChanged: (checked) => setState(() => rememberMe = checked),
         ),
-        Text(
-          'Remember Me',
-          style: Theme.of(context).textTheme.displaySmall,
+        GestureDetector(
+          onTap: () => setState(() => rememberMe = rememberMe == false),
+          child: Text(
+            'Remember Me',
+            style: Theme.of(context)
+                .textTheme
+                .caption
+                ?.copyWith(fontWeight: FontWeight.w600),
+          ),
         ),
       ],
     );

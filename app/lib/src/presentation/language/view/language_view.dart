@@ -21,7 +21,7 @@ class _LanguageViewState extends State<LanguageView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => injector<LanguageBloc>()..add(LanguageStarted()),
+      create: (context) => getIt<LanguageBloc>()..add(LanguageStarted()),
       child: Scaffold(
         appBar: buildAppBar(
           AppBarParams(
@@ -85,7 +85,7 @@ class _LanguageViewState extends State<LanguageView> {
           width: double.maxFinite,
           child: Text(
             title,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyText1?.copyWith(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -102,7 +102,7 @@ class _LanguageViewState extends State<LanguageView> {
               controlAffinity: ListTileControlAffinity.trailing,
               title: Text(
                 data[index]?.name ?? '',
-                style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                style: Theme.of(context).textTheme.bodyText2?.copyWith(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),

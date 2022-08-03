@@ -6,13 +6,13 @@ import '../core/nd_network/network/environment.dart' as env;
 // Project imports:
 import 'injector.config.dart';
 
-final injector = GetIt.instance;
+final getIt = GetIt.instance;
 
 @InjectableInit()
-void configureDependencies() => $initGetIt(injector);
+void configureDependencies() => $initGetIt(getIt);
 
 Future<void> initializeDependencies() async {
-  injector.registerSingleton<Network>(
+  getIt.registerSingleton<Network>(
     Network(
       enableLogger: true,
       environment: env.Environment.sandbox,

@@ -43,36 +43,30 @@ class _CourseCardState extends State<CourseCard> {
         child: Row(
           children: [
             CourseImage(
-              imagePath: widget.courseModel?.image ?? '',
+              imagePath: '${widget.courseModel?.image}',
             ),
             CourseContentColumn(
-              tag: widget.courseModel?.categoryName ?? '',
-              name: widget.courseModel?.name ?? '',
-              price: widget.courseModel?.discountPrice ?? '',
-              originalPrice: widget.courseModel?.originalPrice ?? '',
+              tag: '${widget.courseModel?.categoryName}',
+              name: '${widget.courseModel?.name}',
+              price: '${widget.courseModel?.discountPrice}',
+              originalPrice: '${widget.courseModel?.originalPrice}',
               rating: widget.courseModel?.rating ?? 0,
-              studentCount: widget.courseModel?.enrollCount ?? '',
+              studentCount: '${widget.courseModel?.enrollCount}',
             ),
             if (widget.isInRemoveBookmark)
               SizedBox(
                 height: 120,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Icon(Icons.bookmark),
-                  ],
+                  children: const [Icon(Icons.bookmark)],
                 ),
               )
             else
               BookmarkButton(
                 courseModel: widget.courseModel,
                 isInRemoveBookmark: widget.isInRemoveBookmark,
-                onAddBookmark: () {
-                  widget.onAddBookmark();
-                },
-                onRemoveBookmark: () {
-                  widget.onRemoveBookmark();
-                },
+                onAddBookmark: () => widget.onAddBookmark(),
+                onRemoveBookmark: () => widget.onRemoveBookmark(),
               ),
           ],
         ),

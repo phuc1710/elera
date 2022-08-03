@@ -54,8 +54,8 @@ dependencies:
   intl: ^0.17.0
   webview_flutter: ^3.0.4
   auto_route: ^4.2.1
-  ez_ui:
-    path: ../_shared/ez_ui
+  app_ui:
+    path: ../_shared/app_ui
 
 dev_dependencies:
   flutter_test:

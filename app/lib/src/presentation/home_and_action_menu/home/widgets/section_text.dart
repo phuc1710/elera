@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SectionText extends StatelessWidget {
   const SectionText({
@@ -13,11 +12,10 @@ class SectionText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.urbanist(
-        fontSize: 14,
-        fontWeight: FontWeight.w700,
-        color: Colors.black,
-      ),
+      style: Theme.of(context)
+          .textTheme
+          .bodyText2
+          ?.copyWith(fontWeight: FontWeight.bold),
     );
   }
 }

@@ -75,6 +75,7 @@ class _SignInBodyState extends State<SignInBody> {
   }
 
   void onSignInButtonTapped(BuildContext context) {
+    FocusScope.of(context).unfocus();
     context.read<SignInBloc>().add(
           SignInSubmitted(
             email: _emailController.text,

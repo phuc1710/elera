@@ -32,20 +32,20 @@ class _FriendTileState extends State<FriendTile> {
           widget.friend?.name ?? '',
           style: Theme.of(context)
               .textTheme
-              .bodyMedium
-              ?.copyWith(color: Colors.black),
+              .bodyText2
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
       subtitle: Text(
         widget.friend?.phone ?? '',
-        style: Theme.of(context)
-            .textTheme
-            .bodySmall
-            ?.copyWith(color: Colors.black, fontSize: 14),
+        style: Theme.of(context).textTheme.overline?.copyWith(
+              fontSize: 11,
+              color: const Color(0xff616161),
+            ),
       ),
       trailing: SizedBox(
-        width: 55,
-        height: 30,
+        width: 80,
+        height: 35,
         child: BaseButton(
           title: isInvited ? 'Invited' : 'Invite',
           color: isInvited ? Colors.white : Theme.of(context).primaryColor,
@@ -54,6 +54,13 @@ class _FriendTileState extends State<FriendTile> {
           titleColor: isInvited ? Theme.of(context).primaryColor : Colors.white,
           borderRadius: 20,
           onTap: widget.onInvited,
+          shadow: const [
+            BoxShadow(
+              color: Color.fromRGBO(51, 94, 247, 0.25),
+              blurRadius: 24,
+              offset: Offset(4, 8),
+            )
+          ],
         ),
       ),
     );

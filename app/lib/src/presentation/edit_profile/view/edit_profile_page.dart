@@ -64,11 +64,14 @@ class _EditProfileViewState extends State<EditProfileView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          injector<EditProfileBloc>()..add(EditProfileStarted()),
+      create: (context) => getIt<EditProfileBloc>()..add(EditProfileStarted()),
       child: Scaffold(
         appBar: buildAppBar(
-          AppBarParams(context, title: 'Edit Profile'),
+          AppBarParams(
+            context,
+            title: 'Edit Profile',
+            backgroundColor: Colors.transparent,
+          ),
         ),
         body: BlocConsumer<EditProfileBloc, EditProfileState>(
           listener: (context, state) {
@@ -100,7 +103,7 @@ class _EditProfileViewState extends State<EditProfileView> {
   Widget buildBody(BuildContext context, EditProfileDataModel? data) {
     return SizedBox(
       child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
           child: Column(
@@ -166,7 +169,14 @@ class _EditProfileViewState extends State<EditProfileView> {
       child: BaseButton(
         title: 'Update',
         titleColor: Colors.white,
-        color: Colors.blue[700],
+        color: Theme.of(context).colorScheme.primary,
+        shadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(51, 94, 247, 0.25),
+            blurRadius: 24,
+            offset: Offset(4, 8),
+          )
+        ],
         onTap: () {
           context.read<EditProfileBloc>().add(
                 EditProfileUpdated(

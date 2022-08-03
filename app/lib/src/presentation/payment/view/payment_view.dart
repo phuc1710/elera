@@ -23,17 +23,15 @@ class _PaymentViewState extends State<PaymentView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => injector<PaymentBloc>()..add(PaymentStarted()),
+      create: (context) => getIt<PaymentBloc>()..add(PaymentStarted()),
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: buildAppBar(
           AppBarParams(
             context,
             title: 'Payment',
-            backgroundColor: Colors.grey[100],
-            actions: [
-              const Icon(Icons.more_horiz_outlined),
-            ],
+            backgroundColor: Colors.transparent,
+            actions: [const Icon(Icons.more_horiz_outlined)],
           ),
         ),
         body: BlocConsumer<PaymentBloc, PaymentState>(
@@ -89,8 +87,15 @@ class _PaymentViewState extends State<PaymentView> {
       child: BaseButton(
         title: 'Add New Card',
         titleColor: Colors.white,
-        color: Colors.blue[700],
+        color: Theme.of(context).colorScheme.primary,
         onTap: () => context.router.pushNamed(Routes.newCardRoute),
+        shadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(51, 94, 247, 0.25),
+            blurRadius: 24,
+            offset: Offset(4, 8),
+          )
+        ],
       ),
     );
   }

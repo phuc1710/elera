@@ -19,7 +19,7 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
   bool isTimeOut = false;
   @override
   Widget build(BuildContext context) {
-    final TextStyle? displayMedium = Theme.of(context).textTheme.displayMedium;
+    final TextStyle? bodyText2 = Theme.of(context).textTheme.bodyText2;
 
     return Expanded(
       flex: 2,
@@ -27,9 +27,9 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Resend code in ', style: displayMedium),
+          Text('Resend code in ', style: bodyText2),
           buildResendTimerAndButton(context),
-          Text(' s', style: displayMedium),
+          Text(' s', style: bodyText2),
         ],
       ),
     );
@@ -37,17 +37,17 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
 
   Widget buildResendTimerAndButton(BuildContext context) {
     const Duration duration = Duration(minutes: 1);
+    final TextStyle? bodyText2withColor = Theme.of(context)
+        .textTheme
+        .bodyText2
+        ?.copyWith(color: Theme.of(context).colorScheme.primary);
 
     return !isTimeOut
         ? TweenAnimationBuilder(
             tween: Tween(begin: duration, end: Duration.zero),
             duration: duration,
-            builder: (BuildContext context, Duration duration, Widget? child) {
-              return Text(
-                '${duration.inSeconds}',
-                style: Theme.of(context).textTheme.labelMedium,
-              );
-            },
+            builder: (BuildContext context, Duration duration, Widget? child) =>
+                Text('${duration.inSeconds}', style: bodyText2withColor),
             onEnd: () => setState(() => isTimeOut = true),
           )
         : InkWell(
@@ -57,8 +57,7 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
                   .add(PinSendingRequested(widget.contactInfo));
               setState(() => isTimeOut = false);
             },
-            child:
-                Text('Resend', style: Theme.of(context).textTheme.labelMedium),
+            child: Text('Resend', style: bodyText2withColor),
           );
   }
 }

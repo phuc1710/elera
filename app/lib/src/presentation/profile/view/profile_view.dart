@@ -7,6 +7,7 @@ import '../../../config/router/app_router.dart';
 import '../../../config/router/routes.dart';
 import '../../../core/params/appbar_params.dart';
 import '../../../injector/injector.dart';
+import '../../_blocs/app_multi_bloc_provider.dart';
 import '../../widgets/base_appbar.dart';
 import '../../widgets/logout_button.dart';
 import '../bloc/profile_bloc.dart';
@@ -20,42 +21,51 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  var isDarkMode = false;
-
   @override
   Widget build(BuildContext context) {
+    final Brightness brightness = Theme.of(context).brightness;
+    final bool isDarkMode = brightness == Brightness.dark;
+
     return BlocProvider(
-      create: (context) => injector<ProfileBloc>()..add(ProfileStarted()),
-      child: Container(
+      create: (context) => getIt<ProfileBloc>()..add(ProfileStarted()),
+      child: SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
-        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TopAppBar(
-                AppBarParams(
-                  context,
-                  title: 'Profile',
-                  leading: Image.network(
-                    'https://www.pinpng.com/pngs/m/114-1147460_elearning-development-e-learning-icon-orange-hd-png.png',
-                    width: 30,
-                    height: 30,
-                  ),
-                  actions: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.more_horiz_rounded,
-                        color: Colors.black,
-                      ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05,
+                ),
+                child: TopAppBar(
+                  AppBarParams(
+                    context,
+                    title: 'Profile',
+                    leading: Image.network(
+                      'https://www.pinpng.com/pngs/m/114-1147460_elearning-development-e-learning-icon-orange-hd-png.png',
+                      width: 30,
+                      height: 30,
                     ),
-                  ],
+                    actions: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.more_horiz_rounded,
+                          color: Color(0xff212121),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               buildUserDisplay(context),
-              Divider(color: Colors.grey.withOpacity(0.8)),
-              ...actions(context),
+              Divider(
+                indent: MediaQuery.of(context).size.width * 0.05,
+                endIndent: MediaQuery.of(context).size.width * 0.05,
+                color: Colors.grey.withOpacity(0.8),
+              ),
+              ...actions(context, isDarkMode),
               const LogoutButton(),
             ],
           ),
@@ -73,6 +83,7 @@ class _ProfileViewState extends State<ProfileView> {
   }) {
     return ListTile(
       leading: Icon(icon, size: 35),
+      minLeadingWidth: 20,
       onTap: onTap,
       title: Row(
         children: [
@@ -80,10 +91,7 @@ class _ProfileViewState extends State<ProfileView> {
             child: Text(
               title,
               textAlign: TextAlign.start,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium
-                  ?.copyWith(color: Colors.black),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
           if (value != null)
@@ -91,10 +99,7 @@ class _ProfileViewState extends State<ProfileView> {
               child: Text(
                 value,
                 textAlign: TextAlign.end,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(color: Colors.black),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             )
         ],
@@ -121,12 +126,15 @@ class _ProfileViewState extends State<ProfileView> {
                   const SizedBox(height: 15),
                   Text(
                     state.profile?.fullname ?? '',
-                    style: Theme.of(context).textTheme.titleSmall,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(fontSize: 24),
                   ),
                   const SizedBox(height: 12),
                   Text(
                     state.profile?.email ?? '',
-                    style: Theme.of(context).textTheme.displayLarge,
+                    style: Theme.of(context).textTheme.button,
                   ),
                 ],
               ),
@@ -140,7 +148,7 @@ class _ProfileViewState extends State<ProfileView> {
   }
 
   // ignore: long-method
-  List<Widget> actions(BuildContext context) => [
+  List<Widget> actions(BuildContext context, bool isDarkMode) => [
         BlocBuilder<ProfileBloc, ProfileState>(
           builder: (context, state) {
             if (state is ProfileFetchSuccess) {
@@ -161,7 +169,8 @@ class _ProfileViewState extends State<ProfileView> {
           context,
           title: 'Notification',
           icon: Icons.notifications,
-          onTap: () => context.router.pushNamed('/notification_setting'),
+          onTap: () =>
+              context.router.pushNamed(Routes.notificationSettingsRoute),
         ),
         profileActionItem(
           context,
@@ -192,15 +201,18 @@ class _ProfileViewState extends State<ProfileView> {
             textAlign: TextAlign.start,
             style: Theme.of(context)
                 .textTheme
-                .bodyMedium
+                .bodyText1
                 ?.copyWith(color: Colors.black),
           ),
           trailing: CupertinoSwitch(
             value: isDarkMode,
             onChanged: (value) {
-              setState(() {
-                isDarkMode = value;
-              });
+              if (value) {
+                context.read<ThemeBloc>().add(DarkThemeEnabled());
+              }
+              if (!value) {
+                context.read<ThemeBloc>().add(DarkThemeDisabled());
+              }
             },
           ),
         ),

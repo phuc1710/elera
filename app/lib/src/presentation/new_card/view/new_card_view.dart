@@ -29,7 +29,7 @@ class _NewCardViewState extends State<NewCardView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => injector<NewCardBloc>(),
+      create: (context) => getIt<NewCardBloc>(),
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: buildAppBar(
@@ -100,7 +100,14 @@ class _NewCardViewState extends State<NewCardView> {
       child: BaseButton(
         title: 'Add New Card',
         titleColor: Colors.white,
-        color: Colors.blue[700],
+        color: Theme.of(context).colorScheme.primary,
+        shadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(51, 94, 247, 0.25),
+            blurRadius: 24,
+            offset: Offset(4, 8),
+          )
+        ],
         onTap: () {
           context.read<NewCardBloc>().add(
                 NewCardAdded(
@@ -159,7 +166,7 @@ class _NewCardViewState extends State<NewCardView> {
               textAlign: TextAlign.start,
               style: Theme.of(context)
                   .textTheme
-                  .displayLarge
+                  .bodyText2
                   ?.copyWith(fontWeight: FontWeight.bold),
             ),
           ),

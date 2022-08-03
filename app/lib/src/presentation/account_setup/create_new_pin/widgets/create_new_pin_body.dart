@@ -30,22 +30,26 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
         }
       },
       builder: (context, state) {
+        final screenWidth = MediaQuery.of(context).size.width;
+        final screenHeight = MediaQuery.of(context).size.height;
+
         return Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05,
-          ),
-          child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+          child: Column(
             children: [
+              const Expanded(
+                child: SizedBox(),
+              ),
               Padding(
                 padding: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * 0.05,
-                  MediaQuery.of(context).size.height * 0.1,
-                  MediaQuery.of(context).size.width * 0.05,
-                  MediaQuery.of(context).size.height * 0.05,
+                  screenWidth * 0.05,
+                  screenHeight * 0.1,
+                  screenWidth * 0.05,
+                  screenHeight * 0.05,
                 ),
                 child: Text(
                   'Add a pin number to make your account more secure',
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.bodyText2,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -53,11 +57,11 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
                 controller: pinController,
                 obscureText: true,
               ),
+              const Expanded(flex: 2, child: SizedBox()),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).size.height * 0.02,
-                ),
+                padding: EdgeInsets.only(bottom: screenHeight * 0.032),
                 child: InkWell(
+                  borderRadius: BorderRadius.circular(40),
                   onTap: () => onContinueButtonTapped(context),
                   child: const MainActionInk(buttonString: 'Continue'),
                 ),

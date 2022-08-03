@@ -15,7 +15,10 @@ class ForgotPasswordButton extends StatelessWidget {
       onPressed: () => context.router.push(SelectContactRoute(email: email)),
       child: Text(
         'Forgot the password?',
-        style: Theme.of(context).textTheme.labelMedium,
+        style: Theme.of(context).textTheme.caption?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
       ),
     );
   }

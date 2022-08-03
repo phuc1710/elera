@@ -47,7 +47,7 @@ class _BookmarkButtonState extends State<BookmarkButton> {
               widget.courseModel?.isBookmarked ?? false
                   ? Icons.bookmark
                   : Icons.bookmark_outline,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
         ],

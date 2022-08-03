@@ -16,6 +16,7 @@ class DealsSlider extends StatefulWidget {
 class _DealsSliderState extends State<DealsSlider> {
   final _controller = PageController();
   var page = 0;
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
@@ -35,40 +36,38 @@ class _DealsSliderState extends State<DealsSlider> {
               horizontal: MediaQuery.of(context).size.width * 0.05,
               vertical: MediaQuery.of(context).size.height * 0.03,
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(25),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  boxShadow: getButtonBoxShadow(context),
-                ),
-                height: MediaQuery.of(context).size.height * 0.22,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    PageView(
-                      controller: _controller,
-                      onPageChanged: (index) => setState(() {
-                        page = index;
-                      }),
-                      children: List.generate(state.data?.deals?.length ?? 0,
-                          (index) {
-                        final deal = state.data?.deals?[index];
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Theme.of(context).primaryColor,
+                boxShadow: getButtonBoxShadow(context),
+              ),
+              height: MediaQuery.of(context).size.height * 0.22,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  PageView(
+                    controller: _controller,
+                    onPageChanged: (index) => setState(() {
+                      page = index;
+                    }),
+                    children:
+                        List.generate(state.data?.deals?.length ?? 0, (index) {
+                      final deal = state.data?.deals?[index];
 
-                        return DealPage(
-                          title: deal?.title,
-                          subtitle: deal?.subtitle,
-                          description: deal?.description,
-                          deal: deal?.deal,
-                        );
-                      }),
-                    ),
-                    PageIndicator(
-                      controller: _controller,
-                      pageCount: state.data?.deals?.length ?? 0,
-                    )
-                  ],
-                ),
+                      return DealPage(
+                        title: deal?.title,
+                        subtitle: deal?.subtitle,
+                        description: deal?.description,
+                        deal: deal?.deal,
+                      );
+                    }),
+                  ),
+                  PageIndicator(
+                    controller: _controller,
+                    pageCount: state.data?.deals?.length ?? 0,
+                  )
+                ],
               ),
             ),
           );
@@ -80,10 +79,10 @@ class _DealsSliderState extends State<DealsSlider> {
 
   List<BoxShadow>? getButtonBoxShadow(BuildContext context) {
     return [
-      BoxShadow(
-        color: Colors.black.withOpacity(0.2),
-        blurRadius: 10,
-        offset: const Offset(0, 3),
+      const BoxShadow(
+        color: Color.fromRGBO(51, 94, 247, 0.25),
+        blurRadius: 24,
+        offset: Offset(4, 8),
       )
     ];
   }

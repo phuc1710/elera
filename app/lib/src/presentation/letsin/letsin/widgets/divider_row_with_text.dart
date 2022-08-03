@@ -14,14 +14,15 @@ class DividerRowWithText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Padding(
       padding: _padding,
       child: Row(
         children: [
           Expanded(
             child: Divider(
-              indent: MediaQuery.of(context).size.width * 0.05,
-              endIndent: MediaQuery.of(context).size.width * 0.03,
+              endIndent: screenWidth * 0.03,
             ),
           ),
           FittedBox(
@@ -30,15 +31,14 @@ class DividerRowWithText extends StatelessWidget {
                 _text,
                 style: Theme.of(context)
                     .textTheme
-                    .labelSmall
-                    ?.copyWith(color: Colors.grey),
+                    .bodyText2
+                    ?.copyWith(color: const Color(0xff616161)),
               ),
             ),
           ),
           Expanded(
             child: Divider(
-              indent: MediaQuery.of(context).size.width * 0.03,
-              endIndent: MediaQuery.of(context).size.width * 0.05,
+              indent: screenWidth * 0.03,
             ),
           )
         ],

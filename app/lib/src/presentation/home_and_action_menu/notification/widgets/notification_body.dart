@@ -30,7 +30,7 @@ class NotificationBody extends StatelessWidget {
                     vertical: MediaQuery.of(context).size.height * 0.01,
                   ),
                   child: SectionText(
-                    text: state.data?.notificationList?[index].date ?? '',
+                    text: '${state.data?.notificationList?[index].date}',
                   ),
                 ),
                 ...List.generate(
@@ -52,9 +52,7 @@ class NotificationBody extends StatelessWidget {
               for (var list in notification2dList) ...list
             ];
 
-            return ListView(
-              children: notification1dList,
-            );
+            return ListView(children: notification1dList);
           }
 
           return const Center(child: CircularProgressIndicator());

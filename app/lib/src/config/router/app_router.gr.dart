@@ -149,7 +149,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(SearchRoute.name, path: '/search'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
-            path: '/notification_setting'),
+            path: '/notification_settings'),
         RouteConfig(PaymentRoute.name, path: '/payment'),
         RouteConfig(NewCardRoute.name, path: '/new_card'),
         RouteConfig(SecurityRoute.name, path: '/security'),
@@ -224,7 +224,7 @@ class SetYourFingerprintRoute extends PageRouteInfo<void> {
 class SelectContactRoute extends PageRouteInfo<SelectContactRouteArgs> {
   SelectContactRoute({Key? key, required String email})
       : super(SelectContactRoute.name,
-            path: Routes.selectContactRoute,
+            path: '/select_contact',
             args: SelectContactRouteArgs(key: key, email: email));
 
   static const String name = 'SelectContactRoute';
@@ -354,7 +354,7 @@ class EditProfileRouteArgs {
 /// [NotificationSettingsView]
 class NotificationSettingsRoute extends PageRouteInfo<void> {
   const NotificationSettingsRoute()
-      : super(NotificationSettingsRoute.name, path: '/notification_setting');
+      : super(NotificationSettingsRoute.name, path: '/notification_settings');
 
   static const String name = 'NotificationSettingsRoute';
 }

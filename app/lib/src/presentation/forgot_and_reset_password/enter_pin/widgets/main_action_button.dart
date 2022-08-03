@@ -17,10 +17,11 @@ class _MainActionButtonState extends State<MainActionButton> {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
+          EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.042),
       child: InkWell(
+        borderRadius: BorderRadius.circular(40),
         onTap: () => onContinueButtonTapped(context),
-        child: const MainActionInk(buttonString: 'Continue'),
+        child: const MainActionInk(buttonString: 'Verify', width: 0.9,),
       ),
     );
   }

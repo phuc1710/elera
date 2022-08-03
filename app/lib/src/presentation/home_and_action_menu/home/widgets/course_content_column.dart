@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'course_tag.dart';
 import 'price_row.dart';
@@ -36,11 +35,10 @@ class CourseContentColumn extends StatelessWidget {
               name.replaceAll('', '\u{200B}'),
               overflow: TextOverflow.ellipsis,
               softWrap: false,
-              style: GoogleFonts.urbanist(
-                fontSize: 14,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2
+                  ?.copyWith(fontWeight: FontWeight.bold),
             ),
             PriceRow(
               price: price,
@@ -48,7 +46,10 @@ class CourseContentColumn extends StatelessWidget {
             ),
             Text(
               '⭐  $rating  |  $studentCount students',
-              style: Theme.of(context).textTheme.displaySmall,
+              style: Theme.of(context)
+                  .textTheme
+                  .overline
+                  ?.copyWith(color: const Color(0xff616161)),
             ),
           ],
         ),

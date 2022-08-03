@@ -35,7 +35,7 @@ class ProfileTextField extends StatelessWidget {
         ),
         style: Theme.of(context)
             .textTheme
-            .displayLarge
+            .caption
             ?.copyWith(fontWeight: FontWeight.bold),
       ),
     );

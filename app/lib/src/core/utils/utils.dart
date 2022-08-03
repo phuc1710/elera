@@ -16,7 +16,10 @@ class Utils {
       SnackBar(
         content: Text(
           message ?? 'An error occurred',
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context)
+              .textTheme
+              .caption
+              ?.copyWith(color: Colors.white),
         ),
       ),
     );

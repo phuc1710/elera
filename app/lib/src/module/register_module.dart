@@ -15,11 +15,10 @@ import '../injector/injector.dart';
 @module
 abstract class RegisterModule {
   @Named(kApiDio)
-  Dio get apiDio => injector<Network>().apiProvider.apiDio;
+  Dio get apiDio => getIt<Network>().apiProvider.apiDio;
 
   @Named(kApiBaseUrl)
-  String get apiBaseUrl =>
-      injector<Network>().apiProvider.apiDio.options.baseUrl;
+  String get apiBaseUrl => getIt<Network>().apiProvider.apiDio.options.baseUrl;
 
   @lazySingleton
   UserApiService userApiService(

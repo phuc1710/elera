@@ -31,8 +31,8 @@ class TitleRow extends StatelessWidget {
               leadingButtonText,
               style: Theme.of(context)
                   .textTheme
-                  .labelMedium
-                  ?.copyWith(fontWeight: FontWeight.w700),
+                  .button
+                  ?.copyWith(color: Theme.of(context).colorScheme.primary),
             ),
           ),
         ],

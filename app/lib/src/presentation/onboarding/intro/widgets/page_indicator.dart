@@ -25,6 +25,7 @@ class PageIndicator extends StatelessWidget {
                 dotHeight: 8,
                 dotWidth: 8,
                 activeDotColor: Theme.of(context).primaryColor,
+                dotColor: const Color(0xffe0e0e0),
               ),
               onDotClicked: (index) => _controller.animateToPage(
                 index,

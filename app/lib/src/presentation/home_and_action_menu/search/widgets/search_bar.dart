@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../search/widgets/filter_bottom_sheet_content.dart';
-import '../bloc/search_bloc.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({
@@ -13,11 +11,11 @@ class SearchBar extends StatefulWidget {
     this.onChanged,
     this.showOverlayResultPrediction = false,
     this.data = const <String?>[],
-    required this.onFocus,
+    required this.onTap,
   }) : super(key: key);
 
   final bool atHome;
-  final VoidCallback onFocus;
+  final VoidCallback onTap;
   final void Function(String?) onSubmitted;
   final void Function(String?)? onChanged;
   final TextEditingController? controller;
@@ -57,7 +55,7 @@ class _SearchBarState extends State<SearchBar> {
               : const Color(0xFFF5F5F5),
           borderRadius: BorderRadius.circular(15),
           border: isFocus ?? true && !widget.atHome
-              ? Border.all(color: Theme.of(context).primaryColor)
+              ? Border.all(color: Theme.of(context).colorScheme.primary)
               : null,
         ),
         child: SizedBox(
@@ -69,13 +67,11 @@ class _SearchBarState extends State<SearchBar> {
             autofocus: !widget.atHome,
             autocorrect: false,
             onTap: () {
-              context.read<SearchBloc>().add(RecentSearchFetched('userEmail'));
+              widget.onTap();
               focusNode.requestFocus();
             },
             onSubmitted: (value) {
               widget.onSubmitted(value);
-              context.read<SearchBloc>().add(RecentSearchAdded(value));
-              context.read<SearchBloc>().add(SearchFetched(value));
             },
             onChanged: (text) {
               widget.onChanged?.call(text);
@@ -112,30 +108,30 @@ class _SearchBarState extends State<SearchBar> {
               prefixIcon: Icon(
                 Icons.search,
                 color: isFocus ?? true && !widget.atHome
-                    ? Theme.of(context).primaryColor
+                    ? Theme.of(context).colorScheme.primary
                     : Colors.grey[400],
               ),
               suffixIcon: widget.atHome
                   ? Icon(
                       Icons.filter_alt_outlined,
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).colorScheme.primary,
                     )
                   : IconButton(
                       onPressed: () => showSearchFilterBottomSheet(context),
                       icon: Icon(
                         Icons.filter_alt_outlined,
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                       splashRadius: 10,
                     ),
               hintText: 'Search',
-              hintStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
+              hintStyle: Theme.of(context).textTheme.caption?.copyWith(
                     color: isFocus ?? true && !widget.atHome
-                        ? Colors.black
+                        ? const Color(0xff212121)
                         : Colors.grey[400],
                   ),
             ),
-            style: Theme.of(context).textTheme.displaySmall,
+            style: Theme.of(context).textTheme.caption,
           ),
         ),
       ),
@@ -197,8 +193,8 @@ class _SearchBarState extends State<SearchBar> {
                         alPredictions[index] ?? '',
                         style: Theme.of(context)
                             .textTheme
-                            .bodyMedium
-                            ?.copyWith(color: Colors.black),
+                            .bodyText1
+                            ?.copyWith(color: const Color(0xff212121)),
                       ),
                     ),
                   );

@@ -10,11 +10,12 @@ class LogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: const Icon(Icons.logout, size: 35, color: Colors.red),
+      minLeadingWidth: 20,
       title: Text(
         'Logout',
         textAlign: TextAlign.start,
         style:
-            Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.red),
+            Theme.of(context).textTheme.bodyText1?.copyWith(color: Colors.red),
       ),
       onTap: () {
         showBaseBottomSheet(
@@ -25,12 +26,12 @@ class LogoutButton extends StatelessWidget {
               SizedBox(
                 width: double.maxFinite,
                 child: Text(
-                  'Are You sure you want to logout?',
+                  'Are you sure you want to logout?',
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: Colors.black, fontSize: 20),
+                      .bodyText2
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(height: 20),
@@ -42,16 +43,23 @@ class LogoutButton extends StatelessWidget {
                     Expanded(
                       child: BaseButton(
                         title: 'Cancel',
-                        color: Colors.lightBlue.withOpacity(0.1),
-                        titleColor: Colors.blue,
+                        color: Theme.of(context).colorScheme.secondary,
+                        titleColor: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                     const SizedBox(width: 10),
-                    const Expanded(
+                    Expanded(
                       child: BaseButton(
                         title: 'Yes, Logout',
                         titleColor: Colors.white,
-                        color: Colors.blue,
+                        color: Theme.of(context).colorScheme.primary,
+                        shadow: const [
+                          BoxShadow(
+                            color: Color.fromRGBO(51, 94, 247, 0.25),
+                            blurRadius: 24,
+                            offset: Offset(4, 8),
+                          )
+                        ],
                       ),
                     ),
                   ],

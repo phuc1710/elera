@@ -23,7 +23,7 @@ class SignInView extends StatelessWidget {
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider<SignInBloc>(
-            create: (context) => injector(),
+            create: (context) => getIt(),
             child: const SignInBody(),
           ),
         ),

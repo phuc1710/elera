@@ -67,9 +67,7 @@ class _SearchResultTabViewState extends State<SearchResultTabView> {
                     if (widget.searchPhrase.isEmpty)
                       const NotFoundListView()
                     else
-                      TopMentorsListView(
-                        mentorList: widget.mentorList,
-                      ),
+                      TopMentorsListView(mentorList: widget.mentorList),
                   ],
                 ),
               ),

@@ -10,7 +10,7 @@ part of 'user_api_service.dart';
 
 class _UserApiService implements UserApiService {
   _UserApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.140:7412/api/';
+    baseUrl ??= 'http://103.63.215.141:7412/api';
   }
 
   final Dio _dio;
@@ -51,7 +51,7 @@ class _UserApiService implements UserApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<SignUpResponseModel>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/sign_up',
+                .compose(_dio.options, '/users/sign-up',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = SignUpResponseModel.fromJson(_result.data!);

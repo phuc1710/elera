@@ -13,6 +13,7 @@ class SignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(40),
       onTap: onTap,
       child: const MainActionInk(buttonString: 'Sign in'),
     );

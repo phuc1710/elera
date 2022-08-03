@@ -7,6 +7,7 @@ class SignUpRequestParams {
   SignUpRequestParams({
     this.email,
     this.password,
+    this.loginMethod,
   });
 
   factory SignUpRequestParams.fromJson(Map<String, dynamic> json) =>
@@ -17,6 +18,9 @@ class SignUpRequestParams {
 
   @JsonKey(name: 'password')
   String? password;
+
+  @JsonKey(name: 'login_method', defaultValue: 'email')
+  String? loginMethod;
 
   Map<String, dynamic> toJson() => _$SignUpRequestParamsToJson(this);
 }

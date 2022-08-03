@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../data/models/profile/profile_response_model.dart';
 import '../../presentation/account_setup/create_new_pin/views/create_new_pin.dart';
 import '../../presentation/account_setup/fill_your_profile/views/fill_your_profile.dart';
-import '../../presentation/account_setup/set_your_fingerprint/views/set_your_fingerprint.dart';
+import '../../presentation/account_setup/set_your_fingerprint/views/set_your_fingerprint_view.dart';
 import '../../presentation/edit_profile/view/edit_profile_page.dart';
 import '../../presentation/forgot_and_reset_password/create_new_password/views/create_new_password_view.dart';
 import '../../presentation/forgot_and_reset_password/enter_pin/views/enter_pin_view.dart';
@@ -75,7 +75,7 @@ part 'app_router.gr.dart';
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(
       page: NotificationSettingsView,
-      path: '/notification_setting',
+      path: Routes.notificationSettingsRoute,
     ),
     AutoRoute<dynamic>(page: PaymentView, path: Routes.paymentRoute),
     AutoRoute<dynamic>(page: NewCardView, path: Routes.newCardRoute),

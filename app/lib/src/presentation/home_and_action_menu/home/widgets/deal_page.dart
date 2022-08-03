@@ -16,6 +16,8 @@ class DealPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Stack(
       children: [
         Padding(
@@ -27,17 +29,17 @@ class DealPage extends StatelessWidget {
                 title: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4.0),
                   child: Text(
-                    subtitle ?? '',
-                    style: Theme.of(context).textTheme.bodySmall,
+                    '$subtitle',
+                    style: textTheme.bodySmall?.copyWith(color: Colors.white),
                   ),
                 ),
                 subtitle: Text(
-                  title ?? '',
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  '$title',
+                  style: textTheme.bodyMedium?.copyWith(color: Colors.white),
                 ),
                 trailing: Text(
-                  deal ?? '',
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  '$deal',
+                  style: textTheme.bodyLarge?.copyWith(color: Colors.white),
                 ),
               ),
               Padding(
@@ -45,10 +47,11 @@ class DealPage extends StatelessWidget {
                   horizontal: MediaQuery.of(context).size.width * 0.04,
                 ),
                 child: Text(
-                  description ?? '',
+                  '$description',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontSize: 13.5,
                         fontWeight: FontWeight.w400,
+                        color: Colors.white,
                       ),
                 ),
               ),

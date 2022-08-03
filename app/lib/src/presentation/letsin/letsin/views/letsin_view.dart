@@ -9,7 +9,6 @@ class LetsInView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(''),
           foregroundColor: Colors.black,
           backgroundColor: Colors.transparent,
           elevation: 0,

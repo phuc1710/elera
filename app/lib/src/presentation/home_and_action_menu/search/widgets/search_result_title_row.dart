@@ -21,12 +21,13 @@ class _SearchResultTitleRowState extends State<SearchResultTitleRow> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.05,
         vertical: MediaQuery.of(context).size.height * 0.015,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          RichResultText(text: widget.phrase),
+          Expanded(child: RichResultText(text: widget.phrase)),
           Text(
             widget.leadingText,
             style: Theme.of(context)

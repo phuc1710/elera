@@ -57,7 +57,7 @@ class _SelectContactBodyState extends State<SelectContactBody> {
                     (index) => ContactRadio(
                       selectedValue: _selectedIndex,
                       icon: iconList[index],
-                      title: 'via ${state.contacts[index]?.type}',
+                      title: 'via ${state.contacts[index]?.type}:',
                       subtitle: '${state.contacts[index]?.info}',
                       onSelected: (dynamic value) =>
                           setState(() => _selectedIndex = value),

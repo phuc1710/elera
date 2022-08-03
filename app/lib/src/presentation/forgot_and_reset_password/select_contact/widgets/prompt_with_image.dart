@@ -7,19 +7,19 @@ class PromptWithImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.3,
+          height: screenHeight * 0.3,
           child: Image.asset('assets/images/contact.png'),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: MediaQuery.of(context).size.height * 0.025,
-          ),
+          padding: EdgeInsets.symmetric(vertical: screenHeight * 0.025),
           child: Text(
             'Select which contact detail should we use to reset your password',
-            style: Theme.of(context).textTheme.displayMedium,
+            style: Theme.of(context).textTheme.bodyText2,
           ),
         ),
       ],

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import '../../../../config/router/routes.dart';
+import '../../../../config/router/app_router.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
@@ -16,7 +16,7 @@ class ActionButtonRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: MediaQuery.of(context).size.height * 0.02,
+        vertical: MediaQuery.of(context).size.height * 0.04,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -46,7 +46,7 @@ class ActionButtonRow extends StatelessWidget {
   Future<dynamic> showWelcomeDialog(BuildContext context) async {
     showDialog<dynamic>(
       context: context,
-      barrierDismissible: true,
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           shape: RoundedRectangleBorder(
@@ -54,15 +54,15 @@ class ActionButtonRow extends StatelessWidget {
           ),
           title: const DialogTitle(),
           content: const DialogContent(),
-          contentTextStyle: Theme.of(context).textTheme.displayMedium,
+          contentTextStyle:
+              Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 14),
         );
       },
     );
-
     await Future.delayed(const Duration(seconds: 2), () {
       SchedulerBinding.instance.addPostFrameCallback((_) {
         context.router.pop();
-        context.router.navigateNamed(Routes.homeRoute);
+        context.router.replaceAll([const HomeRoute()]);
       });
     });
   }

@@ -17,17 +17,18 @@ class MyBookmarkView extends StatelessWidget {
           resizeToAvoidBottomInset: true,
           appBar: AppBar(
             title: const Text('My bookmark'),
-            titleTextStyle: Theme.of(context).textTheme.titleSmall,
+            titleTextStyle: Theme.of(context).textTheme.headline6,
             actions: [
               IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
             ],
+            leadingWidth: 35,
             foregroundColor: Colors.black,
             backgroundColor: Colors.transparent,
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider<BookmarkBloc>(
-            create: (context) => injector()..add(BookmarkFetched()),
+            create: (context) => getIt()..add(BookmarkFetched()),
             child: const MyBookmarkBody(),
           ),
         ),

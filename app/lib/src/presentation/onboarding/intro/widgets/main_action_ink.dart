@@ -24,7 +24,7 @@ class MainActionInk extends StatelessWidget {
         borderRadius: BorderRadius.circular(40),
       ),
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * (_width ?? 0.8),
+        width: MediaQuery.of(context).size.width * (_width ?? 0.9),
         height: MediaQuery.of(context).size.height * 0.08,
         child: Center(
           child: Text(
@@ -38,23 +38,29 @@ class MainActionInk extends StatelessWidget {
 
   Color getButtonColor(BuildContext context) {
     return _isMainAction == null
-        ? Theme.of(context).primaryColor
+        ? Theme.of(context).colorScheme.primary
         : Theme.of(context).colorScheme.secondary;
   }
 
   TextStyle? getButtonTextStyle(BuildContext context) {
     return _isMainAction == null
-        ? Theme.of(context).textTheme.labelSmall
-        : Theme.of(context).textTheme.labelMedium;
+        ? Theme.of(context)
+            .textTheme
+            .bodyText2
+            ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold)
+        : Theme.of(context).textTheme.bodyText2?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            );
   }
 
   List<BoxShadow>? getButtonBoxShadow(BuildContext context) {
     return _isMainAction == null
         ? [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 10,
-              offset: const Offset(0, 3),
+            const BoxShadow(
+              color: Color.fromRGBO(51, 94, 247, 0.25),
+              blurRadius: 24,
+              offset: Offset(4, 8),
             )
           ]
         : null;

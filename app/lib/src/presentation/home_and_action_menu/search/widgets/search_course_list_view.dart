@@ -22,31 +22,36 @@ class SearchCourseListView extends StatefulWidget {
 class _SearchCourseListViewState extends State<SearchCourseListView> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: List.generate(
-        widget.courseList?.length ?? 0,
-        (index) => CourseCard(
-          courseModel: widget.courseList?[index],
-          isInRemoveBookmark: false,
-          onAddBookmark: () {
-            onBookmarkAdded(
-              context,
-              widget.courseList ?? <Item>[],
-              '${widget.courseList?[index].categoryName}',
-              '${widget.courseList?[index].name}',
-            );
-          },
-          onRemoveBookmark: () {
-            setState(() {
-              widget.courseList?[index].isBookmarked = false;
-            });
-            onBookmarkRemoved(
-              context,
-              widget.courseList ?? <Item>[],
-              '${widget.courseList?[index].categoryName}',
-              '${widget.courseList?[index].name}',
-            );
-          },
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.05,
+      ),
+      child: Column(
+        children: List.generate(
+          widget.courseList?.length ?? 0,
+          (index) => CourseCard(
+            courseModel: widget.courseList?[index],
+            isInRemoveBookmark: false,
+            onAddBookmark: () {
+              onBookmarkAdded(
+                context,
+                widget.courseList ?? <Item>[],
+                '${widget.courseList?[index].categoryName}',
+                '${widget.courseList?[index].name}',
+              );
+            },
+            onRemoveBookmark: () {
+              setState(() {
+                widget.courseList?[index].isBookmarked = false;
+              });
+              onBookmarkRemoved(
+                context,
+                widget.courseList ?? <Item>[],
+                '${widget.courseList?[index].categoryName}',
+                '${widget.courseList?[index].name}',
+              );
+            },
+          ),
         ),
       ),
     );

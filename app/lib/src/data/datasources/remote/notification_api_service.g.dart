@@ -10,7 +10,7 @@ part of 'notification_api_service.dart';
 
 class _NotificationApiService implements NotificationApiService {
   _NotificationApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.140:7412/api/';
+    baseUrl ??= 'http://103.63.215.141:7412/api';
   }
 
   final Dio _dio;

@@ -17,16 +17,16 @@ class SelectContactView extends StatelessWidget {
           appBar: AppBar(
             title: Text(
               'Forgot Password',
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme.of(context).textTheme.headline6,
             ),
+            leadingWidth: 35,
             foregroundColor: Colors.black,
             backgroundColor: Colors.transparent,
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider<ContactSelectionBloc>(
-            create: (context) =>
-                injector()..add(ContactFetched(userEmail: email)),
+            create: (context) => getIt()..add(ContactFetched(userEmail: email)),
             child: SelectContactBody(email: email),
           ),
         ),

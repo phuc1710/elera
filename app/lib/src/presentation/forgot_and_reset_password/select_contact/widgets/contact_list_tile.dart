@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ContactListTile extends StatelessWidget {
   const ContactListTile({
@@ -15,14 +14,13 @@ class ContactListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: Theme.of(context).colorScheme.secondary,
         radius: 50,
-        child: Icon(
-          icon,
-          color: Theme.of(context).primaryColor,
-        ),
+        child: Icon(icon, color: Theme.of(context).colorScheme.primary),
       ),
       minLeadingWidth: 0,
       contentPadding: EdgeInsets.symmetric(
@@ -32,20 +30,12 @@ class ContactListTile extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 10.0),
         child: Text(
           title,
-          style: GoogleFonts.urbanist(
-            fontSize: 10,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey[400],
-          ),
+          style: textTheme.overline?.copyWith(color: Colors.grey[600]),
         ),
       ),
       subtitle: Text(
         subtitle,
-        style: GoogleFonts.urbanist(
-          fontSize: 12,
-          fontWeight: FontWeight.w700,
-          color: Colors.black,
-        ),
+        style: textTheme.caption?.copyWith(fontWeight: FontWeight.bold),
       ),
     );
   }

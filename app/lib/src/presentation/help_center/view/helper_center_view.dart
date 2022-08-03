@@ -29,11 +29,11 @@ class _HelperCenterViewState extends State<HelperCenterView> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        backgroundColor: Colors.grey[100],
         appBar: buildAppBar(
           AppBarParams(
             context,
             title: 'Help Center',
+            backgroundColor: Colors.transparent,
             actions: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -45,7 +45,7 @@ class _HelperCenterViewState extends State<HelperCenterView> {
         ),
         body: BlocProvider(
           create: (context) =>
-              injector<HelperCenterBloc>()..add(HelperCenterStarted()),
+              getIt<HelperCenterBloc>()..add(HelperCenterStarted()),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             width: double.maxFinite,
@@ -55,11 +55,9 @@ class _HelperCenterViewState extends State<HelperCenterView> {
               child: Column(
                 children: [
                   TabBar(
-                    labelStyle: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(color: Theme.of(context).primaryColor),
-                    labelColor: Theme.of(context).primaryColor,
+                    labelStyle: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        color: Theme.of(context).colorScheme.primary),
+                    labelColor: Theme.of(context).colorScheme.primary,
                     unselectedLabelColor: Colors.grey,
                     tabs: const [
                       Tab(text: 'FAQ'),
@@ -115,7 +113,7 @@ class _HelperCenterViewState extends State<HelperCenterView> {
         item?.name ?? '',
         style: Theme.of(context)
             .textTheme
-            .bodyMedium
+            .bodyText1
             ?.copyWith(color: Colors.black),
       ),
     );
@@ -243,7 +241,7 @@ class _HelperCenterViewState extends State<HelperCenterView> {
               child: Center(
                 child: Text(
                   faqData[index]?.name ?? '',
-                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                  style: Theme.of(context).textTheme.button?.copyWith(
                         color: isSelected
                             ? Colors.white
                             : Theme.of(context).primaryColor,

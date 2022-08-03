@@ -32,32 +32,48 @@ class _SearchViewState extends State<SearchView> {
           resizeToAvoidBottomInset: false,
           body: BlocProvider<SearchBloc>(
             create: (context) =>
-                injector()..add(RecentSearchFetched('user@email.com')),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-              child: Column(
-                children: [
-                  Hero(
-                    tag: 'searchBar',
-                    child: Material(
-                      color: Colors.white,
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: screenHeight * 0.02),
-                        child: SearchBar(
-                          atHome: false,
-                          onFocus: () {},
-                          onSubmitted: (value) => setState(() {
-                            searchPhrase = '$value';
-                          }),
-                          controller: _searchController,
+                getIt()..add(RecentSearchFetched('user@email.com')),
+            child: BlocBuilder<SearchBloc, SearchState>(
+              builder: (context, state) {
+                return Column(
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                      child: Hero(
+                        tag: 'searchBar',
+                        child: Material(
+                          color: Colors.white,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: screenHeight * 0.02,
+                            ),
+                            child: SearchBar(
+                              atHome: false,
+                              onTap: () {
+                                context
+                                    .read<SearchBloc>()
+                                    .add(RecentSearchFetched('userEmail'));
+                              },
+                              onSubmitted: (value) => setState(() {
+                                searchPhrase = '$value';
+                                context
+                                    .read<SearchBloc>()
+                                    .add(RecentSearchAdded(''));
+                                context
+                                    .read<SearchBloc>()
+                                    .add(SearchFetched(''));
+                              }),
+                              controller: _searchController,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  getSearchContent()
-                ],
-              ),
+                    getSearchContent()
+                  ],
+                );
+              },
             ),
           ),
         ),
@@ -89,11 +105,9 @@ class _SearchViewState extends State<SearchView> {
             searchList: state.data?.searchList,
             onSuggestPressed: () {
               setState(
-                () => searchPhrase = _key.currentState?.searchPhrase ?? '',
+                () => searchPhrase = '${_key.currentState?.searchPhrase}',
               );
-              context.read<SearchBloc>().add(
-                    RecentSearchAdded(searchPhrase),
-                  );
+              context.read<SearchBloc>().add(RecentSearchAdded(searchPhrase));
               context.read<SearchBloc>().add(SearchFetched(searchPhrase));
             },
           );

@@ -12,20 +12,20 @@ class PaymentTile extends StatelessWidget {
     return ListTile(
       tileColor: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 15),
-      leading: Image.network(data?.img ?? '', width: 20, height: 20),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+      leading: Image.network(data?.img ?? '', width: 40, height: 40),
       title: Text(
         data?.displayName ?? '',
         style: Theme.of(context)
             .textTheme
-            .displayLarge
+            .bodyText2
             ?.copyWith(fontWeight: FontWeight.bold),
       ),
       trailing: Text(
         data?.status ?? '',
-        style: Theme.of(context).textTheme.displayLarge?.copyWith(
+        style: Theme.of(context).textTheme.bodyText2?.copyWith(
               fontWeight: FontWeight.bold,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
       ),
     );

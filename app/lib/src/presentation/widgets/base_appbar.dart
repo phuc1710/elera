@@ -8,9 +8,10 @@ AppBar buildAppBar(AppBarParams params) {
     backgroundColor: params.backgroundColor,
     elevation: 0,
     title: Text(
-      params.title ?? '',
-      style: Theme.of(params.context).textTheme.titleLarge,
+      '${params.title}',
+      style: Theme.of(params.context).textTheme.headline6,
     ),
+    leadingWidth: 35,
     centerTitle: params.centerTitle,
     leading: params.leading ??
         (params.hasBack
@@ -18,7 +19,7 @@ AppBar buildAppBar(AppBarParams params) {
                 IconButton(
                   onPressed: params.onExit ?? () => params.context.router.pop(),
                   iconSize: 30,
-                  icon: const Icon(Icons.arrow_back, color: Colors.black),
+                  icon: const Icon(Icons.arrow_back, color: Color(0xff212121)),
                 ))
             : null),
     actions: params.actions,
@@ -45,7 +46,7 @@ class TopAppBar extends StatelessWidget {
           Expanded(
             child: Text(
               params.title ?? '',
-              style: Theme.of(params.context).textTheme.titleMedium,
+              style: Theme.of(params.context).textTheme.headline6,
             ),
           ),
           if (params.actions.isNotEmpty)

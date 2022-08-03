@@ -18,13 +18,13 @@ class BaseBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? MediaQuery.of(context).size.height * 372 / 812,
+      height: height ?? MediaQuery.of(context).size.height * 0.3,
       width: double.infinity,
       decoration: const BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24),
-          topRight: Radius.circular(24),
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
         ),
       ),
       child: Column(
@@ -71,7 +71,7 @@ Widget headerBottomSheet(BuildContext context, String title) {
             title,
             style: Theme.of(context)
                 .textTheme
-                .bodyMedium
+                .bodyText1
                 ?.copyWith(color: Colors.red, fontSize: 22),
           ),
         ),

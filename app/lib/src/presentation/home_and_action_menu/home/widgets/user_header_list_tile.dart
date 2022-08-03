@@ -17,30 +17,25 @@ class UserHeaderListTile extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: Theme.of(context).colorScheme.secondary,
-          radius: 30,
+          radius: 25,
         ),
         minLeadingWidth: 0,
         contentPadding: EdgeInsets.symmetric(
           vertical: MediaQuery.of(context).size.height * 0.02,
         ),
         title: Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
+          padding: const EdgeInsets.only(bottom: 5.0),
           child: Text(
             'Good Morning 👋',
-            style: GoogleFonts.urbanist(
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[400],
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .caption
+                ?.copyWith(color: const Color(0xff757575)),
           ),
         ),
         subtitle: Text(
           'Andrew Ainsley',
-          style: GoogleFonts.urbanist(
-            fontSize: 14,
-            fontWeight: FontWeight.w700,
-            color: Colors.black,
-          ),
+          style: Theme.of(context).textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
         ),
         trailing: const TrailingButtonsRow(),
       ),

@@ -10,6 +10,7 @@ class BaseButton extends StatelessWidget {
     this.borderRadius,
     this.titleColor,
     this.onTap,
+    this.shadow,
   }) : super(key: key);
 
   final String? title;
@@ -19,6 +20,7 @@ class BaseButton extends StatelessWidget {
   final TextStyle? style;
   final double? borderRadius;
   final Function()? onTap;
+  final List<BoxShadow>? shadow;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class BaseButton extends StatelessWidget {
         border:
             Border.all(color: borderColor ?? color ?? const Color(0xFF000000)),
         borderRadius: BorderRadius.circular(borderRadius ?? 30),
+        boxShadow: shadow,
       ),
       child: Material(
         borderRadius: BorderRadius.circular(borderRadius ?? 30),
@@ -42,10 +45,10 @@ class BaseButton extends StatelessWidget {
             child: Text(
               title ?? '',
               style: style ??
-                  Theme.of(context)
-                      .textTheme
-                      .displayLarge
-                      ?.copyWith(color: titleColor ?? Colors.blue),
+                  Theme.of(context).textTheme.button?.copyWith(
+                        color:
+                            titleColor ?? Theme.of(context).colorScheme.primary,
+                      ),
             ),
           ),
         ),

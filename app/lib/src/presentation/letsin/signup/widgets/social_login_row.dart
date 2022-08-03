@@ -12,31 +12,40 @@ class SocialLoginRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        InkWell(
-          borderRadius: BorderRadius.circular(15.0),
-          onTap: () {
-            // TODO(phucndh): Facebook login
-          },
-          child: const SocialConnectInk(
-            imagePath: 'assets/images/facebook-logo.png',
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(15.0),
+            onTap: () {
+              // TODO(phucndh): Facebook login
+            },
+            child: const SocialConnectInk(
+              imagePath: 'assets/images/facebook-logo.png',
+            ),
           ),
         ),
-        InkWell(
-          borderRadius: BorderRadius.circular(15.0),
-          onTap: () {
-            // TODO(phucndh): Google login
-          },
-          child: const SocialConnectInk(
-            imagePath: 'assets/images/google-logo.png',
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(15.0),
+            onTap: () {
+              // TODO(phucndh): Google login
+            },
+            child: const SocialConnectInk(
+              imagePath: 'assets/images/google-logo.png',
+            ),
           ),
         ),
-        InkWell(
-          borderRadius: BorderRadius.circular(15.0),
-          onTap: () {
-            // TODO(phucndh): Apple login
-          },
-          child: const SocialConnectInk(
-            imagePath: 'assets/images/apple-logo.png',
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(15.0),
+            onTap: () {
+              // TODO(phucndh): Apple login
+            },
+            child: const SocialConnectInk(
+              imagePath: 'assets/images/apple-logo.png',
+            ),
           ),
         ),
       ],

@@ -18,7 +18,7 @@ class TitleText extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Text(
           title,
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).textTheme.headline3,
         ),
       ),
     );

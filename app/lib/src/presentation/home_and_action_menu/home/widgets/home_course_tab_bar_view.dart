@@ -29,6 +29,8 @@ class _HomeCourseTabBarViewState extends State<HomeCourseTabBarView> {
             Padding(
               padding: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width * 0.05,
+                top:  MediaQuery.of(context).size.height * 0.02,
+                bottom:  MediaQuery.of(context).size.height * 0.02,
               ),
               child: ButtonsTabBar(
                 backgroundColor: Theme.of(context).primaryColor,

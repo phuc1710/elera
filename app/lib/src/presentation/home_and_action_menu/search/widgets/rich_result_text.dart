@@ -12,6 +12,8 @@ class RichResultText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      overflow: TextOverflow.ellipsis,
+      maxLines: 1,
       text: TextSpan(
         text: 'Result for "',
         style: GoogleFonts.urbanist(
@@ -21,7 +23,7 @@ class RichResultText extends StatelessWidget {
         ),
         children: [
           TextSpan(
-            text: text,
+            text: text.replaceAll('', '\u200B'),
             style: GoogleFonts.urbanist(
               fontSize: 16,
               fontWeight: FontWeight.w700,

@@ -10,12 +10,13 @@ class DialogContent extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children: [
         Text(
           'Your account is ready to use. You will be redirected to the Home page in a few seconds..',
           textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 14),
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(top: 20),
           child: CircularProgressIndicator.adaptive(),
         ),

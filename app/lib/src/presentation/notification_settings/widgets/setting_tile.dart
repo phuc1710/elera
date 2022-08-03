@@ -31,13 +31,10 @@ class _SettingTileState extends State<SettingTile> {
     return ListTile(
       title: Text(
         widget.title,
-        style: Theme.of(context)
-            .textTheme
-            .displayLarge
-            ?.copyWith(fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.bodyText2,
       ),
       trailing: CupertinoSwitch(
-        activeColor: Theme.of(context).primaryColor,
+        activeColor: Theme.of(context).colorScheme.primary,
         value: value,
         onChanged: (val) {
           setState(() {

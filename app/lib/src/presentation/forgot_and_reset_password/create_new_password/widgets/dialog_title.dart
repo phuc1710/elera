@@ -16,7 +16,10 @@ class DialogTitle extends StatelessWidget {
         ),
         Text(
           'Congratulation!',
-          style: Theme.of(context).textTheme.labelLarge,
+          style: Theme.of(context)
+              .textTheme
+              .headline6
+              ?.copyWith(color: Theme.of(context).colorScheme.primary),
           textAlign: TextAlign.center,
         ),
       ],

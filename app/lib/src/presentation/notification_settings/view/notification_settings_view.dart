@@ -17,7 +17,7 @@ class _NotificationSettingsViewState extends State<NotificationSettingsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(
-        AppBarParams(context, title: 'Notification'),
+        AppBarParams(context, title: 'Notification', backgroundColor: Colors.transparent),
       ),
       body: SizedBox(
         child: SingleChildScrollView(

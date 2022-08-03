@@ -19,15 +19,16 @@ class CreateNewPinView extends StatelessWidget {
           appBar: AppBar(
             title: Text(
               'Create new PIN',
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme.of(context).textTheme.headline6,
             ),
-            foregroundColor: Colors.black,
+            leadingWidth: 35,
+            foregroundColor: const Color(0xff212121),
             backgroundColor: Colors.transparent,
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider<CreateNewPinBloc>(
-            create: (context) => injector<CreateNewPinBloc>(),
+            create: (context) => getIt<CreateNewPinBloc>(),
             child: const CreateNewPinBody(),
           ),
         ),

@@ -20,13 +20,17 @@ class PriceRow extends StatelessWidget {
           ),
           child: Text(
             price,
-            style: Theme.of(context).textTheme.labelLarge,
+            style: Theme.of(context)
+                .textTheme
+                .button
+                ?.copyWith(color: Theme.of(context).colorScheme.primary),
           ),
         ),
         Text(
           originalPrice,
-          style: Theme.of(context).textTheme.displaySmall?.copyWith(
+          style: Theme.of(context).textTheme.overline?.copyWith(
                 decoration: TextDecoration.lineThrough,
+                color: const Color(0xff616161),
               ),
         ),
       ],

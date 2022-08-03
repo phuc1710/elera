@@ -19,12 +19,17 @@ class _IntroBodyState extends State<IntroBody> {
   final _controller = PageController();
   String _buttonString = 'Next';
   int page = 0;
+
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return ListView(
+      physics: const NeverScrollableScrollPhysics(),
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.8,
+          height: screenHeight * 0.8,
           child: Stack(
             children: [
               PageView(
@@ -41,10 +46,11 @@ class _IntroBodyState extends State<IntroBody> {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.1,
-            vertical: MediaQuery.of(context).size.height * 0.04,
+            horizontal: screenWidth * 0.05,
+            vertical: screenHeight * 0.02,
           ),
           child: InkWell(
+            borderRadius: BorderRadius.circular(40),
             onTap: () {
               _controller.nextPage(
                 duration: const Duration(milliseconds: 300),

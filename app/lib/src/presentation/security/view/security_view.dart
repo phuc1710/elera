@@ -20,7 +20,7 @@ class _SecurityViewState extends State<SecurityView> {
         AppBarParams(
           context,
           title: 'Security',
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.transparent,
         ),
       ),
       body: Container(
@@ -54,8 +54,8 @@ class _SecurityViewState extends State<SecurityView> {
               width: double.maxFinite,
               child: BaseButton(
                 title: 'Change PIN',
-                titleColor: Colors.lightBlue[900],
-                color: Colors.deepPurple.withOpacity(0.2),
+                titleColor: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.secondary,
                 onTap: () {},
               ),
             ),
@@ -64,8 +64,8 @@ class _SecurityViewState extends State<SecurityView> {
               width: double.maxFinite,
               child: BaseButton(
                 title: 'Change Password',
-                titleColor: Colors.lightBlue[900],
-                color: Colors.deepPurple.withOpacity(0.2),
+                titleColor: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.secondary,
                 onTap: () {},
               ),
             ),
@@ -90,8 +90,8 @@ class _SecurityViewState extends State<SecurityView> {
         textAlign: TextAlign.start,
         style: Theme.of(context)
             .textTheme
-            .displayLarge
-            ?.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
+            .bodyText2
+            ?.copyWith(fontWeight: FontWeight.bold),
       ),
       trailing:
           const Icon(Icons.arrow_forward_ios, size: 17, color: Colors.black),

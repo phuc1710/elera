@@ -29,16 +29,17 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       params: SignUpRequestParams(
         email: event.email,
         password: event.password,
+        loginMethod: 'email',
       ),
     );
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (dataState.data?.errorCode == ErrorCode.success)
+      if (dataState.data?.code == ErrorCode.success)
         emit(SignUpSuccess());
       else
         emit(
           SignUpFailed(
-            ApiError(errorCode: res?.errorCode, errorMessage: res?.message),
+            ApiError(errorCode: res?.code, errorMessage: res?.message),
           ),
         );
     }

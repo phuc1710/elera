@@ -83,7 +83,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
   TextStyle? inputStyle(BuildContext context) {
     return Theme.of(context)
         .textTheme
-        .displayLarge
+        .caption
         ?.copyWith(fontWeight: FontWeight.bold);
   }
 }

@@ -19,19 +19,19 @@ class HomeTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: BlocProvider<HomeBloc>(
-        create: (context) => injector()..add(HomeFetched()),
+        create: (context) => getIt()..add(HomeFetched()),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const UserHeaderListTile(),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: Hero(
                   tag: 'searchBar',
                   child: Material(
@@ -45,9 +45,7 @@ class HomeTabView extends StatelessWidget {
               ),
               const DealsSlider(),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: TitleRow(
                   title: 'Top Mentors',
                   leadingButtonText: 'See All',
@@ -57,9 +55,7 @@ class HomeTabView extends StatelessWidget {
               ),
               const MentorListview(),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: TitleRow(
                   title: 'Most Popular Courses',
                   leadingButtonText: 'See All',

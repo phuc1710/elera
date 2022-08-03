@@ -19,33 +19,30 @@ class _PasswordInputState extends State<PasswordInput> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Padding(
-      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
+      padding: EdgeInsets.only(top: screenHeight * 0.03),
       child: TextField(
         decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(
-              MediaQuery.of(context).size.height * 0.02,
-            ),
-            borderSide: BorderSide.none,
-          ),
+          fillColor: const Color(0xfffafafa),
+          filled: true,
+          border: const OutlineInputBorder(borderSide: BorderSide.none),
           focusedBorder: OutlineInputBorder(
-            borderRadius:
-                BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
+            borderSide:
+                BorderSide(color: Theme.of(context).colorScheme.primary),
+            borderRadius: BorderRadius.circular(screenWidth * 0.03),
           ),
           prefixIcon: const Icon(Icons.lock),
           suffixIcon: IconButton(
             icon: Icon(_showPassword ? Icons.visibility_off : Icons.visibility),
-            onPressed: () {
-              setState(() {
-                _showPassword = !_showPassword;
-              });
-            },
+            onPressed: () => setState(() => _showPassword = !_showPassword),
           ),
           hintText: widget.hint,
         ),
         obscureText: _showPassword,
-        style: Theme.of(context).textTheme.displaySmall,
+        style: Theme.of(context).textTheme.caption,
       ),
     );
   }

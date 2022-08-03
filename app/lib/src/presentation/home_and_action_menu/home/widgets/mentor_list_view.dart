@@ -13,7 +13,7 @@ class MentorListview extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.2,
+        height: MediaQuery.of(context).size.height * 0.18,
         child: BlocConsumer<HomeBloc, HomeState>(
           listener: (context, state) {},
           buildWhen: (prev, curr) =>
@@ -29,28 +29,24 @@ class MentorListview extends StatelessWidget {
                 itemBuilder: (_, index) => InkWell(
                   borderRadius: BorderRadius.circular(30.0),
                   onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          radius: MediaQuery.of(context).size.width * 0.08,
-                          backgroundColor:
-                              Theme.of(context).colorScheme.secondary,
-                          backgroundImage:
-                              Image.network(mentorList?[index].avatar ?? '')
-                                  .image,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        radius: MediaQuery.of(context).size.width * 0.1,
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondary,
+                        backgroundImage:
+                            Image.network('${mentorList?[index].avatar}').image,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2.0),
+                        child: Text(
+                          '${mentorList?[index].nickname}',
+                          style: Theme.of(context).textTheme.button,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text(
-                            mentorList?[index].nickname ?? '',
-                            style: Theme.of(context).textTheme.displayMedium,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               );

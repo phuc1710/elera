@@ -14,28 +14,32 @@ class LetsInBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.05,
+      ),
       child: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
         child: Column(
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.55,
+              height: screenHeight * 0.3,
               child: Image.asset('assets/images/login.png'),
             ),
             Text(
               "Let's you in",
-              style: Theme.of(context).textTheme.titleLarge,
+              style: Theme.of(context).textTheme.headline3,
             ),
             const SocialLoginColumn(),
-            const DividerRowWithText(
+            DividerRowWithText(
               text: 'or',
-              padding: EdgeInsets.symmetric(vertical: 20.0),
+              padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
             ),
             InkWell(
               onTap: () => context.router.pushNamed(Routes.signInRoute),
-              child: const MainActionInk(
-                buttonString: 'Sign in with password',
-              ),
+              child: const MainActionInk(buttonString: 'Sign in with password'),
             ),
             const BottomPromptRow()
           ],

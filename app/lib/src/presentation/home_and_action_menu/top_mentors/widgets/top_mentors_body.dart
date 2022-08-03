@@ -27,7 +27,7 @@ class TopMentorsBody extends StatelessWidget {
                     onTap: () {},
                     child: ListTile(
                       leading: CircleAvatar(
-                        radius: MediaQuery.of(context).size.width * 0.05,
+                        radius: MediaQuery.of(context).size.width * 0.08,
                         backgroundColor:
                             Theme.of(context).colorScheme.secondary,
                         backgroundImage:
@@ -35,17 +35,23 @@ class TopMentorsBody extends StatelessWidget {
                       ),
                       title: Text(
                         '${mentor?.name}',
-                        style: Theme.of(context).textTheme.displayLarge,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2
+                            ?.copyWith(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Text(
                         '${mentor?.description}',
-                        style: Theme.of(context).textTheme.displayMedium,
+                        style: Theme.of(context).textTheme.overline?.copyWith(
+                              fontSize: 11,
+                              color: const Color(0xff616161),
+                            ),
                       ),
                       trailing: IconButton(
                         onPressed: () {},
                         icon: Icon(
                           Icons.chat_bubble_outline,
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ),

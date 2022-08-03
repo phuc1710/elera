@@ -31,13 +31,13 @@ class _CourseFilterChipsState extends State<CourseFilterChips> {
             label: Text(
               _courseFilterList[index],
             ),
-            side: BorderSide(width: 2, color: Theme.of(context).primaryColor),
+            side: BorderSide(width: 2, color: Theme.of(context).colorScheme.primary),
             selected: _courseFilterList[index] == selectedCourseTag,
             selectedColor: Theme.of(context).primaryColor,
-            labelStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
+            labelStyle: Theme.of(context).textTheme.caption?.copyWith(
                   color: _courseFilterList[index] == selectedCourseTag
                       ? Colors.white
-                      : Theme.of(context).primaryColor,
+                      : Theme.of(context).colorScheme.primary,
                 ),
             onSelected: (bool b) => setState(() {
               selectedCourseTag = _courseFilterList[index];

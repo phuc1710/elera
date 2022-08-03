@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BottomPromptRow extends StatelessWidget {
   const BottomPromptRow({
@@ -25,17 +24,19 @@ class BottomPromptRow extends StatelessWidget {
         children: [
           Text(
             promptText,
-            style: GoogleFonts.urbanist(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Colors.grey[400],
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .caption
+                ?.copyWith(color: const Color(0xff9e9e9e)),
           ),
           TextButton(
             onPressed: () => context.router.replaceNamed(path),
             child: Text(
               actionText,
-              style: Theme.of(context).textTheme.labelMedium,
+              style: Theme.of(context).textTheme.caption?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
           ),
         ],

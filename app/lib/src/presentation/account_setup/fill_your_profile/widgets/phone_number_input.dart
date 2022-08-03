@@ -17,38 +17,56 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.of(context).size.width * 0.03,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              value: dropDownFlagValue,
-              style: Theme.of(context).textTheme.displaySmall,
-              items: const [
-                DropdownMenuItem(
-                  value: 'US',
-                  child: Text(
-                    'US',
-                  ),
-                )
-              ],
-              onChanged: onDropDownFlagChanged,
-            ),
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    return Stack(
+      alignment: AlignmentDirectional.center,
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
+          height: screenHeight * 0.07,
+          decoration: BoxDecoration(
+            color: const Color(0xfffafafa),
+            borderRadius: BorderRadius.circular(screenWidth * 0.03),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.7,
-            child: InformationInput(
-              controller: widget.controller,
-              hintText: 'Phone Number',
-              keyboardtype: TextInputType.number,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: screenWidth * 0.05),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  value: dropDownFlagValue,
+                  icon: const Icon(Icons.arrow_drop_down_rounded),
+                  iconEnabledColor: const Color(0xff9e9e9e),
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption
+                      ?.copyWith(color: const Color(0xff9e9e9e)),
+                  items: const [
+                    DropdownMenuItem(
+                      value: 'US',
+                      child: Text('US'),
+                    )
+                  ],
+                  onChanged: onDropDownFlagChanged,
+                ),
+              ),
             ),
-          ),
-        ],
-      ),
+            SizedBox(
+              width: screenWidth * 0.7,
+              child: InformationInput(
+                controller: widget.controller,
+                hintText: 'Phone Number',
+                keyboardtype: TextInputType.number,
+                customPadding: EdgeInsets.zero,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 

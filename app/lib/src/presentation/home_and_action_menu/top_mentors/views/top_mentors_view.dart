@@ -15,7 +15,8 @@ class TopMentorsView extends StatelessWidget {
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: const Text('Top Mentors'),
-          titleTextStyle: Theme.of(context).textTheme.titleSmall,
+          titleTextStyle: Theme.of(context).textTheme.headline6,
+          leadingWidth: 35,
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.search))
           ],
@@ -24,14 +25,9 @@ class TopMentorsView extends StatelessWidget {
           elevation: 0,
           toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
         ),
-        body: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05,
-          ),
-          child: BlocProvider<TopMentorsBloc>(
-            create: (context) => injector()..add(TopMentorsFetched()),
-            child: const TopMentorsBody(),
-          ),
+        body: BlocProvider<TopMentorsBloc>(
+          create: (context) => getIt()..add(TopMentorsFetched()),
+          child: const TopMentorsBody(),
         ),
       ),
     );

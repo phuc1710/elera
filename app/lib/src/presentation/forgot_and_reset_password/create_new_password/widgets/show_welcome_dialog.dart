@@ -2,14 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import '../../../../config/router/routes.dart';
+import '../../../../config/router/app_router.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
 
 Future<dynamic> showWelcomeDialog(BuildContext context) async {
   showDialog<dynamic>(
     context: context,
-    barrierDismissible: true,
+    barrierDismissible: false,
     builder: (BuildContext dialogContext) {
       return AlertDialog(
         shape: RoundedRectangleBorder(
@@ -24,7 +24,7 @@ Future<dynamic> showWelcomeDialog(BuildContext context) async {
   await Future.delayed(const Duration(seconds: 2), () {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       context.router.pop();
-      context.router.navigateNamed(Routes.homeRoute);
+      context.router.replaceAll([const HomeRoute()]);
     });
   });
 }

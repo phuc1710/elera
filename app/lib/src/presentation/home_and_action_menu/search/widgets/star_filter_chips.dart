@@ -44,7 +44,7 @@ class _StarFilterChipsState extends State<StarFilterChips> {
               side: BorderSide(width: 2, color: primaryColor),
               selected: isCourseSelected,
               selectedColor: primaryColor,
-              labelStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
+              labelStyle: Theme.of(context).textTheme.caption?.copyWith(
                     color: isCourseSelected ? Colors.white : primaryColor,
                   ),
               onSelected: (bool b) => setState(() {

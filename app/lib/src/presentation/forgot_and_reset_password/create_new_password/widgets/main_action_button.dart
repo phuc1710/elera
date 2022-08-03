@@ -11,14 +11,12 @@ class MainActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: MediaQuery.of(context).size.height * 0.03,
+        vertical: MediaQuery.of(context).size.height * 0.016,
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(40),
         onTap: () => onContinueButtonTapped(context),
-        child: const MainActionInk(
-          buttonString: 'Continue',
-        ),
+        child: const MainActionInk(buttonString: 'Continue'),
       ),
     );
   }

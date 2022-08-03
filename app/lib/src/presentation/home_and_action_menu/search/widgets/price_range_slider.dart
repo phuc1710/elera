@@ -22,7 +22,7 @@ class _PriceRangeSliderState extends State<PriceRangeSlider> {
         data: SliderTheme.of(context).copyWith(
           valueIndicatorTextStyle: Theme.of(context)
               .textTheme
-              .displayMedium
+              .caption
               ?.copyWith(color: Colors.white),
           valueIndicatorColor: Theme.of(context).primaryColor,
           thumbColor: Colors.white,

@@ -21,13 +21,13 @@ class _FriendsInvitationViewState extends State<FriendsInvitationView> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          injector<FriendsInvitationBloc>()..add(FriendsInvitationStarted()),
+          getIt<FriendsInvitationBloc>()..add(FriendsInvitationStarted()),
       child: Scaffold(
         appBar: buildAppBar(
           AppBarParams(
             context,
-            title: 'Payment',
-            backgroundColor: Colors.white,
+            title: 'Invite Friends',
+            backgroundColor: Colors.transparent,
           ),
         ),
         body: BlocConsumer<FriendsInvitationBloc, FriendsInvitationState>(

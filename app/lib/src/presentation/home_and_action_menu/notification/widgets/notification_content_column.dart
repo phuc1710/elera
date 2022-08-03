@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NotificationContentColumn extends StatelessWidget {
   const NotificationContentColumn({
@@ -24,17 +23,16 @@ class NotificationContentColumn extends StatelessWidget {
               title,
               overflow: TextOverflow.ellipsis,
               softWrap: false,
-              style: GoogleFonts.urbanist(
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2
+                  ?.copyWith(fontWeight: FontWeight.bold),
             ),
             Text(
               description,
               style: Theme.of(context)
                   .textTheme
-                  .displayMedium
+                  .caption
                   ?.copyWith(color: Colors.grey),
             ),
           ],

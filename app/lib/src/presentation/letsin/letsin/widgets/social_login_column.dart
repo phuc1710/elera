@@ -11,31 +11,43 @@ class SocialLoginColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        InkWell(
-          onTap: () {
-            // TODO(phucndh): Navigate to Facebook login
-          },
-          child: const SocialLoginInk(
-            iconPath: 'assets/images/facebook-logo.png',
-            text: 'Continue with Facebook',
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(15),
+            onTap: () {
+              // TODO(phucndh): Navigate to Facebook login
+            },
+            child: const SocialLoginInk(
+              iconPath: 'assets/images/facebook-logo.png',
+              text: 'Continue with Facebook',
+            ),
           ),
         ),
-        InkWell(
-          onTap: () {
-            // TODO(phucndh): Navigate to Google login
-          },
-          child: const SocialLoginInk(
-            iconPath: 'assets/images/google-logo.png',
-            text: 'Continue with Google',
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(15),
+            onTap: () {
+              // TODO(phucndh): Navigate to Google login
+            },
+            child: const SocialLoginInk(
+              iconPath: 'assets/images/google-logo.png',
+              text: 'Continue with Google',
+            ),
           ),
         ),
-        InkWell(
-          onTap: () {
-            // TODO(phucndh): Navigate to Apple login
-          },
-          child: const SocialLoginInk(
-            iconPath: 'assets/images/apple-logo.png',
-            text: 'Continue with Apple',
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(15),
+            onTap: () {
+              // TODO(phucndh): Navigate to Apple login
+            },
+            child: const SocialLoginInk(
+              iconPath: 'assets/images/apple-logo.png',
+              text: 'Continue with Apple',
+            ),
           ),
         ),
       ],
