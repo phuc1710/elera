@@ -8,21 +8,21 @@ part of 'update_profile_params.dart';
 
 UpdateProfileParams _$UpdateProfileParamsFromJson(Map<String, dynamic> json) =>
     UpdateProfileParams(
-      fullname: json['fullname'] as String?,
-      name: json['name'] as String?,
+      fullName: json['full_name'] as String?,
+      nickname: json['nickname'] as String?,
       email: json['email'] as String?,
-      dob: json['dob'] as String?,
+      dob: json['dob'] as int?,
       country: json['country'] as String?,
       phone: json['phone'] as String?,
-      gender: json['gender'] as bool?,
+      gender: json['gender'] as String?,
       job: json['job'] as String?,
     );
 
 Map<String, dynamic> _$UpdateProfileParamsToJson(
         UpdateProfileParams instance) =>
     <String, dynamic>{
-      'fullname': instance.fullname,
-      'name': instance.name,
+      'full_name': instance.fullName,
+      'nickname': instance.nickname,
       'email': instance.email,
       'dob': instance.dob,
       'country': instance.country,

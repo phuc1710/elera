@@ -15,14 +15,14 @@ class PaymentTile extends StatelessWidget {
       contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
       leading: Image.network(data?.img ?? '', width: 40, height: 40),
       title: Text(
-        data?.displayName ?? '',
+        data?.name ?? '',
         style: Theme.of(context)
             .textTheme
             .bodyText2
             ?.copyWith(fontWeight: FontWeight.bold),
       ),
       trailing: Text(
-        data?.status ?? '',
+        'Connected',
         style: Theme.of(context).textTheme.bodyText2?.copyWith(
               fontWeight: FontWeight.bold,
               color: Theme.of(context).colorScheme.primary,

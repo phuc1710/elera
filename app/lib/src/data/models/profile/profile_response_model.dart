@@ -5,9 +5,10 @@ part 'profile_response_model.g.dart';
 @JsonSerializable()
 class ProfileResponseModel {
   ProfileResponseModel({
-    this.message,
-    this.errorCode,
-    this.data,
+    required this.status,
+    required this.code,
+    required this.message,
+    required this.data,
   });
 
   factory ProfileResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -15,24 +16,30 @@ class ProfileResponseModel {
 
   Map<String, dynamic> toJson() => _$ProfileResponseModelToJson(this);
 
+  final int? status;
+  final int? code;
   final String? message;
-  @JsonKey(name: 'error_code')
-  final int? errorCode;
   final ProfileModel? data;
+
+  @override
+  String toString() {
+    return '$status, $code, $message, $data';
+  }
 }
 
 @JsonSerializable()
 class ProfileModel {
   ProfileModel({
-    this.fullname,
-    this.name,
-    this.email,
-    this.img,
-    this.dob,
-    this.country,
-    this.phone,
-    this.gender,
-    this.job,
+    required this.id,
+    required this.fullName,
+    required this.nickname,
+    required this.email,
+    required this.phone,
+    required this.gender,
+    required this.dob,
+    required this.avatar,
+    required this.country,
+    required this.job,
   });
 
   factory ProfileModel.fromJson(Map<String, dynamic> json) =>
@@ -40,13 +47,20 @@ class ProfileModel {
 
   Map<String, dynamic> toJson() => _$ProfileModelToJson(this);
 
-  final String? fullname;
-  final String? name;
+  final String? id;
+  @JsonKey(name: 'full_name')
+  final String? fullName;
+  final String? nickname;
   final String? email;
-  final String? img;
-  final String? dob;
-  final String? country;
   final String? phone;
-  final bool? gender;
+  final String? gender;
+  final String? dob;
+  final String? avatar;
+  final String? country;
   final String? job;
+
+  @override
+  String toString() {
+    return '$id, $fullName, $nickname, $email, $phone, $gender, $dob, $avatar, $country, $job';
+  }
 }

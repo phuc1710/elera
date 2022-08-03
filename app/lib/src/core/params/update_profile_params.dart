@@ -6,8 +6,8 @@ part 'update_profile_params.g.dart';
 @JsonSerializable()
 class UpdateProfileParams extends Equatable {
   const UpdateProfileParams({
-    this.fullname,
-    this.name,
+    this.fullName,
+    this.nickname,
     this.email,
     this.dob,
     this.country,
@@ -21,19 +21,20 @@ class UpdateProfileParams extends Equatable {
 
   Map<String, dynamic> toJson() => _$UpdateProfileParamsToJson(this);
 
-  final String? fullname;
-  final String? name;
+  @JsonKey(name: 'full_name')
+  final String? fullName;
+  final String? nickname;
   final String? email;
-  final String? dob;
+  final int? dob;
   final String? country;
   final String? phone;
-  final bool? gender;
+  final String? gender;
   final String? job;
 
   @override
   List<Object?> get props => [
-        fullname,
-        name,
+        fullName,
+        nickname,
         email,
         dob,
         country,

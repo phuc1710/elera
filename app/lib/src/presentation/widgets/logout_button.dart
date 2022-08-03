@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 
+import '../../config/router/routes.dart';
+import '../../domain/usecases/clear_cache_usecase.dart';
+import '../../injector/injector.dart';
 import 'base_bottom_sheet.dart';
 import 'base_button.dart';
 
@@ -60,6 +64,7 @@ class LogoutButton extends StatelessWidget {
                             offset: Offset(4, 8),
                           )
                         ],
+                        onTap: () => logOut(context),
                       ),
                     ),
                   ],
@@ -70,5 +75,11 @@ class LogoutButton extends StatelessWidget {
         );
       },
     );
+  }
+
+  Future<void> logOut(BuildContext context) async {
+    final clearCacheUC = getIt<ClearCacheUseCase>();
+    await clearCacheUC();
+    await context.router.navigateNamed(Routes.signInRoute);
   }
 }

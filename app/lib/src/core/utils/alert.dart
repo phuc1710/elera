@@ -1,5 +1,4 @@
 // Flutter imports:
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +24,7 @@ class Alert {
     // set up the button
     await showDialog<void>(
       context: context,
-      builder: (BuildContext context) {
+      builder: (BuildContext _) {
         return WillPopScope(
           onWillPop: () async => false,
           child: CupertinoAlertDialog(
@@ -52,7 +51,7 @@ class Alert {
                 ),
                 onPressed: () {
                   if (isPop) {
-                    context.router.pop();
+                    Navigator.of(context).pop();
                   }
                   onPressOK?.call();
                 },

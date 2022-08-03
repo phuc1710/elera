@@ -2,6 +2,8 @@ import 'package:injectable/injectable.dart';
 
 import '../config/defines/keys.dart';
 import '../core/nd_network/nd_network.dart';
+import '../data/datasources/local/cache/app_cache.dart';
+import '../data/datasources/local/local_storage.dart';
 import '../data/datasources/remote/bookmark_api_service.dart';
 import '../data/datasources/remote/course_api_service.dart';
 import '../data/datasources/remote/helper_api_service.dart';
@@ -14,6 +16,9 @@ import '../injector/injector.dart';
 
 @module
 abstract class RegisterModule {
+  @lazySingleton
+  AppCache get cache => LocalStorage.instance.getCache();
+
   @Named(kApiDio)
   Dio get apiDio => getIt<Network>().apiProvider.apiDio;
 

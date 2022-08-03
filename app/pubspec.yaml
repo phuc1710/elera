@@ -32,6 +32,9 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  ez_cache:
+    path: ./_shared/ez_cache
+
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
   json_annotation: ^4.5.0
@@ -68,7 +71,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   json_serializable: ^6.2.0
-  injectable_generator: ^1.5.3  
+  injectable_generator: ^1.5.3
+  hive_generator: ^1.1.3  
   build_runner: ^2.0.6
   dart_code_metrics: ^4.15.2
   retrofit_generator: ^4.0.1

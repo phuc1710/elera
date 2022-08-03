@@ -120,16 +120,21 @@ class _ProfileViewState extends State<ProfileView> {
               child: Column(
                 children: [
                   ProfilePicture(
-                    avatar: state.profile?.img,
+                    avatar: state.profile?.avatar,
                     callBack: () {},
                   ),
                   const SizedBox(height: 15),
                   Text(
+<<<<<<< HEAD:app/lib/src/presentation/profile/view/profile_view.dart
                     state.profile?.fullname ?? '',
                     style: Theme.of(context)
                         .textTheme
                         .headline6
                         ?.copyWith(fontSize: 24),
+=======
+                    state.profile?.fullName ?? '',
+                    style: Theme.of(context).textTheme.titleSmall,
+>>>>>>> 24c5553d923cd44f67efea821d2818cbeb75ddac:lib/src/presentation/profile/view/profile_view.dart
                   ),
                   const SizedBox(height: 12),
                   Text(
@@ -184,12 +189,23 @@ class _ProfileViewState extends State<ProfileView> {
           icon: Icons.security,
           onTap: () => context.router.pushNamed(Routes.securityRoute),
         ),
-        profileActionItem(
-          context,
-          title: 'Language',
-          icon: Icons.language,
-          value: 'English(US)',
-          onTap: () => context.router.pushNamed(Routes.languageRoute),
+        BlocBuilder<ProfileBloc, ProfileState>(
+          builder: (context, state) {
+            var language = '';
+            if (state is ProfileFetchSuccess) {
+              language = state.language?.name ?? '';
+            }
+
+            return profileActionItem(
+              context,
+              title: 'Language',
+              icon: Icons.language,
+              value: language,
+              onTap: () => context.router.pushNamed(Routes.languageRoute).then(
+                    (_) => context.read<ProfileBloc>().add(ProfileStarted()),
+                  ),
+            );
+          },
         ),
         ListTile(
           leading: const Icon(Icons.dark_mode_outlined, size: 35),

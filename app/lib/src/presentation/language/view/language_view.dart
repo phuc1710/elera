@@ -108,6 +108,7 @@ class _LanguageViewState extends State<LanguageView> {
                     ),
               ),
               onChanged: (val) {
+                context.read<LanguageBloc>().add(LanguageSaved(val));
                 setState(() {
                   selectedLanguage = val;
                 });

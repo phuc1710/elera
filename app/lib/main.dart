@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'src/config/router/app_router.dart';
 import 'src/core/utils/utils.dart';
+import 'src/data/datasources/app_datasources.dart';
 import 'src/injector/injector.dart';
 import 'src/presentation/_blocs/app_multi_bloc_provider.dart';
 
@@ -11,6 +12,7 @@ Future<void> main() async {
   Utils.addGoogleFontsLicense();
 
   WidgetsFlutterBinding.ensureInitialized();
+  await AppDataSources.init();
   await initializeDependencies();
 
   Future.delayed(const Duration(milliseconds: 150), () => runApp(const App()));

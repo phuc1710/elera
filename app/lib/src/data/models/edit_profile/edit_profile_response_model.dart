@@ -7,24 +7,28 @@ part 'edit_profile_response_model.g.dart';
 @JsonSerializable()
 class EditProfileResponseModel {
   EditProfileResponseModel({
-    this.errorCode,
-    this.message,
-    this.data,
+    required this.status,
+    required this.code,
+    required this.message,
+    required this.data,
   });
 
   factory EditProfileResponseModel.fromJson(Map<String, dynamic> json) =>
       _$EditProfileResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$EditProfileResponseModelToJson(this);
-  @JsonKey(name: 'error_code')
-  final int? errorCode;
+
+  final int? status;
+  final int? code;
   final String? message;
   final EditProfileDataModel? data;
 }
 
 @JsonSerializable()
 class EditProfileDataModel {
-  EditProfileDataModel({required this.countries});
+  EditProfileDataModel({
+    required this.items,
+  });
 
   factory EditProfileDataModel.fromJson(Map<String, dynamic> json) =>
       _$EditProfileDataModelFromJson(json);
@@ -32,5 +36,5 @@ class EditProfileDataModel {
   Map<String, dynamic> toJson() => _$EditProfileDataModelToJson(this);
 
   @JsonKey(defaultValue: <CountryModel>[])
-  final List<CountryModel?> countries;
+  final List<CountryModel?> items;
 }
