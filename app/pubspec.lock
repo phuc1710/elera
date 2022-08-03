@@ -277,7 +277,7 @@ packages:
   ez_cache:
     dependency: "direct main"
     description:
-      path: "_shared/ez_cache"
+      path: "../_shared/ez_cache"
       relative: true
     source: path
     version: "0.0.1"

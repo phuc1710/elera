@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'trailing_buttons_row.dart';
 
@@ -35,7 +34,10 @@ class UserHeaderListTile extends StatelessWidget {
         ),
         subtitle: Text(
           'Andrew Ainsley',
-          style: Theme.of(context).textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context)
+              .textTheme
+              .bodyText2
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
         trailing: const TrailingButtonsRow(),
       ),

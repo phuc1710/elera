@@ -55,7 +55,8 @@ class _HelperCenterViewState extends State<HelperCenterView> {
                 children: [
                   TabBar(
                     labelStyle: Theme.of(context).textTheme.bodyText1?.copyWith(
-                        color: Theme.of(context).colorScheme.primary),
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                     labelColor: Theme.of(context).colorScheme.primary,
                     unselectedLabelColor: Colors.grey,
                     tabs: const [

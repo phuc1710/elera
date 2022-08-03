@@ -18,7 +18,7 @@ Future<void> initializeDependencies() async {
       enableLogger: true,
       environment: env.Environment.sandbox,
       getHeadersApiProvider: () async {
-        final accessToken = await injector<AccessTokenUseCase>()();
+        final accessToken = await getIt<AccessTokenUseCase>()();
         final Map<String, dynamic> header = <String, dynamic>{
           'product': 'app',
           'authorization': accessToken,

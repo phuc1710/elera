@@ -125,16 +125,11 @@ class _ProfileViewState extends State<ProfileView> {
                   ),
                   const SizedBox(height: 15),
                   Text(
-<<<<<<< HEAD:app/lib/src/presentation/profile/view/profile_view.dart
-                    state.profile?.fullname ?? '',
+                    state.profile?.fullName ?? '',
                     style: Theme.of(context)
                         .textTheme
                         .headline6
                         ?.copyWith(fontSize: 24),
-=======
-                    state.profile?.fullName ?? '',
-                    style: Theme.of(context).textTheme.titleSmall,
->>>>>>> 24c5553d923cd44f67efea821d2818cbeb75ddac:lib/src/presentation/profile/view/profile_view.dart
                   ),
                   const SizedBox(height: 12),
                   Text(
