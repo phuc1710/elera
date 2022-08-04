@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
@@ -12,11 +13,13 @@ class LogoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return ListTile(
       leading: const Icon(Icons.logout, size: 35, color: Colors.red),
       minLeadingWidth: 20,
       title: Text(
-        'Logout',
+        l10n.logOut,
         textAlign: TextAlign.start,
         style:
             Theme.of(context).textTheme.bodyText1?.copyWith(color: Colors.red),
@@ -24,7 +27,7 @@ class LogoutButton extends StatelessWidget {
       onTap: () {
         showBaseBottomSheet(
           context: context,
-          title: 'Logout',
+          title: l10n.logOut,
           child: Column(
             children: [
               SizedBox(

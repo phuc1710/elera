@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +26,7 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     final Brightness brightness = Theme.of(context).brightness;
     final bool isDarkMode = brightness == Brightness.dark;
+    final AppLocalizations l10n = AppLocalizations.of(context);
 
     return BlocProvider(
       create: (context) => getIt<ProfileBloc>()..add(ProfileStarted()),
@@ -41,7 +43,7 @@ class _ProfileViewState extends State<ProfileView> {
                 child: TopAppBar(
                   AppBarParams(
                     context,
-                    title: 'Profile',
+                    title: l10n.profile,
                     leading: Image.network(
                       'https://www.pinpng.com/pngs/m/114-1147460_elearning-development-e-learning-icon-orange-hd-png.png',
                       width: 30,
@@ -148,107 +150,107 @@ class _ProfileViewState extends State<ProfileView> {
   }
 
   // ignore: long-method
-  List<Widget> actions(BuildContext context, bool isDarkMode) => [
-        BlocBuilder<ProfileBloc, ProfileState>(
-          builder: (context, state) {
-            if (state is ProfileFetchSuccess) {
-              return profileActionItem(
-                context,
-                title: 'Edit Profile',
-                icon: Icons.person,
-                //! Push object
-                onTap: () => context.router
-                    .push(EditProfileRoute(profile: state.profile)),
-              );
-            }
+  List<Widget> actions(BuildContext context, bool isDarkMode) {
+    final l10n = AppLocalizations.of(context);
 
-            return const SizedBox();
-          },
-        ),
-        profileActionItem(
-          context,
-          title: 'Notification',
-          icon: Icons.notifications,
-          onTap: () =>
-              context.router.pushNamed(Routes.notificationSettingsRoute),
-        ),
-        profileActionItem(
-          context,
-          title: 'Payment',
-          icon: Icons.payment,
-          onTap: () => context.router.pushNamed(Routes.paymentRoute),
-        ),
-        profileActionItem(
-          context,
-          title: 'Security',
-          icon: Icons.security,
-          onTap: () => context.router.pushNamed(Routes.securityRoute),
-        ),
-        BlocBuilder<ProfileBloc, ProfileState>(
-          builder: (context, state) {
-            var language = '';
-            if (state is ProfileFetchSuccess) {
-              language = state.language?.name ?? '';
-            }
-
+    return [
+      BlocBuilder<ProfileBloc, ProfileState>(
+        builder: (context, state) {
+          if (state is ProfileFetchSuccess) {
             return profileActionItem(
               context,
-              title: 'Language',
-              icon: Icons.language,
-              value: language,
-              onTap: () => context.router.pushNamed(Routes.languageRoute).then(
-                    (_) => context.read<ProfileBloc>().add(ProfileStarted()),
-                  ),
+              title: l10n.editProfile,
+              icon: Icons.person,
+              //! Push object
+              onTap: () =>
+                  context.router.push(EditProfileRoute(profile: state.profile)),
             );
+          }
+
+          return const SizedBox();
+        },
+      ),
+      profileActionItem(
+        context,
+        title: l10n.notification,
+        icon: Icons.notifications,
+        onTap: () => context.router.pushNamed(Routes.notificationSettingsRoute),
+      ),
+      profileActionItem(
+        context,
+        title: l10n.payment,
+        icon: Icons.payment,
+        onTap: () => context.router.pushNamed(Routes.paymentRoute),
+      ),
+      profileActionItem(
+        context,
+        title: l10n.security,
+        icon: Icons.security,
+        onTap: () => context.router.pushNamed(Routes.securityRoute),
+      ),
+      BlocBuilder<ProfileBloc, ProfileState>(
+        builder: (context, state) {
+          var language = '';
+          if (state is ProfileFetchSuccess) {
+            language = state.language?.name ?? '';
+          }
+
+          return profileActionItem(
+            context,
+            title: AppLocalizations.of(context).language,
+            icon: Icons.language,
+            value: language,
+            onTap: () => context.router.pushNamed(Routes.languageRoute).then(
+                  (_) => context.read<ProfileBloc>().add(ProfileStarted()),
+                ),
+          );
+        },
+      ),
+      ListTile(
+        leading: const Icon(Icons.dark_mode_outlined, size: 35),
+        onTap: () {
+          isDarkMode = !isDarkMode;
+        },
+        title: Text(
+          l10n.darkMode,
+          textAlign: TextAlign.start,
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
+        trailing: CupertinoSwitch(
+          value: isDarkMode,
+          onChanged: (value) {
+            if (value) {
+              context.read<ThemeBloc>().add(DarkThemeEnabled());
+            }
+            if (!value) {
+              context.read<ThemeBloc>().add(DarkThemeDisabled());
+            }
           },
         ),
-        ListTile(
-          leading: const Icon(Icons.dark_mode_outlined, size: 35),
-          onTap: () {
-            isDarkMode = !isDarkMode;
-          },
-          title: Text(
-            'Dark Mode',
-            textAlign: TextAlign.start,
-            style: Theme.of(context)
-                .textTheme
-                .bodyText1
-                ?.copyWith(color: Colors.black),
-          ),
-          trailing: CupertinoSwitch(
-            value: isDarkMode,
-            onChanged: (value) {
-              if (value) {
-                context.read<ThemeBloc>().add(DarkThemeEnabled());
-              }
-              if (!value) {
-                context.read<ThemeBloc>().add(DarkThemeDisabled());
-              }
-            },
+      ),
+      profileActionItem(
+        context,
+        title: l10n.privacyPolicy,
+        icon: Icons.lock,
+        onTap: () => context.router.push(
+          PrivacyPolicyRoute(
+            url:
+                'https://cmapi.ngocdunggroup.com.vn/news/view?id=4a730df1-5d68-454c-99d2-4574f2f04154',
           ),
         ),
-        profileActionItem(
-          context,
-          title: 'Privacy Policy',
-          icon: Icons.lock,
-          onTap: () => context.router.push(
-            PrivacyPolicyRoute(
-              url:
-                  'https://cmapi.ngocdunggroup.com.vn/news/view?id=4a730df1-5d68-454c-99d2-4574f2f04154',
-            ),
-          ),
-        ),
-        profileActionItem(
-          context,
-          title: 'Help Center',
-          icon: Icons.help_center,
-          onTap: () => context.router.pushNamed(Routes.helperCenter),
-        ),
-        profileActionItem(
-          context,
-          title: 'Invite Friends',
-          icon: Icons.group,
-          onTap: () => context.router.pushNamed(Routes.friendsInvitationRoute),
-        ),
-      ];
+      ),
+      profileActionItem(
+        context,
+        title: l10n.helpCenter,
+        icon: Icons.help_center,
+        onTap: () => context.router.pushNamed(Routes.helperCenter),
+      ),
+      profileActionItem(
+        context,
+        title: l10n.inviteFriends,
+        icon: Icons.group,
+        onTap: () => context.router.pushNamed(Routes.friendsInvitationRoute),
+      ),
+    ];
+  }
 }

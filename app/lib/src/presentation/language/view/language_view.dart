@@ -1,3 +1,4 @@
+import 'package:ez_intl/l10n/arb/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -5,6 +6,7 @@ import '../../../core/params/appbar_params.dart';
 import '../../../core/utils/alert.dart';
 import '../../../data/models/language/language_response_model.dart';
 import '../../../injector/injector.dart';
+import '../../_blocs/locale/locale_bloc.dart';
 import '../../widgets/base_appbar.dart';
 import '../bloc/language_bloc.dart';
 
@@ -67,8 +69,16 @@ class _LanguageViewState extends State<LanguageView> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: ListView(
         children: [
-          buildSection(context, title: 'Suggested', data: suggested),
-          buildSection(context, title: 'Language', data: languages),
+          buildSection(
+            context,
+            title: AppLocalizations.of(context).suggested,
+            data: suggested,
+          ),
+          buildSection(
+            context,
+            title: AppLocalizations.of(context).language,
+            data: languages,
+          ),
         ],
       ),
     );
@@ -109,6 +119,7 @@ class _LanguageViewState extends State<LanguageView> {
               ),
               onChanged: (val) {
                 context.read<LanguageBloc>().add(LanguageSaved(val));
+                context.read<LocaleBloc>().add(LocaleChanged('${val?.name}'));
                 setState(() {
                   selectedLanguage = val;
                 });

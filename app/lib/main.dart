@@ -1,4 +1,5 @@
 import 'package:app_ui/app_ui.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,6 +37,10 @@ class _AppState extends State<App> {
       providers: [
         BlocProvider<ThemeBloc>(
           create: (BuildContext context) => getIt<ThemeBloc>(),
+        ),
+        BlocProvider<LocaleBloc>(
+          create: (BuildContext context) =>
+              getIt<LocaleBloc>()..add(LocaleCached()),
         )
       ],
       child: MultiBlocListener(
@@ -51,22 +56,46 @@ class _AppState extends State<App> {
                 _darkTheme = AppTheme.light;
               }
             },
-          )
+          ),
         ],
-        child: BlocBuilder<ThemeBloc, ThemeState>(
-          builder: (context, state) {
-            return MaterialApp.router(
-              title: 'E-Learning',
-              debugShowCheckedModeBanner: false,
-              theme: _theme,
-              darkTheme: _darkTheme,
-              // theme: theme(),
-              routerDelegate: _appRouter.delegate(),
-              routeInformationParser: _appRouter.defaultRouteParser(),
-            );
-          },
+        child: MateApp(
+          theme: _theme,
+          darkTheme: _darkTheme,
+          appRouter: _appRouter,
         ),
       ),
+    );
+  }
+}
+
+class MateApp extends StatelessWidget {
+  const MateApp({
+    Key? key,
+    required ThemeData theme,
+    required ThemeData darkTheme,
+    required AppRouter appRouter,
+  })  : _theme = theme,
+        _darkTheme = darkTheme,
+        _appRouter = appRouter,
+        super(key: key);
+
+  final ThemeData _theme;
+  final ThemeData _darkTheme;
+  final AppRouter _appRouter;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      title: 'E-Learning',
+      debugShowCheckedModeBanner: false,
+      theme: _theme,
+      darkTheme: _darkTheme,
+      // theme: theme(),
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
+      locale: context.watch<LocaleBloc>().state.locale,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

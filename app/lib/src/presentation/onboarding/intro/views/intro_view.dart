@@ -1,3 +1,4 @@
+import 'package:ez_intl/l10n/arb/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/intro_body.dart';
@@ -10,12 +11,13 @@ class IntroView extends StatefulWidget {
 }
 
 class _IntroViewState extends State<IntroView> {
-  int page = 0;
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    final _initButtonString = AppLocalizations.of(context).next;
+
+    return SafeArea(
       child: Scaffold(
-        body: IntroBody(),
+        body: IntroBody(initButtonString: _initButtonString),
       ),
     );
   }
