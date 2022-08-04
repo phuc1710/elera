@@ -25,8 +25,8 @@ class CreateNewPasswordView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: BlocProvider<PasswordCreationBloc>(
-            create: (context) => getIt(),
+          body: BlocProvider(
+            create: (context) => getIt<PasswordCreationBloc>(),
             child: const CreateNewPasswordBody(),
           ),
         ),

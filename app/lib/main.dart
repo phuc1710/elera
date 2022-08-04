@@ -35,10 +35,10 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ThemeBloc>(
+        BlocProvider(
           create: (BuildContext context) => getIt<ThemeBloc>(),
         ),
-        BlocProvider<LocaleBloc>(
+        BlocProvider(
           create: (BuildContext context) =>
               getIt<LocaleBloc>()..add(LocaleCached()),
         )

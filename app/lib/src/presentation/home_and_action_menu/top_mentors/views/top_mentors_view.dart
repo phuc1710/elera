@@ -25,8 +25,9 @@ class TopMentorsView extends StatelessWidget {
           elevation: 0,
           toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
         ),
-        body: BlocProvider<TopMentorsBloc>(
-          create: (context) => getIt()..add(TopMentorsFetched()),
+        body: BlocProvider(
+          create: (context) =>
+              getIt<TopMentorsBloc>()..add(TopMentorsFetched()),
           child: const TopMentorsBody(),
         ),
       ),

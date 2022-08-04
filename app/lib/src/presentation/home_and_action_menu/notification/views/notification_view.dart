@@ -27,8 +27,9 @@ class NotificationView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: BlocProvider<NotificationBloc>(
-            create: (context) => getIt()..add(NotificationFetched()),
+          body: BlocProvider(
+            create: (context) =>
+                getIt<NotificationBloc>()..add(NotificationFetched()),
             child: const NotificationBody(),
           ),
         ),

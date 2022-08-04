@@ -27,8 +27,8 @@ class MostPopularCoursesView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: BlocProvider<CourseBloc>(
-            create: (context) => getIt()..add(CourseFetched()),
+          body: BlocProvider(
+            create: (context) => getIt<CourseBloc>()..add(CourseFetched()),
             child: const MostPopularCoursesBody(),
           ),
         ),

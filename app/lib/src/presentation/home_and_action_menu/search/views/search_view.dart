@@ -30,9 +30,9 @@ class _SearchViewState extends State<SearchView> {
       child: SafeArea(
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          body: BlocProvider<SearchBloc>(
+          body: BlocProvider(
             create: (context) =>
-                getIt()..add(RecentSearchFetched('user@email.com')),
+                getIt<SearchBloc>()..add(RecentSearchFetched('user@email.com')),
             child: BlocBuilder<SearchBloc, SearchState>(
               builder: (context, state) {
                 return Column(

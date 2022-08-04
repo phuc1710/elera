@@ -25,8 +25,9 @@ class SelectContactView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: BlocProvider<ContactSelectionBloc>(
-            create: (context) => getIt()..add(ContactFetched(userEmail: email)),
+          body: BlocProvider(
+            create: (context) => getIt<ContactSelectionBloc>()
+              ..add(ContactFetched(userEmail: email)),
             child: SelectContactBody(email: email),
           ),
         ),

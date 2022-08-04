@@ -22,8 +22,8 @@ class SignUpView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: BlocProvider<SignUpBloc>(
-            create: (context) => getIt(),
+          body: BlocProvider(
+            create: (context) => getIt<SignUpBloc>(),
             child: const SignUpBody(),
           ),
         ),
