@@ -1,3 +1,4 @@
+import 'package:ez_intl/l10n/arb/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../../../profile/view/profile_view.dart';
@@ -37,6 +38,8 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return SafeArea(
       child: Scaffold(
         body: tabs[_selectedIndex],
@@ -47,31 +50,31 @@ class _HomeViewState extends State<HomeView> {
           unselectedLabelStyle: const TextStyle(color: Colors.black),
           currentIndex: _selectedIndex,
           onTap: (index) => setState(() => _selectedIndex = index),
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              activeIcon: Icon(Icons.home_rounded),
-              icon: Icon(Icons.home_outlined),
-              label: 'Home',
+              activeIcon: const Icon(Icons.home_rounded),
+              icon: const Icon(Icons.home_outlined),
+              label: l10n.home,
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(Icons.document_scanner_rounded),
-              icon: Icon(Icons.document_scanner_outlined),
-              label: 'My Course',
+              activeIcon: const Icon(Icons.document_scanner_rounded),
+              icon: const Icon(Icons.document_scanner_outlined),
+              label: l10n.myCourse,
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(Icons.chat_rounded),
-              icon: Icon(Icons.chat_outlined),
-              label: 'Inbox',
+              activeIcon: const Icon(Icons.chat_rounded),
+              icon: const Icon(Icons.chat_outlined),
+              label: l10n.inbox,
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(Icons.shopping_cart_rounded),
-              icon: Icon(Icons.shopping_cart_outlined),
-              label: 'Transaction',
+              activeIcon: const Icon(Icons.shopping_cart_rounded),
+              icon: const Icon(Icons.shopping_cart_outlined),
+              label: l10n.transaction,
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(Icons.person_rounded),
-              icon: Icon(Icons.person_outline_rounded),
-              label: 'Profile',
+              activeIcon: const Icon(Icons.person_rounded),
+              icon: const Icon(Icons.person_outline_rounded),
+              label: l10n.profile,
             ),
           ],
         ),

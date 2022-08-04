@@ -61,8 +61,8 @@ class ActionButtonRow extends StatelessWidget {
     );
     await Future.delayed(const Duration(seconds: 2), () {
       SchedulerBinding.instance.addPostFrameCallback((_) {
-        context.router.pop();
-        context.router.replaceAll([const HomeRoute()]);
+        context.router
+            .pushAndPopUntil(const HomeRoute(), predicate: (route) => false);
       });
     });
   }

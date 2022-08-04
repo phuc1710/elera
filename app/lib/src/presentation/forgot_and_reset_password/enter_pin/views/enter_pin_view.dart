@@ -30,9 +30,9 @@ class EnterPinView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: BlocProvider<PinEntryBloc>(
+          body: BlocProvider(
             create: (context) =>
-                getIt()..add(PinSendingRequested(contactInfo as String)),
+                getIt<PinEntryBloc>()..add(PinSendingRequested(contactInfo as String)),
             child: EnterPinBody(contactInfo: contactInfo),
           ),
         ),

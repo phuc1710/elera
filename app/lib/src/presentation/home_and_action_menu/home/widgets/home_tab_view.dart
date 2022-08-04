@@ -23,8 +23,8 @@ class HomeTabView extends StatelessWidget {
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: BlocProvider<HomeBloc>(
-        create: (context) => getIt()..add(HomeFetched()),
+      child: BlocProvider(
+        create: (context) => getIt<HomeBloc>()..add(HomeFetched()),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

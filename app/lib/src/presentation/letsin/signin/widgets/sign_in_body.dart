@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/router/app_router.dart';
 import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../letsin/widgets/divider_row_with_text.dart';
@@ -34,7 +35,8 @@ class _SignInBodyState extends State<SignInBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignInSuccess) {
-          context.router.navigateNamed(Routes.homeRoute);
+          context.router
+              .pushAndPopUntil(const HomeRoute(), predicate: (route) => false);
         }
       },
       buildWhen: (prev, curr) => curr is! SignInLoading,

@@ -27,8 +27,8 @@ class MyBookmarkView extends StatelessWidget {
             elevation: 0,
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
-          body: BlocProvider<BookmarkBloc>(
-            create: (context) => getIt()..add(BookmarkFetched()),
+          body: BlocProvider(
+            create: (context) => getIt<BookmarkBloc>()..add(BookmarkFetched()),
             child: const MyBookmarkBody(),
           ),
         ),

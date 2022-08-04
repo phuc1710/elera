@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
@@ -9,7 +10,10 @@ import 'page_indicator.dart';
 class IntroBody extends StatefulWidget {
   const IntroBody({
     Key? key,
+    required this.initButtonString,
   }) : super(key: key);
+
+  final String initButtonString;
 
   @override
   State<IntroBody> createState() => _IntroBodyState();
@@ -17,8 +21,14 @@ class IntroBody extends StatefulWidget {
 
 class _IntroBodyState extends State<IntroBody> {
   final _controller = PageController();
-  String _buttonString = 'Next';
   int page = 0;
+  String _buttonString = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _buttonString = widget.initButtonString;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +46,9 @@ class _IntroBodyState extends State<IntroBody> {
                 controller: _controller,
                 onPageChanged: (index) => setState(() {
                   page = index;
-                  _buttonString = page > 1 ? 'Get Started' : 'Next';
+                  _buttonString = page > 1
+                      ? AppLocalizations.of(context).getStarted
+                      : AppLocalizations.of(context).next;
                 }),
                 children: getIntroPages,
               ),
@@ -56,7 +68,7 @@ class _IntroBodyState extends State<IntroBody> {
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeIn,
               );
-              if (_buttonString == 'Get Started') {
+              if (_buttonString == AppLocalizations.of(context).getStarted) {
                 context.router.pushNamed(Routes.letsInRoute);
               }
             },
