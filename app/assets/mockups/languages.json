@@ -1,0 +1,81 @@
+{
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+      "suggested": [
+          {
+              "id": "62e200b3ddf4a335e0acaf16",
+              "name": "English (UK)",
+              "is_suggested": true
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf15",
+              "name": "English (US)",
+              "is_suggested": true
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf17",
+              "name": "Tiếng Việt",
+              "is_suggested": true
+          }
+      ],
+      "languages": [
+          {
+              "id": "62e200b3ddf4a335e0acaf16",
+              "name": "English (UK)",
+              "is_suggested": true
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf15",
+              "name": "English (US)",
+              "is_suggested": true
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf17",
+              "name": "Tiếng Việt",
+              "is_suggested": true
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf18",
+              "name": "Mandarin",
+              "is_suggested": false
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf19",
+              "name": "Hindi",
+              "is_suggested": false
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf1c",
+              "name": "Arabic",
+              "is_suggested": false
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf1d",
+              "name": "Bengali",
+              "is_suggested": false
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf1e",
+              "name": "Russian",
+              "is_suggested": false
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf1f",
+              "name": "Indonesia",
+              "is_suggested": false
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf1b",
+              "name": "French",
+              "is_suggested": false
+          },
+          {
+              "id": "62e200b3ddf4a335e0acaf1a",
+              "name": "Spanish",
+              "is_suggested": false
+          }
+      ]
+  }
+}

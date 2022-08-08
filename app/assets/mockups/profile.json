@@ -1,0 +1,17 @@
+{
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+      "id": "62e09d57bf80da2d56936980",
+      "full_name": "",
+      "nickname": "",
+      "email": "thinhhh@gmail.com",
+      "phone": "",
+      "gender": "Khác",
+      "dob": "",
+      "avatar": "https://media.ngocdunggroup.com.vn/images/ma_ios/2019/10/36ad0db3-fc88-4f30-b9ce-183b62cd308c.jpg",
+      "country": "",
+      "job": ""
+  }
+}

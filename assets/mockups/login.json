@@ -1,9 +1,0 @@
-{    "message": "",
-    "status": 0,
-    "data": {
-        "token":"thisIsToken",
-        "name":"Name",
-        "email":"email@gmail.com"
-    }
-
-}
