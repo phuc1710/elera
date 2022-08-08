@@ -1,6 +1,6 @@
 class Routes {
   // 1. Onboarding
-  static const String introRoute = '/';
+  static const String introRoute = '/intro';
   // 2. Let's in (Sign up, Sign in)
   static const String letsInRoute = '/lets_in';
   static const String signUpRoute = '/sign_up';
@@ -20,6 +20,8 @@ class Routes {
   static const String topMentorsRoute = '/top_mentors';
   static const String mostPopularCoursesRoute = '/most_popular_courses';
   static const String searchRoute = '/search';
+  // 6. Course Details & Payment/Enroll
+  static const String courseDetail = '/';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';
   static const String notificationSettingsRoute = '/notification_settings';

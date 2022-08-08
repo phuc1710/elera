@@ -58,10 +58,14 @@ class _AppState extends State<App> {
             },
           ),
         ],
-        child: MateApp(
-          theme: _theme,
-          darkTheme: _darkTheme,
-          appRouter: _appRouter,
+        child: BlocBuilder<ThemeBloc, ThemeState>(
+          builder: (context, state) {
+            return MateApp(
+              theme: _theme,
+              darkTheme: _darkTheme,
+              appRouter: _appRouter,
+            );
+          },
         ),
       ),
     );

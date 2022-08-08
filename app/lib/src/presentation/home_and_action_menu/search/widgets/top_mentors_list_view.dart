@@ -38,7 +38,6 @@ class _TopMentorsListViewState extends State<TopMentorsListView> {
             subtitle: Text(
               '${mentor?.description}',
               style: Theme.of(context).textTheme.overline?.copyWith(
-                    fontSize: 11,
                     color: const Color(0xff616161),
                   ),
             ),

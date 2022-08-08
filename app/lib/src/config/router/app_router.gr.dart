@@ -85,6 +85,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SearchView());
     },
+    CourseDetailRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const CourseDetailView());
+    },
     EditProfileRoute.name: (routeData) {
       final args = routeData.argsAs<EditProfileRouteArgs>();
       return MaterialPageX<dynamic>(
@@ -129,7 +133,7 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(IntroRoute.name, path: '/'),
+        RouteConfig(IntroRoute.name, path: '/intro'),
         RouteConfig(LetsInRoute.name, path: '/lets_in'),
         RouteConfig(SignUpRoute.name, path: '/sign_up'),
         RouteConfig(SignInRoute.name, path: '/sign_in'),
@@ -147,6 +151,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(MostPopularCoursesRoute.name,
             path: '/most_popular_courses'),
         RouteConfig(SearchRoute.name, path: '/search'),
+        RouteConfig(CourseDetailRoute.name, path: '/'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
             path: '/notification_settings'),
@@ -163,7 +168,7 @@ class _$AppRouter extends RootStackRouter {
 /// generated route for
 /// [IntroView]
 class IntroRoute extends PageRouteInfo<void> {
-  const IntroRoute() : super(IntroRoute.name, path: '/');
+  const IntroRoute() : super(IntroRoute.name, path: '/intro');
 
   static const String name = 'IntroRoute';
 }
@@ -324,6 +329,14 @@ class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute() : super(SearchRoute.name, path: '/search');
 
   static const String name = 'SearchRoute';
+}
+
+/// generated route for
+/// [CourseDetailView]
+class CourseDetailRoute extends PageRouteInfo<void> {
+  const CourseDetailRoute() : super(CourseDetailRoute.name, path: '/');
+
+  static const String name = 'CourseDetailRoute';
 }
 
 /// generated route for

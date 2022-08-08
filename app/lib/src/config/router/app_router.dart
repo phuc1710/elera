@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import '../../presentation/course_detail_payment_enroll/view/course_detail_view.dart';
 import 'routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ part 'app_router.gr.dart';
   replaceInRouteName: 'View,Route',
   routes: <AutoRoute>[
     // 1. Onboarding
-    AutoRoute<dynamic>(page: IntroView, initial: true, path: Routes.introRoute),
+    AutoRoute<dynamic>(page: IntroView, path: Routes.introRoute),
     // 2. Let's in (Sign up, Sign in)
     AutoRoute<dynamic>(page: LetsInView, path: Routes.letsInRoute),
     AutoRoute<dynamic>(page: SignUpView, path: Routes.signUpRoute),
@@ -71,6 +72,8 @@ part 'app_router.gr.dart';
       path: Routes.mostPopularCoursesRoute,
     ),
     AutoRoute<dynamic>(page: SearchView, path: Routes.searchRoute),
+    // 6. Course Details & Payment/Enroll
+    AutoRoute<dynamic>(page: CourseDetailView, path: Routes.courseDetail, initial: true),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(
