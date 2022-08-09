@@ -1,6 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import '../../presentation/course_detail_payment_enroll/view/course_detail_view.dart';
-import 'routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +6,8 @@ import '../../data/models/profile/profile_response_model.dart';
 import '../../presentation/account_setup/create_new_pin/views/create_new_pin.dart';
 import '../../presentation/account_setup/fill_your_profile/views/fill_your_profile.dart';
 import '../../presentation/account_setup/set_your_fingerprint/views/set_your_fingerprint_view.dart';
+import '../../presentation/course_detail_payment_enroll/course_detail/view/course_detail_view.dart';
+import '../../presentation/course_detail_payment_enroll/mentor_profile/view/mentor_profile_view.dart';
 import '../../presentation/edit_profile/view/edit_profile_page.dart';
 import '../../presentation/forgot_and_reset_password/create_new_password/views/create_new_password_view.dart';
 import '../../presentation/forgot_and_reset_password/enter_pin/views/enter_pin_view.dart';
@@ -30,6 +30,7 @@ import '../../presentation/onboarding/intro/views/intro_view.dart';
 import '../../presentation/payment/view/payment_view.dart';
 import '../../presentation/privacy_policy/privacy_policy_view.dart';
 import '../../presentation/security/view/security_view.dart';
+import 'routes.dart';
 
 part 'app_router.gr.dart';
 
@@ -73,7 +74,12 @@ part 'app_router.gr.dart';
     ),
     AutoRoute<dynamic>(page: SearchView, path: Routes.searchRoute),
     // 6. Course Details & Payment/Enroll
-    AutoRoute<dynamic>(page: CourseDetailView, path: Routes.courseDetail, initial: true),
+    AutoRoute<dynamic>(
+      page: CourseDetailView,
+      path: Routes.courseDetail,
+      initial: true,
+    ),
+    AutoRoute<dynamic>(page: MentorProfileView, path: Routes.mentorProfile),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(

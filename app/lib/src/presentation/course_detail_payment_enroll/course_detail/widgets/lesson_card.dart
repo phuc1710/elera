@@ -7,19 +7,18 @@ class LessonCard extends StatelessWidget {
     required this.lessonTitle,
     required this.duration,
     required this.isLock,
-    required this.textTheme,
-    required this.primaryColor,
   }) : super(key: key);
 
   final String id;
   final String lessonTitle;
   final String duration;
   final bool isLock;
-  final TextTheme textTheme;
-  final Color primaryColor;
 
   @override
   Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).colorScheme.primary;
+    final textTheme = Theme.of(context).textTheme;
+
     return Card(
       elevation: 2,
       shadowColor: Colors.grey[200],
@@ -40,9 +39,7 @@ class LessonCard extends StatelessWidget {
         ),
         title: Text(
           lessonTitle,
-          style: textTheme.bodyText2?.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
+          style: textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
           duration,

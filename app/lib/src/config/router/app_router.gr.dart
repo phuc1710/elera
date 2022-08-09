@@ -89,6 +89,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const CourseDetailView());
     },
+    MentorProfileRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const MentorProfileView());
+    },
     EditProfileRoute.name: (routeData) {
       final args = routeData.argsAs<EditProfileRouteArgs>();
       return MaterialPageX<dynamic>(
@@ -152,6 +156,7 @@ class _$AppRouter extends RootStackRouter {
             path: '/most_popular_courses'),
         RouteConfig(SearchRoute.name, path: '/search'),
         RouteConfig(CourseDetailRoute.name, path: '/'),
+        RouteConfig(MentorProfileRoute.name, path: '/mentor_profile'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
             path: '/notification_settings'),
@@ -337,6 +342,14 @@ class CourseDetailRoute extends PageRouteInfo<void> {
   const CourseDetailRoute() : super(CourseDetailRoute.name, path: '/');
 
   static const String name = 'CourseDetailRoute';
+}
+
+/// generated route for
+/// [MentorProfileView]
+class MentorProfileRoute extends PageRouteInfo<void> {
+  const MentorProfileRoute() : super(MentorProfileRoute.name, path: '/mentor_profile');
+
+  static const String name = 'MentorProfileRoute';
 }
 
 /// generated route for

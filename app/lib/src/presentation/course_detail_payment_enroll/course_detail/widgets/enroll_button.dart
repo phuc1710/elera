@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../onboarding/intro/widgets/main_action_ink.dart';
 
 class EnrollButton extends StatelessWidget {
   const EnrollButton({Key? key}) : super(key: key);

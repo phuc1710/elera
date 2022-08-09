@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../home_and_action_menu/home/widgets/section_text.dart';
+import '../../../home_and_action_menu/home/widgets/section_text.dart';
 import 'mentor_list_tile.dart';
 
 class AboutTabView extends StatelessWidget {

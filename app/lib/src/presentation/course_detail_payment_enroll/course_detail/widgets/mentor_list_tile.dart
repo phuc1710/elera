@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../config/router/routes.dart';
 
 class MentorListTile extends StatelessWidget {
   const MentorListTile({Key? key}) : super(key: key);
@@ -10,7 +13,7 @@ class MentorListTile extends StatelessWidget {
 
     return InkWell(
       borderRadius: BorderRadius.circular(30.0),
-      onTap: () {},
+      onTap: () => context.router.pushNamed(Routes.mentorProfile),
       child: ListTile(
         contentPadding: EdgeInsets.zero,
         leading: CircleAvatar(

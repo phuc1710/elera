@@ -22,6 +22,7 @@ class Routes {
   static const String searchRoute = '/search';
   // 6. Course Details & Payment/Enroll
   static const String courseDetail = '/';
+  static const String mentorProfile = '/mentor_profile';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';
   static const String notificationSettingsRoute = '/notification_settings';

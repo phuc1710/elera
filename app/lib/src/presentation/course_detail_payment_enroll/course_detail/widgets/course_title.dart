@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../home_and_action_menu/home/widgets/course_tag.dart';
-
-class CourseTagAndReview extends StatelessWidget {
-  const CourseTagAndReview({
+class CourseTitle extends StatelessWidget {
+  const CourseTitle({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).colorScheme.primary;
     final textTheme = Theme.of(context).textTheme;
     final screenHeight = MediaQuery.of(context).size.height;
 
@@ -17,12 +16,16 @@ class CourseTagAndReview extends StatelessWidget {
         vertical: screenHeight * 0.01,
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const CourseTag(tag: 'UI/UX Design'),
           Text(
-            '⭐  4.8 (4,479 reviews)',
-            style: textTheme.overline?.copyWith(color: const Color(0xff616161)),
+            'Intro to UI/UX Design',
+            style: textTheme.headline4?.copyWith(fontSize: 26),
           ),
+          Icon(
+            Icons.bookmark_outline,
+            color: primaryColor,
+          )
         ],
       ),
     );
