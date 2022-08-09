@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/routes.dart';
 import '../../../home_and_action_menu/home/widgets/title_row.dart';
 import 'lesson_card.dart';
 import 'section_row.dart';
@@ -16,7 +18,9 @@ class LessonsTabView extends StatelessWidget {
           TitleRow(
             title: '124 Lessons',
             leadingButtonText: 'See All',
-            leadingButtonCallback: () {},
+            leadingButtonCallback: () {
+              context.router.pushNamed(Routes.lesson);
+            },
           ),
           const SectionRow(
             title: 'Section 1',
