@@ -23,6 +23,7 @@ class Routes {
   // 6. Course Details & Payment/Enroll
   static const String courseDetail = '/';
   static const String mentorProfile = '/mentor_profile';
+  static const String review = '/review';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';
   static const String notificationSettingsRoute = '/notification_settings';

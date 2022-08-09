@@ -8,6 +8,7 @@ import '../../presentation/account_setup/fill_your_profile/views/fill_your_profi
 import '../../presentation/account_setup/set_your_fingerprint/views/set_your_fingerprint_view.dart';
 import '../../presentation/course_detail_payment_enroll/course_detail/view/course_detail_view.dart';
 import '../../presentation/course_detail_payment_enroll/mentor_profile/view/mentor_profile_view.dart';
+import '../../presentation/course_detail_payment_enroll/review/view/review_view.dart';
 import '../../presentation/edit_profile/view/edit_profile_page.dart';
 import '../../presentation/forgot_and_reset_password/create_new_password/views/create_new_password_view.dart';
 import '../../presentation/forgot_and_reset_password/enter_pin/views/enter_pin_view.dart';
@@ -80,6 +81,7 @@ part 'app_router.gr.dart';
       initial: true,
     ),
     AutoRoute<dynamic>(page: MentorProfileView, path: Routes.mentorProfile),
+    AutoRoute<dynamic>(page: ReviewView, path: Routes.review),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(
