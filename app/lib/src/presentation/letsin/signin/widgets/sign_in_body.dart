@@ -31,7 +31,7 @@ class _SignInBodyState extends State<SignInBody> {
   Widget build(BuildContext context) {
     return BlocConsumer<SignInBloc, SignInState>(
       listener: (context, state) {
-        if (state is SignInFailed) {
+        if (state is SignInFailure) {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignInSuccess) {
@@ -39,7 +39,7 @@ class _SignInBodyState extends State<SignInBody> {
               .pushAndPopUntil(const HomeRoute(), predicate: (route) => false);
         }
       },
-      buildWhen: (prev, curr) => curr is! SignInLoading,
+      buildWhen: (prev, current) => current is! SignInLoading,
       builder: (context, state) {
         return buildLoginView(context);
       },

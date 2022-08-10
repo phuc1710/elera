@@ -16,8 +16,8 @@ class SignInSuccess extends SignInState {
   SignInSuccess();
 }
 
-class SignInFailed extends SignInState {
-  SignInFailed(this.error);
+class SignInFailure extends SignInState {
+  SignInFailure(this.error);
 
   final ApiError error;
 }
