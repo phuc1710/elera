@@ -66,7 +66,7 @@ class _EnrollCourseBodyState extends State<EnrollCourseBody> {
           ),
         ),
         EnrollButton(
-          action: () => context.router.pushNamed(Routes.enrollCourse),
+          action: () => context.router.pushNamed(Routes.confirmPayment),
         )
       ],
     );

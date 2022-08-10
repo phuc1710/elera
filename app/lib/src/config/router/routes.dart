@@ -26,6 +26,7 @@ class Routes {
   static const String review = '/review';
   static const String lesson = '/lesson';
   static const String enrollCourse = '/enroll_course';
+  static const String confirmPayment = '/confirm_payment';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';
   static const String notificationSettingsRoute = '/notification_settings';

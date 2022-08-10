@@ -6,13 +6,13 @@ class MentorInfoColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final primaryColor = Theme.of(context).colorScheme.primary;
+    final secondaryColor = Theme.of(context).colorScheme.secondary;
     final textTheme = Theme.of(context).textTheme;
 
     return Column(
       children: [
         CircleAvatar(
-          backgroundColor: primaryColor,
+          backgroundColor: secondaryColor,
           radius: screenHeight * 0.08,
         ),
         Padding(

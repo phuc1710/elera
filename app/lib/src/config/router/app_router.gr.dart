@@ -105,6 +105,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const EnrollCourseView());
     },
+    ConfirmPaymentRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ConfirmPaymentView());
+    },
     EditProfileRoute.name: (routeData) {
       final args = routeData.argsAs<EditProfileRouteArgs>();
       return MaterialPageX<dynamic>(
@@ -172,6 +176,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(ReviewRoute.name, path: '/review'),
         RouteConfig(LessonRoute.name, path: '/lesson'),
         RouteConfig(EnrollCourseRoute.name, path: '/enroll_course'),
+        RouteConfig(ConfirmPaymentRoute.name, path: '/confirm_payment'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
             path: '/notification_settings'),
@@ -391,6 +396,15 @@ class EnrollCourseRoute extends PageRouteInfo<void> {
       : super(EnrollCourseRoute.name, path: '/enroll_course');
 
   static const String name = 'EnrollCourseRoute';
+}
+
+/// generated route for
+/// [ConfirmPaymentView]
+class ConfirmPaymentRoute extends PageRouteInfo<void> {
+  const ConfirmPaymentRoute()
+      : super(ConfirmPaymentRoute.name, path: '/confirm_payment');
+
+  static const String name = 'ConfirmPaymentRoute';
 }
 
 /// generated route for

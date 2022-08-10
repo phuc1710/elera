@@ -11,13 +11,16 @@ class EnrollButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
 
-    return SizedBox(
-      height: screenHeight * 0.15,
-      child: Center(
-        child: InkWell(
-          borderRadius: BorderRadius.circular(25),
-          onTap: action,
-          child: const MainActionInk(buttonString: r'Enroll Course - $40'),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(15),
+      child: SizedBox(
+        height: screenHeight * 0.15,
+        child: Center(
+          child: InkWell(
+            borderRadius: BorderRadius.circular(25),
+            onTap: action,
+            child: const MainActionInk(buttonString: r'Enroll Course - $40'),
+          ),
         ),
       ),
     );
