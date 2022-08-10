@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../onboarding/intro/widgets/main_action_ink.dart';
 
 class EnrollButton extends StatelessWidget {
-  const EnrollButton({Key? key}) : super(key: key);
+  const EnrollButton({Key? key, required this.action}) : super(key: key);
+
+  final VoidCallback action;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class EnrollButton extends StatelessWidget {
       child: Center(
         child: InkWell(
           borderRadius: BorderRadius.circular(25),
-          onTap: () {},
+          onTap: action,
           child: const MainActionInk(buttonString: r'Enroll Course - $40'),
         ),
       ),

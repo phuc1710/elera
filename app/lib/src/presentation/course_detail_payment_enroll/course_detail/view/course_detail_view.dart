@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/routes.dart';
 import '../widgets/course_detail_tab_bar_view.dart';
 import '../widgets/course_extra_info.dart';
 import '../widgets/course_tag_and_review.dart';
@@ -59,7 +61,9 @@ class CourseDetailView extends StatelessWidget {
               ),
             ),
           ),
-          const EnrollButton()
+          EnrollButton(
+            action: () => context.router.pushNamed(Routes.enrollCourse),
+          )
         ],
       ),
     );
