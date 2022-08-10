@@ -153,7 +153,7 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(IntroRoute.name, path: '/intro'),
+        RouteConfig(IntroRoute.name, path: '/'),
         RouteConfig(LetsInRoute.name, path: '/lets_in'),
         RouteConfig(SignUpRoute.name, path: '/sign_up'),
         RouteConfig(SignInRoute.name, path: '/sign_in'),
@@ -171,7 +171,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(MostPopularCoursesRoute.name,
             path: '/most_popular_courses'),
         RouteConfig(SearchRoute.name, path: '/search'),
-        RouteConfig(CourseDetailRoute.name, path: '/'),
+        RouteConfig(CourseDetailRoute.name, path: '/course_detail'),
         RouteConfig(MentorProfileRoute.name, path: '/mentor_profile'),
         RouteConfig(ReviewRoute.name, path: '/review'),
         RouteConfig(LessonRoute.name, path: '/lesson'),
@@ -193,7 +193,7 @@ class _$AppRouter extends RootStackRouter {
 /// generated route for
 /// [IntroView]
 class IntroRoute extends PageRouteInfo<void> {
-  const IntroRoute() : super(IntroRoute.name, path: '/intro');
+  const IntroRoute() : super(IntroRoute.name, path: '/');
 
   static const String name = 'IntroRoute';
 }
@@ -359,7 +359,8 @@ class SearchRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [CourseDetailView]
 class CourseDetailRoute extends PageRouteInfo<void> {
-  const CourseDetailRoute() : super(CourseDetailRoute.name, path: '/');
+  const CourseDetailRoute()
+      : super(CourseDetailRoute.name, path: '/course_detail');
 
   static const String name = 'CourseDetailRoute';
 }

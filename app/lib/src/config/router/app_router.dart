@@ -42,7 +42,7 @@ part 'app_router.gr.dart';
   replaceInRouteName: 'View,Route',
   routes: <AutoRoute>[
     // 1. Onboarding
-    AutoRoute<dynamic>(page: IntroView, path: Routes.introRoute),
+    AutoRoute<dynamic>(page: IntroView, path: Routes.introRoute, initial: true),
     // 2. Let's in (Sign up, Sign in)
     AutoRoute<dynamic>(page: LetsInView, path: Routes.letsInRoute),
     AutoRoute<dynamic>(page: SignUpView, path: Routes.signUpRoute),
@@ -78,7 +78,7 @@ part 'app_router.gr.dart';
     ),
     AutoRoute<dynamic>(page: SearchView, path: Routes.searchRoute),
     // 6. Course Details & Payment/Enroll
-    AutoRoute<dynamic>(page: CourseDetailView, path: Routes.courseDetail, initial: true),
+    AutoRoute<dynamic>(page: CourseDetailView, path: Routes.courseDetail),
     AutoRoute<dynamic>(page: MentorProfileView, path: Routes.mentorProfile),
     AutoRoute<dynamic>(page: ReviewView, path: Routes.review),
     AutoRoute<dynamic>(page: LessonView, path: Routes.lesson),
