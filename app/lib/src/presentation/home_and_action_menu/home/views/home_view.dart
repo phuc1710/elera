@@ -1,6 +1,7 @@
 import 'package:ez_intl/l10n/arb/app_localizations.dart';
 import 'package:flutter/material.dart';
 
+import '../../../my_course/my_courses/view/my_courses_tabview.dart';
 import '../../../profile/view/profile_view.dart';
 import '../widgets/home_tab_view.dart';
 
@@ -15,23 +16,10 @@ class _HomeViewState extends State<HomeView> {
   int _selectedIndex = 0;
   final tabs = [
     const HomeTabView(),
+    const MyCoursesTabView(),
+    const Center(child: Text('Inbox', style: TextStyle(color: Colors.black))),
     const Center(
-      child: Text(
-        'My Courses',
-        style: TextStyle(color: Colors.black),
-      ),
-    ),
-    const Center(
-      child: Text(
-        'Inbox',
-        style: TextStyle(color: Colors.black),
-      ),
-    ),
-    const Center(
-      child: Text(
-        'Transaction',
-        style: TextStyle(color: Colors.black),
-      ),
+      child: Text('Transaction', style: TextStyle(color: Colors.black)),
     ),
     const ProfileView(),
   ];
