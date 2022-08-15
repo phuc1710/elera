@@ -20,7 +20,7 @@ class LessonCard extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Card(
-      elevation: 2,
+      elevation: 8,
       shadowColor: Colors.grey[200],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
@@ -45,13 +45,14 @@ class LessonCard extends StatelessWidget {
           duration,
           style: textTheme.overline?.copyWith(color: const Color(0xff616161)),
         ),
-        trailing: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            isLock ? Icons.lock_outline : Icons.play_circle_fill_rounded,
-            color: primaryColor,
-          ),
-        ),
+        trailing: isLock
+            ? const Icon(Icons.lock_outline)
+            : IconButton(
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+                onPressed: () {},
+                icon: Icon(Icons.play_circle_fill_rounded, color: primaryColor),
+              ),
       ),
     );
   }

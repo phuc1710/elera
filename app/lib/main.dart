@@ -27,13 +27,12 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (BuildContext context) => getIt<ThemeBloc>(),
-        ),
+        BlocProvider(create: (BuildContext context) => getIt<ThemeBloc>()),
         BlocProvider(
           create: (BuildContext context) =>
               getIt<LocaleBloc>()..add(LocaleCached()),

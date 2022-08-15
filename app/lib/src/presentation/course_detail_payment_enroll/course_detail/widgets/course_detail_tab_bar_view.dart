@@ -15,7 +15,7 @@ class CourseDetailTabBarView extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return SizedBox(
-      height: 700,
+      height: 650,
       child: DefaultTabController(
         length: 3,
         child: Column(

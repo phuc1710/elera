@@ -109,6 +109,13 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ConfirmPaymentView());
     },
+    MyCompletedCourseRoute.name: (routeData) {
+      final args = routeData.argsAs<MyCompletedCourseRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: MyCompletedCourseView(
+              key: args.key, courseTitle: args.courseTitle));
+    },
     EditProfileRoute.name: (routeData) {
       final args = routeData.argsAs<EditProfileRouteArgs>();
       return MaterialPageX<dynamic>(
@@ -177,6 +184,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(LessonRoute.name, path: '/lesson'),
         RouteConfig(EnrollCourseRoute.name, path: '/enroll_course'),
         RouteConfig(ConfirmPaymentRoute.name, path: '/confirm_payment'),
+        RouteConfig(MyCompletedCourseRoute.name,
+            path: '/my_completed_course_detail'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
             path: '/notification_settings'),
@@ -406,6 +415,31 @@ class ConfirmPaymentRoute extends PageRouteInfo<void> {
       : super(ConfirmPaymentRoute.name, path: '/confirm_payment');
 
   static const String name = 'ConfirmPaymentRoute';
+}
+
+/// generated route for
+/// [MyCompletedCourseView]
+class MyCompletedCourseRoute extends PageRouteInfo<MyCompletedCourseRouteArgs> {
+  MyCompletedCourseRoute({Key? key, required String courseTitle})
+      : super(MyCompletedCourseRoute.name,
+            path: '/my_completed_course_detail',
+            args:
+                MyCompletedCourseRouteArgs(key: key, courseTitle: courseTitle));
+
+  static const String name = 'MyCompletedCourseRoute';
+}
+
+class MyCompletedCourseRouteArgs {
+  const MyCompletedCourseRouteArgs({this.key, required this.courseTitle});
+
+  final Key? key;
+
+  final String courseTitle;
+
+  @override
+  String toString() {
+    return 'MyCompletedCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
+  }
 }
 
 /// generated route for

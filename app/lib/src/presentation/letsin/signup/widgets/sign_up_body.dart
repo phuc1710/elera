@@ -50,6 +50,7 @@ class _SignUpBodyState extends State<SignUpBody> {
               PasswordInput(controller: _passwordController),
               const RememberMeCheckBox(),
               InkWell(
+                borderRadius: BorderRadius.circular(40),
                 onTap: () => onSignUpButtonTapped(context),
                 child: const MainActionInk(buttonString: 'Sign up'),
               ),

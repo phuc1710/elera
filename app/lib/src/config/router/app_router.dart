@@ -28,6 +28,7 @@ import '../../presentation/language/view/language_view.dart';
 import '../../presentation/letsin/letsin/views/letsin_view.dart';
 import '../../presentation/letsin/signin/views/signin_view.dart';
 import '../../presentation/letsin/signup/views/signup_view.dart';
+import '../../presentation/my_course/my_completed_course/view/my_completed_course_view.dart';
 import '../../presentation/new_card/view/new_card_view.dart';
 import '../../presentation/notification_settings/view/notification_settings_view.dart';
 import '../../presentation/onboarding/intro/views/intro_view.dart';
@@ -84,6 +85,11 @@ part 'app_router.gr.dart';
     AutoRoute<dynamic>(page: LessonView, path: Routes.lesson),
     AutoRoute<dynamic>(page: EnrollCourseView, path: Routes.enrollCourse),
     AutoRoute<dynamic>(page: ConfirmPaymentView, path: Routes.confirmPayment),
+    // 7. My Course
+    AutoRoute<dynamic>(
+      page: MyCompletedCourseView,
+      path: Routes.myCompletedCourseDetail,
+    ),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(

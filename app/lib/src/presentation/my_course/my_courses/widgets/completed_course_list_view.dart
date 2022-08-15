@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/app_router.dart';
 import 'my_course_card.dart';
 
 class CompletedCourseListView extends StatelessWidget {
@@ -16,7 +18,7 @@ class CompletedCourseListView extends StatelessWidget {
         vertical: screenHeight * 0.01,
       ),
       child: ListView(
-        children: List.generate(4, (index) {
+        children: List.generate(5, (index) {
           const value = 1.0;
           const courseTitle = 'CRM Management for Dummies';
 
@@ -25,7 +27,8 @@ class CompletedCourseListView extends StatelessWidget {
             value: value,
             courseTitle: courseTitle,
             time: '2 hrs 25 mins',
-            action: () {},
+            action: () => context.router
+                .push(MyCompletedCourseRoute(courseTitle: courseTitle)),
           );
         }),
       ),

@@ -50,7 +50,6 @@ dependencies:
   get_it: ^7.2.0
   flutter_hooks: ^0.18.5+1
   image_picker: ^0.8.5+3
-
   injectable: ^1.5.3
   expandable: ^5.0.1
   flutter_multi_formatter: ^2.5.7
@@ -61,7 +60,8 @@ dependencies:
     path: ../_shared/app_ui
   ez_intl:
     path: ../_shared/ez_intl
-  
+  syncfusion_flutter_pdfviewer: ^20.2.43-beta
+  flutter_pdfview: ^1.2.3
 
 dev_dependencies:
   flutter_test:
@@ -81,9 +81,6 @@ dev_dependencies:
   retrofit_generator: ^4.0.1
   pretty_dio_logger: ^1.2.0-beta-1
   auto_route_generator: ^4.2.0
-
-dependency_overrides:
-  analyzer: '4.2.0'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
