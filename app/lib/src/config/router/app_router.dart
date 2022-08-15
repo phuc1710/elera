@@ -86,6 +86,12 @@ part 'app_router.gr.dart';
     AutoRoute<dynamic>(page: LessonView, path: Routes.lesson),
     AutoRoute<dynamic>(page: EnrollCourseView, path: Routes.enrollCourse),
     AutoRoute<dynamic>(page: ConfirmPaymentView, path: Routes.confirmPayment),
+    // 7. My Course
+    AutoRoute<dynamic>(
+      page: MyCompletedCourseView,
+      path: Routes.myCompletedCourse,
+    ),
+    AutoRoute<dynamic>(page: CourseVideoView, path: Routes.courseVideo),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(

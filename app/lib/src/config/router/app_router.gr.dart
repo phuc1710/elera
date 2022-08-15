@@ -188,8 +188,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(LessonRoute.name, path: '/lesson'),
         RouteConfig(EnrollCourseRoute.name, path: '/enroll_course'),
         RouteConfig(ConfirmPaymentRoute.name, path: '/confirm_payment'),
-        RouteConfig(MyCompletedCourseRoute.name,
-            path: '/my_completed_course_detail'),
+        RouteConfig(MyCompletedCourseRoute.name, path: '/my_completed_course'),
         RouteConfig(CourseVideoRoute.name, path: '/course_video'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
@@ -427,7 +426,7 @@ class ConfirmPaymentRoute extends PageRouteInfo<void> {
 class MyCompletedCourseRoute extends PageRouteInfo<MyCompletedCourseRouteArgs> {
   MyCompletedCourseRoute({Key? key, required String courseTitle})
       : super(MyCompletedCourseRoute.name,
-            path: '/my_completed_course_detail',
+            path: '/my_completed_course',
             args:
                 MyCompletedCourseRouteArgs(key: key, courseTitle: courseTitle));
 
@@ -457,43 +456,6 @@ class CourseVideoRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [MyCompletedCourseView]
-class MyCompletedCourseRoute extends PageRouteInfo<MyCompletedCourseRouteArgs> {
-  MyCompletedCourseRoute({Key? key, required String courseTitle})
-      : super(MyCompletedCourseRoute.name,
-            path: '/my_completed_course_detail',
-            args:
-                MyCompletedCourseRouteArgs(key: key, courseTitle: courseTitle));
-
-  static const String name = 'MyCompletedCourseRoute';
-}
-
-class MyCompletedCourseRouteArgs {
-  const MyCompletedCourseRouteArgs({this.key, required this.courseTitle});
-
-  final Key? key;
-
-  final String courseTitle;
-
-  @override
-  String toString() {
-    return 'MyCompletedCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
-  }
-}
-
-/// generated route for
-<<<<<<< Updated upstream
-=======
-/// [CourseVideoView]
-class CourseVideoRoute extends PageRouteInfo<void> {
-  const CourseVideoRoute()
-      : super(CourseVideoRoute.name, path: '/course_video');
-
-  static const String name = 'CourseVideoRoute';
-}
-
-/// generated route for
->>>>>>> Stashed changes
 /// [EditProfileView]
 class EditProfileRoute extends PageRouteInfo<EditProfileRouteArgs> {
   EditProfileRoute({Key? key, required ProfileModel? profile})

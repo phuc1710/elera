@@ -6,7 +6,7 @@ part of 'helper_api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps
 
 class _HelperApiService implements HelperApiService {
   _HelperApiService(this._dio, {this.baseUrl}) {
