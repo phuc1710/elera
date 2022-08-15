@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../config/router/routes.dart';
 
 class LessonCard extends StatelessWidget {
   const LessonCard({
@@ -50,7 +53,7 @@ class LessonCard extends StatelessWidget {
             : IconButton(
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
-                onPressed: () {},
+                onPressed: () => context.router.pushNamed(Routes.courseVideo),
                 icon: Icon(Icons.play_circle_fill_rounded, color: primaryColor),
               ),
       ),

@@ -8,6 +8,7 @@ import '../../presentation/account_setup/fill_your_profile/views/fill_your_profi
 import '../../presentation/account_setup/set_your_fingerprint/views/set_your_fingerprint_view.dart';
 import '../../presentation/course_detail_payment_enroll/confirm_payment/view/confirm_payment_view.dart';
 import '../../presentation/course_detail_payment_enroll/course_detail/view/course_detail_view.dart';
+import '../../presentation/course_detail_payment_enroll/course_video/view/course_video_view.dart';
 import '../../presentation/course_detail_payment_enroll/enroll_course/view/enroll_course_view.dart';
 import '../../presentation/course_detail_payment_enroll/lesson/view/lesson_view.dart';
 import '../../presentation/course_detail_payment_enroll/mentor_profile/view/mentor_profile_view.dart';
@@ -85,11 +86,6 @@ part 'app_router.gr.dart';
     AutoRoute<dynamic>(page: LessonView, path: Routes.lesson),
     AutoRoute<dynamic>(page: EnrollCourseView, path: Routes.enrollCourse),
     AutoRoute<dynamic>(page: ConfirmPaymentView, path: Routes.confirmPayment),
-    // 7. My Course
-    AutoRoute<dynamic>(
-      page: MyCompletedCourseView,
-      path: Routes.myCompletedCourseDetail,
-    ),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(
