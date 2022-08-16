@@ -1,7 +1,9 @@
 import 'dart:math';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/app_router.dart';
 import 'my_course_card.dart';
 
 class OngoingCourseListView extends StatelessWidget {
@@ -26,7 +28,8 @@ class OngoingCourseListView extends StatelessWidget {
             value: value,
             courseTitle: courseTitle,
             time: '2 hrs 25 mins',
-            action: () {},
+            action: () => context.router
+                .push(MyOngoingCourseRoute(courseTitle: courseTitle)),
           );
         }),
       ),

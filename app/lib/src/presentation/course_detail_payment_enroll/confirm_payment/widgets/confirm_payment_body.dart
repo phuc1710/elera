@@ -63,7 +63,7 @@ class _ConfirmPaymentBodyState extends State<ConfirmPaymentBody> {
   }
 
   void showSuccessfulDialog(BuildContext context) {
-    showDialog<dynamic>(
+    showDialog<AlertDialog>(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {

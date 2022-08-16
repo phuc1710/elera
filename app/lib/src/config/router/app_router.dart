@@ -30,6 +30,7 @@ import '../../presentation/letsin/letsin/views/letsin_view.dart';
 import '../../presentation/letsin/signin/views/signin_view.dart';
 import '../../presentation/letsin/signup/views/signup_view.dart';
 import '../../presentation/my_course/my_completed_course/view/my_completed_course_view.dart';
+import '../../presentation/my_course/my_ongoing_course/view/my_ongoing_course_view.dart';
 import '../../presentation/new_card/view/new_card_view.dart';
 import '../../presentation/notification_settings/view/notification_settings_view.dart';
 import '../../presentation/onboarding/intro/views/intro_view.dart';
@@ -90,6 +91,10 @@ part 'app_router.gr.dart';
     AutoRoute<dynamic>(
       page: MyCompletedCourseView,
       path: Routes.myCompletedCourse,
+    ),
+    AutoRoute<dynamic>(
+      page: MyOngoingCourseView,
+      path: Routes.myOngoingCourse,
     ),
     AutoRoute<dynamic>(page: CourseVideoView, path: Routes.courseVideo),
     // 10. Profile & Settings

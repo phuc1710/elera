@@ -29,6 +29,7 @@ class Routes {
   static const String confirmPayment = '/confirm_payment';
   // 7. My Course
   static const String myCompletedCourse = '/my_completed_course';
+  static const String myOngoingCourse = '/my_ongoing_course';
   static const String courseVideo = '/course_video';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';

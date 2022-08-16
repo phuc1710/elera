@@ -116,6 +116,13 @@ class _$AppRouter extends RootStackRouter {
           child: MyCompletedCourseView(
               key: args.key, courseTitle: args.courseTitle));
     },
+    MyOngoingCourseRoute.name: (routeData) {
+      final args = routeData.argsAs<MyOngoingCourseRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: MyOngoingCourseView(
+              key: args.key, courseTitle: args.courseTitle));
+    },
     CourseVideoRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const CourseVideoView());
@@ -189,6 +196,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(EnrollCourseRoute.name, path: '/enroll_course'),
         RouteConfig(ConfirmPaymentRoute.name, path: '/confirm_payment'),
         RouteConfig(MyCompletedCourseRoute.name, path: '/my_completed_course'),
+        RouteConfig(MyOngoingCourseRoute.name, path: '/my_ongoing_course'),
         RouteConfig(CourseVideoRoute.name, path: '/course_video'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
@@ -443,6 +451,30 @@ class MyCompletedCourseRouteArgs {
   @override
   String toString() {
     return 'MyCompletedCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
+  }
+}
+
+/// generated route for
+/// [MyOngoingCourseView]
+class MyOngoingCourseRoute extends PageRouteInfo<MyOngoingCourseRouteArgs> {
+  MyOngoingCourseRoute({Key? key, required String courseTitle})
+      : super(MyOngoingCourseRoute.name,
+            path: '/my_ongoing_course',
+            args: MyOngoingCourseRouteArgs(key: key, courseTitle: courseTitle));
+
+  static const String name = 'MyOngoingCourseRoute';
+}
+
+class MyOngoingCourseRouteArgs {
+  const MyOngoingCourseRouteArgs({this.key, required this.courseTitle});
+
+  final Key? key;
+
+  final String courseTitle;
+
+  @override
+  String toString() {
+    return 'MyOngoingCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
   }
 }
 

@@ -64,6 +64,7 @@ dependencies:
   flutter_pdfview: ^1.2.3
   service_video_player:
     path: ../_shared/service_video_player
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
