@@ -22,7 +22,7 @@ class TransactionsRepositoryImpl implements TransactionsRepository {
   ) async {
     try {
       final httpResponse = await _transactionsApiService.getTransactionsRequest(
-        isMockup: true,
+        isMockup: false,
         query: params,
       );
 

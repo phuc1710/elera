@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'transactions_api_service.dart';
+part of 'e_receipt_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'transactions_api_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps
 
-class _TransactionsApiService implements TransactionsApiService {
-  _TransactionsApiService(this._dio, {this.baseUrl}) {
+class _EReceiptApiService implements EReceiptApiService {
+  _EReceiptApiService(this._dio, {this.baseUrl}) {
     baseUrl ??= 'http://103.63.215.141:7412/api';
   }
 
@@ -18,7 +18,7 @@ class _TransactionsApiService implements TransactionsApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<TransactionsResponseModel>> getTransactionsRequest(
+  Future<HttpResponse<EReceiptResponseModel>> getEReceiptRequest(
       {isMockup, query}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -28,12 +28,12 @@ class _TransactionsApiService implements TransactionsApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<TransactionsResponseModel>>(
+        _setStreamType<HttpResponse<EReceiptResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/transaction',
+                .compose(_dio.options, '/transaction/e-receipt',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = TransactionsResponseModel.fromJson(_result.data!);
+    final value = EReceiptResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

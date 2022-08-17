@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -16,11 +17,6 @@ class AppBarWidget extends StatelessWidget {
     return AppBar(
       titleTextStyle: textTheme.headline6,
       title: Text(title),
-      // actions: [
-      //   IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz)
-
-      //   )
-      // ],
       actions: [
         PopupMenuButton(
             icon: const Icon(Icons.more_horiz),
@@ -67,11 +63,17 @@ class AppBarWidget extends StatelessWidget {
             },
             onSelected: (value) {
               if (value == 0) {
-                print('My account menu is selected.');
+                if (kDebugMode) {
+                  print('Share E-Receipt.');
+                }
               } else if (value == 1) {
-                print('Settings menu is selected.');
+                if (kDebugMode) {
+                  print('Downlead E-Receipt.');
+                }
               } else if (value == 2) {
-                print('Logout menu is selected.');
+                if (kDebugMode) {
+                  print('Print.');
+                }
               }
             }),
       ],

@@ -6,6 +6,7 @@ import '../data/datasources/local/cache/app_cache.dart';
 import '../data/datasources/local/local_storage.dart';
 import '../data/datasources/remote/bookmark_api_service.dart';
 import '../data/datasources/remote/course_api_service.dart';
+import '../data/datasources/remote/e_receipt_api_service.dart';
 import '../data/datasources/remote/helper_api_service.dart';
 import '../data/datasources/remote/home_api_service.dart';
 import '../data/datasources/remote/mentor_api_service.dart';
@@ -81,6 +82,12 @@ abstract class RegisterModule {
     @Named(kApiBaseUrl) String url,
   ) =>
       TransactionsApiService(dio, baseUrl: url);
+  @lazySingleton
+  EReceiptApiService eReceiptApiService(
+    @Named(kApiDio) Dio dio,
+    @Named(kApiBaseUrl) String url,
+  ) =>
+      EReceiptApiService(dio, baseUrl: url);
   @lazySingleton
   HelperApiService helperApiService(
     @Named(kApiDio) Dio dio,
