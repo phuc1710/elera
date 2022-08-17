@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../data/models/e_receipt/e_receipt_response.dart';
 import 'component_text.dart';
@@ -59,7 +60,21 @@ class EReceiptBottomBody extends StatelessWidget {
                         child: IconButton(
                           padding: EdgeInsets.zero,
                           constraints: const BoxConstraints(),
-                          onPressed: () {},
+                          onPressed: () {
+                            Clipboard.setData(
+                              ClipboardData(
+                                text: value?.transactionId ?? '',
+                              ),
+                            ).then((_) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    'Copied to your clipboard !',
+                                  ),
+                                ),
+                              );
+                            });
+                          },
                           color: primaryColor,
                           icon: const Icon(
                             Icons.copy,
