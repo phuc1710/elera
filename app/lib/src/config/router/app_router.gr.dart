@@ -123,6 +123,10 @@ class _$AppRouter extends RootStackRouter {
           child: MyOngoingCourseView(
               key: args.key, courseTitle: args.courseTitle));
     },
+    ChatRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ChatView());
+    },
     CourseVideoRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const CourseVideoView());
@@ -197,6 +201,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(ConfirmPaymentRoute.name, path: '/confirm_payment'),
         RouteConfig(MyCompletedCourseRoute.name, path: '/my_completed_course'),
         RouteConfig(MyOngoingCourseRoute.name, path: '/my_ongoing_course'),
+        RouteConfig(ChatRoute.name, path: '/chat'),
         RouteConfig(CourseVideoRoute.name, path: '/course_video'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
@@ -476,6 +481,14 @@ class MyOngoingCourseRouteArgs {
   String toString() {
     return 'MyOngoingCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
   }
+}
+
+/// generated route for
+/// [ChatView]
+class ChatRoute extends PageRouteInfo<void> {
+  const ChatRoute() : super(ChatRoute.name, path: '/chat');
+
+  static const String name = 'ChatRoute';
 }
 
 /// generated route for

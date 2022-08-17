@@ -25,6 +25,7 @@ import '../../presentation/home_and_action_menu/my_bookmark/views/my_bookmark_vi
 import '../../presentation/home_and_action_menu/notification/views/notification_view.dart';
 import '../../presentation/home_and_action_menu/search/views/search_view.dart';
 import '../../presentation/home_and_action_menu/top_mentors/views/top_mentors_view.dart';
+import '../../presentation/inbox_chats_and_calls/chat/view/chat_view.dart';
 import '../../presentation/language/view/language_view.dart';
 import '../../presentation/letsin/letsin/views/letsin_view.dart';
 import '../../presentation/letsin/signin/views/signin_view.dart';
@@ -96,6 +97,8 @@ part 'app_router.gr.dart';
       page: MyOngoingCourseView,
       path: Routes.myOngoingCourse,
     ),
+    // 8. Inbox/Messenget (Chats & Calls)
+    AutoRoute<dynamic>(page: ChatView, path: Routes.chat),
     AutoRoute<dynamic>(page: CourseVideoView, path: Routes.courseVideo),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),

@@ -65,6 +65,9 @@ dependencies:
   service_video_player:
     path: ../_shared/service_video_player
   flutter_rating_bar: ^4.0.1
+  iconly: ^1.0.1
+  flutter_chat_ui: ^1.6.4
+  flutter_chat_types: ^3.4.5
 
 dev_dependencies:
   flutter_test:

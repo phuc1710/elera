@@ -31,6 +31,8 @@ class Routes {
   static const String myCompletedCourse = '/my_completed_course';
   static const String myOngoingCourse = '/my_ongoing_course';
   static const String courseVideo = '/course_video';
+  // 8. Inbox/Messenget (Chats & Calls)
+  static const String chat = '/chat';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';
   static const String notificationSettingsRoute = '/notification_settings';

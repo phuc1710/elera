@@ -1,7 +1,8 @@
 import 'package:ez_intl/l10n/arb/app_localizations.dart';
 import 'package:flutter/material.dart';
 
-import '../../../my_course/my_courses/view/my_courses_tabview.dart';
+import '../../../inbox_chats_and_calls/inbox/view/inbox_tab_view.dart';
+import '../../../my_course/my_courses/view/my_courses_tab_view.dart';
 import '../../../profile/view/profile_view.dart';
 import '../widgets/home_tab_view.dart';
 
@@ -17,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
   final tabs = [
     const HomeTabView(),
     const MyCoursesTabView(),
-    const Center(child: Text('Inbox', style: TextStyle(color: Colors.black))),
+    const InboxTabView(),
     const Center(
       child: Text('Transaction', style: TextStyle(color: Colors.black)),
     ),
@@ -66,7 +67,28 @@ class _HomeViewState extends State<HomeView> {
             ),
           ],
         ),
+        floatingActionButton: buildFloatingActionButton(),
       ),
     );
+  }
+
+  Container? buildFloatingActionButton() {
+    return _selectedIndex == 2 ? Container(
+      decoration: const BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(51, 94, 247, 0.25),
+            blurRadius: 24,
+            offset: Offset(4, 8),
+          )
+        ],
+      ),
+      child: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Theme.of(context).primaryColor,
+        elevation: 0,
+        child: const Icon(Icons.add),
+      ),
+    ) : null;
   }
 }
