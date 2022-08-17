@@ -27,6 +27,7 @@ class EndPoints {
   static const String addRecentSearch = '/add_recent_search';
   static const String removeRecentSearch = '/remove_recent_search';
   static const String search = '/search';
+  static const String transactions = '/transactions';
 
   static const String helperCenter = '/support';
   static const String profile = '/users/profile';
