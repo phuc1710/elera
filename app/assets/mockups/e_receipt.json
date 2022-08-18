@@ -1,0 +1,18 @@
+{
+    "status": 200,
+    "code": 1,
+    "message": "Thành công",
+    "data": {
+        "course_name": "Mastering Firgma A to Z",
+        "course_category": "UI/UX Design",
+        "name": "Andrew Ainsley",
+        "phone": "+1 111 567 378 399",
+        "email": "andrew_ainsley@domain.com",
+        "country": "United States",
+        "price": "$40.00",
+        "payment_method": "Credit Card",
+        "date": "Dec 14, 2024 | 14:27:45 PM",
+        "transaction_id": "SK7263535353776",
+        "status": "paid"
+    }
+}

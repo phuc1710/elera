@@ -55,8 +55,10 @@ class UserRepositoryImpl implements UserRepository {
     SignInRequestParams? params,
   ) async {
     try {
-      final httpResponse =
-          await _userApiService.postSignInRequest(body: params);
+      final httpResponse = await _userApiService.postSignInRequest(
+        body: params,
+        isMockup: false,
+      );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data);

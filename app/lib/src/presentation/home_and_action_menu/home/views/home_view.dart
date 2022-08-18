@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../my_course/my_courses/view/my_courses_tabview.dart';
 import '../../../profile/view/profile_view.dart';
+import '../../../transactions/view/transactions_tab_view.dart';
 import '../widgets/home_tab_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -18,9 +19,7 @@ class _HomeViewState extends State<HomeView> {
     const HomeTabView(),
     const MyCoursesTabView(),
     const Center(child: Text('Inbox', style: TextStyle(color: Colors.black))),
-    const Center(
-      child: Text('Transaction', style: TextStyle(color: Colors.black)),
-    ),
+    const TransactionsTabView(),
     const ProfileView(),
   ];
 
