@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 class MainActionInk extends StatelessWidget {
   const MainActionInk({
     Key? key,
-    required String buttonString,
-    bool? isMainAction,
-    double? width,
-  })  : _buttonString = buttonString,
-        _isMainAction = isMainAction,
-        _width = width,
-        super(key: key);
+    required this.buttonString,
+    this.isMainAction,
+    this.disableShadow,
+    this.width,
+  }) : super(key: key);
 
-  final String _buttonString;
-  final bool? _isMainAction;
-  final double? _width;
+  final String buttonString;
+  final bool? isMainAction;
+  final bool? disableShadow;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +23,11 @@ class MainActionInk extends StatelessWidget {
         borderRadius: BorderRadius.circular(40),
       ),
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * (_width ?? 0.9),
+        width: MediaQuery.of(context).size.width * (width ?? 0.9),
         height: MediaQuery.of(context).size.height * 0.08,
         child: Center(
           child: Text(
-            _buttonString,
+            buttonString,
             style: getButtonTextStyle(context),
           ),
         ),
@@ -37,32 +36,33 @@ class MainActionInk extends StatelessWidget {
   }
 
   Color getButtonColor(BuildContext context) {
-    return _isMainAction == null
-        ? Theme.of(context).colorScheme.primary
-        : Theme.of(context).colorScheme.secondary;
+    final ColorScheme color = Theme.of(context).colorScheme;
+
+    return isMainAction == null ? color.primary : color.secondary;
   }
 
   TextStyle? getButtonTextStyle(BuildContext context) {
-    return _isMainAction == null
-        ? Theme.of(context)
-            .textTheme
-            .bodyText2
-            ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold)
-        : Theme.of(context).textTheme.bodyText2?.copyWith(
-              color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold,
-            );
+    final textStyle = Theme.of(context).textTheme.bodyText2;
+
+    return isMainAction == null
+        ? textStyle?.copyWith(color: Colors.white, fontWeight: FontWeight.bold)
+        : textStyle?.copyWith(
+            color: Theme.of(context).colorScheme.primary,
+            fontWeight: FontWeight.bold,
+          );
   }
 
   List<BoxShadow>? getButtonBoxShadow(BuildContext context) {
-    return _isMainAction == null
-        ? [
-            const BoxShadow(
-              color: Color.fromRGBO(51, 94, 247, 0.25),
-              blurRadius: 24,
-              offset: Offset(4, 8),
-            )
-          ]
+    return isMainAction == null
+        ? disableShadow == null
+            ? [
+                const BoxShadow(
+                  color: Color.fromRGBO(51, 94, 247, 0.25),
+                  blurRadius: 24,
+                  offset: Offset(4, 8),
+                )
+              ]
+            : null
         : null;
   }
 }

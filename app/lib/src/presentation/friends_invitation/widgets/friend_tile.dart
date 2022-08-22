@@ -38,10 +38,10 @@ class _FriendTileState extends State<FriendTile> {
       ),
       subtitle: Text(
         widget.friend?.phone ?? '',
-        style: Theme.of(context).textTheme.overline?.copyWith(
-              fontSize: 11,
-              color: const Color(0xff616161),
-            ),
+        style: Theme.of(context)
+            .textTheme
+            .overline
+            ?.copyWith(color: const Color(0xff616161)),
       ),
       trailing: SizedBox(
         width: 80,

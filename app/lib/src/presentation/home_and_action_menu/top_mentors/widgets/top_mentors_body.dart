@@ -43,7 +43,6 @@ class TopMentorsBody extends StatelessWidget {
                       subtitle: Text(
                         '${mentor?.description}',
                         style: Theme.of(context).textTheme.overline?.copyWith(
-                              fontSize: 11,
                               color: const Color(0xff616161),
                             ),
                       ),

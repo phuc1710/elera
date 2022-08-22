@@ -219,12 +219,7 @@ class _ProfileViewState extends State<ProfileView> {
         trailing: CupertinoSwitch(
           value: isDarkMode,
           onChanged: (value) {
-            if (value) {
-              context.read<ThemeBloc>().add(DarkThemeEnabled());
-            }
-            if (!value) {
-              context.read<ThemeBloc>().add(DarkThemeDisabled());
-            }
+            context.read<ThemeBloc>().add(ThemeEvent(value));
           },
         ),
       ),

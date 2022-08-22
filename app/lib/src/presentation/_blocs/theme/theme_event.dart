@@ -1,8 +1,6 @@
 part of 'theme_bloc.dart';
 
-@immutable
-abstract class ThemeEvent {}
-
-class DarkThemeEnabled extends ThemeEvent{}
-
-class DarkThemeDisabled extends ThemeEvent{}
+class ThemeEvent {
+  ThemeEvent(this.value);
+  final bool value;
+}

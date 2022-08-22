@@ -46,6 +46,7 @@ class _StarFilterChipsState extends State<StarFilterChips> {
               selectedColor: primaryColor,
               labelStyle: Theme.of(context).textTheme.caption?.copyWith(
                     color: isCourseSelected ? Colors.white : primaryColor,
+                    fontWeight: FontWeight.bold,
                   ),
               onSelected: (bool b) => setState(() {
                 selectedCourseTag = _courseFilterList[index];

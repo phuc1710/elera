@@ -1,4 +1,3 @@
-import 'package:app_ui/app_ui.dart';
 import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,74 +27,29 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final _appRouter = AppRouter();
-  ThemeData _theme = AppTheme.light;
-  ThemeData _darkTheme = AppTheme.dark;
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (BuildContext context) => getIt<ThemeBloc>(),
-        ),
+        BlocProvider(create: (BuildContext context) => getIt<ThemeBloc>()),
         BlocProvider(
           create: (BuildContext context) =>
               getIt<LocaleBloc>()..add(LocaleCached()),
         )
       ],
-      child: MultiBlocListener(
-        listeners: [
-          BlocListener<ThemeBloc, ThemeState>(
-            listener: (context, state) {
-              if (state is DarkThemeSuccess) {
-                _theme = AppTheme.dark;
-                _darkTheme = AppTheme.dark;
-              }
-              if (state is LightThemeSuccess) {
-                _theme = AppTheme.light;
-                _darkTheme = AppTheme.light;
-              }
-            },
-          ),
-        ],
-        child: MateApp(
-          theme: _theme,
-          darkTheme: _darkTheme,
-          appRouter: _appRouter,
+      child: BlocBuilder<ThemeBloc, ThemeState>(
+        builder: (context, state) => MaterialApp.router(
+          title: 'E-Learning',
+          debugShowCheckedModeBanner: false,
+          theme: state.theme,
+          routerDelegate: _appRouter.delegate(),
+          routeInformationParser: _appRouter.defaultRouteParser(),
+          locale: context.watch<LocaleBloc>().state.locale,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
         ),
       ),
-    );
-  }
-}
-
-class MateApp extends StatelessWidget {
-  const MateApp({
-    Key? key,
-    required ThemeData theme,
-    required ThemeData darkTheme,
-    required AppRouter appRouter,
-  })  : _theme = theme,
-        _darkTheme = darkTheme,
-        _appRouter = appRouter,
-        super(key: key);
-
-  final ThemeData _theme;
-  final ThemeData _darkTheme;
-  final AppRouter _appRouter;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'E-Learning',
-      debugShowCheckedModeBanner: false,
-      theme: _theme,
-      darkTheme: _darkTheme,
-      // theme: theme(),
-      routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
-      locale: context.watch<LocaleBloc>().state.locale,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

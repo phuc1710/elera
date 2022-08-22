@@ -85,6 +85,60 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SearchView());
     },
+    CourseDetailRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const CourseDetailView());
+    },
+    MentorProfileRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const MentorProfileView());
+    },
+    ReviewRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ReviewView());
+    },
+    LessonRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const LessonView());
+    },
+    EnrollCourseRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const EnrollCourseView());
+    },
+    ConfirmPaymentRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ConfirmPaymentView());
+    },
+    MyCompletedCourseRoute.name: (routeData) {
+      final args = routeData.argsAs<MyCompletedCourseRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: MyCompletedCourseView(
+              key: args.key, courseTitle: args.courseTitle));
+    },
+    MyOngoingCourseRoute.name: (routeData) {
+      final args = routeData.argsAs<MyOngoingCourseRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: MyOngoingCourseView(
+              key: args.key, courseTitle: args.courseTitle));
+    },
+    CourseVideoRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const CourseVideoView());
+    },
+    ChatRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ChatView());
+    },
+    CallRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const CallView());
+    },
+    EReceiptRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const EReceiptView());
+    },
     EditProfileRoute.name: (routeData) {
       final args = routeData.argsAs<EditProfileRouteArgs>();
       return MaterialPageX<dynamic>(
@@ -147,6 +201,18 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(MostPopularCoursesRoute.name,
             path: '/most_popular_courses'),
         RouteConfig(SearchRoute.name, path: '/search'),
+        RouteConfig(CourseDetailRoute.name, path: '/course_detail'),
+        RouteConfig(MentorProfileRoute.name, path: '/mentor_profile'),
+        RouteConfig(ReviewRoute.name, path: '/review'),
+        RouteConfig(LessonRoute.name, path: '/lesson'),
+        RouteConfig(EnrollCourseRoute.name, path: '/enroll_course'),
+        RouteConfig(ConfirmPaymentRoute.name, path: '/confirm_payment'),
+        RouteConfig(MyCompletedCourseRoute.name, path: '/my_completed_course'),
+        RouteConfig(MyOngoingCourseRoute.name, path: '/my_ongoing_course'),
+        RouteConfig(CourseVideoRoute.name, path: '/course_video'),
+        RouteConfig(ChatRoute.name, path: '/chat'),
+        RouteConfig(CallRoute.name, path: '/call'),
+        RouteConfig(EReceiptRoute.name, path: '/e_receipt'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
             path: '/notification_settings'),
@@ -324,6 +390,140 @@ class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute() : super(SearchRoute.name, path: '/search');
 
   static const String name = 'SearchRoute';
+}
+
+/// generated route for
+/// [CourseDetailView]
+class CourseDetailRoute extends PageRouteInfo<void> {
+  const CourseDetailRoute()
+      : super(CourseDetailRoute.name, path: '/course_detail');
+
+  static const String name = 'CourseDetailRoute';
+}
+
+/// generated route for
+/// [MentorProfileView]
+class MentorProfileRoute extends PageRouteInfo<void> {
+  const MentorProfileRoute()
+      : super(MentorProfileRoute.name, path: '/mentor_profile');
+
+  static const String name = 'MentorProfileRoute';
+}
+
+/// generated route for
+/// [ReviewView]
+class ReviewRoute extends PageRouteInfo<void> {
+  const ReviewRoute() : super(ReviewRoute.name, path: '/review');
+
+  static const String name = 'ReviewRoute';
+}
+
+/// generated route for
+/// [LessonView]
+class LessonRoute extends PageRouteInfo<void> {
+  const LessonRoute() : super(LessonRoute.name, path: '/lesson');
+
+  static const String name = 'LessonRoute';
+}
+
+/// generated route for
+/// [EnrollCourseView]
+class EnrollCourseRoute extends PageRouteInfo<void> {
+  const EnrollCourseRoute()
+      : super(EnrollCourseRoute.name, path: '/enroll_course');
+
+  static const String name = 'EnrollCourseRoute';
+}
+
+/// generated route for
+/// [ConfirmPaymentView]
+class ConfirmPaymentRoute extends PageRouteInfo<void> {
+  const ConfirmPaymentRoute()
+      : super(ConfirmPaymentRoute.name, path: '/confirm_payment');
+
+  static const String name = 'ConfirmPaymentRoute';
+}
+
+/// generated route for
+/// [MyCompletedCourseView]
+class MyCompletedCourseRoute extends PageRouteInfo<MyCompletedCourseRouteArgs> {
+  MyCompletedCourseRoute({Key? key, required String courseTitle})
+      : super(MyCompletedCourseRoute.name,
+            path: '/my_completed_course',
+            args:
+                MyCompletedCourseRouteArgs(key: key, courseTitle: courseTitle));
+
+  static const String name = 'MyCompletedCourseRoute';
+}
+
+class MyCompletedCourseRouteArgs {
+  const MyCompletedCourseRouteArgs({this.key, required this.courseTitle});
+
+  final Key? key;
+
+  final String courseTitle;
+
+  @override
+  String toString() {
+    return 'MyCompletedCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
+  }
+}
+
+/// generated route for
+/// [MyOngoingCourseView]
+class MyOngoingCourseRoute extends PageRouteInfo<MyOngoingCourseRouteArgs> {
+  MyOngoingCourseRoute({Key? key, required String courseTitle})
+      : super(MyOngoingCourseRoute.name,
+            path: '/my_ongoing_course',
+            args: MyOngoingCourseRouteArgs(key: key, courseTitle: courseTitle));
+
+  static const String name = 'MyOngoingCourseRoute';
+}
+
+class MyOngoingCourseRouteArgs {
+  const MyOngoingCourseRouteArgs({this.key, required this.courseTitle});
+
+  final Key? key;
+
+  final String courseTitle;
+
+  @override
+  String toString() {
+    return 'MyOngoingCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
+  }
+}
+
+/// generated route for
+/// [CourseVideoView]
+class CourseVideoRoute extends PageRouteInfo<void> {
+  const CourseVideoRoute()
+      : super(CourseVideoRoute.name, path: '/course_video');
+
+  static const String name = 'CourseVideoRoute';
+}
+
+/// generated route for
+/// [ChatView]
+class ChatRoute extends PageRouteInfo<void> {
+  const ChatRoute() : super(ChatRoute.name, path: '/chat');
+
+  static const String name = 'ChatRoute';
+}
+
+/// generated route for
+/// [CallView]
+class CallRoute extends PageRouteInfo<void> {
+  const CallRoute() : super(CallRoute.name, path: '/call');
+
+  static const String name = 'CallRoute';
+}
+
+/// generated route for
+/// [EReceiptView]
+class EReceiptRoute extends PageRouteInfo<void> {
+  const EReceiptRoute() : super(EReceiptRoute.name, path: '/e_receipt');
+
+  static const String name = 'EReceiptRoute';
 }
 
 /// generated route for

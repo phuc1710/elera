@@ -20,6 +20,22 @@ class Routes {
   static const String topMentorsRoute = '/top_mentors';
   static const String mostPopularCoursesRoute = '/most_popular_courses';
   static const String searchRoute = '/search';
+  // 6. Course Details & Payment/Enroll
+  static const String courseDetail = '/course_detail';
+  static const String mentorProfile = '/mentor_profile';
+  static const String review = '/review';
+  static const String lesson = '/lesson';
+  static const String enrollCourse = '/enroll_course';
+  static const String confirmPayment = '/confirm_payment';
+  // 7. My Course
+  static const String myCompletedCourse = '/my_completed_course';
+  static const String myOngoingCourse = '/my_ongoing_course';
+  static const String courseVideo = '/course_video';
+  // 8. Inbox/Messenget (Chats & Calls)
+  static const String chat = '/chat';
+  static const String call = '/call';
+  // 9. Transactions
+  static const String e_receipt = '/e_receipt';
   // 10. Profile & Settings
   static const String editProfileRoute = '/edit_profile';
   static const String notificationSettingsRoute = '/notification_settings';

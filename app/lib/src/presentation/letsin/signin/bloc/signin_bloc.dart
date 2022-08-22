@@ -17,13 +17,13 @@ part 'signin_state.dart';
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   SignInBloc(
     this.signInUseCase,
-    this._accessTokenSaveUC,
+    this._accessTokenSaveUseCase,
   ) : super(SignInInitial()) {
     on<SignInSubmitted>(_onSignInSubmitted);
   }
 
   final SignInUseCase signInUseCase;
-  final AccessTokenSaveUseCase _accessTokenSaveUC;
+  final AccessTokenSaveUseCase _accessTokenSaveUseCase;
 
   Future<void> _onSignInSubmitted(
     SignInSubmitted event,
@@ -39,17 +39,17 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     if (dataState is DataSuccess) {
       final res = dataState.data;
       if (dataState.data?.code == ErrorCode.success) {
-        await _accessTokenSaveUC(params: res?.data?.accessToken);
+        await _accessTokenSaveUseCase(params: res?.data?.accessToken);
         emit(SignInSuccess());
       } else
         emit(
-          SignInFailed(
+          SignInFailure(
             ApiError(errorCode: res?.code, errorMessage: res?.message),
           ),
         );
     }
     if (dataState is DataFailed) {
-      emit(SignInFailed(ApiError(errorMessage: dataState.error?.message)));
+      emit(SignInFailure(ApiError(errorMessage: dataState.error?.message)));
     }
   }
 }

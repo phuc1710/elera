@@ -142,7 +142,7 @@ TextTheme getNewTextTheme() {
         letterSpacing: 0.4,
       ),
       overline: TextStyle(
-        fontSize: 10,
+        fontSize: 11,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.15,
       ),
