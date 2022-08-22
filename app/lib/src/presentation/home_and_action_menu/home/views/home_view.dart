@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../inbox_chats_and_calls/inbox/view/inbox_tab_view.dart';
 import '../../../my_course/my_courses/view/my_courses_tab_view.dart';
 import '../../../profile/view/profile_view.dart';
+import '../../../transactions/view/transactions_tab_view.dart';
 import '../widgets/home_tab_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -18,10 +19,8 @@ class _HomeViewState extends State<HomeView> {
   final tabs = [
     const HomeTabView(),
     const MyCoursesTabView(),
-    const InboxTabView(),
-    const Center(
-      child: Text('Transaction', style: TextStyle(color: Colors.black)),
-    ),
+    const Center(child: Text('Inbox', style: TextStyle(color: Colors.black))),
+    const TransactionsTabView(),
     const ProfileView(),
   ];
 

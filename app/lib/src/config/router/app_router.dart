@@ -38,6 +38,7 @@ import '../../presentation/onboarding/intro/views/intro_view.dart';
 import '../../presentation/payment/view/payment_view.dart';
 import '../../presentation/privacy_policy/privacy_policy_view.dart';
 import '../../presentation/security/view/security_view.dart';
+import '../../presentation/transactions/e_receipt/view/e_receipt_view.dart';
 import 'routes.dart';
 
 part 'app_router.gr.dart';
@@ -100,6 +101,8 @@ part 'app_router.gr.dart';
     // 8. Inbox/Messenget (Chats & Calls)
     AutoRoute<dynamic>(page: ChatView, path: Routes.chat),
     AutoRoute<dynamic>(page: CourseVideoView, path: Routes.courseVideo),
+    // 9. Transactionss
+    AutoRoute<dynamic>(page: EReceiptView, path: Routes.e_receipt),
     // 10. Profile & Settings
     AutoRoute<dynamic>(page: EditProfileView, path: Routes.editProfileRoute),
     AutoRoute<dynamic>(

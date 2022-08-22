@@ -1,0 +1,34 @@
+{
+    "status": 200,
+    "code": 1,
+    "message": "Thành công",
+    "data": {
+        "items": [
+            {
+                "course_name": "Mastering Firgma A to Z",
+                "course_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/83/24/ae/8324aeee-2d10-c426-52e5-ad97fb2ffb88/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png",
+                "status": "paid"
+            },
+            {
+                "course_name": "Mastering Blender 3D",
+                "course_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/83/24/ae/8324aeee-2d10-c426-52e5-ad97fb2ffb88/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png",
+                "status": "paid"
+            },
+            {
+                "course_name": "Build Personal Branding",
+                "course_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/83/24/ae/8324aeee-2d10-c426-52e5-ad97fb2ffb88/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png",
+                "status": "paid"
+            },
+            {
+                "course_name": "Complete UI Designer",
+                "course_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/83/24/ae/8324aeee-2d10-c426-52e5-ad97fb2ffb88/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png",
+                "status": "paid"
+            },
+            {
+                "course_name": "Full-Stack Web Developer",
+                "course_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/83/24/ae/8324aeee-2d10-c426-52e5-ad97fb2ffb88/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png",
+                "status": "paid"
+            }
+        ]
+    }
+}

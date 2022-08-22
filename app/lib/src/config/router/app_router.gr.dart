@@ -131,6 +131,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const CourseVideoView());
     },
+    EReceiptRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const EReceiptView());
+    },
     EditProfileRoute.name: (routeData) {
       final args = routeData.argsAs<EditProfileRouteArgs>();
       return MaterialPageX<dynamic>(
@@ -203,6 +207,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(MyOngoingCourseRoute.name, path: '/my_ongoing_course'),
         RouteConfig(ChatRoute.name, path: '/chat'),
         RouteConfig(CourseVideoRoute.name, path: '/course_video'),
+        RouteConfig(EReceiptRoute.name, path: '/e_receipt'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
             path: '/notification_settings'),
@@ -498,6 +503,14 @@ class CourseVideoRoute extends PageRouteInfo<void> {
       : super(CourseVideoRoute.name, path: '/course_video');
 
   static const String name = 'CourseVideoRoute';
+}
+
+/// generated route for
+/// [EReceiptView]
+class EReceiptRoute extends PageRouteInfo<void> {
+  const EReceiptRoute() : super(EReceiptRoute.name, path: '/e_receipt');
+
+  static const String name = 'EReceiptRoute';
 }
 
 /// generated route for
