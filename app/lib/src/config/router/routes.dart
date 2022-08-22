@@ -33,6 +33,7 @@ class Routes {
   static const String courseVideo = '/course_video';
   // 8. Inbox/Messenget (Chats & Calls)
   static const String chat = '/chat';
+  static const String call = '/call';
   // 9. Transactions
   static const String e_receipt = '/e_receipt';
   // 10. Profile & Settings

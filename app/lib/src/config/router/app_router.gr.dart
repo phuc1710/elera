@@ -123,13 +123,17 @@ class _$AppRouter extends RootStackRouter {
           child: MyOngoingCourseView(
               key: args.key, courseTitle: args.courseTitle));
     },
+    CourseVideoRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const CourseVideoView());
+    },
     ChatRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ChatView());
     },
-    CourseVideoRoute.name: (routeData) {
+    CallRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const CourseVideoView());
+          routeData: routeData, child: const CallView());
     },
     EReceiptRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -205,8 +209,9 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(ConfirmPaymentRoute.name, path: '/confirm_payment'),
         RouteConfig(MyCompletedCourseRoute.name, path: '/my_completed_course'),
         RouteConfig(MyOngoingCourseRoute.name, path: '/my_ongoing_course'),
-        RouteConfig(ChatRoute.name, path: '/chat'),
         RouteConfig(CourseVideoRoute.name, path: '/course_video'),
+        RouteConfig(ChatRoute.name, path: '/chat'),
+        RouteConfig(CallRoute.name, path: '/call'),
         RouteConfig(EReceiptRoute.name, path: '/e_receipt'),
         RouteConfig(EditProfileRoute.name, path: '/edit_profile'),
         RouteConfig(NotificationSettingsRoute.name,
@@ -489,6 +494,15 @@ class MyOngoingCourseRouteArgs {
 }
 
 /// generated route for
+/// [CourseVideoView]
+class CourseVideoRoute extends PageRouteInfo<void> {
+  const CourseVideoRoute()
+      : super(CourseVideoRoute.name, path: '/course_video');
+
+  static const String name = 'CourseVideoRoute';
+}
+
+/// generated route for
 /// [ChatView]
 class ChatRoute extends PageRouteInfo<void> {
   const ChatRoute() : super(ChatRoute.name, path: '/chat');
@@ -497,12 +511,11 @@ class ChatRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [CourseVideoView]
-class CourseVideoRoute extends PageRouteInfo<void> {
-  const CourseVideoRoute()
-      : super(CourseVideoRoute.name, path: '/course_video');
+/// [CallView]
+class CallRoute extends PageRouteInfo<void> {
+  const CallRoute() : super(CallRoute.name, path: '/call');
 
-  static const String name = 'CourseVideoRoute';
+  static const String name = 'CallRoute';
 }
 
 /// generated route for

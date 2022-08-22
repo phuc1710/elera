@@ -19,7 +19,7 @@ class _HomeViewState extends State<HomeView> {
   final tabs = [
     const HomeTabView(),
     const MyCoursesTabView(),
-    const Center(child: Text('Inbox', style: TextStyle(color: Colors.black))),
+    const InboxTabView(),
     const TransactionsTabView(),
     const ProfileView(),
   ];
