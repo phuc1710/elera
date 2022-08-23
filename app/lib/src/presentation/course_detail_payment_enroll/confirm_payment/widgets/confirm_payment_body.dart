@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../account_setup/create_new_pin/widgets/pin_code_input.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
 

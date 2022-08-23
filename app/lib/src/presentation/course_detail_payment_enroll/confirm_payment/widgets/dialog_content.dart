@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 
 class DialogContent extends StatelessWidget {
   const DialogContent({
