@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../config/router/app_router.dart';
 import '../../../../core/utils/utils.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 import '../bloc/contact_selection_bloc.dart';
 import '../widgets/contact_radio.dart';
 import '../widgets/prompt_with_image.dart';

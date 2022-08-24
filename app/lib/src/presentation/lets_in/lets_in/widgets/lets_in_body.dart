@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 import 'bottom_prompt_row.dart';
 import 'divider_row_with_text.dart';
 import 'social_login_column.dart';

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
 import 'intro_page.dart';
-import 'main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 import 'page_indicator.dart';
 
 class IntroBody extends StatefulWidget {

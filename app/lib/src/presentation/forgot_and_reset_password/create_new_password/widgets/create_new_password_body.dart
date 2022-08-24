@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/utils.dart';
-import '../../../letsin/signup/widgets/remember_me_check_box.dart';
+import '../../../lets_in/sign_up/widgets/remember_me_check_box.dart';
 import '../bloc/password_creation_bloc.dart';
 import '../widgets/main_action_button.dart';
 import '../widgets/password_input.dart';

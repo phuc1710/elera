@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
-import '../../course_detail/widgets/enroll_button.dart';
+import '../../course_details/widgets/enroll_button.dart';
 import 'lesson_tab_view.dart';
 
 class LessonBody extends StatelessWidget {

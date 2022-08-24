@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
-import '../../letsin/widgets/divider_row_with_text.dart';
-import '../bloc/signup_bloc.dart';
+import '../../../widgets/main_action_ink.dart';
+import '../../lets_in/widgets/divider_row_with_text.dart';
+import '../bloc/sign_up_bloc.dart';
 import '../widgets/bottom_prompt_row.dart';
 import '../widgets/remember_me_check_box.dart';
 import '../widgets/social_login_row.dart';

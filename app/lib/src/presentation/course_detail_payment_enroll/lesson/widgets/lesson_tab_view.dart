@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../course_detail/widgets/lesson_card.dart';
-import '../../course_detail/widgets/section_row.dart';
+import '../../course_details/widgets/lesson_card.dart';
+import '../../course_details/widgets/section_row.dart';
 
 class LessonsTabView extends StatelessWidget {
   const LessonsTabView({Key? key}) : super(key: key);

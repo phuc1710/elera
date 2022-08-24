@@ -9,8 +9,8 @@ import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../domain/usecases/sign_up_usecase.dart';
 
-part 'signup_event.dart';
-part 'signup_state.dart';
+part 'sign_up_event.dart';
+part 'sign_up_state.dart';
 
 @injectable
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {

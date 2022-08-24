@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injector/injector.dart';
-import '../bloc/signin_bloc.dart';
-import '../widgets/sign_in_body.dart';
+import '../bloc/sign_up_bloc.dart';
+import '../widgets/sign_up_body.dart';
 
-class SignInView extends StatelessWidget {
-  const SignInView({Key? key}) : super(key: key);
+class SignUpView extends StatelessWidget {
+  const SignUpView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class SignInView extends StatelessWidget {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: SafeArea(
         child: Scaffold(
-          resizeToAvoidBottomInset: true,
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             title: const Text(''),
             foregroundColor: Colors.black,
@@ -23,8 +23,8 @@ class SignInView extends StatelessWidget {
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider(
-            create: (context) => getIt<SignInBloc>(),
-            child: const SignInBody(),
+            create: (context) => getIt<SignUpBloc>(),
+            child: const SignUpBody(),
           ),
         ),
       ),

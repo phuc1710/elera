@@ -10,8 +10,8 @@ import '../../../../core/utils/constants.dart';
 import '../../../../domain/usecases/access_token_save_usecase.dart';
 import '../../../../domain/usecases/sign_in_usecase.dart';
 
-part 'signin_event.dart';
-part 'signin_state.dart';
+part 'sign_in_event.dart';
+part 'sign_in_state.dart';
 
 @injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {

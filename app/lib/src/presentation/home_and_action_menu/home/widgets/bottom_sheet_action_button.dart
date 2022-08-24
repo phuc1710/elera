@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 
 class BottomSheetActionButtons extends StatefulWidget {
   const BottomSheetActionButtons({

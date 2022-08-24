@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/letsin_body.dart';
+import '../widgets/lets_in_body.dart';
 
 class LetsInView extends StatelessWidget {
   const LetsInView({Key? key}) : super(key: key);

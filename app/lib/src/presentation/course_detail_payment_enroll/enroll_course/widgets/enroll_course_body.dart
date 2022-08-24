@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
-import '../../course_detail/widgets/enroll_button.dart';
+import '../../../widgets/main_action_ink.dart';
+import '../../course_details/widgets/enroll_button.dart';
 
 class EnrollCourseBody extends StatefulWidget {
   const EnrollCourseBody({Key? key}) : super(key: key);
