@@ -68,7 +68,7 @@ class _SignInBodyState extends State<SignInBody> {
           const SocialLoginRow(),
           const BottomPromptRow(
             promptText: "Don't have an account?",
-            path: Routes.signUpRoute,
+            path: Routes.signUp,
             actionText: 'Sign up',
           )
         ],

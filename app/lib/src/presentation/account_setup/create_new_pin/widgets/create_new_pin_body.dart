@@ -26,7 +26,7 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is CreateNewPinSuccess) {
-          context.router.pushNamed(Routes.setYourFingerprintRoute);
+          context.router.pushNamed(Routes.setYourFingerprint);
         }
       },
       builder: (context, state) {

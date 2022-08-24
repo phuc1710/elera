@@ -39,7 +39,7 @@ class LetsInBody extends StatelessWidget {
             ),
             InkWell(
               borderRadius: BorderRadius.circular(40),
-              onTap: () => context.router.pushNamed(Routes.signInRoute),
+              onTap: () => context.router.pushNamed(Routes.signIn),
               child: const MainActionInk(buttonString: 'Sign in with password'),
             ),
             const BottomPromptRow()

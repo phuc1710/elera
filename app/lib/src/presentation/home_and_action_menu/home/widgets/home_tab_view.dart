@@ -50,7 +50,7 @@ class HomeTabView extends StatelessWidget {
                   title: 'Top Mentors',
                   leadingButtonText: 'See All',
                   leadingButtonCallback: () =>
-                      context.router.pushNamed(Routes.topMentorsRoute),
+                      context.router.pushNamed(Routes.topMentors),
                 ),
               ),
               const MentorListview(),
@@ -60,7 +60,7 @@ class HomeTabView extends StatelessWidget {
                   title: 'Most Popular Courses',
                   leadingButtonText: 'See All',
                   leadingButtonCallback: () =>
-                      context.router.pushNamed(Routes.mostPopularCoursesRoute),
+                      context.router.pushNamed(Routes.mostPopularCourses),
                 ),
               ),
               BlocConsumer<HomeBloc, HomeState>(

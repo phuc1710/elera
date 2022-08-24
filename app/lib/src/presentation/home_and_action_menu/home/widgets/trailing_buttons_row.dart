@@ -22,13 +22,13 @@ class _TrailingButtonsRowState extends State<TrailingButtonsRow> {
       children: [
         IconButton(
           icon: const Icon(Icons.notifications_none),
-          onPressed: () => context.router.pushNamed(Routes.notificationRoute),
+          onPressed: () => context.router.pushNamed(Routes.notification),
         ),
         IconButton(
           icon: const Icon(Icons.bookmark_border),
           onPressed: () {
             context.router
-                .pushNamed(Routes.myBookmarkRoute)
+                .pushNamed(Routes.myBookmark)
                 .then((value) => context.read<HomeBloc>().add(HomeFetched()));
           },
         ),

@@ -52,8 +52,7 @@ class _EnrollCourseBodyState extends State<EnrollCourseBody> {
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
                         child: InkWell(
                           borderRadius: BorderRadius.circular(25),
-                          onTap: () =>
-                              context.router.pushNamed(Routes.newCardRoute),
+                          onTap: () => context.router.pushNamed(Routes.newCard),
                           child: const MainActionInk(
                             buttonString: 'Add New Card',
                             isMainAction: false,

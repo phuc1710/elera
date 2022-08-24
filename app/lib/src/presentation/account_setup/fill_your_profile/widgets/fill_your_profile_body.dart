@@ -33,7 +33,7 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is FillYourProfileSuccess) {
-          context.router.pushNamed(Routes.createNewPinRoute);
+          context.router.pushNamed(Routes.createNewPin);
         }
       },
       builder: (context, state) {

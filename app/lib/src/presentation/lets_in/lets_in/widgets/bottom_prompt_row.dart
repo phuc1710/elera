@@ -21,7 +21,7 @@ class BottomPromptRow extends StatelessWidget {
               ?.copyWith(color: const Color(0xff9e9e9e)),
         ),
         TextButton(
-          onPressed: () => context.router.pushNamed(Routes.signUpRoute),
+          onPressed: () => context.router.pushNamed(Routes.signUp),
           child: Text(
             'Sign up',
             style: Theme.of(context).textTheme.caption?.copyWith(

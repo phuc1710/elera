@@ -32,7 +32,9 @@ class _CourseCardState extends State<CourseCard> {
 
     return InkWell(
       borderRadius: BorderRadius.circular(25),
-      onTap: widget.isInRemoveBookmark ? () {} : () => context.router.pushNamed(Routes.courseDetail),
+      onTap: widget.isInRemoveBookmark
+          ? () {}
+          : () => context.router.pushNamed(Routes.courseDetails),
       child: Card(
         elevation: 2,
         shadowColor: Colors.grey[200],

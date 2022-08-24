@@ -33,7 +33,7 @@ class _SignUpBodyState extends State<SignUpBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is SignUpSuccess) {
-          context.router.pushNamed(Routes.fillYourProfileRoute);
+          context.router.pushNamed(Routes.fillYourProfile);
         }
       },
       builder: (context, state) {
@@ -61,7 +61,7 @@ class _SignUpBodyState extends State<SignUpBody> {
               const SocialLoginRow(),
               const BottomPromptRow(
                 promptText: 'Already have an account?',
-                path: Routes.signInRoute,
+                path: Routes.signIn,
                 actionText: 'Sign in',
               ),
             ],

@@ -69,7 +69,7 @@ class _IntroBodyState extends State<IntroBody> {
                 curve: Curves.easeIn,
               );
               if (_buttonString == AppLocalizations.of(context).getStarted) {
-                context.router.pushNamed(Routes.letsInRoute);
+                context.router.pushNamed(Routes.letsIn);
               }
             },
             child: MainActionInk(buttonString: _buttonString),

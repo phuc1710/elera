@@ -83,6 +83,6 @@ class LogoutButton extends StatelessWidget {
   Future<void> logOut(BuildContext context) async {
     final clearCacheUC = getIt<ClearCacheUseCase>();
     await clearCacheUC();
-    await context.router.navigateNamed(Routes.signInRoute);
+    await context.router.navigateNamed(Routes.signIn);
   }
 }

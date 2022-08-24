@@ -9,8 +9,8 @@ import '../widgets/course_title.dart';
 import '../widgets/enroll_button.dart';
 import '../widgets/price_row.dart';
 
-class CourseDetailView extends StatelessWidget {
-  const CourseDetailView({Key? key}) : super(key: key);
+class CourseDetailsView extends StatelessWidget {
+  const CourseDetailsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
