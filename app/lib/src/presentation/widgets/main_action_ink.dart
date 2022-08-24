@@ -38,31 +38,44 @@ class MainActionInk extends StatelessWidget {
   Color getButtonColor(BuildContext context) {
     final ColorScheme color = Theme.of(context).colorScheme;
 
-    return isMainAction == null ? color.primary : color.secondary;
+    if (isMainAction ?? false) {
+      return color.primary;
+    }
+
+    return color.secondary;
   }
 
   TextStyle? getButtonTextStyle(BuildContext context) {
     final textStyle = Theme.of(context).textTheme.bodyText2;
 
-    return isMainAction == null
-        ? textStyle?.copyWith(color: Colors.white, fontWeight: FontWeight.bold)
-        : textStyle?.copyWith(
-            color: Theme.of(context).colorScheme.primary,
-            fontWeight: FontWeight.bold,
-          );
+    if (isMainAction == null) {
+      return textStyle?.copyWith(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+      );
+    }
+
+    return textStyle?.copyWith(
+      color: Theme.of(context).colorScheme.primary,
+      fontWeight: FontWeight.bold,
+    );
   }
 
   List<BoxShadow>? getButtonBoxShadow(BuildContext context) {
-    return isMainAction == null
-        ? disableShadow == null
-            ? [
-                const BoxShadow(
-                  color: Color.fromRGBO(51, 94, 247, 0.25),
-                  blurRadius: 24,
-                  offset: Offset(4, 8),
-                )
-              ]
-            : null
-        : null;
+    if (isMainAction == null) {
+      if (disableShadow == null) {
+        return [
+          const BoxShadow(
+            color: Color.fromRGBO(51, 94, 247, 0.25),
+            blurRadius: 24,
+            offset: Offset(4, 8),
+          )
+        ];
+      }
+
+      return null;
+    } else {
+      return null;
+    }
   }
 }
