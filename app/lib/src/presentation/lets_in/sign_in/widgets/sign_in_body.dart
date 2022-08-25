@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../config/router/app_router.dart';
 import '../../../../config/router/routes.dart';
+import '../../../../core/utils/loading_widget.dart';
 import '../../../../core/utils/utils.dart';
 import '../../lets_in/widgets/divider_row_with_text.dart';
 import '../../sign_up/widgets/bottom_prompt_row.dart';
@@ -39,9 +40,11 @@ class _SignInBodyState extends State<SignInBody> {
               .pushAndPopUntil(const HomeRoute(), predicate: (route) => false);
         }
       },
-      buildWhen: (prev, current) => current is! SignInLoading,
+      buildWhen: (prev, current) => prev is SignInInitial || prev is SignInLoading,
       builder: (context, state) {
-        return buildLoginView(context);
+        return (state is SignInLoading)
+            ? const LoadingWidget()
+            : buildLoginView(context);
       },
     );
   }

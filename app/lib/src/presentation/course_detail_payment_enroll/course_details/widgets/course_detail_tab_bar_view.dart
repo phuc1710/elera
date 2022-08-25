@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../../data/models/course_details/course_details_fetch_response_model.dart';
 import 'about_tab_view.dart';
 import 'lesson_tab_view.dart';
 import 'review_tab_view.dart';
 
 class CourseDetailTabBarView extends StatelessWidget {
-  const CourseDetailTabBarView({
-    Key? key,
-  }) : super(key: key);
+  const CourseDetailTabBarView({Key? key, this.courseData}) : super(key: key);
+
+  final Datum? courseData;
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +35,12 @@ class CourseDetailTabBarView extends StatelessWidget {
                 Tab(text: 'Reviews')
               ],
             ),
-            const Expanded(
+            Expanded(
               child: TabBarView(
                 children: <Widget>[
-                  AboutTabView(),
-                  LessonsTabView(),
-                  ReviewsTabView(),
+                  AboutTabView(courseData: courseData),
+                  const LessonsTabView(),
+                  const ReviewsTabView(),
                 ],
               ),
             ),

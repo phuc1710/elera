@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/home_bloc.dart';
 
-class MentorListview extends StatelessWidget {
-  const MentorListview({
+class MentorListView extends StatelessWidget {
+  const MentorListView({
     Key? key,
   }) : super(key: key);
 

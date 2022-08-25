@@ -7,7 +7,7 @@ import '../../presentation/account_setup/create_new_pin/views/create_new_pin.dar
 import '../../presentation/account_setup/fill_your_profile/views/fill_your_profile.dart';
 import '../../presentation/account_setup/set_your_fingerprint/views/set_your_fingerprint_view.dart';
 import '../../presentation/course_detail_payment_enroll/confirm_payment/view/confirm_payment_view.dart';
-import '../../presentation/course_detail_payment_enroll/course_detail/view/course_detail_view.dart';
+import '../../presentation/course_detail_payment_enroll/course_details/view/course_detail_view.dart';
 import '../../presentation/course_detail_payment_enroll/course_video/view/course_video_view.dart';
 import '../../presentation/course_detail_payment_enroll/enroll_course/view/enroll_course_view.dart';
 import '../../presentation/course_detail_payment_enroll/lesson/view/lesson_view.dart';
@@ -28,9 +28,9 @@ import '../../presentation/home_and_action_menu/top_mentors/views/top_mentors_vi
 import '../../presentation/inbox_chats_and_calls/call/view/call_view.dart';
 import '../../presentation/inbox_chats_and_calls/chat/view/chat_view.dart';
 import '../../presentation/language/view/language_view.dart';
-import '../../presentation/letsin/letsin/views/letsin_view.dart';
-import '../../presentation/letsin/signin/views/signin_view.dart';
-import '../../presentation/letsin/signup/views/signup_view.dart';
+import '../../presentation/lets_in/lets_in/views/lets_in_view.dart';
+import '../../presentation/lets_in/sign_in/views/sign_in_view.dart';
+import '../../presentation/lets_in/sign_up/views/sign_up_view.dart';
 import '../../presentation/my_course/my_completed_course/view/my_completed_course_view.dart';
 import '../../presentation/my_course/my_ongoing_course/view/my_ongoing_course_view.dart';
 import '../../presentation/new_card/view/new_card_view.dart';

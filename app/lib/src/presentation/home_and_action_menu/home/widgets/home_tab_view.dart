@@ -53,7 +53,7 @@ class HomeTabView extends StatelessWidget {
                       context.router.pushNamed(Routes.topMentors),
                 ),
               ),
-              const MentorListview(),
+              const MentorListView(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: TitleRow(
@@ -69,8 +69,8 @@ class HomeTabView extends StatelessWidget {
                     Utils.showAppSnackBar(context, state.error.errorMessage);
                   }
                 },
-                buildWhen: (prev, curr) =>
-                    prev is HomeFetchInProgress && curr is HomeFetchSuccess,
+                buildWhen: (prev, current) =>
+                    prev is HomeFetchInProgress && current is HomeFetchSuccess,
                 builder: (context, state) => !(state is HomeFetchSuccess ||
                         state is BookmarkRemovalSuccess ||
                         state is BookmarkAdditionSuccess)

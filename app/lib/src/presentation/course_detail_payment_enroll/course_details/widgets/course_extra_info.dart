@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CourseExtraInfo extends StatelessWidget {
-  const CourseExtraInfo({Key? key}) : super(key: key);
+  const CourseExtraInfo({Key? key, this.enrollCount, this.totalTime})
+      : super(key: key);
+
+  final String? enrollCount;
+  final String? totalTime;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +21,9 @@ class CourseExtraInfo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Icon(Icons.people, color: primaryColor),
-          Text(
-            '9,839 students',
-            style: textTheme.caption,
-          ),
+          Text('$enrollCount students', style: textTheme.caption),
           Icon(Icons.timer, color: primaryColor),
-          Text('2,5 Hours', style: textTheme.caption),
+          Text('$totalTime Hours', style: textTheme.caption),
           Icon(
             Icons.document_scanner,
             color: primaryColor,

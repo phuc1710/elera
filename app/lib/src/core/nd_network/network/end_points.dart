@@ -27,6 +27,9 @@ class EndPoints {
   static const String addRecentSearch = '/add_recent_search';
   static const String removeRecentSearch = '/remove_recent_search';
   static const String search = '/search';
+
+  static const String courseDetails = '/course_details';
+
   static const String transactions = '/transaction';
   static const String eReceipt = '/transaction/e-receipt';
 

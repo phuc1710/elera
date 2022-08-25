@@ -1,10 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../config/router/routes.dart';
+import '../../../../data/models/course_details/course_details_fetch_response_model.dart';
 
 class MentorListTile extends StatelessWidget {
-  const MentorListTile({Key? key}) : super(key: key);
+  const MentorListTile({Key? key, this.mentorData}) : super(key: key);
+
+  final Mentor? mentorData;
 
   @override
   Widget build(BuildContext context) {
@@ -17,23 +21,24 @@ class MentorListTile extends StatelessWidget {
       child: ListTile(
         contentPadding: EdgeInsets.zero,
         leading: CircleAvatar(
+          foregroundImage: Image.network('${mentorData?.avatar}').image,
           radius: MediaQuery.of(context).size.width * 0.08,
           backgroundColor: Theme.of(context).colorScheme.secondary,
         ),
         title: Text(
-          'Jonathan',
+          '${mentorData?.name}',
           style: textTheme.bodyText2?.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
         subtitle: Text(
-          'Senior',
+          '${mentorData?.career}',
           style: textTheme.overline?.copyWith(color: const Color(0xff616161)),
         ),
         trailing: IconButton(
           onPressed: () {},
           icon: Icon(
-            Icons.chat_bubble_outline,
+            IconlyLight.chat,
             color: primaryColor,
           ),
         ),

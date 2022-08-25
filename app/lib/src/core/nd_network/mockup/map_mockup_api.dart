@@ -18,7 +18,8 @@ final Map<String, String> mapMockApiForGetRequest = {
   EndPoints.recentSearch: 'fetch_recent_search',
   EndPoints.search: 'fetch_search',
   EndPoints.transactions: 'transactions',
-  EndPoints.eReceipt: 'e_receipt'
+  EndPoints.eReceipt: 'e_receipt',
+  EndPoints.courseDetails: 'course_details'
 };
 
 final Map<String, String> mapMockApiForPostRequest = {

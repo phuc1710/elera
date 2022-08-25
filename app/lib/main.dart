@@ -9,6 +9,8 @@ import 'src/injector/injector.dart';
 import 'src/presentation/_blocs/app_multi_bloc_provider.dart';
 
 Future<void> main() async {
+  // debugRepaintRainbowEnabled = true;
+
   Utils.addGoogleFontsLicense();
 
   WidgetsFlutterBinding.ensureInitialized();

@@ -38,7 +38,7 @@ class MainActionInk extends StatelessWidget {
   Color getButtonColor(BuildContext context) {
     final ColorScheme color = Theme.of(context).colorScheme;
 
-    if (isMainAction ?? false) {
+    if (isMainAction ?? true) {
       return color.primary;
     }
 

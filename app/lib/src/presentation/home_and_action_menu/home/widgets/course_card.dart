@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/app_router.dart';
 import '../../../../config/router/routes.dart';
 import '../../../../data/models/course/course_fetch_response_model.dart';
 import 'bookmark_button.dart';
@@ -34,7 +35,8 @@ class _CourseCardState extends State<CourseCard> {
       borderRadius: BorderRadius.circular(25),
       onTap: widget.isInRemoveBookmark
           ? () {}
-          : () => context.router.pushNamed(Routes.courseDetails),
+          : () => context.router
+              .push(CourseDetailsRoute(courseId: '62cfe28220ef7d2084494478')),
       child: Card(
         elevation: 2,
         shadowColor: Colors.grey[200],

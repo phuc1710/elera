@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../home_and_action_menu/home/widgets/course_tag.dart';
 
 class CourseTagAndReview extends StatelessWidget {
-  const CourseTagAndReview({
-    Key? key,
-  }) : super(key: key);
+  const CourseTagAndReview({Key? key, this.tag, this.rating}) : super(key: key);
+
+  final String? tag;
+  final String? rating;
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +14,22 @@ class CourseTagAndReview extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: screenHeight * 0.01,
-      ),
+      padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
       child: Row(
         children: [
-          const CourseTag(tag: 'UI/UX Design'),
+          CourseTag(tag: '$tag'),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Icon(
+              Icons.star_half_rounded,
+              color: Color(0xfffc9a0e),
+              size: 18,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
-              '⭐  4.8 (4,479 reviews)',
+              '$rating',
               style:
                   textTheme.caption?.copyWith(color: const Color(0xff616161)),
             ),

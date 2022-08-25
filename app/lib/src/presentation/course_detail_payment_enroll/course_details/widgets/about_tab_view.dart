@@ -1,16 +1,22 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../data/models/course_details/course_details_fetch_response_model.dart';
 import '../../../home_and_action_menu/home/widgets/section_text.dart';
+import '../bloc/bloc/course_details_bloc.dart';
 import 'mentor_list_tile.dart';
 
 class AboutTabView extends StatelessWidget {
-  const AboutTabView({Key? key}) : super(key: key);
+  const AboutTabView({Key? key, this.courseData}) : super(key: key);
+
+  final Datum? courseData;
 
   @override
   Widget build(BuildContext context) {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final textTheme = Theme.of(context).textTheme;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,7 +25,7 @@ class AboutTabView extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 16.0),
           child: SectionText(text: 'Mentor'),
         ),
-        const MentorListTile(),
+        MentorListTile(mentorData: courseData?.mentor),
         const Padding(
           padding: EdgeInsets.symmetric(vertical: 16.0),
           child: SectionText(
@@ -30,11 +36,11 @@ class AboutTabView extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
-                text: '''
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip''',
-                style: textTheme.overline
-                    ?.copyWith(fontSize: 13, color: const Color(0xff616161)),
+                text: courseData?.aboutCourse,
+                style: textTheme.overline?.copyWith(
+                  fontSize: 13,
+                  color: const Color(0xff616161),
+                ),
               ),
               TextSpan(
                 text: ' Read more ...',
@@ -53,7 +59,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           child: SectionText(text: 'Tools'),
         ),
         Row(
-          children: const [Icon(Icons.adobe), Text('Figma')],
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: Image.network(
+                '${courseData?.tools?[0].icon}',
+                width: screenWidth * 0.08,
+              ),
+            ),
+            Text(
+              '${courseData?.tools?[0].name}',
+              style: textTheme.caption?.copyWith(fontWeight: FontWeight.bold),
+            )
+          ],
         ),
       ],
     );
