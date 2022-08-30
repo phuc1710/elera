@@ -20,7 +20,7 @@ class SocialLoginRow extends StatelessWidget {
               // TODO(phucndh): Facebook login
             },
             child: const SocialConnectInk(
-              imagePath: 'assets/images/facebook-logo.png',
+              imagePath: 'assets/images/facebook_logo.png',
             ),
           ),
         ),

@@ -4,3 +4,5 @@ part of 'course_details_bloc.dart';
 abstract class CourseDetailsEvent {}
 
 class CourseDetailsFetched extends CourseDetailsEvent {}
+
+class CourseLessonsFetched extends CourseDetailsEvent {}

@@ -11,22 +11,45 @@ class ReviewsTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: Column(
-        children: [
-          TitleRow(
-            title: '⭐  4.8 (4,479 reviews)',
-            leadingButtonText: 'See All',
-            leadingButtonCallback: () =>
-                context.router.pushNamed(Routes.review),
-          ),
-          const StarFilterChips(),
-          const ReviewListTile(),
-          const ReviewListTile(),
-          const ReviewListTile(),
-        ],
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return ListView(
+      padding: EdgeInsets.only(
+        top: 8.0,
+        bottom: screenHeight * 0.15,
+        left: screenWidth * 0.05,
+        right: screenWidth * 0.05,
       ),
+      physics: const ClampingScrollPhysics(),
+      children: [
+        Row(
+          children: [
+            const Icon(
+              Icons.star_half_rounded,
+              color: Color(0xfffc9a0e),
+            ),
+            Expanded(
+              child: TitleRow(
+                title: '4.8 (4,479 reviews)',
+                leadingButtonText: 'See All',
+                leadingButtonCallback: () =>
+                    context.router.pushNamed(Routes.review),
+              ),
+            ),
+          ],
+        ),
+        const StarFilterChips(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
+      ],
     );
   }
 }

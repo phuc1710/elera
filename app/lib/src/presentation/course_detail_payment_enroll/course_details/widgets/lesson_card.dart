@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../config/router/routes.dart';
 
@@ -23,10 +24,10 @@ class LessonCard extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Card(
-      elevation: 8,
+      elevation: 5,
       shadowColor: Colors.grey[200],
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(20),
       ),
       margin: EdgeInsets.symmetric(
         vertical: MediaQuery.of(context).size.height * 0.01,
@@ -49,7 +50,7 @@ class LessonCard extends StatelessWidget {
           style: textTheme.overline?.copyWith(color: const Color(0xff616161)),
         ),
         trailing: isLock
-            ? const Icon(Icons.lock_outline)
+            ? const Icon(IconlyLight.lock)
             : IconButton(
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),

@@ -19,7 +19,7 @@ class SocialLoginColumn extends StatelessWidget {
               // TODO(phucndh): Navigate to Facebook login
             },
             child: const SocialLoginInk(
-              iconPath: 'assets/images/facebook-logo.png',
+              iconPath: 'assets/images/facebook_logo.png',
               text: 'Continue with Facebook',
             ),
           ),

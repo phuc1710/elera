@@ -5,19 +5,24 @@
         "cupertino",
         "cyclomatic",
         "datasources",
+        "horiz",
         "ianh",
         "Iconly",
         "ints",
         "LTRB",
         "nnbd",
+        "noti",
         "Ordonez",
+        "pdfviewer",
         "phucndh",
         "proto",
         "protoc",
         "RGBO",
+        "syncfusion",
         "todos",
         "unfocus",
         "usecase",
-        "usecases"
+        "usecases",
+        "vsync"
     ]
 }

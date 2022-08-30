@@ -18,3 +18,19 @@ class CourseDetailsFetchFailure extends CourseDetailsState {
 
   final ApiError error;
 }
+
+class CourseLessonsFetchInitial extends CourseDetailsState {}
+
+class CourseLessonsFetchInProgress extends CourseDetailsState {}
+
+class CourseLessonsFetchSuccess extends CourseDetailsState {
+  CourseLessonsFetchSuccess(this.lessonData);
+
+  final Data? lessonData;
+}
+
+class CourseLessonsFetchFailure extends CourseDetailsState {
+  CourseLessonsFetchFailure(this.error);
+
+  final ApiError error;
+}

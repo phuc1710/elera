@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
 import '../../search/widgets/bottom_modal_sheet_title.dart';
@@ -45,8 +46,8 @@ class _BookmarkButtonState extends State<BookmarkButton> {
             },
             child: Icon(
               widget.courseModel?.isBookmarked ?? false
-                  ? Icons.bookmark
-                  : Icons.bookmark_outline,
+                  ? IconlyBold.bookmark
+                  : IconlyLight.bookmark,
               color: Theme.of(context).colorScheme.primary,
             ),
           ),

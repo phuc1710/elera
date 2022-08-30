@@ -4,9 +4,7 @@ part 'course_details_fetch_request_params.g.dart';
 
 @JsonSerializable()
 class CourseDetailsFetchRequestParams {
-  CourseDetailsFetchRequestParams({
-    required this.courseId,
-  });
+  CourseDetailsFetchRequestParams({required this.courseId});
 
   factory CourseDetailsFetchRequestParams.fromJson(Map<String, dynamic> json) =>
       _$CourseDetailsFetchRequestParamsFromJson(json);
@@ -14,5 +12,6 @@ class CourseDetailsFetchRequestParams {
   @JsonKey(name: 'course_id')
   final String? courseId;
 
-  Map<String, dynamic> toJson() => _$CourseDetailsFetchRequestParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$CourseDetailsFetchRequestParamsToJson(this);
 }
