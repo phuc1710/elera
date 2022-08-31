@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'transactions_course_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../config/router/app_router.dart';
+import 'transactions_course_image.dart';
 
 class ItemsTransactionsTab extends StatelessWidget {
   const ItemsTransactionsTab({

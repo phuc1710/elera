@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'lesson_tab_view.dart';
 import 'certificate_tab_view.dart';
+import 'lesson_tab_view.dart';
 
 class MyCompletedCourseBody extends StatelessWidget {
   const MyCompletedCourseBody({Key? key}) : super(key: key);

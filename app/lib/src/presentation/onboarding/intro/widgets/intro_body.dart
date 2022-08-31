@@ -3,8 +3,8 @@ import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
-import 'intro_page.dart';
 import '../../../widgets/main_action_ink.dart';
+import 'intro_page.dart';
 import 'page_indicator.dart';
 
 class IntroBody extends StatefulWidget {
