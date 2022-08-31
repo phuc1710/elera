@@ -31,17 +31,17 @@ class _CourseCardState extends State<CourseCard> {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
-    return InkWell(
-      borderRadius: BorderRadius.circular(25),
-      onTap: widget.isInRemoveBookmark
-          ? () {}
-          : () => context.router
-              .push(CourseDetailsRoute(courseId: '62cfe28220ef7d2084494478')),
-      child: Card(
-        elevation: 2,
-        shadowColor: Colors.grey[200],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-        margin: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
+    return Card(
+      elevation: 2,
+      shadowColor: Colors.grey[200],
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+      margin: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(25),
+        onTap: widget.isInRemoveBookmark
+            ? () {}
+            : () => context.router
+                .push(CourseDetailsRoute(courseId: '62cfe28220ef7d2084494478')),
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.04,
