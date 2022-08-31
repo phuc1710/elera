@@ -81,6 +81,7 @@ class _CourseDetailsViewState extends State<CourseDetailsView>
                                   CourseTagAndReview(
                                     tag: '${course?.categoryName}',
                                     rating: '${course?.rating}',
+                                    reviewCount: '${course?.reviewCount}',
                                   ),
                                   Padding(
                                     padding: EdgeInsets.symmetric(

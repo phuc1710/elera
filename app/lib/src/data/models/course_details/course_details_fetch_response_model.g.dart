@@ -14,7 +14,7 @@ CourseDetailsFetchResponseModel _$CourseDetailsFetchResponseModelFromJson(
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
-          : Datum.fromJson(json['data'] as Map<String, dynamic>),
+          : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CourseDetailsFetchResponseModelToJson(
@@ -26,7 +26,7 @@ Map<String, dynamic> _$CourseDetailsFetchResponseModelToJson(
       'data': instance.data,
     };
 
-Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
+Data _$DataFromJson(Map<String, dynamic> json) => Data(
       id: json['id'] as String?,
       categoryName: json['category_name'] as String?,
       name: json['name'] as String?,
@@ -49,9 +49,10 @@ Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
       tools: (json['tools'] as List<dynamic>?)
           ?.map((e) => Tool.fromJson(e as Map<String, dynamic>))
           .toList(),
+      reviewCount: json['review_count'] as int?,
     );
 
-Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
+Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'id': instance.id,
       'category_name': instance.categoryName,
       'name': instance.name,
@@ -66,6 +67,7 @@ Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
       'about_course': instance.aboutCourse,
       'mentor': instance.mentor,
       'tools': instance.tools,
+      'review_count': instance.reviewCount,
     };
 
 Price _$PriceFromJson(Map<String, dynamic> json) => Price(

@@ -8,7 +8,7 @@ import 'mentor_list_tile.dart';
 class AboutTabView extends StatelessWidget {
   const AboutTabView({Key? key, this.courseData}) : super(key: key);
 
-  final Datum? courseData;
+  final Data? courseData;
 
   @override
   Widget build(BuildContext context) {

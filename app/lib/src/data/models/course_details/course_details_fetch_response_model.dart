@@ -4,28 +4,27 @@ part 'course_details_fetch_response_model.g.dart';
 
 @JsonSerializable()
 class CourseDetailsFetchResponseModel {
-
   CourseDetailsFetchResponseModel({
     required this.status,
     required this.code,
     required this.message,
     required this.data,
   });
-
   factory CourseDetailsFetchResponseModel.fromJson(Map<String, dynamic> json) =>
       _$CourseDetailsFetchResponseModelFromJson(json);
 
   final int? status;
   final int? code;
   final String? message;
-  final Datum? data;
+  final Data? data;
 
-  Map<String, dynamic> toJson() => _$CourseDetailsFetchResponseModelToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$CourseDetailsFetchResponseModelToJson(this);
 }
 
 @JsonSerializable()
-class Datum {
-  Datum({
+class Data {
+  Data({
     required this.id,
     required this.categoryName,
     required this.name,
@@ -40,9 +39,9 @@ class Datum {
     required this.aboutCourse,
     required this.mentor,
     required this.tools,
+    required this.reviewCount,
   });
-
-  factory Datum.fromJson(Map<String, dynamic> json) => _$DatumFromJson(json);
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
   final String? id;
 
@@ -73,7 +72,10 @@ class Datum {
   final Mentor? mentor;
   final List<Tool>? tools;
 
-  Map<String, dynamic> toJson() => _$DatumToJson(this);
+  @JsonKey(name: 'review_count')
+  final int? reviewCount;
+
+  Map<String, dynamic> toJson() => _$DataToJson(this);
 }
 
 @JsonSerializable()
@@ -82,7 +84,6 @@ class Price {
     required this.vn,
     required this.en,
   });
-
   factory Price.fromJson(Map<String, dynamic> json) => _$PriceFromJson(json);
 
   final int? vn;
@@ -99,7 +100,6 @@ class Mentor {
     required this.avatar,
     required this.career,
   });
-
   factory Mentor.fromJson(Map<String, dynamic> json) => _$MentorFromJson(json);
 
   final String? id;
@@ -116,7 +116,6 @@ class Tool {
     required this.icon,
     required this.name,
   });
-
   factory Tool.fromJson(Map<String, dynamic> json) => _$ToolFromJson(json);
 
   final String? icon;

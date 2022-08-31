@@ -9,7 +9,7 @@ class CourseDetailTabBarView extends StatelessWidget {
   const CourseDetailTabBarView({Key? key, this.courseData, this.controller})
       : super(key: key);
 
-  final Datum? courseData;
+  final Data? courseData;
   final TabController? controller;
 
   @override
@@ -19,7 +19,7 @@ class CourseDetailTabBarView extends StatelessWidget {
       children: <Widget>[
         AboutTabView(courseData: courseData),
         const LessonsTabView(),
-        const ReviewsTabView(),
+        ReviewsTabView(courseData: courseData),
       ],
     );
   }

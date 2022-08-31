@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import '../../../home_and_action_menu/home/widgets/course_tag.dart';
 
 class CourseTagAndReview extends StatelessWidget {
-  const CourseTagAndReview({Key? key, this.tag, this.rating}) : super(key: key);
+  const CourseTagAndReview({Key? key, this.tag, this.rating, this.reviewCount})
+      : super(key: key);
 
   final String? tag;
   final String? rating;
+  final String? reviewCount;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class CourseTagAndReview extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
-              '$rating',
+              '$rating ($reviewCount reviews)',
               style:
                   textTheme.caption?.copyWith(color: const Color(0xff616161)),
             ),

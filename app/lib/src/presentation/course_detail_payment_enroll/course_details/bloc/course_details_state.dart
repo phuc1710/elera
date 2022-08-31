@@ -10,7 +10,7 @@ class CourseDetailsFetchInProgress extends CourseDetailsState {}
 class CourseDetailsFetchSuccess extends CourseDetailsState {
   CourseDetailsFetchSuccess(this.courseData);
 
-  final Datum? courseData;
+  final Data? courseData;
 }
 
 class CourseDetailsFetchFailure extends CourseDetailsState {
@@ -26,7 +26,7 @@ class CourseLessonsFetchInProgress extends CourseDetailsState {}
 class CourseLessonsFetchSuccess extends CourseDetailsState {
   CourseLessonsFetchSuccess(this.lessonData);
 
-  final Data? lessonData;
+  final lesson.Data? lessonData;
 }
 
 class CourseLessonsFetchFailure extends CourseDetailsState {
