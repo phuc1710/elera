@@ -4,7 +4,20 @@ import 'package:iconly/iconly.dart';
 import 'reviewer_list_tile.dart';
 
 class ReviewListTile extends StatelessWidget {
-  const ReviewListTile({Key? key}) : super(key: key);
+  const ReviewListTile({
+    Key? key,
+    this.fullName,
+    this.avatar,
+    this.rating,
+    this.content,
+    this.likeCount,
+  }) : super(key: key);
+
+  final String? fullName;
+  final String? avatar;
+  final String? content;
+  final int? likeCount;
+  final int? rating;
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +27,11 @@ class ReviewListTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Column(
         children: [
-          const ReviewerListTile(),
+          ReviewerListTile(fullName: fullName, avatar: avatar, rating: rating),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
-              'The course is very good, the explanation of the mentor is very clear and easy to understand!',
+              '$content',
               style: textTheme.overline
                   ?.copyWith(fontSize: 12, color: const Color(0xff616161)),
             ),
@@ -33,7 +46,7 @@ class ReviewListTile extends StatelessWidget {
                 icon: const Icon(IconlyBold.heart, color: Color(0xffff5971)),
                 iconSize: 30,
               ),
-              Text('948', style: textTheme.caption),
+              Text('$likeCount', style: textTheme.caption),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Text(

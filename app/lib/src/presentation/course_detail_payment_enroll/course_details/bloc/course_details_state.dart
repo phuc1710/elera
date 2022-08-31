@@ -34,3 +34,19 @@ class CourseLessonsFetchFailure extends CourseDetailsState {
 
   final ApiError error;
 }
+
+class CourseReviewsFetchInitial extends CourseDetailsState {}
+
+class CourseReviewsFetchInProgress extends CourseDetailsState {}
+
+class CourseReviewsFetchSuccess extends CourseDetailsState {
+  CourseReviewsFetchSuccess(this.reviewData);
+
+  final review.Data? reviewData;
+}
+
+class CourseReviewsFetchFailure extends CourseDetailsState {
+  CourseReviewsFetchFailure(this.error);
+
+  final ApiError error;
+}

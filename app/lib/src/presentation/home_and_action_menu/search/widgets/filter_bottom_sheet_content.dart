@@ -31,7 +31,7 @@ class FilterBottomSheetContent extends StatelessWidget {
             const SectionText(text: 'Price'),
             const PriceRangeSlider(),
             const SectionText(text: 'Rating'),
-            const StarFilterChips(),
+            StarFilterChips(selectedCallbackAction: (value) {}),
             const Divider(),
             BottomSheetActionButtons(
               onMainActionPressed: () {},

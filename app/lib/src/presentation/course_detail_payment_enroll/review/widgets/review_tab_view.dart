@@ -9,11 +9,11 @@ class ReviewsTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        StarFilterChips(),
-        ReviewListTile(),
-        ReviewListTile(),
-        ReviewListTile(),
+      children: [
+        StarFilterChips(selectedCallbackAction: (value) {}),
+        const ReviewListTile(),
+        const ReviewListTile(),
+        const ReviewListTile(),
       ],
     );
   }

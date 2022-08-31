@@ -30,6 +30,7 @@ class EndPoints {
 
   static const String courseDetails = '/course_details';
   static const String courseLessons = '/course_lessons';
+  static const String courseReviews = '/course/review';
 
   static const String transactions = '/transaction';
   static const String eReceipt = '/transaction/e-receipt';
