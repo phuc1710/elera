@@ -30,7 +30,7 @@ class _CourseApiService implements CourseApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<CourseFetchResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/fetch_course',
+                .compose(_dio.options, '/course',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = CourseFetchResponseModel.fromJson(_result.data!);

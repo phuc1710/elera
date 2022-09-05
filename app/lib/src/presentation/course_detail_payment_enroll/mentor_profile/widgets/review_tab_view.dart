@@ -7,7 +7,17 @@ class ReviewsTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return ListView(
+      padding: EdgeInsets.only(
+        top: 8.0,
+        bottom: screenHeight * 0.15,
+        left: screenWidth * 0.05,
+        right: screenWidth * 0.05,
+      ),
+      physics: const ClampingScrollPhysics(),
       children: const [
         ReviewListTile(),
         ReviewListTile(),

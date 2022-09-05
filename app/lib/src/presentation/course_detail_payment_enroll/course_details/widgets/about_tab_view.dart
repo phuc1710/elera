@@ -17,10 +17,7 @@ class AboutTabView extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return ListView(
-      padding:
-          EdgeInsets.only(left: screenWidth * 0.05, right: screenWidth * 0.05),
-      physics: const ClampingScrollPhysics(),
-      shrinkWrap: true,
+      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
       children: [
         const Padding(
           padding: EdgeInsets.symmetric(vertical: 16.0),

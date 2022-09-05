@@ -15,6 +15,7 @@ class _MentorStudentListViewState extends State<MentorStudentListView> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: const ClampingScrollPhysics(),
       itemCount: widget.mentorList?.length ?? 0,
       itemBuilder: (context, index) {
         final mentor = widget.mentorList?[index];

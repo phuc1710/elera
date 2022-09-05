@@ -58,13 +58,14 @@ import '../domain/usecases/get_helper_center_usecase.dart' as _i76;
 import '../domain/usecases/get_home_fetch_usecase.dart' as _i79;
 import '../domain/usecases/get_invite_friends_usecase.dart' as _i30;
 import '../domain/usecases/get_languages_usecase.dart' as _i77;
-import '../domain/usecases/get_mentor_fetch_usecase.dart' as _i81;
-import '../domain/usecases/get_notification_fetch_usecase.dart' as _i82;
+import '../domain/usecases/get_mentor_details_fetch_usecase.dart' as _i81;
+import '../domain/usecases/get_mentor_fetch_usecase.dart' as _i82;
+import '../domain/usecases/get_notification_fetch_usecase.dart' as _i83;
 import '../domain/usecases/get_payments_usecase.dart' as _i31;
 import '../domain/usecases/get_pin_sending_usecase.dart' as _i54;
 import '../domain/usecases/get_profile_usecase.dart' as _i32;
-import '../domain/usecases/get_recent_search_fetch_usecase.dart' as _i86;
-import '../domain/usecases/get_search_fetch_usecase.dart' as _i88;
+import '../domain/usecases/get_recent_search_fetch_usecase.dart' as _i87;
+import '../domain/usecases/get_search_fetch_usecase.dart' as _i89;
 import '../domain/usecases/get_transactions_usecase.dart' as _i33;
 import '../domain/usecases/invite_friend_usecase.dart' as _i40;
 import '../domain/usecases/language_save_usecase.dart' as _i41;
@@ -74,12 +75,12 @@ import '../domain/usecases/post_bookmark_removal_usecase.dart' as _i65;
 import '../domain/usecases/post_contact_selection_usecase.dart' as _i19;
 import '../domain/usecases/post_password_creation_usecase.dart' as _i51;
 import '../domain/usecases/post_pin_entry_usecase.dart' as _i53;
-import '../domain/usecases/post_recent_search_addition_usecase.dart' as _i85;
-import '../domain/usecases/post_recent_search_removal_usecase.dart' as _i87;
+import '../domain/usecases/post_recent_search_addition_usecase.dart' as _i86;
+import '../domain/usecases/post_recent_search_removal_usecase.dart' as _i88;
 import '../domain/usecases/sign_in_usecase.dart' as _i59;
 import '../domain/usecases/sign_up_usecase.dart' as _i60;
 import '../domain/usecases/update_profile_usecase.dart' as _i62;
-import '../module/register_module.dart' as _i99;
+import '../module/register_module.dart' as _i101;
 import '../presentation/_blocs/locale/locale_bloc.dart' as _i43;
 import '../presentation/_blocs/theme/theme_bloc.dart' as _i5;
 import '../presentation/account_setup/create_new_pin/bloc/create_new_pin_bloc.dart'
@@ -87,31 +88,33 @@ import '../presentation/account_setup/create_new_pin/bloc/create_new_pin_bloc.da
 import '../presentation/account_setup/fill_your_profile/bloc/fill_your_profile_bloc.dart'
     as _i73;
 import '../presentation/course_detail_payment_enroll/course_details/bloc/course_details_bloc.dart'
-    as _i94;
-import '../presentation/edit_profile/bloc/edit_profile_bloc.dart' as _i95;
+    as _i95;
+import '../presentation/course_detail_payment_enroll/mentor_profile/bloc/mentor_details_bloc.dart'
+    as _i98;
+import '../presentation/edit_profile/bloc/edit_profile_bloc.dart' as _i96;
 import '../presentation/forgot_and_reset_password/create_new_password/bloc/password_creation_bloc.dart'
-    as _i83;
-import '../presentation/forgot_and_reset_password/enter_pin/bloc/pin_entry_bloc.dart'
     as _i84;
+import '../presentation/forgot_and_reset_password/enter_pin/bloc/pin_entry_bloc.dart'
+    as _i85;
 import '../presentation/forgot_and_reset_password/select_contact/bloc/contact_selection_bloc.dart'
     as _i67;
 import '../presentation/friends_invitation/bloc/friends_invitation_bloc.dart'
     as _i74;
 import '../presentation/help_center/bloc/helper_center_bloc.dart' as _i78;
-import '../presentation/home_and_action_menu/home/bloc/home_bloc.dart' as _i96;
+import '../presentation/home_and_action_menu/home/bloc/home_bloc.dart' as _i97;
 import '../presentation/home_and_action_menu/most_popular_courses/bloc/course_bloc.dart'
-    as _i93;
+    as _i94;
 import '../presentation/home_and_action_menu/my_bookmark/bloc/bookmark_bloc.dart'
-    as _i92;
+    as _i93;
 import '../presentation/home_and_action_menu/notification/bloc/notification_bloc.dart'
-    as _i97;
+    as _i99;
 import '../presentation/home_and_action_menu/search/bloc/search_bloc.dart'
-    as _i98;
+    as _i100;
 import '../presentation/home_and_action_menu/top_mentors/bloc/top_mentors_bloc.dart'
-    as _i91;
+    as _i92;
 import '../presentation/language/bloc/language_bloc.dart' as _i80;
-import '../presentation/lets_in/sign_in/bloc/sign_in_bloc.dart' as _i89;
-import '../presentation/lets_in/sign_up/bloc/sign_up_bloc.dart' as _i90;
+import '../presentation/lets_in/sign_in/bloc/sign_in_bloc.dart' as _i90;
+import '../presentation/lets_in/sign_up/bloc/sign_up_bloc.dart' as _i91;
 import '../presentation/new_card/bloc/new_card_bloc.dart' as _i47;
 import '../presentation/payment/bloc/payment_bloc.dart' as _i52;
 import '../presentation/profile/bloc/profile_bloc.dart' as _i55;
@@ -272,51 +275,55 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i79.HomeFetchUseCase(get<_i38.HomeRepository>()));
   gh.factory<_i80.LanguageBloc>(() => _i80.LanguageBloc(
       get<_i77.GetLanguagesUseCase>(), get<_i41.LanguageSaveUseCase>()));
-  gh.factory<_i81.MentorFetchUseCase>(
-      () => _i81.MentorFetchUseCase(get<_i45.MentorRepository>()));
-  gh.factory<_i82.NotificationFetchUseCase>(
-      () => _i82.NotificationFetchUseCase(get<_i49.NotificationRepository>()));
-  gh.factory<_i83.PasswordCreationBloc>(
-      () => _i83.PasswordCreationBloc(get<_i51.PasswordCreationUseCase>()));
-  gh.factory<_i84.PinEntryBloc>(() => _i84.PinEntryBloc(
+  gh.factory<_i81.MentorDetailsFetchUseCase>(
+      () => _i81.MentorDetailsFetchUseCase(get<_i45.MentorRepository>()));
+  gh.factory<_i82.MentorFetchUseCase>(
+      () => _i82.MentorFetchUseCase(get<_i45.MentorRepository>()));
+  gh.factory<_i83.NotificationFetchUseCase>(
+      () => _i83.NotificationFetchUseCase(get<_i49.NotificationRepository>()));
+  gh.factory<_i84.PasswordCreationBloc>(
+      () => _i84.PasswordCreationBloc(get<_i51.PasswordCreationUseCase>()));
+  gh.factory<_i85.PinEntryBloc>(() => _i85.PinEntryBloc(
       get<_i54.PinSendingUseCase>(), get<_i53.PinEntryUseCase>()));
-  gh.factory<_i85.RecentSearchAdditionUseCase>(
-      () => _i85.RecentSearchAdditionUseCase(get<_i57.SearchRepository>()));
-  gh.factory<_i86.RecentSearchFetchUseCase>(
-      () => _i86.RecentSearchFetchUseCase(get<_i57.SearchRepository>()));
-  gh.factory<_i87.RecentSearchRemovalUseCase>(
-      () => _i87.RecentSearchRemovalUseCase(get<_i57.SearchRepository>()));
-  gh.factory<_i88.SearchFetchUseCase>(
-      () => _i88.SearchFetchUseCase(get<_i57.SearchRepository>()));
-  gh.factory<_i89.SignInBloc>(() => _i89.SignInBloc(
+  gh.factory<_i86.RecentSearchAdditionUseCase>(
+      () => _i86.RecentSearchAdditionUseCase(get<_i57.SearchRepository>()));
+  gh.factory<_i87.RecentSearchFetchUseCase>(
+      () => _i87.RecentSearchFetchUseCase(get<_i57.SearchRepository>()));
+  gh.factory<_i88.RecentSearchRemovalUseCase>(
+      () => _i88.RecentSearchRemovalUseCase(get<_i57.SearchRepository>()));
+  gh.factory<_i89.SearchFetchUseCase>(
+      () => _i89.SearchFetchUseCase(get<_i57.SearchRepository>()));
+  gh.factory<_i90.SignInBloc>(() => _i90.SignInBloc(
       get<_i59.SignInUseCase>(), get<_i12.AccessTokenSaveUseCase>()));
-  gh.factory<_i90.SignUpBloc>(() => _i90.SignUpBloc(get<_i60.SignUpUseCase>()));
-  gh.factory<_i91.TopMentorsBloc>(
-      () => _i91.TopMentorsBloc(get<_i81.MentorFetchUseCase>()));
-  gh.factory<_i92.BookmarkBloc>(() => _i92.BookmarkBloc(
+  gh.factory<_i91.SignUpBloc>(() => _i91.SignUpBloc(get<_i60.SignUpUseCase>()));
+  gh.factory<_i92.TopMentorsBloc>(
+      () => _i92.TopMentorsBloc(get<_i82.MentorFetchUseCase>()));
+  gh.factory<_i93.BookmarkBloc>(() => _i93.BookmarkBloc(
       get<_i64.BookmarkFetchUseCase>(), get<_i65.BookmarkRemovalUseCase>()));
-  gh.factory<_i93.CourseBloc>(() => _i93.CourseBloc(
+  gh.factory<_i94.CourseBloc>(() => _i94.CourseBloc(
       get<_i69.CourseFetchUseCase>(),
       get<_i63.BookmarkAdditionUseCase>(),
       get<_i65.BookmarkRemovalUseCase>()));
-  gh.factory<_i94.CourseDetailsBloc>(() => _i94.CourseDetailsBloc(
+  gh.factory<_i95.CourseDetailsBloc>(() => _i95.CourseDetailsBloc(
       get<_i68.CourseDetailsFetchUseCase>(),
       get<_i70.CourseLessonsFetchUseCase>(),
       get<_i23.CourseReviewsFetchUseCase>()));
-  gh.factory<_i95.EditProfileBloc>(() => _i95.EditProfileBloc(
+  gh.factory<_i96.EditProfileBloc>(() => _i96.EditProfileBloc(
       get<_i75.GetCountriesUseCase>(), get<_i62.UpdateProfileUseCase>()));
-  gh.factory<_i96.HomeBloc>(() => _i96.HomeBloc(get<_i79.HomeFetchUseCase>(),
+  gh.factory<_i97.HomeBloc>(() => _i97.HomeBloc(get<_i79.HomeFetchUseCase>(),
       get<_i63.BookmarkAdditionUseCase>(), get<_i65.BookmarkRemovalUseCase>()));
-  gh.factory<_i97.NotificationBloc>(
-      () => _i97.NotificationBloc(get<_i82.NotificationFetchUseCase>()));
-  gh.factory<_i98.SearchBloc>(() => _i98.SearchBloc(
-      get<_i88.SearchFetchUseCase>(),
-      get<_i86.RecentSearchFetchUseCase>(),
-      get<_i85.RecentSearchAdditionUseCase>(),
-      get<_i87.RecentSearchRemovalUseCase>(),
+  gh.factory<_i98.MentorDetailsBloc>(
+      () => _i98.MentorDetailsBloc(get<_i81.MentorDetailsFetchUseCase>()));
+  gh.factory<_i99.NotificationBloc>(
+      () => _i99.NotificationBloc(get<_i83.NotificationFetchUseCase>()));
+  gh.factory<_i100.SearchBloc>(() => _i100.SearchBloc(
+      get<_i89.SearchFetchUseCase>(),
+      get<_i87.RecentSearchFetchUseCase>(),
+      get<_i86.RecentSearchAdditionUseCase>(),
+      get<_i88.RecentSearchRemovalUseCase>(),
       get<_i63.BookmarkAdditionUseCase>(),
       get<_i65.BookmarkRemovalUseCase>()));
   return get;
 }
 
-class _$RegisterModule extends _i99.RegisterModule {}
+class _$RegisterModule extends _i101.RegisterModule {}

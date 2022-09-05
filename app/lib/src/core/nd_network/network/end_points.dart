@@ -16,7 +16,7 @@ class EndPoints {
   static const String enterPin = '/enter_pin';
   static const String createPassword = '/create_password';
 
-  static const String course = '/fetch_course';
+  static const String course = '/course';
   static const String home = '/fetch_home';
   static const String notification = '/fetch_notification';
   static const String bookmark = '/fetch_bookmark';
@@ -30,10 +30,11 @@ class EndPoints {
 
   static const String courseDetails = '/course_details';
   static const String courseLessons = '/course_lessons';
-  static const String courseReviews = '/course/review';
+  static const String courseReviews = '${EndPoints.course}/review';
+  static const String mentorDetails = '/mentor_details';
 
   static const String transactions = '/transaction';
-  static const String eReceipt = '/transaction/e-receipt';
+  static const String eReceipt = '${EndPoints.transactions}/e-receipt';
 
   static const String helperCenter = '/support';
   static const String profile = '/users/profile';

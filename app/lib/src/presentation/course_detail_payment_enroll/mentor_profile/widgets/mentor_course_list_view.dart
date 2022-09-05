@@ -11,7 +11,7 @@ class MentorCourseListView extends StatefulWidget {
   }) : super(key: key);
 
   final String? tag;
-  final List<Item>? courseList;
+  final List<Course>? courseList;
 
   @override
   State<MentorCourseListView> createState() => _MentorCourseListViewState();
@@ -24,7 +24,8 @@ class _MentorCourseListViewState extends State<MentorCourseListView> {
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * 0.05,
       ),
-      child: Column(
+      child: ListView(
+        physics: const ClampingScrollPhysics(),
         children: List.generate(
           widget.courseList?.length ?? 0,
           (index) => CourseCard(
@@ -33,18 +34,16 @@ class _MentorCourseListViewState extends State<MentorCourseListView> {
             onAddBookmark: () {
               onBookmarkAdded(
                 context,
-                widget.courseList ?? <Item>[],
+                widget.courseList ?? <Course>[],
                 '${widget.courseList?[index].categoryName}',
                 '${widget.courseList?[index].name}',
               );
             },
             onRemoveBookmark: () {
-              setState(() {
-                widget.courseList?[index].isBookmarked = false;
-              });
+              setState(() => widget.courseList?[index].isBookmarked = false);
               onBookmarkRemoved(
                 context,
-                widget.courseList ?? <Item>[],
+                widget.courseList ?? <Course>[],
                 '${widget.courseList?[index].categoryName}',
                 '${widget.courseList?[index].name}',
               );
@@ -57,7 +56,7 @@ class _MentorCourseListViewState extends State<MentorCourseListView> {
 
   void onBookmarkAdded(
     BuildContext context,
-    List<Item> courseList,
+    List<Course> courseList,
     String tag,
     String name,
   ) {
@@ -68,7 +67,7 @@ class _MentorCourseListViewState extends State<MentorCourseListView> {
 
   void onBookmarkRemoved(
     BuildContext context,
-    List<Item> courseList,
+    List<Course> courseList,
     String tag,
     String name,
   ) {

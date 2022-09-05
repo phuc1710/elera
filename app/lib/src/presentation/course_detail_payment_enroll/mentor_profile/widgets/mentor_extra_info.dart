@@ -1,47 +1,32 @@
 import 'package:flutter/material.dart';
 
+import 'mentor_detail.dart';
+
 class MentorExtraInfo extends StatelessWidget {
-  const MentorExtraInfo({Key? key}) : super(key: key);
+  const MentorExtraInfo({
+    Key? key,
+    this.courseCount,
+    this.studentCount,
+    this.reviewCount,
+  }) : super(key: key);
+
+  final int? courseCount;
+  final int? studentCount;
+  final int? reviewCount;
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: IntrinsicHeight(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('25', style: textTheme.headline6),
-                ),
-                Text('Courses', style: textTheme.caption),
-              ],
-            ),
+            MentorDetail(value: courseCount, unit: 'Courses'),
             const VerticalDivider(width: 4),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('22,379', style: textTheme.headline6),
-                ),
-                Text('Students', style: textTheme.caption),
-              ],
-            ),
+            const MentorDetail(value: 22379, unit: 'Students'),
             const VerticalDivider(width: 4),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('9,287', style: textTheme.headline6),
-                ),
-                Text('Reviews', style: textTheme.caption),
-              ],
-            ),
+            const MentorDetail(value: 9287, unit: 'Reviews')
           ],
         ),
       ),

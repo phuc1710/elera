@@ -7,7 +7,7 @@ import '../../presentation/account_setup/create_new_pin/views/create_new_pin.dar
 import '../../presentation/account_setup/fill_your_profile/views/fill_your_profile.dart';
 import '../../presentation/account_setup/set_your_fingerprint/views/set_your_fingerprint_view.dart';
 import '../../presentation/course_detail_payment_enroll/confirm_payment/view/confirm_payment_view.dart';
-import '../../presentation/course_detail_payment_enroll/course_details/view/course_detail_view.dart';
+import '../../presentation/course_detail_payment_enroll/course_details/view/course_details_view.dart';
 import '../../presentation/course_detail_payment_enroll/course_video/view/course_video_view.dart';
 import '../../presentation/course_detail_payment_enroll/enroll_course/view/enroll_course_view.dart';
 import '../../presentation/course_detail_payment_enroll/lesson/view/lesson_view.dart';
