@@ -17,7 +17,7 @@ class SearchResultTabView extends StatefulWidget {
   }) : super(key: key);
 
   final String searchPhrase;
-  final List<Item>? courseList;
+  final List<Course>? courseList;
   final List<Mentor>? mentorList;
   @override
   State<SearchResultTabView> createState() => _SearchResultTabViewState();

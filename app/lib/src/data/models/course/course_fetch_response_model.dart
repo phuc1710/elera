@@ -25,39 +25,50 @@ class CourseFetchResponseModel {
 @JsonSerializable()
 class Data {
   Data({
-    required this.courseList,
+    required this.page,
+    required this.isMore,
+    required this.categories,
+    required this.courses,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
-  @JsonKey(name: 'course_list')
-  final List<CourseList>? courseList;
+  final String? page;
+
+  @JsonKey(name: 'is_more')
+  final bool? isMore;
+  final List<Category>? categories;
+  final List<Course>? courses;
 
   Map<String, dynamic> toJson() => _$DataToJson(this);
 }
 
 @JsonSerializable()
-class CourseList {
-  CourseList({
-    required this.tag,
-    required this.items,
+class Category {
+  Category({
+    required this.id,
+    required this.name,
+    required this.icon,
   });
 
-  factory CourseList.fromJson(Map<String, dynamic> json) =>
-      _$CourseListFromJson(json);
+  factory Category.fromJson(Map<String, dynamic> json) =>
+      _$CategoryFromJson(json);
 
-  final String? tag;
-  final List<Item>? items;
+  final String? id;
+  final String? name;
+  final String? icon;
 
-  Map<String, dynamic> toJson() => _$CourseListToJson(this);
+  Map<String, dynamic> toJson() => _$CategoryToJson(this);
 }
 
 @JsonSerializable()
-class Item {
-  Item({
+class Course {
+  Course({
+    required this.id,
     required this.categoryName,
     required this.name,
     required this.image,
+    required this.thumbnail,
     required this.discountPrice,
     required this.originalPrice,
     required this.rating,
@@ -65,25 +76,43 @@ class Item {
     required this.isBookmarked,
   });
 
-  factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
+  factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
+
+  final String? id;
 
   @JsonKey(name: 'category_name')
   final String? categoryName;
   final String? name;
   final String? image;
+  final String? thumbnail;
 
   @JsonKey(name: 'discount_price')
-  final String? discountPrice;
+  final Price? discountPrice;
 
   @JsonKey(name: 'original_price')
-  final String? originalPrice;
+  final Price? originalPrice;
   final double? rating;
 
   @JsonKey(name: 'enroll_count')
-  final String? enrollCount;
+  final int? enrollCount;
 
   @JsonKey(name: 'is_bookmarked')
   bool? isBookmarked;
 
-  Map<String, dynamic> toJson() => _$ItemToJson(this);
+  Map<String, dynamic> toJson() => _$CourseToJson(this);
+}
+
+@JsonSerializable()
+class Price {
+  Price({
+    required this.vn,
+    required this.en,
+  });
+
+  factory Price.fromJson(Map<String, dynamic> json) => _$PriceFromJson(json);
+
+  final int? vn;
+  final int? en;
+
+  Map<String, dynamic> toJson() => _$PriceToJson(this);
 }

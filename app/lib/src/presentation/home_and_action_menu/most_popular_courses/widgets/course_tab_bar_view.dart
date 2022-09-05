@@ -7,10 +7,10 @@ import 'course_list_view.dart';
 class CourseTabBarView extends StatefulWidget {
   const CourseTabBarView({
     Key? key,
-    required this.courseList,
+    required this.courses,
   }) : super(key: key);
 
-  final List<CourseList>? courseList;
+  final List<Course>? courses;
   @override
   State<CourseTabBarView> createState() => _CourseTabBarViewState();
 }
@@ -18,9 +18,12 @@ class CourseTabBarView extends StatefulWidget {
 class _CourseTabBarViewState extends State<CourseTabBarView> {
   @override
   Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).primaryColor;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     int? courseListLength;
     try {
-      courseListLength = widget.courseList?[0].items?.length;
+      courseListLength = widget.courses?.length;
     } catch (_) {
       courseListLength = 0;
     }
@@ -28,41 +31,36 @@ class _CourseTabBarViewState extends State<CourseTabBarView> {
     return SizedBox(
       height: (211.0 - 5 * (courseListLength ?? 0)) * (courseListLength ?? 0),
       child: DefaultTabController(
-        length: widget.courseList?.length ?? 0,
+        length: widget.courses?.length ?? 0,
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.05,
-              ),
+              padding: EdgeInsets.only(left: screenWidth * 0.05),
               child: ButtonsTabBar(
-                backgroundColor: Theme.of(context).primaryColor,
-                borderColor: Theme.of(context).primaryColor,
+                backgroundColor: primaryColor,
+                borderColor: primaryColor,
                 borderWidth: 2,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 15),
                 radius: 20,
-                tabs: widget.courseList
-                        ?.map((course) => Tab(text: course.tag))
+                tabs: widget.courses
+                        ?.map((course) => Tab(text: course.categoryName))
                         .toList() ??
                     [],
                 unselectedBackgroundColor: Colors.white,
-                unselectedBorderColor: Theme.of(context).primaryColor,
-                unselectedLabelStyle:
-                    TextStyle(color: Theme.of(context).primaryColor),
+                unselectedBorderColor: primaryColor,
+                unselectedLabelStyle: TextStyle(color: primaryColor),
               ),
             ),
             Expanded(
               child: TabBarView(
                 physics: const NeverScrollableScrollPhysics(),
-                children:
-                    List.generate(widget.courseList?.length ?? 0, (index) {
+                children: List.generate(widget.courses?.length ?? 0, (index) {
                   return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.05,
-                    ),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                     child: CourseListView(
-                      tag: widget.courseList?[index].tag,
-                      courseList: widget.courseList,
+                      categoryName: widget.courses?[index].categoryName,
+                      courses: widget.courses,
                     ),
                   );
                 }),

@@ -75,7 +75,7 @@ class BookmarkAdditionInProgress extends SearchState {
 class BookmarkAdditionSuccess extends SearchState {
   BookmarkAdditionSuccess(this.courseList);
 
-  final List<Item> courseList;
+  final List<Course> courseList;
 }
 
 class BookmarkAdditionFailure extends SearchState {
@@ -91,7 +91,7 @@ class BookmarkRemovalInProgress extends SearchState {
 class BookmarkRemovalSuccess extends SearchState {
   BookmarkRemovalSuccess(this.courseList);
 
-  final List<Item> courseList;
+  final List<Course> courseList;
 }
 
 class BookmarkRemovalFailure extends SearchState {

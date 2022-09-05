@@ -16,7 +16,7 @@ class CourseCard extends StatefulWidget {
     required this.onRemoveBookmark,
   }) : super(key: key);
 
-  final Item? courseModel;
+  final Course? courseModel;
   final bool isInRemoveBookmark;
   final VoidCallback onAddBookmark;
   final VoidCallback onRemoveBookmark;
@@ -53,8 +53,8 @@ class _CourseCardState extends State<CourseCard> {
               CourseContentColumn(
                 tag: '${widget.courseModel?.categoryName}',
                 name: '${widget.courseModel?.name}',
-                price: '${widget.courseModel?.discountPrice}',
-                originalPrice: '${widget.courseModel?.originalPrice}',
+                price: '\$${widget.courseModel?.discountPrice?.en}',
+                originalPrice: '\$${widget.courseModel?.originalPrice?.en}',
                 rating: widget.courseModel?.rating ?? 0,
                 studentCount: '${widget.courseModel?.enrollCount}',
               ),

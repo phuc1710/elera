@@ -31,7 +31,7 @@ class Data {
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
   @JsonKey(name: 'bookmark_courses')
-  final List<CourseList>? bookmarkCourses;
+  final List<Course>? bookmarkCourses;
 
   Map<String, dynamic> toJson() => _$DataToJson(this);
 }

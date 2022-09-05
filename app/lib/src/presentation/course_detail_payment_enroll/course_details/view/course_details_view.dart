@@ -8,7 +8,7 @@ import '../../../../core/utils/utils.dart';
 import '../../../../injector/injector.dart';
 import '../../../my_course/my_completed_course/widgets/bottom_action_ink.dart';
 import '../bloc/course_details_bloc.dart';
-import '../widgets/course_detail_tab_bar_view.dart';
+import '../widgets/course_details_tab_bar_view.dart';
 import '../widgets/course_extra_info.dart';
 import '../widgets/course_tag_and_review.dart';
 import '../widgets/course_title.dart';

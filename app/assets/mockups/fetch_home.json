@@ -1,176 +1,146 @@
 {
-  "message": "",
-  "error_code": 1,
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
   "data": {
-    "deals": [
-      {
-        "title": "Today's Special",
-        "subtitle": "40% OFF",
-        "description": "Get a discount for every course order!\nOnly valid for today!",
-        "deal": "40%"
-      },
-      {
-        "title": "Today's Special",
-        "subtitle": "50% OFF",
-        "description": "Get a discount for every course order!\nOnly valid for today!",
-        "deal": "50%"
-      },
-      {
-        "title": "Today's Special",
-        "subtitle": "60% OFF",
-        "description": "Get a discount for every course order!\nOnly valid for today!",
-        "deal": "60%"
-      },
-      {
-        "title": "Today's Special",
-        "subtitle": "70% OFF",
-        "description": "Get a discount for every course order!\nOnly valid for today!",
-        "deal": "70%"
-      },
-      {
-        "title": "Today's Special",
-        "subtitle": "80% OFF",
-        "description": "Get a discount for every course order!\nOnly valid for today!",
-        "deal": "80%"
-      }
-    ],
-    "mentors": [
-      {
-        "nickname": "Jacob",
-        "fullname": "Jacob Kulikowski",
-        "description": "Marketing Analyst",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Claire",
-        "fullname": "Claire Ordonez",
-        "description": "VP of Sales",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Priscilla",
-        "fullname": "Priscilla Ehrman",
-        "description": "UX Designer",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Wade",
-        "fullname": "Wade Chenail",
-        "description": "Manager, Solution Engineering",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Kathryn",
-        "fullname": "Kathryn Pera",
-        "description": "Product Manager",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Francene",
-        "fullname": "Francene Vandyne",
-        "description": "EVP and GM, Sales Cloud",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Benny",
-        "fullname": "Benny Spanbauer",
-        "description": "Senior Product Manager",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Jamel",
-        "fullname": "Jamel Eusebio",
-        "description": "Product Designer",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
-      },
-      {
-        "nickname": "Cyndy",
-        "fullname": "Cyndy Lillibridge",
-        "description": "VP of Marketing",
-        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
-      }
-    ],
-    "course_list": [
-      {
-        "tag": "All",
-        "items": [
+      "banners": [
           {
-            "category_name": "3D Design",
-            "name": "3D Design Illustration",
-            "image": "assets/images/course_1.png",
-            "discount_price": "$48",
-            "original_price": "$80",
-            "rating": 4.8,
-            "enroll_count": "8.289",
-            "is_bookmarked": true
+              "id": "62e89755175edc8add690871",
+              "image": "https://m.nhonmy.com/wp-content/uploads/2018/06/anh-bia.jpeg"
           },
           {
-            "category_name": "Entrepreneurship",
-            "name": "Digital Entrepreneurship",
-            "image": "assets/images/course_2.jpg",
-            "discount_price": "$39",
-            "original_price": "",
-            "rating": 4.9,
-            "enroll_count": "6.182",
-            "is_bookmarked": true
+              "id": "62e89755175edc8add690870",
+              "image": "https://m.nhonmy.com/wp-content/uploads/2018/06/anh-bia.jpeg"
           },
           {
-            "category_name": "UI/UX Design",
-            "name": "Learn UX User Persona",
-            "image": "assets/images/course_3.jpg",
-            "discount_price": "$42",
-            "original_price": "$75",
-            "rating": 4.7,
-            "enroll_count": "7.938",
-            "is_bookmarked": true
-          }
-        ]
-      },
-      {
-        "tag": "3D Design",
-        "items": [
+              "id": "62e89755175edc8add69086e",
+              "image": "https://baosongngu.com/wp-content/uploads/2019/12/sale-off-la-gi.jpg"
+          },
           {
-            "category_name": "3D Design",
-            "name": "3D Design Illustration",
-            "image": "assets/images/course_1.png",
-            "discount_price": "$48",
-            "original_price": "$80",
-            "rating": 4.8,
-            "enroll_count": "8.289",
-            "is_bookmarked": true
-          }
-        ]
-      },
-      {
-        "tag": "Entrepreneurship",
-        "items": [
+              "id": "62e89755175edc8add69086f",
+              "image": "https://m.nhonmy.com/wp-content/uploads/2018/06/anh-bia.jpeg"
+          },
           {
-            "category_name": "Entrepreneurship",
-            "name": "Digital Entrepreneurship",
-            "image": "assets/images/course_2.jpg",
-            "discount_price": "$39",
-            "original_price": "",
-            "rating": 4.9,
-            "enroll_count": "6.182",
-            "is_bookmarked": true
+              "id": "62e89755175edc8add69086d",
+              "image": "https://socialmarketing.vn/wp-content/uploads/2019/10/sale-off-l%C3%A0-g%C3%AC.jpg"
           }
-        ]
-      },
-      {
-        "tag": "UI/UX Design",
-        "items": [
+      ],
+      "mentors": [
           {
-            "category_name": "UI/UX Design",
-            "name": "Learn UX User Persona",
-            "image": "assets/images/course_3.jpg",
-            "discount_price": "$42",
-            "original_price": "$75",
-            "rating": 4.7,
-            "enroll_count": "7.938",
-            "is_bookmarked": true
+              "id": "62ea2afa330425187d477881",
+              "name": "Jacob Kulikowski",
+              "nickname": "Jacob Kulikowski",
+              "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+              "career": "Senior UI/UX Design at Google",
+              "students": 10,
+              "courses": 12,
+              "reviews": 3,
+              "website": "https://google.com"
+          },
+          {
+              "id": "62ea2afa330425187d477882",
+              "name": "Claire Ordonez",
+              "nickname": "Claire Ordonez",
+              "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+              "career": "Senior UI/UX Design at Google",
+              "students": 10,
+              "courses": 12,
+              "reviews": 3,
+              "website": "https://google.com"
+          },
+          {
+              "id": "62ea2afa330425187d477883",
+              "name": "Priscilla Ehrman",
+              "nickname": "Priscilla Ehrman",
+              "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+              "career": "Senior UI/UX Design at Google",
+              "students": 10,
+              "courses": 12,
+              "reviews": 3,
+              "website": "https://google.com"
+          },
+          {
+              "id": "62ea2afa330425187d477885",
+              "name": "Benny Spanbauer",
+              "nickname": "Benny Spanbauer",
+              "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+              "career": "Senior UI/UX Design at Google",
+              "students": 10,
+              "courses": 12,
+              "reviews": 3,
+              "website": "https://google.com"
+          },
+          {
+              "id": "62ea2afa330425187d477886",
+              "name": "Jamel Eusebio",
+              "nickname": "Jamel Eusebio",
+              "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+              "career": "Senior UI/UX Design at Google",
+              "students": 10,
+              "courses": 12,
+              "reviews": 3,
+              "website": "https://google.com"
+          },
+          {
+              "id": "62ea2afa330425187d477887",
+              "name": "Cyndy Lillibridge",
+              "nickname": "Cyndy Lillibridge",
+              "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+              "career": "Senior UI/UX Design at Google",
+              "students": 10,
+              "courses": 12,
+              "reviews": 3,
+              "website": "https://google.com"
+          },
+          {
+              "id": "62ea2afa330425187d477884",
+              "name": "Wade Chenail",
+              "nickname": "Wade Chenail",
+              "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+              "career": "Senior UI/UX Design at Google",
+              "students": 10,
+              "courses": 12,
+              "reviews": 3,
+              "website": "https://google.com"
           }
-        ]
-      }
-    ]
+      ],
+      "popular_courses": [
+          {
+              "id": "62cfe28220ef7d2084494477",
+              "category_name": "3D Design",
+              "name": "3D Design Illustration",
+              "image": "assets/images/course_1.png",
+              "thumbnail": "assets/images/course_1.png",
+              "discount_price": {
+                  "vn": 10000000000,
+                  "en": 39
+              },
+              "original_price": {
+                  "vn": 10000000000,
+                  "en": 80
+              },
+              "rating": 4.8,
+              "enroll_count": 8,
+              "is_bookmarked": false
+          },
+          {
+              "id": "62cfe28220ef7d2084494474",
+              "category_name": "3D Design",
+              "name": "3D Design Illustration",
+              "image": "assets/images/course_1.png",
+              "thumbnail": "assets/images/course_1.png",
+              "discount_price": {
+                  "vn": 10000000000,
+                  "en": 39
+              },
+              "original_price": {
+                  "vn": 10000000000,
+                  "en": 80
+              },
+              "rating": 4.8,
+              "enroll_count": 9,
+              "is_bookmarked": true
+          }
+      ]
   }
 }

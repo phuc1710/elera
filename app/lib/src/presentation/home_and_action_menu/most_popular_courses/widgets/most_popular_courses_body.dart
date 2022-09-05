@@ -21,24 +21,24 @@ class MostPopularCoursesBody extends StatelessWidget {
           buildWhen: (prev, curr) =>
               prev is CourseFetchInProgress && curr is CourseFetchSuccess,
           builder: (context, state) {
-            return CourseTabBarView(courseList: getCourseList(context, state));
+            return CourseTabBarView(courses: getCourses(context, state));
           },
         ),
       ],
     );
   }
 
-  List<CourseList>? getCourseList(BuildContext context, CourseState state) {
+  List<Course>? getCourses(BuildContext context, CourseState state) {
     if (state is CourseFetchSuccess) {
-      return state.data?.courseList;
+      return state.data?.courses;
     }
 
     if (state is BookmarkAdditionSuccess) {
-      return state.courseList;
+      return state.courses;
     }
 
     if (state is BookmarkRemovalSuccess) {
-      return state.courseList;
+      return state.courses;
     }
 
     return [];

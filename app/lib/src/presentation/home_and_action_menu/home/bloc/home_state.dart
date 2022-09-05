@@ -31,7 +31,7 @@ class BookmarkAdditionInProgress extends HomeState {
 class BookmarkAdditionSuccess extends HomeState {
   BookmarkAdditionSuccess(this.courseList);
 
-  final List<CourseList> courseList;
+  final List<Course> courseList;
 }
 
 class BookmarkAdditionFailure extends HomeState {
@@ -47,7 +47,7 @@ class BookmarkRemovalInProgress extends HomeState {
 class BookmarkRemovalSuccess extends HomeState {
   BookmarkRemovalSuccess(this.courseList);
 
-  final List<CourseList> courseList;
+  final List<Course> courseList;
 }
 
 class BookmarkRemovalFailure extends HomeState {

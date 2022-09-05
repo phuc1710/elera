@@ -15,7 +15,7 @@ class BottomSheetActionButtons extends StatefulWidget {
 
   final String mainButtonString;
   final String subButtonString;
-  final Item? courseModel;
+  final Course? courseModel;
   final VoidCallback onMainActionPressed;
 
   @override

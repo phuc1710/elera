@@ -36,10 +36,7 @@ class HomeTabView extends StatelessWidget {
                   tag: 'searchBar',
                   child: Material(
                     color: Colors.white,
-                    child: SearchBar(
-                      atHome: true,
-                      onFocus: () {},
-                    ),
+                    child: SearchBar(atHome: true, onFocus: () {}),
                   ),
                 ),
               ),
@@ -86,9 +83,9 @@ class HomeTabView extends StatelessWidget {
     );
   }
 
-  List<CourseList>? getCourseList(BuildContext context, HomeState state) {
+  List<Course>? getCourseList(BuildContext context, HomeState state) {
     if (state is HomeFetchSuccess) {
-      return state.data?.courseList;
+      return state.data?.popularCourses;
     }
 
     if (state is BookmarkAdditionSuccess) {

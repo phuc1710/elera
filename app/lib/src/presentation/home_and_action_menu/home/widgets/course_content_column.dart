@@ -23,6 +23,8 @@ class CourseContentColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Expanded(
       child: SizedBox(
         height: 120,
@@ -35,21 +37,13 @@ class CourseContentColumn extends StatelessWidget {
               name.replaceAll('', '\u{200B}'),
               overflow: TextOverflow.ellipsis,
               softWrap: false,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText2
-                  ?.copyWith(fontWeight: FontWeight.bold),
+              style: textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
             ),
-            PriceRow(
-              price: price,
-              originalPrice: originalPrice,
-            ),
+            PriceRow(price: price, originalPrice: originalPrice),
             Text(
               '⭐  $rating  |  $studentCount students',
-              style: Theme.of(context)
-                  .textTheme
-                  .overline
-                  ?.copyWith(color: const Color(0xff616161)),
+              style:
+                  textTheme.overline?.copyWith(color: const Color(0xff616161)),
             ),
           ],
         ),

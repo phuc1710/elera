@@ -69,15 +69,15 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
     if (dataState is DataSuccess) {
       final res = dataState.data;
       if (dataState.data?.code == ErrorCode.success) {
-        event.courseList
-            .firstWhere((element) => element.tag == event.tag)
-            .items
-            ?.removeWhere((element) => element.name == event.name);
-        event.courseList
-            .firstWhere((element) => element.tag == 'All')
-            .items
-            ?.removeWhere((element) => element.name == event.name);
-        emit(BookmarkRemovalSuccess(event.courseList));
+        // event.courses
+        //     .firstWhere((element) => element.categoryName == event.tag)
+        //     .items
+        //     ?.removeWhere((element) => element.name == event.name);
+        // event.courses
+        //     .firstWhere((element) => element.categoryName == 'All')
+        //     .items
+        //     ?.removeWhere((element) => element.name == event.name);
+        emit(BookmarkRemovalSuccess(event.courses));
       } else
         emit(
           BookmarkRemovalFailure(

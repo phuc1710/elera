@@ -35,7 +35,7 @@ class Data {
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
   final List<Mentor>? mentors;
-  final List<Item>? courses;
+  final List<Course>? courses;
 
   Map<String, dynamic> toJson() => _$DataToJson(this);
 }

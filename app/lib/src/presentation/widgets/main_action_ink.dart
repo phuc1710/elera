@@ -38,11 +38,11 @@ class MainActionInk extends StatelessWidget {
   Color getButtonColor(BuildContext context) {
     final ColorScheme color = Theme.of(context).colorScheme;
 
-    if (isMainAction ?? true) {
-      return color.primary;
+    if (isMainAction ?? false) {
+      return color.secondary;
     }
 
-    return color.secondary;
+    return color.primary;
   }
 
   TextStyle? getButtonTextStyle(BuildContext context) {

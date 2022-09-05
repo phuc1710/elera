@@ -9,8 +9,9 @@ part of 'home_fetch_response_model.dart';
 HomeFetchResponseModel _$HomeFetchResponseModelFromJson(
         Map<String, dynamic> json) =>
     HomeFetchResponseModel(
+      status: json['status'] as int?,
+      code: json['code'] as int?,
       message: json['message'] as String?,
-      errorCode: json['error_code'] as int?,
       data: json['data'] == null
           ? null
           : Data.fromJson(json['data'] as Map<String, dynamic>),
@@ -19,53 +20,60 @@ HomeFetchResponseModel _$HomeFetchResponseModelFromJson(
 Map<String, dynamic> _$HomeFetchResponseModelToJson(
         HomeFetchResponseModel instance) =>
     <String, dynamic>{
+      'status': instance.status,
+      'code': instance.code,
       'message': instance.message,
-      'error_code': instance.errorCode,
       'data': instance.data,
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      deals: (json['deals'] as List<dynamic>?)
-          ?.map((e) => Deal.fromJson(e as Map<String, dynamic>))
+      banners: (json['banners'] as List<dynamic>?)
+          ?.map((e) => Banner.fromJson(e as Map<String, dynamic>))
           .toList(),
       mentors: (json['mentors'] as List<dynamic>?)
           ?.map((e) => Mentor.fromJson(e as Map<String, dynamic>))
           .toList(),
-      courseList: (json['course_list'] as List<dynamic>?)
-          ?.map((e) => CourseList.fromJson(e as Map<String, dynamic>))
+      popularCourses: (json['popular_courses'] as List<dynamic>?)
+          ?.map((e) => Course.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'deals': instance.deals,
+      'banners': instance.banners,
       'mentors': instance.mentors,
-      'course_list': instance.courseList,
+      'popular_courses': instance.popularCourses,
     };
 
-Deal _$DealFromJson(Map<String, dynamic> json) => Deal(
-      title: json['title'] as String?,
-      subtitle: json['subtitle'] as String?,
-      description: json['description'] as String?,
-      deal: json['deal'] as String?,
+Banner _$BannerFromJson(Map<String, dynamic> json) => Banner(
+      id: json['id'] as String?,
+      image: json['image'] as String?,
     );
 
-Map<String, dynamic> _$DealToJson(Deal instance) => <String, dynamic>{
-      'title': instance.title,
-      'subtitle': instance.subtitle,
-      'description': instance.description,
-      'deal': instance.deal,
+Map<String, dynamic> _$BannerToJson(Banner instance) => <String, dynamic>{
+      'id': instance.id,
+      'image': instance.image,
     };
 
 Mentor _$MentorFromJson(Map<String, dynamic> json) => Mentor(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
       nickname: json['nickname'] as String?,
-      fullname: json['fullname'] as String?,
-      description: json['description'] as String?,
       avatar: json['avatar'] as String?,
+      career: json['career'] as String?,
+      students: json['students'] as int?,
+      courses: json['courses'] as int?,
+      reviews: json['reviews'] as int?,
+      website: json['website'] as String?,
     );
 
 Map<String, dynamic> _$MentorToJson(Mentor instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
       'nickname': instance.nickname,
-      'fullname': instance.fullname,
-      'description': instance.description,
       'avatar': instance.avatar,
+      'career': instance.career,
+      'students': instance.students,
+      'courses': instance.courses,
+      'reviews': instance.reviews,
+      'website': instance.website,
     };

@@ -39,7 +39,6 @@ class _DealsSliderState extends State<DealsSlider> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Theme.of(context).primaryColor,
                 boxShadow: getButtonBoxShadow(context),
               ),
               height: MediaQuery.of(context).size.height * 0.22,
@@ -51,21 +50,16 @@ class _DealsSliderState extends State<DealsSlider> {
                     onPageChanged: (index) => setState(() {
                       page = index;
                     }),
-                    children:
-                        List.generate(state.data?.deals?.length ?? 0, (index) {
-                      final deal = state.data?.deals?[index];
+                    children: List.generate(state.data?.banners?.length ?? 0,
+                        (index) {
+                      final deal = state.data?.banners?[index];
 
-                      return DealPage(
-                        title: deal?.title,
-                        subtitle: deal?.subtitle,
-                        description: deal?.description,
-                        deal: deal?.deal,
-                      );
+                      return DealPage(image: deal?.image);
                     }),
                   ),
                   PageIndicator(
                     controller: _controller,
-                    pageCount: state.data?.deals?.length ?? 0,
+                    pageCount: state.data?.banners?.length ?? 0,
                   )
                 ],
               ),

@@ -9,7 +9,7 @@ class CourseFetched extends CourseEvent {}
 class CourseBookmarkAddRequested extends CourseEvent {
   CourseBookmarkAddRequested(this.courseList, this.tag, this.name);
 
-  final List<CourseList> courseList;
+  final List<Course> courseList;
   final String tag;
   final String name;
 }
@@ -17,7 +17,7 @@ class CourseBookmarkAddRequested extends CourseEvent {
 class CourseBookmarkRemoveRequested extends CourseEvent {
   CourseBookmarkRemoveRequested(this.courseList, this.tag, this.name);
 
-  final List<CourseList> courseList;
+  final List<Course> courseList;
   final String tag;
   final String name;
 }

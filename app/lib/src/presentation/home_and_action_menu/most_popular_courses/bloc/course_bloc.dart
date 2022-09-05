@@ -72,16 +72,16 @@ class CourseBloc extends Bloc<CourseEvent, CourseState> {
     if (dataState is DataSuccess) {
       final res = dataState.data;
       if (dataState.data?.code == ErrorCode.success) {
-        event.courseList
-            .firstWhere((element) => element.tag == event.tag)
-            .items
-            ?.firstWhere((element) => element.name == event.name)
-            .isBookmarked = true;
-        event.courseList
-            .firstWhere((element) => element.tag == 'All')
-            .items
-            ?.firstWhere((element) => element.name == event.name)
-            .isBookmarked = true;
+        // event.courseList
+        //     .firstWhere((element) => element.categoryName == event.tag)
+        //     .items
+        //     ?.firstWhere((element) => element.name == event.name)
+        //     .isBookmarked = true;
+        // event.courseList
+        //     .firstWhere((element) => element.categoryName == 'All')
+        //     .items
+        //     ?.firstWhere((element) => element.name == event.name)
+        //     .isBookmarked = true;
         emit(BookmarkAdditionSuccess(event.courseList));
       } else
         emit(
@@ -110,16 +110,14 @@ class CourseBloc extends Bloc<CourseEvent, CourseState> {
     if (dataState is DataSuccess) {
       final res = dataState.data;
       if (dataState.data?.code == ErrorCode.success) {
-        event.courseList
-            .firstWhere((element) => element.tag == event.tag)
-            .items
-            ?.firstWhere((element) => element.name == event.name)
-            .isBookmarked = false;
-        event.courseList
-            .firstWhere((element) => element.tag == 'All')
-            .items
-            ?.firstWhere((element) => element.name == event.name)
-            .isBookmarked = false;
+        // event.courseList
+        //     .firstWhere((element) => element.categoryName == event.tag)
+        //     ?.firstWhere((element) => element.name == event.name)
+        //     .isBookmarked = false;
+        // event.courseList
+        //     .firstWhere((element) => element.categoryName == 'All')
+        //     ?.firstWhere((element) => element.name == event.name)
+        //     .isBookmarked = false;
         emit(BookmarkRemovalSuccess(event.courseList));
       } else
         emit(

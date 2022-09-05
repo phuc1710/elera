@@ -9,10 +9,10 @@ import 'bookmark_course_list_view.dart';
 class BookmarkCourseTabBarView extends StatefulWidget {
   const BookmarkCourseTabBarView({
     Key? key,
-    required this.courseList,
+    required this.courses,
   }) : super(key: key);
 
-  final List<CourseList>? courseList;
+  final List<Course>? courses;
   @override
   State<BookmarkCourseTabBarView> createState() =>
       _BookmarkCourseTabBarViewState();
@@ -22,10 +22,10 @@ class _BookmarkCourseTabBarViewState extends State<BookmarkCourseTabBarView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: (214.0 - 4 * (widget.courseList?[0].items?.length ?? 0)) *
-          (widget.courseList?[0].items?.length ?? 0),
+      height: (214.0 - 4 * (widget.courses?.length ?? 0)) *
+          (widget.courses?.length ?? 0),
       child: DefaultTabController(
-        length: widget.courseList?.length ?? 0,
+        length: widget.courses?.length ?? 0,
         child: Column(
           children: [
             Padding(
@@ -38,8 +38,8 @@ class _BookmarkCourseTabBarViewState extends State<BookmarkCourseTabBarView> {
                 borderWidth: 2,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 15),
                 radius: 20,
-                tabs: widget.courseList
-                        ?.map((course) => Tab(text: course.tag))
+                tabs: widget.courses
+                        ?.map((course) => Tab(text: course.categoryName))
                         .toList() ??
                     [],
                 unselectedBackgroundColor: Colors.white,
@@ -56,8 +56,8 @@ class _BookmarkCourseTabBarViewState extends State<BookmarkCourseTabBarView> {
                     ? const Center(child: CircularProgressIndicator())
                     : Expanded(
                         child: TabBarView(
-                          children: List.generate(
-                              widget.courseList?.length ?? 0, (index) {
+                          children: List.generate(widget.courses?.length ?? 0,
+                              (index) {
                             return Padding(
                               padding: EdgeInsets.symmetric(
                                 horizontal:
@@ -65,7 +65,7 @@ class _BookmarkCourseTabBarViewState extends State<BookmarkCourseTabBarView> {
                               ),
                               child: BookmarkCourseListView(
                                 tag: getCourseTag(state, index),
-                                courseList: getCourseList(state, index),
+                                courses: getCourseList(state, index),
                               ),
                             );
                           }),
@@ -81,21 +81,21 @@ class _BookmarkCourseTabBarViewState extends State<BookmarkCourseTabBarView> {
 
   String? getCourseTag(BookmarkState state, int index) {
     if (state is BookmarkFetchSuccess) {
-      return widget.courseList?[index].tag;
+      return widget.courses?[index].categoryName;
     }
     if (state is BookmarkRemovalSuccess) {
-      return state.courseList[index].tag;
+      return state.courses[index].categoryName;
     }
 
     return '';
   }
 
-  List<CourseList>? getCourseList(BookmarkState state, int index) {
+  List<Course>? getCourseList(BookmarkState state, int index) {
     if (state is BookmarkFetchSuccess) {
-      return widget.courseList;
+      return widget.courses;
     }
     if (state is BookmarkRemovalSuccess) {
-      return state.courseList;
+      return state.courses;
     }
 
     return [];
