@@ -39,8 +39,8 @@ class _MentorApiService implements MentorApiService {
   }
 
   @override
-  Future<HttpResponse<MentorDetailsFetchResponseModel>>
-      getMentorDetailsFetchRequest({isMockup, query}) async {
+  Future<HttpResponse<MentorCoursesFetchResponseModel>>
+      getMentorCoursesFetchRequest({isMockup, query}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
@@ -49,12 +49,12 @@ class _MentorApiService implements MentorApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<MentorDetailsFetchResponseModel>>(
+        _setStreamType<HttpResponse<MentorCoursesFetchResponseModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/mentor_details',
+                .compose(_dio.options, '/mentor/course',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = MentorDetailsFetchResponseModel.fromJson(_result.data!);
+    final value = MentorCoursesFetchResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

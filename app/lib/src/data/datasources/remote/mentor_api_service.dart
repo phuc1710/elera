@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../core/nd_network/network/end_points.dart';
-import '../../../core/params/mentor_details_fetch_request_params.dart';
+import '../../../core/params/mentor_courses_fetch_request_params.dart';
 import '../../../core/params/mentor_fetch_request_params.dart';
 import '../../models/mentor/mentor_fetch_response_model.dart';
-import '../../models/mentor_details/mentor_details_fetch_response_model.dart';
+import '../../models/mentor_courses/mentor_courses_fetch_response_model.dart';
 
 part 'mentor_api_service.g.dart';
 
@@ -19,9 +19,10 @@ abstract class MentorApiService {
     @Queries() MentorFetchRequestParams? query,
   });
 
-  @GET(EndPoints.mentorDetails)
-  Future<HttpResponse<MentorDetailsFetchResponseModel>> getMentorDetailsFetchRequest({
+  @GET(EndPoints.mentorCourses)
+  Future<HttpResponse<MentorCoursesFetchResponseModel>>
+      getMentorCoursesFetchRequest({
     @Header('isMockup') bool? isMockup,
-    @Queries() MentorDetailsFetchRequestParams? query,
+    @Queries() MentorCoursesFetchRequestParams? query,
   });
 }

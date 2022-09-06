@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'mentor_details_fetch_response_model.dart';
+part of 'mentor_courses_fetch_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-MentorDetailsFetchResponseModel _$MentorDetailsFetchResponseModelFromJson(
+MentorCoursesFetchResponseModel _$MentorCoursesFetchResponseModelFromJson(
         Map<String, dynamic> json) =>
-    MentorDetailsFetchResponseModel(
+    MentorCoursesFetchResponseModel(
       status: json['status'] as int?,
       code: json['code'] as int?,
       message: json['message'] as String?,
@@ -17,8 +17,8 @@ MentorDetailsFetchResponseModel _$MentorDetailsFetchResponseModelFromJson(
           : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MentorDetailsFetchResponseModelToJson(
-        MentorDetailsFetchResponseModel instance) =>
+Map<String, dynamic> _$MentorCoursesFetchResponseModelToJson(
+        MentorCoursesFetchResponseModel instance) =>
     <String, dynamic>{
       'status': instance.status,
       'code': instance.code,

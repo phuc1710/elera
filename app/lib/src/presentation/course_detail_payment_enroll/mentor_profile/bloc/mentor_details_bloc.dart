@@ -1,13 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
-import '../../../../core/params/mentor_details_fetch_request_params.dart';
+import '../../../../core/params/mentor_courses_fetch_request_params.dart';
 import '../../../../core/resources/api_error.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
-import '../../../../data/models/mentor_details/mentor_details_fetch_response_model.dart';
+import '../../../../data/models/mentor_courses/mentor_courses_fetch_response_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../domain/usecases/get_mentor_details_fetch_usecase.dart';
+import '../../../../domain/usecases/get_mentor_courses_fetch_usecase.dart';
 
 part 'mentor_details_event.dart';
 part 'mentor_details_state.dart';
@@ -19,7 +19,7 @@ class MentorDetailsBloc extends Bloc<MentorDetailsEvent, MentorDetailsState> {
     on<MentorDetailsFetched>(_onMentorDetailsFetched);
   }
 
-  final MentorDetailsFetchUseCase mentorDetailsFetchUseCase;
+  final MentorCoursesFetchUseCase mentorDetailsFetchUseCase;
 
   Future<void> _onMentorDetailsFetched(
     MentorDetailsFetched event,
@@ -27,7 +27,7 @@ class MentorDetailsBloc extends Bloc<MentorDetailsEvent, MentorDetailsState> {
   ) async {
     emit(MentorDetailsFetchInProgress());
     final dataState = await mentorDetailsFetchUseCase(
-      params: MentorDetailsFetchRequestParams(
+      params: MentorCoursesFetchRequestParams(
         mentorId: '62ea2afa330425187d477882',
         page: 1,
       ),

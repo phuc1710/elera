@@ -2,19 +2,19 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../course/course_fetch_response_model.dart';
 
-part 'mentor_details_fetch_response_model.g.dart';
+part 'mentor_courses_fetch_response_model.g.dart';
 
 @JsonSerializable()
-class MentorDetailsFetchResponseModel {
-  MentorDetailsFetchResponseModel({
+class MentorCoursesFetchResponseModel {
+  MentorCoursesFetchResponseModel({
     required this.status,
     required this.code,
     required this.message,
     required this.data,
   });
 
-  factory MentorDetailsFetchResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$MentorDetailsFetchResponseModelFromJson(json);
+  factory MentorCoursesFetchResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$MentorCoursesFetchResponseModelFromJson(json);
 
   final int? status;
   final int? code;
@@ -22,7 +22,7 @@ class MentorDetailsFetchResponseModel {
   final Data? data;
 
   Map<String, dynamic> toJson() =>
-      _$MentorDetailsFetchResponseModelToJson(this);
+      _$MentorCoursesFetchResponseModelToJson(this);
 }
 
 @JsonSerializable()

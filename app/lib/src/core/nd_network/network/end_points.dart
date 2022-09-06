@@ -31,7 +31,7 @@ class EndPoints {
   static const String courseDetails = '/course_details';
   static const String courseLessons = '/course_lessons';
   static const String courseReviews = '${EndPoints.course}/review';
-  static const String mentorDetails = '/mentor_details';
+  static const String mentorCourses = '${EndPoints.mentor}/course';
 
   static const String transactions = '/transaction';
   static const String eReceipt = '${EndPoints.transactions}/e-receipt';
