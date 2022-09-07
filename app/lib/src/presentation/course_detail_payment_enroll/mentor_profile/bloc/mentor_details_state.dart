@@ -32,3 +32,17 @@ class MentorStudentsFetchFailure extends MentorDetailsState {
 
   final ApiError error;
 }
+
+class MentorReviewsFetchInProgress extends MentorDetailsState {}
+
+class MentorReviewsFetchSuccess extends MentorDetailsState {
+  MentorReviewsFetchSuccess(this.mentorReviewData);
+
+  final mentor_review.Data? mentorReviewData;
+}
+
+class MentorReviewsFetchFailure extends MentorDetailsState {
+  MentorReviewsFetchFailure(this.error);
+
+  final ApiError error;
+}
