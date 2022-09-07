@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/utils/loading_widget.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../../injector/injector.dart';
-import '../../../home_and_action_menu/search/widgets/star_filter_chips.dart';
 import '../../course_details/widgets/review_list_tile.dart';
 import '../bloc/mentor_details_bloc.dart';
 
@@ -17,7 +16,8 @@ class ReviewsTabView extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return BlocProvider(
-      create: (context) => getIt<MentorDetailsBloc>()..add(MentorReviewsFetched('All')),
+      create: (context) =>
+          getIt<MentorDetailsBloc>()..add(MentorReviewsFetched('All')),
       child: BlocConsumer<MentorDetailsBloc, MentorDetailsState>(
         listener: (context, state) {
           if (state is MentorReviewsFetchFailure)

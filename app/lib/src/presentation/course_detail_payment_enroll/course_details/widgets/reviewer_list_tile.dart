@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import 'star_chip.dart';
 
@@ -31,7 +32,13 @@ class ReviewerListTile extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           StarChip(rating: rating),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz)),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              IconlyLight.more_circle,
+              color: Color(0xff212121),
+            ),
+          ),
         ],
       ),
     );
