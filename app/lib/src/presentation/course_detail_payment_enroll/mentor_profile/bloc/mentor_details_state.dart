@@ -5,16 +5,30 @@ abstract class MentorDetailsState {}
 
 class MentorDetailsFetchInitial extends MentorDetailsState {}
 
-class MentorDetailsFetchInProgress extends MentorDetailsState {}
+class MentorCoursesFetchInProgress extends MentorDetailsState {}
 
-class MentorDetailsFetchSuccess extends MentorDetailsState {
-  MentorDetailsFetchSuccess(this.mentorData);
+class MentorCoursesFetchSuccess extends MentorDetailsState {
+  MentorCoursesFetchSuccess(this.mentorCourseData);
 
-  final Data? mentorData;
+  final mentor_course.Data? mentorCourseData;
 }
 
-class MentorDetailsFetchFailure extends MentorDetailsState {
-  MentorDetailsFetchFailure(this.error);
+class MentorCoursesFetchFailure extends MentorDetailsState {
+  MentorCoursesFetchFailure(this.error);
+
+  final ApiError error;
+}
+
+class MentorStudentsFetchInProgress extends MentorDetailsState {}
+
+class MentorStudentsFetchSuccess extends MentorDetailsState {
+  MentorStudentsFetchSuccess(this.mentorStudentData);
+
+  final mentor_student.Data? mentorStudentData;
+}
+
+class MentorStudentsFetchFailure extends MentorDetailsState {
+  MentorStudentsFetchFailure(this.error);
 
   final ApiError error;
 }

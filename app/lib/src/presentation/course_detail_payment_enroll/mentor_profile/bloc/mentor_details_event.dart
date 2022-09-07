@@ -3,4 +3,6 @@ part of 'mentor_details_bloc.dart';
 @immutable
 abstract class MentorDetailsEvent {}
 
-class MentorDetailsFetched extends MentorDetailsEvent {}
+class MentorCoursesFetched extends MentorDetailsEvent {}
+
+class MentorStudentsFetched extends MentorDetailsEvent {}

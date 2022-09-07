@@ -23,6 +23,7 @@ final Map<String, String> mapMockApiForGetRequest = {
   EndPoints.courseLessons: 'course_lessons',
   EndPoints.courseReviews: 'course_reviews',
   EndPoints.mentorCourses: 'mentor_courses',
+  EndPoints.mentorStudents: 'mentor_students',
 };
 
 final Map<String, String> mapMockApiForPostRequest = {

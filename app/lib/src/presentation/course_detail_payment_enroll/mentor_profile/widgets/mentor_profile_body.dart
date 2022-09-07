@@ -34,14 +34,14 @@ class _MentorProfileBodyState extends State<MentorProfileBody>
 
     return BlocConsumer<MentorDetailsBloc, MentorDetailsState>(
       listener: (context, state) {
-        if (state is MentorDetailsFetchFailure) {
+        if (state is MentorCoursesFetchFailure) {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
       },
       builder: (context, state) {
-        if (state is MentorDetailsFetchSuccess) {
-          final mentor = state.mentorData?.mentor?.items;
-          final courses = state.mentorData?.courses?.items;
+        if (state is MentorCoursesFetchSuccess) {
+          final mentor = state.mentorCourseData?.mentor?.items;
+          final courses = state.mentorCourseData?.courses?.items;
 
           return NestedScrollView(
             controller: scrollController,

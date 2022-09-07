@@ -25,7 +25,7 @@ class MentorProfileView extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (context) =>
-            getIt<MentorDetailsBloc>()..add(MentorDetailsFetched()),
+            getIt<MentorDetailsBloc>()..add(MentorCoursesFetched()),
         child: const MentorProfileBody(),
       ),
     );
