@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../data/models/course_details/course_details_fetch_response_model.dart';
 import 'about_tab_view.dart';
-import 'lesson_tab_view.dart';
+import '../widgets/lesson_tab_view.dart';
 import 'review_tab_view.dart';
 
 class CourseDetailTabBarView extends StatelessWidget {
