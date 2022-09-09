@@ -1,0 +1,38 @@
+{
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+    "id": "62cfe28220ef7d2084494478",
+    "category_name": "Entrepreneurship",
+    "name": "Digital Entrepreneurship",
+    "image": "assets/images/course_2.jpg",
+    "thumbnail": "assets/images/course_1.png",
+    "discount_price": {
+      "vn": 10000000000,
+      "en": 39
+    },
+    "original_price": {
+      "vn": 10000000000,
+      "en": 80
+    },
+    "rating": 4.9,
+    "enroll_count": 6,
+    "is_bookmarked": false,
+    "total_time": 100,
+    "about_course": "this is a demo course for dev",
+    "mentor": {
+      "id": "62ea2afa330425187d477882",
+      "name": "Claire Ordonez",
+      "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+      "career": "Senior UI/UX Design at Google"
+    },
+    "tools": [
+      {
+        "icon": "https://st.quantrimang.com/photos/image/2022/06/13/slack-200-size-150x150-znd.jpg",
+        "name": "Slack"
+      }
+    ],
+    "review_count": 3
+  }
+}

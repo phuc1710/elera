@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/confirm_payment_bloc.dart';
 import '../widgets/confirm_payment_body.dart';
 
 class ConfirmPaymentView extends StatelessWidget {
@@ -15,7 +19,7 @@ class ConfirmPaymentView extends StatelessWidget {
         titleTextStyle: textTheme.headline6,
         title: const Text('Enroll Course'),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
+          IconButton(onPressed: () {}, icon: const Icon(IconlyLight.more_circle))
         ],
         leadingWidth: 35,
         foregroundColor: Colors.black,
@@ -23,7 +27,10 @@ class ConfirmPaymentView extends StatelessWidget {
         elevation: 0,
         toolbarHeight: screenHeight * 0.0995,
       ),
-      body: const ConfirmPaymentBody(),
+      body: BlocProvider(
+        create: (context) => getIt<ConfirmPaymentBloc>(),
+        child: const ConfirmPaymentBody(),
+      ),
     );
   }
 }

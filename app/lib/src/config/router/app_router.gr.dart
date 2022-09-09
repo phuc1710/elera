@@ -85,9 +85,11 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SearchView());
     },
-    CourseDetailRoute.name: (routeData) {
+    CourseDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<CourseDetailsRouteArgs>();
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const CourseDetailView());
+          routeData: routeData,
+          child: CourseDetailsView(key: args.key, courseId: args.courseId));
     },
     MentorProfileRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -201,7 +203,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(MostPopularCoursesRoute.name,
             path: '/most_popular_courses'),
         RouteConfig(SearchRoute.name, path: '/search'),
-        RouteConfig(CourseDetailRoute.name, path: '/course_detail'),
+        RouteConfig(CourseDetailsRoute.name, path: '/course_detail'),
         RouteConfig(MentorProfileRoute.name, path: '/mentor_profile'),
         RouteConfig(ReviewRoute.name, path: '/review'),
         RouteConfig(LessonRoute.name, path: '/lesson'),
@@ -393,12 +395,27 @@ class SearchRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [CourseDetailView]
-class CourseDetailRoute extends PageRouteInfo<void> {
-  const CourseDetailRoute()
-      : super(CourseDetailRoute.name, path: '/course_detail');
+/// [CourseDetailsView]
+class CourseDetailsRoute extends PageRouteInfo<CourseDetailsRouteArgs> {
+  CourseDetailsRoute({Key? key, required String courseId})
+      : super(CourseDetailsRoute.name,
+            path: '/course_detail',
+            args: CourseDetailsRouteArgs(key: key, courseId: courseId));
 
-  static const String name = 'CourseDetailRoute';
+  static const String name = 'CourseDetailsRoute';
+}
+
+class CourseDetailsRouteArgs {
+  const CourseDetailsRouteArgs({this.key, required this.courseId});
+
+  final Key? key;
+
+  final String courseId;
+
+  @override
+  String toString() {
+    return 'CourseDetailsRouteArgs{key: $key, courseId: $courseId}';
+  }
 }
 
 /// generated route for

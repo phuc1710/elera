@@ -13,7 +13,7 @@ class SearchCourseListView extends StatefulWidget {
   }) : super(key: key);
 
   final String? tag;
-  final List<Item>? courseList;
+  final List<Course>? courseList;
 
   @override
   State<SearchCourseListView> createState() => _SearchCourseListViewState();
@@ -35,7 +35,7 @@ class _SearchCourseListViewState extends State<SearchCourseListView> {
             onAddBookmark: () {
               onBookmarkAdded(
                 context,
-                widget.courseList ?? <Item>[],
+                widget.courseList ?? <Course>[],
                 '${widget.courseList?[index].categoryName}',
                 '${widget.courseList?[index].name}',
               );
@@ -46,7 +46,7 @@ class _SearchCourseListViewState extends State<SearchCourseListView> {
               });
               onBookmarkRemoved(
                 context,
-                widget.courseList ?? <Item>[],
+                widget.courseList ?? <Course>[],
                 '${widget.courseList?[index].categoryName}',
                 '${widget.courseList?[index].name}',
               );
@@ -59,7 +59,7 @@ class _SearchCourseListViewState extends State<SearchCourseListView> {
 
   void onBookmarkAdded(
     BuildContext context,
-    List<Item> courseList,
+    List<Course> courseList,
     String tag,
     String name,
   ) {
@@ -70,7 +70,7 @@ class _SearchCourseListViewState extends State<SearchCourseListView> {
 
   void onBookmarkRemoved(
     BuildContext context,
-    List<Item> courseList,
+    List<Course> courseList,
     String tag,
     String name,
   ) {

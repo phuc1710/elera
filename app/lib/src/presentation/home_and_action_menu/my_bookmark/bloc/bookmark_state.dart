@@ -29,9 +29,9 @@ class BookmarkRemovalInProgress extends BookmarkState {
 }
 
 class BookmarkRemovalSuccess extends BookmarkState {
-  BookmarkRemovalSuccess(this.courseList);
+  BookmarkRemovalSuccess(this.courses);
 
-  final List<CourseList> courseList;
+  final List<Course> courses;
 }
 
 class BookmarkRemovalFailure extends BookmarkState {

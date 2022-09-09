@@ -5,8 +5,8 @@ import '../../core/params/fill_your_profile_request_params.dart';
 import '../../core/params/friend_invite_params.dart';
 import '../../core/params/new_card_params.dart';
 import '../../core/params/password_creation_request_params.dart';
-import '../../core/params/pin_entry_request_params.dart';
 import '../../core/params/pin_sending_request_params.dart';
+import '../../core/params/pin_validation_request_params.dart';
 import '../../core/params/sign_in_request_params.dart';
 import '../../core/params/sign_up_request_params.dart';
 import '../../core/params/update_profile_params.dart';
@@ -19,7 +19,7 @@ import '../../data/models/friends/friend_response_model.dart';
 import '../../data/models/general_response/general_response_model.dart';
 import '../../data/models/password_creation/password_creation_response_model.dart';
 import '../../data/models/payment/payment_response_model.dart';
-import '../../data/models/pin_entry/pin_entry_response_model.dart';
+import '../../data/models/pin_validation/pin_validation_response_model.dart';
 import '../../data/models/pin_sending/pin_sending_response_model.dart';
 import '../../data/models/profile/profile_response_model.dart';
 import '../../data/models/sign_in/sign_in_response_model.dart';
@@ -58,8 +58,8 @@ abstract class UserRepository {
     PinSendingRequestParams? params,
   );
 
-  Future<DataState<PinEntryResponseModel>> postPinEntryRequest(
-    PinEntryRequestParams? params,
+  Future<DataState<PinValidationResponseModel>> postPinEntryRequest(
+    PinValidationRequestParams? params,
   );
 
   Future<DataState<PasswordCreationResponseModel>> postPasswordCreationRequest(

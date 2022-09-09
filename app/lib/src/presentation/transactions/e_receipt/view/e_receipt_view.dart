@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injector/injector.dart';
 import '../bloc/e_receipt_bloc.dart';
-
 import '../widgets/appbar_widget.dart';
 import '../widgets/barcode_widget.dart';
 import '../widgets/e_receipt_bottom_body.dart';

@@ -31,7 +31,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
           ?.map((e) => Mentor.fromJson(e as Map<String, dynamic>))
           .toList(),
       courses: (json['courses'] as List<dynamic>?)
-          ?.map((e) => Item.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Course.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

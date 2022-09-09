@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/mentor_details_bloc.dart';
 import '../widgets/mentor_profile_body.dart';
 
 class MentorProfileView extends StatelessWidget {
@@ -16,10 +19,15 @@ class MentorProfileView extends StatelessWidget {
         ],
         leadingWidth: 35,
         backgroundColor: Colors.white,
+        foregroundColor: const Color(0xff212121),
         elevation: 0,
         toolbarHeight: screenHeight * 0.0995,
       ),
-      body: const MentorProfileBody(),
+      body: BlocProvider(
+        create: (context) =>
+            getIt<MentorDetailsBloc>()..add(MentorCoursesFetched()),
+        child: const MentorProfileBody(),
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
-import '../../../../data/models/e_receipt/e_receipt_response.dart';
-import 'component_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../data/models/e_receipt/e_receipt_response.dart';
+import 'component_text.dart';
 import 'conponent_value.dart';
 
 class EReceiptTopBody extends StatelessWidget {

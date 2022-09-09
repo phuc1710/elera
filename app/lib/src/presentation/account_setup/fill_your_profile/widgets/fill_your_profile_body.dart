@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 import '../bloc/fill_your_profile_bloc.dart';
 import '../widgets/information_input.dart';
 import '../widgets/phone_number_input.dart';
@@ -33,7 +33,7 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
           Utils.showAppSnackBar(context, state.error.errorMessage);
         }
         if (state is FillYourProfileSuccess) {
-          context.router.pushNamed(Routes.createNewPinRoute);
+          context.router.pushNamed(Routes.createNewPin);
         }
       },
       builder: (context, state) {

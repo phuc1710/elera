@@ -10,7 +10,7 @@ import '../../core/params/fill_your_profile_request_params.dart';
 import '../../core/params/friend_invite_params.dart';
 import '../../core/params/new_card_params.dart';
 import '../../core/params/password_creation_request_params.dart';
-import '../../core/params/pin_entry_request_params.dart';
+import '../../core/params/pin_validation_request_params.dart';
 import '../../core/params/pin_sending_request_params.dart';
 import '../../core/params/sign_in_request_params.dart';
 import '../../core/params/sign_up_request_params.dart';
@@ -28,7 +28,7 @@ import '../models/friends/friend_response_model.dart';
 import '../models/general_response/general_response_model.dart';
 import '../models/password_creation/password_creation_response_model.dart';
 import '../models/payment/payment_response_model.dart';
-import '../models/pin_entry/pin_entry_response_model.dart';
+import '../models/pin_validation/pin_validation_response_model.dart';
 import '../models/pin_sending/pin_sending_response_model.dart';
 import '../models/profile/profile_response_model.dart';
 import '../models/sign_in/sign_in_response_model.dart';
@@ -189,11 +189,11 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<DataState<PinEntryResponseModel>> postPinEntryRequest(
-    PinEntryRequestParams? params,
+  Future<DataState<PinValidationResponseModel>> postPinEntryRequest(
+    PinValidationRequestParams? params,
   ) async {
     try {
-      final httpResponse = await _userApiService.postPinEntryRequest(
+      final httpResponse = await _userApiService.postPinValidationRequest(
         isMockup: true,
         body: params,
       );

@@ -87,7 +87,7 @@ class _PaymentViewState extends State<PaymentView> {
         title: 'Add New Card',
         titleColor: Colors.white,
         color: Theme.of(context).colorScheme.primary,
-        onTap: () => context.router.pushNamed(Routes.newCardRoute),
+        onTap: () => context.router.pushNamed(Routes.newCard),
         shadow: const [
           BoxShadow(
             color: Color.fromRGBO(51, 94, 247, 0.25),

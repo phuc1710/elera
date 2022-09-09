@@ -1,0 +1,45 @@
+{
+    "status": 200,
+    "code": 1,
+    "message": "Thành công",
+    "data": {
+        "items": [
+            {
+                "course_id": "62cfe28220ef7d2084494478",
+                "rating": 5,
+                "content": "this is a great course",
+                "like_count": 0,
+                "user": {
+                    "id": "62f4c62432dcf595227861bb",
+                    "full_name": "",
+                    "nickname": "",
+                    "avatar": "https://media.ngocdunggroup.com.vn/images/ma_ios/2019/10/36ad0db3-fc88-4f30-b9ce-183b62cd308c.jpg"
+                }
+            },
+            {
+                "course_id": "62cfe28220ef7d2084494478",
+                "rating": 5,
+                "content": "this is a great course",
+                "like_count": 0,
+                "user": {
+                    "id": "62f4c62432dcf595227861bb",
+                    "full_name": "",
+                    "nickname": "",
+                    "avatar": "https://media.ngocdunggroup.com.vn/images/ma_ios/2019/10/36ad0db3-fc88-4f30-b9ce-183b62cd308c.jpg"
+                }
+            },
+            {
+                "course_id": "62cfe28220ef7d2084494478",
+                "rating": 5,
+                "content": "This is amazing course",
+                "like_count": 4,
+                "user": {
+                    "id": "62cfd5cad7d6204bf5f99b0e",
+                    "full_name": "Phan Minh Hiếu",
+                    "nickname": "Hieu cute",
+                    "avatar": "https://img5.thuthuatphanmem.vn/uploads/2022/01/11/hinh-anh-chibi-zoro_102331237.jpg"
+                }
+            }
+        ]
+    }
+}

@@ -36,10 +36,7 @@ class HomeTabView extends StatelessWidget {
                   tag: 'searchBar',
                   child: Material(
                     color: Colors.white,
-                    child: SearchBar(
-                      atHome: true,
-                      onFocus: () {},
-                    ),
+                    child: SearchBar(atHome: true, onFocus: () {}),
                   ),
                 ),
               ),
@@ -50,17 +47,17 @@ class HomeTabView extends StatelessWidget {
                   title: 'Top Mentors',
                   leadingButtonText: 'See All',
                   leadingButtonCallback: () =>
-                      context.router.pushNamed(Routes.topMentorsRoute),
+                      context.router.pushNamed(Routes.topMentors),
                 ),
               ),
-              const MentorListview(),
+              const MentorListView(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: TitleRow(
                   title: 'Most Popular Courses',
                   leadingButtonText: 'See All',
                   leadingButtonCallback: () =>
-                      context.router.pushNamed(Routes.mostPopularCoursesRoute),
+                      context.router.pushNamed(Routes.mostPopularCourses),
                 ),
               ),
               BlocConsumer<HomeBloc, HomeState>(
@@ -69,8 +66,8 @@ class HomeTabView extends StatelessWidget {
                     Utils.showAppSnackBar(context, state.error.errorMessage);
                   }
                 },
-                buildWhen: (prev, curr) =>
-                    prev is HomeFetchInProgress && curr is HomeFetchSuccess,
+                buildWhen: (prev, current) =>
+                    prev is HomeFetchInProgress && current is HomeFetchSuccess,
                 builder: (context, state) => !(state is HomeFetchSuccess ||
                         state is BookmarkRemovalSuccess ||
                         state is BookmarkAdditionSuccess)
@@ -86,9 +83,9 @@ class HomeTabView extends StatelessWidget {
     );
   }
 
-  List<CourseList>? getCourseList(BuildContext context, HomeState state) {
+  List<Course>? getCourseList(BuildContext context, HomeState state) {
     if (state is HomeFetchSuccess) {
-      return state.data?.courseList;
+      return state.data?.popularCourses;
     }
 
     if (state is BookmarkAdditionSuccess) {

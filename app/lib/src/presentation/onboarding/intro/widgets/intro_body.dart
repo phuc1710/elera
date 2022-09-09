@@ -3,8 +3,8 @@ import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
+import '../../../widgets/main_action_ink.dart';
 import 'intro_page.dart';
-import 'main_action_ink.dart';
 import 'page_indicator.dart';
 
 class IntroBody extends StatefulWidget {
@@ -69,7 +69,7 @@ class _IntroBodyState extends State<IntroBody> {
                 curve: Curves.easeIn,
               );
               if (_buttonString == AppLocalizations.of(context).getStarted) {
-                context.router.pushNamed(Routes.letsInRoute);
+                context.router.pushNamed(Routes.letsIn);
               }
             },
             child: MainActionInk(buttonString: _buttonString),

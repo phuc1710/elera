@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../course_detail_payment_enroll/course_detail/widgets/lesson_card.dart';
-import '../../../course_detail_payment_enroll/course_detail/widgets/section_row.dart';
+import '../../../course_detail_payment_enroll/course_details/widgets/lesson_card.dart';
+import '../../../course_detail_payment_enroll/course_details/widgets/section_row.dart';
 import 'bottom_action_ink.dart';
 
 class LessonsTabView extends StatelessWidget {

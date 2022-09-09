@@ -18,7 +18,13 @@ final Map<String, String> mapMockApiForGetRequest = {
   EndPoints.recentSearch: 'fetch_recent_search',
   EndPoints.search: 'fetch_search',
   EndPoints.transactions: 'transactions',
-  EndPoints.eReceipt: 'e_receipt'
+  EndPoints.eReceipt: 'e_receipt',
+  EndPoints.courseDetails: 'course_details',
+  EndPoints.courseLessons: 'course_lessons',
+  EndPoints.courseReviews: 'course_reviews',
+  EndPoints.mentorCourses: 'mentor_courses',
+  EndPoints.mentorStudents: 'mentor_students',
+  EndPoints.mentorReviews: 'mentor_reviews',
 };
 
 final Map<String, String> mapMockApiForPostRequest = {
@@ -30,12 +36,13 @@ final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.payments: 'profile',
   EndPoints.inviteFriends: 'invite_friends',
   EndPoints.selectContact: 'select_contact',
-  EndPoints.enterPin: 'enter_pin',
+  EndPoints.pinValidation: 'pin_validation',
   EndPoints.createPassword: 'create_password',
   EndPoints.addBookmark: 'add_bookmark',
   EndPoints.removeBookmark: 'remove_bookmark',
   EndPoints.addRecentSearch: 'add_bookmark',
-  EndPoints.removeRecentSearch: 'remove_bookmark'
+  EndPoints.removeRecentSearch: 'remove_bookmark',
+  EndPoints.enrollCourse: 'enroll_course',
 };
 
 String? getJsonNameForGetRequest(

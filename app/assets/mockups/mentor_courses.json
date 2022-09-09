@@ -1,0 +1,115 @@
+{
+    "status": 200,
+    "code": 1,
+    "message": "Thành công",
+    "data": {
+        "mentor": {
+            "items": {
+                "id": "62ea2afa330425187d477881",
+                "name": "Jacob Kulikowski",
+                "nickname": "Jacob Kulikowski",
+                "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+                "career": "Senior UI/UX Design at Google",
+                "students": 10,
+                "courses": 12,
+                "reviews": 3,
+                "website": "https://google.com"
+            }
+        },
+        "courses": {
+            "items": [
+                {
+                    "id": "62cfe28220ef7d2084494477",
+                    "category_name": "3D Design",
+                    "name": "3D Design Illustration",
+                    "image": "assets/images/course_1.png",
+                    "thumbnail": "assets/images/course_1.png",
+                    "discount_price": {
+                        "vn": 10000000000,
+                        "en": 39
+                    },
+                    "original_price": {
+                        "vn": 10000000000,
+                        "en": 80
+                    },
+                    "rating": 4.8,
+                    "enroll_count": 8,
+                    "is_bookmarked": false
+                },
+                {
+                    "id": "62cfe28220ef7d2084494478",
+                    "category_name": "Entrepreneurship",
+                    "name": "Digital Entrepreneurship",
+                    "image": "assets/images/course_2.jpg",
+                    "thumbnail": "assets/images/course_1.png",
+                    "discount_price": {
+                        "vn": 10000000000,
+                        "en": 39
+                    },
+                    "original_price": {
+                        "vn": 10000000000,
+                        "en": 80
+                    },
+                    "rating": 4.9,
+                    "enroll_count": 6,
+                    "is_bookmarked": false
+                },
+                {
+                    "id": "62cfe28220ef7d2084494476",
+                    "category_name": "UI/UX Design",
+                    "name": "Learn UX User Persona",
+                    "image": "assets/images/course_3.jpg",
+                    "thumbnail": "assets/images/course_1.png",
+                    "discount_price": {
+                        "vn": 10000000000,
+                        "en": 39
+                    },
+                    "original_price": {
+                        "vn": 10000000000,
+                        "en": 80
+                    },
+                    "rating": 4.7,
+                    "enroll_count": 7,
+                    "is_bookmarked": false
+                },
+                {
+                    "id": "62cfe28220ef7d2084494475",
+                    "category_name": "Entrepreneurship",
+                    "name": "Digital Entrepreneurship",
+                    "image": "assets/images/course_2.jpg",
+                    "thumbnail": "assets/images/course_1.png",
+                    "discount_price": {
+                        "vn": 10000000000,
+                        "en": 39
+                    },
+                    "original_price": {
+                        "vn": 10000000000,
+                        "en": 80
+                    },
+                    "rating": 4.9,
+                    "enroll_count": 6,
+                    "is_bookmarked": true
+                },
+                {
+                    "id": "62cfe28220ef7d2084494474",
+                    "category_name": "3D Design",
+                    "name": "3D Design Illustration",
+                    "image": "assets/images/course_1.png",
+                    "thumbnail": "assets/images/course_1.png",
+                    "discount_price": {
+                        "vn": 10000000000,
+                        "en": 39
+                    },
+                    "original_price": {
+                        "vn": 10000000000,
+                        "en": 80
+                    },
+                    "rating": 4.8,
+                    "enroll_count": 9,
+                    "is_bookmarked": true
+                }
+            ],
+            "is_more": false
+        }
+    }
+}

@@ -174,19 +174,19 @@ class _ProfileViewState extends State<ProfileView> {
         context,
         title: l10n.notification,
         icon: Icons.notifications,
-        onTap: () => context.router.pushNamed(Routes.notificationSettingsRoute),
+        onTap: () => context.router.pushNamed(Routes.notificationSettings),
       ),
       profileActionItem(
         context,
         title: l10n.payment,
         icon: Icons.payment,
-        onTap: () => context.router.pushNamed(Routes.paymentRoute),
+        onTap: () => context.router.pushNamed(Routes.payment),
       ),
       profileActionItem(
         context,
         title: l10n.security,
         icon: Icons.security,
-        onTap: () => context.router.pushNamed(Routes.securityRoute),
+        onTap: () => context.router.pushNamed(Routes.security),
       ),
       BlocBuilder<ProfileBloc, ProfileState>(
         builder: (context, state) {
@@ -200,7 +200,7 @@ class _ProfileViewState extends State<ProfileView> {
             title: AppLocalizations.of(context).language,
             icon: Icons.language,
             value: language,
-            onTap: () => context.router.pushNamed(Routes.languageRoute).then(
+            onTap: () => context.router.pushNamed(Routes.language).then(
                   (_) => context.read<ProfileBloc>().add(ProfileStarted()),
                 ),
           );
@@ -244,7 +244,7 @@ class _ProfileViewState extends State<ProfileView> {
         context,
         title: l10n.inviteFriends,
         icon: Icons.group,
-        onTap: () => context.router.pushNamed(Routes.friendsInvitationRoute),
+        onTap: () => context.router.pushNamed(Routes.friendsInvitation),
       ),
     ];
   }

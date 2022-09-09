@@ -31,7 +31,7 @@ class SearchFetched extends SearchEvent {
 class SearchBookmarkAddRequested extends SearchEvent {
   SearchBookmarkAddRequested(this.courseList, this.tag, this.name);
 
-  final List<Item> courseList;
+  final List<Course> courseList;
   final String tag;
   final String name;
 }
@@ -39,7 +39,7 @@ class SearchBookmarkAddRequested extends SearchEvent {
 class SearchBookmarkRemoveRequested extends SearchEvent {
   SearchBookmarkRemoveRequested(this.courseList, this.tag, this.name);
 
-  final List<Item> courseList;
+  final List<Course> courseList;
   final String tag;
   final String name;
 }

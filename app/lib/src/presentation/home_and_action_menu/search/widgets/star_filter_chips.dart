@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StarFilterChips extends StatefulWidget {
-  const StarFilterChips({Key? key}) : super(key: key);
+  const StarFilterChips({Key? key, required this.selectedCallbackAction})
+      : super(key: key);
+
+  final Function(String value) selectedCallbackAction;
 
   @override
   State<StarFilterChips> createState() => _StarFilterChipsState();
@@ -24,7 +27,7 @@ class _StarFilterChipsState extends State<StarFilterChips> {
           final bool isCourseSelected =
               _courseFilterList[index] == selectedCourseTag;
           final primaryColor = Theme.of(context).primaryColor;
-          final double width = MediaQuery.of(context).size.width;
+          final width = MediaQuery.of(context).size.width;
 
           return Padding(
             padding: const EdgeInsets.only(right: 8),
@@ -35,9 +38,7 @@ class _StarFilterChipsState extends State<StarFilterChips> {
                 size: width * 0.05,
               ),
               backgroundColor: Colors.white,
-              padding: EdgeInsets.symmetric(
-                horizontal: width * 0.01,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: width * 0.01),
               label: Text(
                 _courseFilterList[index],
               ),
@@ -48,9 +49,12 @@ class _StarFilterChipsState extends State<StarFilterChips> {
                     color: isCourseSelected ? Colors.white : primaryColor,
                     fontWeight: FontWeight.bold,
                   ),
-              onSelected: (bool b) => setState(() {
-                selectedCourseTag = _courseFilterList[index];
-              }),
+              onSelected: (bool b) {
+                setState(() {
+                  selectedCourseTag = _courseFilterList[index];
+                });
+                widget.selectedCallbackAction(selectedCourseTag);
+              },
             ),
           );
         },

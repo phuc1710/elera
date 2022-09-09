@@ -6,12 +6,10 @@ import '../bloc/home_bloc.dart';
 import 'home_course_list_view.dart';
 
 class HomeCourseTabBarView extends StatefulWidget {
-  const HomeCourseTabBarView({
-    Key? key,
-    required this.courseList,
-  }) : super(key: key);
+  const HomeCourseTabBarView({Key? key, required this.courseList})
+      : super(key: key);
 
-  final List<CourseList>? courseList;
+  final List<Course>? courseList;
   @override
   State<HomeCourseTabBarView> createState() => _HomeCourseTabBarViewState();
 }
@@ -19,33 +17,36 @@ class HomeCourseTabBarView extends StatefulWidget {
 class _HomeCourseTabBarViewState extends State<HomeCourseTabBarView> {
   @override
   Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).primaryColor;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return SizedBox(
-      height: (211.0 - 5 * (widget.courseList?[0].items?.length ?? 0)) *
-          (widget.courseList?[0].items?.length ?? 0),
+      height: (211.0 - 5 * (widget.courseList?.length ?? 0)) *
+          (widget.courseList?.length ?? 0),
       child: DefaultTabController(
         length: widget.courseList?.length ?? 0,
         child: Column(
           children: [
             Padding(
               padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.05,
-                top:  MediaQuery.of(context).size.height * 0.02,
-                bottom:  MediaQuery.of(context).size.height * 0.02,
+                left: screenWidth * 0.05,
+                top: screenHeight * 0.02,
+                bottom: screenHeight * 0.02,
               ),
               child: ButtonsTabBar(
-                backgroundColor: Theme.of(context).primaryColor,
-                borderColor: Theme.of(context).primaryColor,
+                backgroundColor: primaryColor,
+                borderColor: primaryColor,
                 borderWidth: 2,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 15),
                 radius: 20,
                 tabs: widget.courseList
-                        ?.map((course) => Tab(text: course.tag))
+                        ?.map((course) => Tab(text: course.categoryName))
                         .toList() ??
                     [],
                 unselectedBackgroundColor: Colors.white,
-                unselectedBorderColor: Theme.of(context).primaryColor,
-                unselectedLabelStyle:
-                    TextStyle(color: Theme.of(context).primaryColor),
+                unselectedBorderColor: primaryColor,
+                unselectedLabelStyle: TextStyle(color: primaryColor),
               ),
             ),
             Expanded(
@@ -54,11 +55,10 @@ class _HomeCourseTabBarViewState extends State<HomeCourseTabBarView> {
                 children:
                     List.generate(widget.courseList?.length ?? 0, (index) {
                   return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.05,
-                    ),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                     child: HomeCourseListView(
-                      tag: widget.courseList?[index].tag,
+                      tag: widget.courseList?[index].categoryName,
                       courseList: widget.courseList,
                     ),
                   );
@@ -73,19 +73,19 @@ class _HomeCourseTabBarViewState extends State<HomeCourseTabBarView> {
 
   String? getCourseTag(HomeState state, int index) {
     if (state is HomeFetchSuccess) {
-      return widget.courseList?[index].tag;
+      return widget.courseList?[index].categoryName;
     }
     if (state is BookmarkAdditionSuccess) {
-      return state.courseList[index].tag;
+      return state.courseList[index].categoryName;
     }
     if (state is BookmarkRemovalSuccess) {
-      return state.courseList[index].tag;
+      return state.courseList[index].categoryName;
     }
 
     return '';
   }
 
-  List<CourseList>? getCourseList(HomeState state, int index) {
+  List<Course>? getCourseList(HomeState state, int index) {
     if (state is HomeFetchSuccess) {
       return widget.courseList;
     }

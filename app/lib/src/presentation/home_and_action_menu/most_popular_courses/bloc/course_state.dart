@@ -29,9 +29,9 @@ class BookmarkAdditionInProgress extends CourseState {
 }
 
 class BookmarkAdditionSuccess extends CourseState {
-  BookmarkAdditionSuccess(this.courseList);
+  BookmarkAdditionSuccess(this.courses);
 
-  final List<CourseList> courseList;
+  final List<Course> courses;
 }
 
 class BookmarkAdditionFailure extends CourseState {
@@ -45,9 +45,9 @@ class BookmarkRemovalInProgress extends CourseState {
 }
 
 class BookmarkRemovalSuccess extends CourseState {
-  BookmarkRemovalSuccess(this.courseList);
+  BookmarkRemovalSuccess(this.courses);
 
-  final List<CourseList> courseList;
+  final List<Course> courses;
 }
 
 class BookmarkRemovalFailure extends CourseState {

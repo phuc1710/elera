@@ -26,7 +26,7 @@ Map<String, dynamic> _$BookmarkFetchResponseModelToJson(
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       bookmarkCourses: (json['bookmark_courses'] as List<dynamic>?)
-          ?.map((e) => CourseList.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Course.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

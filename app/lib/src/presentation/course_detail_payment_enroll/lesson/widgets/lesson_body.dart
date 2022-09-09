@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
-import '../../course_detail/widgets/enroll_button.dart';
+import '../../../my_course/my_completed_course/widgets/bottom_action_ink.dart';
 import 'lesson_tab_view.dart';
 
 class LessonBody extends StatelessWidget {
@@ -10,23 +10,14 @@ class LessonBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    final screenWidth = MediaQuery.of(context).size.width;
-
-    return Column(
+    return Stack(
+      alignment: AlignmentDirectional.bottomCenter,
       children: [
-        SizedBox(
-          height: screenHeight * 0.717,
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-              child: const LessonsTabView(),
-            ),
-          ),
-        ),
-        EnrollButton(
+        const LessonsTabView(),
+        BottomActionInk(
+          buttonString: r'Enroll Course - $40',
           action: () => context.router.pushNamed(Routes.enrollCourse),
-        )
+        ),
       ],
     );
   }

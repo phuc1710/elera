@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 
 class BottomSheetActionButtons extends StatefulWidget {
   const BottomSheetActionButtons({
@@ -15,7 +15,7 @@ class BottomSheetActionButtons extends StatefulWidget {
 
   final String mainButtonString;
   final String subButtonString;
-  final Item? courseModel;
+  final Course? courseModel;
   final VoidCallback onMainActionPressed;
 
   @override
@@ -39,7 +39,7 @@ class _BottomSheetActionButtonsState extends State<BottomSheetActionButtons> {
             child: MainActionInk(
               buttonString: widget.subButtonString,
               width: 0.4,
-              isMainAction: true,
+              isNotMainAction: true,
             ),
           ),
           InkWell(

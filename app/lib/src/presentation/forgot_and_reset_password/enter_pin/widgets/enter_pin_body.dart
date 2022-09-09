@@ -36,7 +36,7 @@ class _EnterPinBodyState extends State<EnterPinBody> {
         }
         if (state is PinEntrySuccess) {
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
-          context.router.pushNamed(Routes.createNewPasswordRoute);
+          context.router.pushNamed(Routes.createNewPassword);
         }
       },
       builder: (context, state) {

@@ -13,7 +13,7 @@ class HomeCourseListView extends StatefulWidget {
   }) : super(key: key);
 
   final String? tag;
-  final List<CourseList>? courseList;
+  final List<Course>? courseList;
 
   @override
   State<HomeCourseListView> createState() => _HomeCourseListViewState();
@@ -23,32 +23,31 @@ class _HomeCourseListViewState extends State<HomeCourseListView> {
   @override
   Widget build(BuildContext context) {
     final itemList = widget.courseList
-        ?.firstWhere((element) => element.tag == widget.tag)
-        .items;
+        ?.firstWhere((element) => element.categoryName == widget.tag);
 
     return Column(
       children: List.generate(
-        itemList?.length ?? 0,
+        widget.courseList?.length ?? 0,
         (index) => CourseCard(
-          courseModel: itemList?[index],
+          courseModel: widget.courseList?[index],
           isInRemoveBookmark: false,
           onAddBookmark: () {
             onBookmarkAdded(
               context,
-              widget.courseList ?? <CourseList>[],
-              '${itemList?[index].categoryName}',
-              '${itemList?[index].name}',
+              widget.courseList ?? <Course>[],
+              '${widget.courseList?[index].categoryName}',
+              '${widget.courseList?[index].name}',
             );
           },
           onRemoveBookmark: () {
             setState(() {
-              itemList?[index].isBookmarked = false;
+              widget.courseList?[index].isBookmarked = false;
             });
             onBookmarkRemoved(
               context,
-              widget.courseList ?? <CourseList>[],
-              '${itemList?[index].categoryName}',
-              '${itemList?[index].name}',
+              widget.courseList ?? <Course>[],
+              '${widget.courseList?[index].categoryName}',
+              '${widget.courseList?[index].name}',
             );
           },
         ),
@@ -58,7 +57,7 @@ class _HomeCourseListViewState extends State<HomeCourseListView> {
 
   void onBookmarkAdded(
     BuildContext context,
-    List<CourseList> courseList,
+    List<Course> courseList,
     String tag,
     String name,
   ) {
@@ -69,7 +68,7 @@ class _HomeCourseListViewState extends State<HomeCourseListView> {
 
   void onBookmarkRemoved(
     BuildContext context,
-    List<CourseList> courseList,
+    List<Course> courseList,
     String tag,
     String name,
   ) {

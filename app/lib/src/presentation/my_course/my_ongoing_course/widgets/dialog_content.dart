@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../account_setup/fill_your_profile/widgets/information_input.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 
 class DialogContent extends StatelessWidget {
   const DialogContent({
@@ -31,7 +31,8 @@ class DialogContent extends StatelessWidget {
           RatingBar(
             initialRating: 5,
             itemSize: 30,
-            itemPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
+            itemPadding:
+                const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
             onRatingUpdate: (value) {},
             ratingWidget: RatingWidget(
               full: Icon(
@@ -67,7 +68,7 @@ class DialogContent extends StatelessWidget {
                   onTap: () => context.router.pop(),
                   child: const MainActionInk(
                     buttonString: 'Cancel',
-                    isMainAction: false,
+                    isNotMainAction: true,
                   ),
                 )
               ],

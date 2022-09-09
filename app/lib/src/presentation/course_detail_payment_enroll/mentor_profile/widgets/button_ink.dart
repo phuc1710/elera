@@ -30,8 +30,8 @@ class ButtonInk extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(icon, color: contentColor, size: 18),
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(icon, color: contentColor, size: 16),
               ),
               Text(
                 text,

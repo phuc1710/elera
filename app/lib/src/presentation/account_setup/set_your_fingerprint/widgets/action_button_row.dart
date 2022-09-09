@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 import '../../../../config/router/app_router.dart';
-import '../../../onboarding/intro/widgets/main_action_ink.dart';
+import '../../../widgets/main_action_ink.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
 
@@ -27,7 +27,7 @@ class ActionButtonRow extends StatelessWidget {
             child: const MainActionInk(
               buttonString: 'Skip',
               width: 0.4,
-              isMainAction: true,
+              isNotMainAction: true,
             ),
           ),
           InkWell(
