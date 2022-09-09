@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/utils.dart';
 import '../../../account_setup/create_new_pin/widgets/pin_code_input.dart';
 import '../../../widgets/main_action_ink.dart';
+import '../bloc/confirm_payment_bloc.dart';
 import 'dialog_content.dart';
 import 'dialog_title.dart';
 
@@ -20,46 +23,58 @@ class _ConfirmPaymentBodyState extends State<ConfirmPaymentBody> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-      child: Column(
-        children: [
-          const Expanded(
-            child: SizedBox(),
+    return BlocConsumer<ConfirmPaymentBloc, ConfirmPaymentState>(
+      listener: (context, state) {
+        if (state is ConfirmPaymentFailure)
+          Utils.showAppSnackBar(context, state.error.errorMessage);
+        if (state is ConfirmPaymentSuccess) {
+          showSuccessfulDialog(context);
+        }
+      },
+      builder: (context, state) {
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+          child: Column(
+            children: [
+              const Expanded(
+                child: SizedBox(),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                  screenWidth * 0.05,
+                  screenHeight * 0.1,
+                  screenWidth * 0.05,
+                  screenHeight * 0.05,
+                ),
+                child: Text(
+                  'Enter your PIN to confirm payment',
+                  style: Theme.of(context).textTheme.bodyText2,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              PinCodeInput(
+                controller: pinController,
+                obscureText: true,
+              ),
+              const Expanded(flex: 2, child: SizedBox()),
+              Padding(
+                padding: EdgeInsets.only(bottom: screenHeight * 0.032),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(40),
+                  onTap: () =>
+                      onContinueButtonTapped(context, pinController.text),
+                  child: const MainActionInk(buttonString: 'Continue'),
+                ),
+              )
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(
-              screenWidth * 0.05,
-              screenHeight * 0.1,
-              screenWidth * 0.05,
-              screenHeight * 0.05,
-            ),
-            child: Text(
-              'Enter your PIN to confirm payment',
-              style: Theme.of(context).textTheme.bodyText2,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          PinCodeInput(
-            controller: pinController,
-            obscureText: true,
-          ),
-          const Expanded(flex: 2, child: SizedBox()),
-          Padding(
-            padding: EdgeInsets.only(bottom: screenHeight * 0.032),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(40),
-              onTap: () => onContinueButtonTapped(context),
-              child: const MainActionInk(buttonString: 'Continue'),
-            ),
-          )
-        ],
-      ),
+        );
+      },
     );
   }
 
-  void onContinueButtonTapped(BuildContext context) {
-    showSuccessfulDialog(context);
+  void onContinueButtonTapped(BuildContext context, String pin) {
+    context.read<ConfirmPaymentBloc>().add(ConfirmPaymentSubmitted(pin));
   }
 
   void showSuccessfulDialog(BuildContext context) {

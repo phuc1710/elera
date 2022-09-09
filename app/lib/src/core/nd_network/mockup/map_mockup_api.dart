@@ -36,7 +36,7 @@ final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.payments: 'profile',
   EndPoints.inviteFriends: 'invite_friends',
   EndPoints.selectContact: 'select_contact',
-  EndPoints.enterPin: 'enter_pin',
+  EndPoints.pinValidation: 'pin_validation',
   EndPoints.createPassword: 'create_password',
   EndPoints.addBookmark: 'add_bookmark',
   EndPoints.removeBookmark: 'remove_bookmark',

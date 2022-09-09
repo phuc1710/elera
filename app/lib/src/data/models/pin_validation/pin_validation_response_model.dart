@@ -1,24 +1,24 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'enroll_course_response_model.g.dart';
+part 'pin_validation_response_model.g.dart';
 
 @JsonSerializable()
-class EnrollCourseResponseModel {
-  EnrollCourseResponseModel({
+class PinValidationResponseModel {
+  PinValidationResponseModel({
     required this.status,
     required this.code,
     required this.message,
     required this.data,
   });
-  factory EnrollCourseResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$EnrollCourseResponseModelFromJson(json);
+  factory PinValidationResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$PinValidationResponseModelFromJson(json);
 
   final int? status;
   final int? code;
   final String? message;
   final Data? data;
 
-  Map<String, dynamic> toJson() => _$EnrollCourseResponseModelToJson(this);
+  Map<String, dynamic> toJson() => _$PinValidationResponseModelToJson(this);
 }
 
 @JsonSerializable()

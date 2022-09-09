@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../core/params/pin_entry_request_params.dart';
 import '../../../../core/params/pin_sending_request_params.dart';
+import '../../../../core/params/pin_validation_request_params.dart';
 import '../../../../core/resources/api_error.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../domain/usecases/get_pin_sending_usecase.dart';
-import '../../../../domain/usecases/post_pin_entry_usecase.dart';
+import '../../../../domain/usecases/post_pin_validation_usecase.dart';
 
 part 'pin_entry_event.dart';
 part 'pin_entry_state.dart';
@@ -23,7 +23,7 @@ class PinEntryBloc extends Bloc<PinEntryEvent, PinEntryState> {
   }
 
   final PinSendingUseCase pinSendingUseCase;
-  final PinEntryUseCase pinEntryUseCase;
+  final PinValidationUseCase pinEntryUseCase;
 
   Future<void> _onPinSendingSubmitted(
     PinSendingRequested event,
@@ -59,16 +59,16 @@ class PinEntryBloc extends Bloc<PinEntryEvent, PinEntryState> {
   ) async {
     emit(PinEntryInProgress());
     final dataState = await pinEntryUseCase(
-      params: PinEntryRequestParams(pinCode: event.pin),
+      params: PinValidationRequestParams(pin: event.pin),
     );
     if (dataState is DataSuccess) {
       final res = dataState.data;
-      if (dataState.data?.errorCode == ErrorCode.success)
+      if (dataState.data?.code == ErrorCode.success)
         emit(PinEntrySuccess());
       else
         emit(
           PinEntryFailure(
-            ApiError(errorCode: res?.errorCode, errorMessage: res?.message),
+            ApiError(errorCode: res?.code, errorMessage: res?.message),
           ),
         );
     }

@@ -68,7 +68,7 @@ class DialogContent extends StatelessWidget {
                   onTap: () => context.router.pop(),
                   child: const MainActionInk(
                     buttonString: 'Cancel',
-                    isNotMainAction: false,
+                    isNotMainAction: true,
                   ),
                 )
               ],

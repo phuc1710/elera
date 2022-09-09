@@ -1,5 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/router/app_router.dart';
+import '../../../../config/router/routes.dart';
 import '../../../widgets/main_action_ink.dart';
 
 class DialogContent extends StatelessWidget {
@@ -23,7 +26,10 @@ class DialogContent extends StatelessWidget {
             children: [
               InkWell(
                 borderRadius: BorderRadius.circular(25),
-                onTap: () {},
+                onTap: () {
+                  int count = 0;
+                  context.router.popUntil((route) => count++ == 3);
+                },
                 child: const MainActionInk(
                   buttonString: 'View Course',
                   disableShadow: true,
@@ -35,7 +41,7 @@ class DialogContent extends StatelessWidget {
                 onTap: () {},
                 child: const MainActionInk(
                   buttonString: 'View E-Receipt',
-                  isNotMainAction: false,
+                  isNotMainAction: true,
                 ),
               )
             ],

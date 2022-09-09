@@ -4,8 +4,9 @@ class EndPoints {
 
   static const String baseUrl = 'http://103.63.215.141:7412/api';
   static const String devUrl = '';
-  static const String signIn = '/users/login';
-  static const String signUp = '/users/sign-up';
+  static const String user = '/users';
+  static const String signIn = '${EndPoints.user}/login';
+  static const String signUp = '${EndPoints.user}/sign-up';
 
   static const String fillYourProfile = '/fill_your_profile';
   static const String createNewPin = '/create_new_pin';
@@ -13,7 +14,6 @@ class EndPoints {
   static const String fetchContact = '/fetch_contact';
   static const String selectContact = '/select_contact';
   static const String pinSending = '/pin_sending';
-  static const String enterPin = '/enter_pin';
   static const String createPassword = '/create_password';
 
   static const String course = '/course';
@@ -35,6 +35,7 @@ class EndPoints {
   static const String mentorStudents = '${EndPoints.mentor}/student';
   static const String mentorReviews = '${EndPoints.mentor}/review';
   static const String enrollCourse = '${EndPoints.course}/enroll';
+  static const String pinValidation = '${EndPoints.user}/validation-pin';
 
   static const String transactions = '/transaction';
   static const String eReceipt = '${EndPoints.transactions}/e-receipt';

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'enroll_course_response_model.dart';
+part of 'pin_validation_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-EnrollCourseResponseModel _$EnrollCourseResponseModelFromJson(
+PinValidationResponseModel _$PinValidationResponseModelFromJson(
         Map<String, dynamic> json) =>
-    EnrollCourseResponseModel(
+    PinValidationResponseModel(
       status: json['status'] as int?,
       code: json['code'] as int?,
       message: json['message'] as String?,
@@ -17,8 +17,8 @@ EnrollCourseResponseModel _$EnrollCourseResponseModelFromJson(
           : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$EnrollCourseResponseModelToJson(
-        EnrollCourseResponseModel instance) =>
+Map<String, dynamic> _$PinValidationResponseModelToJson(
+        PinValidationResponseModel instance) =>
     <String, dynamic>{
       'status': instance.status,
       'code': instance.code,

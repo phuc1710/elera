@@ -144,7 +144,7 @@ class _UserApiService implements UserApiService {
   }
 
   @override
-  Future<HttpResponse<PinEntryResponseModel>> postPinEntryRequest(
+  Future<HttpResponse<PinValidationResponseModel>> postPinValidationRequest(
       {isMockup, body}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -154,12 +154,12 @@ class _UserApiService implements UserApiService {
     final _data = <String, dynamic>{};
     _data.addAll(body?.toJson() ?? <String, dynamic>{});
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<PinEntryResponseModel>>(
+        _setStreamType<HttpResponse<PinValidationResponseModel>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/enter_pin',
+                .compose(_dio.options, '/users/validation-pin',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = PinEntryResponseModel.fromJson(_result.data!);
+    final value = PinValidationResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
