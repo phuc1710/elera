@@ -35,7 +35,7 @@ class DialogContent extends StatelessWidget {
                 onTap: () {},
                 child: const MainActionInk(
                   buttonString: 'View E-Receipt',
-                  isMainAction: false,
+                  isNotMainAction: false,
                 ),
               )
             ],

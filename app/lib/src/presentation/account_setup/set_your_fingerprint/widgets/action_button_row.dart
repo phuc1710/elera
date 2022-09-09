@@ -27,7 +27,7 @@ class ActionButtonRow extends StatelessWidget {
             child: const MainActionInk(
               buttonString: 'Skip',
               width: 0.4,
-              isMainAction: true,
+              isNotMainAction: true,
             ),
           ),
           InkWell(

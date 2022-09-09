@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/enroll_course_bloc.dart';
 import '../widgets/enroll_course_body.dart';
 
 class EnrollCourseView extends StatelessWidget {
@@ -15,7 +19,10 @@ class EnrollCourseView extends StatelessWidget {
         titleTextStyle: textTheme.headline6,
         title: const Text('Enroll Course'),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(IconlyLight.more_circle),
+          )
         ],
         leadingWidth: 35,
         foregroundColor: Colors.black,
@@ -23,7 +30,11 @@ class EnrollCourseView extends StatelessWidget {
         elevation: 0,
         toolbarHeight: screenHeight * 0.0995,
       ),
-      body: const EnrollCourseBody(),
+      body: BlocProvider(
+        create: (context) =>
+            getIt<EnrollCourseBloc>()..add(EnrollCoursePaymentFetched()),
+        child: const EnrollCourseBody(),
+      ),
     );
   }
 }

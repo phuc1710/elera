@@ -4,13 +4,13 @@ class MainActionInk extends StatelessWidget {
   const MainActionInk({
     Key? key,
     required this.buttonString,
-    this.isMainAction,
+    this.isNotMainAction,
     this.disableShadow,
     this.width,
   }) : super(key: key);
 
   final String buttonString;
-  final bool? isMainAction;
+  final bool? isNotMainAction;
   final bool? disableShadow;
   final double? width;
 
@@ -38,7 +38,7 @@ class MainActionInk extends StatelessWidget {
   Color getButtonColor(BuildContext context) {
     final ColorScheme color = Theme.of(context).colorScheme;
 
-    if (isMainAction ?? false) {
+    if (isNotMainAction ?? false) {
       return color.secondary;
     }
 
@@ -48,7 +48,7 @@ class MainActionInk extends StatelessWidget {
   TextStyle? getButtonTextStyle(BuildContext context) {
     final textStyle = Theme.of(context).textTheme.bodyText2;
 
-    if (isMainAction == null) {
+    if (isNotMainAction == null) {
       return textStyle?.copyWith(
         color: Colors.white,
         fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class MainActionInk extends StatelessWidget {
   }
 
   List<BoxShadow>? getButtonBoxShadow(BuildContext context) {
-    if (isMainAction == null) {
+    if (isNotMainAction == null) {
       if (disableShadow == null) {
         return [
           const BoxShadow(

@@ -41,7 +41,8 @@ final Map<String, String> mapMockApiForPostRequest = {
   EndPoints.addBookmark: 'add_bookmark',
   EndPoints.removeBookmark: 'remove_bookmark',
   EndPoints.addRecentSearch: 'add_bookmark',
-  EndPoints.removeRecentSearch: 'remove_bookmark'
+  EndPoints.removeRecentSearch: 'remove_bookmark',
+  EndPoints.enrollCourse: 'enroll_course',
 };
 
 String? getJsonNameForGetRequest(

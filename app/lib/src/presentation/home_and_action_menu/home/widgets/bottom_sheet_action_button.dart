@@ -39,7 +39,7 @@ class _BottomSheetActionButtonsState extends State<BottomSheetActionButtons> {
             child: MainActionInk(
               buttonString: widget.subButtonString,
               width: 0.4,
-              isMainAction: true,
+              isNotMainAction: true,
             ),
           ),
           InkWell(

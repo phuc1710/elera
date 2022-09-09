@@ -31,7 +31,8 @@ class DialogContent extends StatelessWidget {
           RatingBar(
             initialRating: 5,
             itemSize: 30,
-            itemPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
+            itemPadding:
+                const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
             onRatingUpdate: (value) {},
             ratingWidget: RatingWidget(
               full: Icon(
@@ -67,7 +68,7 @@ class DialogContent extends StatelessWidget {
                   onTap: () => context.router.pop(),
                   child: const MainActionInk(
                     buttonString: 'Cancel',
-                    isMainAction: false,
+                    isNotMainAction: false,
                   ),
                 )
               ],
