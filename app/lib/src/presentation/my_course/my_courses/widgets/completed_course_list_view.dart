@@ -2,10 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/app_router.dart';
+import '../../../../data/models/my_course/my_course_fetch_response_model.dart';
 import 'my_course_card.dart';
 
 class CompletedCourseListView extends StatelessWidget {
-  const CompletedCourseListView({Key? key}) : super(key: key);
+  const CompletedCourseListView({Key? key, this.courseList}) : super(key: key);
+
+  final List<Course>? courseList;
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +21,17 @@ class CompletedCourseListView extends StatelessWidget {
         vertical: screenHeight * 0.01,
       ),
       child: ListView(
-        children: List.generate(5, (index) {
-          const value = 1.0;
-          const courseTitle = 'CRM Management for Dummies';
+        children: List.generate(courseList?.length ?? 0, (index) {
+          // const value = 1.0;
+          final courseInfo = courseList?[index].courseInfo;
 
           return MyCourseCard(
             imagePath: 'assets/images/course_1.png',
-            value: value,
-            courseTitle: courseTitle,
-            time: '2 hrs 25 mins',
+            value: 1.0,
+            courseTitle: '${courseInfo?.name}',
+            time: '${courseInfo?.totalTime}',
             action: () => context.router
-                .push(MyCompletedCourseRoute(courseTitle: courseTitle)),
+                .push(MyCompletedCourseRoute(courseTitle: '${courseInfo?.name}')),
           );
         }),
       ),

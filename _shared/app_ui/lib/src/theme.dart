@@ -194,11 +194,10 @@ class AppTheme {
   static ElevatedButtonThemeData _elevatedButtonTheme(Color primaryColor) {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        elevation: 0,
+        elevation: 0, backgroundColor: primaryColor,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
-        primary: primaryColor,
         fixedSize: const Size(208, 54),
       ),
     );
@@ -207,11 +206,10 @@ class AppTheme {
   static OutlinedButtonThemeData _outlinedButtonTheme(Color primaryColor) {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        shape: const RoundedRectangleBorder(
+        foregroundColor: primaryColor, shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
         side: BorderSide(color: primaryColor, width: 2),
-        primary: primaryColor,
         fixedSize: const Size(208, 54),
       ),
     );

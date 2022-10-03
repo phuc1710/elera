@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../config/router/app_router.dart';
-import '../../../../config/router/routes.dart';
 import '../../../widgets/main_action_ink.dart';
 
 class DialogContent extends StatelessWidget {

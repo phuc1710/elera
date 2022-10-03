@@ -78,7 +78,7 @@ class ItemsTransactionsTab extends StatelessWidget {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           fixedSize: const Size(10, 5),
-                          primary: primaryColor,
+                          backgroundColor: primaryColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),

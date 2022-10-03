@@ -22,7 +22,7 @@ class _HomeCourseTabBarViewState extends State<HomeCourseTabBarView> {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return SizedBox(
-      height: (211.0 - 5 * (widget.courseList?.length ?? 0)) *
+      height: (213.0 - 5 * (widget.courseList?.length ?? 0)) *
           (widget.courseList?.length ?? 0),
       child: DefaultTabController(
         length: widget.courseList?.length ?? 0,
@@ -31,8 +31,8 @@ class _HomeCourseTabBarViewState extends State<HomeCourseTabBarView> {
             Padding(
               padding: EdgeInsets.only(
                 left: screenWidth * 0.05,
-                top: screenHeight * 0.02,
-                bottom: screenHeight * 0.02,
+                top: screenHeight * 0.01,
+                bottom: screenHeight * 0.01,
               ),
               child: ButtonsTabBar(
                 backgroundColor: primaryColor,
