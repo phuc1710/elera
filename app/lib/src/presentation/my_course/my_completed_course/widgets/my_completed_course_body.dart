@@ -41,10 +41,14 @@ class MyCompletedCourseBody extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      const LessonsTabView(),
+                      LessonsTabView(
+                        lessonData: state.courseData?.lessons?.items,
+                      ),
                       Padding(
                         padding: EdgeInsets.only(top: screenHeight * 0.02),
-                        child: CertificateTabView(certificateLink: state.courseData?.certificate),
+                        child: CertificateTabView(
+                          certificateLink: state.courseData?.certificate,
+                        ),
                       )
                     ],
                   ),
