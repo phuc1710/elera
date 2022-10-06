@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/my_ongoing_course_bloc.dart';
 import '../widgets/my_ongoing_course_body.dart';
 
 class MyOngoingCourseView extends StatelessWidget {
-  const MyOngoingCourseView({Key? key, required this.courseTitle})
-      : super(key: key);
+  const MyOngoingCourseView({
+    Key? key,
+    required this.courseId,
+    required this.courseTitle,
+  }) : super(key: key);
 
+  final String courseId;
   final String courseTitle;
 
   @override
@@ -26,7 +33,11 @@ class MyOngoingCourseView extends StatelessWidget {
         elevation: 0,
         toolbarHeight: screenHeight * 0.0995,
       ),
-      body: const MyOngoingCourseBody(),
+      body: BlocProvider(
+        create: (context) =>
+            getIt<MyOngoingCourseBloc>()..add(MyOngoingCourseFetched(courseId)),
+        child: const MyOngoingCourseBody(),
+      ),
     );
   }
 }

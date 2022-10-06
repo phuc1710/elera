@@ -23,6 +23,7 @@ class OngoingCourseListView extends StatelessWidget {
       child: ListView(
         children: List.generate(courseList?.length ?? 0, (index) {
           final courseInfo = courseList?[index].courseInfo;
+          final courseId = courseList?[index].courseId;
           final completedLesson = courseInfo?.completeLesson ?? 0;
           final lessonCount = courseInfo?.lessonCount ?? 1;
 
@@ -31,8 +32,12 @@ class OngoingCourseListView extends StatelessWidget {
             value: completedLesson / lessonCount,
             courseTitle: '${courseInfo?.name}',
             time: '${courseInfo?.totalTime}',
-            action: () => context.router
-                .push(MyOngoingCourseRoute(courseTitle: '${courseInfo?.name}')),
+            action: () => context.router.push(
+              MyOngoingCourseRoute(
+                courseId: '$courseId',
+                courseTitle: '${courseInfo?.name}',
+              ),
+            ),
           );
         }),
       ),

@@ -125,7 +125,9 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData,
           child: MyOngoingCourseView(
-              key: args.key, courseTitle: args.courseTitle));
+              key: args.key,
+              courseId: args.courseId,
+              courseTitle: args.courseTitle));
     },
     CourseVideoRoute.name: (routeData) {
       final args = routeData.argsAs<CourseVideoRouteArgs>();
@@ -497,24 +499,29 @@ class MyCompletedCourseRouteArgs {
 /// generated route for
 /// [MyOngoingCourseView]
 class MyOngoingCourseRoute extends PageRouteInfo<MyOngoingCourseRouteArgs> {
-  MyOngoingCourseRoute({Key? key, required String courseTitle})
+  MyOngoingCourseRoute(
+      {Key? key, required String courseId, required String courseTitle})
       : super(MyOngoingCourseRoute.name,
             path: '/my_ongoing_course',
-            args: MyOngoingCourseRouteArgs(key: key, courseTitle: courseTitle));
+            args: MyOngoingCourseRouteArgs(
+                key: key, courseId: courseId, courseTitle: courseTitle));
 
   static const String name = 'MyOngoingCourseRoute';
 }
 
 class MyOngoingCourseRouteArgs {
-  const MyOngoingCourseRouteArgs({this.key, required this.courseTitle});
+  const MyOngoingCourseRouteArgs(
+      {this.key, required this.courseId, required this.courseTitle});
 
   final Key? key;
+
+  final String courseId;
 
   final String courseTitle;
 
   @override
   String toString() {
-    return 'MyOngoingCourseRouteArgs{key: $key, courseTitle: $courseTitle}';
+    return 'MyOngoingCourseRouteArgs{key: $key, courseId: $courseId, courseTitle: $courseTitle}';
   }
 }
 

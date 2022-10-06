@@ -45,11 +45,9 @@ class LessonsTabView extends StatelessWidget {
       alignment: AlignmentDirectional.bottomCenter,
       children: [
         ListView(
-          padding: EdgeInsets.only(
-            top: 8.0,
-            bottom: screenHeight * 0.15,
-            left: screenWidth * 0.05,
-            right: screenWidth * 0.05,
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.05,
+            vertical: screenHeight * 0.02,
           ),
           physics: const ClampingScrollPhysics(),
           children: lesson1dList,
