@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../injector/injector.dart';
+import '../bloc/my_complete_course_bloc.dart';
 import '../widgets/my_completed_course_body.dart';
 
 class MyCompletedCourseView extends StatelessWidget {
-  const MyCompletedCourseView({Key? key, required this.courseTitle})
-      : super(key: key);
+  const MyCompletedCourseView({
+    Key? key,
+    required this.courseId,
+    required this.courseTitle,
+  }) : super(key: key);
 
+  final String courseId;
   final String courseTitle;
 
   @override
@@ -26,7 +33,11 @@ class MyCompletedCourseView extends StatelessWidget {
         elevation: 0,
         toolbarHeight: screenHeight * 0.0995,
       ),
-      body: const MyCompletedCourseBody(),
+      body: BlocProvider(
+        create: (context) => getIt<MyCompleteCourseBloc>()
+          ..add(MyCompleteCourseFetched(courseId)),
+        child: const MyCompletedCourseBody(),
+      ),
     );
   }
 }

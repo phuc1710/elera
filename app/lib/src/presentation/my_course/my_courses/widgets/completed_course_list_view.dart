@@ -24,14 +24,19 @@ class CompletedCourseListView extends StatelessWidget {
         children: List.generate(courseList?.length ?? 0, (index) {
           // const value = 1.0;
           final courseInfo = courseList?[index].courseInfo;
+          final courseId = courseList?[index].courseId;
 
           return MyCourseCard(
             imagePath: 'assets/images/course_1.png',
             value: 1.0,
             courseTitle: '${courseInfo?.name}',
             time: '${courseInfo?.totalTime}',
-            action: () => context.router
-                .push(MyCompletedCourseRoute(courseTitle: '${courseInfo?.name}')),
+            action: () => context.router.push(
+              MyCompletedCourseRoute(
+                courseId: '$courseId',
+                courseTitle: '${courseInfo?.name}',
+              ),
+            ),
           );
         }),
       ),

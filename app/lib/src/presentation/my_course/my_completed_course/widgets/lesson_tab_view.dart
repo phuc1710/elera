@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/loading_widget.dart';
+import '../../../../core/utils/utils.dart';
+import '../../../../injector/injector.dart';
+import '../../../course_detail_payment_enroll/course_details/bloc/course_details_bloc.dart';
 import '../../../course_detail_payment_enroll/course_details/widgets/lesson_card.dart';
 import '../../../course_detail_payment_enroll/course_details/widgets/section_row.dart';
+import '../bloc/my_complete_course_bloc.dart';
 import 'bottom_action_ink.dart';
 
 class LessonsTabView extends StatelessWidget {
@@ -15,46 +21,58 @@ class LessonsTabView extends StatelessWidget {
     return Stack(
       alignment: AlignmentDirectional.bottomCenter,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.05,
-            vertical: screenHeight * 0.02,
-          ),
-          child: ListView(
-            children: const [
-              SectionRow(
-                title: 'Section 1',
-                leadingButtonText: '15 mins',
-              ),
-              LessonCard(
-                id: '01',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: false,
-              ),
-              LessonCard(
-                id: '02',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: true,
-              ),
-              SectionRow(
-                title: 'Section 2',
-                leadingButtonText: '60 mins',
-              ),
-              LessonCard(
-                id: '01',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: false,
-              ),
-              LessonCard(
-                id: '02',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: true,
-              )
-            ],
+        BlocProvider(
+          create: (context) =>
+              getIt<CourseDetailsBloc>()..add(CourseLessonsFetched()),
+          child: BlocConsumer<MyCompleteCourseBloc, MyCompleteCourseState>(
+            listener: (context, state) {
+              if (state is MyCompleteCourseFetchFailure)
+                Utils.showAppSnackBar(context, state.error.errorMessage);
+            },
+            builder: (context, state) {
+              if (state is MyCompleteCourseFetchSuccess) {
+                final lessonData = state.courseData?.lessons?.items;
+                final lesson2dList =
+                    List.generate(lessonData?.length ?? 0, (index) {
+                  final item = lessonData?[index];
+
+                  return [
+                    SectionRow(
+                      title: '${item?.section}',
+                      leadingButtonText: '${item?.time}',
+                    ),
+                    ...List.generate(
+                      lessonData?[index].lesson?.length ?? 0,
+                      (childIndex) {
+                        final lesson = item?.lesson?[childIndex].item;
+
+                        return LessonCard(
+                          id: '${lesson?.lessonOrder}',
+                          lessonTitle: '${lesson?.lessonName}',
+                          duration: '${lesson?.time}',
+                          isLock: lesson?.status == 'lock',
+                          videoLink: lesson?.content,
+                        );
+                      },
+                    ),
+                  ];
+                });
+                final lesson1dList = [for (var list in lesson2dList) ...list];
+
+                return ListView(
+                  padding: EdgeInsets.only(
+                    top: 8.0,
+                    bottom: screenHeight * 0.15,
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
+                  physics: const ClampingScrollPhysics(),
+                  children: lesson1dList,
+                );
+              }
+
+              return const LoadingWidget();
+            },
           ),
         ),
         BottomActionInk(

@@ -4,7 +4,12 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'bottom_action_ink.dart';
 
 class CertificateTabView extends StatelessWidget {
-  const CertificateTabView({Key? key}) : super(key: key);
+  const CertificateTabView({
+    Key? key,
+    this.certificateLink,
+  }) : super(key: key);
+
+  final String? certificateLink;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +25,8 @@ class CertificateTabView extends StatelessWidget {
             width: MediaQuery.of(context).size.width - 48,
             child: SizedBox(
               height: screenHeight * 0.62,
-              child: SfPdfViewer.asset(
-                'assets/mockups/certificate.pdf',
+              child: SfPdfViewer.network(
+                '$certificateLink',
                 enableDoubleTapZooming: false,
                 enableTextSelection: false,
                 scrollDirection: PdfScrollDirection.horizontal,

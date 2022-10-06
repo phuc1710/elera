@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
@@ -24,10 +22,9 @@ class OngoingCourseListView extends StatelessWidget {
       ),
       child: ListView(
         children: List.generate(courseList?.length ?? 0, (index) {
-          // final value = Random().nextDouble();
           final courseInfo = courseList?[index].courseInfo;
           final completedLesson = courseInfo?.completeLesson ?? 0;
-          final lessonCount = courseInfo?.lessonCount ?? 0;
+          final lessonCount = courseInfo?.lessonCount ?? 1;
 
           return MyCourseCard(
             imagePath: 'assets/images/course_2.jpg',

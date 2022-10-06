@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
-import '../../../../config/router/routes.dart';
+import '../../../../config/router/app_router.dart';
 
 class LessonCard extends StatelessWidget {
   const LessonCard({
@@ -11,12 +11,14 @@ class LessonCard extends StatelessWidget {
     required this.lessonTitle,
     required this.duration,
     required this.isLock,
+    this.videoLink,
   }) : super(key: key);
 
   final String id;
   final String lessonTitle;
   final String duration;
   final bool isLock;
+  final String? videoLink;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,8 @@ class LessonCard extends StatelessWidget {
             : IconButton(
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
-                onPressed: () => context.router.pushNamed(Routes.courseVideo),
+                onPressed: () =>
+                    context.router.push(CourseVideoRoute(videoLink: videoLink)),
                 icon: Icon(Icons.play_circle_fill_rounded, color: primaryColor),
               ),
       ),
