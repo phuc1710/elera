@@ -1,61 +1,56 @@
 import 'package:flutter/material.dart';
 
+import '../../../../data/models/my_course_detail/my_course_detail_fetch_response_model.dart';
 import '../../../course_detail_payment_enroll/course_details/widgets/lesson_card.dart';
 import '../../../course_detail_payment_enroll/course_details/widgets/section_row.dart';
 import 'bottom_action_ink.dart';
 
 class LessonsTabView extends StatelessWidget {
-  const LessonsTabView({Key? key}) : super(key: key);
+  const LessonsTabView({Key? key, this.lessonData}) : super(key: key);
+
+  final List<ItemElement>? lessonData;
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
+    final lesson2dList = List.generate(lessonData?.length ?? 0, (index) {
+      final item = lessonData?[index];
+
+      return [
+        SectionRow(
+          title: '${item?.section}',
+          leadingButtonText: '${item?.time}',
+        ),
+        ...List.generate(
+          lessonData?[index].lesson?.length ?? 0,
+          (childIndex) {
+            final lesson = item?.lesson?[childIndex].item;
+
+            return LessonCard(
+              id: '${lesson?.lessonOrder}',
+              lessonTitle: '${lesson?.lessonName}',
+              duration: '${lesson?.time}',
+              isLock: lesson?.status == 'lock',
+              videoLink: lesson?.content,
+            );
+          },
+        ),
+      ];
+    });
+    final lesson1dList = [for (var list in lesson2dList) ...list];
+
     return Stack(
       alignment: AlignmentDirectional.bottomCenter,
       children: [
-        Padding(
+        ListView(
           padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.05,
             vertical: screenHeight * 0.02,
           ),
-          child: ListView(
-            children: const [
-              SectionRow(
-                title: 'Section 1',
-                leadingButtonText: '15 mins',
-              ),
-              LessonCard(
-                id: '01',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: false,
-              ),
-              LessonCard(
-                id: '02',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: true,
-              ),
-              SectionRow(
-                title: 'Section 2',
-                leadingButtonText: '60 mins',
-              ),
-              LessonCard(
-                id: '01',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: false,
-              ),
-              LessonCard(
-                id: '02',
-                lessonTitle: 'Why using Figma',
-                duration: '10 mins',
-                isLock: true,
-              )
-            ],
-          ),
+          physics: const ClampingScrollPhysics(),
+          children: lesson1dList,
         ),
         BottomActionInk(
           buttonString: 'Start Course Again',

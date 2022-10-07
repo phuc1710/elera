@@ -49,7 +49,7 @@ class ActionButtonsRow extends StatelessWidget {
 
   Future<void> _launchUrl(Uri uri) async {
     if (!await launchUrl(uri)) {
-      print('Could not launch $uri');
+      // print('Could not launch $uri');
     }
   }
 }

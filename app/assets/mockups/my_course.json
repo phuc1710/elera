@@ -1,0 +1,59 @@
+{
+    "status": 200,
+    "code": 1,
+    "message": "Thành công",
+    "data": {
+        "data": [
+            {
+                "status": "processing",
+                "courses": [
+                    {
+                        "course_id": "62cfe28220ef7d2084494476",
+                        "status": "processing",
+                        "course_info": {
+                            "name": "Learn UX User Persona",
+                            "total_time": 100,
+                            "lesson_count": 5,
+                            "complete_lesson": 1
+                        }
+                    },
+                    {
+                        "course_id": "62cfe28220ef7d2084494477",
+                        "status": "processing",
+                        "course_info": {
+                            "name": "3D Design Illustration",
+                            "total_time": 100,
+                            "lesson_count": 5,
+                            "complete_lesson": 2
+                        }
+                    },
+                    {
+                        "course_id": "62cfe28220ef7d2084494474",
+                        "status": "processing",
+                        "course_info": {
+                            "name": "3D Design Illustration",
+                            "total_time": 100,
+                            "lesson_count": 5,
+                            "complete_lesson": 0
+                        }
+                    }
+                ]
+            },
+            {
+                "status": "complete",
+                "courses": [
+                    {
+                        "course_id": "62cfe28220ef7d2084494478",
+                        "status": "complete",
+                        "course_info": {
+                            "name": "Digital Entrepreneurship",
+                            "total_time": 100,
+                            "lesson_count": 5,
+                            "complete_lesson": 5
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

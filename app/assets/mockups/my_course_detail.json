@@ -1,0 +1,90 @@
+{
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+    "lessons": {
+      "items": [
+        {
+          "section": "Section 1 - intro",
+          "lesson": [
+            {
+              "item": {
+                "_id": "62f5b19bab281edfbc4a5eb0",
+                "course_id": "62cfe28220ef7d2084494478",
+                "section_order": 1,
+                "section_name": "intro",
+                "lesson_order": 1,
+                "lesson_name": "what is ?",
+                "time": 30,
+                "content": "https://file-examples.com/storage/feb2e515cc6339d7ba1ffcd/2017/04/file_example_MP4_480_1_5MG.mp4",
+                "status": "unlock"
+              }
+            },
+            {
+              "item": {
+                "_id": "62f5b19bab281edfbc4a5eb1",
+                "course_id": "62cfe28220ef7d2084494478",
+                "section_order": 1,
+                "section_name": "intro",
+                "lesson_order": 2,
+                "lesson_name": "why ?",
+                "time": 30,
+                "content": "https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4",
+                "status": "lock"
+              }
+            }
+          ],
+          "time": "01 hours 00 minutes"
+        },
+        {
+          "section": "Section 2 - basic",
+          "lesson": [
+            {
+              "item": {
+                "_id": "62f5b19bab281edfbc4a5eb2",
+                "course_id": "62cfe28220ef7d2084494478",
+                "section_order": 2,
+                "section_name": "basic",
+                "lesson_order": 1,
+                "lesson_name": "how to ?",
+                "time": 30,
+                "content": "https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4",
+                "status": "lock"
+              }
+            },
+            {
+              "item": {
+                "_id": "62f5b19bab281edfbc4a5eb3",
+                "course_id": "62cfe28220ef7d2084494478",
+                "section_order": 2,
+                "section_name": "basic",
+                "lesson_order": 2,
+                "lesson_name": "who ?",
+                "time": 30,
+                "content": "https://file-examples.com/storage/feb2e515cc6339d7ba1ffcd/2017/04/file_example_MP4_480_1_5MG.mp4",
+                "status": "lock"
+              }
+            },
+            {
+              "item": {
+                "_id": "62f5b19bab281edfbc4a5eb4",
+                "course_id": "62cfe28220ef7d2084494478",
+                "section_order": 2,
+                "section_name": "basic",
+                "lesson_order": 3,
+                "lesson_name": "when ?",
+                "time": 30,
+                "content": "https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4",
+                "status": "lock"
+              }
+            }
+          ],
+          "time": "01 hours 30 minutes"
+        }
+      ],
+      "total": 5
+    },
+    "certificate": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+  }
+}

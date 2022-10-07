@@ -37,6 +37,9 @@ class EndPoints {
   static const String enrollCourse = '${EndPoints.course}/enroll';
   static const String pinValidation = '${EndPoints.user}/validation-pin';
 
+  static const String myCourse = '${EndPoints.course}/user';
+  static const String myCourseDetail = '${EndPoints.course}/user/';
+
   static const String transactions = '/transaction';
   static const String eReceipt = '${EndPoints.transactions}/e-receipt';
 

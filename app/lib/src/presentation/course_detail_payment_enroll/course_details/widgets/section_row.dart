@@ -24,10 +24,9 @@ class SectionRow extends StatelessWidget {
           LessonSectionText(text: title),
           Text(
             leadingButtonText,
-            style: Theme.of(context)
-                .textTheme
-                .button
-                ?.copyWith(color: Theme.of(context).colorScheme.primary),
+            style: Theme.of(context).textTheme.button?.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
           ),
         ],
       ),

@@ -8,6 +8,8 @@ import '../../core/params/contact_selection_request_params.dart';
 import '../../core/params/create_new_pin_request_params.dart';
 import '../../core/params/fill_your_profile_request_params.dart';
 import '../../core/params/friend_invite_params.dart';
+import '../../core/params/my_course_detail_fetch_request_params.dart';
+import '../../core/params/my_course_fetch_request_params.dart';
 import '../../core/params/new_card_params.dart';
 import '../../core/params/password_creation_request_params.dart';
 import '../../core/params/pin_validation_request_params.dart';
@@ -26,6 +28,8 @@ import '../models/create_new_pin/create_new_pin_response_model.dart';
 import '../models/fill_your_profile/fill_your_profile_response_model.dart';
 import '../models/friends/friend_response_model.dart';
 import '../models/general_response/general_response_model.dart';
+import '../models/my_course/my_course_fetch_response_model.dart';
+import '../models/my_course_detail/my_course_detail_fetch_response_model.dart';
 import '../models/password_creation/password_creation_response_model.dart';
 import '../models/payment/payment_response_model.dart';
 import '../models/pin_validation/pin_validation_response_model.dart';
@@ -216,6 +220,47 @@ class UserRepositoryImpl implements UserRepository {
       final httpResponse = await _userApiService.postPasswordCreationRequest(
         isMockup: true,
         body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<MyCourseFetchResponseModel>> getMyCourseFetchRequest(
+    MyCourseFetchRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.getMyCourseFetchRequest(
+        isMockup: true,
+        body: params,
+      );
+
+      if (httpResponse.response.statusCode == HttpStatus.ok) {
+        return DataSuccess(httpResponse.data);
+      }
+
+      return DataFailed(httpResponse.dioError);
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<DataState<MyCourseDetailFetchResponseModel>>
+      getMyCourseDetailFetchRequest(
+    MyCourseDetailFetchRequestParams? params,
+  ) async {
+    try {
+      final httpResponse = await _userApiService.getMyCourseDetailFetchRequest(
+        isMockup: true,
+        query: params,
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {

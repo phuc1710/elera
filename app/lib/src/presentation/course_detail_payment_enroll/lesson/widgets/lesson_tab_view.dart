@@ -1,12 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../config/router/routes.dart';
 import '../../../../core/utils/loading_widget.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../../injector/injector.dart';
-import '../../../home_and_action_menu/home/widgets/title_row.dart';
 import '../../course_details/bloc/course_details_bloc.dart';
 import '../../course_details/widgets/lesson_card.dart';
 import '../../course_details/widgets/section_row.dart';
