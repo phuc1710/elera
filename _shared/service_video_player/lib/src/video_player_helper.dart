@@ -26,6 +26,7 @@ class VideoPlayerHelper {
       source: source,
       loadingWidget: loadingWidget,
       isLive: isLive,
+      updatePauseTime: (value) {},
     );
   }
 
@@ -45,7 +46,10 @@ class VideoPlayer extends StatefulWidget {
     this.loadingWidget,
     this.isLive = false,
     this.isAsset = false,
-  }) : super(key: key);
+    required this.updatePauseTime,
+  }) : super(key: globalKey);
+
+  static final GlobalKey<_VideoPlayerState> globalKey = GlobalKey();
 
   final String source;
 
@@ -55,12 +59,14 @@ class VideoPlayer extends StatefulWidget {
 
   final Widget? loadingWidget;
 
+  final ValueChanged<String> updatePauseTime;
+
   @override
   _VideoPlayerState createState() => _VideoPlayerState();
 }
 
 class _VideoPlayerState extends State<VideoPlayer> {
-  VideoPlayerController? videoPlayerController;
+  late VideoPlayerController videoPlayerController;
 
   ChewieController? chewieController;
 
@@ -115,7 +121,7 @@ class _VideoPlayerState extends State<VideoPlayer> {
   @override
   void dispose() {
     super.dispose();
-    videoPlayerController?.dispose();
+    videoPlayerController.dispose();
     chewieController?.dispose();
   }
 
@@ -124,30 +130,32 @@ class _VideoPlayerState extends State<VideoPlayer> {
       _isLive = isLive;
       if (mounted) {
         errorVideo = '';
-        await videoPlayerController?.pause();
-        videoPlayerController = null;
         chewieController = null;
-        setState(() {});
-        if (widget.isAsset == false) {
-          videoPlayerController = VideoPlayerController.network(source!);
-        } else {
-          videoPlayerController = VideoPlayerController.file(File(source!));
-        }
+        videoPlayerController = !widget.isAsset
+            ? VideoPlayerController.network(source!)
+            : VideoPlayerController.file(File(source!));
 
-        await videoPlayerController?.initialize();
+        await videoPlayerController
+            .initialize()
+            .then((value) => videoPlayerController.addListener(() {
+                  if (!videoPlayerController.value.isPlaying) {
+                    var pauseTime =
+                        videoPlayerController.value.position.inSeconds;
+                    // print('Pause: $pauseTime');
+                    widget.updatePauseTime('$pauseTime');
+                  }
+                }));
         chewieController = ChewieController(
+          autoInitialize: true,
           isLive: _isLive,
-          videoPlayerController: videoPlayerController!,
+          videoPlayerController: videoPlayerController,
           autoPlay: true,
           looping: true,
           customControls: const MaterialControls(),
           deviceOrientationsAfterFullScreen: [DeviceOrientation.portraitUp],
         );
-        setState(() {});
       }
     } catch (error) {
-      await videoPlayerController?.dispose();
-      videoPlayerController = null;
       errorVideo = error.toString();
       if (mounted) {
         setState(() {});
@@ -156,6 +164,6 @@ class _VideoPlayerState extends State<VideoPlayer> {
   }
 
   Future<void> pauseVideo() async {
-    await videoPlayerController?.pause();
+    await videoPlayerController.pause();
   }
 }

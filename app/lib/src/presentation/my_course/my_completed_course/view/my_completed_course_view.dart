@@ -36,7 +36,7 @@ class MyCompletedCourseView extends StatelessWidget {
       body: BlocProvider(
         create: (context) => getIt<MyCompleteCourseBloc>()
           ..add(MyCompleteCourseFetched(courseId)),
-        child: const MyCompletedCourseBody(),
+        child: MyCompletedCourseBody(courseId: courseId),
       ),
     );
   }

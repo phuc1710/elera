@@ -8,7 +8,9 @@ import 'certificate_tab_view.dart';
 import 'lesson_tab_view.dart';
 
 class MyCompletedCourseBody extends StatelessWidget {
-  const MyCompletedCourseBody({Key? key}) : super(key: key);
+  const MyCompletedCourseBody({Key? key, this.courseId}) : super(key: key);
+
+  final String? courseId;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class MyCompletedCourseBody extends StatelessWidget {
                   child: TabBarView(
                     children: [
                       LessonsTabView(
+                        courseId: courseId,
                         lessonData: state.courseData?.lessons?.items,
                       ),
                       Padding(

@@ -36,7 +36,7 @@ class MyOngoingCourseView extends StatelessWidget {
       body: BlocProvider(
         create: (context) =>
             getIt<MyOngoingCourseBloc>()..add(MyOngoingCourseFetched(courseId)),
-        child: const MyOngoingCourseBody(),
+        child: MyOngoingCourseBody(courseId: courseId),
       ),
     );
   }

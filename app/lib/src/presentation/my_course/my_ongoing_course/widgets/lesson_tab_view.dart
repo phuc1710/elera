@@ -7,8 +7,10 @@ import '../../my_completed_course/widgets/bottom_action_ink.dart';
 import 'rating_dialog.dart';
 
 class LessonsTabView extends StatelessWidget {
-  const LessonsTabView({Key? key, this.lessonData}) : super(key: key);
+  const LessonsTabView({Key? key, this.courseId, this.lessonData})
+      : super(key: key);
 
+  final String? courseId;
   final List<ItemElement>? lessonData;
 
   @override
@@ -30,7 +32,9 @@ class LessonsTabView extends StatelessWidget {
             final lesson = item?.lesson?[childIndex].item;
 
             return LessonCard(
-              id: '${lesson?.lessonOrder}',
+              courseId: '$courseId',
+              id: '${lesson?.id}',
+              order: '${lesson?.lessonOrder}',
               lessonTitle: '${lesson?.lessonName}',
               duration: '${lesson?.time}',
               isLock: lesson?.status == 'lock',

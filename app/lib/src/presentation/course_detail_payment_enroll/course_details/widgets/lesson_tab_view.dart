@@ -45,7 +45,9 @@ class LessonsTabView extends StatelessWidget {
                     final lesson = item?.lesson?[childIndex];
 
                     return LessonCard(
-                      id: '${lesson?.order}',
+                      courseId: '',
+                      id: '${lesson?.id}',
+                      order: '${lesson?.order}',
                       lessonTitle: '${lesson?.name}',
                       duration: '${lesson?.time}',
                       isLock: lesson?.status == 'lock',
