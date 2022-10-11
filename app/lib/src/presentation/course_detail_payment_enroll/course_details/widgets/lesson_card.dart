@@ -14,6 +14,7 @@ class LessonCard extends StatelessWidget {
     required this.duration,
     required this.isLock,
     this.videoLink,
+    this.currentTime,
   }) : super(key: key);
 
   final String courseId;
@@ -23,6 +24,7 @@ class LessonCard extends StatelessWidget {
   final String duration;
   final bool isLock;
   final String? videoLink;
+  final int? currentTime;
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +67,7 @@ class LessonCard extends StatelessWidget {
                     courseId: courseId,
                     lessonId: id,
                     videoLink: videoLink,
+                    currentTime: currentTime,
                   ),
                 ),
                 icon: Icon(Icons.play_circle_fill_rounded, color: primaryColor),

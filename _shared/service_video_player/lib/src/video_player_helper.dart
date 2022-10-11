@@ -46,6 +46,7 @@ class VideoPlayer extends StatefulWidget {
     this.loadingWidget,
     this.isLive = false,
     this.isAsset = false,
+    this.currentTime,
     required this.updatePauseTime,
   }) : super(key: globalKey);
 
@@ -58,6 +59,8 @@ class VideoPlayer extends StatefulWidget {
   final bool isAsset;
 
   final Widget? loadingWidget;
+
+  final int? currentTime;
 
   final ValueChanged<String> updatePauseTime;
 
@@ -149,8 +152,9 @@ class _VideoPlayerState extends State<VideoPlayer> {
           autoInitialize: true,
           isLive: _isLive,
           videoPlayerController: videoPlayerController,
-          autoPlay: true,
+          autoPlay: true, 
           looping: true,
+          startAt: Duration(seconds: widget.currentTime ?? 0),
           customControls: const MaterialControls(),
           deviceOrientationsAfterFullScreen: [DeviceOrientation.portraitUp],
         );

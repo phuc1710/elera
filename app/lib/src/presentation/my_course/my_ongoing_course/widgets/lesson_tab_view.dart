@@ -11,7 +11,7 @@ class LessonsTabView extends StatelessWidget {
       : super(key: key);
 
   final String? courseId;
-  final List<ItemElement>? lessonData;
+  final List<Item>? lessonData;
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +29,13 @@ class LessonsTabView extends StatelessWidget {
         ...List.generate(
           lessonData?[index].lesson?.length ?? 0,
           (childIndex) {
-            final lesson = item?.lesson?[childIndex].item;
+            final lesson = item?.lesson?[childIndex];
 
             return LessonCard(
               courseId: '$courseId',
               id: '${lesson?.id}',
-              order: '${lesson?.lessonOrder}',
-              lessonTitle: '${lesson?.lessonName}',
+              order: '${lesson?.order}',
+              lessonTitle: '${lesson?.name}',
               duration: '${lesson?.time}',
               isLock: lesson?.status == 'lock',
               videoLink: lesson?.content,

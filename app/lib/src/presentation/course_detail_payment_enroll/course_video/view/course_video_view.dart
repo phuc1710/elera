@@ -14,11 +14,13 @@ class CourseVideoView extends StatefulWidget {
     this.courseId,
     this.lessonId,
     this.videoLink,
+    this.currentTime,
   }) : super(key: key);
 
   final String? courseId;
   final String? lessonId;
   final String? videoLink;
+  final int? currentTime;
 
   @override
   State<CourseVideoView> createState() => _CourseVideoViewState();
@@ -72,6 +74,7 @@ class _CourseVideoViewState extends State<CourseVideoView> {
                         'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
                     loadingWidget: const LoadingWidget(),
                     updatePauseTime: updatePauseTime,
+                    currentTime: widget.currentTime,
                   ),
                 ],
               ),

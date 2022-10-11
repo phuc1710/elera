@@ -138,7 +138,8 @@ class _$AppRouter extends RootStackRouter {
               key: args.key,
               courseId: args.courseId,
               lessonId: args.lessonId,
-              videoLink: args.videoLink));
+              videoLink: args.videoLink,
+              currentTime: args.currentTime));
     },
     ChatRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -534,21 +535,30 @@ class MyOngoingCourseRouteArgs {
 /// [CourseVideoView]
 class CourseVideoRoute extends PageRouteInfo<CourseVideoRouteArgs> {
   CourseVideoRoute(
-      {Key? key, String? courseId, String? lessonId, String? videoLink})
+      {Key? key,
+      String? courseId,
+      String? lessonId,
+      String? videoLink,
+      int? currentTime})
       : super(CourseVideoRoute.name,
             path: '/course_video',
             args: CourseVideoRouteArgs(
                 key: key,
                 courseId: courseId,
                 lessonId: lessonId,
-                videoLink: videoLink));
+                videoLink: videoLink,
+                currentTime: currentTime));
 
   static const String name = 'CourseVideoRoute';
 }
 
 class CourseVideoRouteArgs {
   const CourseVideoRouteArgs(
-      {this.key, this.courseId, this.lessonId, this.videoLink});
+      {this.key,
+      this.courseId,
+      this.lessonId,
+      this.videoLink,
+      this.currentTime});
 
   final Key? key;
 
@@ -558,9 +568,11 @@ class CourseVideoRouteArgs {
 
   final String? videoLink;
 
+  final int? currentTime;
+
   @override
   String toString() {
-    return 'CourseVideoRouteArgs{key: $key, courseId: $courseId, lessonId: $lessonId, videoLink: $videoLink}';
+    return 'CourseVideoRouteArgs{key: $key, courseId: $courseId, lessonId: $lessonId, videoLink: $videoLink, currentTime: $currentTime}';
   }
 }
 

@@ -40,7 +40,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
 
 Lessons _$LessonsFromJson(Map<String, dynamic> json) => Lessons(
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) => ItemElement.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Item.fromJson(e as Map<String, dynamic>))
           .toList(),
       total: json['total'] as int?,
     );
@@ -50,7 +50,7 @@ Map<String, dynamic> _$LessonsToJson(Lessons instance) => <String, dynamic>{
       'total': instance.total,
     };
 
-ItemElement _$ItemElementFromJson(Map<String, dynamic> json) => ItemElement(
+Item _$ItemFromJson(Map<String, dynamic> json) => Item(
       section: json['section'] as String?,
       lesson: (json['lesson'] as List<dynamic>?)
           ?.map((e) => Lesson.fromJson(e as Map<String, dynamic>))
@@ -58,44 +58,32 @@ ItemElement _$ItemElementFromJson(Map<String, dynamic> json) => ItemElement(
       time: json['time'] as String?,
     );
 
-Map<String, dynamic> _$ItemElementToJson(ItemElement instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{
       'section': instance.section,
       'lesson': instance.lesson,
       'time': instance.time,
     };
 
 Lesson _$LessonFromJson(Map<String, dynamic> json) => Lesson(
-      item: json['item'] == null
-          ? null
-          : LessonItem.fromJson(json['item'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$LessonToJson(Lesson instance) => <String, dynamic>{
-      'item': instance.item,
-    };
-
-LessonItem _$LessonItemFromJson(Map<String, dynamic> json) => LessonItem(
-      id: json['_id'] as String?,
-      courseId: json['course_id'] as String?,
+      id: json['id'] as String?,
       sectionOrder: json['section_order'] as int?,
       sectionName: json['section_name'] as String?,
-      lessonOrder: json['lesson_order'] as int?,
-      lessonName: json['lesson_name'] as String?,
-      time: json['time'] as int?,
+      name: json['name'] as String?,
+      order: json['order'] as String?,
+      time: json['time'] as String?,
+      currentTime: json['current_time'] as int?,
       content: json['content'] as String?,
       status: json['status'] as String?,
     );
 
-Map<String, dynamic> _$LessonItemToJson(LessonItem instance) =>
-    <String, dynamic>{
-      '_id': instance.id,
-      'course_id': instance.courseId,
+Map<String, dynamic> _$LessonToJson(Lesson instance) => <String, dynamic>{
+      'id': instance.id,
       'section_order': instance.sectionOrder,
       'section_name': instance.sectionName,
-      'lesson_order': instance.lessonOrder,
-      'lesson_name': instance.lessonName,
+      'name': instance.name,
+      'order': instance.order,
       'time': instance.time,
+      'current_time': instance.currentTime,
       'content': instance.content,
       'status': instance.status,
     };
