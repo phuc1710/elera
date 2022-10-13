@@ -41,19 +41,19 @@ class _ChatBodyState extends State<ChatBody> {
         inputTextColor: const Color(0x00212121).withOpacity(1.0),
       ),
       messages: messages.reversed.toList(),
-      onSendPressed: (message) {
-        final textMessage = types.TextMessage(
-          author: user,
-          createdAt: DateTime.now().millisecondsSinceEpoch,
-          id: Random().toString(),
-          text: message.text,
-          showStatus: true,
-          status: types.Status.sending,
-        );
-        dev.log(textMessage.toString());
-        setState(() => messages.add(textMessage));
-      },
+      onSendPressed: handleSendPressed,
       user: user,
     );
   }
+
+  void handleSendPressed(types.PartialText message) {
+      final textMessage = types.TextMessage(
+        author: user,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: Random().toString(),
+        text: message.text,
+      );
+      dev.log(textMessage.toString());
+      setState(() => messages.add(textMessage));
+    }
 }

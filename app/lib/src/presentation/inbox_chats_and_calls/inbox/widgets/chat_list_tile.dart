@@ -4,7 +4,20 @@ import 'package:flutter/material.dart';
 import '../../../../config/router/routes.dart';
 
 class ChatListTile extends StatelessWidget {
-  const ChatListTile({Key? key}) : super(key: key);
+  const ChatListTile({
+    Key? key,
+    this.avatar,
+    this.name,
+    this.unreadMessages,
+    this.lastMessage,
+    this.laseMessageTime,
+  }) : super(key: key);
+
+  final String? avatar;
+  final String? name;
+  final int? unreadMessages;
+  final String? lastMessage;
+  final String? laseMessageTime;
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +32,15 @@ class ChatListTile extends StatelessWidget {
         leading: CircleAvatar(
           radius: MediaQuery.of(context).size.width * 0.08,
           backgroundColor: Theme.of(context).colorScheme.secondary,
+          backgroundImage:
+              avatar == null ? null : Image.network('$avatar').image,
         ),
         title: Text(
-          'Jenny Wilona',
+          '$name',
           style: textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
-          'Hi, good morning too!',
+          '$lastMessage',
           style: textTheme.overline?.copyWith(color: const Color(0xff616161)),
         ),
         trailing: Column(
@@ -35,12 +50,12 @@ class ChatListTile extends StatelessWidget {
               radius: 10,
               backgroundColor: primaryColor,
               child: Text(
-                '2',
+                '$unreadMessages',
                 style: textTheme.overline?.copyWith(color: Colors.white),
               ),
             ),
             Text(
-              '13:29',
+              '$laseMessageTime',
               style:
                   textTheme.overline?.copyWith(color: const Color(0xff616161)),
             )

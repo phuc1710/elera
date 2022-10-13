@@ -41,6 +41,8 @@ class EndPoints {
   static const String myCourseDetail = '${EndPoints.course}/user/';
   static const String updateLessonTime = '${EndPoints.course}/lesson/time';
 
+  static const String inbox = 'inbox';
+
   static const String transactions = '/transaction';
   static const String eReceipt = '${EndPoints.transactions}/e-receipt';
 

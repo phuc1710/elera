@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../widget/chat_body.dart';
 
 class ChatView extends StatelessWidget {
-  const ChatView({Key? key}) : super(key: key);
+  const ChatView({Key? key, this.username}) : super(key: key);
+
+  final String? username;
 
   @override
   Widget build(BuildContext context) {

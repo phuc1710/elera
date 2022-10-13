@@ -142,8 +142,11 @@ class _$AppRouter extends RootStackRouter {
               currentTime: args.currentTime));
     },
     ChatRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<ChatRouteArgs>(orElse: () => const ChatRouteArgs());
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const ChatView());
+          routeData: routeData,
+          child: ChatView(key: args.key, username: args.username));
     },
     CallRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -578,10 +581,25 @@ class CourseVideoRouteArgs {
 
 /// generated route for
 /// [ChatView]
-class ChatRoute extends PageRouteInfo<void> {
-  const ChatRoute() : super(ChatRoute.name, path: '/chat');
+class ChatRoute extends PageRouteInfo<ChatRouteArgs> {
+  ChatRoute({Key? key, String? username})
+      : super(ChatRoute.name,
+            path: '/chat', args: ChatRouteArgs(key: key, username: username));
 
   static const String name = 'ChatRoute';
+}
+
+class ChatRouteArgs {
+  const ChatRouteArgs({this.key, this.username});
+
+  final Key? key;
+
+  final String? username;
+
+  @override
+  String toString() {
+    return 'ChatRouteArgs{key: $key, username: $username}';
+  }
 }
 
 /// generated route for
