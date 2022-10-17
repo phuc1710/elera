@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../config/router/routes.dart';
+import '../../../../config/router/app_router.dart';
 
 class ChatListTile extends StatelessWidget {
   const ChatListTile({
@@ -26,7 +26,7 @@ class ChatListTile extends StatelessWidget {
 
     return InkWell(
       borderRadius: BorderRadius.circular(30.0),
-      onTap: () => context.router.pushNamed(Routes.chat),
+      onTap: () => context.router.push(ChatRoute(username: name)),
       child: ListTile(
         contentPadding: EdgeInsets.zero,
         leading: CircleAvatar(

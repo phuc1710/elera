@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/loading_widget.dart';
+import '../../../../core/utils/utils.dart';
+import '../../../../injector/injector.dart';
+import '../bloc/chat_bloc.dart';
 import '../widget/chat_body.dart';
 
 class ChatView extends StatelessWidget {
@@ -15,7 +20,7 @@ class ChatView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         titleTextStyle: textTheme.headline6,
-        title: const Text('Jenny Willona'),
+        title: Text('$username'),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
         ],
@@ -25,7 +30,28 @@ class ChatView extends StatelessWidget {
         elevation: 0,
         toolbarHeight: screenHeight * 0.0995,
       ),
-      body: const ChatBody(),
+      body: BlocProvider(
+        create: (context) => getIt<ChatBloc>()..add(ChatFetched()),
+        child: BlocConsumer<ChatBloc, ChatState>(
+          listener: (context, state) {
+            if (state is ChatFetchFailure)
+              Utils.showAppSnackBar(context, state.error?.errorMessage);
+          },
+          buildWhen: (previous, current) =>
+              previous is ChatFetchInProgress && current is ChatFetchSuccess,
+          builder: (context, state) {
+            if (state is ChatFetchSuccess) {
+              return ChatBody(
+                firstName: username?.split(' ')[0],
+                lastName: username?.split(' ')[1],
+                messages: state.data?.messages,
+              );
+            }
+
+            return const LoadingWidget();
+          },
+        ),
+      ),
     );
   }
 }

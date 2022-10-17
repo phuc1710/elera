@@ -7,6 +7,7 @@
       {
         "id": "ch1",
         "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+        "user_id": "re",
         "name": "Roselle Ehrman",
         "unread_messages": 2,
         "last_message": "Hi, good morning, too!",
@@ -15,6 +16,7 @@
       {
         "id": "ch2",
         "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+        "user_id": "so",
         "name": "Sanjuanita Ordonez",
         "unread_messages": 2,
         "last_message": "I just finished it",

@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+    "messages": [
+      {
+        "id": "u_1",
+        "author": "Roselle Ehrman",
+        "created_at": 1420691710727,
+        "text": "Hi"
+      },
+      {
+        "id": "2",
+        "author": "Phan Hieu",
+        "created_at": 1420691727727,
+        "text": "Hello"
+      }
+    ]
+  }
+}
