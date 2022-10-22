@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for English (`en`).
@@ -42,6 +39,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notification => 'Notification';
+
+  @override
+  String get onboarding1 => 'We provide the best learning courses & great mentors!';
+
+  @override
+  String get onboarding2 => 'Learn anytime and anywhere easily and conveniently';
+
+  @override
+  String get onboarding3 => 'Let\'s improve your skills together with Elera right now!';
 
   @override
   String get payment => 'Payment';

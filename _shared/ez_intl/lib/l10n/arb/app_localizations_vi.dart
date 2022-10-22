@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Vietnamese (`vi`).
@@ -42,6 +39,15 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get notification => 'Thông báo';
+
+  @override
+  String get onboarding1 => 'Chúng tôi cung cấp những khóa học tốt nhất và những giảng viên tuyệt vời!';
+
+  @override
+  String get onboarding2 => 'Học mọi lúc mọi nơi, dễ dàng và tiện lợi';
+
+  @override
+  String get onboarding3 => 'Hãy cùng cải thiện kĩ năng của bạn với Elera ngay nào!';
 
   @override
   String get payment => 'Thanh toán';
