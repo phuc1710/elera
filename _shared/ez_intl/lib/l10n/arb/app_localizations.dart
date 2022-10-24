@@ -219,6 +219,12 @@ abstract class AppLocalizations {
   /// **'Get Started'**
   String get getStarted;
 
+  /// No description provided for @goodMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Good Morning 👏'**
+  String get goodMorning;
+
   /// No description provided for @helpCenter.
   ///
   /// In en, this message translates to:
@@ -272,6 +278,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'m,Male'**
   String get male;
+
+  /// No description provided for @mostPopularCourses.
+  ///
+  /// In en, this message translates to:
+  /// **'Most Popular Courses'**
+  String get mostPopularCourses;
 
   /// No description provided for @myCourse.
   ///
@@ -369,11 +381,23 @@ abstract class AppLocalizations {
   /// **'Remember Me'**
   String get rememberMe;
 
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
   /// No description provided for @security.
   ///
   /// In en, this message translates to:
   /// **'Security'**
   String get security;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAll;
 
   /// No description provided for @setYourFingerprint.
   ///
@@ -410,6 +434,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Suggested'**
   String get suggested;
+
+  /// No description provided for @topMentors.
+  ///
+  /// In en, this message translates to:
+  /// **'Top Mentors'**
+  String get topMentors;
 
   /// No description provided for @transaction.
   ///

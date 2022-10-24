@@ -68,6 +68,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get getStarted => 'Bắt đầu';
 
   @override
+  String get goodMorning => 'Xin chào 👏';
+
+  @override
   String get helpCenter => 'Trung tâm trợ giúp';
 
   @override
@@ -93,6 +96,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get male => 'm,Nam';
+
+  @override
+  String get mostPopularCourses => 'Khóa học phổ biến nhất';
 
   @override
   String get myCourse => 'Khóa học';
@@ -143,7 +149,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get rememberMe => 'Ghi nhớ tôi';
 
   @override
+  String get search => 'Tìm kiếm';
+
+  @override
   String get security => 'Bảo mật';
+
+  @override
+  String get seeAll => 'Xem tất cả';
 
   @override
   String get setYourFingerprint => 'Đặt dấu vân tay của bạn';
@@ -162,6 +174,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get suggested => 'Gợi ý';
+
+  @override
+  String get topMentors => 'Giảng viên hàng đầu';
 
   @override
   String get transaction => 'Giao dịch';

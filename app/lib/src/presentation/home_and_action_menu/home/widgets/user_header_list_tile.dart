@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import 'trailing_buttons_row.dart';
@@ -25,19 +26,17 @@ class UserHeaderListTile extends StatelessWidget {
         title: Padding(
           padding: const EdgeInsets.only(bottom: 5.0),
           child: Text(
-            'Good Morning 👋',
-            style: Theme.of(context)
-                .textTheme
-                .caption
-                ?.copyWith(color: const Color(0xff757575)),
+            AppLocalizations.of(context).goodMorning,
+            style: Theme.of(context).textTheme.caption?.copyWith(
+                  color: const Color(0xff757575),
+                ),
           ),
         ),
         subtitle: Text(
           'Andrew Ainsley',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText2
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
         ),
         trailing: const TrailingButtonsRow(),
       ),

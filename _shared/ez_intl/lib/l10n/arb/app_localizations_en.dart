@@ -68,6 +68,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get getStarted => 'Get Started';
 
   @override
+  String get goodMorning => 'Good Morning 👏';
+
+  @override
   String get helpCenter => 'Help Center';
 
   @override
@@ -93,6 +96,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get male => 'm,Male';
+
+  @override
+  String get mostPopularCourses => 'Most Popular Courses';
 
   @override
   String get myCourse => 'My Course';
@@ -143,7 +149,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get rememberMe => 'Remember Me';
 
   @override
+  String get search => 'Search';
+
+  @override
   String get security => 'Security';
+
+  @override
+  String get seeAll => 'See All';
 
   @override
   String get setYourFingerprint => 'Set Your Fingerprint';
@@ -162,6 +174,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get suggested => 'Suggested';
+
+  @override
+  String get topMentors => 'Top Mentors';
 
   @override
   String get transaction => 'Transaction';
