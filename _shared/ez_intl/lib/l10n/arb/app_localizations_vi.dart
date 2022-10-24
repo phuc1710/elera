@@ -56,6 +56,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get fingerprintCreationDescription2 => 'Vui lòng đặt ngón tay của bạn lên cảm biến vân tay để bắt đầu';
 
   @override
+  String get forgotPassword => 'Quên mật khẩu';
+
+  @override
   String get forgotThePassword => 'Quên mật khẩu?';
 
   @override
@@ -158,6 +161,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get seeAll => 'Xem tất cả';
 
   @override
+  String get selectContactDescription => 'Chọn thông tin liên lạc chúng tôi nên sử dụng để thiết lập lại mật khẩu của bạn';
+
+  @override
   String get setYourFingerprint => 'Đặt dấu vân tay của bạn';
 
   @override
@@ -180,6 +186,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get transaction => 'Giao dịch';
+
+  @override
+  String get via => 'thông qua';
 
   @override
   String get welcomeDialogContent => 'Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..';

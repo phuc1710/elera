@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class PromptWithImage extends StatelessWidget {
@@ -18,7 +19,7 @@ class PromptWithImage extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: screenHeight * 0.025),
           child: Text(
-            'Select which contact detail should we use to reset your password',
+            AppLocalizations.of(context).selectContactDescription,
             style: Theme.of(context).textTheme.bodyText2,
           ),
         ),

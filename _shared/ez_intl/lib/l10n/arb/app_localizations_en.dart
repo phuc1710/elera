@@ -56,6 +56,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fingerprintCreationDescription2 => 'Please put your finger on the fingerprint scanner to get started';
 
   @override
+  String get forgotPassword => 'Forgot Password';
+
+  @override
   String get forgotThePassword => 'Forgot the password?';
 
   @override
@@ -158,6 +161,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seeAll => 'See All';
 
   @override
+  String get selectContactDescription => 'Select which contact detail should we use to reset your password';
+
+  @override
   String get setYourFingerprint => 'Set Your Fingerprint';
 
   @override
@@ -180,6 +186,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get transaction => 'Transaction';
+
+  @override
+  String get via => 'via';
 
   @override
   String get welcomeDialogContent => 'Your account is ready to use. You will be redirected to the Home page in a few seconds..';

@@ -16,6 +16,7 @@
   "fillYourProfile": "Hoàn thiện thông tin của bạn",
   "fingerprintCreationDescription1": "Thêm dấu vân tay giúp tài khoản của bạn an toàn hơn",
   "fingerprintCreationDescription2": "Vui lòng đặt ngón tay của bạn lên cảm biến vân tay để bắt đầu",
+  "forgotPassword": "Quên mật khẩu",
   "forgotThePassword": "Quên mật khẩu?",
   "fullName": "Họ và tên",
   "gender": "Giới tính",
@@ -50,6 +51,7 @@
   "search": "Tìm kiếm",
   "security": "Bảo mật",
   "seeAll": "Xem tất cả",
+  "selectContactDescription": "Chọn thông tin liên lạc chúng tôi nên sử dụng để thiết lập lại mật khẩu của bạn",
   "setYourFingerprint": "Đặt dấu vân tay của bạn",
   "signIn": "Đăng nhập",
   "signInWithPassword": "Đăng nhập bằng mật khẩu",
@@ -58,5 +60,6 @@
   "suggested": "Gợi ý",
   "topMentors": "Giảng viên hàng đầu",
   "transaction": "Giao dịch",
+  "via": "thông qua",
   "welcomeDialogContent": "Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát.."
 }

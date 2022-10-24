@@ -195,6 +195,12 @@ abstract class AppLocalizations {
   /// **'Please put your finger on the fingerprint scanner to get started'**
   String get fingerprintCreationDescription2;
 
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password'**
+  String get forgotPassword;
+
   /// No description provided for @forgotThePassword.
   ///
   /// In en, this message translates to:
@@ -399,6 +405,12 @@ abstract class AppLocalizations {
   /// **'See All'**
   String get seeAll;
 
+  /// No description provided for @selectContactDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Select which contact detail should we use to reset your password'**
+  String get selectContactDescription;
+
   /// No description provided for @setYourFingerprint.
   ///
   /// In en, this message translates to:
@@ -446,6 +458,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Transaction'**
   String get transaction;
+
+  /// No description provided for @via.
+  ///
+  /// In en, this message translates to:
+  /// **'via'**
+  String get via;
 
   /// No description provided for @welcomeDialogContent.
   ///

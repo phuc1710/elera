@@ -16,6 +16,7 @@
   "fillYourProfile": "Fill Your Profile",
   "fingerprintCreationDescription1": "Add a fingerprint to make your account more secure",
   "fingerprintCreationDescription2": "Please put your finger on the fingerprint scanner to get started",
+  "forgotPassword": "Forgot Password",
   "forgotThePassword": "Forgot the password?",
   "fullName": "Full Name",
   "gender": "Gender",
@@ -50,6 +51,7 @@
   "search": "Search",
   "security": "Security",
   "seeAll": "See All",
+  "selectContactDescription": "Select which contact detail should we use to reset your password",
   "setYourFingerprint": "Set Your Fingerprint",
   "signIn": "Sign in",
   "signInWithPassword": "Sign in with password",
@@ -58,5 +60,6 @@
   "suggested": "Suggested",
   "topMentors": "Top Mentors",
   "transaction": "Transaction",
+  "via": "via",
   "welcomeDialogContent": "Your account is ready to use. You will be redirected to the Home page in a few seconds.."
 }
