@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,7 @@ class MostPopularCoursesView extends StatelessWidget {
         child: Scaffold(
           resizeToAvoidBottomInset: true,
           appBar: AppBar(
-            title: const Text('Most popular courses'),
+            title: Text(AppLocalizations.of(context).mostPopularCourses),
             titleTextStyle: Theme.of(context).textTheme.headline6,
             actions: [
               IconButton(onPressed: () {}, icon: const Icon(Icons.search))
