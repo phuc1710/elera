@@ -5,6 +5,9 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get alreadyHaveAnAccount => 'Already have an account?';
+
+  @override
   String get continueWithApple => 'Continue with Apple';
 
   @override
@@ -14,6 +17,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithGoogle => 'Continue with Google';
 
   @override
+  String get createYourAccount => 'Create your\nAccount';
+
+  @override
   String get darkMode => 'Dark Mode';
 
   @override
@@ -21,6 +27,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editProfile => 'Edit Profile';
+
+  @override
+  String get email => 'Email';
 
   @override
   String get getStarted => 'Get Started';
@@ -68,6 +77,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get or => 'or';
 
   @override
+  String get orContinueWith => 'or continue with';
+
+  @override
+  String get password => 'Password';
+
+  @override
   String get payment => 'Payment';
 
   @override
@@ -77,7 +92,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profile => 'Profile';
 
   @override
+  String get rememberMe => 'Remember Me';
+
+  @override
   String get security => 'Security';
+
+  @override
+  String get signIn => 'Sign in';
 
   @override
   String get signInWithPassword => 'Sign in with password';

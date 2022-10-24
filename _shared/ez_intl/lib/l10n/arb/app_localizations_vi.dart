@@ -5,6 +5,9 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
+  String get alreadyHaveAnAccount => 'Đã có tài khoản?';
+
+  @override
   String get continueWithApple => 'Tiếp tục với Apple';
 
   @override
@@ -14,6 +17,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get continueWithGoogle => 'Tiếp tục với Google';
 
   @override
+  String get createYourAccount => 'Tạo tài khoản\ncủa bạn';
+
+  @override
   String get darkMode => 'Chế độ tối';
 
   @override
@@ -21,6 +27,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get editProfile => 'Chỉnh sửa hồ sơ';
+
+  @override
+  String get email => 'Email';
 
   @override
   String get getStarted => 'Bắt đầu';
@@ -68,6 +77,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get or => 'hoặc';
 
   @override
+  String get orContinueWith => 'hoặc tiếp tục với';
+
+  @override
+  String get password => 'Mật khẩu';
+
+  @override
   String get payment => 'Thanh toán';
 
   @override
@@ -77,7 +92,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get profile => 'Hồ sơ';
 
   @override
+  String get rememberMe => 'Ghi nhớ tôi';
+
+  @override
   String get security => 'Bảo mật';
+
+  @override
+  String get signIn => 'Đăng nhập';
 
   @override
   String get signInWithPassword => 'Đăng nhập bằng mật khẩu';

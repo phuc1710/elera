@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class EmailInput extends StatelessWidget {
@@ -30,7 +31,7 @@ class EmailInput extends StatelessWidget {
             borderRadius: BorderRadius.circular(screenWidth * 0.03),
           ),
           prefixIcon: const Icon(Icons.email_rounded),
-          hintText: 'Email',
+          hintText: AppLocalizations.of(context).email,
           hintStyle: caption?.copyWith(color: const Color(0xff9e9e9e)),
         ),
         style: caption?.copyWith(fontWeight: FontWeight.w600),

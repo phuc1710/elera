@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,32 +38,32 @@ class _SignUpBodyState extends State<SignUpBody> {
         }
       },
       builder: (context, state) {
+        final l10n = AppLocalizations.of(context);
+
         return Padding(
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.05,
           ),
           child: ListView(
             children: [
-              const TitleText(
-                title: 'Create your\nAccount',
-              ),
+              TitleText(title: l10n.createYourAccount),
               EmailInput(controller: _emailController),
               PasswordInput(controller: _passwordController),
               const RememberMeCheckBox(),
               InkWell(
                 borderRadius: BorderRadius.circular(40),
                 onTap: () => onSignUpButtonTapped(context),
-                child: const MainActionInk(buttonString: 'Sign up'),
+                child: MainActionInk(buttonString: l10n.signUp),
               ),
-              const DividerRowWithText(
-                text: 'or continue with',
-                padding: EdgeInsets.fromLTRB(0.0, 68.0, 0.0, 20.0),
+              DividerRowWithText(
+                text: l10n.orContinueWith,
+                padding: const EdgeInsets.fromLTRB(0.0, 68.0, 0.0, 20.0),
               ),
               const SocialLoginRow(),
-              const BottomPromptRow(
-                promptText: 'Already have an account?',
+              BottomPromptRow(
+                promptText: l10n.alreadyHaveAnAccount,
                 path: Routes.signIn,
-                actionText: 'Sign in',
+                actionText: l10n.signIn,
               ),
             ],
           ),
