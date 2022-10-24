@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,7 +41,8 @@ class _SignInBodyState extends State<SignInBody> {
               .pushAndPopUntil(const HomeRoute(), predicate: (route) => false);
         }
       },
-      buildWhen: (prev, current) => prev is SignInInitial || prev is SignInLoading,
+      buildWhen: (prev, current) =>
+          prev is SignInInitial || prev is SignInLoading,
       builder: (context, state) {
         return (state is SignInLoading)
             ? const LoadingWidget()
@@ -50,13 +52,15 @@ class _SignInBodyState extends State<SignInBody> {
   }
 
   Padding buildLoginView(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * 0.05,
       ),
       child: ListView(
         children: [
-          const TitleText(title: 'Login to your\nAccount'),
+          TitleText(title: l10n.loginToYourAccount),
           EmailInput(controller: _emailController),
           PasswordInput(controller: _passwordController),
           const RememberMeCheckBox(),
@@ -64,15 +68,15 @@ class _SignInBodyState extends State<SignInBody> {
             onTap: () => onSignInButtonTapped(context),
           ),
           ForgotPasswordButton(email: _emailController.text),
-          const DividerRowWithText(
-            text: 'or continue with',
-            padding: EdgeInsets.symmetric(vertical: 20.0),
+          DividerRowWithText(
+            text: l10n.orContinueWith,
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
           ),
           const SocialLoginRow(),
-          const BottomPromptRow(
-            promptText: "Don't have an account?",
+          BottomPromptRow(
+            promptText: l10n.dontHaveAnAccount,
             path: Routes.signUp,
-            actionText: 'Sign up',
+            actionText: l10n.signUp,
           )
         ],
       ),

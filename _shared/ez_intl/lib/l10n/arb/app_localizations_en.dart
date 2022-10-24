@@ -32,6 +32,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get email => 'Email';
 
   @override
+  String get forgotThePassword => 'Forgot the password?';
+
+  @override
   String get getStarted => 'Get Started';
 
   @override
@@ -54,6 +57,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logOut => 'Logout';
+
+  @override
+  String get loginToYourAccount => 'Login to your\nAccount';
 
   @override
   String get myCourse => 'My Course';

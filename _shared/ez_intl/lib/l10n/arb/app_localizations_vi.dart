@@ -32,6 +32,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get email => 'Email';
 
   @override
+  String get forgotThePassword => 'Quên mật khẩu?';
+
+  @override
   String get getStarted => 'Bắt đầu';
 
   @override
@@ -54,6 +57,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get logOut => 'Đăng xuất';
+
+  @override
+  String get loginToYourAccount => 'Đăng nhập tài khoản của bạn';
 
   @override
   String get myCourse => 'Khóa học';

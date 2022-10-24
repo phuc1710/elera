@@ -147,6 +147,12 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get email;
 
+  /// No description provided for @forgotThePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot the password?'**
+  String get forgotThePassword;
+
   /// No description provided for @getStarted.
   ///
   /// In en, this message translates to:
@@ -194,6 +200,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logout'**
   String get logOut;
+
+  /// No description provided for @loginToYourAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Login to your\nAccount'**
+  String get loginToYourAccount;
 
   /// No description provided for @myCourse.
   ///
