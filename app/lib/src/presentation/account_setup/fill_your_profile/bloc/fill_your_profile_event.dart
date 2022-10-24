@@ -19,5 +19,5 @@ class FillYourProfileSubmitted extends FillYourProfileEvent {
   final String dateOfBirth;
   final String email;
   final String phoneNumber;
-  final String gender;
+  final String? gender;
 }

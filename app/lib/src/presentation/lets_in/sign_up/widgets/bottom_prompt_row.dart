@@ -24,10 +24,9 @@ class BottomPromptRow extends StatelessWidget {
         children: [
           Text(
             promptText,
-            style: Theme.of(context)
-                .textTheme
-                .caption
-                ?.copyWith(color: const Color(0xff9e9e9e)),
+            style: Theme.of(context).textTheme.caption?.copyWith(
+                  color: const Color(0xff9e9e9e),
+                ),
           ),
           TextButton(
             onPressed: () => context.router.replaceNamed(path),

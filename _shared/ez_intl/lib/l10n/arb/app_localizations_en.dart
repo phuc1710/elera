@@ -8,6 +8,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override
+  String get cont => 'Continue';
+
+  @override
   String get continueWithApple => 'Continue with Apple';
 
   @override
@@ -23,6 +26,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get darkMode => 'Dark Mode';
 
   @override
+  String get dob => 'Date of Birth';
+
+  @override
   String get dontHaveAnAccount => 'Don\'t have an account?';
 
   @override
@@ -32,7 +38,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get email => 'Email';
 
   @override
+  String get female => 'f,Female';
+
+  @override
+  String get fillYourProfile => 'Fill your profile';
+
+  @override
   String get forgotThePassword => 'Forgot the password?';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get gender => 'Gender';
 
   @override
   String get getStarted => 'Get Started';
@@ -62,10 +80,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginToYourAccount => 'Login to your\nAccount';
 
   @override
+  String get male => 'm,Male';
+
+  @override
   String get myCourse => 'My Course';
 
   @override
   String get next => 'Next';
+
+  @override
+  String get nickname => 'Nickname';
 
   @override
   String get notification => 'Notification';
@@ -90,6 +114,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get payment => 'Payment';
+
+  @override
+  String get phoneNumber => 'Phone Number';
 
   @override
   String get privacyPolicy => 'Privacy Policy';

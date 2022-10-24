@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,7 +24,7 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
   final TextEditingController dateOfBirthController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneNumberController = TextEditingController();
-  String dropDownGenderValue = 'Male';
+  String? dropDownGenderValue;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,8 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
         }
       },
       builder: (context, state) {
+        final l10n = AppLocalizations.of(context);
+
         return Padding(
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -46,21 +49,21 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
             children: [
               const Avatar(),
               InformationInput(
-                hintText: 'Full Name',
+                hintText: l10n.fullName,
                 controller: fullNameController,
               ),
               InformationInput(
-                hintText: 'Nickname',
+                hintText: l10n.nickname,
                 controller: nicknameController,
               ),
               // TODO(phucndh): implement date_picker from thinhhh
               InformationInput(
-                hintText: 'Date of Birth',
+                hintText: l10n.dob,
                 controller: dateOfBirthController,
                 suffixIcon: const Icon(Icons.date_range_rounded),
               ),
               InformationInput(
-                hintText: 'Email',
+                hintText: l10n.email,
                 controller: emailController,
                 suffixIcon: const Icon(Icons.email_rounded),
               ),
@@ -76,7 +79,7 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(40),
                   onTap: () => onContinueButtonTapped(context),
-                  child: const MainActionInk(buttonString: 'Continue'),
+                  child: MainActionInk(buttonString: l10n.cont),
                 ),
               ),
             ],
@@ -123,13 +126,12 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
               value: dropDownGenderValue,
               icon: const Icon(Icons.arrow_drop_down_rounded),
               iconEnabledColor: const Color(0xff9e9e9e),
-              style: Theme.of(context)
-                  .textTheme
-                  .caption
-                  ?.copyWith(color: const Color(0xff9e9e9e)),
+              style: Theme.of(context).textTheme.caption?.copyWith(
+                    color: const Color(0xff9e9e9e),
+                  ),
               isExpanded: true,
-              hint: const Text('Gender'),
-              items: getGenderItems(),
+              hint: Text(AppLocalizations.of(context).gender),
+              items: getGenderItems(context),
               onChanged: onDropDownGenderChanged,
             ),
           ),
@@ -146,12 +148,14 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
     });
   }
 
-  List<DropdownMenuItem<String>> getGenderItems() {
-    return ['Male', 'Female']
+  List<DropdownMenuItem<String>> getGenderItems(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
+    return [l10n.male, l10n.female]
         .map(
           (e) => DropdownMenuItem(
-            value: e,
-            child: Text(e),
+            value: e.split(',')[0],
+            child: Text(e.split(',')[1]),
           ),
         )
         .toList();

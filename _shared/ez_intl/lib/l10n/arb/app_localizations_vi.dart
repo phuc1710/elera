@@ -8,6 +8,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Đã có tài khoản?';
 
   @override
+  String get cont => 'Tiếp tục';
+
+  @override
   String get continueWithApple => 'Tiếp tục với Apple';
 
   @override
@@ -23,6 +26,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get darkMode => 'Chế độ tối';
 
   @override
+  String get dob => 'Ngày tháng năm sinh';
+
+  @override
   String get dontHaveAnAccount => 'Không có tài khoản?';
 
   @override
@@ -32,7 +38,19 @@ class AppLocalizationsVi extends AppLocalizations {
   String get email => 'Email';
 
   @override
+  String get female => 'f,Nữ';
+
+  @override
+  String get fillYourProfile => 'Hoàn thiện thông tin của bạn';
+
+  @override
   String get forgotThePassword => 'Quên mật khẩu?';
+
+  @override
+  String get fullName => 'Họ và tên';
+
+  @override
+  String get gender => 'Giới tính';
 
   @override
   String get getStarted => 'Bắt đầu';
@@ -62,10 +80,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String get loginToYourAccount => 'Đăng nhập tài khoản của bạn';
 
   @override
+  String get male => 'm,Nam';
+
+  @override
   String get myCourse => 'Khóa học';
 
   @override
   String get next => 'Tiếp tục';
+
+  @override
+  String get nickname => 'Biệt danh';
 
   @override
   String get notification => 'Thông báo';
@@ -90,6 +114,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get payment => 'Thanh toán';
+
+  @override
+  String get phoneNumber => 'Số điện thoại';
 
   @override
   String get privacyPolicy => 'Chính sách riêng tư';

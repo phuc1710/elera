@@ -99,6 +99,12 @@ abstract class AppLocalizations {
   /// **'Already have an account?'**
   String get alreadyHaveAnAccount;
 
+  /// No description provided for @cont.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get cont;
+
   /// No description provided for @continueWithApple.
   ///
   /// In en, this message translates to:
@@ -129,6 +135,12 @@ abstract class AppLocalizations {
   /// **'Dark Mode'**
   String get darkMode;
 
+  /// No description provided for @dob.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of Birth'**
+  String get dob;
+
   /// No description provided for @dontHaveAnAccount.
   ///
   /// In en, this message translates to:
@@ -147,11 +159,35 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get email;
 
+  /// No description provided for @female.
+  ///
+  /// In en, this message translates to:
+  /// **'f,Female'**
+  String get female;
+
+  /// No description provided for @fillYourProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill your profile'**
+  String get fillYourProfile;
+
   /// No description provided for @forgotThePassword.
   ///
   /// In en, this message translates to:
   /// **'Forgot the password?'**
   String get forgotThePassword;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
 
   /// No description provided for @getStarted.
   ///
@@ -207,6 +243,12 @@ abstract class AppLocalizations {
   /// **'Login to your\nAccount'**
   String get loginToYourAccount;
 
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'m,Male'**
+  String get male;
+
   /// No description provided for @myCourse.
   ///
   /// In en, this message translates to:
@@ -218,6 +260,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Next'**
   String get next;
+
+  /// No description provided for @nickname.
+  ///
+  /// In en, this message translates to:
+  /// **'Nickname'**
+  String get nickname;
 
   /// No description provided for @notification.
   ///
@@ -266,6 +314,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Payment'**
   String get payment;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneNumber;
 
   /// No description provided for @privacyPolicy.
   ///
