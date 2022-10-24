@@ -57,7 +57,7 @@ class _HomeViewState extends State<HomeView> {
             BottomNavigationBarItem(
               activeIcon: const Icon(Icons.shopping_cart_rounded),
               icon: const Icon(Icons.shopping_cart_outlined),
-              label: l10n.transaction,
+              label: l10n.transactions,
             ),
             BottomNavigationBarItem(
               activeIcon: const Icon(Icons.person_rounded),

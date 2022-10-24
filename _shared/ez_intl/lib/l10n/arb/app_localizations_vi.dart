@@ -56,6 +56,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get dontHaveAnAccount => 'Không có tài khoản?';
 
   @override
+  String get eReceipt => 'Hóa đơn';
+
+  @override
   String get editProfile => 'Chỉnh sửa hồ sơ';
 
   @override
@@ -233,7 +236,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get topMentors => 'Giảng viên hàng đầu';
 
   @override
-  String get transaction => 'Giao dịch';
+  String get transactions => 'Giao dịch';
 
   @override
   String get verify => 'Xác minh';

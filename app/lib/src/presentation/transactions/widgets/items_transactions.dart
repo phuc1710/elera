@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../config/router/app_router.dart';
@@ -86,9 +87,9 @@ class ItemsTransactionsTab extends StatelessWidget {
                         onPressed: () {
                           context.router.push(const EReceiptRoute());
                         },
-                        child: const Text(
-                          'E-receipt',
-                          style: TextStyle(color: Colors.white),
+                        child: Text(
+                          AppLocalizations.of(context).eReceipt,
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     ),

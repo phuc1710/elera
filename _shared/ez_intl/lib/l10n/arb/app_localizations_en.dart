@@ -56,6 +56,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dontHaveAnAccount => 'Don\'t have an account?';
 
   @override
+  String get eReceipt => 'E-receipt';
+
+  @override
   String get editProfile => 'Edit Profile';
 
   @override
@@ -233,7 +236,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get topMentors => 'Top Mentors';
 
   @override
-  String get transaction => 'Transaction';
+  String get transactions => 'Transactions';
 
   @override
   String get verify => 'Verify';

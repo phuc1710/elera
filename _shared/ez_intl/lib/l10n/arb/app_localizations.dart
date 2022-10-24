@@ -195,6 +195,12 @@ abstract class AppLocalizations {
   /// **'Don\'t have an account?'**
   String get dontHaveAnAccount;
 
+  /// No description provided for @eReceipt.
+  ///
+  /// In en, this message translates to:
+  /// **'E-receipt'**
+  String get eReceipt;
+
   /// No description provided for @editProfile.
   ///
   /// In en, this message translates to:
@@ -549,11 +555,11 @@ abstract class AppLocalizations {
   /// **'Top Mentors'**
   String get topMentors;
 
-  /// No description provided for @transaction.
+  /// No description provided for @transactions.
   ///
   /// In en, this message translates to:
-  /// **'Transaction'**
-  String get transaction;
+  /// **'Transactions'**
+  String get transactions;
 
   /// No description provided for @verify.
   ///
