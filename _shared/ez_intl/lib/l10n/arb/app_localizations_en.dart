@@ -5,7 +5,19 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get continueWithApple => 'Continue with Apple';
+
+  @override
+  String get continueWithFacebook => 'Continue with Facebook';
+
+  @override
+  String get continueWithGoogle => 'Continue with Google';
+
+  @override
   String get darkMode => 'Dark Mode';
+
+  @override
+  String get dontHaveAnAccount => 'Don\'t have an account?';
 
   @override
   String get editProfile => 'Edit Profile';
@@ -29,6 +41,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get language => 'Language';
 
   @override
+  String get letsYouIn => 'Let\'s you in';
+
+  @override
   String get logOut => 'Logout';
 
   @override
@@ -50,6 +65,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboarding3 => 'Let\'s improve your skills together with Elera right now!';
 
   @override
+  String get or => 'or';
+
+  @override
   String get payment => 'Payment';
 
   @override
@@ -60,6 +78,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get security => 'Security';
+
+  @override
+  String get signInWithPassword => 'Sign in with password';
+
+  @override
+  String get signUp => 'Sign up';
 
   @override
   String get suggested => 'Suggested';

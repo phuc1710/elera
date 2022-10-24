@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import 'social_login_ink.dart';
@@ -9,6 +10,8 @@ class SocialLoginColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
@@ -18,9 +21,9 @@ class SocialLoginColumn extends StatelessWidget {
             onTap: () {
               // TODO(phucndh): Navigate to Facebook login
             },
-            child: const SocialLoginInk(
+            child: SocialLoginInk(
               iconPath: 'assets/images/facebook_logo.png',
-              text: 'Continue with Facebook',
+              text: l10n.continueWithFacebook,
             ),
           ),
         ),
@@ -31,9 +34,9 @@ class SocialLoginColumn extends StatelessWidget {
             onTap: () {
               // TODO(phucndh): Navigate to Google login
             },
-            child: const SocialLoginInk(
+            child: SocialLoginInk(
               iconPath: 'assets/images/google-logo.png',
-              text: 'Continue with Google',
+              text: l10n.continueWithGoogle,
             ),
           ),
         ),
@@ -44,9 +47,9 @@ class SocialLoginColumn extends StatelessWidget {
             onTap: () {
               // TODO(phucndh): Navigate to Apple login
             },
-            child: const SocialLoginInk(
+            child: SocialLoginInk(
               iconPath: 'assets/images/apple-logo.png',
-              text: 'Continue with Apple',
+              text: l10n.continueWithApple,
             ),
           ),
         ),

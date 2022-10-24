@@ -1,5 +1,9 @@
 {
+  "continueWithApple": "Tiếp tục với Apple",
+  "continueWithFacebook": "Tiếp tục với Facebook",
+  "continueWithGoogle": "Tiếp tục với Google",
   "darkMode": "Chế độ tối",
+  "dontHaveAnAccount": "Không có tài khoản?",
   "editProfile": "Chỉnh sửa hồ sơ",
   "getStarted": "Bắt đầu",
   "helpCenter": "Trung tâm trợ giúp",
@@ -7,6 +11,7 @@
   "inbox": "Tin nhắn",
   "inviteFriends": "Mời bạn bè",
   "language": "Ngôn ngữ",
+  "letsYouIn": "Vào ứng dụng",
   "logOut": "Đăng xuất",
   "myCourse": "Khóa học",
   "next": "Tiếp tục",
@@ -14,10 +19,13 @@
   "onboarding1": "Chúng tôi cung cấp những khóa học tốt nhất và những giảng viên tuyệt vời!",
   "onboarding2": "Học mọi lúc mọi nơi, dễ dàng và tiện lợi",
   "onboarding3": "Hãy cùng cải thiện kĩ năng của bạn với Elera ngay nào!",
+  "or": "hoặc",
   "payment": "Thanh toán",
   "privacyPolicy": "Chính sách riêng tư",
   "profile": "Hồ sơ",
   "security": "Bảo mật",
+  "signInWithPassword": "Đăng nhập bằng mật khẩu",
+  "signUp": "Đăng ký",
   "suggested": "Gợi ý",
   "transaction": "Giao dịch"
 }

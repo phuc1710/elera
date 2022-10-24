@@ -5,7 +5,19 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
+  String get continueWithApple => 'Tiếp tục với Apple';
+
+  @override
+  String get continueWithFacebook => 'Tiếp tục với Facebook';
+
+  @override
+  String get continueWithGoogle => 'Tiếp tục với Google';
+
+  @override
   String get darkMode => 'Chế độ tối';
+
+  @override
+  String get dontHaveAnAccount => 'Không có tài khoản?';
 
   @override
   String get editProfile => 'Chỉnh sửa hồ sơ';
@@ -29,6 +41,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get language => 'Ngôn ngữ';
 
   @override
+  String get letsYouIn => 'Vào ứng dụng';
+
+  @override
   String get logOut => 'Đăng xuất';
 
   @override
@@ -50,6 +65,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get onboarding3 => 'Hãy cùng cải thiện kĩ năng của bạn với Elera ngay nào!';
 
   @override
+  String get or => 'hoặc';
+
+  @override
   String get payment => 'Thanh toán';
 
   @override
@@ -60,6 +78,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get security => 'Bảo mật';
+
+  @override
+  String get signInWithPassword => 'Đăng nhập bằng mật khẩu';
+
+  @override
+  String get signUp => 'Đăng ký';
 
   @override
   String get suggested => 'Gợi ý';

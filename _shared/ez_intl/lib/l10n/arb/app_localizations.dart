@@ -93,11 +93,35 @@ abstract class AppLocalizations {
     Locale('vi')
   ];
 
+  /// No description provided for @continueWithApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get continueWithApple;
+
+  /// No description provided for @continueWithFacebook.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Facebook'**
+  String get continueWithFacebook;
+
+  /// No description provided for @continueWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get continueWithGoogle;
+
   /// No description provided for @darkMode.
   ///
   /// In en, this message translates to:
   /// **'Dark Mode'**
   String get darkMode;
+
+  /// No description provided for @dontHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get dontHaveAnAccount;
 
   /// No description provided for @editProfile.
   ///
@@ -141,6 +165,12 @@ abstract class AppLocalizations {
   /// **'Language'**
   String get language;
 
+  /// No description provided for @letsYouIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s you in'**
+  String get letsYouIn;
+
   /// No description provided for @logOut.
   ///
   /// In en, this message translates to:
@@ -183,6 +213,12 @@ abstract class AppLocalizations {
   /// **'Let\'s improve your skills together with Elera right now!'**
   String get onboarding3;
 
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get or;
+
   /// No description provided for @payment.
   ///
   /// In en, this message translates to:
@@ -206,6 +242,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Security'**
   String get security;
+
+  /// No description provided for @signInWithPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with password'**
+  String get signInWithPassword;
+
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get signUp;
 
   /// No description provided for @suggested.
   ///

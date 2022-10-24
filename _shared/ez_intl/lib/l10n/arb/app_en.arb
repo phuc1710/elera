@@ -1,5 +1,9 @@
 {
+  "continueWithApple": "Continue with Apple",
+  "continueWithFacebook": "Continue with Facebook",
+  "continueWithGoogle": "Continue with Google",
   "darkMode": "Dark Mode",
+  "dontHaveAnAccount": "Don't have an account?",
   "editProfile": "Edit Profile",
   "getStarted": "Get Started",
   "helpCenter": "Help Center",
@@ -7,6 +11,7 @@
   "inbox": "Inbox",
   "inviteFriends": "Invite Friends",
   "language": "Language",
+  "letsYouIn": "Let's you in",
   "logOut": "Logout",
   "myCourse": "My Course",
   "next": "Next",
@@ -14,10 +19,13 @@
   "onboarding1": "We provide the best learning courses & great mentors!",
   "onboarding2": "Learn anytime and anywhere easily and conveniently",
   "onboarding3": "Let's improve your skills together with Elera right now!",
+  "or": "or",
   "payment": "Payment",
   "privacyPolicy": "Privacy Policy",
   "profile": "Profile",
   "security": "Security",
+  "signInWithPassword": "Sign in with password",
+  "signUp": "Sign up",
   "suggested": "Suggested",
   "transaction": "Transaction"
 }
