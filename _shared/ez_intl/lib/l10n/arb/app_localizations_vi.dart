@@ -8,6 +8,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Đã có tài khoản?';
 
   @override
+  String get congratulations => 'Xin chúc mừng!';
+
+  @override
   String get cont => 'Tiếp tục';
 
   @override
@@ -45,6 +48,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get fillYourProfile => 'Hoàn thiện thông tin của bạn';
+
+  @override
+  String get fingerprintCreationDescription1 => 'Thêm dấu vân tay giúp tài khoản của bạn an toàn hơn';
+
+  @override
+  String get fingerprintCreationDescription2 => 'Vui lòng đặt ngón tay của bạn lên cảm biến vân tay để bắt đầu';
 
   @override
   String get forgotThePassword => 'Quên mật khẩu?';
@@ -137,6 +146,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get security => 'Bảo mật';
 
   @override
+  String get setYourFingerprint => 'Đặt dấu vân tay của bạn';
+
+  @override
   String get signIn => 'Đăng nhập';
 
   @override
@@ -146,8 +158,14 @@ class AppLocalizationsVi extends AppLocalizations {
   String get signUp => 'Đăng ký';
 
   @override
+  String get skip => 'Bỏ qua';
+
+  @override
   String get suggested => 'Gợi ý';
 
   @override
   String get transaction => 'Giao dịch';
+
+  @override
+  String get welcomeDialogContent => 'Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..';
 }

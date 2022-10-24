@@ -8,6 +8,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override
+  String get congratulations => 'Congratulations!';
+
+  @override
   String get cont => 'Continue';
 
   @override
@@ -44,7 +47,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get female => 'f,Female';
 
   @override
-  String get fillYourProfile => 'Fill your profile';
+  String get fillYourProfile => 'Fill Your Profile';
+
+  @override
+  String get fingerprintCreationDescription1 => 'Add a fingerprint to make your account more secure';
+
+  @override
+  String get fingerprintCreationDescription2 => 'Please put your finger on the fingerprint scanner to get started';
 
   @override
   String get forgotThePassword => 'Forgot the password?';
@@ -137,6 +146,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get security => 'Security';
 
   @override
+  String get setYourFingerprint => 'Set Your Fingerprint';
+
+  @override
   String get signIn => 'Sign in';
 
   @override
@@ -146,8 +158,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signUp => 'Sign up';
 
   @override
+  String get skip => 'Skip';
+
+  @override
   String get suggested => 'Suggested';
 
   @override
   String get transaction => 'Transaction';
+
+  @override
+  String get welcomeDialogContent => 'Your account is ready to use. You will be redirected to the Home page in a few seconds..';
 }

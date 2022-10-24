@@ -1,5 +1,6 @@
 {
   "alreadyHaveAnAccount": "Đã có tài khoản?",
+  "congratulations": "Xin chúc mừng!",
   "cont": "Tiếp tục",
   "continueWithApple": "Tiếp tục với Apple",
   "continueWithFacebook": "Tiếp tục với Facebook",
@@ -13,6 +14,8 @@
   "email": "Email",
   "female": "f,Nữ",
   "fillYourProfile": "Hoàn thiện thông tin của bạn",
+  "fingerprintCreationDescription1": "Thêm dấu vân tay giúp tài khoản của bạn an toàn hơn",
+  "fingerprintCreationDescription2": "Vui lòng đặt ngón tay của bạn lên cảm biến vân tay để bắt đầu",
   "forgotThePassword": "Quên mật khẩu?",
   "fullName": "Họ và tên",
   "gender": "Giới tính",
@@ -43,9 +46,12 @@
   "profile": "Hồ sơ",
   "rememberMe": "Ghi nhớ tôi",
   "security": "Bảo mật",
+  "setYourFingerprint": "Đặt dấu vân tay của bạn",
   "signIn": "Đăng nhập",
   "signInWithPassword": "Đăng nhập bằng mật khẩu",
   "signUp": "Đăng ký",
+  "skip": "Bỏ qua",
   "suggested": "Gợi ý",
-  "transaction": "Giao dịch"
+  "transaction": "Giao dịch",
+  "welcomeDialogContent": "Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát.."
 }

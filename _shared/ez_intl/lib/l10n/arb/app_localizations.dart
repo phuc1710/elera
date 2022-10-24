@@ -99,6 +99,12 @@ abstract class AppLocalizations {
   /// **'Already have an account?'**
   String get alreadyHaveAnAccount;
 
+  /// No description provided for @congratulations.
+  ///
+  /// In en, this message translates to:
+  /// **'Congratulations!'**
+  String get congratulations;
+
   /// No description provided for @cont.
   ///
   /// In en, this message translates to:
@@ -174,8 +180,20 @@ abstract class AppLocalizations {
   /// No description provided for @fillYourProfile.
   ///
   /// In en, this message translates to:
-  /// **'Fill your profile'**
+  /// **'Fill Your Profile'**
   String get fillYourProfile;
+
+  /// No description provided for @fingerprintCreationDescription1.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a fingerprint to make your account more secure'**
+  String get fingerprintCreationDescription1;
+
+  /// No description provided for @fingerprintCreationDescription2.
+  ///
+  /// In en, this message translates to:
+  /// **'Please put your finger on the fingerprint scanner to get started'**
+  String get fingerprintCreationDescription2;
 
   /// No description provided for @forgotThePassword.
   ///
@@ -357,6 +375,12 @@ abstract class AppLocalizations {
   /// **'Security'**
   String get security;
 
+  /// No description provided for @setYourFingerprint.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Your Fingerprint'**
+  String get setYourFingerprint;
+
   /// No description provided for @signIn.
   ///
   /// In en, this message translates to:
@@ -375,6 +399,12 @@ abstract class AppLocalizations {
   /// **'Sign up'**
   String get signUp;
 
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
   /// No description provided for @suggested.
   ///
   /// In en, this message translates to:
@@ -386,6 +416,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Transaction'**
   String get transaction;
+
+  /// No description provided for @welcomeDialogContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account is ready to use. You will be redirected to the Home page in a few seconds..'**
+  String get welcomeDialogContent;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1,5 +1,6 @@
 {
   "alreadyHaveAnAccount": "Already have an account?",
+  "congratulations": "Congratulations!",
   "cont": "Continue",
   "continueWithApple": "Continue with Apple",
   "continueWithFacebook": "Continue with Facebook",
@@ -12,7 +13,9 @@
   "editProfile": "Edit Profile",
   "email": "Email",
   "female": "f,Female",
-  "fillYourProfile": "Fill your profile",
+  "fillYourProfile": "Fill Your Profile",
+  "fingerprintCreationDescription1": "Add a fingerprint to make your account more secure",
+  "fingerprintCreationDescription2": "Please put your finger on the fingerprint scanner to get started",
   "forgotThePassword": "Forgot the password?",
   "fullName": "Full Name",
   "gender": "Gender",
@@ -43,9 +46,12 @@
   "profile": "Profile",
   "rememberMe": "Remember Me",
   "security": "Security",
+  "setYourFingerprint": "Set Your Fingerprint",
   "signIn": "Sign in",
   "signInWithPassword": "Sign in with password",
   "signUp": "Sign up",
+  "skip": "Skip",
   "suggested": "Suggested",
-  "transaction": "Transaction"
+  "transaction": "Transaction",
+  "welcomeDialogContent": "Your account is ready to use. You will be redirected to the Home page in a few seconds.."
 }
