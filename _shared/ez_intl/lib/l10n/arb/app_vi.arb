@@ -1,5 +1,6 @@
 {
   "alreadyHaveAnAccount": "Đã có tài khoản?",
+  "cancel": "Hủy bỏ",
   "congratulations": "Xin chúc mừng!",
   "cont": "Tiếp tục",
   "continueWithApple": "Tiếp tục với Apple",
@@ -34,6 +35,7 @@
   "loginToYourAccount": "Đăng nhập tài khoản của bạn",
   "male": "m,Nam",
   "mostPopularCourses": "Khóa học phổ biến nhất",
+  "myBookmark": "Đánh dấu của tôi",
   "myCourse": "Khóa học",
   "next": "Tiếp tục",
   "nickname": "Biệt danh",
@@ -51,6 +53,7 @@
   "privacyPolicy": "Chính sách riêng tư",
   "profile": "Hồ sơ",
   "rememberMe": "Ghi nhớ tôi",
+  "removeFromBookmark": "Loại bỏ khỏi đánh dấu?",
   "repeatPassword": "Lặp lại mật khẩu",
   "resend": "Gửi lại",
   "resendCodeIn": "Gửi lại mã trong",
@@ -64,10 +67,12 @@
   "signInWithPassword": "Đăng nhập bằng mật khẩu",
   "signUp": "Đăng ký",
   "skip": "Bỏ qua",
+  "students": "học sinh",
   "suggested": "Gợi ý",
   "topMentors": "Giảng viên hàng đầu",
   "transaction": "Giao dịch",
   "verify": "Xác minh",
   "via": "thông qua",
-  "welcomeDialogContent": "Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát.."
+  "welcomeDialogContent": "Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..",
+  "yesRemove": "Có, Loại bỏ"
 }

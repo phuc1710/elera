@@ -8,6 +8,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override
+  String get cancel => 'Cancel';
+
+  @override
   String get congratulations => 'Congratulations!';
 
   @override
@@ -110,6 +113,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mostPopularCourses => 'Most Popular Courses';
 
   @override
+  String get myBookmark => 'My Bookmark';
+
+  @override
   String get myCourse => 'My Course';
 
   @override
@@ -161,6 +167,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get rememberMe => 'Remember Me';
 
   @override
+  String get removeFromBookmark => 'Remove from bookmark?';
+
+  @override
   String get repeatPassword => 'Repeat Password';
 
   @override
@@ -200,6 +209,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skip => 'Skip';
 
   @override
+  String get students => 'students';
+
+  @override
   String get suggested => 'Suggested';
 
   @override
@@ -216,4 +228,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcomeDialogContent => 'Your account is ready to use. You will be redirected to the Home page in a few seconds..';
+
+  @override
+  String get yesRemove => 'Yes, Remove';
 }

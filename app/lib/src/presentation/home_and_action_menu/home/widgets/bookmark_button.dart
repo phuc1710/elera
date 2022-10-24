@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -66,6 +67,8 @@ class _BookmarkButtonState extends State<BookmarkButton> {
         ),
       ),
       builder: (context) {
+        final l10n = AppLocalizations.of(context);
+
         return Padding(
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -74,7 +77,7 @@ class _BookmarkButtonState extends State<BookmarkButton> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const BottomModalSheetTitle(title: 'Remove from bookmark?'),
+              BottomModalSheetTitle(title: l10n.removeFromBookmark),
               const Divider(),
               CourseCard(
                 courseModel: widget.courseModel,
@@ -83,8 +86,8 @@ class _BookmarkButtonState extends State<BookmarkButton> {
                 onRemoveBookmark: () {},
               ),
               BottomSheetActionButtons(
-                mainButtonString: 'Yes, Remove',
-                subButtonString: 'Cancel',
+                mainButtonString: l10n.yesRemove,
+                subButtonString: l10n.cancel,
                 courseModel: widget.courseModel,
                 onMainActionPressed: widget.onRemoveBookmark,
               )

@@ -99,6 +99,12 @@ abstract class AppLocalizations {
   /// **'Already have an account?'**
   String get alreadyHaveAnAccount;
 
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
   /// No description provided for @congratulations.
   ///
   /// In en, this message translates to:
@@ -303,6 +309,12 @@ abstract class AppLocalizations {
   /// **'Most Popular Courses'**
   String get mostPopularCourses;
 
+  /// No description provided for @myBookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'My Bookmark'**
+  String get myBookmark;
+
   /// No description provided for @myCourse.
   ///
   /// In en, this message translates to:
@@ -405,6 +417,12 @@ abstract class AppLocalizations {
   /// **'Remember Me'**
   String get rememberMe;
 
+  /// No description provided for @removeFromBookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from bookmark?'**
+  String get removeFromBookmark;
+
   /// No description provided for @repeatPassword.
   ///
   /// In en, this message translates to:
@@ -483,6 +501,12 @@ abstract class AppLocalizations {
   /// **'Skip'**
   String get skip;
 
+  /// No description provided for @students.
+  ///
+  /// In en, this message translates to:
+  /// **'students'**
+  String get students;
+
   /// No description provided for @suggested.
   ///
   /// In en, this message translates to:
@@ -518,6 +542,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your account is ready to use. You will be redirected to the Home page in a few seconds..'**
   String get welcomeDialogContent;
+
+  /// No description provided for @yesRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, Remove'**
+  String get yesRemove;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

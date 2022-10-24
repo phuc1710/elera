@@ -8,6 +8,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Đã có tài khoản?';
 
   @override
+  String get cancel => 'Hủy bỏ';
+
+  @override
   String get congratulations => 'Xin chúc mừng!';
 
   @override
@@ -110,6 +113,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get mostPopularCourses => 'Khóa học phổ biến nhất';
 
   @override
+  String get myBookmark => 'Đánh dấu của tôi';
+
+  @override
   String get myCourse => 'Khóa học';
 
   @override
@@ -161,6 +167,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get rememberMe => 'Ghi nhớ tôi';
 
   @override
+  String get removeFromBookmark => 'Loại bỏ khỏi đánh dấu?';
+
+  @override
   String get repeatPassword => 'Lặp lại mật khẩu';
 
   @override
@@ -200,6 +209,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get skip => 'Bỏ qua';
 
   @override
+  String get students => 'học sinh';
+
+  @override
   String get suggested => 'Gợi ý';
 
   @override
@@ -216,4 +228,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get welcomeDialogContent => 'Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..';
+
+  @override
+  String get yesRemove => 'Có, Loại bỏ';
 }

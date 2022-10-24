@@ -1,5 +1,6 @@
 {
   "alreadyHaveAnAccount": "Already have an account?",
+  "cancel": "Cancel",
   "congratulations": "Congratulations!",
   "cont": "Continue",
   "continueWithApple": "Continue with Apple",
@@ -34,6 +35,7 @@
   "loginToYourAccount": "Login to your\nAccount",
   "male": "m,Male",
   "mostPopularCourses": "Most Popular Courses",
+  "myBookmark": "My Bookmark",
   "myCourse": "My Course",
   "next": "Next",
   "nickname": "Nickname",
@@ -51,6 +53,7 @@
   "privacyPolicy": "Privacy Policy",
   "profile": "Profile",
   "rememberMe": "Remember Me",
+  "removeFromBookmark": "Remove from bookmark?",
   "repeatPassword": "Repeat Password",
   "resend": "Resend",
   "resendCodeIn": "Resend code in",
@@ -64,10 +67,12 @@
   "signInWithPassword": "Sign in with password",
   "signUp": "Sign up",
   "skip": "Skip",
+  "students": "students",
   "suggested": "Suggested",
   "topMentors": "Top Mentors",
   "transaction": "Transaction",
   "verify": "Verify",
   "via": "via",
-  "welcomeDialogContent": "Your account is ready to use. You will be redirected to the Home page in a few seconds.."
+  "welcomeDialogContent": "Your account is ready to use. You will be redirected to the Home page in a few seconds..",
+  "yesRemove": "Yes, Remove"
 }
