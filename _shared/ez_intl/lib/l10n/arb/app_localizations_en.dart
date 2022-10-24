@@ -20,6 +20,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithGoogle => 'Continue with Google';
 
   @override
+  String get createNewPIN => 'Create new PIN';
+
+  @override
   String get createYourAccount => 'Create your\nAccount';
 
   @override
@@ -117,6 +120,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get phoneNumber => 'Phone Number';
+
+  @override
+  String get pinCreationDescription => 'Add a pin number to make your account more secure';
 
   @override
   String get privacyPolicy => 'Privacy Policy';

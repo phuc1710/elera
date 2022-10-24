@@ -123,6 +123,12 @@ abstract class AppLocalizations {
   /// **'Continue with Google'**
   String get continueWithGoogle;
 
+  /// No description provided for @createNewPIN.
+  ///
+  /// In en, this message translates to:
+  /// **'Create new PIN'**
+  String get createNewPIN;
+
   /// No description provided for @createYourAccount.
   ///
   /// In en, this message translates to:
@@ -320,6 +326,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone Number'**
   String get phoneNumber;
+
+  /// No description provided for @pinCreationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a pin number to make your account more secure'**
+  String get pinCreationDescription;
 
   /// No description provided for @privacyPolicy.
   ///

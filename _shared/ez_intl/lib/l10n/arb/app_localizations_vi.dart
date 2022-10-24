@@ -20,6 +20,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get continueWithGoogle => 'Tiếp tục với Google';
 
   @override
+  String get createNewPIN => 'Tạo mã PIN mới';
+
+  @override
   String get createYourAccount => 'Tạo tài khoản\ncủa bạn';
 
   @override
@@ -117,6 +120,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get phoneNumber => 'Số điện thoại';
+
+  @override
+  String get pinCreationDescription => 'Thêm mã pin giúp tài khoản của bạn an toàn hơn';
 
   @override
   String get privacyPolicy => 'Chính sách riêng tư';
