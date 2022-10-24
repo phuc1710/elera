@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,6 +21,7 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
   @override
   Widget build(BuildContext context) {
     final TextStyle? bodyText2 = Theme.of(context).textTheme.bodyText2;
+    final l10n = AppLocalizations.of(context);
 
     return Expanded(
       flex: 2,
@@ -27,9 +29,9 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Resend code in ', style: bodyText2),
+          Text('${l10n.resendCodeIn} ', style: bodyText2),
           buildResendTimerAndButton(context),
-          Text(' s', style: bodyText2),
+          Text(' ${l10n.s}', style: bodyText2),
         ],
       ),
     );
@@ -37,10 +39,10 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
 
   Widget buildResendTimerAndButton(BuildContext context) {
     const Duration duration = Duration(minutes: 1);
-    final TextStyle? bodyText2withColor = Theme.of(context)
-        .textTheme
-        .bodyText2
-        ?.copyWith(color: Theme.of(context).colorScheme.primary);
+    final TextStyle? bodyText2withColor =
+        Theme.of(context).textTheme.bodyText2?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+            );
 
     return !isTimeOut
         ? TweenAnimationBuilder(
@@ -52,12 +54,15 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
           )
         : InkWell(
             onTap: () {
-              context
-                  .read<PinEntryBloc>()
-                  .add(PinSendingRequested(widget.contactInfo));
+              context.read<PinEntryBloc>().add(
+                    PinSendingRequested(widget.contactInfo),
+                  );
               setState(() => isTimeOut = false);
             },
-            child: Text('Resend', style: bodyText2withColor),
+            child: Text(
+              AppLocalizations.of(context).resend,
+              style: bodyText2withColor,
+            ),
           );
   }
 }

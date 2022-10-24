@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,7 +22,7 @@ class EnterPinView extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             title: Text(
-              'Forgot Password',
+              AppLocalizations.of(context).forgotPassword,
               style: Theme.of(context).textTheme.headline6,
             ),
             leadingWidth: 35,

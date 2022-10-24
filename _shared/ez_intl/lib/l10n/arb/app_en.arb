@@ -45,9 +45,13 @@
   "payment": "Payment",
   "phoneNumber": "Phone Number",
   "pinCreationDescription": "Add a pin number to make your account more secure",
+  "pinEntryPrompt": "Code has been sent to",
   "privacyPolicy": "Privacy Policy",
   "profile": "Profile",
   "rememberMe": "Remember Me",
+  "resend": "Resend",
+  "resendCodeIn": "Resend code in",
+  "s": "s",
   "search": "Search",
   "security": "Security",
   "seeAll": "See All",
@@ -60,6 +64,7 @@
   "suggested": "Suggested",
   "topMentors": "Top Mentors",
   "transaction": "Transaction",
+  "verify": "Verify",
   "via": "via",
   "welcomeDialogContent": "Your account is ready to use. You will be redirected to the Home page in a few seconds.."
 }

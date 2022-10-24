@@ -369,6 +369,12 @@ abstract class AppLocalizations {
   /// **'Add a pin number to make your account more secure'**
   String get pinCreationDescription;
 
+  /// No description provided for @pinEntryPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Code has been sent to'**
+  String get pinEntryPrompt;
+
   /// No description provided for @privacyPolicy.
   ///
   /// In en, this message translates to:
@@ -386,6 +392,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remember Me'**
   String get rememberMe;
+
+  /// No description provided for @resend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend'**
+  String get resend;
+
+  /// No description provided for @resendCodeIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code in'**
+  String get resendCodeIn;
+
+  /// No description provided for @s.
+  ///
+  /// In en, this message translates to:
+  /// **'s'**
+  String get s;
 
   /// No description provided for @search.
   ///
@@ -458,6 +482,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Transaction'**
   String get transaction;
+
+  /// No description provided for @verify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify'**
+  String get verify;
 
   /// No description provided for @via.
   ///

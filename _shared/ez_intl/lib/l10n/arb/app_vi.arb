@@ -45,9 +45,13 @@
   "payment": "Thanh toán",
   "phoneNumber": "Số điện thoại",
   "pinCreationDescription": "Thêm mã pin giúp tài khoản của bạn an toàn hơn",
+  "pinEntryPrompt": "Mã đã được gửi đến",
   "privacyPolicy": "Chính sách riêng tư",
   "profile": "Hồ sơ",
   "rememberMe": "Ghi nhớ tôi",
+  "resend": "Gửi lại",
+  "resendCodeIn": "Gửi lại mã trong",
+  "s": "giây",
   "search": "Tìm kiếm",
   "security": "Bảo mật",
   "seeAll": "Xem tất cả",
@@ -60,6 +64,7 @@
   "suggested": "Gợi ý",
   "topMentors": "Giảng viên hàng đầu",
   "transaction": "Giao dịch",
+  "verify": "Xác minh",
   "via": "thông qua",
   "welcomeDialogContent": "Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát.."
 }

@@ -143,6 +143,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pinCreationDescription => 'Add a pin number to make your account more secure';
 
   @override
+  String get pinEntryPrompt => 'Code has been sent to';
+
+  @override
   String get privacyPolicy => 'Privacy Policy';
 
   @override
@@ -150,6 +153,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get rememberMe => 'Remember Me';
+
+  @override
+  String get resend => 'Resend';
+
+  @override
+  String get resendCodeIn => 'Resend code in';
+
+  @override
+  String get s => 's';
 
   @override
   String get search => 'Search';
@@ -186,6 +198,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get transaction => 'Transaction';
+
+  @override
+  String get verify => 'Verify';
 
   @override
   String get via => 'via';

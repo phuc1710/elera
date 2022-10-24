@@ -143,6 +143,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get pinCreationDescription => 'Thêm mã pin giúp tài khoản của bạn an toàn hơn';
 
   @override
+  String get pinEntryPrompt => 'Mã đã được gửi đến';
+
+  @override
   String get privacyPolicy => 'Chính sách riêng tư';
 
   @override
@@ -150,6 +153,15 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get rememberMe => 'Ghi nhớ tôi';
+
+  @override
+  String get resend => 'Gửi lại';
+
+  @override
+  String get resendCodeIn => 'Gửi lại mã trong';
+
+  @override
+  String get s => 'giây';
 
   @override
   String get search => 'Tìm kiếm';
@@ -186,6 +198,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get transaction => 'Giao dịch';
+
+  @override
+  String get verify => 'Xác minh';
 
   @override
   String get via => 'thông qua';

@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,7 +22,10 @@ class _MainActionButtonState extends State<MainActionButton> {
       child: InkWell(
         borderRadius: BorderRadius.circular(40),
         onTap: () => onContinueButtonTapped(context),
-        child: const MainActionInk(buttonString: 'Verify', width: 0.9,),
+        child: MainActionInk(
+          buttonString: AppLocalizations.of(context).verify,
+          width: 0.9,
+        ),
       ),
     );
   }
