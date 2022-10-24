@@ -5,6 +5,12 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
+  String get about => 'Thông tin';
+
+  @override
+  String get aboutCourse => 'Về khóa học';
+
+  @override
   String get alreadyHaveAnAccount => 'Đã có tài khoản?';
 
   @override
@@ -12,6 +18,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get cancel => 'Hủy bỏ';
+
+  @override
+  String get certificate => 'Chứng chỉ';
 
   @override
   String get chats => 'Tin nhắn';
@@ -65,6 +74,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get email => 'Email';
 
   @override
+  String get enrollCourse => 'Tham gia khóa học';
+
+  @override
   String get female => 'f,Nữ';
 
   @override
@@ -101,6 +113,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get home => 'Trang chủ';
 
   @override
+  String get hours => 'Giờ';
+
+  @override
   String get inbox => 'Tin nhắn';
 
   @override
@@ -108,6 +123,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get language => 'Ngôn ngữ';
+
+  @override
+  String get lessons => 'bài giảng';
+
+  @override
+  String get lessonsCap => 'Bài giảng';
 
   @override
   String get letsYouIn => 'Vào ứng dụng';
@@ -120,6 +141,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get male => 'm,Nam';
+
+  @override
+  String get mentor => 'Giảng viên';
 
   @override
   String get mostPopularCourses => 'Khóa học phổ biến nhất';
@@ -182,6 +206,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get profile => 'Hồ sơ';
 
   @override
+  String get readMore => 'Đọc thêm ...';
+
+  @override
   String get rememberMe => 'Ghi nhớ tôi';
 
   @override
@@ -195,6 +222,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get resendCodeIn => 'Gửi lại mã trong';
+
+  @override
+  String get reviews => 'đánh giá';
+
+  @override
+  String get reviewsCap => 'Đánh giá';
 
   @override
   String get s => 'giây';
@@ -231,6 +264,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get suggested => 'Gợi ý';
+
+  @override
+  String get tools => 'Công cụ';
 
   @override
   String get topMentors => 'Giảng viên hàng đầu';

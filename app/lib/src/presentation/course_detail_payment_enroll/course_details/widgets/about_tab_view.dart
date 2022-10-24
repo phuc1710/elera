@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -15,18 +16,19 @@ class AboutTabView extends StatelessWidget {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final textTheme = Theme.of(context).textTheme;
     final screenWidth = MediaQuery.of(context).size.width;
+    final l10n = AppLocalizations.of(context);
 
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 16.0),
-          child: SectionText(text: 'Mentor'),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: SectionText(text: l10n.mentor),
         ),
         MentorListTile(mentorData: courseData?.mentor),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 16.0),
-          child: SectionText(text: 'About Course'),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: SectionText(text: l10n.aboutCourse),
         ),
         RichText(
           text: TextSpan(
@@ -37,7 +39,7 @@ class AboutTabView extends StatelessWidget {
                     ?.copyWith(fontSize: 13, color: const Color(0xff616161)),
               ),
               TextSpan(
-                text: ' Read more ...',
+                text: ' ${l10n.readMore}',
                 style: textTheme.overline?.copyWith(
                   fontSize: 13,
                   color: primaryColor,
@@ -48,9 +50,9 @@ class AboutTabView extends StatelessWidget {
             ],
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 16.0),
-          child: SectionText(text: 'Tools'),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: SectionText(text: l10n.tools),
         ),
         Row(
           children: [

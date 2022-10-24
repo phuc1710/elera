@@ -93,6 +93,18 @@ abstract class AppLocalizations {
     Locale('vi')
   ];
 
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @aboutCourse.
+  ///
+  /// In en, this message translates to:
+  /// **'About Course'**
+  String get aboutCourse;
+
   /// No description provided for @alreadyHaveAnAccount.
   ///
   /// In en, this message translates to:
@@ -110,6 +122,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get cancel;
+
+  /// No description provided for @certificate.
+  ///
+  /// In en, this message translates to:
+  /// **'Certificate'**
+  String get certificate;
 
   /// No description provided for @chats.
   ///
@@ -213,6 +231,12 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get email;
 
+  /// No description provided for @enrollCourse.
+  ///
+  /// In en, this message translates to:
+  /// **'Enroll Course'**
+  String get enrollCourse;
+
   /// No description provided for @female.
   ///
   /// In en, this message translates to:
@@ -285,6 +309,12 @@ abstract class AppLocalizations {
   /// **'Home'**
   String get home;
 
+  /// No description provided for @hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Hours'**
+  String get hours;
+
   /// No description provided for @inbox.
   ///
   /// In en, this message translates to:
@@ -302,6 +332,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Language'**
   String get language;
+
+  /// No description provided for @lessons.
+  ///
+  /// In en, this message translates to:
+  /// **'lessons'**
+  String get lessons;
+
+  /// No description provided for @lessonsCap.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessons'**
+  String get lessonsCap;
 
   /// No description provided for @letsYouIn.
   ///
@@ -326,6 +368,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'m,Male'**
   String get male;
+
+  /// No description provided for @mentor.
+  ///
+  /// In en, this message translates to:
+  /// **'Mentor'**
+  String get mentor;
 
   /// No description provided for @mostPopularCourses.
   ///
@@ -447,6 +495,12 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get profile;
 
+  /// No description provided for @readMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Read more ...'**
+  String get readMore;
+
   /// No description provided for @rememberMe.
   ///
   /// In en, this message translates to:
@@ -476,6 +530,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Resend code in'**
   String get resendCodeIn;
+
+  /// No description provided for @reviews.
+  ///
+  /// In en, this message translates to:
+  /// **'reviews'**
+  String get reviews;
+
+  /// No description provided for @reviewsCap.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews'**
+  String get reviewsCap;
 
   /// No description provided for @s.
   ///
@@ -548,6 +614,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Suggested'**
   String get suggested;
+
+  /// No description provided for @tools.
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get tools;
 
   /// No description provided for @topMentors.
   ///

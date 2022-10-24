@@ -5,6 +5,12 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get about => 'About';
+
+  @override
+  String get aboutCourse => 'About Course';
+
+  @override
   String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override
@@ -12,6 +18,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cancel => 'Cancel';
+
+  @override
+  String get certificate => 'Certificate';
 
   @override
   String get chats => 'Chats';
@@ -65,6 +74,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get email => 'Email';
 
   @override
+  String get enrollCourse => 'Enroll Course';
+
+  @override
   String get female => 'f,Female';
 
   @override
@@ -101,6 +113,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get home => 'Home';
 
   @override
+  String get hours => 'Hours';
+
+  @override
   String get inbox => 'Inbox';
 
   @override
@@ -108,6 +123,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get language => 'Language';
+
+  @override
+  String get lessons => 'lessons';
+
+  @override
+  String get lessonsCap => 'Lessons';
 
   @override
   String get letsYouIn => 'Let\'s you in';
@@ -120,6 +141,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get male => 'm,Male';
+
+  @override
+  String get mentor => 'Mentor';
 
   @override
   String get mostPopularCourses => 'Most Popular Courses';
@@ -182,6 +206,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profile => 'Profile';
 
   @override
+  String get readMore => 'Read more ...';
+
+  @override
   String get rememberMe => 'Remember Me';
 
   @override
@@ -195,6 +222,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resendCodeIn => 'Resend code in';
+
+  @override
+  String get reviews => 'reviews';
+
+  @override
+  String get reviewsCap => 'Reviews';
 
   @override
   String get s => 's';
@@ -231,6 +264,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get suggested => 'Suggested';
+
+  @override
+  String get tools => 'Tools';
 
   @override
   String get topMentors => 'Top Mentors';
