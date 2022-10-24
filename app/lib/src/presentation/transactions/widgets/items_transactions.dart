@@ -40,7 +40,7 @@ class ItemsTransactionsTab extends StatelessWidget {
                     imagePath: courseImage,
                   ),
                   SizedBox(
-                    width: screenWidth * 0.3,
+                    width: screenWidth * 0.25,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -77,7 +77,6 @@ class ItemsTransactionsTab extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          fixedSize: const Size(10, 5),
                           backgroundColor: primaryColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
