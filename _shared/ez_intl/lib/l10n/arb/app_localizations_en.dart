@@ -8,7 +8,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override
+  String get calls => 'Calls';
+
+  @override
   String get cancel => 'Cancel';
+
+  @override
+  String get chats => 'Chats';
 
   @override
   String get completed => 'Completed';

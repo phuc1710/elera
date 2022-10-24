@@ -8,7 +8,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Đã có tài khoản?';
 
   @override
+  String get calls => 'Cuộc gọi';
+
+  @override
   String get cancel => 'Hủy bỏ';
+
+  @override
+  String get chats => 'Tin nhắn';
 
   @override
   String get completed => 'Đã hoàn thành';

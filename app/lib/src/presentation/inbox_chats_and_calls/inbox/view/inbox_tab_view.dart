@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,12 +19,13 @@ class InboxTabView extends StatelessWidget {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    final l10n = AppLocalizations.of(context);
 
     return BlocProvider(
       create: (context) => getIt<InboxBloc>()..add(InboxFetched()),
       child: Column(
         children: [
-          const TitleAppBar(title: 'Inbox'),
+          TitleAppBar(title: l10n.inbox),
           Expanded(
             child: DefaultTabController(
               length: 2,
@@ -37,7 +39,7 @@ class InboxTabView extends StatelessWidget {
                     ),
                     indicatorColor: primaryColor,
                     indicatorSize: TabBarIndicatorSize.tab,
-                    tabs: const [Tab(text: 'Chats'), Tab(text: 'Calls')],
+                    tabs: [Tab(text: l10n.chats), Tab(text: l10n.calls)],
                   ),
                   BlocConsumer<InboxBloc, InboxState>(
                     listener: (context, state) {
