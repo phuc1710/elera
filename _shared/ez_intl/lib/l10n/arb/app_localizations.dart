@@ -135,11 +135,23 @@ abstract class AppLocalizations {
   /// **'Create new PIN'**
   String get createNewPIN;
 
+  /// No description provided for @createNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Password'**
+  String get createNewPassword;
+
   /// No description provided for @createYourAccount.
   ///
   /// In en, this message translates to:
   /// **'Create your\nAccount'**
   String get createYourAccount;
+
+  /// No description provided for @createYourNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Your New Password'**
+  String get createYourNewPassword;
 
   /// No description provided for @darkMode.
   ///
@@ -392,6 +404,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remember Me'**
   String get rememberMe;
+
+  /// No description provided for @repeatPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat Password'**
+  String get repeatPassword;
 
   /// No description provided for @resend.
   ///

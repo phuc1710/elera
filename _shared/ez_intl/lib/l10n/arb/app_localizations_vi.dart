@@ -26,7 +26,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get createNewPIN => 'Tạo mã PIN mới';
 
   @override
+  String get createNewPassword => 'Tạo mật khẩu mới';
+
+  @override
   String get createYourAccount => 'Tạo tài khoản\ncủa bạn';
+
+  @override
+  String get createYourNewPassword => 'Tạo mật khẩu mới của bạn';
 
   @override
   String get darkMode => 'Chế độ tối';
@@ -153,6 +159,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get rememberMe => 'Ghi nhớ tôi';
+
+  @override
+  String get repeatPassword => 'Lặp lại mật khẩu';
 
   @override
   String get resend => 'Gửi lại';

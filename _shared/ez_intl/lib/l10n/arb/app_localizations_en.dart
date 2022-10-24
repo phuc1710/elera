@@ -26,7 +26,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createNewPIN => 'Create new PIN';
 
   @override
+  String get createNewPassword => 'Create New Password';
+
+  @override
   String get createYourAccount => 'Create your\nAccount';
+
+  @override
+  String get createYourNewPassword => 'Create Your New Password';
 
   @override
   String get darkMode => 'Dark Mode';
@@ -153,6 +159,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get rememberMe => 'Remember Me';
+
+  @override
+  String get repeatPassword => 'Repeat Password';
 
   @override
   String get resend => 'Resend';
