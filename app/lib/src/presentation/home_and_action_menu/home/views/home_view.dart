@@ -47,7 +47,7 @@ class _HomeViewState extends State<HomeView> {
             BottomNavigationBarItem(
               activeIcon: const Icon(Icons.document_scanner_rounded),
               icon: const Icon(Icons.document_scanner_outlined),
-              label: l10n.myCourse,
+              label: l10n.myCourseNavBar,
             ),
             BottomNavigationBarItem(
               activeIcon: const Icon(Icons.chat_rounded),

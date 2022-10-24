@@ -11,6 +11,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancel => 'Cancel';
 
   @override
+  String get completed => 'Completed';
+
+  @override
   String get congratulations => 'Congratulations!';
 
   @override
@@ -119,6 +122,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get myCourse => 'My Course';
 
   @override
+  String get myCourseNavBar => 'My Course';
+
+  @override
   String get next => 'Next';
 
   @override
@@ -135,6 +141,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboarding3 => 'Let\'s improve your skills together with Elera right now!';
+
+  @override
+  String get ongoing => 'Ongoing';
 
   @override
   String get or => 'or';

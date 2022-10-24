@@ -105,6 +105,12 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
+  /// No description provided for @completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get completed;
+
   /// No description provided for @congratulations.
   ///
   /// In en, this message translates to:
@@ -321,6 +327,12 @@ abstract class AppLocalizations {
   /// **'My Course'**
   String get myCourse;
 
+  /// No description provided for @myCourseNavBar.
+  ///
+  /// In en, this message translates to:
+  /// **'My Course'**
+  String get myCourseNavBar;
+
   /// No description provided for @next.
   ///
   /// In en, this message translates to:
@@ -356,6 +368,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Let\'s improve your skills together with Elera right now!'**
   String get onboarding3;
+
+  /// No description provided for @ongoing.
+  ///
+  /// In en, this message translates to:
+  /// **'Ongoing'**
+  String get ongoing;
 
   /// No description provided for @or.
   ///

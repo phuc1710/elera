@@ -11,6 +11,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get cancel => 'Hủy bỏ';
 
   @override
+  String get completed => 'Đã hoàn thành';
+
+  @override
   String get congratulations => 'Xin chúc mừng!';
 
   @override
@@ -116,7 +119,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get myBookmark => 'Đánh dấu của tôi';
 
   @override
-  String get myCourse => 'Khóa học';
+  String get myCourse => 'Khóa học của tôi';
+
+  @override
+  String get myCourseNavBar => 'Khóa học';
 
   @override
   String get next => 'Tiếp tục';
@@ -135,6 +141,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get onboarding3 => 'Hãy cùng cải thiện kĩ năng của bạn với Elera ngay nào!';
+
+  @override
+  String get ongoing => 'Đang học';
 
   @override
   String get or => 'hoặc';
