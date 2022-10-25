@@ -105,6 +105,12 @@ abstract class AppLocalizations {
   /// **'About Course'**
   String get aboutCourse;
 
+  /// No description provided for @all.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all;
+
   /// No description provided for @alreadyHaveAnAccount.
   ///
   /// In en, this message translates to:

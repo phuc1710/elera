@@ -11,6 +11,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutCourse => 'About Course';
 
   @override
+  String get all => 'All';
+
+  @override
   String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override

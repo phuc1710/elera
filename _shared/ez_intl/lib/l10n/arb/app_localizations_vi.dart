@@ -11,6 +11,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get aboutCourse => 'Về khóa học';
 
   @override
+  String get all => 'Tất cả';
+
+  @override
   String get alreadyHaveAnAccount => 'Đã có tài khoản?';
 
   @override
