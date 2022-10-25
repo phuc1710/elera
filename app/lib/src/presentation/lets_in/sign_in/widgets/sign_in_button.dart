@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/main_action_ink.dart';
@@ -15,7 +16,7 @@ class SignInButton extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(40),
       onTap: onTap,
-      child: const MainActionInk(buttonString: 'Sign in'),
+      child: MainActionInk(buttonString: AppLocalizations.of(context).signIn),
     );
   }
 }
