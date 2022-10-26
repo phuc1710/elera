@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
@@ -15,6 +16,7 @@ class MentorDetailTabBarView extends StatelessWidget {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final textTheme = Theme.of(context).textTheme;
     final screenWidth = MediaQuery.of(context).size.width;
+    final l10n = AppLocalizations.of(context);
 
     return DefaultTabController(
       length: 3,
@@ -30,10 +32,10 @@ class MentorDetailTabBarView extends StatelessWidget {
             indicatorColor: primaryColor,
             indicatorSize: TabBarIndicatorSize.tab,
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-            tabs: const [
-              Tab(text: 'Courses'),
-              Tab(text: 'Students'),
-              Tab(text: 'Reviews')
+            tabs: [
+              Tab(text: l10n.courses),
+              Tab(text: l10n.studentsCap),
+              Tab(text: l10n.reviewsCap)
             ],
           ),
           Expanded(

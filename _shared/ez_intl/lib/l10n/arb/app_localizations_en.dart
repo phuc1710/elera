@@ -47,6 +47,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithGoogle => 'Continue with Google';
 
   @override
+  String get courses => 'Courses';
+
+  @override
   String get createNewPIN => 'Create new PIN';
 
   @override
@@ -147,6 +150,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mentor => 'Mentor';
+
+  @override
+  String get message => 'Message';
 
   @override
   String get mostPopularCourses => 'Most Popular Courses';
@@ -266,6 +272,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get students => 'students';
 
   @override
+  String get studentsCap => 'Students';
+
+  @override
   String get suggested => 'Suggested';
 
   @override
@@ -282,6 +291,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get via => 'via';
+
+  @override
+  String get website => 'Website';
 
   @override
   String get welcomeDialogContent => 'Your account is ready to use. You will be redirected to the Home page in a few seconds..';

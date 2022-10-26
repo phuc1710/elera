@@ -47,6 +47,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get continueWithGoogle => 'Tiếp tục với Google';
 
   @override
+  String get courses => 'Khóa học';
+
+  @override
   String get createNewPIN => 'Tạo mã PIN mới';
 
   @override
@@ -147,6 +150,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get mentor => 'Giảng viên';
+
+  @override
+  String get message => 'Tin nhắn';
 
   @override
   String get mostPopularCourses => 'Khóa học phổ biến nhất';
@@ -266,6 +272,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get students => 'học sinh';
 
   @override
+  String get studentsCap => 'Học sinh';
+
+  @override
   String get suggested => 'Gợi ý';
 
   @override
@@ -282,6 +291,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get via => 'thông qua';
+
+  @override
+  String get website => 'Trang web';
 
   @override
   String get welcomeDialogContent => 'Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..';

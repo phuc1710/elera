@@ -177,6 +177,12 @@ abstract class AppLocalizations {
   /// **'Continue with Google'**
   String get continueWithGoogle;
 
+  /// No description provided for @courses.
+  ///
+  /// In en, this message translates to:
+  /// **'Courses'**
+  String get courses;
+
   /// No description provided for @createNewPIN.
   ///
   /// In en, this message translates to:
@@ -380,6 +386,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mentor'**
   String get mentor;
+
+  /// No description provided for @message.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get message;
 
   /// No description provided for @mostPopularCourses.
   ///
@@ -615,6 +627,12 @@ abstract class AppLocalizations {
   /// **'students'**
   String get students;
 
+  /// No description provided for @studentsCap.
+  ///
+  /// In en, this message translates to:
+  /// **'Students'**
+  String get studentsCap;
+
   /// No description provided for @suggested.
   ///
   /// In en, this message translates to:
@@ -650,6 +668,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'via'**
   String get via;
+
+  /// No description provided for @website.
+  ///
+  /// In en, this message translates to:
+  /// **'Website'**
+  String get website;
 
   /// No description provided for @welcomeDialogContent.
   ///

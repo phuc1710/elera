@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -13,6 +14,7 @@ class ActionButtonsRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final Uri uri = Uri.parse('$url');
+    final l10n = AppLocalizations.of(context);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -26,7 +28,7 @@ class ActionButtonsRow extends StatelessWidget {
               borderRadius: BorderRadius.circular(40),
             ),
             icon: IconlyBold.chat,
-            text: 'Message',
+            text: l10n.website,
             contentColor: Colors.white,
           ),
         ),
@@ -39,7 +41,7 @@ class ActionButtonsRow extends StatelessWidget {
               borderRadius: BorderRadius.circular(40),
             ),
             icon: IconlyBold.discovery,
-            text: 'Website',
+            text: l10n.website,
             contentColor: primaryColor,
           ),
         ),

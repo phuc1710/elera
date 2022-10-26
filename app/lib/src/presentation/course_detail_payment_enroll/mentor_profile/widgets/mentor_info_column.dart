@@ -26,10 +26,7 @@ class MentorInfoColumn extends StatelessWidget {
           radius: screenHeight * 0.08,
           backgroundImage: avatar == null
               ? null
-              : Image.network(
-                  '$avatar',
-                  width: screenWidth * 0.08,
-                ).image,
+              : Image.network('$avatar', width: screenWidth * 0.08).image,
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
