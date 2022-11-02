@@ -10,7 +10,7 @@ part of 'user_api_service.dart';
 
 class _UserApiService implements UserApiService {
   _UserApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://103.63.215.141:7412/api';
+    baseUrl ??= 'http://103.63.215.141:7414/api';
   }
 
   final Dio _dio;
