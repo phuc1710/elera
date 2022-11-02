@@ -9,7 +9,10 @@ part of 'home_api_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _HomeApiService implements HomeApiService {
-  _HomeApiService(this._dio, {this.baseUrl}) {
+  _HomeApiService(
+    this._dio, {
+    this.baseUrl,
+  }) {
     baseUrl ??= 'http://103.63.215.141:7414/api';
   }
 
@@ -18,8 +21,10 @@ class _HomeApiService implements HomeApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<HomeFetchResponseModel>> getHomeFetchRequest(
-      {isMockup, query}) async {
+  Future<HttpResponse<HomeFetchResponseModel>> getHomeFetchRequest({
+    isMockup,
+    query,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
@@ -28,11 +33,18 @@ class _HomeApiService implements HomeApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<HomeFetchResponseModel>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/fetch_home',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<HttpResponse<HomeFetchResponseModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/fetch_home',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = HomeFetchResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;

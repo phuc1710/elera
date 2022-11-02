@@ -154,35 +154,53 @@ import '../presentation/transactions/e_receipt/bloc/e_receipt_bloc.dart'
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-_i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+_i1.GetIt $initGetIt(
+  _i1.GetIt get, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) {
+  final gh = _i2.GetItHelper(
+    get,
+    environment,
+    environmentFilter,
+  );
   final registerModule = _$RegisterModule();
   gh.lazySingleton<_i3.AppCache>(() => registerModule.cache);
-  gh.factory<_i4.Dio>(() => registerModule.apiDio, instanceName: 'ApiDio');
-  gh.factory<String>(() => registerModule.apiBaseUrl,
-      instanceName: 'ApiBaseUrl');
+  gh.factory<_i4.Dio>(
+    () => registerModule.apiDio,
+    instanceName: 'ApiDio',
+  );
+  gh.factory<String>(
+    () => registerModule.apiBaseUrl,
+    instanceName: 'ApiBaseUrl',
+  );
   gh.factory<_i5.ThemeBloc>(() => _i5.ThemeBloc());
-  gh.lazySingleton<_i6.TransactionsApiService>(() =>
-      registerModule.transactionsApiService(
-          get<_i4.Dio>(instanceName: 'ApiDio'),
-          get<String>(instanceName: 'ApiBaseUrl')));
+  gh.lazySingleton<_i6.TransactionsApiService>(
+      () => registerModule.transactionsApiService(
+            get<_i4.Dio>(instanceName: 'ApiDio'),
+            get<String>(instanceName: 'ApiBaseUrl'),
+          ));
   gh.factory<_i7.TransactionsRepository>(
       () => _i8.TransactionsRepositoryImpl(get<_i6.TransactionsApiService>()));
   gh.lazySingleton<_i9.UserApiService>(() => registerModule.userApiService(
-      get<_i4.Dio>(instanceName: 'ApiDio'),
-      get<String>(instanceName: 'ApiBaseUrl')));
-  gh.factory<_i10.UserRepository>(() =>
-      _i11.UserRepositoryImpl(get<_i3.AppCache>(), get<_i9.UserApiService>()));
+        get<_i4.Dio>(instanceName: 'ApiDio'),
+        get<String>(instanceName: 'ApiBaseUrl'),
+      ));
+  gh.factory<_i10.UserRepository>(() => _i11.UserRepositoryImpl(
+        get<_i3.AppCache>(),
+        get<_i9.UserApiService>(),
+      ));
   gh.factory<_i12.AccessTokenSaveUseCase>(
       () => _i12.AccessTokenSaveUseCase(get<_i10.UserRepository>()));
   gh.lazySingleton<_i13.AccessTokenUseCase>(
       () => _i13.AccessTokenUseCase(get<_i10.UserRepository>()));
   gh.factory<_i14.AddNewCardUseCase>(
       () => _i14.AddNewCardUseCase(get<_i10.UserRepository>()));
-  gh.lazySingleton<_i15.BookmarkApiService>(() =>
-      registerModule.bookmarkApiService(get<_i4.Dio>(instanceName: 'ApiDio'),
-          get<String>(instanceName: 'ApiBaseUrl')));
+  gh.lazySingleton<_i15.BookmarkApiService>(
+      () => registerModule.bookmarkApiService(
+            get<_i4.Dio>(instanceName: 'ApiDio'),
+            get<String>(instanceName: 'ApiBaseUrl'),
+          ));
   gh.factory<_i16.BookmarkRepository>(
       () => _i17.BookmarkRepositoryImpl(get<_i15.BookmarkApiService>()));
   gh.factory<_i18.ContactFetchUseCase>(
@@ -190,17 +208,20 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i19.ContactSelectionUseCase>(
       () => _i19.ContactSelectionUseCase(get<_i10.UserRepository>()));
   gh.lazySingleton<_i20.CourseApiService>(() => registerModule.courseApiService(
-      get<_i4.Dio>(instanceName: 'ApiDio'),
-      get<String>(instanceName: 'ApiBaseUrl')));
+        get<_i4.Dio>(instanceName: 'ApiDio'),
+        get<String>(instanceName: 'ApiBaseUrl'),
+      ));
   gh.factory<_i21.CourseRepository>(
       () => _i22.CourseRepositoryImpl(get<_i20.CourseApiService>()));
   gh.factory<_i23.CourseReviewsFetchUseCase>(
       () => _i23.CourseReviewsFetchUseCase(get<_i21.CourseRepository>()));
   gh.factory<_i24.CreateNewPinUseCase>(
       () => _i24.CreateNewPinUseCase(get<_i10.UserRepository>()));
-  gh.lazySingleton<_i25.EReceiptApiService>(() =>
-      registerModule.eReceiptApiService(get<_i4.Dio>(instanceName: 'ApiDio'),
-          get<String>(instanceName: 'ApiBaseUrl')));
+  gh.lazySingleton<_i25.EReceiptApiService>(
+      () => registerModule.eReceiptApiService(
+            get<_i4.Dio>(instanceName: 'ApiDio'),
+            get<String>(instanceName: 'ApiBaseUrl'),
+          ));
   gh.factory<_i26.EReceiptRepository>(
       () => _i27.EReceiptRepositoryImpl(get<_i25.EReceiptApiService>()));
   gh.factory<_i28.FillYourProfileUseCase>(
@@ -216,18 +237,23 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i33.GetTransactionsUseCase>(
       () => _i33.GetTransactionsUseCase(get<_i7.TransactionsRepository>()));
   gh.lazySingleton<_i34.HelperApiService>(() => registerModule.helperApiService(
-      get<_i4.Dio>(instanceName: 'ApiDio'),
-      get<String>(instanceName: 'ApiBaseUrl')));
+        get<_i4.Dio>(instanceName: 'ApiDio'),
+        get<String>(instanceName: 'ApiBaseUrl'),
+      ));
   gh.lazySingleton<_i35.HelperRepository>(() => _i36.HelperRepositoryImpl(
-      get<_i3.AppCache>(), get<_i34.HelperApiService>()));
+        get<_i3.AppCache>(),
+        get<_i34.HelperApiService>(),
+      ));
   gh.lazySingleton<_i37.HomeApiService>(() => registerModule.homeApiService(
-      get<_i4.Dio>(instanceName: 'ApiDio'),
-      get<String>(instanceName: 'ApiBaseUrl')));
+        get<_i4.Dio>(instanceName: 'ApiDio'),
+        get<String>(instanceName: 'ApiBaseUrl'),
+      ));
   gh.factory<_i38.HomeRepository>(
       () => _i39.HomeRepositoryImpl(get<_i37.HomeApiService>()));
   gh.lazySingleton<_i40.InboxApiService>(() => registerModule.inboxApiService(
-      get<_i4.Dio>(instanceName: 'ApiDio'),
-      get<String>(instanceName: 'ApiBaseUrl')));
+        get<_i4.Dio>(instanceName: 'ApiDio'),
+        get<String>(instanceName: 'ApiBaseUrl'),
+      ));
   gh.factory<_i41.InboxRepository>(
       () => _i42.InboxRepositoryImpl(get<_i40.InboxApiService>()));
   gh.factory<_i43.InviteFriendUseCase>(
@@ -239,8 +265,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i46.LocaleBloc>(
       () => _i46.LocaleBloc(get<_i45.LanguageUseCase>()));
   gh.lazySingleton<_i47.MentorApiService>(() => registerModule.mentorApiService(
-      get<_i4.Dio>(instanceName: 'ApiDio'),
-      get<String>(instanceName: 'ApiBaseUrl')));
+        get<_i4.Dio>(instanceName: 'ApiDio'),
+        get<String>(instanceName: 'ApiBaseUrl'),
+      ));
   gh.factory<_i48.MentorRepository>(
       () => _i49.MentorRepositoryImpl(get<_i47.MentorApiService>()));
   gh.factory<_i50.MentorReviewsFetchUseCase>(
@@ -255,10 +282,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i54.MyOngoingCourseBloc(get<_i52.MyCourseDetailFetchUseCase>()));
   gh.factory<_i55.NewCardBloc>(
       () => _i55.NewCardBloc(get<_i14.AddNewCardUseCase>()));
-  gh.lazySingleton<_i56.NotificationApiService>(() =>
-      registerModule.notificationApiService(
-          get<_i4.Dio>(instanceName: 'ApiDio'),
-          get<String>(instanceName: 'ApiBaseUrl')));
+  gh.lazySingleton<_i56.NotificationApiService>(
+      () => registerModule.notificationApiService(
+            get<_i4.Dio>(instanceName: 'ApiDio'),
+            get<String>(instanceName: 'ApiBaseUrl'),
+          ));
   gh.factory<_i57.NotificationRepository>(() =>
       _i58.NotificationRepositoryImpl(get<_i56.NotificationApiService>()));
   gh.factory<_i59.PasswordCreationUseCase>(
@@ -274,12 +302,15 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i64.PostUpdateLessonTimeUseCase>(
       () => _i64.PostUpdateLessonTimeUseCase(get<_i21.CourseRepository>()));
   gh.factory<_i65.ProfileBloc>(() => _i65.ProfileBloc(
-      get<_i32.GetProfileUseCase>(), get<_i45.LanguageUseCase>()));
+        get<_i32.GetProfileUseCase>(),
+        get<_i45.LanguageUseCase>(),
+      ));
   gh.factory<_i66.ReviewBloc>(
       () => _i66.ReviewBloc(get<_i23.CourseReviewsFetchUseCase>()));
   gh.lazySingleton<_i67.SearchApiService>(() => registerModule.searchApiService(
-      get<_i4.Dio>(instanceName: 'ApiDio'),
-      get<String>(instanceName: 'ApiBaseUrl')));
+        get<_i4.Dio>(instanceName: 'ApiDio'),
+        get<String>(instanceName: 'ApiBaseUrl'),
+      ));
   gh.factory<_i68.SearchRepository>(
       () => _i69.SearchRepositoryImpl(get<_i67.SearchApiService>()));
   gh.factory<_i70.SignInUseCase>(
@@ -303,7 +334,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i79.ConfirmPaymentBloc>(
       () => _i79.ConfirmPaymentBloc(get<_i62.PinValidationUseCase>()));
   gh.factory<_i80.ContactSelectionBloc>(() => _i80.ContactSelectionBloc(
-      get<_i19.ContactSelectionUseCase>(), get<_i18.ContactFetchUseCase>()));
+        get<_i19.ContactSelectionUseCase>(),
+        get<_i18.ContactFetchUseCase>(),
+      ));
   gh.factory<_i81.CourseDetailsFetchUseCase>(
       () => _i81.CourseDetailsFetchUseCase(get<_i21.CourseRepository>()));
   gh.factory<_i82.CourseFetchUseCase>(
@@ -317,11 +350,15 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i86.EReceiptBloc>(
       () => _i86.EReceiptBloc(get<_i29.GetEReceiptUseCase>()));
   gh.factory<_i87.EnrollCourseBloc>(() => _i87.EnrollCourseBloc(
-      get<_i31.GetPaymentsUseCase>(), get<_i63.PostEnrollCourseUseCase>()));
+        get<_i31.GetPaymentsUseCase>(),
+        get<_i63.PostEnrollCourseUseCase>(),
+      ));
   gh.factory<_i88.FillYourProfileBloc>(
       () => _i88.FillYourProfileBloc(get<_i28.FillYourProfileUseCase>()));
   gh.factory<_i89.FriendsInvitationBloc>(() => _i89.FriendsInvitationBloc(
-      get<_i30.GetInviteFriendsUseCase>(), get<_i43.InviteFriendUseCase>()));
+        get<_i30.GetInviteFriendsUseCase>(),
+        get<_i43.InviteFriendUseCase>(),
+      ));
   gh.factory<_i90.GetCountriesUseCase>(
       () => _i90.GetCountriesUseCase(get<_i35.HelperRepository>()));
   gh.factory<_i91.GetHelperCenterUseCase>(
@@ -335,15 +372,18 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i95.InboxFetchUseCase>(
       () => _i95.InboxFetchUseCase(get<_i41.InboxRepository>()));
   gh.factory<_i96.LanguageBloc>(() => _i96.LanguageBloc(
-      get<_i92.GetLanguagesUseCase>(), get<_i44.LanguageSaveUseCase>()));
+        get<_i92.GetLanguagesUseCase>(),
+        get<_i44.LanguageSaveUseCase>(),
+      ));
   gh.factory<_i97.LessonBloc>(
       () => _i97.LessonBloc(get<_i83.CourseLessonsFetchUseCase>()));
   gh.factory<_i98.MentorCoursesFetchUseCase>(
       () => _i98.MentorCoursesFetchUseCase(get<_i48.MentorRepository>()));
   gh.factory<_i99.MentorDetailsBloc>(() => _i99.MentorDetailsBloc(
-      get<_i98.MentorCoursesFetchUseCase>(),
-      get<_i51.MentorStudentsFetchUseCase>(),
-      get<_i50.MentorReviewsFetchUseCase>()));
+        get<_i98.MentorCoursesFetchUseCase>(),
+        get<_i51.MentorStudentsFetchUseCase>(),
+        get<_i50.MentorReviewsFetchUseCase>(),
+      ));
   gh.factory<_i100.MentorFetchUseCase>(
       () => _i100.MentorFetchUseCase(get<_i48.MentorRepository>()));
   gh.factory<_i101.MyCompleteCourseBloc>(
@@ -355,7 +395,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i104.PasswordCreationBloc>(
       () => _i104.PasswordCreationBloc(get<_i59.PasswordCreationUseCase>()));
   gh.factory<_i105.PinEntryBloc>(() => _i105.PinEntryBloc(
-      get<_i61.PinSendingUseCase>(), get<_i62.PinValidationUseCase>()));
+        get<_i61.PinSendingUseCase>(),
+        get<_i62.PinValidationUseCase>(),
+      ));
   gh.factory<_i106.RecentSearchAdditionUseCase>(
       () => _i106.RecentSearchAdditionUseCase(get<_i68.SearchRepository>()));
   gh.factory<_i107.RecentSearchFetchUseCase>(
@@ -365,38 +407,50 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i109.SearchFetchUseCase>(
       () => _i109.SearchFetchUseCase(get<_i68.SearchRepository>()));
   gh.factory<_i110.SignInBloc>(() => _i110.SignInBloc(
-      get<_i70.SignInUseCase>(), get<_i12.AccessTokenSaveUseCase>()));
+        get<_i70.SignInUseCase>(),
+        get<_i12.AccessTokenSaveUseCase>(),
+      ));
   gh.factory<_i111.SignUpBloc>(
       () => _i111.SignUpBloc(get<_i71.SignUpUseCase>()));
   gh.factory<_i112.TopMentorsBloc>(
       () => _i112.TopMentorsBloc(get<_i100.MentorFetchUseCase>()));
   gh.factory<_i113.BookmarkBloc>(() => _i113.BookmarkBloc(
-      get<_i75.BookmarkFetchUseCase>(), get<_i76.BookmarkRemovalUseCase>()));
+        get<_i75.BookmarkFetchUseCase>(),
+        get<_i76.BookmarkRemovalUseCase>(),
+      ));
   gh.factory<_i114.ChatBloc>(
       () => _i114.ChatBloc(get<_i77.ChatFetchUseCase>()));
   gh.factory<_i115.CourseBloc>(() => _i115.CourseBloc(
-      get<_i82.CourseFetchUseCase>(),
-      get<_i74.BookmarkAdditionUseCase>(),
-      get<_i76.BookmarkRemovalUseCase>()));
+        get<_i82.CourseFetchUseCase>(),
+        get<_i74.BookmarkAdditionUseCase>(),
+        get<_i76.BookmarkRemovalUseCase>(),
+      ));
   gh.factory<_i116.CourseDetailsBloc>(() => _i116.CourseDetailsBloc(
-      get<_i81.CourseDetailsFetchUseCase>(),
-      get<_i83.CourseLessonsFetchUseCase>(),
-      get<_i23.CourseReviewsFetchUseCase>()));
+        get<_i81.CourseDetailsFetchUseCase>(),
+        get<_i83.CourseLessonsFetchUseCase>(),
+        get<_i23.CourseReviewsFetchUseCase>(),
+      ));
   gh.factory<_i117.EditProfileBloc>(() => _i117.EditProfileBloc(
-      get<_i90.GetCountriesUseCase>(), get<_i73.UpdateProfileUseCase>()));
-  gh.factory<_i118.HomeBloc>(() => _i118.HomeBloc(get<_i94.HomeFetchUseCase>(),
-      get<_i74.BookmarkAdditionUseCase>(), get<_i76.BookmarkRemovalUseCase>()));
+        get<_i90.GetCountriesUseCase>(),
+        get<_i73.UpdateProfileUseCase>(),
+      ));
+  gh.factory<_i118.HomeBloc>(() => _i118.HomeBloc(
+        get<_i94.HomeFetchUseCase>(),
+        get<_i74.BookmarkAdditionUseCase>(),
+        get<_i76.BookmarkRemovalUseCase>(),
+      ));
   gh.factory<_i119.InboxBloc>(
       () => _i119.InboxBloc(get<_i95.InboxFetchUseCase>()));
   gh.factory<_i120.NotificationBloc>(
       () => _i120.NotificationBloc(get<_i103.NotificationFetchUseCase>()));
   gh.factory<_i121.SearchBloc>(() => _i121.SearchBloc(
-      get<_i109.SearchFetchUseCase>(),
-      get<_i107.RecentSearchFetchUseCase>(),
-      get<_i106.RecentSearchAdditionUseCase>(),
-      get<_i108.RecentSearchRemovalUseCase>(),
-      get<_i74.BookmarkAdditionUseCase>(),
-      get<_i76.BookmarkRemovalUseCase>()));
+        get<_i109.SearchFetchUseCase>(),
+        get<_i107.RecentSearchFetchUseCase>(),
+        get<_i106.RecentSearchAdditionUseCase>(),
+        get<_i108.RecentSearchRemovalUseCase>(),
+        get<_i74.BookmarkAdditionUseCase>(),
+        get<_i76.BookmarkRemovalUseCase>(),
+      ));
   return get;
 }
 

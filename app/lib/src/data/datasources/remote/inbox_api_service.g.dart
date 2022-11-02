@@ -9,7 +9,10 @@ part of 'inbox_api_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _InboxApiService implements InboxApiService {
-  _InboxApiService(this._dio, {this.baseUrl}) {
+  _InboxApiService(
+    this._dio, {
+    this.baseUrl,
+  }) {
     baseUrl ??= 'http://103.63.215.141:7414/api';
   }
 
@@ -18,8 +21,10 @@ class _InboxApiService implements InboxApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<InboxFetchResponseModel>> getInboxFetchRequest(
-      {isMockup, query}) async {
+  Future<HttpResponse<InboxFetchResponseModel>> getInboxFetchRequest({
+    isMockup,
+    query,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
@@ -28,19 +33,28 @@ class _InboxApiService implements InboxApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<InboxFetchResponseModel>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/inbox',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<HttpResponse<InboxFetchResponseModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/inbox',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = InboxFetchResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
 
   @override
-  Future<HttpResponse<ChatFetchResponseModel>> getChatFetchRequest(
-      {isMockup, query}) async {
+  Future<HttpResponse<ChatFetchResponseModel>> getChatFetchRequest({
+    isMockup,
+    query,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
@@ -49,11 +63,18 @@ class _InboxApiService implements InboxApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<ChatFetchResponseModel>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/chat',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<HttpResponse<ChatFetchResponseModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/chat',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ChatFetchResponseModel.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
