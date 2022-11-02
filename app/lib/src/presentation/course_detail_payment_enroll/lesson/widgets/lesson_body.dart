@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/router/routes.dart';
@@ -15,7 +16,7 @@ class LessonBody extends StatelessWidget {
       children: [
         const LessonsTabView(),
         BottomActionInk(
-          buttonString: r'Enroll Course - $40',
+          buttonString: '${AppLocalizations.of(context).enrollCourse} - \$40',
           action: () => context.router.pushNamed(Routes.enrollCourse),
         ),
       ],

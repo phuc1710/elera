@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
@@ -17,7 +18,7 @@ class LessonView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         titleTextStyle: textTheme.headline6,
-        title: const Text('Lesson'),
+        title: Text(AppLocalizations.of(context).lessonsCap),
         actions: [
           IconButton(
             onPressed: () {},
