@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import 'course_tag.dart';
@@ -41,7 +42,7 @@ class CourseContentColumn extends StatelessWidget {
             ),
             PriceRow(price: price, originalPrice: originalPrice),
             Text(
-              '⭐  $rating  |  $studentCount students',
+              '⭐  $rating  |  $studentCount ${AppLocalizations.of(context).students}',
               style:
                   textTheme.overline?.copyWith(color: const Color(0xff616161)),
             ),
