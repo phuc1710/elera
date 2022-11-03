@@ -141,6 +141,12 @@ abstract class AppLocalizations {
   /// **'Chats'**
   String get chats;
 
+  /// No description provided for @clearAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear All'**
+  String get clearAll;
+
   /// No description provided for @completed.
   ///
   /// In en, this message translates to:
@@ -518,6 +524,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Read more ...'**
   String get readMore;
+
+  /// No description provided for @recent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent'**
+  String get recent;
 
   /// No description provided for @rememberMe.
   ///

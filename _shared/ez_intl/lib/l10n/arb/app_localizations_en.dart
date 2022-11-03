@@ -29,6 +29,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chats => 'Chats';
 
   @override
+  String get clearAll => 'Clear All';
+
+  @override
   String get completed => 'Completed';
 
   @override
@@ -216,6 +219,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get readMore => 'Read more ...';
+
+  @override
+  String get recent => 'Recent';
 
   @override
   String get rememberMe => 'Remember Me';

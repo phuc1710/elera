@@ -29,6 +29,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get chats => 'Tin nhắn';
 
   @override
+  String get clearAll => 'Xóa tất cả';
+
+  @override
   String get completed => 'Đã hoàn thành';
 
   @override
@@ -216,6 +219,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get readMore => 'Đọc thêm ...';
+
+  @override
+  String get recent => 'Gần đây';
 
   @override
   String get rememberMe => 'Ghi nhớ tôi';
