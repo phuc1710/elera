@@ -177,6 +177,12 @@ abstract class AppLocalizations {
   /// **'Continue'**
   String get cont;
 
+  /// No description provided for @contactUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get contactUs;
+
   /// No description provided for @continueWithApple.
   ///
   /// In en, this message translates to:
@@ -284,6 +290,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You have successfully made payment and enrolled the course.'**
   String get enrollSuccessDialogContent;
+
+  /// No description provided for @faq.
+  ///
+  /// In en, this message translates to:
+  /// **'FAQ'**
+  String get faq;
 
   /// No description provided for @female.
   ///

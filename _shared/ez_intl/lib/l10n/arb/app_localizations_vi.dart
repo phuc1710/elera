@@ -47,6 +47,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get cont => 'Tiếp tục';
 
   @override
+  String get contactUs => 'Liên hệ chúng tôi';
+
+  @override
   String get continueWithApple => 'Tiếp tục với Apple';
 
   @override
@@ -99,6 +102,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get enrollSuccessDialogContent => 'Bạn đã thanh toán thành công và tham gia vào khóa học.';
+
+  @override
+  String get faq => 'Câu hỏi thường gặp';
 
   @override
   String get female => 'f,Nữ';

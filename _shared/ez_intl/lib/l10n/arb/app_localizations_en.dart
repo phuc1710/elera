@@ -47,6 +47,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cont => 'Continue';
 
   @override
+  String get contactUs => 'Contact Us';
+
+  @override
   String get continueWithApple => 'Continue with Apple';
 
   @override
@@ -99,6 +102,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enrollSuccessDialogContent => 'You have successfully made payment and enrolled the course.';
+
+  @override
+  String get faq => 'FAQ';
 
   @override
   String get female => 'f,Female';
