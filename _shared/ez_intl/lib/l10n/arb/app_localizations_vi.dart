@@ -11,6 +11,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get aboutCourse => 'Về khóa học';
 
   @override
+  String get addNewCard => 'Thêm thẻ mới';
+
+  @override
   String get all => 'Tất cả';
 
   @override
@@ -87,6 +90,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get enrollCourse => 'Tham gia khóa học';
+
+  @override
+  String get enrollCoursePrompt => 'Chọn phương thức thanh toán bạn muốn sử dụng';
 
   @override
   String get enrollCourseSuccessful => 'Tham gia khóa học thành công!';

@@ -11,6 +11,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutCourse => 'About Course';
 
   @override
+  String get addNewCard => 'Add New Card';
+
+  @override
   String get all => 'All';
 
   @override
@@ -87,6 +90,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enrollCourse => 'Enroll Course';
+
+  @override
+  String get enrollCoursePrompt => 'Select the payment method you want to use';
 
   @override
   String get enrollCourseSuccessful => 'Enroll Course Successful!';

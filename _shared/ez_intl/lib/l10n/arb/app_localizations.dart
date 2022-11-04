@@ -105,6 +105,12 @@ abstract class AppLocalizations {
   /// **'About Course'**
   String get aboutCourse;
 
+  /// No description provided for @addNewCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Card'**
+  String get addNewCard;
+
   /// No description provided for @all.
   ///
   /// In en, this message translates to:
@@ -260,6 +266,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enroll Course'**
   String get enrollCourse;
+
+  /// No description provided for @enrollCoursePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Select the payment method you want to use'**
+  String get enrollCoursePrompt;
 
   /// No description provided for @enrollCourseSuccessful.
   ///

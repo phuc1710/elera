@@ -1,6 +1,7 @@
 {
   "about": "About",
   "aboutCourse": "About Course",
+  "addNewCard": "Add New Card",
   "all": "All",
   "alreadyHaveAnAccount": "Already have an account?",
   "calls": "Calls",
@@ -27,6 +28,7 @@
   "editProfile": "Edit Profile",
   "email": "Email",
   "enrollCourse": "Enroll Course",
+  "enrollCoursePrompt": "Select the payment method you want to use",
   "enrollCourseSuccessful": "Enroll Course Successful!",
   "enrollSuccessDialogContent": "You have successfully made payment and enrolled the course.",
   "female": "f,Female",

@@ -1,6 +1,7 @@
 {
   "about": "Thông tin",
   "aboutCourse": "Về khóa học",
+  "addNewCard": "Thêm thẻ mới",
   "all": "Tất cả",
   "alreadyHaveAnAccount": "Đã có tài khoản?",
   "calls": "Cuộc gọi",
@@ -27,6 +28,7 @@
   "editProfile": "Chỉnh sửa hồ sơ",
   "email": "Email",
   "enrollCourse": "Tham gia khóa học",
+  "enrollCoursePrompt": "Chọn phương thức thanh toán bạn muốn sử dụng",
   "enrollCourseSuccessful": "Tham gia khóa học thành công!",
   "enrollSuccessDialogContent": "Bạn đã thanh toán thành công và tham gia vào khóa học.",
   "female": "f,Nữ",
