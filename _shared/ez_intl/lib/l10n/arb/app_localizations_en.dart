@@ -35,6 +35,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get completed => 'Completed';
 
   @override
+  String get confirmPaymentPrompt => 'Enter your PIN to confirm payment';
+
+  @override
   String get congratulations => 'Congratulations!';
 
   @override
@@ -84,6 +87,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enrollCourse => 'Enroll Course';
+
+  @override
+  String get enrollCourseSuccessful => 'Enroll Course Successful!';
+
+  @override
+  String get enrollSuccessDialogContent => 'You have successfully made payment and enrolled the course.';
 
   @override
   String get female => 'f,Female';
@@ -297,6 +306,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get via => 'via';
+
+  @override
+  String get viewCourse => 'View Course';
+
+  @override
+  String get viewEReceipt => 'View E-Receipt';
 
   @override
   String get website => 'Website';

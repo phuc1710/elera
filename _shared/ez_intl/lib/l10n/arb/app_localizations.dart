@@ -153,6 +153,12 @@ abstract class AppLocalizations {
   /// **'Completed'**
   String get completed;
 
+  /// No description provided for @confirmPaymentPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your PIN to confirm payment'**
+  String get confirmPaymentPrompt;
+
   /// No description provided for @congratulations.
   ///
   /// In en, this message translates to:
@@ -254,6 +260,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enroll Course'**
   String get enrollCourse;
+
+  /// No description provided for @enrollCourseSuccessful.
+  ///
+  /// In en, this message translates to:
+  /// **'Enroll Course Successful!'**
+  String get enrollCourseSuccessful;
+
+  /// No description provided for @enrollSuccessDialogContent.
+  ///
+  /// In en, this message translates to:
+  /// **'You have successfully made payment and enrolled the course.'**
+  String get enrollSuccessDialogContent;
 
   /// No description provided for @female.
   ///
@@ -680,6 +698,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'via'**
   String get via;
+
+  /// No description provided for @viewCourse.
+  ///
+  /// In en, this message translates to:
+  /// **'View Course'**
+  String get viewCourse;
+
+  /// No description provided for @viewEReceipt.
+  ///
+  /// In en, this message translates to:
+  /// **'View E-Receipt'**
+  String get viewEReceipt;
 
   /// No description provided for @website.
   ///

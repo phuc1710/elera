@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class DialogTitle extends StatelessWidget {
@@ -15,11 +16,10 @@ class DialogTitle extends StatelessWidget {
           child: Image.asset('assets/images/welcome_dialog.png'),
         ),
         Text(
-          'Enroll Course Successful!',
-          style: Theme.of(context)
-              .textTheme
-              .headline6
-              ?.copyWith(color: Theme.of(context).colorScheme.primary),
+          AppLocalizations.of(context).enrollCourseSuccessful,
+          style: Theme.of(context).textTheme.headline6?.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+              ),
           textAlign: TextAlign.center,
         ),
       ],

@@ -35,6 +35,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get completed => 'Đã hoàn thành';
 
   @override
+  String get confirmPaymentPrompt => 'Nhập mã PIN để xác nhận thanh toán';
+
+  @override
   String get congratulations => 'Xin chúc mừng!';
 
   @override
@@ -84,6 +87,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get enrollCourse => 'Tham gia khóa học';
+
+  @override
+  String get enrollCourseSuccessful => 'Tham gia khóa học thành công!';
+
+  @override
+  String get enrollSuccessDialogContent => 'Bạn đã thanh toán thành công và tham gia vào khóa học.';
 
   @override
   String get female => 'f,Nữ';
@@ -297,6 +306,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get via => 'thông qua';
+
+  @override
+  String get viewCourse => 'Xem khóa học';
+
+  @override
+  String get viewEReceipt => 'Xem hóa đơn';
 
   @override
   String get website => 'Trang web';

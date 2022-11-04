@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/main_action_ink.dart';
@@ -10,14 +11,13 @@ class DialogContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
-          'You have successfully made payment and enrolled the course.',
-          textAlign: TextAlign.center,
-        ),
+        Text(l10n.enrollSuccessDialogContent, textAlign: TextAlign.center),
         Padding(
           padding: const EdgeInsets.only(top: 20),
           child: Column(
@@ -28,8 +28,8 @@ class DialogContent extends StatelessWidget {
                   int count = 0;
                   context.router.popUntil((route) => count++ == 3);
                 },
-                child: const MainActionInk(
-                  buttonString: 'View Course',
+                child: MainActionInk(
+                  buttonString: l10n.viewCourse,
                   disableShadow: true,
                 ),
               ),
@@ -37,8 +37,8 @@ class DialogContent extends StatelessWidget {
               InkWell(
                 borderRadius: BorderRadius.circular(25),
                 onTap: () {},
-                child: const MainActionInk(
-                  buttonString: 'View E-Receipt',
+                child: MainActionInk(
+                  buttonString: l10n.viewEReceipt,
                   isNotMainAction: true,
                 ),
               )
