@@ -21,27 +21,21 @@ class _FriendTileState extends State<FriendTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.network(
-        widget.friend?.img ?? '',
-        width: 50,
-        height: 50,
-      ),
+      leading: Image.network(widget.friend?.img ?? '', width: 50, height: 50),
       title: Padding(
         padding: const EdgeInsets.only(bottom: 6),
         child: Text(
           widget.friend?.name ?? '',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText2
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
         ),
       ),
       subtitle: Text(
         widget.friend?.phone ?? '',
-        style: Theme.of(context)
-            .textTheme
-            .overline
-            ?.copyWith(color: const Color(0xff616161)),
+        style: Theme.of(context).textTheme.overline?.copyWith(
+              color: const Color(0xff616161),
+            ),
       ),
       trailing: SizedBox(
         width: 80,
