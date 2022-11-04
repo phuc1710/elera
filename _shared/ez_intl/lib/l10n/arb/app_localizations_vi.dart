@@ -191,6 +191,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get nickname => 'Biệt danh';
 
   @override
+  String get noContent => 'Chưa có nội dung';
+
+  @override
   String get notification => 'Thông báo';
 
   @override
@@ -275,6 +278,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get selectContactDescription => 'Chọn thông tin liên lạc chúng tôi nên sử dụng để thiết lập lại mật khẩu của bạn';
 
   @override
+  String get selectCountry => 'Chọn quốc gia';
+
+  @override
+  String get selectGender => 'Chọn giới tính';
+
+  @override
   String get setYourFingerprint => 'Đặt dấu vân tay của bạn';
 
   @override
@@ -306,6 +315,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get transactions => 'Giao dịch';
+
+  @override
+  String get update => 'Cập nhật';
 
   @override
   String get verify => 'Xác minh';

@@ -63,9 +63,8 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
   }
 
   TextStyle? inputStyle(BuildContext context) {
-    return Theme.of(context)
-        .textTheme
-        .caption
-        ?.copyWith(fontWeight: FontWeight.bold);
+    return Theme.of(context).textTheme.caption?.copyWith(
+          fontWeight: FontWeight.bold,
+        );
   }
 }

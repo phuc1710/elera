@@ -191,6 +191,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nickname => 'Nickname';
 
   @override
+  String get noContent => 'No content';
+
+  @override
   String get notification => 'Notification';
 
   @override
@@ -275,6 +278,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectContactDescription => 'Select which contact detail should we use to reset your password';
 
   @override
+  String get selectCountry => 'Select country';
+
+  @override
+  String get selectGender => 'Select gender';
+
+  @override
   String get setYourFingerprint => 'Set Your Fingerprint';
 
   @override
@@ -306,6 +315,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get transactions => 'Transactions';
+
+  @override
+  String get update => 'Update';
 
   @override
   String get verify => 'Verify';

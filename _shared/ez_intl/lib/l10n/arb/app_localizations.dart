@@ -465,6 +465,12 @@ abstract class AppLocalizations {
   /// **'Nickname'**
   String get nickname;
 
+  /// No description provided for @noContent.
+  ///
+  /// In en, this message translates to:
+  /// **'No content'**
+  String get noContent;
+
   /// No description provided for @notification.
   ///
   /// In en, this message translates to:
@@ -633,6 +639,18 @@ abstract class AppLocalizations {
   /// **'Select which contact detail should we use to reset your password'**
   String get selectContactDescription;
 
+  /// No description provided for @selectCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Select country'**
+  String get selectCountry;
+
+  /// No description provided for @selectGender.
+  ///
+  /// In en, this message translates to:
+  /// **'Select gender'**
+  String get selectGender;
+
   /// No description provided for @setYourFingerprint.
   ///
   /// In en, this message translates to:
@@ -698,6 +716,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Transactions'**
   String get transactions;
+
+  /// No description provided for @update.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get update;
 
   /// No description provided for @verify.
   ///
