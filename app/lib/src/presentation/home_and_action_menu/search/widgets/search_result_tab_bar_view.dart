@@ -1,4 +1,5 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/course/course_fetch_response_model.dart';
@@ -24,9 +25,11 @@ class SearchResultTabView extends StatefulWidget {
 }
 
 class _SearchResultTabViewState extends State<SearchResultTabView> {
-  final _tabList = ['Courses', 'Mentors'];
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final _tabList = [l10n.courses, l10n.mentors];
+
     return SingleChildScrollView(
       child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.85,

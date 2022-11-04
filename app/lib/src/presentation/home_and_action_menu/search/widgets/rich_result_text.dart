@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,7 +16,7 @@ class RichResultText extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       maxLines: 1,
       text: TextSpan(
-        text: 'Result for "',
+        text: '${AppLocalizations.of(context).resultFor} "',
         style: GoogleFonts.urbanist(
           fontSize: 16,
           fontWeight: FontWeight.w700,

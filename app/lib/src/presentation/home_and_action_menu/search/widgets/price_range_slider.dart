@@ -20,10 +20,10 @@ class _PriceRangeSliderState extends State<PriceRangeSlider> {
       ),
       child: SliderTheme(
         data: SliderTheme.of(context).copyWith(
-          valueIndicatorTextStyle: Theme.of(context)
-              .textTheme
-              .caption
-              ?.copyWith(color: Colors.white),
+          valueIndicatorTextStyle:
+              Theme.of(context).textTheme.caption?.copyWith(
+                    color: Colors.white,
+                  ),
           valueIndicatorColor: Theme.of(context).primaryColor,
           thumbColor: Colors.white,
           overlayColor: Theme.of(context).primaryColor,

@@ -30,10 +30,9 @@ class _SearchResultTitleRowState extends State<SearchResultTitleRow> {
           Expanded(child: RichResultText(text: widget.phrase)),
           Text(
             widget.leadingText,
-            style: Theme.of(context)
-                .textTheme
-                .labelMedium
-                ?.copyWith(fontWeight: FontWeight.w700),
+            style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
           ),
         ],
       ),

@@ -26,6 +26,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancel => 'Cancel';
 
   @override
+  String get category => 'Category';
+
+  @override
   String get certificate => 'Certificate';
 
   @override
@@ -113,6 +116,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fillYourProfile => 'Fill Your Profile';
 
   @override
+  String get filter => 'FIlter';
+
+  @override
   String get fingerprintCreationDescription1 => 'Add a fingerprint to make your account more secure';
 
   @override
@@ -176,6 +182,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mentor => 'Mentor';
 
   @override
+  String get mentors => 'Mentors';
+
+  @override
   String get message => 'Message';
 
   @override
@@ -198,6 +207,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noContent => 'No content';
+
+  @override
+  String get notFound => 'Not Found';
+
+  @override
+  String get notFoundPrompt => 'Sorry, the keyword you entered cannot be found, please check again or search with another keyword';
 
   @override
   String get notification => 'Notification';
@@ -236,10 +251,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pinEntryPrompt => 'Code has been sent to';
 
   @override
+  String get price => 'Price';
+
+  @override
   String get privacyPolicy => 'Privacy Policy';
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get rating => 'Rating';
 
   @override
   String get readMore => 'Read more ...';
@@ -261,6 +282,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resendCodeIn => 'Resend code in';
+
+  @override
+  String get reset => 'Reset';
+
+  @override
+  String get resultFor => 'Result for';
 
   @override
   String get reviews => 'reviews';

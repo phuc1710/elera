@@ -135,6 +135,12 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
+  /// No description provided for @category.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get category;
+
   /// No description provided for @certificate.
   ///
   /// In en, this message translates to:
@@ -309,6 +315,12 @@ abstract class AppLocalizations {
   /// **'Fill Your Profile'**
   String get fillYourProfile;
 
+  /// No description provided for @filter.
+  ///
+  /// In en, this message translates to:
+  /// **'FIlter'**
+  String get filter;
+
   /// No description provided for @fingerprintCreationDescription1.
   ///
   /// In en, this message translates to:
@@ -435,6 +447,12 @@ abstract class AppLocalizations {
   /// **'Mentor'**
   String get mentor;
 
+  /// No description provided for @mentors.
+  ///
+  /// In en, this message translates to:
+  /// **'Mentors'**
+  String get mentors;
+
   /// No description provided for @message.
   ///
   /// In en, this message translates to:
@@ -482,6 +500,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No content'**
   String get noContent;
+
+  /// No description provided for @notFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Found'**
+  String get notFound;
+
+  /// No description provided for @notFoundPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry, the keyword you entered cannot be found, please check again or search with another keyword'**
+  String get notFoundPrompt;
 
   /// No description provided for @notification.
   ///
@@ -555,6 +585,12 @@ abstract class AppLocalizations {
   /// **'Code has been sent to'**
   String get pinEntryPrompt;
 
+  /// No description provided for @price.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get price;
+
   /// No description provided for @privacyPolicy.
   ///
   /// In en, this message translates to:
@@ -566,6 +602,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
+
+  /// No description provided for @rating.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get rating;
 
   /// No description provided for @readMore.
   ///
@@ -608,6 +650,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Resend code in'**
   String get resendCodeIn;
+
+  /// No description provided for @reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get reset;
+
+  /// No description provided for @resultFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Result for'**
+  String get resultFor;
 
   /// No description provided for @reviews.
   ///

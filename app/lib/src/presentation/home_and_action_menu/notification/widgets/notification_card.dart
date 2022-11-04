@@ -33,13 +33,8 @@ class NotificationCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            NotificationImage(
-              imagePath: imagePath,
-            ),
-            NotificationContentColumn(
-              title: title,
-              description: description,
-            ),
+            NotificationImage(imagePath: imagePath),
+            NotificationContentColumn(title: title, description: description),
           ],
         ),
       ),

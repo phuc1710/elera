@@ -193,10 +193,9 @@ class _SearchBarState extends State<SearchBar> {
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         alPredictions[index] ?? '',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1
-                            ?.copyWith(color: const Color(0xff212121)),
+                        style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                              color: const Color(0xff212121),
+                            ),
                       ),
                     ),
                   );

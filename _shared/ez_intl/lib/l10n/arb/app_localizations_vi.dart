@@ -26,6 +26,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get cancel => 'Hủy bỏ';
 
   @override
+  String get category => 'Thể loại';
+
+  @override
   String get certificate => 'Chứng chỉ';
 
   @override
@@ -113,6 +116,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get fillYourProfile => 'Hoàn thiện thông tin của bạn';
 
   @override
+  String get filter => 'Bộ lọc';
+
+  @override
   String get fingerprintCreationDescription1 => 'Thêm dấu vân tay giúp tài khoản của bạn an toàn hơn';
 
   @override
@@ -176,6 +182,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get mentor => 'Giảng viên';
 
   @override
+  String get mentors => 'Giảng viên';
+
+  @override
   String get message => 'Tin nhắn';
 
   @override
@@ -198,6 +207,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get noContent => 'Chưa có nội dung';
+
+  @override
+  String get notFound => 'Không tìm thấy';
+
+  @override
+  String get notFoundPrompt => 'Xin lỗi, từ khóa bạn nhập không thể tìm thấy, vui lòng kiểm tra lại hay tìm kiếm với từ khóa khác';
 
   @override
   String get notification => 'Thông báo';
@@ -236,10 +251,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String get pinEntryPrompt => 'Mã đã được gửi đến';
 
   @override
+  String get price => 'Giá';
+
+  @override
   String get privacyPolicy => 'Chính sách riêng tư';
 
   @override
   String get profile => 'Hồ sơ';
+
+  @override
+  String get rating => 'Đánh giá';
 
   @override
   String get readMore => 'Đọc thêm ...';
@@ -261,6 +282,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get resendCodeIn => 'Gửi lại mã trong';
+
+  @override
+  String get reset => 'Đặt lại';
+
+  @override
+  String get resultFor => 'Kết quả cho';
 
   @override
   String get reviews => 'đánh giá';

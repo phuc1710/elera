@@ -28,10 +28,11 @@ class _CourseFilterChipsState extends State<CourseFilterChips> {
           padding: const EdgeInsets.only(right: 8),
           child: ChoiceChip(
             backgroundColor: Colors.white,
-            label: Text(
-              _courseFilterList[index],
+            label: Text(_courseFilterList[index]),
+            side: BorderSide(
+              width: 2,
+              color: Theme.of(context).colorScheme.primary,
             ),
-            side: BorderSide(width: 2, color: Theme.of(context).colorScheme.primary),
             selected: _courseFilterList[index] == selectedCourseTag,
             selectedColor: Theme.of(context).primaryColor,
             labelStyle: Theme.of(context).textTheme.caption?.copyWith(

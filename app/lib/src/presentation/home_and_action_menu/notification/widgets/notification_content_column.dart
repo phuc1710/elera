@@ -23,17 +23,15 @@ class NotificationContentColumn extends StatelessWidget {
               title,
               overflow: TextOverflow.ellipsis,
               softWrap: false,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText2
-                  ?.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             Text(
               description,
-              style: Theme.of(context)
-                  .textTheme
-                  .caption
-                  ?.copyWith(color: Colors.grey),
+              style: Theme.of(context).textTheme.caption?.copyWith(
+                    color: Colors.grey,
+                  ),
             ),
           ],
         ),

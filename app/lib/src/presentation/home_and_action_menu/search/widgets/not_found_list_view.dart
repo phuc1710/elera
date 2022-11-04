@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class NotFoundListView extends StatelessWidget {
@@ -5,6 +6,8 @@ class NotFoundListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -18,15 +21,14 @@ class NotFoundListView extends StatelessWidget {
               vertical: MediaQuery.of(context).size.height * 0.02,
             ),
             child: Text(
-              'Not Found',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall
-                  ?.copyWith(fontWeight: FontWeight.w700),
+              l10n.notFound,
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
             ),
           ),
           Text(
-            'Sorry, the keyword you entered cannot be found, please check again or search with another keyword',
+            l10n.notFoundPrompt,
             style: Theme.of(context).textTheme.displayLarge,
             textAlign: TextAlign.center,
           )

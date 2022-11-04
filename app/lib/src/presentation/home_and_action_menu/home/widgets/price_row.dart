@@ -20,10 +20,9 @@ class PriceRow extends StatelessWidget {
           ),
           child: Text(
             price,
-            style: Theme.of(context)
-                .textTheme
-                .button
-                ?.copyWith(color: Theme.of(context).colorScheme.primary),
+            style: Theme.of(context).textTheme.button?.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
           ),
         ),
         Text(

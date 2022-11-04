@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../home/widgets/bottom_sheet_action_button.dart';
@@ -14,6 +15,8 @@ class FilterBottomSheetContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.7,
       child: Padding(
@@ -24,19 +27,19 @@ class FilterBottomSheetContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const BottomModalSheetTitle(title: 'Filter'),
+            BottomModalSheetTitle(title: l10n.filter),
             const Divider(),
-            const SectionText(text: 'Category'),
+            SectionText(text: l10n.category),
             const CourseFilterChips(),
-            const SectionText(text: 'Price'),
+            SectionText(text: l10n.price),
             const PriceRangeSlider(),
-            const SectionText(text: 'Rating'),
+            SectionText(text: l10n.rating),
             StarFilterChips(selectedCallbackAction: (value) {}),
             const Divider(),
             BottomSheetActionButtons(
               onMainActionPressed: () {},
-              mainButtonString: 'Filter',
-              subButtonString: 'Reset',
+              mainButtonString: l10n.filter,
+              subButtonString: l10n.reset,
             )
           ],
         ),
