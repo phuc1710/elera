@@ -31,7 +31,7 @@ class _CourseVideoViewState extends State<CourseVideoView> {
 
   void updatePauseTime(String pauseTime) {
     setState(() => pause = pauseTime);
-    print('Course paused: $pause');
+    // print('Course paused: $pause');
   }
 
   @override
