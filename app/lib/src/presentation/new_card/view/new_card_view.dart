@@ -141,7 +141,7 @@ class _NewCardViewState extends State<NewCardView> {
         Expanded(
           child: buildInputField(
             context,
-            title: 'CVV',
+            title: AppLocalizations.of(context).cvv,
             controller: cvvController,
           ),
         ),

@@ -122,6 +122,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createYourNewPassword => 'Create Your New Password';
 
   @override
+  String get cvv => 'CVV';
+
+  @override
   String get darkMode => 'Dark Mode';
 
   @override

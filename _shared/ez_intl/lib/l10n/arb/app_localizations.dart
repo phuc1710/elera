@@ -327,6 +327,12 @@ abstract class AppLocalizations {
   /// **'Create Your New Password'**
   String get createYourNewPassword;
 
+  /// No description provided for @cvv.
+  ///
+  /// In en, this message translates to:
+  /// **'CVV'**
+  String get cvv;
+
   /// No description provided for @darkMode.
   ///
   /// In en, this message translates to:

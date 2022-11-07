@@ -122,6 +122,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get createYourNewPassword => 'Tạo mật khẩu mới của bạn';
 
   @override
+  String get cvv => 'CVV';
+
+  @override
   String get darkMode => 'Chế độ tối';
 
   @override
