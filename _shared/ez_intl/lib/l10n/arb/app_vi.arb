@@ -16,9 +16,12 @@
   "congratulations": "Xin chúc mừng!",
   "cont": "Tiếp tục",
   "contactUs": "Liên hệ chúng tôi",
+  "continueCourse": "Tiếp tục khóa học",
   "continueWithApple": "Tiếp tục với Apple",
   "continueWithFacebook": "Tiếp tục với Facebook",
   "continueWithGoogle": "Tiếp tục với Google",
+  "courseCompleted": "Khóa học đã hoàn thành!",
+  "courseReviewDialogContent": "Vui lòng để lại đánh giá cho khóa học.",
   "courses": "Khóa học",
   "createNewPIN": "Tạo mã PIN mới",
   "createNewPassword": "Tạo mật khẩu mới",
@@ -96,6 +99,7 @@
   "resendCodeIn": "Gửi lại mã trong",
   "reset": "Đặt lại",
   "resultFor": "Kết quả cho",
+  "review": "Đánh giá",
   "reviews": "đánh giá",
   "reviewsCap": "Đánh giá",
   "s": "giây",
@@ -124,5 +128,6 @@
   "viewEReceipt": "Xem hóa đơn",
   "website": "Trang web",
   "welcomeDialogContent": "Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..",
+  "writeReview": "Viết đánh giá",
   "yesRemove": "Có, Loại bỏ"
 }

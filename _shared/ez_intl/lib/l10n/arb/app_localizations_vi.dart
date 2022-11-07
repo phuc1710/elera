@@ -56,6 +56,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get contactUs => 'Liên hệ chúng tôi';
 
   @override
+  String get continueCourse => 'Tiếp tục khóa học';
+
+  @override
   String get continueWithApple => 'Tiếp tục với Apple';
 
   @override
@@ -63,6 +66,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get continueWithGoogle => 'Tiếp tục với Google';
+
+  @override
+  String get courseCompleted => 'Khóa học đã hoàn thành!';
+
+  @override
+  String get courseReviewDialogContent => 'Vui lòng để lại đánh giá cho khóa học.';
 
   @override
   String get courses => 'Khóa học';
@@ -296,6 +305,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get resultFor => 'Kết quả cho';
 
   @override
+  String get review => 'Đánh giá';
+
+  @override
   String get reviews => 'đánh giá';
 
   @override
@@ -378,6 +390,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get welcomeDialogContent => 'Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..';
+
+  @override
+  String get writeReview => 'Viết đánh giá';
 
   @override
   String get yesRemove => 'Có, Loại bỏ';

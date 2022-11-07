@@ -56,6 +56,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contactUs => 'Contact Us';
 
   @override
+  String get continueCourse => 'Continue Course';
+
+  @override
   String get continueWithApple => 'Continue with Apple';
 
   @override
@@ -63,6 +66,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get continueWithGoogle => 'Continue with Google';
+
+  @override
+  String get courseCompleted => 'Course Completed!';
+
+  @override
+  String get courseReviewDialogContent => 'Please leave a review for your course.';
 
   @override
   String get courses => 'Courses';
@@ -296,6 +305,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resultFor => 'Result for';
 
   @override
+  String get review => 'Review';
+
+  @override
   String get reviews => 'reviews';
 
   @override
@@ -378,6 +390,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcomeDialogContent => 'Your account is ready to use. You will be redirected to the Home page in a few seconds..';
+
+  @override
+  String get writeReview => 'Write Review';
 
   @override
   String get yesRemove => 'Yes, Remove';

@@ -16,9 +16,12 @@
   "congratulations": "Congratulations!",
   "cont": "Continue",
   "contactUs": "Contact Us",
+  "continueCourse": "Continue Course",
   "continueWithApple": "Continue with Apple",
   "continueWithFacebook": "Continue with Facebook",
   "continueWithGoogle": "Continue with Google",
+  "courseCompleted": "Course Completed!",
+  "courseReviewDialogContent": "Please leave a review for your course.",
   "courses": "Courses",
   "createNewPIN": "Create new PIN",
   "createNewPassword": "Create New Password",
@@ -96,6 +99,7 @@
   "resendCodeIn": "Resend code in",
   "reset": "Reset",
   "resultFor": "Result for",
+  "review": "Review",
   "reviews": "reviews",
   "reviewsCap": "Reviews",
   "s": "s",
@@ -124,5 +128,6 @@
   "viewEReceipt": "View E-Receipt",
   "website": "Website",
   "welcomeDialogContent": "Your account is ready to use. You will be redirected to the Home page in a few seconds..",
+  "writeReview": "Write Review",
   "yesRemove": "Yes, Remove"
 }

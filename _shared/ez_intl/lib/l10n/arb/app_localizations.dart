@@ -195,6 +195,12 @@ abstract class AppLocalizations {
   /// **'Contact Us'**
   String get contactUs;
 
+  /// No description provided for @continueCourse.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue Course'**
+  String get continueCourse;
+
   /// No description provided for @continueWithApple.
   ///
   /// In en, this message translates to:
@@ -212,6 +218,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue with Google'**
   String get continueWithGoogle;
+
+  /// No description provided for @courseCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Course Completed!'**
+  String get courseCompleted;
+
+  /// No description provided for @courseReviewDialogContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Please leave a review for your course.'**
+  String get courseReviewDialogContent;
 
   /// No description provided for @courses.
   ///
@@ -675,6 +693,12 @@ abstract class AppLocalizations {
   /// **'Result for'**
   String get resultFor;
 
+  /// No description provided for @review.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get review;
+
   /// No description provided for @reviews.
   ///
   /// In en, this message translates to:
@@ -842,6 +866,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your account is ready to use. You will be redirected to the Home page in a few seconds..'**
   String get welcomeDialogContent;
+
+  /// No description provided for @writeReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Write Review'**
+  String get writeReview;
 
   /// No description provided for @yesRemove.
   ///
