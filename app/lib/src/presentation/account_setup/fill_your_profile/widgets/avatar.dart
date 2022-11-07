@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Avatar extends StatefulWidget {
@@ -46,7 +47,7 @@ class _AvatarState extends State<Avatar> {
               child: const Padding(
                 padding: EdgeInsets.all(2.0),
                 child: Icon(
-                  Icons.edit,
+                  IconlyBold.edit,
                   size: 20,
                   color: Colors.white,
                 ),

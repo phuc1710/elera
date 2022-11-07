@@ -73,12 +73,15 @@
   "home": "Home",
   "hours": "Hours",
   "inbox": "Inbox",
+  "invite": "Invite",
   "inviteFriends": "Invite Friends",
+  "invited": "Invited",
   "language": "Language",
   "lessons": "lessons",
   "lessonsCap": "Lessons",
   "letsYouIn": "Let's you in",
   "logOut": "Logout",
+  "logOutPrompt": "Are you sure you want to logout?",
   "loginToYourAccount": "Login to your\nAccount",
   "male": "m,Male",
   "mentor": "Mentor",
@@ -161,5 +164,6 @@
   "website": "Website",
   "welcomeDialogContent": "Your account is ready to use. You will be redirected to the Home page in a few seconds..",
   "writeReview": "Write Review",
+  "yesLogout": "Yes, Logout",
   "yesRemove": "Yes, Remove"
 }

@@ -227,7 +227,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get inbox => 'Tin nhắn';
 
   @override
+  String get invite => 'Mời';
+
+  @override
   String get inviteFriends => 'Mời bạn bè';
+
+  @override
+  String get invited => 'Đã mời';
 
   @override
   String get language => 'Ngôn ngữ';
@@ -243,6 +249,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get logOut => 'Đăng xuất';
+
+  @override
+  String get logOutPrompt => 'Bạn có chắc muốn đăng xuất?';
 
   @override
   String get loginToYourAccount => 'Đăng nhập tài khoản của bạn';
@@ -489,6 +498,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get writeReview => 'Viết đánh giá';
+
+  @override
+  String get yesLogout => 'Có, Đăng xuất';
 
   @override
   String get yesRemove => 'Có, Loại bỏ';

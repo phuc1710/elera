@@ -227,7 +227,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get inbox => 'Inbox';
 
   @override
+  String get invite => 'Invite';
+
+  @override
   String get inviteFriends => 'Invite Friends';
+
+  @override
+  String get invited => 'Invited';
 
   @override
   String get language => 'Language';
@@ -243,6 +249,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logOut => 'Logout';
+
+  @override
+  String get logOutPrompt => 'Are you sure you want to logout?';
 
   @override
   String get loginToYourAccount => 'Login to your\nAccount';
@@ -489,6 +498,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get writeReview => 'Write Review';
+
+  @override
+  String get yesLogout => 'Yes, Logout';
 
   @override
   String get yesRemove => 'Yes, Remove';

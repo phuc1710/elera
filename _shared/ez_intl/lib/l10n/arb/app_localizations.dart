@@ -537,11 +537,23 @@ abstract class AppLocalizations {
   /// **'Inbox'**
   String get inbox;
 
+  /// No description provided for @invite.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite'**
+  String get invite;
+
   /// No description provided for @inviteFriends.
   ///
   /// In en, this message translates to:
   /// **'Invite Friends'**
   String get inviteFriends;
+
+  /// No description provided for @invited.
+  ///
+  /// In en, this message translates to:
+  /// **'Invited'**
+  String get invited;
 
   /// No description provided for @language.
   ///
@@ -572,6 +584,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logout'**
   String get logOut;
+
+  /// No description provided for @logOutPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to logout?'**
+  String get logOutPrompt;
 
   /// No description provided for @loginToYourAccount.
   ///
@@ -1064,6 +1082,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Write Review'**
   String get writeReview;
+
+  /// No description provided for @yesLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, Logout'**
+  String get yesLogout;
 
   /// No description provided for @yesRemove.
   ///

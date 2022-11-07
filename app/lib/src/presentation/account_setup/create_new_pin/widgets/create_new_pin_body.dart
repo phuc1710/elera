@@ -39,9 +39,7 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
           padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
           child: Column(
             children: [
-              const Expanded(
-                child: SizedBox(),
-              ),
+              const Expanded(child: SizedBox()),
               Padding(
                 padding: EdgeInsets.fromLTRB(
                   screenWidth * 0.05,

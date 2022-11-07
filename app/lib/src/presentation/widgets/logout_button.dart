@@ -33,12 +33,11 @@ class LogoutButton extends StatelessWidget {
               SizedBox(
                 width: double.maxFinite,
                 child: Text(
-                  'Are you sure you want to logout?',
+                  l10n.logOutPrompt,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2
-                      ?.copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
               const SizedBox(height: 20),
@@ -49,7 +48,7 @@ class LogoutButton extends StatelessWidget {
                   children: [
                     Expanded(
                       child: BaseButton(
-                        title: 'Cancel',
+                        title: l10n.cancel,
                         color: Theme.of(context).colorScheme.secondary,
                         titleColor: Theme.of(context).colorScheme.primary,
                       ),
@@ -57,7 +56,7 @@ class LogoutButton extends StatelessWidget {
                     const SizedBox(width: 10),
                     Expanded(
                       child: BaseButton(
-                        title: 'Yes, Logout',
+                        title: l10n.yesLogout,
                         titleColor: Colors.white,
                         color: Theme.of(context).colorScheme.primary,
                         shadow: const [

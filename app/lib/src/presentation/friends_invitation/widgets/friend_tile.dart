@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/friends/friend_response_model.dart';
@@ -20,6 +21,8 @@ class FriendTile extends StatefulWidget {
 class _FriendTileState extends State<FriendTile> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return ListTile(
       leading: Image.network(widget.friend?.img ?? '', width: 50, height: 50),
       title: Padding(
@@ -41,7 +44,7 @@ class _FriendTileState extends State<FriendTile> {
         width: 80,
         height: 35,
         child: BaseButton(
-          title: isInvited ? 'Invited' : 'Invite',
+          title: isInvited ? l10n.invited : l10n.invite,
           color: isInvited ? Colors.white : Theme.of(context).primaryColor,
           borderColor:
               isInvited ? Theme.of(context).primaryColor : Colors.white,

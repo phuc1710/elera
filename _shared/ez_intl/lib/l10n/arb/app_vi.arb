@@ -73,12 +73,15 @@
   "home": "Trang chủ",
   "hours": "Giờ",
   "inbox": "Tin nhắn",
+  "invite": "Mời",
   "inviteFriends": "Mời bạn bè",
+  "invited": "Đã mời",
   "language": "Ngôn ngữ",
   "lessons": "bài giảng",
   "lessonsCap": "Bài giảng",
   "letsYouIn": "Vào ứng dụng",
   "logOut": "Đăng xuất",
+  "logOutPrompt": "Bạn có chắc muốn đăng xuất?",
   "loginToYourAccount": "Đăng nhập tài khoản của bạn",
   "male": "m,Nam",
   "mentor": "Giảng viên",
@@ -161,5 +164,6 @@
   "website": "Trang web",
   "welcomeDialogContent": "Tài khoản của bạn đã sẵn sàng để sử dụng. Bạn sẽ được điều hướng đến Trang chủ trong chốc lát..",
   "writeReview": "Viết đánh giá",
+  "yesLogout": "Có, Đăng xuất",
   "yesRemove": "Có, Loại bỏ"
 }
