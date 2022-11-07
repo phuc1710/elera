@@ -23,6 +23,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appUpdates => 'App Updates';
 
   @override
+  String get biometricID => 'Biometric ID';
+
+  @override
   String get calls => 'Calls';
 
   @override
@@ -45,6 +48,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get certificates => 'Certificates';
+
+  @override
+  String get changePIN => 'Change PIN';
+
+  @override
+  String get changePassword => 'Change Password';
 
   @override
   String get chats => 'Chats';
@@ -143,6 +152,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get expiryDate => 'Expiry Date';
 
   @override
+  String get faceID => 'Face ID';
+
+  @override
   String get faq => 'FAQ';
 
   @override
@@ -180,6 +192,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goodMorning => 'Good Morning 👏';
+
+  @override
+  String get googleAuthenticator => 'Google Authenticator';
 
   @override
   String get helpCenter => 'Help Center';

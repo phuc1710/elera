@@ -23,6 +23,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get appUpdates => 'Cập nhật ứng dụng';
 
   @override
+  String get biometricID => 'ID sinh trắc';
+
+  @override
   String get calls => 'Cuộc gọi';
 
   @override
@@ -45,6 +48,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get certificates => 'Chứng chỉ';
+
+  @override
+  String get changePIN => 'Đổi mã PIN';
+
+  @override
+  String get changePassword => 'Đổi mật khẩu';
 
   @override
   String get chats => 'Tin nhắn';
@@ -143,6 +152,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get expiryDate => 'Ngày hết hạn';
 
   @override
+  String get faceID => 'ID gương mặt';
+
+  @override
   String get faq => 'Câu hỏi thường gặp';
 
   @override
@@ -180,6 +192,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get goodMorning => 'Xin chào 👏';
+
+  @override
+  String get googleAuthenticator => 'Xác thực Google';
 
   @override
   String get helpCenter => 'Trung tâm trợ giúp';

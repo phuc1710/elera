@@ -129,6 +129,12 @@ abstract class AppLocalizations {
   /// **'App Updates'**
   String get appUpdates;
 
+  /// No description provided for @biometricID.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric ID'**
+  String get biometricID;
+
   /// No description provided for @calls.
   ///
   /// In en, this message translates to:
@@ -176,6 +182,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Certificates'**
   String get certificates;
+
+  /// No description provided for @changePIN.
+  ///
+  /// In en, this message translates to:
+  /// **'Change PIN'**
+  String get changePIN;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get changePassword;
 
   /// No description provided for @chats.
   ///
@@ -369,6 +387,12 @@ abstract class AppLocalizations {
   /// **'Expiry Date'**
   String get expiryDate;
 
+  /// No description provided for @faceID.
+  ///
+  /// In en, this message translates to:
+  /// **'Face ID'**
+  String get faceID;
+
   /// No description provided for @faq.
   ///
   /// In en, this message translates to:
@@ -446,6 +470,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Good Morning 👏'**
   String get goodMorning;
+
+  /// No description provided for @googleAuthenticator.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Authenticator'**
+  String get googleAuthenticator;
 
   /// No description provided for @helpCenter.
   ///
