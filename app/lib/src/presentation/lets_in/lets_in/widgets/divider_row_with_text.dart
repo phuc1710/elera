@@ -20,27 +20,18 @@ class DividerRowWithText extends StatelessWidget {
       padding: _padding,
       child: Row(
         children: [
-          Expanded(
-            child: Divider(
-              endIndent: screenWidth * 0.03,
-            ),
-          ),
+          Expanded(child: Divider(endIndent: screenWidth * 0.03)),
           FittedBox(
             child: Center(
               child: Text(
                 _text,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText2
-                    ?.copyWith(color: const Color(0xff616161)),
+                style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                      color: const Color(0xff616161),
+                    ),
               ),
             ),
           ),
-          Expanded(
-            child: Divider(
-              indent: screenWidth * 0.03,
-            ),
-          )
+          Expanded(child: Divider(indent: screenWidth * 0.03))
         ],
       ),
     );

@@ -147,6 +147,12 @@ abstract class AppLocalizations {
   /// **'Certificate'**
   String get certificate;
 
+  /// No description provided for @certificates.
+  ///
+  /// In en, this message translates to:
+  /// **'Certificates'**
+  String get certificates;
+
   /// No description provided for @chats.
   ///
   /// In en, this message translates to:
@@ -254,6 +260,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Don\'t have an account?'**
   String get dontHaveAnAccount;
+
+  /// No description provided for @downloadCertificate.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Certificate'**
+  String get downloadCertificate;
 
   /// No description provided for @eReceipt.
   ///
@@ -746,6 +758,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Skip'**
   String get skip;
+
+  /// No description provided for @startCourseAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Course Again'**
+  String get startCourseAgain;
 
   /// No description provided for @students.
   ///

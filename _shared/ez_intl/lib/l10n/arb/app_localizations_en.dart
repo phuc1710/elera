@@ -32,6 +32,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get certificate => 'Certificate';
 
   @override
+  String get certificates => 'Certificates';
+
+  @override
   String get chats => 'Chats';
 
   @override
@@ -84,6 +87,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dontHaveAnAccount => 'Don\'t have an account?';
+
+  @override
+  String get downloadCertificate => 'Download Certificate';
 
   @override
   String get eReceipt => 'E-receipt';
@@ -330,6 +336,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skip => 'Skip';
+
+  @override
+  String get startCourseAgain => 'Start Course Again';
 
   @override
   String get students => 'students';

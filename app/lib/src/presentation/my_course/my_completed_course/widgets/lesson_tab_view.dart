@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/my_course_detail/my_course_detail_fetch_response_model.dart';
@@ -58,7 +59,7 @@ class LessonsTabView extends StatelessWidget {
           children: lesson1dList,
         ),
         BottomActionInk(
-          buttonString: 'Start Course Again',
+          buttonString: AppLocalizations.of(context).startCourseAgain,
           action: () {},
         )
       ],

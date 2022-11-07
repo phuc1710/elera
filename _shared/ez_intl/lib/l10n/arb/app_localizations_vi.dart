@@ -32,6 +32,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get certificate => 'Chứng chỉ';
 
   @override
+  String get certificates => 'Chứng chỉ';
+
+  @override
   String get chats => 'Tin nhắn';
 
   @override
@@ -84,6 +87,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get dontHaveAnAccount => 'Không có tài khoản?';
+
+  @override
+  String get downloadCertificate => 'Tải Chứng chỉ';
 
   @override
   String get eReceipt => 'Hóa đơn';
@@ -330,6 +336,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get skip => 'Bỏ qua';
+
+  @override
+  String get startCourseAgain => 'Bắt đầu lại khóa học';
 
   @override
   String get students => 'học sinh';

@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,6 +27,8 @@ class MyCompletedCourseBody extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is MyCompleteCourseFetchSuccess) {
+          final l10n = AppLocalizations.of(context);
+
           return DefaultTabController(
             length: 2,
             child: Column(
@@ -38,7 +41,10 @@ class MyCompletedCourseBody extends StatelessWidget {
                   ),
                   indicatorColor: primaryColor,
                   indicatorSize: TabBarIndicatorSize.tab,
-                  tabs: const [Tab(text: 'Lessons'), Tab(text: 'Certificates')],
+                  tabs: [
+                    Tab(text: l10n.lessonsCap),
+                    Tab(text: l10n.certificates)
+                  ],
                 ),
                 Expanded(
                   child: TabBarView(
