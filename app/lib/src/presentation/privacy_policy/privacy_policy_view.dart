@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -26,11 +27,13 @@ class _PrivacyPolicyViewState extends State<PrivacyPolicyView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       appBar: buildAppBar(
         AppBarParams(
           context,
-          title: 'Security',
+          title: l10n.security,
           backgroundColor: Colors.white,
         ),
       ),
@@ -39,7 +42,7 @@ class _PrivacyPolicyViewState extends State<PrivacyPolicyView> {
         width: double.maxFinite,
         child: (widget.url?.isNotEmpty == true)
             ? WebView(initialUrl: widget.url)
-            : const Center(child: Text('chưa có nội dung')),
+            : Center(child: Text(l10n.noContent)),
       ),
     );
   }
