@@ -20,6 +20,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override
+  String get appUpdates => 'App Updates';
+
+  @override
   String get calls => 'Calls';
 
   @override
@@ -30,6 +33,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cardNumber => 'Card Number';
+
+  @override
+  String get cashback => 'Cashback';
 
   @override
   String get category => 'Category';
@@ -164,6 +170,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gender => 'Gender';
 
   @override
+  String get generalNotification => 'General Notification';
+
+  @override
   String get getStarted => 'Get Started';
 
   @override
@@ -227,6 +236,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get myCourseNavBar => 'My Course';
 
   @override
+  String get newServiceAvailable => 'New Service Available';
+
+  @override
+  String get newTipsAvailable => 'New Tips Available';
+
+  @override
   String get next => 'Next';
 
   @override
@@ -285,6 +300,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get promoAndDiscount => 'Promo & Discount';
 
   @override
   String get rating => 'Rating';
@@ -362,6 +380,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skip => 'Skip';
 
   @override
+  String get sound => 'Sound';
+
+  @override
+  String get specialOffers => 'Special Offers';
+
+  @override
   String get startCourseAgain => 'Start Course Again';
 
   @override
@@ -390,6 +414,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get via => 'via';
+
+  @override
+  String get vibrate => 'Vibrate';
 
   @override
   String get viewCourse => 'View Course';

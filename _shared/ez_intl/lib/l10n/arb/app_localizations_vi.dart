@@ -20,6 +20,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get alreadyHaveAnAccount => 'Đã có tài khoản?';
 
   @override
+  String get appUpdates => 'Cập nhật ứng dụng';
+
+  @override
   String get calls => 'Cuộc gọi';
 
   @override
@@ -30,6 +33,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get cardNumber => 'Số thẻ';
+
+  @override
+  String get cashback => 'Hoàn tiền';
 
   @override
   String get category => 'Thể loại';
@@ -164,6 +170,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get gender => 'Giới tính';
 
   @override
+  String get generalNotification => 'Thông báo chung';
+
+  @override
   String get getStarted => 'Bắt đầu';
 
   @override
@@ -227,6 +236,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get myCourseNavBar => 'Khóa học';
 
   @override
+  String get newServiceAvailable => 'Dịch vụ mới có sẵn';
+
+  @override
+  String get newTipsAvailable => 'Lời khuyên mới có sẵn';
+
+  @override
   String get next => 'Tiếp tục';
 
   @override
@@ -285,6 +300,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get profile => 'Hồ sơ';
+
+  @override
+  String get promoAndDiscount => 'Khuyến mãi & giảm giá';
 
   @override
   String get rating => 'Đánh giá';
@@ -362,6 +380,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get skip => 'Bỏ qua';
 
   @override
+  String get sound => 'Âm thanh';
+
+  @override
+  String get specialOffers => 'Ưu đãi đặc biệt';
+
+  @override
   String get startCourseAgain => 'Bắt đầu lại khóa học';
 
   @override
@@ -390,6 +414,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get via => 'thông qua';
+
+  @override
+  String get vibrate => 'Rung';
 
   @override
   String get viewCourse => 'Xem khóa học';

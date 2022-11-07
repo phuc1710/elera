@@ -123,6 +123,12 @@ abstract class AppLocalizations {
   /// **'Already have an account?'**
   String get alreadyHaveAnAccount;
 
+  /// No description provided for @appUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'App Updates'**
+  String get appUpdates;
+
   /// No description provided for @calls.
   ///
   /// In en, this message translates to:
@@ -146,6 +152,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Card Number'**
   String get cardNumber;
+
+  /// No description provided for @cashback.
+  ///
+  /// In en, this message translates to:
+  /// **'Cashback'**
+  String get cashback;
 
   /// No description provided for @category.
   ///
@@ -411,6 +423,12 @@ abstract class AppLocalizations {
   /// **'Gender'**
   String get gender;
 
+  /// No description provided for @generalNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'General Notification'**
+  String get generalNotification;
+
   /// No description provided for @getStarted.
   ///
   /// In en, this message translates to:
@@ -537,6 +555,18 @@ abstract class AppLocalizations {
   /// **'My Course'**
   String get myCourseNavBar;
 
+  /// No description provided for @newServiceAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'New Service Available'**
+  String get newServiceAvailable;
+
+  /// No description provided for @newTipsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'New Tips Available'**
+  String get newTipsAvailable;
+
   /// No description provided for @next.
   ///
   /// In en, this message translates to:
@@ -656,6 +686,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
+
+  /// No description provided for @promoAndDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo & Discount'**
+  String get promoAndDiscount;
 
   /// No description provided for @rating.
   ///
@@ -807,6 +843,18 @@ abstract class AppLocalizations {
   /// **'Skip'**
   String get skip;
 
+  /// No description provided for @sound.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound'**
+  String get sound;
+
+  /// No description provided for @specialOffers.
+  ///
+  /// In en, this message translates to:
+  /// **'Special Offers'**
+  String get specialOffers;
+
   /// No description provided for @startCourseAgain.
   ///
   /// In en, this message translates to:
@@ -866,6 +914,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'via'**
   String get via;
+
+  /// No description provided for @vibrate.
+  ///
+  /// In en, this message translates to:
+  /// **'Vibrate'**
+  String get vibrate;
 
   /// No description provided for @viewCourse.
   ///
