@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,7 +9,9 @@ import 'certificate_tab_view.dart';
 import 'lesson_tab_view.dart';
 
 class MyCompletedCourseBody extends StatelessWidget {
-  const MyCompletedCourseBody({Key? key}) : super(key: key);
+  const MyCompletedCourseBody({Key? key, this.courseId}) : super(key: key);
+
+  final String? courseId;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +27,8 @@ class MyCompletedCourseBody extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is MyCompleteCourseFetchSuccess) {
+          final l10n = AppLocalizations.of(context);
+
           return DefaultTabController(
             length: 2,
             child: Column(
@@ -36,12 +41,16 @@ class MyCompletedCourseBody extends StatelessWidget {
                   ),
                   indicatorColor: primaryColor,
                   indicatorSize: TabBarIndicatorSize.tab,
-                  tabs: const [Tab(text: 'Lessons'), Tab(text: 'Certificates')],
+                  tabs: [
+                    Tab(text: l10n.lessonsCap),
+                    Tab(text: l10n.certificates)
+                  ],
                 ),
                 Expanded(
                   child: TabBarView(
                     children: [
                       LessonsTabView(
+                        courseId: courseId,
                         lessonData: state.courseData?.lessons?.items,
                       ),
                       Padding(

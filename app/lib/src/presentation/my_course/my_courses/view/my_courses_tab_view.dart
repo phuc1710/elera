@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,12 +17,13 @@ class MyCoursesTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final primaryColor = Theme.of(context).colorScheme.primary;
+    final l10n = AppLocalizations.of(context);
 
     return BlocProvider(
       create: (context) => getIt<MyCourseBloc>()..add(MyCourseFetched()),
       child: Column(
         children: [
-          const TitleAppBar(title: 'My Course'),
+          TitleAppBar(title: l10n.myCourse),
           Expanded(
             child: DefaultTabController(
               length: 2,
@@ -35,7 +37,7 @@ class MyCoursesTabView extends StatelessWidget {
                     ),
                     indicatorColor: primaryColor,
                     indicatorSize: TabBarIndicatorSize.tab,
-                    tabs: const [Tab(text: 'Ongoing'), Tab(text: 'Completed')],
+                    tabs: [Tab(text: l10n.ongoing), Tab(text: l10n.completed)],
                   ),
                   Expanded(
                     child: BlocConsumer<MyCourseBloc, MyCourseState>(

@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/set_your_fingerprint_body.dart';
@@ -14,7 +15,7 @@ class SetYourFingerprintView extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             title: Text(
-              'Set Your Fingerprint',
+              AppLocalizations.of(context).setYourFingerprint,
               style: Theme.of(context).textTheme.headline6,
             ),
             leadingWidth: 35,

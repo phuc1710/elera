@@ -36,10 +36,9 @@ class SocialLoginInk extends StatelessWidget {
           ),
           Text(
             text,
-            style: Theme.of(context)
-                .textTheme
-                .caption
-                ?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.caption?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
           ),
         ],
       ),

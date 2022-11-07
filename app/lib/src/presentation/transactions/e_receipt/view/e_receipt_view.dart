@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,9 +15,11 @@ class EReceiptView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String title = 'E-Receipt';
+    final l10n = AppLocalizations.of(context);
 
-    const String text = 'Course';
+    final String title = l10n.eReceipt;
+
+    final String text = l10n.course;
 
     return Scaffold(
       body: BlocProvider(
@@ -26,17 +29,10 @@ class EReceiptView extends StatelessWidget {
             if (state is EReceiptFetchSuccess) {
               return Column(
                 children: [
-                  const AppBarWidget(
-                    title: title,
-                  ),
-                  const BarcodeWidget(
-                    img: 'assets/images/img_barcode.png',
-                  ),
+                  AppBarWidget(title: title),
+                  const BarcodeWidget(img: 'assets/images/img_barcode.png'),
                   EReceiptTopBody(text: text, value: state.eReceipt),
-                  EReceiptMidBody(
-                    text: text,
-                    value: state.eReceipt,
-                  ),
+                  EReceiptMidBody(text: text, value: state.eReceipt),
                   EReceiptBottomBody(value: state.eReceipt),
                 ],
               );

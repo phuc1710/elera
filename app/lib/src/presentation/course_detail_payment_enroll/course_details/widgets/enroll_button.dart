@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/main_action_ink.dart';
@@ -19,7 +20,10 @@ class EnrollButton extends StatelessWidget {
           child: InkWell(
             borderRadius: BorderRadius.circular(25),
             onTap: action,
-            child: const MainActionInk(buttonString: r'Enroll Course - $40'),
+            child: MainActionInk(
+              buttonString:
+                  '${AppLocalizations.of(context).enrollCourse} - \$40',
+            ),
           ),
         ),
       ),

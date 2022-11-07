@@ -17,10 +17,7 @@ class CourseImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         child: SizedBox.square(
           dimension: 80,
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-          ),
+          child: Image.asset(imagePath, fit: BoxFit.cover),
         ),
       ),
     );

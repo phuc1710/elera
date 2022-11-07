@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,6 +37,7 @@ class _CreateNewPasswordBodyState extends State<CreateNewPasswordBody> {
       builder: (context, state) {
         final screenWidth = MediaQuery.of(context).size.width;
         final screenHeight = MediaQuery.of(context).size.height;
+        final l10n = AppLocalizations.of(context);
 
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
@@ -49,15 +51,15 @@ class _CreateNewPasswordBodyState extends State<CreateNewPasswordBody> {
                 ),
               ),
               Text(
-                'Create Your New Password',
+                l10n.createYourNewPassword,
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               PasswordInput(
-                hint: 'Password',
+                hint: l10n.password,
                 controller: passwordController,
               ),
               PasswordInput(
-                hint: 'Repeat Password',
+                hint: l10n.repeatPassword,
                 controller: repeatPasswordController,
               ),
               const RememberMeCheckBox(),

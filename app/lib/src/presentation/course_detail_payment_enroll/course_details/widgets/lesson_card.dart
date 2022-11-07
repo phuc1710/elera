@@ -7,18 +7,24 @@ import '../../../../config/router/app_router.dart';
 class LessonCard extends StatelessWidget {
   const LessonCard({
     Key? key,
+    required this.courseId,
     required this.id,
+    required this.order,
     required this.lessonTitle,
     required this.duration,
     required this.isLock,
     this.videoLink,
+    this.currentTime,
   }) : super(key: key);
 
+  final String courseId;
   final String id;
+  final String order;
   final String lessonTitle;
   final String duration;
   final bool isLock;
   final String? videoLink;
+  final int? currentTime;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +45,7 @@ class LessonCard extends StatelessWidget {
           radius: MediaQuery.of(context).size.width * 0.08,
           backgroundColor: Theme.of(context).colorScheme.secondary,
           child: Text(
-            id,
+            order,
             style: textTheme.headline6?.copyWith(color: primaryColor),
           ),
         ),
@@ -56,8 +62,14 @@ class LessonCard extends StatelessWidget {
             : IconButton(
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
-                onPressed: () =>
-                    context.router.push(CourseVideoRoute(videoLink: videoLink)),
+                onPressed: () => context.router.push(
+                  CourseVideoRoute(
+                    courseId: courseId,
+                    lessonId: id,
+                    videoLink: videoLink,
+                    currentTime: currentTime,
+                  ),
+                ),
                 icon: Icon(Icons.play_circle_fill_rounded, color: primaryColor),
               ),
       ),

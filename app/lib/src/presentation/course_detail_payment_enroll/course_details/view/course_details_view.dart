@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -52,6 +53,8 @@ class _CourseDetailsViewState extends State<CourseDetailsView>
             }
           },
           builder: (context, state) {
+            final l10n = AppLocalizations.of(context);
+
             if (state is CourseDetailsFetchSuccess) {
               final course = state.courseData;
 
@@ -121,10 +124,10 @@ class _CourseDetailsViewState extends State<CourseDetailsView>
                           ),
                           indicatorColor: primaryColor,
                           indicatorSize: TabBarIndicatorSize.tab,
-                          tabs: const [
-                            Tab(text: 'About'),
-                            Tab(text: 'Lessons'),
-                            Tab(text: 'Reviews')
+                          tabs: [
+                            Tab(text: l10n.about),
+                            Tab(text: l10n.lessonsCap),
+                            Tab(text: l10n.reviewsCap)
                           ],
                         ),
                       )
@@ -135,7 +138,7 @@ class _CourseDetailsViewState extends State<CourseDetailsView>
                     ),
                   ),
                   BottomActionInk(
-                    buttonString: r'Enroll Course - $40',
+                    buttonString: '${l10n.enrollCourse} - \$40',
                     action: () => context.router.pushNamed(Routes.enrollCourse),
                   ),
                 ],

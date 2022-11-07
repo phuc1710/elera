@@ -10,6 +10,7 @@ class MyCourseDetailFetchResponseModel {
     required this.message,
     required this.data,
   });
+
   factory MyCourseDetailFetchResponseModel.fromJson(
     Map<String, dynamic> json,
   ) =>
@@ -30,6 +31,7 @@ class Data {
     required this.lessons,
     required this.certificate,
   });
+
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
   final Lessons? lessons;
@@ -44,80 +46,64 @@ class Lessons {
     required this.items,
     required this.total,
   });
+
   factory Lessons.fromJson(Map<String, dynamic> json) =>
       _$LessonsFromJson(json);
 
-  final List<ItemElement>? items;
+  final List<Item>? items;
   final int? total;
 
   Map<String, dynamic> toJson() => _$LessonsToJson(this);
 }
 
 @JsonSerializable()
-class ItemElement {
-  ItemElement({
+class Item {
+  Item({
     required this.section,
     required this.lesson,
     required this.time,
   });
-  factory ItemElement.fromJson(Map<String, dynamic> json) =>
-      _$ItemElementFromJson(json);
+
+  factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
   final String? section;
   final List<Lesson>? lesson;
   final String? time;
 
-  Map<String, dynamic> toJson() => _$ItemElementToJson(this);
+  Map<String, dynamic> toJson() => _$ItemToJson(this);
 }
 
 @JsonSerializable()
 class Lesson {
   Lesson({
-    required this.item,
-  });
-  factory Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
-
-  final LessonItem? item;
-
-  Map<String, dynamic> toJson() => _$LessonToJson(this);
-}
-
-@JsonSerializable()
-class LessonItem {
-  LessonItem({
     required this.id,
-    required this.courseId,
     required this.sectionOrder,
     required this.sectionName,
-    required this.lessonOrder,
-    required this.lessonName,
+    required this.name,
+    required this.order,
     required this.time,
+    required this.currentTime,
     required this.content,
     required this.status,
   });
-  factory LessonItem.fromJson(Map<String, dynamic> json) =>
-      _$LessonItemFromJson(json);
 
-  @JsonKey(name: '_id')
+  factory Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
+
   final String? id;
-
-  @JsonKey(name: 'course_id')
-  final String? courseId;
 
   @JsonKey(name: 'section_order')
   final int? sectionOrder;
 
   @JsonKey(name: 'section_name')
   final String? sectionName;
+  final String? name;
+  final String? order;
+  final String? time;
 
-  @JsonKey(name: 'lesson_order')
-  final int? lessonOrder;
-
-  @JsonKey(name: 'lesson_name')
-  final String? lessonName;
-  final int? time;
+  @JsonKey(name: 'current_time')
+  final int? currentTime;
   final String? content;
   final String? status;
 
-  Map<String, dynamic> toJson() => _$LessonItemToJson(this);
+  Map<String, dynamic> toJson() => _$LessonToJson(this);
 }

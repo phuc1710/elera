@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class RememberMeCheckBox extends StatefulWidget {
@@ -11,6 +12,7 @@ class RememberMeCheckBox extends StatefulWidget {
 
 class _RememberMeCheckBoxState extends State<RememberMeCheckBox> {
   bool? rememberMe = false;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -30,11 +32,10 @@ class _RememberMeCheckBoxState extends State<RememberMeCheckBox> {
         GestureDetector(
           onTap: () => setState(() => rememberMe = rememberMe == false),
           child: Text(
-            'Remember Me',
-            style: Theme.of(context)
-                .textTheme
-                .caption
-                ?.copyWith(fontWeight: FontWeight.w600),
+            AppLocalizations.of(context).rememberMe,
+            style: Theme.of(context).textTheme.caption?.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
           ),
         ),
       ],

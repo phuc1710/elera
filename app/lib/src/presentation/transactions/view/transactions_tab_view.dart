@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../my_course/my_courses/widgets/title_app_bar.dart';
@@ -9,9 +10,9 @@ class TransactionsTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        TitleAppBar(title: 'Transations'),
-        TransactionsTabBody(),
+      children: [
+        TitleAppBar(title: AppLocalizations.of(context).transactions),
+        const TransactionsTabBody(),
       ],
     );
   }

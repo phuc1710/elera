@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,6 +21,7 @@ class HomeTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final l10n = AppLocalizations.of(context);
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -44,8 +46,8 @@ class HomeTabView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: TitleRow(
-                  title: 'Top Mentors',
-                  leadingButtonText: 'See All',
+                  title: l10n.topMentors,
+                  leadingButtonText: l10n.seeAll,
                   leadingButtonCallback: () =>
                       context.router.pushNamed(Routes.topMentors),
                 ),
@@ -54,8 +56,8 @@ class HomeTabView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: TitleRow(
-                  title: 'Most Popular Courses',
-                  leadingButtonText: 'See All',
+                  title: l10n.mostPopularCourses,
+                  leadingButtonText: l10n.seeAll,
                   leadingButtonCallback: () =>
                       context.router.pushNamed(Routes.mostPopularCourses),
                 ),

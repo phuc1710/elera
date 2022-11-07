@@ -5,7 +5,18 @@ import 'package:iconly/iconly.dart';
 import '../../../../config/router/routes.dart';
 
 class CallListTile extends StatelessWidget {
-  const CallListTile({Key? key}) : super(key: key);
+  const CallListTile({
+    Key? key,
+    this.avatar,
+    this.name,
+    this.lastCallType,
+    this.lastCallTime,
+  }) : super(key: key);
+
+  final String? avatar;
+  final String? name;
+  final String? lastCallType;
+  final String? lastCallTime;
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +28,18 @@ class CallListTile extends StatelessWidget {
       leading: CircleAvatar(
         radius: MediaQuery.of(context).size.width * 0.08,
         backgroundColor: Theme.of(context).colorScheme.secondary,
+        backgroundImage: avatar == null ? null : Image.network('$avatar').image,
       ),
       title: Text(
-        'Roselle Ehrman',
+        '$name',
         style: textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
       ),
       subtitle: Row(
         children: [
-          Icon(IconlyBold.arrow_down_square, size: 16, color: primaryColor),
+          getLastCallTypeIcon(context, lastCallType),
           Text(
-            ' Incoming | Dec 19, 2024',
-            style:
-                textTheme.overline?.copyWith(color: const Color(0xff616161)),
+            ' $lastCallType | $lastCallTime',
+            style: textTheme.overline?.copyWith(color: const Color(0xff616161)),
           ),
         ],
       ),
@@ -38,5 +49,34 @@ class CallListTile extends StatelessWidget {
         color: primaryColor,
       ),
     );
+  }
+
+  Icon getLastCallTypeIcon(BuildContext context, String? lastCallType) {
+    switch (lastCallType) {
+      case 'Incoming':
+        return const Icon(
+          IconlyBold.arrow_down_square,
+          size: 16,
+          color: Color(0xff396dff),
+        );
+      case 'Missed':
+        return const Icon(
+          IconlyBold.close_square,
+          size: 16,
+          color: Color(0xffed5352),
+        );
+      case 'Outgoing':
+        return const Icon(
+          IconlyBold.arrow_up_square,
+          size: 16,
+          color: Color(0xff63de7c),
+        );
+      default:
+        return Icon(
+          Icons.square_rounded,
+          size: 16,
+          color: Theme.of(context).colorScheme.primary,
+        );
+    }
   }
 }

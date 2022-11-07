@@ -1,0 +1,43 @@
+{
+  "status": 200,
+  "code": 1,
+  "message": "Thành công",
+  "data": {
+    "chats": [
+      {
+        "id": "ch1",
+        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+        "user_id": "re",
+        "name": "Roselle Ehrman",
+        "unread_messages": 2,
+        "last_message": "Hi, good morning, too!",
+        "last_message_time": "13:29"
+      },
+      {
+        "id": "ch2",
+        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+        "user_id": "so",
+        "name": "Sanjuanita Ordonez",
+        "unread_messages": 2,
+        "last_message": "I just finished it",
+        "last_message_time": "10:48"
+      }
+    ],
+    "calls": [
+      {
+        "id": "c1",
+        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+        "name": "Roselle Ehrman",
+        "last_call_type": "Incoming",
+        "last_call_time": "Dec 19, 2024"
+      },
+      {
+        "id": "c1",
+        "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg",
+        "name": "Sanjuanita Ordonez",
+        "last_call_type": "Missed",
+        "last_call_time": "Dec 18, 2024"
+      }
+    ]
+  }
+}

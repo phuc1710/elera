@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class StarFilterChips extends StatefulWidget {
@@ -39,9 +40,7 @@ class _StarFilterChipsState extends State<StarFilterChips> {
               ),
               backgroundColor: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: width * 0.01),
-              label: Text(
-                _courseFilterList[index],
-              ),
+              label: Text(getFilter(context, index)),
               side: BorderSide(width: 2, color: primaryColor),
               selected: isCourseSelected,
               selectedColor: primaryColor,
@@ -60,5 +59,12 @@ class _StarFilterChipsState extends State<StarFilterChips> {
         },
       ),
     );
+  }
+
+  String getFilter(BuildContext context, int index) {
+    final l10n = AppLocalizations.of(context);
+    final List<String> _courseFilterList = [l10n.all, '5', '4', '3', '2', '1'];
+
+    return _courseFilterList[index];
   }
 }

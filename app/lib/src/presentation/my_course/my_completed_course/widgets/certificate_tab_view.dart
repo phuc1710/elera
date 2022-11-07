@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
@@ -34,7 +35,7 @@ class CertificateTabView extends StatelessWidget {
             ),
           ),
           BottomActionInk(
-            buttonString: 'Download Certificate',
+            buttonString: AppLocalizations.of(context).downloadCertificate,
             action: () {},
           )
         ],

@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import 'information_input.dart';
@@ -59,7 +60,7 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
               width: screenWidth * 0.7,
               child: InformationInput(
                 controller: widget.controller,
-                hintText: 'Phone Number',
+                hintText: AppLocalizations.of(context).phoneNumber,
                 keyboardtype: TextInputType.number,
                 customPadding: EdgeInsets.zero,
               ),

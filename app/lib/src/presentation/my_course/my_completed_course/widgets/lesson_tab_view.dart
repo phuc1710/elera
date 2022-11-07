@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/my_course_detail/my_course_detail_fetch_response_model.dart';
@@ -6,9 +7,11 @@ import '../../../course_detail_payment_enroll/course_details/widgets/section_row
 import 'bottom_action_ink.dart';
 
 class LessonsTabView extends StatelessWidget {
-  const LessonsTabView({Key? key, this.lessonData}) : super(key: key);
+  const LessonsTabView({Key? key, this.courseId, this.lessonData})
+      : super(key: key);
 
-  final List<ItemElement>? lessonData;
+  final String? courseId;
+  final List<Item>? lessonData;
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +29,17 @@ class LessonsTabView extends StatelessWidget {
         ...List.generate(
           lessonData?[index].lesson?.length ?? 0,
           (childIndex) {
-            final lesson = item?.lesson?[childIndex].item;
+            final lesson = item?.lesson?[childIndex];
 
             return LessonCard(
-              id: '${lesson?.lessonOrder}',
-              lessonTitle: '${lesson?.lessonName}',
+              courseId: '$courseId',
+              id: '${lesson?.id}',
+              order: '${lesson?.order}',
+              lessonTitle: '${lesson?.name}',
               duration: '${lesson?.time}',
               isLock: lesson?.status == 'lock',
               videoLink: lesson?.content,
+              currentTime: 0,
             );
           },
         ),
@@ -53,7 +59,7 @@ class LessonsTabView extends StatelessWidget {
           children: lesson1dList,
         ),
         BottomActionInk(
-          buttonString: 'Start Course Again',
+          buttonString: AppLocalizations.of(context).startCourseAgain,
           action: () {},
         )
       ],

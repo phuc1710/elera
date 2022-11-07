@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -14,6 +15,8 @@ class ActionButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: MediaQuery.of(context).size.height * 0.04,
@@ -24,8 +27,8 @@ class ActionButtonRow extends StatelessWidget {
           InkWell(
             borderRadius: BorderRadius.circular(40),
             onTap: () => showWelcomeDialog(context),
-            child: const MainActionInk(
-              buttonString: 'Skip',
+            child: MainActionInk(
+              buttonString: l10n.skip,
               width: 0.4,
               isNotMainAction: true,
             ),
@@ -33,10 +36,7 @@ class ActionButtonRow extends StatelessWidget {
           InkWell(
             borderRadius: BorderRadius.circular(40),
             onTap: () => showWelcomeDialog(context),
-            child: const MainActionInk(
-              buttonString: 'Continue',
-              width: 0.4,
-            ),
+            child: MainActionInk(buttonString: l10n.cont, width: 0.4),
           ),
         ],
       ),

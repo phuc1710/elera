@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,6 +33,7 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
       builder: (context, state) {
         final screenWidth = MediaQuery.of(context).size.width;
         final screenHeight = MediaQuery.of(context).size.height;
+        final l10n = AppLocalizations.of(context);
 
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
@@ -48,22 +50,19 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
                   screenHeight * 0.05,
                 ),
                 child: Text(
-                  'Add a pin number to make your account more secure',
+                  l10n.pinCreationDescription,
                   style: Theme.of(context).textTheme.bodyText2,
                   textAlign: TextAlign.center,
                 ),
               ),
-              PinCodeInput(
-                controller: pinController,
-                obscureText: true,
-              ),
+              PinCodeInput(controller: pinController, obscureText: true),
               const Expanded(flex: 2, child: SizedBox()),
               Padding(
                 padding: EdgeInsets.only(bottom: screenHeight * 0.032),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(40),
                   onTap: () => onContinueButtonTapped(context),
-                  child: const MainActionInk(buttonString: 'Continue'),
+                  child: MainActionInk(buttonString: l10n.cont),
                 ),
               )
             ],
@@ -75,9 +74,7 @@ class _CreateNewPinBodyState extends State<CreateNewPinBody> {
 
   void onContinueButtonTapped(BuildContext context) {
     context.read<CreateNewPinBloc>().add(
-          CreateNewPinSubmitted(
-            pinCode: pinController.text,
-          ),
+          CreateNewPinSubmitted(pinCode: pinController.text),
         );
   }
 }

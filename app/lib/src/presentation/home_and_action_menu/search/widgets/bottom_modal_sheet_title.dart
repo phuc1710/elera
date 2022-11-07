@@ -14,10 +14,7 @@ class BottomModalSheetTitle extends StatelessWidget {
         vertical: MediaQuery.of(context).size.height * 0.025,
       ),
       child: Center(
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headline6,
-        ),
+        child: Text(title, style: Theme.of(context).textTheme.headline6),
       ),
     );
   }

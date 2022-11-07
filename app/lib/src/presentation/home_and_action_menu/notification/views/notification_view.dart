@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,7 @@ class NotificationView extends StatelessWidget {
         child: Scaffold(
           resizeToAvoidBottomInset: true,
           appBar: AppBar(
-            title: const Text('Notification'),
+            title: Text(AppLocalizations.of(context).notification),
             titleTextStyle: Theme.of(context).textTheme.headline6,
             actions: [
               IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))

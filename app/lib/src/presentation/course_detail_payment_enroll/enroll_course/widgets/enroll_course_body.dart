@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,6 +27,7 @@ class _EnrollCourseBodyState extends State<EnrollCourseBody> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final textTheme = Theme.of(context).textTheme;
+    final l10n = AppLocalizations.of(context);
 
     return Stack(
       alignment: AlignmentDirectional.bottomCenter,
@@ -49,10 +51,7 @@ class _EnrollCourseBodyState extends State<EnrollCourseBody> {
               if (state is EnrollCoursePaymentFetchSuccess) {
                 return ListView(
                   children: <Widget>[
-                        Text(
-                          'Select the payment method you want to use',
-                          style: textTheme.caption,
-                        ),
+                        Text(l10n.enrollCoursePrompt, style: textTheme.caption)
                       ] +
                       buildPaymentList(state.paymentData?.items) +
                       [
@@ -62,8 +61,8 @@ class _EnrollCourseBodyState extends State<EnrollCourseBody> {
                             borderRadius: BorderRadius.circular(25),
                             onTap: () =>
                                 context.router.pushNamed(Routes.newCard),
-                            child: const MainActionInk(
-                              buttonString: 'Add New Card',
+                            child: MainActionInk(
+                              buttonString: l10n.addNewCard,
                               isNotMainAction: true,
                             ),
                           ),
@@ -77,7 +76,7 @@ class _EnrollCourseBodyState extends State<EnrollCourseBody> {
           ),
         ),
         BottomActionInk(
-          buttonString: r'Enroll Course - $40',
+          buttonString: '${l10n.enrollCourse} - \$40',
           action: () {
             context
                 .read<EnrollCourseBloc>()

@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/l10n/arb/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,6 +24,7 @@ class ReviewsTabView extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final rating = courseData?.rating;
     final reviewCount = courseData?.reviewCount;
+    final l10n = AppLocalizations.of(context);
 
     return BlocProvider(
       create: (context) =>
@@ -51,8 +53,8 @@ class ReviewsTabView extends StatelessWidget {
                           ),
                           Expanded(
                             child: TitleRow(
-                              title: '$rating ($reviewCount reviews)',
-                              leadingButtonText: 'See All',
+                              title: '$rating ($reviewCount ${l10n.reviews})',
+                              leadingButtonText: l10n.seeAll,
                               leadingButtonCallback: () =>
                                   context.router.pushNamed(Routes.review),
                             ),
@@ -88,8 +90,8 @@ class ReviewsTabView extends StatelessWidget {
                         ),
                         Expanded(
                           child: TitleRow(
-                            title: '$rating ($reviewCount reviews)',
-                            leadingButtonText: 'See All',
+                            title: '$rating ($reviewCount ${l10n.reviews})',
+                            leadingButtonText: l10n.seeAll,
                             leadingButtonCallback: () =>
                                 context.router.pushNamed(Routes.review),
                           ),

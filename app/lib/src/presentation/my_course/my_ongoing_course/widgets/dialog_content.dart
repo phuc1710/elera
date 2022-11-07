@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -14,6 +15,7 @@ class DialogContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final primaryColor = Theme.of(context).colorScheme.primary;
+    final l10n = AppLocalizations.of(context);
 
     return SingleChildScrollView(
       child: Column(
@@ -23,7 +25,7 @@ class DialogContent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Text(
-              'Please leave a review for your course.',
+              l10n.courseReviewDialogContent,
               textAlign: TextAlign.center,
               style: textTheme.bodyText2,
             ),
@@ -35,21 +37,12 @@ class DialogContent extends StatelessWidget {
                 const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
             onRatingUpdate: (value) {},
             ratingWidget: RatingWidget(
-              full: Icon(
-                Icons.star_rounded,
-                color: primaryColor,
-              ),
-              half: Icon(
-                Icons.star_half_rounded,
-                color: primaryColor,
-              ),
-              empty: Icon(
-                Icons.star_outline_rounded,
-                color: primaryColor,
-              ),
+              full: Icon(Icons.star_rounded, color: primaryColor),
+              half: Icon(Icons.star_half_rounded, color: primaryColor),
+              empty: Icon(Icons.star_outline_rounded, color: primaryColor),
             ),
           ),
-          const InformationInput(hintText: 'Review'),
+          InformationInput(hintText: l10n.review),
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Column(
@@ -57,8 +50,8 @@ class DialogContent extends StatelessWidget {
                 InkWell(
                   borderRadius: BorderRadius.circular(25),
                   onTap: () {},
-                  child: const MainActionInk(
-                    buttonString: 'Write Review',
+                  child: MainActionInk(
+                    buttonString: l10n.writeReview,
                     disableShadow: true,
                   ),
                 ),
@@ -66,8 +59,8 @@ class DialogContent extends StatelessWidget {
                 InkWell(
                   borderRadius: BorderRadius.circular(25),
                   onTap: () => context.router.pop(),
-                  child: const MainActionInk(
-                    buttonString: 'Cancel',
+                  child: MainActionInk(
+                    buttonString: l10n.cancel,
                     isNotMainAction: true,
                   ),
                 )

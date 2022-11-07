@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../home/widgets/title_row.dart';
@@ -26,8 +27,8 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
       child: Column(
         children: [
           TitleRow(
-            title: 'Recent',
-            leadingButtonText: 'Clear All',
+            title: AppLocalizations.of(context).recent,
+            leadingButtonText: AppLocalizations.of(context).clearAll,
             leadingButtonCallback: () => setState(() {
               widget.searchList?.clear();
             }),

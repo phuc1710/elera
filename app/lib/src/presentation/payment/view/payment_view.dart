@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,6 +23,8 @@ class PaymentView extends StatefulWidget {
 class _PaymentViewState extends State<PaymentView> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return BlocProvider(
       create: (context) => getIt<PaymentBloc>()..add(PaymentStarted()),
       child: Scaffold(
@@ -29,7 +32,7 @@ class _PaymentViewState extends State<PaymentView> {
         appBar: buildAppBar(
           AppBarParams(
             context,
-            title: 'Payment',
+            title: l10n.payment,
             backgroundColor: Colors.transparent,
             actions: [const Icon(Icons.more_horiz_outlined)],
           ),
@@ -50,7 +53,7 @@ class _PaymentViewState extends State<PaymentView> {
               return const Center(child: CircularProgressIndicator());
             }
 
-            return const Center(child: Text('chưa có nội dung'));
+            return Center(child: Text(l10n.noContent));
           },
         ),
       ),
@@ -84,7 +87,7 @@ class _PaymentViewState extends State<PaymentView> {
       left: 0,
       right: 0,
       child: BaseButton(
-        title: 'Add New Card',
+        title: AppLocalizations.of(context).addNewCard,
         titleColor: Colors.white,
         color: Theme.of(context).colorScheme.primary,
         onTap: () => context.router.pushNamed(Routes.newCard),

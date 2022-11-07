@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,6 +19,7 @@ class LessonsTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    final l10n = AppLocalizations.of(context);
 
     return BlocProvider(
       create: (context) =>
@@ -45,7 +47,9 @@ class LessonsTabView extends StatelessWidget {
                     final lesson = item?.lesson?[childIndex];
 
                     return LessonCard(
-                      id: '${lesson?.order}',
+                      courseId: '',
+                      id: '${lesson?.id}',
+                      order: '${lesson?.order}',
                       lessonTitle: '${lesson?.name}',
                       duration: '${lesson?.time}',
                       isLock: lesson?.status == 'lock',
@@ -66,8 +70,9 @@ class LessonsTabView extends StatelessWidget {
               physics: const ClampingScrollPhysics(),
               children: <Widget>[
                     TitleRow(
-                      title: '${state.lessonData?.total} lessons',
-                      leadingButtonText: 'See all',
+                      title:
+                          '${state.lessonData?.total} ${AppLocalizations.of(context).lessons}',
+                      leadingButtonText: l10n.seeAll,
                       leadingButtonCallback: () =>
                           context.router.pushNamed(Routes.lesson),
                     )

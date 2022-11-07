@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class PasswordInput extends StatefulWidget {
@@ -43,7 +44,7 @@ class _PasswordInputState extends State<PasswordInput> {
             ),
             onPressed: () => setState(() => _showPassword = !_showPassword),
           ),
-          hintText: 'Password',
+          hintText: AppLocalizations.of(context).password,
           hintStyle: caption?.copyWith(color: const Color(0xff9e9e9e)),
         ),
         obscureText: _showPassword,

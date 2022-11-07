@@ -20,10 +20,7 @@ class CourseTag extends StatelessWidget {
             color: Theme.of(context).colorScheme.secondary,
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 6.0,
-              horizontal: 8.0,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 8.0),
             child: Text(
               tag,
               style: GoogleFonts.urbanist(

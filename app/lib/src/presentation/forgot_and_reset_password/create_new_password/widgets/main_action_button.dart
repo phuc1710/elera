@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,7 @@ class MainActionButton extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(40),
         onTap: () => onContinueButtonTapped(context),
-        child: const MainActionInk(buttonString: 'Continue'),
+        child: MainActionInk(buttonString: AppLocalizations.of(context).cont),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,7 +27,7 @@ class _FriendsInvitationViewState extends State<FriendsInvitationView> {
         appBar: buildAppBar(
           AppBarParams(
             context,
-            title: 'Invite Friends',
+            title: AppLocalizations.of(context).inviteFriends,
             backgroundColor: Colors.transparent,
           ),
         ),
@@ -47,7 +48,7 @@ class _FriendsInvitationViewState extends State<FriendsInvitationView> {
               return const Center(child: CircularProgressIndicator());
             }
 
-            return const Center(child: Text('chưa có nội dung'));
+            return Center(child: Text(AppLocalizations.of(context).noContent));
           },
         ),
       ),

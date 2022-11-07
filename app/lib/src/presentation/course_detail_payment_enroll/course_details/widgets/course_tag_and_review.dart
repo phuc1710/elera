@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../home_and_action_menu/home/widgets/course_tag.dart';
@@ -31,7 +32,7 @@ class CourseTagAndReview extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
-              '$rating ($reviewCount reviews)',
+              '$rating ($reviewCount ${AppLocalizations.of(context).reviews})',
               style:
                   textTheme.caption?.copyWith(color: const Color(0xff616161)),
             ),

@@ -2,7 +2,7 @@
 class EndPoints {
   EndPoints._();
 
-  static const String baseUrl = 'http://103.63.215.141:7412/api';
+  static const String baseUrl = 'http://103.63.215.141:7414/api';
   static const String devUrl = '';
   static const String user = '/users';
   static const String signIn = '${EndPoints.user}/login';
@@ -39,6 +39,10 @@ class EndPoints {
 
   static const String myCourse = '${EndPoints.course}/user';
   static const String myCourseDetail = '${EndPoints.course}/user/';
+  static const String updateLessonTime = '${EndPoints.course}/lesson/time';
+
+  static const String inbox = '/inbox';
+  static const String chat = '/chat';
 
   static const String transactions = '/transaction';
   static const String eReceipt = '${EndPoints.transactions}/e-receipt';

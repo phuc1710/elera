@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import 'action_button_row.dart';
@@ -7,6 +8,8 @@ class SetYourFingerprintBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -17,7 +20,7 @@ class SetYourFingerprintBody extends StatelessWidget {
           Padding(
             padding: getPadding(context),
             child: Text(
-              'Add a fingerprint to make your account more secure',
+              l10n.fingerprintCreationDescription1,
               style: Theme.of(context).textTheme.bodyText2,
               textAlign: TextAlign.center,
             ),
@@ -29,7 +32,7 @@ class SetYourFingerprintBody extends StatelessWidget {
           Padding(
             padding: getPadding(context),
             child: Text(
-              'Please put your finger on the fingerprint scanner to get started',
+              l10n.fingerprintCreationDescription2,
               style: Theme.of(context).textTheme.bodyText2,
               textAlign: TextAlign.center,
             ),

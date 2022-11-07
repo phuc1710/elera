@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -58,15 +59,12 @@ class _EnterPinBodyState extends State<EnterPinBody> {
                   screenHeight * 0.05,
                 ),
                 child: Text(
-                  'Code has been sent to ${widget._contactInfo}',
+                  '${AppLocalizations.of(context).pinEntryPrompt} ${widget._contactInfo}',
                   style: Theme.of(context).textTheme.bodyText2,
                   textAlign: TextAlign.center,
                 ),
               ),
-              PinCodeInput(
-                controller: pinController,
-                obscureText: false,
-              ),
+              PinCodeInput(controller: pinController, obscureText: false),
               ResendCodeRow(contactInfo: widget._contactInfo as String),
               MainActionButton(pin: pinController.text),
             ],

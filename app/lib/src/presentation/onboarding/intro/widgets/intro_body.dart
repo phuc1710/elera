@@ -80,18 +80,20 @@ class _IntroBodyState extends State<IntroBody> {
   }
 
   List<Widget> get getIntroPages {
-    return const [
+    final l10n = AppLocalizations.of(context);
+
+    return [
       IntroPage(
         imagePath: 'assets/images/onboard1.png',
-        text: 'We provide the best learning courses & great mentors!',
+        text: l10n.onboarding1,
       ),
       IntroPage(
         imagePath: 'assets/images/onboard2.png',
-        text: 'Learn anytime and anywhere easily and conveniently',
+        text: l10n.onboarding2,
       ),
       IntroPage(
         imagePath: 'assets/images/onboard3.png',
-        text: "Let's improve your skills together with Elera right now!",
+        text: l10n.onboarding3,
       ),
     ];
   }

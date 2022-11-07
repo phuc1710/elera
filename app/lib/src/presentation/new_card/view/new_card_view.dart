@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,7 +36,7 @@ class _NewCardViewState extends State<NewCardView> {
         appBar: buildAppBar(
           AppBarParams(
             context,
-            title: 'Add New Card',
+            title: AppLocalizations.of(context).addNewCard,
             backgroundColor: Colors.white,
             actions: [
               const Icon(Icons.more_horiz_outlined, color: Colors.black),
@@ -73,12 +74,12 @@ class _NewCardViewState extends State<NewCardView> {
                   ),
                   buildInputField(
                     context,
-                    title: 'Card Name',
+                    title: AppLocalizations.of(context).cardName,
                     controller: cardNameController,
                   ),
                   buildInputField(
                     context,
-                    title: 'Card Number',
+                    title: AppLocalizations.of(context).cardNumber,
                     controller: cardNumberController,
                   ),
                   buildMoreInputs(context),
@@ -98,7 +99,7 @@ class _NewCardViewState extends State<NewCardView> {
       left: 0,
       right: 0,
       child: BaseButton(
-        title: 'Add New Card',
+        title: AppLocalizations.of(context).addNewCard,
         titleColor: Colors.white,
         color: Theme.of(context).colorScheme.primary,
         shadow: const [
@@ -130,7 +131,7 @@ class _NewCardViewState extends State<NewCardView> {
         Expanded(
           child: buildInputField(
             context,
-            title: 'Expiry Date',
+            title: AppLocalizations.of(context).expiryDate,
             controller: expiryDateController,
             onTap: () => showDatePicker(context),
             icon: const Icon(Icons.calendar_month),
@@ -140,7 +141,7 @@ class _NewCardViewState extends State<NewCardView> {
         Expanded(
           child: buildInputField(
             context,
-            title: 'CVV',
+            title: AppLocalizations.of(context).cvv,
             controller: cvvController,
           ),
         ),
@@ -173,7 +174,7 @@ class _NewCardViewState extends State<NewCardView> {
           const SizedBox(height: 10),
           ProfileTextField(
             controller: controller,
-            hint: 'Enter $title',
+            hint: '${AppLocalizations.of(context).enter} $title',
             onTap: onTap,
             readOnly: onTap != null,
             icon: icon,

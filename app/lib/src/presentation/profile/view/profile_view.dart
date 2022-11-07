@@ -128,10 +128,9 @@ class _ProfileViewState extends State<ProfileView> {
                   const SizedBox(height: 15),
                   Text(
                     state.profile?.fullName ?? '',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6
-                        ?.copyWith(fontSize: 24),
+                    style: Theme.of(context).textTheme.headline6?.copyWith(
+                          fontSize: 24,
+                        ),
                   ),
                   const SizedBox(height: 12),
                   Text(

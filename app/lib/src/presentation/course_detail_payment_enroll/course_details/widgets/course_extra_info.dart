@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class CourseExtraInfo extends StatelessWidget {
@@ -12,6 +13,7 @@ class CourseExtraInfo extends StatelessWidget {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final textTheme = Theme.of(context).textTheme;
     final screenHeight = MediaQuery.of(context).size.height;
+    final l10n = AppLocalizations.of(context);
 
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -21,14 +23,14 @@ class CourseExtraInfo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Icon(Icons.people, color: primaryColor),
-          Text('$enrollCount students', style: textTheme.caption),
+          Text('$enrollCount ${l10n.students}', style: textTheme.caption),
           Icon(Icons.timer, color: primaryColor),
-          Text('$totalTime Hours', style: textTheme.caption),
+          Text('$totalTime ${l10n.hours}', style: textTheme.caption),
           Icon(
             Icons.document_scanner,
             color: primaryColor,
           ),
-          Text('Certificate', style: textTheme.caption),
+          Text(l10n.certificate, style: textTheme.caption),
         ],
       ),
     );

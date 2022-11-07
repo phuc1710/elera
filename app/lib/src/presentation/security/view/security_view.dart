@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/params/appbar_params.dart';
@@ -15,11 +16,13 @@ class SecurityView extends StatefulWidget {
 class _SecurityViewState extends State<SecurityView> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       appBar: buildAppBar(
         AppBarParams(
           context,
-          title: 'Security',
+          title: l10n.security,
           backgroundColor: Colors.transparent,
         ),
       ),
@@ -32,28 +35,20 @@ class _SecurityViewState extends State<SecurityView> {
             SettingTile(
               value: true,
               onChange: (val) {},
-              title: 'Remember me',
+              title: l10n.rememberMe,
             ),
-            SettingTile(
-              value: false,
-              onChange: (val) {},
-              title: 'Face ID',
-            ),
+            SettingTile(value: false, onChange: (val) {}, title: l10n.faceID),
             SettingTile(
               value: true,
               onChange: (val) {},
-              title: 'Biometric ID',
+              title: l10n.biometricID,
             ),
-            actionItem(
-              context,
-              title: 'Google Authenticator',
-              onTap: () {},
-            ),
+            actionItem(context, title: l10n.googleAuthenticator, onTap: () {}),
             const SizedBox(height: 20),
             SizedBox(
               width: double.maxFinite,
               child: BaseButton(
-                title: 'Change PIN',
+                title: l10n.changePIN,
                 titleColor: Theme.of(context).colorScheme.primary,
                 color: Theme.of(context).colorScheme.secondary,
                 onTap: () {},
@@ -63,7 +58,7 @@ class _SecurityViewState extends State<SecurityView> {
             SizedBox(
               width: double.maxFinite,
               child: BaseButton(
-                title: 'Change Password',
+                title: l10n.changePassword,
                 titleColor: Theme.of(context).colorScheme.primary,
                 color: Theme.of(context).colorScheme.secondary,
                 onTap: () {},
@@ -88,10 +83,9 @@ class _SecurityViewState extends State<SecurityView> {
       title: Text(
         title,
         textAlign: TextAlign.start,
-        style: Theme.of(context)
-            .textTheme
-            .bodyText2
-            ?.copyWith(fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.bodyText2?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
       ),
       trailing:
           const Icon(Icons.arrow_forward_ios, size: 17, color: Colors.black),

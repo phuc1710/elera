@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 class DialogContent extends StatelessWidget {
@@ -12,7 +13,7 @@ class DialogContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Your account is ready to use. You will be redirected to the Home page in a few seconds..',
+          AppLocalizations.of(context).welcomeDialogContent,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 14),
         ),

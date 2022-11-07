@@ -7,7 +7,9 @@ import '../bloc/my_ongoing_course_bloc.dart';
 import 'lesson_tab_view.dart';
 
 class MyOngoingCourseBody extends StatelessWidget {
-  const MyOngoingCourseBody({Key? key}) : super(key: key);
+  const MyOngoingCourseBody({Key? key, this.courseId}) : super(key: key);
+
+  final String? courseId;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,10 @@ class MyOngoingCourseBody extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is MyOngoingCourseFetchSuccess) {
-          return LessonsTabView(lessonData: state.courseData?.lessons?.items);
+          return LessonsTabView(
+            courseId: courseId,
+            lessonData: state.courseData?.lessons?.items,
+          );
         }
 
         return const LoadingWidget();

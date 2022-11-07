@@ -1,5 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:expandable/expandable.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +32,7 @@ class _HelperCenterViewState extends State<HelperCenterView> {
         appBar: buildAppBar(
           AppBarParams(
             context,
-            title: 'Help Center',
+            title: AppLocalizations.of(context).helpCenter,
             backgroundColor: Colors.transparent,
             actions: [
               Container(
@@ -59,9 +60,9 @@ class _HelperCenterViewState extends State<HelperCenterView> {
                         ),
                     labelColor: Theme.of(context).colorScheme.primary,
                     unselectedLabelColor: Colors.grey,
-                    tabs: const [
-                      Tab(text: 'FAQ'),
-                      Tab(text: 'Contact Us'),
+                    tabs: [
+                      Tab(text: AppLocalizations.of(context).faq),
+                      Tab(text: AppLocalizations.of(context).contactUs),
                     ],
                   ),
                   Expanded(
@@ -97,7 +98,7 @@ class _HelperCenterViewState extends State<HelperCenterView> {
           );
         }
 
-        return const Center(child: Text('Chưa có nội dung'));
+        return Center(child: Text(AppLocalizations.of(context).noContent));
       },
     );
   }
@@ -111,10 +112,9 @@ class _HelperCenterViewState extends State<HelperCenterView> {
       leading: Image.network(item?.img ?? '', width: 30, height: 30),
       title: Text(
         item?.name ?? '',
-        style: Theme.of(context)
-            .textTheme
-            .bodyText1
-            ?.copyWith(color: Colors.black),
+        style: Theme.of(context).textTheme.bodyText1?.copyWith(
+              color: Colors.black,
+            ),
       ),
     );
   }
@@ -165,7 +165,7 @@ class _HelperCenterViewState extends State<HelperCenterView> {
           );
         }
 
-        return const Center(child: Text('Chưa có nội dung'));
+        return Center(child: Text(AppLocalizations.of(context).noContent));
       },
     );
   }

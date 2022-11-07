@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../search/widgets/filter_bottom_sheet_content.dart';
@@ -124,7 +125,7 @@ class _SearchBarState extends State<SearchBar> {
                       ),
                       splashRadius: 10,
                     ),
-              hintText: 'Search',
+              hintText: AppLocalizations.of(context).search,
               hintStyle: Theme.of(context).textTheme.caption?.copyWith(
                     color: isFocus ?? true && !widget.atHome
                         ? const Color(0xff212121)
@@ -191,10 +192,9 @@ class _SearchBarState extends State<SearchBar> {
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         alPredictions[index] ?? '',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1
-                            ?.copyWith(color: const Color(0xff212121)),
+                        style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                              color: const Color(0xff212121),
+                            ),
                       ),
                     ),
                   );

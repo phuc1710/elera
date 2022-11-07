@@ -33,10 +33,9 @@ class ProfileTextField extends StatelessWidget {
           suffixIcon: icon,
           hintText: hint,
         ),
-        style: Theme.of(context)
-            .textTheme
-            .caption
-            ?.copyWith(fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.caption?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
       ),
     );
   }

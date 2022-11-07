@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -43,6 +44,8 @@ class _SelectContactBodyState extends State<SelectContactBody> {
       buildWhen: (prev, curr) =>
           prev is ContactFetchInProgress && curr is! ContactFetchInProgress,
       builder: (context, state) {
+        final l10n = AppLocalizations.of(context);
+
         return Padding(
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -57,7 +60,7 @@ class _SelectContactBodyState extends State<SelectContactBody> {
                     (index) => ContactRadio(
                       selectedValue: _selectedIndex,
                       icon: iconList[index],
-                      title: 'via ${state.contacts[index]?.type}:',
+                      title: '${l10n.via} ${state.contacts[index]?.type}:',
                       subtitle: '${state.contacts[index]?.info}',
                       onSelected: (dynamic value) =>
                           setState(() => _selectedIndex = value),
@@ -69,7 +72,7 @@ class _SelectContactBodyState extends State<SelectContactBody> {
               InkWell(
                 onTap: () => onContinueButtonTapped(context),
                 borderRadius: BorderRadius.circular(40),
-                child: const MainActionInk(buttonString: 'Continue'),
+                child: MainActionInk(buttonString: l10n.cont),
               ),
             ],
           ),

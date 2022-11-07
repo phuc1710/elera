@@ -35,10 +35,9 @@ class TopMentorsBody extends StatelessWidget {
                       ),
                       title: Text(
                         '${mentor?.name}',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            ?.copyWith(fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                       subtitle: Text(
                         '${mentor?.description}',

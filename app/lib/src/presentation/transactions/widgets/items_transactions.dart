@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../config/router/app_router.dart';
@@ -40,7 +41,7 @@ class ItemsTransactionsTab extends StatelessWidget {
                     imagePath: courseImage,
                   ),
                   SizedBox(
-                    width: screenWidth * 0.3,
+                    width: screenWidth * 0.25,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -77,7 +78,6 @@ class ItemsTransactionsTab extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          fixedSize: const Size(10, 5),
                           backgroundColor: primaryColor,
                           elevation: 3,
                           shape: RoundedRectangleBorder(
@@ -87,9 +87,9 @@ class ItemsTransactionsTab extends StatelessWidget {
                         onPressed: () {
                           context.router.push(const EReceiptRoute());
                         },
-                        child: const Text(
-                          'E-receipt',
-                          style: TextStyle(color: Colors.white),
+                        child: Text(
+                          AppLocalizations.of(context).eReceipt,
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     ),

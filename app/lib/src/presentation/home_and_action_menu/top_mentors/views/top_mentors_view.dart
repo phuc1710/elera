@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,7 +15,7 @@ class TopMentorsView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          title: const Text('Top Mentors'),
+          title: Text(AppLocalizations.of(context).topMentors),
           titleTextStyle: Theme.of(context).textTheme.headline6,
           leadingWidth: 35,
           actions: [

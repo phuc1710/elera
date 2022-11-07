@@ -28,7 +28,7 @@ class _LanguageViewState extends State<LanguageView> {
         appBar: buildAppBar(
           AppBarParams(
             context,
-            title: 'Language',
+            title: AppLocalizations.of(context).language,
             backgroundColor: Colors.white,
           ),
         ),
@@ -51,7 +51,7 @@ class _LanguageViewState extends State<LanguageView> {
               return const Center(child: CircularProgressIndicator());
             }
 
-            return const Center(child: Text('chưa có nội dung'));
+            return Center(child: Text(AppLocalizations.of(context).noContent));
           },
         ),
       ),

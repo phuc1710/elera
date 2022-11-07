@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
@@ -70,7 +71,7 @@ class _EditProfileViewState extends State<EditProfileView> {
         appBar: buildAppBar(
           AppBarParams(
             context,
-            title: 'Edit Profile',
+            title: AppLocalizations.of(context).editProfile,
             backgroundColor: Colors.transparent,
           ),
         ),
@@ -94,7 +95,7 @@ class _EditProfileViewState extends State<EditProfileView> {
               return buildBody(context, state.data);
             }
 
-            return const Center(child: Text('chưa có nội dung'));
+            return Center(child: Text(AppLocalizations.of(context).noContent));
           },
         ),
       ),
@@ -170,7 +171,7 @@ class _EditProfileViewState extends State<EditProfileView> {
     return SizedBox(
       width: double.maxFinite,
       child: BaseButton(
-        title: 'Update',
+        title: AppLocalizations.of(context).update,
         titleColor: Colors.white,
         color: Theme.of(context).colorScheme.primary,
         shadow: const [
@@ -213,10 +214,9 @@ class _EditProfileViewState extends State<EditProfileView> {
       },
       title: Text(
         title ?? '',
-        style: Theme.of(context)
-            .textTheme
-            .bodyMedium
-            ?.copyWith(color: Colors.black),
+        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Colors.black,
+            ),
       ),
     );
   }
@@ -227,7 +227,7 @@ class _EditProfileViewState extends State<EditProfileView> {
   }) {
     return showBaseBottomSheet(
       context: context,
-      title: 'Select country',
+      title: AppLocalizations.of(context).selectCountry,
       child: ListView.separated(
         shrinkWrap: true,
         itemCount: countries.length,
@@ -248,7 +248,7 @@ class _EditProfileViewState extends State<EditProfileView> {
   void showModalGenders(BuildContext context) {
     return showBaseBottomSheet(
       context: context,
-      title: 'Select gender',
+      title: AppLocalizations.of(context).selectGender,
       child: ListView.separated(
         shrinkWrap: true,
         itemCount: genders.length,
