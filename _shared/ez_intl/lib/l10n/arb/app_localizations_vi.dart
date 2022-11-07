@@ -62,6 +62,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get congratulations => 'Xin chúc mừng!';
 
   @override
+  String get connected => 'Đã kết nối';
+
+  @override
   String get cont => 'Tiếp tục';
 
   @override

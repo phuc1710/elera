@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/payment/payment_response_model.dart';
@@ -22,7 +23,7 @@ class PaymentTile extends StatelessWidget {
             ?.copyWith(fontWeight: FontWeight.bold),
       ),
       trailing: Text(
-        'Connected',
+        AppLocalizations.of(context).connected,
         style: Theme.of(context).textTheme.bodyText2?.copyWith(
               fontWeight: FontWeight.bold,
               color: Theme.of(context).colorScheme.primary,

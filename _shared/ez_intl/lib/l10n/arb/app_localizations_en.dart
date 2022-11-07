@@ -62,6 +62,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get congratulations => 'Congratulations!';
 
   @override
+  String get connected => 'Connected';
+
+  @override
   String get cont => 'Continue';
 
   @override

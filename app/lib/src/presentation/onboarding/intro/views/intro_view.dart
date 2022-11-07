@@ -16,9 +16,7 @@ class _IntroViewState extends State<IntroView> {
     final _initButtonString = AppLocalizations.of(context).next;
 
     return SafeArea(
-      child: Scaffold(
-        body: IntroBody(initButtonString: _initButtonString),
-      ),
+      child: Scaffold(body: IntroBody(initButtonString: _initButtonString)),
     );
   }
 }

@@ -207,6 +207,12 @@ abstract class AppLocalizations {
   /// **'Congratulations!'**
   String get congratulations;
 
+  /// No description provided for @connected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connected'**
+  String get connected;
+
   /// No description provided for @cont.
   ///
   /// In en, this message translates to:
