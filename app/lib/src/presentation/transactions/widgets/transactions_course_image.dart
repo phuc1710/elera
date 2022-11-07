@@ -17,10 +17,7 @@ class TransactionsCourseImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         child: SizedBox.square(
           dimension: 80,
-          child: Image.network(
-            imagePath,
-            fit: BoxFit.cover,
-          ),
+          child: Image.network(imagePath, fit: BoxFit.cover),
         ),
       ),
     );

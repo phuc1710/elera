@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final textTheme = Theme.of(context).textTheme;
+    final l10n = AppLocalizations.of(context);
 
     return AppBar(
       titleTextStyle: textTheme.headline6,
@@ -26,36 +28,30 @@ class AppBarWidget extends StatelessWidget {
               PopupMenuItem<int>(
                 value: 0,
                 child: Row(
-                  children: const [
-                    Icon(Icons.share),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Share E-Receipt'),
+                  children: [
+                    const Icon(Icons.share),
+                    const SizedBox(width: 10),
+                    Text(l10n.shareEReceipt),
                   ],
                 ),
               ),
               PopupMenuItem<int>(
                 value: 1,
                 child: Row(
-                  children: const [
-                    Icon(Icons.download),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Downlead E-Receipt'),
+                  children: [
+                    const Icon(Icons.download),
+                    const SizedBox(width: 10),
+                    Text(l10n.downloadEReceipt),
                   ],
                 ),
               ),
               PopupMenuItem<int>(
                 value: 2,
                 child: Row(
-                  children: const [
-                    Icon(Icons.print),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Print'),
+                  children: [
+                    const Icon(Icons.print),
+                    const SizedBox(width: 10),
+                    Text(l10n.print),
                   ],
                 ),
               ),

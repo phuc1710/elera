@@ -207,6 +207,12 @@ abstract class AppLocalizations {
   /// **'Clear All'**
   String get clearAll;
 
+  /// No description provided for @clipboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied to your clipboard!'**
+  String get clipboard;
+
   /// No description provided for @completed.
   ///
   /// In en, this message translates to:
@@ -267,6 +273,18 @@ abstract class AppLocalizations {
   /// **'Continue with Google'**
   String get continueWithGoogle;
 
+  /// No description provided for @country.
+  ///
+  /// In en, this message translates to:
+  /// **'Country'**
+  String get country;
+
+  /// No description provided for @course.
+  ///
+  /// In en, this message translates to:
+  /// **'Course'**
+  String get course;
+
   /// No description provided for @courseCompleted.
   ///
   /// In en, this message translates to:
@@ -315,6 +333,12 @@ abstract class AppLocalizations {
   /// **'Dark Mode'**
   String get darkMode;
 
+  /// No description provided for @date.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
   /// No description provided for @dob.
   ///
   /// In en, this message translates to:
@@ -332,6 +356,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Download Certificate'**
   String get downloadCertificate;
+
+  /// No description provided for @downloadEReceipt.
+  ///
+  /// In en, this message translates to:
+  /// **'Download E-Receipt'**
+  String get downloadEReceipt;
 
   /// No description provided for @eReceipt.
   ///
@@ -591,6 +621,12 @@ abstract class AppLocalizations {
   /// **'My Course'**
   String get myCourseNavBar;
 
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
   /// No description provided for @newServiceAvailable.
   ///
   /// In en, this message translates to:
@@ -687,6 +723,18 @@ abstract class AppLocalizations {
   /// **'Payment'**
   String get payment;
 
+  /// No description provided for @paymentMethods.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Methods'**
+  String get paymentMethods;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phone;
+
   /// No description provided for @phoneNumber.
   ///
   /// In en, this message translates to:
@@ -710,6 +758,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Price'**
   String get price;
+
+  /// No description provided for @print.
+  ///
+  /// In en, this message translates to:
+  /// **'Print'**
+  String get print;
 
   /// No description provided for @privacyPolicy.
   ///
@@ -855,6 +909,12 @@ abstract class AppLocalizations {
   /// **'Set Your Fingerprint'**
   String get setYourFingerprint;
 
+  /// No description provided for @shareEReceipt.
+  ///
+  /// In en, this message translates to:
+  /// **'Share E-Receipt'**
+  String get shareEReceipt;
+
   /// No description provided for @signIn.
   ///
   /// In en, this message translates to:
@@ -897,6 +957,12 @@ abstract class AppLocalizations {
   /// **'Start Course Again'**
   String get startCourseAgain;
 
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
   /// No description provided for @students.
   ///
   /// In en, this message translates to:
@@ -926,6 +992,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Top Mentors'**
   String get topMentors;
+
+  /// No description provided for @transactionID.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction ID'**
+  String get transactionID;
 
   /// No description provided for @transactions.
   ///

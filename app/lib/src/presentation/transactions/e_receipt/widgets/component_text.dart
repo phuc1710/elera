@@ -10,17 +10,11 @@ class ComponentText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style1 = TextStyle(
-      fontSize: 14,
-      color: Colors.grey[600],
-    );
+    final style1 = TextStyle(fontSize: 14, color: Colors.grey[600]);
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 10.0),
-      child: Text(
-        text,
-        style: style1,
-      ),
+      child: Text(text, style: style1),
     );
   }
 }

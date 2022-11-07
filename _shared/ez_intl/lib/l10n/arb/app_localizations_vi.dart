@@ -62,6 +62,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get clearAll => 'Xóa tất cả';
 
   @override
+  String get clipboard => 'Đã sao chép đến clipboard!';
+
+  @override
   String get completed => 'Đã hoàn thành';
 
   @override
@@ -92,6 +95,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get continueWithGoogle => 'Tiếp tục với Google';
 
   @override
+  String get country => 'Quốc gia';
+
+  @override
+  String get course => 'Khóa học';
+
+  @override
   String get courseCompleted => 'Khóa học đã hoàn thành!';
 
   @override
@@ -116,6 +125,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get darkMode => 'Chế độ tối';
 
   @override
+  String get date => 'Ngày';
+
+  @override
   String get dob => 'Ngày tháng năm sinh';
 
   @override
@@ -123,6 +135,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get downloadCertificate => 'Tải Chứng chỉ';
+
+  @override
+  String get downloadEReceipt => 'Tải hóa đơn';
 
   @override
   String get eReceipt => 'Hóa đơn';
@@ -254,6 +269,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get myCourseNavBar => 'Khóa học';
 
   @override
+  String get name => 'Tên';
+
+  @override
   String get newServiceAvailable => 'Dịch vụ mới có sẵn';
 
   @override
@@ -302,6 +320,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get payment => 'Thanh toán';
 
   @override
+  String get paymentMethods => 'Phương thức thanh toán';
+
+  @override
+  String get phone => 'SĐT';
+
+  @override
   String get phoneNumber => 'Số điện thoại';
 
   @override
@@ -312,6 +336,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get price => 'Giá';
+
+  @override
+  String get print => 'In';
 
   @override
   String get privacyPolicy => 'Chính sách riêng tư';
@@ -386,6 +413,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get setYourFingerprint => 'Đặt dấu vân tay của bạn';
 
   @override
+  String get shareEReceipt => 'Chia sẻ hóa đơn';
+
+  @override
   String get signIn => 'Đăng nhập';
 
   @override
@@ -407,6 +437,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get startCourseAgain => 'Bắt đầu lại khóa học';
 
   @override
+  String get status => 'Tình trạng';
+
+  @override
   String get students => 'học sinh';
 
   @override
@@ -420,6 +453,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get topMentors => 'Giảng viên hàng đầu';
+
+  @override
+  String get transactionID => 'ID giao dịch';
 
   @override
   String get transactions => 'Giao dịch';

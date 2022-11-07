@@ -62,6 +62,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clearAll => 'Clear All';
 
   @override
+  String get clipboard => 'Copied to your clipboard!';
+
+  @override
   String get completed => 'Completed';
 
   @override
@@ -92,6 +95,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithGoogle => 'Continue with Google';
 
   @override
+  String get country => 'Country';
+
+  @override
+  String get course => 'Course';
+
+  @override
   String get courseCompleted => 'Course Completed!';
 
   @override
@@ -116,6 +125,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get darkMode => 'Dark Mode';
 
   @override
+  String get date => 'Date';
+
+  @override
   String get dob => 'Date of Birth';
 
   @override
@@ -123,6 +135,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get downloadCertificate => 'Download Certificate';
+
+  @override
+  String get downloadEReceipt => 'Download E-Receipt';
 
   @override
   String get eReceipt => 'E-receipt';
@@ -254,6 +269,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get myCourseNavBar => 'My Course';
 
   @override
+  String get name => 'Name';
+
+  @override
   String get newServiceAvailable => 'New Service Available';
 
   @override
@@ -302,6 +320,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get payment => 'Payment';
 
   @override
+  String get paymentMethods => 'Payment Methods';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
   String get phoneNumber => 'Phone Number';
 
   @override
@@ -312,6 +336,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get price => 'Price';
+
+  @override
+  String get print => 'Print';
 
   @override
   String get privacyPolicy => 'Privacy Policy';
@@ -386,6 +413,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get setYourFingerprint => 'Set Your Fingerprint';
 
   @override
+  String get shareEReceipt => 'Share E-Receipt';
+
+  @override
   String get signIn => 'Sign in';
 
   @override
@@ -407,6 +437,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startCourseAgain => 'Start Course Again';
 
   @override
+  String get status => 'Status';
+
+  @override
   String get students => 'students';
 
   @override
@@ -420,6 +453,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get topMentors => 'Top Mentors';
+
+  @override
+  String get transactionID => 'Transaction ID';
 
   @override
   String get transactions => 'Transactions';

@@ -14,7 +14,7 @@ final String img;
             padding: const EdgeInsets.only(
               left: 30,
               right: 30,
-              // bottom: 10,
+              // bottom: 10
             ),
             child: Image.asset(img),
           ),

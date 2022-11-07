@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/e_receipt/e_receipt_response.dart';
@@ -28,24 +29,16 @@ class EReceiptTopBody extends StatelessWidget {
         ),
         margin: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
         child: Padding(
-          padding: const EdgeInsets.only(
-            right: 20,
-            left: 20,
-            top: 20,
-            bottom: 10,
-          ),
+          padding:
+              const EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ComponentText(
-                    text: text,
-                  ),
-                  const ComponentText(
-                    text: 'Category',
-                  ),
+                  ComponentText(text: text),
+                  ComponentText(text: AppLocalizations.of(context).category),
                 ],
               ),
               Column(

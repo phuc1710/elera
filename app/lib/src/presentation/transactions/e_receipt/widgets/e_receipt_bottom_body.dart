@@ -1,3 +1,4 @@
+import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -14,7 +15,7 @@ class EReceiptBottomBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final primaryColor = Theme.of(context).colorScheme.primary;
-
+    final l10n = AppLocalizations.of(context);
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Padding(
@@ -26,23 +27,19 @@ class EReceiptBottomBody extends StatelessWidget {
         ),
         margin: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
         child: Padding(
-          padding: const EdgeInsets.only(
-            right: 20,
-            left: 20,
-            top: 20,
-            bottom: 10,
-          ),
+          padding:
+              const EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  ComponentText(text: 'Price'),
-                  ComponentText(text: 'Payment Methots'),
-                  ComponentText(text: 'Date'),
-                  ComponentText(text: 'Transaction ID'),
-                  ComponentText(text: 'Status'),
+                children: [
+                  ComponentText(text: l10n.price),
+                  ComponentText(text: l10n.paymentMethods),
+                  ComponentText(text: l10n.date),
+                  ComponentText(text: l10n.transactionID),
+                  ComponentText(text: l10n.status),
                 ],
               ),
               Column(
@@ -62,24 +59,15 @@ class EReceiptBottomBody extends StatelessWidget {
                           constraints: const BoxConstraints(),
                           onPressed: () {
                             Clipboard.setData(
-                              ClipboardData(
-                                text: value?.transactionId ?? '',
-                              ),
+                              ClipboardData(text: value?.transactionId ?? ''),
                             ).then((_) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text(
-                                    'Copied to your clipboard !',
-                                  ),
-                                ),
+                                SnackBar(content: Text(l10n.clipboard)),
                               );
                             });
                           },
                           color: primaryColor,
-                          icon: const Icon(
-                            Icons.copy,
-                            size: 20,
-                          ),
+                          icon: const Icon(Icons.copy, size: 20),
                         ),
                       )
                     ],
