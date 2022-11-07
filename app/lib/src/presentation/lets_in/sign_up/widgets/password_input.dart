@@ -1,5 +1,6 @@
 import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 class PasswordInput extends StatefulWidget {
   const PasswordInput({
@@ -37,11 +38,9 @@ class _PasswordInputState extends State<PasswordInput> {
                 BorderSide(color: Theme.of(context).colorScheme.primary),
             borderRadius: BorderRadius.circular(screenWidth * 0.03),
           ),
-          prefixIcon: const Icon(Icons.lock),
+          prefixIcon: const Icon(IconlyBold.lock),
           suffixIcon: IconButton(
-            icon: Icon(
-              _showPassword ? Icons.visibility_off : Icons.visibility,
-            ),
+            icon: Icon(_showPassword ? IconlyBold.hide : IconlyBold.show),
             onPressed: () => setState(() => _showPassword = !_showPassword),
           ),
           hintText: AppLocalizations.of(context).password,

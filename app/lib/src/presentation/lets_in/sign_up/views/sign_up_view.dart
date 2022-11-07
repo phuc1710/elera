@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../injector/injector.dart';
 import '../bloc/sign_up_bloc.dart';
@@ -20,6 +21,7 @@ class SignUpView extends StatelessWidget {
             foregroundColor: Colors.black,
             backgroundColor: Colors.transparent,
             elevation: 0,
+            leading: const Icon(IconlyLight.arrow_left),
             toolbarHeight: MediaQuery.of(context).size.height * 0.0995,
           ),
           body: BlocProvider(
