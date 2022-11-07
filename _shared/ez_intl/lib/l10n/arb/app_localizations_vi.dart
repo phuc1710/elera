@@ -26,6 +26,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get cancel => 'Hủy bỏ';
 
   @override
+  String get cardName => 'Tên thẻ';
+
+  @override
+  String get cardNumber => 'Số thẻ';
+
+  @override
   String get category => 'Thể loại';
 
   @override
@@ -120,6 +126,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get enrollSuccessDialogContent => 'Bạn đã thanh toán thành công và tham gia vào khóa học.';
+
+  @override
+  String get enter => 'Nhập';
+
+  @override
+  String get expiryDate => 'Ngày hết hạn';
 
   @override
   String get faq => 'Câu hỏi thường gặp';

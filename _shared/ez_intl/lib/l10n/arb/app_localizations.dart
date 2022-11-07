@@ -135,6 +135,18 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
+  /// No description provided for @cardName.
+  ///
+  /// In en, this message translates to:
+  /// **'Card Name'**
+  String get cardName;
+
+  /// No description provided for @cardNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Card Number'**
+  String get cardNumber;
+
   /// No description provided for @category.
   ///
   /// In en, this message translates to:
@@ -326,6 +338,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You have successfully made payment and enrolled the course.'**
   String get enrollSuccessDialogContent;
+
+  /// No description provided for @enter.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter'**
+  String get enter;
+
+  /// No description provided for @expiryDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry Date'**
+  String get expiryDate;
 
   /// No description provided for @faq.
   ///

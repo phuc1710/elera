@@ -26,6 +26,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancel => 'Cancel';
 
   @override
+  String get cardName => 'Card Name';
+
+  @override
+  String get cardNumber => 'Card Number';
+
+  @override
   String get category => 'Category';
 
   @override
@@ -120,6 +126,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enrollSuccessDialogContent => 'You have successfully made payment and enrolled the course.';
+
+  @override
+  String get enter => 'Enter';
+
+  @override
+  String get expiryDate => 'Expiry Date';
 
   @override
   String get faq => 'FAQ';
