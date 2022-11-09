@@ -46,11 +46,7 @@ class _AvatarState extends State<Avatar> {
               ),
               child: const Padding(
                 padding: EdgeInsets.all(2.0),
-                child: Icon(
-                  IconlyBold.edit,
-                  size: 20,
-                  color: Colors.white,
-                ),
+                child: Icon(IconlyBold.edit, size: 20, color: Colors.white),
               ),
             ),
             onPressed: () => _pickImage(ImageSource.gallery),

@@ -49,9 +49,8 @@ class ActionButtonRow extends StatelessWidget {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
-          ),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
           title: const DialogTitle(),
           content: const DialogContent(),
           contentTextStyle:

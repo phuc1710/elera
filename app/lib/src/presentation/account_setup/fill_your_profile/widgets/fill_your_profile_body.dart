@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../config/router/routes.dart';
 import '../../../../core/utils/utils.dart';
@@ -60,12 +61,12 @@ class _FillYourProfileBodyState extends State<FillYourProfileBody> {
               InformationInput(
                 hintText: l10n.dob,
                 controller: dateOfBirthController,
-                suffixIcon: const Icon(Icons.date_range_rounded),
+                suffixIcon: const Icon(IconlyLight.calendar),
               ),
               InformationInput(
                 hintText: l10n.email,
                 controller: emailController,
-                suffixIcon: const Icon(Icons.email_rounded),
+                suffixIcon: const Icon(IconlyLight.message),
               ),
               // TODO(phucndh): implement phone input from thinhhh
               PhoneNumberInput(

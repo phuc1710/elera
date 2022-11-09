@@ -42,15 +42,11 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
                   value: dropDownFlagValue,
                   icon: const Icon(Icons.arrow_drop_down_rounded),
                   iconEnabledColor: const Color(0xff9e9e9e),
-                  style: Theme.of(context)
-                      .textTheme
-                      .caption
-                      ?.copyWith(color: const Color(0xff9e9e9e)),
+                  style: Theme.of(context).textTheme.caption?.copyWith(
+                        color: const Color(0xff9e9e9e),
+                      ),
                   items: const [
-                    DropdownMenuItem(
-                      value: 'US',
-                      child: Text('US'),
-                    )
+                    DropdownMenuItem(value: 'US', child: Text('US'))
                   ],
                   onChanged: onDropDownFlagChanged,
                 ),

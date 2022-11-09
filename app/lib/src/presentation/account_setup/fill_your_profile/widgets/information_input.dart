@@ -40,10 +40,9 @@ class InformationInput extends StatelessWidget {
             borderRadius: BorderRadius.circular(screenWidth * 0.03),
           ),
           hintText: hintText,
-          hintStyle: Theme.of(context)
-              .textTheme
-              .caption
-              ?.copyWith(color: const Color(0xff9e9e9e)),
+          hintStyle: Theme.of(context).textTheme.caption?.copyWith(
+                color: const Color(0xff9e9e9e),
+              ),
           suffixIcon: suffixIcon,
         ),
         style: Theme.of(context).textTheme.caption,
