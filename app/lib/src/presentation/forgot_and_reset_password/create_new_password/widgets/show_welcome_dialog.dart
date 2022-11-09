@@ -12,9 +12,7 @@ Future<dynamic> showWelcomeDialog(BuildContext context) async {
     barrierDismissible: false,
     builder: (BuildContext dialogContext) {
       return AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         title: const DialogTitle(),
         content: const DialogContent(),
         contentTextStyle: Theme.of(context).textTheme.displayMedium,

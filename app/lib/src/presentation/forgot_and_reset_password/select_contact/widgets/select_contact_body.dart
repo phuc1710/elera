@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../config/router/app_router.dart';
 import '../../../../core/utils/utils.dart';
@@ -20,7 +21,7 @@ class SelectContactBody extends StatefulWidget {
 
 class _SelectContactBodyState extends State<SelectContactBody> {
   dynamic _selectedIndex;
-  List<IconData> iconList = [Icons.chat_rounded, Icons.email];
+  List<IconData> iconList = [IconlyBold.chat, IconlyBold.message];
 
   @override
   Widget build(BuildContext context) {
