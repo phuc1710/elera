@@ -1,5 +1,6 @@
 import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 class StarFilterChips extends StatefulWidget {
   const StarFilterChips({Key? key, required this.selectedCallbackAction})
@@ -34,7 +35,7 @@ class _StarFilterChipsState extends State<StarFilterChips> {
             padding: const EdgeInsets.only(right: 8),
             child: ChoiceChip(
               avatar: Icon(
-                Icons.star_rounded,
+                IconlyBold.star,
                 color: isCourseSelected ? Colors.white : primaryColor,
                 size: width * 0.05,
               ),

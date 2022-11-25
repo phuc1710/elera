@@ -1,5 +1,6 @@
 import 'package:ez_intl/l10n/arb/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../inbox_chats_and_calls/inbox/view/inbox_tab_view.dart';
 import '../../../my_course/my_courses/view/my_courses_tab_view.dart';
@@ -40,28 +41,28 @@ class _HomeViewState extends State<HomeView> {
           onTap: (index) => setState(() => _selectedIndex = index),
           items: [
             BottomNavigationBarItem(
-              activeIcon: const Icon(Icons.home_rounded),
-              icon: const Icon(Icons.home_outlined),
+              activeIcon: const Icon(IconlyBold.home),
+              icon: const Icon(IconlyLight.home),
               label: l10n.home,
             ),
             BottomNavigationBarItem(
-              activeIcon: const Icon(Icons.document_scanner_rounded),
-              icon: const Icon(Icons.document_scanner_outlined),
+              activeIcon: const Icon(IconlyBold.document),
+              icon: const Icon(IconlyLight.document),
               label: l10n.myCourseNavBar,
             ),
             BottomNavigationBarItem(
-              activeIcon: const Icon(Icons.chat_rounded),
-              icon: const Icon(Icons.chat_outlined),
+              activeIcon: const Icon(IconlyBold.chat),
+              icon: const Icon(IconlyLight.chat),
               label: l10n.inbox,
             ),
             BottomNavigationBarItem(
-              activeIcon: const Icon(Icons.shopping_cart_rounded),
-              icon: const Icon(Icons.shopping_cart_outlined),
+              activeIcon: const Icon(IconlyBold.buy),
+              icon: const Icon(IconlyLight.buy),
               label: l10n.transactions,
             ),
             BottomNavigationBarItem(
-              activeIcon: const Icon(Icons.person_rounded),
-              icon: const Icon(Icons.person_outline_rounded),
+              activeIcon: const Icon(IconlyBold.profile),
+              icon: const Icon(IconlyLight.profile),
               label: l10n.profile,
             ),
           ],
@@ -72,22 +73,24 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Container? buildFloatingActionButton() {
-    return _selectedIndex == 2 ? Container(
-      decoration: const BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromRGBO(51, 94, 247, 0.25),
-            blurRadius: 24,
-            offset: Offset(4, 8),
+    return _selectedIndex == 2
+        ? Container(
+            decoration: const BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(51, 94, 247, 0.25),
+                  blurRadius: 24,
+                  offset: Offset(4, 8),
+                )
+              ],
+            ),
+            child: FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Theme.of(context).primaryColor,
+              elevation: 0,
+              child: const Icon(Icons.add),
+            ),
           )
-        ],
-      ),
-      child: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Theme.of(context).primaryColor,
-        elevation: 0,
-        child: const Icon(Icons.add),
-      ),
-    ) : null;
+        : null;
   }
 }

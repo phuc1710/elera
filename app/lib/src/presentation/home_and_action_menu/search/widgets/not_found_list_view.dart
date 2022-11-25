@@ -29,7 +29,7 @@ class NotFoundListView extends StatelessWidget {
           ),
           Text(
             l10n.notFoundPrompt,
-            style: Theme.of(context).textTheme.displayLarge,
+            style: Theme.of(context).textTheme.bodyText2,
             textAlign: TextAlign.center,
           )
         ],

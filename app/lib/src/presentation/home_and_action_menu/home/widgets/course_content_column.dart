@@ -41,10 +41,22 @@ class CourseContentColumn extends StatelessWidget {
               style: textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
             ),
             PriceRow(price: price, originalPrice: originalPrice),
-            Text(
-              '⭐  $rating  |  $studentCount ${AppLocalizations.of(context).students}',
-              style:
-                  textTheme.overline?.copyWith(color: const Color(0xff616161)),
+            Row(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(right: 4.0),
+                  child: Icon(
+                    Icons.star_half_rounded,
+                    color: Color(0xfffc9a0e),
+                    size: 18,
+                  ),
+                ),
+                Text(
+                  '$rating  |  $studentCount ${AppLocalizations.of(context).students}',
+                  style: textTheme.overline
+                      ?.copyWith(color: const Color(0xff616161)),
+                ),
+              ],
             ),
           ],
         ),

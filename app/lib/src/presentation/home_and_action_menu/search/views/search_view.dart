@@ -95,8 +95,6 @@ class _SearchViewState extends State<SearchView> {
         if (state is SearchFetchSuccess) {
           return SearchResultTabView(
             searchPhrase: searchPhrase,
-            courseList: state.data?.courses,
-            mentorList: state.data?.mentors,
           );
         }
         if (state is RecentSearchFetchSuccess) {

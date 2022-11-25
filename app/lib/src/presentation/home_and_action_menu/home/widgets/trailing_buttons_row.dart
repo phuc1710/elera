@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../config/router/routes.dart';
 import '../bloc/home_bloc.dart';
@@ -21,11 +22,11 @@ class _TrailingButtonsRowState extends State<TrailingButtonsRow> {
       mainAxisSize: MainAxisSize.min,
       children: [
         IconButton(
-          icon: const Icon(Icons.notifications_none),
+          icon: const Icon(IconlyLight.notification),
           onPressed: () => context.router.pushNamed(Routes.notification),
         ),
         IconButton(
-          icon: const Icon(Icons.bookmark_border),
+          icon: const Icon(IconlyLight.bookmark),
           onPressed: () {
             context.router
                 .pushNamed(Routes.myBookmark)

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../config/router/routes.dart';
 import '../../search/widgets/filter_bottom_sheet_content.dart';
@@ -108,20 +109,20 @@ class _SearchBarState extends State<SearchBar> {
             decoration: InputDecoration(
               border: InputBorder.none,
               prefixIcon: Icon(
-                Icons.search,
+                IconlyLight.search,
                 color: isFocus && !widget.atHome
                     ? Theme.of(context).primaryColor
                     : Colors.grey[400],
               ),
               suffixIcon: widget.atHome
                   ? Icon(
-                      Icons.filter_alt_outlined,
+                      IconlyLight.filter,
                       color: Theme.of(context).colorScheme.primary,
                     )
                   : IconButton(
                       onPressed: () => showSearchFilterBottomSheet(context),
                       icon: Icon(
-                        Icons.filter_alt_outlined,
+                        IconlyLight.filter,
                         color: Theme.of(context).colorScheme.primary,
                       ),
                       splashRadius: 10,

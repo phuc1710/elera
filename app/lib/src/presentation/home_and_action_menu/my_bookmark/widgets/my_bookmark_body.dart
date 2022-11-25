@@ -18,10 +18,12 @@ class MyBookmarkBody extends StatelessWidget {
       },
       buildWhen: (prev, curr) =>
           prev is BookmarkFetchInProgress && curr is BookmarkFetchSuccess,
-      builder: (context, state) => !(state is BookmarkFetchSuccess ||
-              state is BookmarkRemovalSuccess)
-          ? const Center(child: CircularProgressIndicator())
-          : BookmarkCourseTabBarView(courses: getCourseList(context, state)),
+      builder: (context, state) =>
+          !(state is BookmarkFetchSuccess || state is BookmarkRemovalSuccess)
+              ? const Center(child: CircularProgressIndicator())
+              : const BookmarkCourseTabBarView(
+                  courses: null,
+                ), //getCourseList(context, state)),
     );
   }
 

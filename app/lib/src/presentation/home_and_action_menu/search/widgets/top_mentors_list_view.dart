@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../data/models/mentor/mentor_fetch_response_model.dart';
 
@@ -43,7 +44,7 @@ class _TopMentorsListViewState extends State<TopMentorsListView> {
             trailing: IconButton(
               onPressed: () {},
               icon: Icon(
-                Icons.chat_bubble_outline,
+                IconlyLight.chat,
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),

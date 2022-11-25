@@ -1,5 +1,6 @@
 import 'package:ez_intl/ez_intl.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../home/widgets/title_row.dart';
 
@@ -63,7 +64,7 @@ class RecentSearchListViewState extends State<RecentSearchListView> {
                 onTap: () => setState(() {
                   widget.searchList?.removeAt(i);
                 }),
-                child: const Icon(Icons.cancel_outlined),
+                child: const Icon(IconlyLight.close_square),
               ),
             ),
           ),

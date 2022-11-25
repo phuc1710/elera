@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../core/utils/utils.dart';
 import '../bloc/top_mentors_bloc.dart';
@@ -48,7 +49,7 @@ class TopMentorsBody extends StatelessWidget {
                       trailing: IconButton(
                         onPressed: () {},
                         icon: Icon(
-                          Icons.chat_bubble_outline,
+                          IconlyLight.chat,
                           color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
